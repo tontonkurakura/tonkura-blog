@@ -1,13 +1,22 @@
+import { Metadata } from "next";
 import path from "path";
 import { getPostData } from "@/utils/markdown";
 
-interface BlogPostPageProps {
-  params: {
-    slug: string[];
+interface Props {
+  params: { slug: string[] };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const fullPath = path.join(process.cwd(), "content", ...params.slug) + ".md";
+  const post = await getPostData(fullPath);
+
+  return {
+    title: post.title,
+    description: post.description || "",
   };
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
+export default async function BlogPostPage({ params }: Props) {
   const fullPath = path.join(process.cwd(), "content", ...params.slug) + ".md";
   const post = await getPostData(fullPath);
 

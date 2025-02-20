@@ -7,6 +7,17 @@ interface OrderConfig {
   order: string[];
 }
 
+interface DirectoryStructure {
+  [key: string]: DirectoryStructure | "file";
+}
+
+interface TreeNode {
+  name: string;
+  path: string;
+  type: "file" | "directory";
+  children?: TreeNode[];
+}
+
 // 設定ファイルを読み込む関数
 async function loadOrderConfig(): Promise<OrderConfig> {
   const configPath = path.join(
@@ -30,7 +41,7 @@ async function loadOrderConfig(): Promise<OrderConfig> {
 
 // 設定ファイルを更新する関数
 async function updateOrderConfig(
-  structure: any,
+  structure: DirectoryStructure,
   config: OrderConfig
 ): Promise<OrderConfig> {
   const existingFolders = new Set(config.order);
@@ -69,16 +80,11 @@ async function updateOrderConfig(
 
 // ディレクトリ構造を再帰的にTreeNode形式に変換する関数
 function convertToTreeNode(
-  structure: any,
+  structure: DirectoryStructure,
   currentPath: string = "",
   orderConfig: OrderConfig | null = null
-): {
-  name: string;
-  path: string;
-  type: "file" | "directory";
-  children?: Array<any>;
-}[] {
-  let entries = Object.entries(structure);
+): TreeNode[] {
+  const entries = Object.entries(structure);
 
   // 設定ファイルに基づいて並び替え
   if (orderConfig && currentPath === "") {
@@ -87,9 +93,9 @@ function convertToTreeNode(
     );
 
     entries.sort(([nameA], [nameB]) => {
-      const orderA = orderMap.has(nameA) ? orderMap.get(nameA) : Infinity;
-      const orderB = orderMap.has(nameB) ? orderMap.get(nameB) : Infinity;
-      return (orderA as number) - (orderB as number);
+      const indexA = orderMap.get(nameA) ?? Infinity;
+      const indexB = orderMap.get(nameB) ?? Infinity;
+      return indexA - indexB;
     });
   }
 
@@ -100,13 +106,13 @@ function convertToTreeNode(
       return {
         name,
         path: nodePath,
-        type: "file",
+        type: "file" as const,
       };
     } else {
       return {
         name,
         path: nodePath,
-        type: "directory",
+        type: "directory" as const,
         children: convertToTreeNode(data, nodePath, orderConfig),
       };
     }
@@ -115,16 +121,16 @@ function convertToTreeNode(
 
 export default async function NeurologyContent() {
   const structure = await getDirectoryStructure();
-  let orderConfig = await loadOrderConfig();
+  const orderConfig = await loadOrderConfig();
 
   // neurologyディレクトリの内容を取得
   const neurologyContent = structure["neurology"] || {};
 
   // 設定ファイルを更新
-  orderConfig = await updateOrderConfig(neurologyContent, orderConfig);
+  const updatedConfig = await updateOrderConfig(neurologyContent, orderConfig);
 
   // ディレクトリ構造を変換（順序設定を適用）
-  const structureArray = convertToTreeNode(neurologyContent, "", orderConfig);
+  const structureArray = convertToTreeNode(neurologyContent, "", updatedConfig);
 
   return (
     <div className="grid grid-cols-1 gap-6">

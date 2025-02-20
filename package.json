@@ -13,9 +13,12 @@
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.1.7",
     "@tailwindcss/typography": "^0.5.16",
-    "exif": "^0.6.0",
-    "exifr": "^7.1.3",
+    "@types/js-yaml": "^4.0.9",
+    "date-fns": "^4.1.0",
+    "exif-reader": "^2.0.2",
+    "exifreader": "^4.26.1",
     "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
     "next": "15.1.7",
     "next-mdx-remote": "^5.0.0",
     "react": "^19.0.0",
@@ -27,13 +30,14 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
-    "@types/react": "^19",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.17.19",
+    "@types/react": "^19.0.10",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5.7.3"
   }
 }

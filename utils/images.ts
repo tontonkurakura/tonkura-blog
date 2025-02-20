@@ -1,130 +1,150 @@
 import fs from "fs";
 import path from "path";
 import sharp from "sharp";
-import { ExifImage } from "exif";
+import exifReader from "exifreader";
 
 export interface ImageMetadata {
+  shootingDate: Date | undefined;
   width: number;
   height: number;
   originalPath: string;
-  shootingDate?: Date;
-  exif?: {
-    camera?: string;
-    lens?: string;
-    focalLength?: string;
-    aperture?: string;
-    iso?: string;
-    shutterSpeed?: string;
-    dateTime?: string;
-    orientation?: number;
-  };
+  camera?: string;
+  lens?: string;
+  focalLength?: string;
+  aperture?: string;
+  shutterSpeed?: string;
+  iso?: string;
 }
 
-interface ProcessedImage {
-  metadata: ImageMetadata;
-  timestamp: number;
-  outputPath: string;
-  thumbPath: string;
-}
-
-const processedImagesCache = new Map<string, ProcessedImage>();
-const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24時間
-
-function formatDate(date: Date): string {
-  try {
-    if (!(date instanceof Date) || isNaN(date.getTime())) {
-      date = new Date();
-    }
-    const yyyy = date.getFullYear();
-    const mm = String(date.getMonth() + 1).padStart(2, "0");
-    const dd = String(date.getDate()).padStart(2, "0");
-    const hh = String(date.getHours()).padStart(2, "0");
-    const mi = String(date.getMinutes()).padStart(2, "0");
-    const ss = String(date.getSeconds()).padStart(2, "0");
-    return `${yyyy}${mm}${dd}_${hh}${mi}${ss}`;
-  } catch (error) {
-    console.error("Date formatting error:", error);
-    const now = new Date();
-    return now
-      .toISOString()
-      .replace(/[-:T.Z]/g, "")
-      .slice(0, 14);
+export async function getAllImagesWithMetadata(
+  directory: string
+): Promise<Array<{ originalPath: string }>> {
+  if (!fs.existsSync(directory)) {
+    console.log(`Directory does not exist: ${directory}`);
+    return [];
   }
-}
 
-function parseExifDate(dateStr?: string): Date {
-  if (!dateStr) return new Date();
-
-  try {
-    // EXIF日付形式のバリエーションに対応
-    // 1. "YYYY:MM:DD HH:MM:SS"
-    // 2. "YYYY:MM:DD"
-    // 3. "YYYY-MM-DD HH:MM:SS"
-    // 4. "YYYY-MM-DD"
-
-    // コロンとハイフンを統一
-    const normalizedStr = dateStr.replace(/-/g, ":");
-
-    // 日付と時刻に分割
-    const [datePart, timePart = "00:00:00"] = normalizedStr.split(" ");
-
-    // 日付部分を分解
-    const [yearStr, monthStr, dayStr] = datePart.split(":");
-    const year = parseInt(yearStr, 10);
-    const month = parseInt(monthStr, 10) - 1; // JavaScriptの月は0-11
-    const day = parseInt(dayStr, 10);
-
-    // 時刻部分を分解
-    const [hourStr, minuteStr, secondStr] = timePart.split(":");
-    const hour = parseInt(hourStr, 10);
-    const minute = parseInt(minuteStr, 10);
-    const second = parseInt(secondStr, 10);
-
-    // 数値の妥当性チェック
-    if (
-      isNaN(year) ||
-      year < 1900 ||
-      year > 2100 ||
-      isNaN(month) ||
-      month < 0 ||
-      month > 11 ||
-      isNaN(day) ||
-      day < 1 ||
-      day > 31 ||
-      isNaN(hour) ||
-      hour < 0 ||
-      hour > 23 ||
-      isNaN(minute) ||
-      minute < 0 ||
-      minute > 59 ||
-      isNaN(second) ||
-      second < 0 ||
-      second > 59
-    ) {
-      throw new Error(`Invalid date components: ${dateStr}`);
-    }
-
-    const date = new Date(year, month, day, hour, minute, second);
-
-    // 最終チェック
-    if (isNaN(date.getTime())) {
-      throw new Error(`Invalid date result: ${dateStr}`);
-    }
-
-    return date;
-  } catch (error) {
-    console.error(`Date parsing error for "${dateStr}":`, error);
-    return new Date();
-  }
-}
-
-function isCacheValid(cached: ProcessedImage): boolean {
-  return (
-    cached &&
-    Date.now() - cached.timestamp < CACHE_DURATION &&
-    fs.existsSync(cached.outputPath) &&
-    fs.existsSync(cached.thumbPath)
+  const files = fs.readdirSync(directory);
+  const imageFiles = files.filter((file) =>
+    /\.(jpg|jpeg|png|gif)$/i.test(file)
   );
+
+  return imageFiles.map((file) => ({
+    originalPath: path.join(directory, file),
+  }));
+}
+
+// 日付をYYYYMMDDHHMMSS形式にフォーマットする関数
+function formatDate(date: Date | undefined): string {
+  if (!date) {
+    const now = new Date();
+    return formatDateToString(now);
+  }
+  return formatDateToString(date);
+}
+
+// 日付を文字列に変換する補助関数
+function formatDateToString(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
+  return `${year}${month}${day}${hours}${minutes}${seconds}`;
+}
+
+async function getExifData(filePath: string): Promise<Partial<ImageMetadata>> {
+  try {
+    const image = sharp(filePath);
+    const metadata = await image.metadata();
+
+    if (!metadata.exif) {
+      console.log("No EXIF data found in image:", filePath);
+      return {};
+    }
+
+    const exifData = exifReader(metadata.exif);
+    console.log("Raw EXIF data:", JSON.stringify(exifData, null, 2));
+
+    const result: Partial<ImageMetadata> = {};
+
+    // カメラ情報
+    if (exifData.image?.Make || exifData.image?.Model) {
+      const make = exifData.image?.Make?.trim();
+      const model = exifData.image?.Model?.trim();
+      result.camera = [make, model].filter(Boolean).join(" ");
+    }
+
+    // レンズ情報
+    if (exifData.exif?.LensModel) {
+      result.lens = exifData.exif.LensModel.trim();
+    }
+
+    // 焦点距離
+    if (exifData.exif?.FocalLength) {
+      const focalLength =
+        typeof exifData.exif.FocalLength === "number"
+          ? exifData.exif.FocalLength
+          : parseFloat(exifData.exif.FocalLength);
+      result.focalLength = `${Math.round(focalLength)}mm`;
+    }
+
+    // 絞り値
+    if (exifData.exif?.FNumber) {
+      const fNumber =
+        typeof exifData.exif.FNumber === "number"
+          ? exifData.exif.FNumber
+          : parseFloat(exifData.exif.FNumber);
+      result.aperture = `f/${fNumber.toFixed(1)}`;
+    }
+
+    // シャッタースピード
+    if (exifData.exif?.ExposureTime) {
+      const exposureTime =
+        typeof exifData.exif.ExposureTime === "number"
+          ? exifData.exif.ExposureTime
+          : parseFloat(exifData.exif.ExposureTime);
+      if (exposureTime < 1) {
+        result.shutterSpeed = `1/${Math.round(1 / exposureTime)}`;
+      } else {
+        result.shutterSpeed = exposureTime.toString();
+      }
+    }
+
+    // ISO感度
+    if (exifData.exif?.ISO) {
+      result.iso = `ISO ${exifData.exif.ISO}`;
+    }
+
+    // 撮影日時
+    if (exifData.exif?.DateTimeOriginal) {
+      const dateStr = exifData.exif.DateTimeOriginal;
+      // YYYY:MM:DD HH:mm:ss 形式の文字列を解析
+      const [date, time] = dateStr.split(" ");
+      const [year, month, day] = date.split(":");
+      const [hour, minute, second] = time.split(":");
+
+      const parsedDate = new Date(
+        parseInt(year),
+        parseInt(month) - 1,
+        parseInt(day),
+        parseInt(hour),
+        parseInt(minute),
+        parseInt(second)
+      );
+
+      if (!isNaN(parsedDate.getTime())) {
+        result.shootingDate = parsedDate;
+      }
+    }
+
+    console.log("Extracted EXIF metadata:", result);
+    return result;
+  } catch (error) {
+    console.error("Error extracting EXIF data:", error);
+    return {};
+  }
 }
 
 export async function processImage(
@@ -133,179 +153,73 @@ export async function processImage(
   filename: string,
   index: number
 ): Promise<ImageMetadata> {
-  const cacheKey = inputPath;
-  const cached = processedImagesCache.get(cacheKey);
-
-  // EXIF情報を先に取得して撮影日を取得
-  const exifData = await getExifData(inputPath);
-  const shootingDate = exifData?.dateTime
-    ? parseExifDate(exifData.dateTime)
-    : new Date(fs.statSync(inputPath).mtime);
-
-  // 新しいファイル名を生成
-  const newFilename = `${formatDate(shootingDate)}_${String(index + 1).padStart(
-    3,
-    "0"
-  )}`;
-  const outputPath = path.join(outputDir, `${newFilename}.webp`);
-  const thumbPath = path.join(outputDir, `thumb_${newFilename}.webp`);
-
-  // キャッシュをチェック
-  if (cached && isCacheValid(cached)) {
-    return cached.metadata;
-  }
-
-  // 出力ディレクトリが存在しない場合は作成
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  // 画像の処理
-  const image = sharp(inputPath);
-  image.rotate(); // 自動回転を有効化
-  const metadata = await image.metadata();
+  try {
+    const image = sharp(inputPath);
+    const metadata = await image.metadata();
+    const exifData = await getExifData(inputPath);
 
-  console.log(`Processing image: ${inputPath} -> ${outputPath}`);
+    // 日付ベースのファイル名を生成（タイムスタンプではなく日付を使用）
+    const dateStr = formatDate(exifData.shootingDate || new Date());
+    const baseName = `${dateStr}_${String(index).padStart(3, "0")}`;
 
-  // サムネイルとフル画像の生成
-  await Promise.all([
-    image
+    // サムネイル生成
+    const thumbPath = path.join(outputDir, `thumb_${baseName}.webp`);
+    console.log("Generating thumbnail at:", thumbPath);
+    await image
       .clone()
-      .resize(400, 400, { fit: "cover" })
+      .resize(300, 300, {
+        fit: "cover",
+        position: "centre",
+      })
       .webp({ quality: 80 })
-      .toFile(thumbPath),
-    image
+      .toFile(thumbPath);
+
+    // 生成されたサムネイルの確認
+    if (!fs.existsSync(thumbPath)) {
+      console.error("Failed to generate thumbnail:", thumbPath);
+    } else {
+      console.log("Successfully generated thumbnail:", thumbPath);
+      console.log("Thumbnail file exists:", fs.existsSync(thumbPath));
+    }
+
+    // 大きな画像生成
+    const largePath = path.join(outputDir, `${baseName}.webp`);
+    console.log("Generating large image at:", largePath);
+    await image
       .clone()
-      .resize(2000, null, { fit: "inside" })
+      .resize(1920, null, {
+        fit: "inside",
+        withoutEnlargement: true,
+      })
       .webp({ quality: 85 })
-      .toFile(outputPath),
-  ]);
+      .toFile(largePath);
 
-  const imageMetadata: ImageMetadata = {
-    width: metadata.width || 0,
-    height: metadata.height || 0,
-    originalPath: inputPath,
-    shootingDate,
-    exif: exifData,
-  };
-
-  // キャッシュを更新
-  processedImagesCache.set(cacheKey, {
-    metadata: imageMetadata,
-    timestamp: Date.now(),
-    outputPath,
-    thumbPath,
-  });
-
-  return imageMetadata;
-}
-
-function getExifData(imagePath: string): Promise<ImageMetadata["exif"]> {
-  return new Promise((resolve) => {
-    try {
-      new ExifImage({ image: imagePath }, (error, exifData) => {
-        if (error) {
-          console.error(`EXIF reading error for ${imagePath}:`, error);
-          resolve(undefined);
-          return;
-        }
-
-        try {
-          // EXIF情報を取得（優先順位順）
-          const dateTime =
-            exifData.exif.DateTimeOriginal ||
-            exifData.exif.CreateDate ||
-            exifData.image.ModifyDate ||
-            exifData.image.CreateDate;
-
-          // 日付が取得できた場合はパースを試みる
-          if (dateTime) {
-            try {
-              parseExifDate(dateTime);
-            } catch (error) {
-              console.error(
-                `Invalid EXIF date format in ${imagePath}:`,
-                dateTime
-              );
-            }
-          }
-
-          resolve({
-            camera: `${exifData.image.Make} ${exifData.image.Model}`.trim(),
-            lens: exifData.exif.LensModel,
-            focalLength: exifData.exif.FocalLength
-              ? `${exifData.exif.FocalLength}mm`
-              : undefined,
-            aperture: exifData.exif.FNumber
-              ? `f/${exifData.exif.FNumber}`
-              : undefined,
-            iso: exifData.exif.ISO ? `${exifData.exif.ISO}` : undefined,
-            shutterSpeed: exifData.exif.ExposureTime
-              ? `${exifData.exif.ExposureTime}s`
-              : undefined,
-            dateTime,
-            orientation: exifData.image.Orientation,
-          });
-        } catch (error) {
-          console.error(`Error processing EXIF data for ${imagePath}:`, error);
-          resolve(undefined);
-        }
-      });
-    } catch (error) {
-      console.error(`Error creating ExifImage for ${imagePath}:`, error);
-      resolve(undefined);
+    // 生成された大きな画像の確認
+    if (!fs.existsSync(largePath)) {
+      console.error("Failed to generate large image:", largePath);
+    } else {
+      console.log("Successfully generated large image:", largePath);
+      console.log("Large image file exists:", fs.existsSync(largePath));
     }
-  });
-}
 
-export async function getAllImagesWithMetadata(
-  directory: string
-): Promise<ImageMetadata[]> {
-  const imagePaths = getAllImages(directory);
-  const imagesWithDates: { path: string; date: Date }[] = [];
-
-  // 全画像のEXIF情報を取得
-  for (const imagePath of imagePaths) {
-    try {
-      const exifData = await getExifData(imagePath);
-      const date = exifData?.dateTime
-        ? parseExifDate(exifData.dateTime)
-        : new Date(fs.statSync(imagePath).mtime);
-
-      imagesWithDates.push({ path: imagePath, date });
-    } catch (error) {
-      console.error(`Error processing image ${imagePath}:`, error);
-      // エラーが発生した場合はファイルの更新日時を使用
-      imagesWithDates.push({
-        path: imagePath,
-        date: new Date(fs.statSync(imagePath).mtime),
-      });
-    }
+    return {
+      shootingDate: exifData.shootingDate,
+      width: metadata.width || 0,
+      height: metadata.height || 0,
+      originalPath: inputPath,
+      camera: exifData.camera,
+      lens: exifData.lens,
+      focalLength: exifData.focalLength,
+      aperture: exifData.aperture,
+      shutterSpeed: exifData.shutterSpeed,
+      iso: exifData.iso,
+    };
+  } catch (error) {
+    console.error("Error processing image:", error);
+    throw error;
   }
-
-  // 日付で降順ソート
-  return imagesWithDates
-    .sort((a, b) => b.date.getTime() - a.date.getTime())
-    .map((item) => ({
-      width: 0,
-      height: 0,
-      originalPath: item.path,
-      shootingDate: item.date,
-    }));
-}
-
-export function getAllImages(directory: string): string[] {
-  const items = fs.readdirSync(directory, { withFileTypes: true });
-  const images: string[] = [];
-
-  for (const item of items) {
-    const fullPath = path.join(directory, item.name);
-    if (item.isDirectory()) {
-      images.push(...getAllImages(fullPath));
-    } else if (item.isFile() && /\.(jpg|jpeg|png)$/i.test(item.name)) {
-      images.push(fullPath);
-    }
-  }
-
-  return images;
 }

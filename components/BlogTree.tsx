@@ -1,69 +1,44 @@
-"use client";
-
-import { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { FaChevronRight, FaChevronDown, FaFile } from "react-icons/fa";
+import { DirectoryStructure } from "@/utils/markdown";
 
-interface TreeNodeProps {
-  name: string;
-  structure: any;
-  path: string[];
+interface BlogTreeProps {
+  structure: DirectoryStructure;
 }
 
-const TreeNode: React.FC<TreeNodeProps> = ({ name, structure, path }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const isFile = structure === "file";
-  const currentPath = [...path, name];
-
-  if (isFile) {
+export default function BlogTree({ structure }: BlogTreeProps) {
+  const renderTree = (node: DirectoryStructure, path: string = "") => {
     return (
-      <div className="ml-6 py-1 flex items-center">
-        <FaFile className="text-gray-500 mr-2" size={14} />
-        <Link
-          href={`/blog/${currentPath.join("/")}`}
-          className="text-gray-700 hover:text-blue-600 font-mplus"
-        >
-          {name.replace(".md", "")}
-        </Link>
-      </div>
+      <ul className="space-y-2">
+        {Object.entries(node).map(([key, value]) => {
+          const currentPath = path ? `${path}/${key}` : key;
+          const isFile = typeof value === "string";
+
+          return (
+            <li key={currentPath} className="pl-4">
+              {isFile ? (
+                <Link
+                  href={`/blog/${currentPath}`}
+                  className="text-blue-600 hover:text-blue-800"
+                >
+                  {key}
+                </Link>
+              ) : (
+                <>
+                  <span className="font-semibold">{key}</span>
+                  {renderTree(value as DirectoryStructure, currentPath)}
+                </>
+              )}
+            </li>
+          );
+        })}
+      </ul>
     );
-  }
+  };
 
   return (
-    <div>
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center py-1 w-full text-left hover:bg-gray-100 rounded px-2"
-      >
-        {isExpanded ? (
-          <FaChevronDown className="text-gray-500 mr-2" size={14} />
-        ) : (
-          <FaChevronRight className="text-gray-500 mr-2" size={14} />
-        )}
-        <span className="font-mplus text-gray-800">{name}</span>
-      </button>
-      {isExpanded && (
-        <div className="ml-4">
-          {Object.entries(structure).map(([childName, childStructure]) => (
-            <TreeNode
-              key={childName}
-              name={childName}
-              structure={childStructure}
-              path={currentPath}
-            />
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default function BlogTree({ structure }: { structure: any }) {
-  return (
-    <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-200">
-      {Object.entries(structure).map(([name, subStructure]) => (
-        <TreeNode key={name} name={name} structure={subStructure} path={[]} />
-      ))}
+    <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+      {renderTree(structure)}
     </div>
   );
 }

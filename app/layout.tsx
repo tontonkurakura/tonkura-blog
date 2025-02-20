@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { M_PLUS_1p } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -43,44 +44,44 @@ export default function RootLayout({
               <nav className="mt-2">
                 <ul className="flex space-x-8">
                   <li>
-                    <a
+                    <Link
                       href="/"
                       className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-blue-800 to-indigo-800 hover:shadow-inner"
                     >
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="/blog"
                       className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-indigo-800 to-purple-800 hover:shadow-inner"
                     >
                       Blog
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="/neurology"
                       className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-fuchsia-800 to-red-800 hover:shadow-inner"
                     >
                       Neurology
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="/gallery"
-                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-red-800 to-rose-800 hover:shadow-inner"
-                    >
-                      Gallery
-                    </a>
-                  </li>
-                  <li>
-                    <a
+                    <Link
                       href="/tools"
                       className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-rose-800 to-pink-800 hover:shadow-inner"
                     >
                       Tools
-                    </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/photographs"
+                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-pink-800 to-orange-800 hover:shadow-inner"
+                    >
+                      Photographs
+                    </Link>
                   </li>
                 </ul>
               </nav>

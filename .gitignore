@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Generated images
+public/images/webp/
+public/processed-images/
+
+# Cache files
+*.cache
+gallery-cache.json
