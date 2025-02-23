@@ -2,7 +2,6 @@ import { getAllRecipes, categorizeTag } from "@/utils/recipeUtils";
 import Link from "next/link";
 import { format } from "date-fns";
 import { ja } from "date-fns/locale";
-import { useSearchParams } from "next/navigation";
 import SearchBox from "../blog/SearchBox";
 import { Suspense } from "react";
 

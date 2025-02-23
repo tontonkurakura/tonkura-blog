@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import ImageModal from "@/components/ImageModal";
 import type { Photo } from "@/types/photo";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 interface PhotoGalleryProps {
   initialPhotos: Photo[];

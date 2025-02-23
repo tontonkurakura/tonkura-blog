@@ -34,9 +34,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" suppressHydrationWarning={true}>
-      <head>
-        <link rel="stylesheet" href="highlight.js/styles/github-dark.css" />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${mplus1p.className} bg-white`}
         suppressHydrationWarning={true}

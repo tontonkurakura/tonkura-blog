@@ -39,48 +39,9 @@ async function loadOrderConfig(): Promise<OrderConfig> {
   return config;
 }
 
-// 設定ファイルを更新する関数
-async function updateOrderConfig(
-  structure: DirectoryStructure,
-  config: OrderConfig
-): Promise<OrderConfig> {
-  const existingFolders = new Set(config.order);
-  const currentFolders = Object.keys(structure);
-
-  // 新しいフォルダを検出して追加
-  for (const folder of currentFolders) {
-    if (!existingFolders.has(folder)) {
-      config.order.push(folder);
-    }
-  }
-
-  // 存在しないフォルダを削除
-  config.order = config.order.filter((folder) =>
-    currentFolders.includes(folder)
-  );
-
-  // 設定を保存
-  try {
-    const configPath = path.join(
-      process.cwd(),
-      "content",
-      "neurology",
-      "order.json"
-    );
-    fs.writeFileSync(
-      configPath,
-      JSON.stringify({ order: config.order }, null, 2)
-    );
-  } catch (error) {
-    console.error("Error saving order config:", error);
-  }
-
-  return config;
-}
-
 // ディレクトリ構造を再帰的にTreeNode形式に変換する関数
 function convertToTreeNode(
-  structure: any,
+  structure: DirectoryStructure,
   currentPath: string = "",
   orderConfig: OrderConfig | null = null
 ): TreeNode[] {
