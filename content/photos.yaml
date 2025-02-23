@@ -1,7 +1,122 @@
 # 写真の説明を設定するファイル
-# ファイル名をキーとして、その写真の説明を設定します
-# 例：
-# example.jpg:
-#   description: "この写真の説明"
+# 各写真に対して以下の情報を設定できます：
+# - description: 撮影場所
 
-{}
+DSC00072.jpg:
+  description: 増上寺
+DSC00100.jpg:
+  description: 東京タワー
+DSC00103.jpg:
+  description: 牛久大仏内部
+DSC00197.jpg:
+  description:
+DSC00329.jpg:
+  description:
+DSCBanana.jpg:
+  description:
+DSC00351.jpg:
+  description:
+DSC00363.jpg:
+  description:
+DSC00498 (3).jpg:
+  description:
+DSC00670.jpg:
+  description:
+DSC00675.jpg:
+  description:
+DSC01080.jpg:
+  description:
+DSC01137.jpg:
+  description:
+DSC01197.jpg:
+  description:
+DSC01203.jpg:
+  description:
+DSC01265.jpg:
+  description:
+DSC01376-Enhanced-NR.jpg:
+  description:
+DSC01388-Enhanced-NR.jpg:
+  description:
+DSC01465.jpg:
+  description:
+DSC01576.jpg:
+  description:
+DSC01597.jpg:
+  description:
+DSC01655.jpg:
+  description:
+DSC02114-Enhanced-NR-Edit.jpg:
+  description:
+DSC02191-Enhanced-NR.jpg:
+  description:
+DSC02207.jpg:
+  description:
+DSC02229-Enhanced-NR.jpg:
+  description:
+DSC02351-Enhanced-NR-Edit.jpg:
+  description: Chillagoe, Australia
+DSC02359-Enhanced-NR-Pano-Edit.jpg:
+  description:
+DSC03551.jpg:
+  description:
+DSC03624.jpg:
+  description:
+DSC04738.jpg:
+  description:
+DSC05024.jpg:
+  description:
+DSC05051.jpg:
+  description:
+DSC05210.jpg:
+  description:
+DSC05218.jpg:
+  description:
+DSC05237.jpg:
+  description:
+DSC05397.jpg:
+  description:
+DSC05805.jpg:
+  description:
+DSC06034.jpg:
+  description:
+DSC06231.jpg:
+  description:
+DSC06919.jpg:
+  description:
+DSC07199.jpg:
+  description:
+DSC07204.jpg:
+  description:
+DSC07563.jpg:
+  description:
+DSC07646.jpg:
+  description:
+DSC07695.jpg:
+  description:
+DSC07746.jpg:
+  description:
+DSC07817.jpg:
+  description:
+DSC07887.jpg:
+  description:
+DSC08142.jpg:
+  description:
+DSC08150.jpg:
+  description:
+DSC08179.jpg:
+  description:
+DSC08250.jpg:
+  description:
+DSC08282.jpg:
+  description:
+DSC09251.jpg:
+  description:
+DSC09372.jpg:
+  description:
+DSC09427.jpg:
+  description:
+DSC09654.jpg:
+  description:
+DSC09931.jpg:
+  description:

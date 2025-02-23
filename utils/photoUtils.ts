@@ -1,10 +1,9 @@
 import fs from "fs/promises";
 import path from "path";
 import sharp from "sharp";
-// @ts-ignore
-import exifReader from "exif-reader";
+import ExifReader from "exifreader";
 import type { Photo, ExifData } from "@/types/photo";
-import { readFileSync } from "fs";
+import { readFileSync, writeFileSync, existsSync } from "fs";
 import yaml from "js-yaml";
 
 const PHOTOS_DIR = path.join(process.cwd(), "public/images");
@@ -76,6 +75,43 @@ function formatDateForFileName(dateStr: string | Date): string {
   return match.slice(1).join(""); // YYYYMMDDHHmmss形式
 }
 
+async function updatePhotoYaml(newPhotoFileName: string) {
+  try {
+    // 既存のYAMLファイルを読み込む
+    let photoInfo: PhotoInfo = {};
+    if (existsSync(PHOTO_INFO_PATH)) {
+      const yamlContent = readFileSync(PHOTO_INFO_PATH, "utf8");
+      photoInfo = (yaml.load(yamlContent) as PhotoInfo) || {};
+    }
+
+    // 新しい写真のエントリがない場合のみ追加
+    if (!photoInfo[newPhotoFileName]) {
+      photoInfo[newPhotoFileName] = {
+        description: "写真の説明を入力してください",
+      };
+
+      // YAMLファイルに書き出し
+      const yamlContent = yaml.dump(photoInfo, {
+        indent: 2,
+        lineWidth: -1,
+        quotingType: '"',
+      });
+
+      // ヘッダーコメントを追加
+      const yamlWithHeader = `# 写真の説明を設定するファイル
+# 各写真に対して以下の情報を設定できます：
+# - description: 写真の詳細な説明
+
+${yamlContent}`;
+
+      writeFileSync(PHOTO_INFO_PATH, yamlWithHeader);
+      console.log(`Added new photo entry to photos.yaml: ${newPhotoFileName}`);
+    }
+  } catch (error) {
+    console.error("Error updating photos.yaml:", error);
+  }
+}
+
 async function convertToWebp(
   filePath: string,
   fileName: string,
@@ -96,6 +132,9 @@ async function convertToWebp(
       .resize(1920, 1920, { fit: "inside", withoutEnlargement: true })
       .webp({ quality: 80 })
       .toFile(webpPath);
+
+    // 新しいWEBPファイルが作成されたら、YAMLファイルも更新
+    await updatePhotoYaml(fileName);
   }
 
   return `/images/webp/${webpFileName}`;
@@ -105,9 +144,29 @@ async function extractExif(
   filePath: string
 ): Promise<[ExifData, string | Date | null]> {
   const buffer = await fs.readFile(filePath);
-  const metadata = await sharp(buffer).metadata();
+  let tags;
+  try {
+    tags = ExifReader.load(buffer);
+  } catch (error) {
+    console.log(
+      `Error reading Exif data for: ${path.basename(filePath)}`,
+      error
+    );
+    return [
+      {
+        camera: "Unknown",
+        lens: "Unknown",
+        focalLength: "Unknown",
+        aperture: "Unknown",
+        shutterSpeed: "Unknown",
+        iso: "Unknown",
+        date: new Date().toISOString(),
+      },
+      null,
+    ];
+  }
 
-  if (!metadata.exif) {
+  if (!tags) {
     console.log(`No Exif data found for: ${path.basename(filePath)}`);
     return [
       {
@@ -123,42 +182,76 @@ async function extractExif(
     ];
   }
 
-  const rawExif = exifReader(metadata.exif) as unknown as RawExif;
-
-  // デバッグ用に日付情報を出力
-  if (path.basename(filePath) === "DSC00100.jpg") {
-    console.log("Raw Exif data:", JSON.stringify(rawExif, null, 2));
-  }
-
   // シャッタースピードを分数形式で表示
   const formatShutterSpeed = (exposureTime: number): string => {
     if (exposureTime >= 1) return `${exposureTime}s`;
     return `1/${Math.round(1 / exposureTime)}s`;
   };
 
-  const dateTimeOriginal = rawExif.Photo?.DateTimeOriginal
-    ? new Date(rawExif.Photo.DateTimeOriginal)
-    : null;
+  let dateTimeOriginal: Date | null = null;
+  try {
+    if (tags.DateTimeOriginal?.description) {
+      const dateStr = tags.DateTimeOriginal.description;
+      // EXIF形式の日付文字列（"YYYY:MM:DD HH:MM:SS"）を解析
+      const match = dateStr.match(
+        /^(\d{4}):(\d{2}):(\d{2}) (\d{2}):(\d{2}):(\d{2})/
+      );
+      if (match) {
+        const [_, year, month, day, hours, minutes, seconds] = match;
+        dateTimeOriginal = new Date(
+          parseInt(year),
+          parseInt(month) - 1,
+          parseInt(day),
+          parseInt(hours),
+          parseInt(minutes),
+          parseInt(seconds)
+        );
+        if (isNaN(dateTimeOriginal.getTime())) {
+          dateTimeOriginal = null;
+        }
+      }
+    }
+  } catch (error) {
+    console.log(`Error parsing date for: ${path.basename(filePath)}`, error);
+    dateTimeOriginal = null;
+  }
 
   const formattedExif = {
-    camera: `${rawExif.Image?.Make || "Unknown"} ${
-      rawExif.Image?.Model || ""
+    camera: `${tags.Make?.description || "Unknown"} ${
+      tags.Model?.description || ""
     }`.trim(),
-    lens: rawExif.Photo?.LensModel || "Unknown",
-    focalLength: rawExif.Photo?.FocalLength
-      ? `${rawExif.Photo.FocalLength}mm`
+    lens: tags.LensModel?.description || "Unknown",
+    focalLength: tags.FocalLength
+      ? `${tags.FocalLength.description}`
       : "Unknown",
-    aperture: rawExif.Photo?.FNumber
-      ? `f/${rawExif.Photo.FNumber.toFixed(1)}`
+    aperture: tags.FNumber?.value?.[0]
+      ? `f/${(
+          (tags.FNumber.value[0] as number) / (tags.FNumber.value[1] as number)
+        ).toFixed(1)}`
       : "Unknown",
-    shutterSpeed: rawExif.Photo?.ExposureTime
-      ? formatShutterSpeed(rawExif.Photo.ExposureTime)
+    shutterSpeed: tags.ExposureTime?.value?.[0]
+      ? formatShutterSpeed(
+          (tags.ExposureTime.value[0] as number) /
+            (tags.ExposureTime.value[1] as number)
+        )
       : "Unknown",
-    iso: rawExif.Photo?.ISOSpeedRatings?.toString() || "Unknown",
+    iso: tags.ISOSpeedRatings?.description?.toString() || "Unknown",
     date: dateTimeOriginal?.toISOString() || new Date().toISOString(),
   };
 
   return [formattedExif, dateTimeOriginal];
+}
+
+async function determineAspectRatio(
+  filePath: string
+): Promise<"landscape" | "portrait" | "square"> {
+  const metadata = await sharp(filePath).metadata();
+  if (!metadata.width || !metadata.height) return "landscape";
+
+  const ratio = metadata.width / metadata.height;
+  if (ratio > 1.2) return "landscape";
+  if (ratio < 0.8) return "portrait";
+  return "square";
 }
 
 export async function getPhotos(): Promise<Photo[]> {
@@ -174,12 +267,14 @@ export async function getPhotos(): Promise<Photo[]> {
     const filePath = path.join(PHOTOS_DIR, file);
     const [exif, dateTimeOriginal] = await extractExif(filePath);
     const webpPath = await convertToWebp(filePath, file, dateTimeOriginal);
+    const aspectRatio = await determineAspectRatio(filePath);
 
     photos.push({
       path: `/images/${file}`,
       webpPath,
       exif,
       description: photoInfo[file]?.description || "",
+      aspectRatio,
     });
   }
 

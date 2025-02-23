@@ -13,4 +13,5 @@ export interface Photo {
   webpPath: string;
   exif: ExifData;
   description: string;
+  aspectRatio: "landscape" | "portrait" | "square";
 }

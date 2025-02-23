@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { M_PLUS_1p } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import "highlight.js/styles/github-dark.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" suppressHydrationWarning={true}>
+      <head>
+        <link rel="stylesheet" href="highlight.js/styles/github-dark.css" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${mplus1p.className} bg-white`}
         suppressHydrationWarning={true}
@@ -78,9 +82,17 @@ export default function RootLayout({
                   <li>
                     <Link
                       href="/photographs"
-                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-pink-800 to-orange-800 hover:shadow-inner"
+                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-pink-800/80 to-orange-800/80 hover:shadow-inner"
                     >
                       Photographs
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/recipes"
+                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-orange-800 to-yellow-800 hover:shadow-inner"
+                    >
+                      Recipes
                     </Link>
                   </li>
                 </ul>
@@ -88,7 +100,7 @@ export default function RootLayout({
             </div>
           </div>
         </header>
-        <main className="container mx-auto px-4 py-8">{children}</main>
+        <main className="container mx-auto pt-12">{children}</main>
       </body>
     </html>
   );

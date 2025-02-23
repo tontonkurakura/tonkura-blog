@@ -1,13 +1,20 @@
 import { getPhotos } from "@/utils/photoUtils";
 import PhotoGallery from "./PhotoGallery";
 
+// ヒーロー写真のファイル名を指定
+const HERO_PHOTO_FILENAME = "DSC02359-Enhanced-NR-Pano-Edit.jpg"; // オーストラリアのパノラマ写真
+
 export default async function PhotographsPage() {
   const photos = await getPhotos();
 
+  // ヒーロー写真を検索
+  const heroPhoto =
+    photos.find((photo) => photo.path.includes(HERO_PHOTO_FILENAME)) ||
+    photos[0];
+
   return (
-    <div className="max-w-7xl mx-auto">
-      <h1 className="text-3xl font-bold mb-8 font-mplus">Photographs</h1>
-      <PhotoGallery initialPhotos={photos} />
+    <div>
+      <PhotoGallery initialPhotos={photos} heroPhoto={heroPhoto} />
     </div>
   );
 }

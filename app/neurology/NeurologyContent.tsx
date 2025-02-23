@@ -80,7 +80,7 @@ async function updateOrderConfig(
 
 // ディレクトリ構造を再帰的にTreeNode形式に変換する関数
 function convertToTreeNode(
-  structure: DirectoryStructure,
+  structure: any,
   currentPath: string = "",
   orderConfig: OrderConfig | null = null
 ): TreeNode[] {
@@ -120,17 +120,16 @@ function convertToTreeNode(
 }
 
 export default async function NeurologyContent() {
-  const structure = await getDirectoryStructure();
+  const structure = await getDirectoryStructure(
+    path.join(process.cwd(), "content")
+  );
   const orderConfig = await loadOrderConfig();
 
   // neurologyディレクトリの内容を取得
   const neurologyContent = structure["neurology"] || {};
 
-  // 設定ファイルを更新
-  const updatedConfig = await updateOrderConfig(neurologyContent, orderConfig);
-
   // ディレクトリ構造を変換（順序設定を適用）
-  const structureArray = convertToTreeNode(neurologyContent, "", updatedConfig);
+  const structureArray = convertToTreeNode(neurologyContent, "", orderConfig);
 
   return (
     <div className="grid grid-cols-1 gap-6">
