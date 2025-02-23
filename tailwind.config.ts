@@ -43,6 +43,8 @@ const config: Config = {
       animation: {
         fadeIn: "fadeIn 0.6s ease-out",
         slideUp: "slideUp 0.6s ease-out",
+        fadeInUp:
+          "fadeIn 0.6s ease-out forwards, slideUp 0.6s ease-out forwards",
       },
     },
   },

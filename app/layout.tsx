@@ -47,7 +47,7 @@ export default function RootLayout({
                   <li>
                     <Link
                       href="/"
-                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-blue-800 to-indigo-800 hover:shadow-inner"
+                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-blue-800 to-indigo-800 hover:shadow-inner text-lg font-bold"
                     >
                       Home
                     </Link>
@@ -55,7 +55,7 @@ export default function RootLayout({
                   <li>
                     <Link
                       href="/blog"
-                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-indigo-800 to-purple-800 hover:shadow-inner"
+                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-indigo-800 to-purple-800 hover:shadow-inner text-lg font-bold"
                     >
                       Blog
                     </Link>
@@ -63,7 +63,7 @@ export default function RootLayout({
                   <li>
                     <Link
                       href="/neurology"
-                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-fuchsia-800 to-red-800 hover:shadow-inner"
+                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-fuchsia-800 to-red-800 hover:shadow-inner text-lg font-bold"
                     >
                       Neurology
                     </Link>
@@ -71,7 +71,7 @@ export default function RootLayout({
                   <li>
                     <Link
                       href="/tools"
-                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-rose-800 to-pink-800 hover:shadow-inner"
+                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-rose-800 to-pink-800 hover:shadow-inner text-lg font-bold"
                     >
                       Tools
                     </Link>
@@ -79,7 +79,7 @@ export default function RootLayout({
                   <li>
                     <Link
                       href="/photographs"
-                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-pink-800/80 to-orange-800/80 hover:shadow-inner"
+                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-pink-800/80 to-orange-800/80 hover:shadow-inner text-lg font-bold"
                     >
                       Photographs
                     </Link>
@@ -87,7 +87,7 @@ export default function RootLayout({
                   <li>
                     <Link
                       href="/recipes"
-                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-orange-800 to-yellow-800 hover:shadow-inner"
+                      className="px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-orange-800 to-yellow-800 hover:shadow-inner text-lg font-bold"
                     >
                       Recipes
                     </Link>

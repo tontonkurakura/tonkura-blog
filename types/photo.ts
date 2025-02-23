@@ -1,3 +1,5 @@
+export type AspectRatio = "landscape" | "portrait" | "square";
+
 export interface ExifData {
   camera: string;
   lens: string;
@@ -13,5 +15,5 @@ export interface Photo {
   webpPath: string;
   exif: ExifData;
   description: string;
-  aspectRatio: "landscape" | "portrait" | "square";
+  aspectRatio: AspectRatio;
 }
