@@ -1,7 +1,7 @@
 ---
 Owner: Toru Miyake
 Last edited time: '2021-08-17T19:37'
-lastmod: '2025-02-24'
+lastmod: '2025-02-25'
 ---
 ## 総論
 

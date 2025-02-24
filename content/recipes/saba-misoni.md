@@ -32,7 +32,7 @@ ingredients:
         amount: 大さじ1
       - name: 味噌
         amount: 大さじ2
-lastmod: '2025-02-24'
+lastmod: '2025-02-25'
 ---
 
 ## 下準備

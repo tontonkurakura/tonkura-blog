@@ -2,7 +2,7 @@
 局在: 淡蒼球，視床下核，黒質，脳幹部被蓋，小脳歯状核
 蓄積蛋白:
   - 4R-tau
-lastmod: '2025-02-24'
+lastmod: '2025-02-25'
 ---
 部位:: Neurons, Glia
 蛋白沈着形式/封入体:: NFTs, Tufted astrocytes

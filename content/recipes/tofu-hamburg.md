@@ -1,48 +1,49 @@
 ---
-id: "tofu-hamburg"
-title: "豆腐ハンバーグ"
-description: "豆腐を使ってヘルシーに仕上げたハンバーグ。豆腐の水切りをしっかりすることで、ふんわりジューシーな食感に。"
-servings: "2人分"
-prepTime: "15分"
-cookTime: "15分"
-calories: "約400kcal"
+id: tofu-hamburg
+title: 豆腐ハンバーグ
+description: 豆腐を使ってヘルシーに仕上げたハンバーグ。豆腐の水切りをしっかりすることで、ふんわりジューシーな食感に。
+servings: 2人分
+prepTime: 15分
+cookTime: 15分
+calories: 約400kcal
 ingredients:
-  - name: "豆腐"
-    amount: "1丁（300g）"
-  - name: "合いびき肉"
-    amount: "200g"
-  - name: "玉ねぎ"
-    amount: "1/2個"
-  - name: "パン粉"
-    amount: "大さじ2"
-  - name: "卵"
-    amount: "1個"
-  - name: "塩"
-    amount: "小さじ1/2"
-  - name: "こしょう"
-    amount: "少々"
-  - name: "ナツメグ"
-    amount: "少々"
-  - name: "サラダ油"
-    amount: "適量"
-  - name: "ソース"
+  - name: 豆腐
+    amount: 1丁（300g）
+  - name: 合いびき肉
+    amount: 200g
+  - name: 玉ねぎ
+    amount: 1/2個
+  - name: パン粉
+    amount: 大さじ2
+  - name: 卵
+    amount: 1個
+  - name: 塩
+    amount: 小さじ1/2
+  - name: こしょう
+    amount: 少々
+  - name: ナツメグ
+    amount: 少々
+  - name: サラダ油
+    amount: 適量
+  - name: ソース
     items:
-      - name: "ケチャップ"
-        amount: "大さじ2"
-      - name: "ウスターソース"
-        amount: "大さじ1"
-      - name: "水"
-        amount: "50ml"
+      - name: ケチャップ
+        amount: 大さじ2
+      - name: ウスターソース
+        amount: 大さじ1
+      - name: 水
+        amount: 50ml
 genreTags:
-  - "和食"
-  - "洋食"
+  - 和食
+  - 洋食
 ingredientTags:
-  - "豆腐"
-  - "ひき肉"
+  - 豆腐
+  - ひき肉
 tags:
-  - "メイン"
-  - "ヘルシー"
-date: "2024-02-24"
+  - メイン
+  - ヘルシー
+date: '2024-02-24'
+lastmod: '2025-02-25'
 ---
 
 ## 下準備

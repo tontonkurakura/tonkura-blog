@@ -2,7 +2,7 @@
 title: 記事タイトル
 description: 記事の簡単な説明
 date: YYYY-MM-DD
-lastmod: '2025-02-24'
+lastmod: '2025-02-25'
 tags:
   - 神経学
   - 臨床

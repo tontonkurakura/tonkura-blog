@@ -1,7 +1,7 @@
 ---
 Owner: Toru Miyake
 Last edited time: '2022-08-24T00:42'
-lastmod: '2025-02-24'
+lastmod: '2025-02-25'
 ---
 いわゆる脊髄長大病変．Longitudinally extensive spinal cord lesions (LESCL)とも言う．
 

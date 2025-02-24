@@ -11,7 +11,16 @@ import remarkGfm from "remark-gfm";
 
 const contentDirectory = path.join(process.cwd(), "content");
 const blogDirectory = path.join(contentDirectory, "blog");
-const CACHE_FILE = path.join(process.cwd(), ".cache", "posts-meta.json");
+
+// 環境に応じてキャッシュディレクトリを設定
+const getCacheDir = () => {
+  if (process.env.NODE_ENV === "production") {
+    return "/tmp/.cache";
+  }
+  return path.join(process.cwd(), ".cache");
+};
+
+const CACHE_FILE = path.join(getCacheDir(), "posts-meta.json");
 
 export interface PostData {
   id: string;
@@ -223,6 +232,15 @@ export async function getAllPosts(): Promise<PostData[]> {
 export async function generatePostMetaCache(): Promise<PostListItem[]> {
   const posts: PostListItem[] = [];
 
+  // キャッシュディレクトリを作成
+  const cacheDir = getCacheDir();
+  try {
+    await fs.promises.mkdir(cacheDir, { recursive: true });
+  } catch (error) {
+    console.warn("キャッシュディレクトリの作成に失敗しました:", error);
+    // エラーは無視して続行
+  }
+
   async function traverseDirectory(dir: string) {
     const items = await fs.promises.readdir(dir, { withFileTypes: true });
 
@@ -257,8 +275,8 @@ export async function generatePostMetaCache(): Promise<PostListItem[]> {
 
   await traverseDirectory(blogDirectory);
 
-  // 日付でソート（同じ日付の場合はタイトルでソート）
-  const sortedPosts = posts.sort((a, b) => {
+  // 日付でソート
+  return posts.sort((a, b) => {
     const dateA = a.date ? new Date(a.date).getTime() : 0;
     const dateB = b.date ? new Date(b.date).getTime() : 0;
     if (dateA === dateB) {
@@ -266,44 +284,11 @@ export async function generatePostMetaCache(): Promise<PostListItem[]> {
     }
     return dateB - dateA;
   });
-
-  // キャッシュディレクトリが存在しない場合は作成
-  const cacheDir = path.dirname(CACHE_FILE);
-  if (!fs.existsSync(cacheDir)) {
-    fs.mkdirSync(cacheDir, { recursive: true });
-  }
-
-  // キャッシュファイルに保存（タイムスタンプを含める）
-  const cache = {
-    timestamp: Date.now(),
-    posts: sortedPosts,
-  };
-  fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2));
-
-  return sortedPosts;
 }
 
-// メタデータのキャッシュを読み込む
-async function getPostMetaFromCache(): Promise<PostListItem[]> {
-  try {
-    if (!fs.existsSync(CACHE_FILE)) {
-      return generatePostMetaCache();
-    }
-
-    const cacheContent = await fs.promises.readFile(CACHE_FILE, "utf-8");
-    const cache = JSON.parse(cacheContent);
-
-    // キャッシュの有効期限をチェック（1時間）
-    const cacheAge = Date.now() - (cache.timestamp || 0);
-    if (cacheAge > 1 * 60 * 60 * 1000) {
-      return generatePostMetaCache();
-    }
-
-    return cache.posts || []; // postsプロパティを返す
-  } catch (error) {
-    console.error("キャッシュの読み込みに失敗しました:", error);
-    return generatePostMetaCache();
-  }
+// キャッシュからメタデータを取得（キャッシュがない場合は直接生成）
+export async function getPostMetaFromCache(): Promise<PostListItem[]> {
+  return generatePostMetaCache();
 }
 
 // 一覧表示用の軽量な関数

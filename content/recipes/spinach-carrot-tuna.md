@@ -1,42 +1,43 @@
 ---
-id: "spinach-carrot-tuna"
-title: "ほうれん草と人参のツナ和え"
-description: "レンジで簡単、シンプルな調味料でツナと和えて白ごまとマッチ！"
-servings: "2人分"
-prepTime: "3分"
-cookTime: "2分"
-calories: "約200kcal"
+id: spinach-carrot-tuna
+title: ほうれん草と人参のツナ和え
+description: レンジで簡単、シンプルな調味料でツナと和えて白ごまとマッチ！
+servings: 2人分
+prepTime: 3分
+cookTime: 2分
+calories: 約200kcal
 ingredients:
-  - name: "ほうれん草"
-    amount: "1袋（150g）"
-  - name: "人参"
-    amount: "1/2本（90g）"
-  - name: "ツナ缶"
-    amount: "1缶（70g）"
-  - name: "調味料A"
+  - name: ほうれん草
+    amount: 1袋（150g）
+  - name: 人参
+    amount: 1/2本（90g）
+  - name: ツナ缶
+    amount: 1缶（70g）
+  - name: 調味料A
     items:
-      - name: "醤油"
-        amount: "大さじ1"
-      - name: "白ごま"
-        amount: "大さじ1"
-      - name: "酢"
-        amount: "小さじ2"
-      - name: "砂糖"
-        amount: "小さじ2"
+      - name: 醤油
+        amount: 大さじ1
+      - name: 白ごま
+        amount: 大さじ1
+      - name: 酢
+        amount: 小さじ2
+      - name: 砂糖
+        amount: 小さじ2
 genreTags:
-  - "和食"
-  - "副菜"
+  - 和食
+  - 副菜
 ingredientTags:
-  - "ほうれん草"
-  - "人参"
-  - "ツナ"
+  - ほうれん草
+  - 人参
+  - ツナ
 tags:
-  - "野菜料理"
-  - "おつまみ"
-  - "火を使わない"
-  - "時短・簡単"
-  - "和え物"
-date: "2024-02-24"
+  - 野菜料理
+  - おつまみ
+  - 火を使わない
+  - 時短・簡単
+  - 和え物
+date: '2024-02-24'
+lastmod: '2025-02-25'
 ---
 
 ## 作り方

@@ -1,6 +1,6 @@
 ---
 title: Treatments
-lastmod: '2025-02-24'
+lastmod: '2025-02-25'
 ---
 
 # 神経疾患の治療

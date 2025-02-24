@@ -1,7 +1,7 @@
 ---
 Owner: Toru Miyake
 Last edited time: '2023-09-07T19:35'
-lastmod: '2025-02-24'
+lastmod: '2025-02-25'
 ---
 ■ 円蓋部クモ膜下出血
 
