@@ -97,6 +97,15 @@ export default function Navigation() {
                   Recipes
                 </Link>
               </li>
+              <li className="w-full md:w-auto text-center">
+                <Link
+                  href="/daisetsu"
+                  className="block px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-yellow-800 to-green-800 hover:shadow-inner text-base md:text-lg font-bold"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Daisetsu
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>

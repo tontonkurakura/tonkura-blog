@@ -19,10 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" suppressHydrationWarning={true}>
-      <body
-        className={`${inter.className} bg-white dark:bg-gray-900`}
-        suppressHydrationWarning={true}
-      >
+      <body className={`${inter.className}`} suppressHydrationWarning={true}>
         <Navigation />
         <main className="container mx-auto px-4 md:px-6 pt-8 md:pt-12">
           {children}
