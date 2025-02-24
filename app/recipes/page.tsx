@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import { ja } from "date-fns/locale";
 import SearchBox from "../blog/SearchBox";
 import { Suspense } from "react";
+import Pagination from "@/components/Pagination";
 
 interface TagCount {
   [key: string]: number;
@@ -12,11 +13,13 @@ interface TagCount {
 export default async function RecipesPage({
   searchParams,
 }: {
-  searchParams: { tag?: string; q?: string };
+  searchParams: { tag?: string; q?: string; page?: string };
 }) {
   const recipes = await getAllRecipes();
   const selectedTag = searchParams.tag;
   const searchQuery = searchParams.q?.toLowerCase();
+  const currentPage = Number(searchParams.page) || 1;
+  const recipesPerPage = 10;
 
   // タグの集計
   const genreTagCounts: TagCount = {};
@@ -81,8 +84,16 @@ export default async function RecipesPage({
   const sortedGenreTags = sortTags(genreTagCounts);
   const sortedIngredientTags = sortTags(ingredientTagCounts);
 
+  // ページネーション用のレシピの抽出
+  const startIndex = (currentPage - 1) * recipesPerPage;
+  const paginatedRecipes = filteredRecipes.slice(
+    startIndex,
+    startIndex + recipesPerPage
+  );
+  const totalPages = Math.ceil(filteredRecipes.length / recipesPerPage);
+
   return (
-    <div className="max-w-6xl mx-auto px-4">
+    <div className="max-w-6xl mx-auto px-4 pb-16">
       <div className="flex flex-col md:flex-row gap-8">
         {/* メインコンテンツ */}
         <main className="md:w-3/4">
@@ -100,9 +111,9 @@ export default async function RecipesPage({
             </p>
           )}
 
-          <div className="grid grid-cols-1 gap-6">
-            {filteredRecipes.length > 0 ? (
-              filteredRecipes.map((recipe) => (
+          <div className="grid grid-cols-1 gap-6 mb-8">
+            {paginatedRecipes.length > 0 ? (
+              paginatedRecipes.map((recipe) => (
                 <article
                   key={recipe.id}
                   className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
@@ -180,6 +191,19 @@ export default async function RecipesPage({
               </p>
             )}
           </div>
+
+          {/* ページネーション */}
+          {totalPages > 1 && (
+            <div className="mt-8">
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                baseUrl={`/recipes${selectedTag ? `?tag=${selectedTag}` : ""}${
+                  searchQuery ? `?q=${searchQuery}` : ""
+                }`}
+              />
+            </div>
+          )}
         </main>
 
         {/* サイドバー */}

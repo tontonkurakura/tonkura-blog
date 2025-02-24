@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import path from "path";
 import { getPostData } from "@/utils/markdown";
 import Script from "next/script";
 import Link from "next/link";
@@ -9,8 +8,8 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const fullPath = path.join(process.cwd(), "content", ...params.slug) + ".md";
-  const post = await getPostData(fullPath);
+  const id = params.slug.join("/");
+  const post = await getPostData(id);
 
   return {
     title: post.title,
@@ -19,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const fullPath = path.join(process.cwd(), "content", ...params.slug) + ".md";
-  const post = await getPostData(fullPath);
+  const id = params.slug.join("/");
+  const post = await getPostData(id);
 
   return (
     <div className="max-w-4xl mx-auto">

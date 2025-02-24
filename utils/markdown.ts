@@ -7,15 +7,15 @@ import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import highlight from "rehype-highlight";
 import { visit } from "unist-util-visit";
+import remarkGfm from "remark-gfm";
 
 const contentDirectory = path.join(process.cwd(), "content");
 const blogDirectory = path.join(contentDirectory, "blog");
-const neurologyDirectory = path.join(contentDirectory, "neurology");
+const CACHE_FILE = path.join(process.cwd(), ".cache", "posts-meta.json");
 
 export interface PostData {
   id: string;
   title: string;
-  category: string;
   content: string;
   date?: string;
   tags?: string[];
@@ -24,6 +24,14 @@ export interface PostData {
 
 export interface DirectoryStructure {
   [key: string]: DirectoryStructure | "file";
+}
+
+interface PostListItem {
+  id: string;
+  title: string;
+  date?: string;
+  tags?: string[];
+  description?: string;
 }
 
 // コードブロックに言語情報を追加するプラグイン
@@ -123,7 +131,7 @@ function remarkAddLanguageClass() {
 }
 
 export function getDirectoryStructure(
-  baseDir: string = contentDirectory
+  baseDir: string = blogDirectory
 ): DirectoryStructure {
   const items = fs.readdirSync(baseDir, { withFileTypes: true });
   const structure: DirectoryStructure = {};
@@ -140,12 +148,21 @@ export function getDirectoryStructure(
   return structure;
 }
 
-export async function getPostData(fullPath: string): Promise<PostData> {
+export async function getPostData(id: string): Promise<PostData> {
+  // idにはサブディレクトリのパスが含まれている可能性がある
+  const fullPath = path.join(blogDirectory, `${id}.md`);
+
+  // ファイルが存在するか確認
+  if (!fs.existsSync(fullPath)) {
+    throw new Error(`Post not found: ${id}`);
+  }
+
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
   const processedContent = await unified()
     .use(remarkParse)
+    .use(remarkGfm)
     .use(remarkAddLanguageClass)
     .use(remarkRehype)
     .use(highlight)
@@ -155,13 +172,9 @@ export async function getPostData(fullPath: string): Promise<PostData> {
 
   const contentHtml = processedContent.toString();
 
-  const category = path.relative(contentDirectory, path.dirname(fullPath));
-  const id = path.relative(contentDirectory, fullPath).replace(/\.md$/, "");
-
   return {
     id,
     title: data.title || path.basename(fullPath, ".md"),
-    category,
     content: contentHtml,
     date: data.date,
     tags: data.tags,
@@ -172,20 +185,204 @@ export async function getPostData(fullPath: string): Promise<PostData> {
 export async function getAllPosts(): Promise<PostData[]> {
   const posts: PostData[] = [];
 
-  function traverseDirectory(dir: string) {
-    const items = fs.readdirSync(dir, { withFileTypes: true });
+  async function traverseDirectory(dir: string) {
+    const items = await fs.promises.readdir(dir, { withFileTypes: true });
 
     for (const item of items) {
       const fullPath = path.join(dir, item.name);
       if (item.isDirectory()) {
-        traverseDirectory(fullPath);
+        await traverseDirectory(fullPath);
       } else if (item.isFile() && item.name.endsWith(".md")) {
-        posts.push(getPostData(fullPath));
+        try {
+          const relativePath = path.relative(blogDirectory, fullPath);
+          const id = relativePath.replace(/\.md$/, "");
+          const post = await getPostData(id);
+          posts.push(post);
+        } catch (error) {
+          console.error(`記事の読み込みに失敗しました: ${fullPath}`, error);
+          continue;
+        }
       }
     }
   }
 
-  traverseDirectory(blogDirectory);
-  traverseDirectory(neurologyDirectory);
-  return Promise.all(posts);
+  await traverseDirectory(blogDirectory);
+
+  // 日付でソート（同じ日付の場合はタイトルでソート）
+  return posts.sort((a, b) => {
+    const dateA = a.date ? new Date(a.date).getTime() : 0;
+    const dateB = b.date ? new Date(b.date).getTime() : 0;
+    if (dateA === dateB) {
+      return a.title.localeCompare(b.title, "ja");
+    }
+    return dateB - dateA;
+  });
+}
+
+// メタデータのキャッシュを作成
+export async function generatePostMetaCache(): Promise<PostListItem[]> {
+  const posts: PostListItem[] = [];
+
+  async function traverseDirectory(dir: string) {
+    const items = await fs.promises.readdir(dir, { withFileTypes: true });
+
+    for (const item of items) {
+      const fullPath = path.join(dir, item.name);
+      if (item.isDirectory()) {
+        await traverseDirectory(fullPath);
+      } else if (item.isFile() && item.name.endsWith(".md")) {
+        try {
+          const relativePath = path.relative(blogDirectory, fullPath);
+          const id = relativePath.replace(/\.md$/, "");
+          const fileContent = await fs.promises.readFile(fullPath, "utf-8");
+          const { data } = matter(fileContent);
+
+          posts.push({
+            id,
+            title: data.title || path.basename(fullPath, ".md"),
+            date: data.date,
+            tags: data.tags,
+            description: data.description,
+          });
+        } catch (error) {
+          console.error(
+            `記事のメタデータ読み込みに失敗しました: ${fullPath}`,
+            error
+          );
+          continue;
+        }
+      }
+    }
+  }
+
+  await traverseDirectory(blogDirectory);
+
+  // 日付でソート（同じ日付の場合はタイトルでソート）
+  const sortedPosts = posts.sort((a, b) => {
+    const dateA = a.date ? new Date(a.date).getTime() : 0;
+    const dateB = b.date ? new Date(b.date).getTime() : 0;
+    if (dateA === dateB) {
+      return a.title.localeCompare(b.title, "ja");
+    }
+    return dateB - dateA;
+  });
+
+  // キャッシュディレクトリが存在しない場合は作成
+  const cacheDir = path.dirname(CACHE_FILE);
+  if (!fs.existsSync(cacheDir)) {
+    fs.mkdirSync(cacheDir, { recursive: true });
+  }
+
+  // キャッシュファイルに保存（タイムスタンプを含める）
+  const cache = {
+    timestamp: Date.now(),
+    posts: sortedPosts,
+  };
+  fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2));
+
+  return sortedPosts;
+}
+
+// メタデータのキャッシュを読み込む
+async function getPostMetaFromCache(): Promise<PostListItem[]> {
+  try {
+    if (!fs.existsSync(CACHE_FILE)) {
+      return generatePostMetaCache();
+    }
+
+    const cacheContent = await fs.promises.readFile(CACHE_FILE, "utf-8");
+    const cache = JSON.parse(cacheContent);
+
+    // キャッシュの有効期限をチェック（1時間）
+    const cacheAge = Date.now() - (cache.timestamp || 0);
+    if (cacheAge > 1 * 60 * 60 * 1000) {
+      return generatePostMetaCache();
+    }
+
+    return cache.posts || []; // postsプロパティを返す
+  } catch (error) {
+    console.error("キャッシュの読み込みに失敗しました:", error);
+    return generatePostMetaCache();
+  }
+}
+
+// 一覧表示用の軽量な関数
+export async function getPostList(
+  page: number = 1,
+  limit: number = 10,
+  options: {
+    tag?: string;
+    searchQuery?: string;
+  } = {}
+): Promise<{
+  posts: PostListItem[];
+  total: number;
+  totalPages: number;
+}> {
+  try {
+    const allPosts = await getPostMetaFromCache();
+    let filteredPosts = [...allPosts]; // 配列のコピーを作成
+
+    // タグでフィルタリング
+    if (options.tag) {
+      const searchTag = options.tag; // 型を確定させる
+      filteredPosts = filteredPosts.filter((post) =>
+        post.tags ? post.tags.includes(searchTag) : false
+      );
+    }
+
+    // 検索クエリでフィルタリング（タイトル、説明文、タグを含む）
+    if (options.searchQuery) {
+      const query = options.searchQuery.toLowerCase();
+      filteredPosts = filteredPosts.filter((post) => {
+        const searchTarget = `${post.title} ${post.description || ""} ${
+          post.tags?.join(" ") || ""
+        }`.toLowerCase();
+        return searchTarget.includes(query);
+      });
+    }
+
+    // 日付でソート（同じ日付の場合はタイトルでソート）
+    const sortedPosts = [...filteredPosts].sort((a, b) => {
+      const dateA = a.date ? new Date(a.date).getTime() : 0;
+      const dateB = b.date ? new Date(b.date).getTime() : 0;
+      if (dateA === dateB) {
+        return a.title.localeCompare(b.title, "ja");
+      }
+      return dateB - dateA;
+    });
+
+    const total = sortedPosts.length;
+    const totalPages = Math.ceil(total / limit);
+    const startIndex = (page - 1) * limit;
+    const paginatedPosts = sortedPosts.slice(startIndex, startIndex + limit);
+
+    return {
+      posts: paginatedPosts,
+      total,
+      totalPages,
+    };
+  } catch (error) {
+    console.error("記事一覧の取得に失敗しました:", error);
+    throw error;
+  }
+}
+
+// タグの集計用関数
+export async function getTagCounts(): Promise<{ [key: string]: number }> {
+  try {
+    const allPosts = await getPostMetaFromCache();
+    const tagCounts: { [key: string]: number } = {};
+
+    allPosts.forEach((post) => {
+      post.tags?.forEach((tag) => {
+        tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+      });
+    });
+
+    return tagCounts;
+  } catch (error) {
+    console.error("タグの集計に失敗しました:", error);
+    throw error;
+  }
 }
