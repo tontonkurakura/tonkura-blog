@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import "highlight.js/styles/github-dark.css";
 import Navigation from "./components/Navigation";
@@ -24,6 +25,7 @@ export default function RootLayout({
         <main className="container mx-auto px-4 md:px-6 pt-8 md:pt-12">
           {children}
         </main>
+        <Analytics />
       </body>
     </html>
   );
