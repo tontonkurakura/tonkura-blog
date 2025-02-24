@@ -1,5 +1,6 @@
 ---
 title: Examinations
+lastmod: '2025-02-24'
 ---
 
 # 神経学的検査

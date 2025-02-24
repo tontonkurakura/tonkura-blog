@@ -1,31 +1,38 @@
 ---
-title: "鯖の味噌煮"
-description: "ご飯が進む！骨まで柔らかい鯖の味噌煮"
-date: "2024-03-28"
-servings: "2人分"
-prepTime: "10分"
-cookTime: "20分"
-calories: "380Kcal（1人分）"
-tags: ["和食", "メイン", "魚料理", "鯖", "味噌", "煮物"]
-category: "メイン"
+title: 鯖の味噌煮
+description: ご飯が進む！骨まで柔らかい鯖の味噌煮
+date: '2024-03-28'
+servings: 2人分
+prepTime: 10分
+cookTime: 20分
+calories: 380Kcal（1人分）
+tags:
+  - 和食
+  - メイン
+  - 魚料理
+  - 鯖
+  - 味噌
+  - 煮物
+category: メイン
 ingredients:
-  - name: "鯖"
-    amount: "2切れ（1切れ80g程度）"
-  - name: "生姜"
-    amount: "1かけ（15g）"
-  - name: "調味料"
-    amount: ""
+  - name: 鯖
+    amount: 2切れ（1切れ80g程度）
+  - name: 生姜
+    amount: 1かけ（15g）
+  - name: 調味料
+    amount: ''
     items:
-      - name: "水"
-        amount: "200ml"
-      - name: "酒"
-        amount: "大さじ2"
-      - name: "みりん"
-        amount: "大さじ2"
-      - name: "砂糖"
-        amount: "大さじ1"
-      - name: "味噌"
-        amount: "大さじ2"
+      - name: 水
+        amount: 200ml
+      - name: 酒
+        amount: 大さじ2
+      - name: みりん
+        amount: 大さじ2
+      - name: 砂糖
+        amount: 大さじ1
+      - name: 味噌
+        amount: 大さじ2
+lastmod: '2025-02-24'
 ---
 
 ## 下準備

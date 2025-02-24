@@ -1,8 +1,13 @@
 ---
-title: "TypeScriptの高度な型システム：ジェネリクス、ユーティリティ型、型推論"
-date: "2024-02-28"
-tags: ["プログラミング", "TypeScript", "型システム", "JavaScript"]
-description: "TypeScriptの高度な型システムについて、実践的な例を交えて解説します。"
+title: TypeScriptの高度な型システム：ジェネリクス、ユーティリティ型、型推論
+date: '2024-02-28'
+tags:
+  - プログラミング
+  - TypeScript
+  - 型システム
+  - JavaScript
+description: TypeScriptの高度な型システムについて、実践的な例を交えて解説します。
+lastmod: '2025-02-24'
 ---
 
 TypeScript の型システムは非常に強力で、多くの高度な機能を提供しています。この記事では、よく使用される高度な型機能について解説します。

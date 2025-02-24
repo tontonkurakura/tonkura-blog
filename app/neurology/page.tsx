@@ -1,7 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import NeurologyContent from "./NeurologyContent";
 import ScrollHandler from "./ScrollHandler";
-import { useSearchParams } from "next/navigation";
 
 export default async function NeurologyPage({
   searchParams,

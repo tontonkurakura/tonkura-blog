@@ -6,6 +6,7 @@
 部位:
   - Glia
   - Neurons
+lastmod: '2025-02-24'
 ---
 ### ■ TDP-43 proteinopathy
 

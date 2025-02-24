@@ -5,6 +5,7 @@
   - α-synuclein
 部位:
   - Neurons
+lastmod: '2025-02-24'
 ---
 ## ■ Synucleinopathy
 

@@ -1,38 +1,44 @@
 ---
-title: "照り焼きチキン"
-description: "ご飯がすすむ！ジューシーな鶏もも肉の照り焼き"
-date: "2024-03-28"
-servings: "2人分"
-prepTime: "10分"
-cookTime: "15分"
-calories: "385Kcal（1人分）"
-tags: ["和食", "メイン", "鶏肉", "照り焼き", "お弁当"]
-category: "メイン"
+title: 照り焼きチキン
+description: ご飯がすすむ！ジューシーな鶏もも肉の照り焼き
+date: '2024-03-28'
+servings: 2人分
+prepTime: 10分
+cookTime: 15分
+calories: 385Kcal（1人分）
+tags:
+  - 和食
+  - メイン
+  - 鶏肉
+  - 照り焼き
+  - お弁当
+category: メイン
 ingredients:
-  - name: "鶏もも肉"
-    amount: "300g"
-  - name: "片栗粉"
-    amount: "適量"
-  - name: "サラダ油"
-    amount: "大さじ1"
-  - name: "タレ"
-    amount: ""
+  - name: 鶏もも肉
+    amount: 300g
+  - name: 片栗粉
+    amount: 適量
+  - name: サラダ油
+    amount: 大さじ1
+  - name: タレ
+    amount: ''
     items:
-      - name: "醤油"
-        amount: "大さじ3"
-      - name: "みりん"
-        amount: "大さじ2"
-      - name: "酒"
-        amount: "大さじ2"
-      - name: "砂糖"
-        amount: "大さじ1"
-  - name: "付け合わせ"
-    amount: ""
+      - name: 醤油
+        amount: 大さじ3
+      - name: みりん
+        amount: 大さじ2
+      - name: 酒
+        amount: 大さじ2
+      - name: 砂糖
+        amount: 大さじ1
+  - name: 付け合わせ
+    amount: ''
     items:
-      - name: "サニーレタス"
-        amount: "2枚"
-      - name: "ミニトマト"
-        amount: "4個"
+      - name: サニーレタス
+        amount: 2枚
+      - name: ミニトマト
+        amount: 4個
+lastmod: '2025-02-24'
 ---
 
 ## 下準備

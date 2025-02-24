@@ -1,28 +1,34 @@
 ---
-title: "本格カルボナーラ"
-description: "シンプルな材料で作る本場イタリアンの味"
-date: "2024-03-27"
-servings: "2人分"
-prepTime: "10分"
-cookTime: "15分"
-calories: "850Kcal（1人分）"
-tags: ["パスタ", "イタリアン", "豚肉", "卵", "チーズ"]
-category: "メイン"
+title: 本格カルボナーラ
+description: シンプルな材料で作る本場イタリアンの味
+date: '2024-03-27'
+servings: 2人分
+prepTime: 10分
+cookTime: 15分
+calories: 850Kcal（1人分）
+tags:
+  - パスタ
+  - イタリアン
+  - 豚肉
+  - 卵
+  - チーズ
+category: メイン
 ingredients:
-  - name: "スパゲッティ"
-    amount: "200g"
-  - name: "グアンチャーレ（またはパンチェッタ）"
-    amount: "100g"
-  - name: "卵黄"
-    amount: "3個"
-  - name: "ペコリーノロマーノ"
-    amount: "50g"
-  - name: "パルメザンチーズ"
-    amount: "50g"
-  - name: "黒こしょう"
-    amount: "適量"
-  - name: "塩"
-    amount: "適量"
+  - name: スパゲッティ
+    amount: 200g
+  - name: グアンチャーレ（またはパンチェッタ）
+    amount: 100g
+  - name: 卵黄
+    amount: 3個
+  - name: ペコリーノロマーノ
+    amount: 50g
+  - name: パルメザンチーズ
+    amount: 50g
+  - name: 黒こしょう
+    amount: 適量
+  - name: 塩
+    amount: 適量
+lastmod: '2025-02-24'
 ---
 
 ## 下準備

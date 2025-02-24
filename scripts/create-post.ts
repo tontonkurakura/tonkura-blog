@@ -1,10 +1,8 @@
-#!/usr/bin/env node
+const path = require("path");
+const fs = require("fs/promises");
+const { format } = require("date-fns");
 
-import { join } from "path";
-import { writeFile } from "fs/promises";
-import { format } from "date-fns";
-
-const BLOG_DIR = join(process.cwd(), "content", "blog");
+const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
 async function createNewPost() {
   const date = new Date();
@@ -21,7 +19,7 @@ async function createNewPost() {
     .replace(/^_+|_+$/g, "");
 
   const fileName = `${dateStr}_${slug}.md`;
-  const filePath = join(BLOG_DIR, fileName);
+  const filePath = path.join(BLOG_DIR, fileName);
 
   // テンプレートの内容
   const content = `---
@@ -35,7 +33,7 @@ description: ""
 `;
 
   try {
-    await writeFile(filePath, content, "utf-8");
+    await fs.writeFile(filePath, content, "utf-8");
     console.log(`✨ 新規記事を作成しました: ${fileName}`);
     console.log(`📝 ファイルパス: ${filePath}`);
   } catch (error) {

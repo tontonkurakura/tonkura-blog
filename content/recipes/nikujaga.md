@@ -1,39 +1,46 @@
 ---
-title: "肉じゃが"
-description: "ほっこり美味しい定番の家庭料理"
-date: "2024-03-28"
-servings: "3-4人分"
-prepTime: "15分"
-cookTime: "30分"
-calories: "320Kcal（1人分）"
-tags: ["和食", "メイン", "牛肉", "じゃがいも", "玉ねぎ", "煮物"]
-category: "メイン"
+title: 肉じゃが
+description: ほっこり美味しい定番の家庭料理
+date: '2024-03-28'
+servings: 3-4人分
+prepTime: 15分
+cookTime: 30分
+calories: 320Kcal（1人分）
+tags:
+  - 和食
+  - メイン
+  - 牛肉
+  - じゃがいも
+  - 玉ねぎ
+  - 煮物
+category: メイン
 ingredients:
-  - name: "牛肉（薄切り）"
-    amount: "200g"
-  - name: "じゃがいも"
-    amount: "3個（400g）"
-  - name: "玉ねぎ"
-    amount: "1個（200g）"
-  - name: "にんじん"
-    amount: "1本（150g）"
-  - name: "糸こんにゃく"
-    amount: "1袋（150g）"
-  - name: "サラダ油"
-    amount: "大さじ1"
-  - name: "調味料"
-    amount: ""
+  - name: 牛肉（薄切り）
+    amount: 200g
+  - name: じゃがいも
+    amount: 3個（400g）
+  - name: 玉ねぎ
+    amount: 1個（200g）
+  - name: にんじん
+    amount: 1本（150g）
+  - name: 糸こんにゃく
+    amount: 1袋（150g）
+  - name: サラダ油
+    amount: 大さじ1
+  - name: 調味料
+    amount: ''
     items:
-      - name: "だし汁"
-        amount: "400ml"
-      - name: "醤油"
-        amount: "大さじ3"
-      - name: "みりん"
-        amount: "大さじ2"
-      - name: "酒"
-        amount: "大さじ2"
-      - name: "砂糖"
-        amount: "大さじ1.5"
+      - name: だし汁
+        amount: 400ml
+      - name: 醤油
+        amount: 大さじ3
+      - name: みりん
+        amount: 大さじ2
+      - name: 酒
+        amount: 大さじ2
+      - name: 砂糖
+        amount: 大さじ1.5
+lastmod: '2025-02-24'
 ---
 
 ## 下準備

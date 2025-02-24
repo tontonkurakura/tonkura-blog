@@ -1,40 +1,46 @@
 ---
-title: "豚の生姜焼き"
-description: "定番の生姜焼きを、ジューシーに仕上げるコツ"
-date: "2024-03-28"
-servings: "2人分"
-prepTime: "10分"
-cookTime: "15分"
-calories: "420Kcal（1人分）"
-tags: ["和食", "メイン", "豚肉", "生姜", "お弁当"]
-category: "メイン"
+title: 豚の生姜焼き
+description: 定番の生姜焼きを、ジューシーに仕上げるコツ
+date: '2024-03-28'
+servings: 2人分
+prepTime: 10分
+cookTime: 15分
+calories: 420Kcal（1人分）
+tags:
+  - 和食
+  - メイン
+  - 豚肉
+  - 生姜
+  - お弁当
+category: メイン
 ingredients:
-  - name: "豚ロース薄切り肉"
-    amount: "300g"
-  - name: "生姜"
-    amount: "1かけ（30g）"
-  - name: "キャベツ"
-    amount: "1/4個（200g）"
-  - name: "サラダ油"
-    amount: "大さじ1"
-  - name: "タレ"
-    amount: ""
+  - name: 豚ロース薄切り肉
+    amount: 300g
+  - name: 生姜
+    amount: 1かけ（30g）
+  - name: キャベツ
+    amount: 1/4個（200g）
+  - name: サラダ油
+    amount: 大さじ1
+  - name: タレ
+    amount: ''
     items:
-      - name: "醤油"
-        amount: "大さじ3"
-      - name: "みりん"
-        amount: "大さじ2"
-      - name: "酒"
-        amount: "大さじ2"
-      - name: "砂糖"
-        amount: "小さじ1"
-  - name: "付け合わせ"
-    amount: ""
+      - name: 醤油
+        amount: 大さじ3
+      - name: みりん
+        amount: 大さじ2
+      - name: 酒
+        amount: 大さじ2
+      - name: 砂糖
+        amount: 小さじ1
+  - name: 付け合わせ
+    amount: ''
     items:
-      - name: "ミニトマト"
-        amount: "4個"
-      - name: "レモン"
-        amount: "1/4個"
+      - name: ミニトマト
+        amount: 4個
+      - name: レモン
+        amount: 1/4個
+lastmod: '2025-02-24'
 ---
 
 ## 下準備

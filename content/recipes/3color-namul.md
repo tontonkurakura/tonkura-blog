@@ -1,33 +1,41 @@
 ---
-title: "3色ナムル"
-description: "ほうれん草と人参ともやしを使った簡単レンジレシピ"
-date: "2024-03-27"
-servings: "2人分"
-prepTime: "5分"
-cookTime: "3分"
-calories: "105Kcal（1人分）"
-tags: ["韓国料理", "副菜", "野菜料理", "時短", "ほうれん草", "人参", "もやし"]
-category: "副菜"
+title: 3色ナムル
+description: ほうれん草と人参ともやしを使った簡単レンジレシピ
+date: '2024-03-27'
+servings: 2人分
+prepTime: 5分
+cookTime: 3分
+calories: 105Kcal（1人分）
+tags:
+  - 韓国料理
+  - 副菜
+  - 野菜料理
+  - 時短
+  - ほうれん草
+  - 人参
+  - もやし
+category: 副菜
 ingredients:
-  - name: "ほうれん草"
-    amount: "80g"
-  - name: "人参"
-    amount: "1/2本（80g）"
-  - name: "もやし"
-    amount: "1袋（120g）"
-  - name: "A"
-    amount: ""
+  - name: ほうれん草
+    amount: 80g
+  - name: 人参
+    amount: 1/2本（80g）
+  - name: もやし
+    amount: 1袋（120g）
+  - name: A
+    amount: ''
     items:
-      - name: "白ごま"
-        amount: "大さじ1"
-      - name: "ごま油"
-        amount: "小さじ2"
-      - name: "鶏がらスープの素"
-        amount: "小さじ1.5"
-      - name: "醤油"
-        amount: "小さじ1.5"
-      - name: "砂糖"
-        amount: "小さじ1"
+      - name: 白ごま
+        amount: 大さじ1
+      - name: ごま油
+        amount: 小さじ2
+      - name: 鶏がらスープの素
+        amount: 小さじ1.5
+      - name: 醤油
+        amount: 小さじ1.5
+      - name: 砂糖
+        amount: 小さじ1
+lastmod: '2025-02-24'
 ---
 
 ## 下準備

@@ -1,6 +1,7 @@
 ---
 Owner: Toru Miyake
-Last edited time: 2022-06-02T22:56
+Last edited time: '2022-06-02T22:56'
+lastmod: '2025-02-24'
 ---
 Auditory Evoked Potential, 聴性誘発電位
 

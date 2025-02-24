@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import path from "path";
 import { getPostData } from "@/utils/markdown";
 import Script from "next/script";
+import Link from "next/link";
 
 interface Props {
   params: { slug: string[] };
@@ -36,12 +37,13 @@ export default async function BlogPostPage({ params }: Props) {
           {post.tags && post.tags.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
-                <span
+                <Link
                   key={tag}
-                  className="px-2 py-1 bg-blue-50 text-blue-600 rounded-full text-xs"
+                  href={`/blog?tag=${encodeURIComponent(tag)}`}
+                  className="px-2 py-1 bg-blue-50 text-blue-600 rounded-full text-xs hover:bg-blue-100 transition-colors"
                 >
                   {tag}
-                </span>
+                </Link>
               ))}
             </div>
           )}

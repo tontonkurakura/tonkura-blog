@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
+import FrontMatter from "@/components/ui/FrontMatter";
 
 function Breadcrumbs({ slug, section }: { slug: string[]; section: string }) {
   // スラグの各部分をデコード
@@ -170,6 +171,9 @@ export default async function NeurologyView({
     );
   }
 
+  // gray-matterを使用してフロントマターを抽出
+  const { data: frontMatter } = matter(result.content);
+
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-4">
@@ -181,12 +185,9 @@ export default async function NeurologyView({
       <Breadcrumbs slug={params.slug} section={result.section} />
 
       <article className="bg-white rounded-lg shadow p-6">
-        <h1 className="text-3xl font-bold mb-8">
-          {decodeURIComponent(params.slug[params.slug.length - 1])
-            .replace(/\.md$/, "")
-            .split(/[\/\\]/)
-            .pop()}
-        </h1>
+        <div className="mb-8 text-right">
+          <FrontMatter frontMatter={frontMatter} />
+        </div>
 
         <div className="prose prose-lg max-w-none">
           <MDXRemote source={result.content} />

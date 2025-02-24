@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import "highlight.js/styles/github-dark.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "TonKurA",
@@ -19,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" suppressHydrationWarning={true}>
-      <body className={`${inter.className} bg-white`} suppressHydrationWarning={true}>
+      <body
+        className={`${inter.className} bg-white`}
+        suppressHydrationWarning={true}
+      >
         <header className="bg-[#0a2647] text-white py-6">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center">

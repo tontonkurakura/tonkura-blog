@@ -1,27 +1,34 @@
 ---
-title: "ほうれん草のお浸し"
-description: "和食の定番！だしの旨味が染みた栄養満点の一品"
-date: "2024-03-28"
-servings: "2人分"
-prepTime: "5分"
-cookTime: "5分"
-calories: "45Kcal（1人分）"
-tags: ["和食", "副菜", "野菜料理", "ほうれん草", "かつお節", "だし"]
-category: "副菜"
+title: ほうれん草のお浸し
+description: 和食の定番！だしの旨味が染みた栄養満点の一品
+date: '2024-03-28'
+servings: 2人分
+prepTime: 5分
+cookTime: 5分
+calories: 45Kcal（1人分）
+tags:
+  - 和食
+  - 副菜
+  - 野菜料理
+  - ほうれん草
+  - かつお節
+  - だし
+category: 副菜
 ingredients:
-  - name: "ほうれん草"
-    amount: "1束（200g）"
-  - name: "かつお節"
-    amount: "5g"
-  - name: "A"
-    amount: ""
+  - name: ほうれん草
+    amount: 1束（200g）
+  - name: かつお節
+    amount: 5g
+  - name: A
+    amount: ''
     items:
-      - name: "だし汁"
-        amount: "100ml"
-      - name: "醤油"
-        amount: "大さじ1"
-      - name: "みりん"
-        amount: "小さじ1"
+      - name: だし汁
+        amount: 100ml
+      - name: 醤油
+        amount: 大さじ1
+      - name: みりん
+        amount: 小さじ1
+lastmod: '2025-02-24'
 ---
 
 ## 下準備
