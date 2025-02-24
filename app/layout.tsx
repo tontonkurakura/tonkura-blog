@@ -1,25 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { M_PLUS_1p } from "next/font/google";
+import { Inter } from 'next/font/google'
 import Link from "next/link";
 import "./globals.css";
 import "highlight.js/styles/github-dark.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const mplus1p = M_PLUS_1p({
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "TonKurA",
@@ -34,10 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" suppressHydrationWarning={true}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${mplus1p.className} bg-white`}
-        suppressHydrationWarning={true}
-      >
+      <body className={`${inter.className} bg-white`} suppressHydrationWarning={true}>
         <header className="bg-[#0a2647] text-white py-6">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center">

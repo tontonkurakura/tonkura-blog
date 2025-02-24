@@ -1,6 +1,6 @@
 # 写真の説明を設定するファイル
 # 各写真に対して以下の情報を設定できます：
-# - description: 撮影場所
+# - description: 写真の詳細な説明
 
 DSC00072.jpg:
   description: Zojoji, Tokyo
@@ -45,7 +45,7 @@ DSC01597.jpg:
 DSC01655.jpg:
   description: Champs-Elysees, Paris
 DSC02114-Enhanced-NR-Edit.jpg:
-  description: Hennazaki-todai, Miyako, Okinawa
+  description: Hennasaki lighthouse, Miyako, Okinawa
 DSC02191-Enhanced-NR.jpg:
   description: Ndukviav(ヌドクビアブ), Miyako, Okinawa
 DSC02207.jpg:
@@ -71,7 +71,7 @@ DSC05218.jpg:
 DSC05237.jpg:
   description: White Cube, London, UK
 DSC05397.jpg:
-  description: Wallace Collection, London, UK
+  description: Courtauld Gallery, London, UK
 DSC05805.jpg:
   description: Tosayamada, Kochi
 DSC06034.jpg:
@@ -116,3 +116,5 @@ DSC09654.jpg:
   description: Sydney, Australia
 DSC09931.jpg:
   description: Tasmania, Australia
+DSC02359-Enhanced-NR-Pano-Edit.jpg:
+  description: 写真の説明を入力してください

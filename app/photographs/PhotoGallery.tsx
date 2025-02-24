@@ -187,6 +187,31 @@ export default function PhotoGallery({
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+                    {/* ロケーション情報 */}
+                    <div className="absolute bottom-4 left-4 flex items-center gap-2 text-white/90 bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-sm opacity-0 translate-y-4 transition-all duration-700 group-hover:opacity-100 group-hover:translate-y-0 z-20">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                        />
+                      </svg>
+                      <span className="text-xs font-light tracking-wider">
+                        {photo.description || "Unknown location"}
+                      </span>
+                    </div>
                   </div>
                 );
               })}

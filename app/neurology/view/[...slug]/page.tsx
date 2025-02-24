@@ -4,32 +4,38 @@ import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 
-function Breadcrumbs({ slug }: { slug: string[] }) {
-  // 最後のスラグ（ファイルパス）を取得して分解
-  const lastSlug = decodeURIComponent(slug[slug.length - 1])
-    .replace(/\.md$/, "")
-    .replace(/\\/g, "/");
+function Breadcrumbs({ slug, section }: { slug: string[]; section: string }) {
+  // スラグの各部分をデコード
+  const decodedSlug = slug.map((part) => decodeURIComponent(part));
 
-  // パスを分割して配列にする
-  const pathParts = [
-    { name: "Neurology", href: "/neurology", isLast: false },
-    ...lastSlug.split("/").map((part, index, array) => {
-      // 現在のパートまでのパスを結合
-      const currentPath = array.slice(0, index + 1).join("/");
-      // 日本語を含むパスを正しくエンコード
-      const encodedPath = currentPath
-        .split("/")
-        .map((p) => encodeURIComponent(p))
-        .join("/");
+  // セクションディレクトリのリストとタブ名のマッピング
+  const sectionDirs = {
+    Neuroanatomy: "anatomy",
+    Diseases: "disease",
+    Symptoms: "symptoms",
+    Examination: "tests",
+    Treatment: "treatments",
+  };
 
-      return {
-        name: part,
-        // 最後の要素以外はホームページの該当セクションへのリンクを設定
-        href: index === array.length - 1 ? "#" : `/neurology#${encodedPath}`,
-        isLast: index === array.length - 1,
-      };
-    }),
-  ];
+  // パスを構築
+  let pathParts = [{ name: "Neurology", href: "/neurology", isLast: false }];
+
+  // 最後のスラグ（ファイル名）を取得
+  const fileName = decodedSlug[decodedSlug.length - 1].replace(/\.md$/, "");
+
+  // セクションディレクトリをパスに追加
+  pathParts.push({
+    name: section,
+    href: `/neurology?tab=${sectionDirs[section]}`,
+    isLast: false,
+  });
+
+  // ファイル名を追加
+  pathParts.push({
+    name: fileName,
+    href: "#",
+    isLast: true,
+  });
 
   return (
     <nav className="flex mb-4 text-sm" aria-label="Breadcrumb">
@@ -56,20 +62,90 @@ function Breadcrumbs({ slug }: { slug: string[] }) {
 }
 
 async function getMarkdownContent(slug: string[]) {
-  const decodedSlug = slug.map((part) =>
-    decodeURIComponent(part).replace(/\\/g, "/")
-  );
-  const filePath =
-    path.join(process.cwd(), "content/neurology", ...decodedSlug) + ".md";
-
   try {
-    const content = await fs.readFile(filePath, "utf8");
-    const { data, content: markdownContent } = matter(content);
-    return { data, content: markdownContent };
+    // スラグの各部分をデコード
+    const decodedSlug = slug.map((part) => decodeURIComponent(part));
+
+    // 可能性のあるベースパス
+    const basePaths = [
+      "Neuroanatomy",
+      "Diseases",
+      "Symptoms",
+      "Examination",
+      "Treatment",
+    ];
+
+    // まず直接のパスを試す
+    let filePath = path.join(
+      process.cwd(),
+      "content/neurology",
+      ...decodedSlug
+    );
+
+    // 画像ファイルの場合はスキップ
+    if (/\.(png|jpe?g|gif|svg|webp)$/i.test(filePath)) {
+      return null;
+    }
+
+    const mdPath = filePath.endsWith(".md") ? filePath : `${filePath}.md`;
+
+    try {
+      const content = await fs.readFile(mdPath, "utf-8");
+      return {
+        content: processContent(content, decodedSlug),
+        section: decodedSlug[0],
+      };
+    } catch (error) {
+      // ファイルが見つからない場合、各セクションディレクトリで検索
+      for (const baseDir of basePaths) {
+        try {
+          // 最後のスラグ部分のみを使用してセクションディレクトリ内を検索
+          const sectionPath = path.join(
+            process.cwd(),
+            "content/neurology",
+            baseDir,
+            decodedSlug[decodedSlug.length - 1]
+          );
+          const sectionMdPath = sectionPath.endsWith(".md")
+            ? sectionPath
+            : `${sectionPath}.md`;
+
+          const content = await fs.readFile(sectionMdPath, "utf-8");
+          // 見つかったファイルのパスに基づいて画像パスを調整
+          return {
+            content: processContent(content, [
+              baseDir,
+              decodedSlug[decodedSlug.length - 1],
+            ]),
+            section: baseDir,
+          };
+        } catch (e) {
+          continue;
+        }
+      }
+    }
+
+    throw new Error("File not found in any section directory");
   } catch (error) {
     console.error("Error reading markdown file:", error);
     return null;
   }
+}
+
+// コンテンツの処理を別関数に分離
+function processContent(content: string, slugParts: string[]) {
+  // slugPartsの最後の要素がファイル名、その前がディレクトリパス
+  const currentDir = slugParts.slice(0, -1).join("/");
+
+  return content.replace(
+    /!\[([^\]]*)\]\((\.\/)?assets\/([^)]+)\)/g,
+    (match, alt, prefix, imagePath) => {
+      // 画像の相対パスを構築
+      const imageUrl = `/api/images/${currentDir}/assets/${imagePath}`;
+      console.log("Image URL:", imageUrl); // デバッグ用
+      return `![${alt}](${imageUrl})`;
+    }
+  );
 }
 
 export default async function NeurologyView({
@@ -77,9 +153,9 @@ export default async function NeurologyView({
 }: {
   params: { slug: string[] };
 }) {
-  const post = await getMarkdownContent(params.slug);
+  const result = await getMarkdownContent(params.slug);
 
-  if (!post) {
+  if (!result) {
     return (
       <div className="max-w-4xl mx-auto">
         <div className="mb-4">
@@ -102,7 +178,7 @@ export default async function NeurologyView({
         </Link>
       </div>
 
-      <Breadcrumbs slug={params.slug} />
+      <Breadcrumbs slug={params.slug} section={result.section} />
 
       <article className="bg-white rounded-lg shadow p-6">
         <h1 className="text-3xl font-bold mb-8">
@@ -113,7 +189,7 @@ export default async function NeurologyView({
         </h1>
 
         <div className="prose prose-lg max-w-none">
-          <MDXRemote source={post.content} />
+          <MDXRemote source={result.content} />
         </div>
       </article>
     </div>
