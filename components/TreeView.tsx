@@ -2,134 +2,144 @@
 
 import Link from "next/link";
 
-type TreeNode = {
+interface TreeNode {
   name: string;
-  path: string;
   type: "file" | "directory";
-  description?: string;
   children?: TreeNode[];
-};
+}
 
-type TreeViewProps = {
+interface TreeViewProps {
   node: TreeNode;
-  level?: number;
-};
+}
 
-type TreeViewItemProps = TreeViewProps & {
-  isLast: boolean;
-};
-
-// パスを正しくエンコードする関数
-function encodePathForId(path: string): string {
-  return path
-    .split("/")
-    .map((part) => encodeURIComponent(part))
+function buildPath(parts: string[]): string {
+  return parts
+    .filter(Boolean)
+    .map((part) => encodeURIComponent(part.trim()))
     .join("/");
 }
 
-const TreeViewItem = ({ node, level = 0, isLast }: TreeViewItemProps) => {
-  const hasChildren = node.children && node.children.length > 0;
-  const encodedPath = encodePathForId(node.path);
+function FileLink({ name, path }: { name: string; path: string[] }) {
+  const displayName = name.replace(/\.md$/, "");
+  const encodedPath = buildPath(path);
 
-  // ルートレベルのディレクトリの場合、カードスタイルを適用
-  if (level === 0 && node.type === "directory") {
-    return (
-      <div
-        id={encodedPath}
-        className="bg-white border border-gray-200 rounded-lg p-6 mb-6 scroll-mt-4"
-      >
-        <h2 className="text-xl font-bold text-gray-800 mb-2">{node.name}</h2>
-        {node.description && (
-          <p className="text-gray-600 text-sm mb-4">{node.description}</p>
-        )}
-        {hasChildren && (
-          <div className="space-y-2">
-            {node.children.map((child, index) => (
-              <TreeViewItem
-                key={child.path}
-                node={child}
-                level={level + 1}
-                isLast={index === node.children!.length - 1}
-              />
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  }
-
-  // その他のアイテムの場合
   return (
-    <div className="relative">
-      <div className="flex items-center py-1">
-        <div className="flex items-center">
-          {/* インデントとライン（ルートレベル以外の場合のみ表示） */}
-          {level > 1 && (
-            <div className="flex">
-              {Array.from({ length: level - 2 }).map((_, i) => (
-                <div key={i} className="w-4 border-l border-gray-300" />
-              ))}
-              <div
-                className={`w-4 ${!isLast ? "border-l" : ""} border-gray-300`}
-              >
-                <div className="w-full h-1/2 border-b border-gray-300" />
-              </div>
-            </div>
-          )}
+    <Link
+      href={`/neurology/view/${encodedPath}`}
+      className="block py-1 px-3 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded transition-colors"
+    >
+      <span className="text-sm leading-relaxed truncate block">
+        {displayName}
+      </span>
+    </Link>
+  );
+}
 
-          {/* タイトル */}
-          <div className="flex items-center">
-            {node.type === "directory" ? (
-              <div id={encodedPath} className="scroll-mt-4">
-                <span className="ml-1 text-gray-700 font-semibold">
-                  {node.name}
-                </span>
-              </div>
-            ) : (
-              <Link
-                href={`/neurology/view/${encodeURIComponent(
-                  node.path.replace(/\.md$/, "")
-                )}`}
-                className="ml-1 text-blue-600 hover:text-blue-800"
-              >
-                {node.name.replace(/\.md$/, "")}
-              </Link>
-            )}
-          </div>
-        </div>
-      </div>
+function FileCard({
+  title,
+  files,
+  subDirectories,
+  pathParts = [],
+}: {
+  title: string;
+  files: TreeNode[];
+  subDirectories: TreeNode[];
+  pathParts?: string[];
+}) {
+  if (files.length === 0 && subDirectories.length === 0) return null;
 
-      {/* 子要素 */}
-      {hasChildren && (
-        <div className="ml-4">
-          {node.children.map((child, index) => (
-            <TreeViewItem
-              key={child.path}
-              node={child}
-              level={level + 1}
-              isLast={index === node.children!.length - 1}
+  const currentPathParts = [...pathParts, title];
+
+  return (
+    <div className="bg-white rounded-lg shadow-sm border p-4">
+      <h4 className="text-base font-medium text-gray-900 mb-3 pb-2 border-b">
+        {title}
+      </h4>
+      {files.length > 0 && (
+        <div className="space-y-0.5 mb-4">
+          {files.map((file, index) => (
+            <FileLink
+              key={index}
+              name={file.name}
+              path={[...currentPathParts, file.name]}
             />
           ))}
         </div>
       )}
+      {subDirectories.length > 0 && (
+        <div className="space-y-4 pl-4 border-l-2 border-gray-200">
+          {subDirectories.map((dir) => {
+            const dirFiles =
+              dir.children?.filter((child) => child.type === "file") || [];
+            const subDirs =
+              dir.children?.filter((child) => child.type === "directory") || [];
+            return (
+              <FileCard
+                key={dir.name}
+                title={dir.name}
+                files={dirFiles}
+                subDirectories={subDirs}
+                pathParts={currentPathParts}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
-};
+}
 
-export default function TreeView({ node }: TreeViewProps) {
-  // ルートディレクトリの子要素（カテゴリー）を取得
-  const categories = node.children || [];
+function DirectoryContent({ node }: { node: TreeNode }) {
+  if (!node.children) return null;
+
+  const files = node.children
+    .filter((child) => child.type === "file")
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const directories = node.children
+    .filter((child) => child.type === "directory")
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const pathParts = node.name === "root" ? [] : [node.name];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {categories.map((category, index) => (
-        <TreeViewItem
-          key={category.path}
-          node={category}
-          level={0}
-          isLast={index === categories.length - 1}
-        />
-      ))}
+    <div className="space-y-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+        {files.length > 0 && node.name !== "root" && (
+          <div className="space-y-0.5">
+            {files.map((file, index) => (
+              <FileLink
+                key={index}
+                name={file.name}
+                path={[node.name, file.name]}
+              />
+            ))}
+          </div>
+        )}
+        {directories.map((dir) => {
+          const dirFiles =
+            dir.children?.filter((child) => child.type === "file") || [];
+          const subDirs =
+            dir.children?.filter((child) => child.type === "directory") || [];
+          return (
+            <FileCard
+              key={dir.name}
+              title={dir.name}
+              files={dirFiles}
+              subDirectories={subDirs}
+              pathParts={pathParts}
+            />
+          );
+        })}
+      </div>
     </div>
   );
+}
+
+export default function TreeView({ node }: TreeViewProps) {
+  if (node.type === "file") {
+    return <FileLink name={node.name} path={[node.name]} />;
+  }
+
+  return <DirectoryContent node={node} />;
 }

@@ -169,28 +169,70 @@ export async function getPostData(id: string): Promise<PostData> {
 
   // 各ディレクトリで記事を検索
   for (const dir of searchDirectories) {
-    const testPath = path.join(dir, `${id}.md`);
-    if (fs.existsSync(testPath)) {
-      fullPath = testPath;
+    // 1. 完全なパスでの検索
+    const fullPathWithExt = path.join(dir, `${id}.md`);
+    if (fs.existsSync(fullPathWithExt)) {
+      fullPath = fullPathWithExt;
       fileExists = true;
       break;
     }
 
-    // サブディレクトリも検索
-    const subDirs = getAllSubdirectories(dir);
-    for (const subDir of subDirs) {
-      const subPath = path.join(subDir, `${id}.md`);
-      if (fs.existsSync(subPath)) {
-        fullPath = subPath;
-        fileExists = true;
-        break;
+    // 2. パス部分とファイル名を分離
+    const pathParts = id.split("/");
+    const fileName = pathParts[pathParts.length - 1];
+
+    // 3. ベースディレクトリにパス部分を追加
+    const searchPath =
+      pathParts.length > 1 ? path.join(dir, ...pathParts.slice(0, -1)) : dir;
+
+    // 4. 指定されたパスが存在する場合、そのディレクトリ内でファイルを検索
+    if (fs.existsSync(searchPath)) {
+      const items = fs.readdirSync(searchPath, { withFileTypes: true });
+      for (const item of items) {
+        if (item.isFile()) {
+          const itemName = item.name.replace(/\.md$/, "");
+          if (itemName === fileName) {
+            fullPath = path.join(searchPath, item.name);
+            fileExists = true;
+            break;
+          }
+        }
       }
     }
 
     if (fileExists) break;
+
+    // 5. 完全一致で見つからない場合は、再帰的に検索
+    const findFileRecursively = (searchDir: string): string | null => {
+      const items = fs.readdirSync(searchDir, { withFileTypes: true });
+
+      for (const item of items) {
+        const itemPath = path.join(searchDir, item.name);
+
+        if (item.isDirectory()) {
+          const found = findFileRecursively(itemPath);
+          if (found) return found;
+        } else if (item.isFile()) {
+          const itemName = item.name.replace(/\.md$/, "");
+          if (itemName === fileName) {
+            return itemPath;
+          }
+        }
+      }
+
+      return null;
+    };
+
+    const foundPath = findFileRecursively(dir);
+    if (foundPath) {
+      fullPath = foundPath;
+      fileExists = true;
+      break;
+    }
   }
 
   if (!fileExists) {
+    console.error(`Post not found: ${id}`);
     throw new Error(`Post not found: ${id}`);
   }
 

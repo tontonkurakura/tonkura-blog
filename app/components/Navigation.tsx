@@ -1,10 +1,40 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showDaisetsu, setShowDaisetsu] = useState(false);
+  const [keySequence, setKeySequence] = useState("");
+  const [isDiscovered, setIsDiscovered] = useState(false);
+
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      const newSequence = keySequence + event.key.toLowerCase();
+      setKeySequence(newSequence);
+
+      // 最後の3文字のみを保持
+      if (newSequence.length > 3) {
+        setKeySequence(newSequence.slice(-3));
+      }
+
+      // キーシーケンスが"zen"の場合、Daisetsuを表示
+      if (newSequence.endsWith("zen")) {
+        setShowDaisetsu(true);
+        setIsDiscovered(true);
+        // 3秒後にディスカバーエフェクトを消す
+        setTimeout(() => {
+          setIsDiscovered(false);
+        }, 3000);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [keySequence]);
 
   return (
     <header className="bg-[#0a2647] text-white py-4 md:py-6">
@@ -97,15 +127,21 @@ export default function Navigation() {
                   Recipes
                 </Link>
               </li>
-              <li className="w-full md:w-auto text-center">
-                <Link
-                  href="/daisetsu"
-                  className="block px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-yellow-800 to-green-800 hover:shadow-inner text-base md:text-lg font-bold"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Daisetsu
-                </Link>
-              </li>
+              {showDaisetsu && (
+                <li className="w-full md:w-auto text-center">
+                  <Link
+                    href="/daisetsu"
+                    className={`block px-4 py-2 rounded-lg transition-all duration-500 hover:bg-gradient-to-r from-yellow-800 to-green-800 hover:shadow-inner text-base md:text-lg font-bold ${
+                      isDiscovered
+                        ? "animate-[discover_2s_ease-out] bg-gradient-to-r from-yellow-800/50 to-green-800/50"
+                        : ""
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Daisetsu
+                  </Link>
+                </li>
+              )}
             </ul>
           </nav>
         </div>
