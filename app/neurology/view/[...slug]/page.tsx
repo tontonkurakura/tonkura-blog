@@ -76,57 +76,67 @@ async function getMarkdownContent(slug: string[]) {
       "Treatment",
     ];
 
-    // まず直接のパスを試す
-    let filePath = path.join(
+    // まずベースパスとの組み合わせを試す
+    for (const baseDir of basePaths) {
+      try {
+        // ファイル名を取得（最後のスラグ）
+        const fileName = decodedSlug[decodedSlug.length - 1];
+
+        // ベースパスとファイル名を組み合わせてパスを構築
+        const sectionPath = path.join(
+          process.cwd(),
+          "content",
+          "neurology",
+          baseDir,
+          fileName
+        );
+
+        // .mdの拡張子を追加（もし既に.mdがある場合は追加しない）
+        const sectionMdPath = sectionPath.endsWith(".md")
+          ? sectionPath
+          : `${sectionPath}.md`;
+
+        // ファイルの存在確認
+        await fs.access(sectionMdPath);
+
+        // ファイルを読み込む
+        const content = await fs.readFile(sectionMdPath, "utf-8");
+
+        // 見つかったファイルのパスに基づいて画像パスを調整
+        return {
+          content: processContent(content, [baseDir, fileName]),
+          section: baseDir,
+        };
+      } catch (e) {
+        continue;
+      }
+    }
+
+    // 直接のパスを試す（上記で見つからなかった場合）
+    const directPath = path.join(
       process.cwd(),
       "content/neurology",
       ...decodedSlug
     );
 
     // 画像ファイルの場合はスキップ
-    if (/\.(png|jpe?g|gif|svg|webp)$/i.test(filePath)) {
+    if (/\.(png|jpe?g|gif|svg|webp)$/i.test(directPath)) {
       return null;
     }
 
-    const mdPath = filePath.endsWith(".md") ? filePath : `${filePath}.md`;
+    const mdPath = directPath.endsWith(".md") ? directPath : `${directPath}.md`;
 
     try {
+      await fs.access(mdPath);
       const content = await fs.readFile(mdPath, "utf-8");
       return {
         content: processContent(content, decodedSlug),
         section: decodedSlug[0],
       };
     } catch (error) {
-      // ファイルが見つからない場合、各セクションディレクトリで検索
-      for (const baseDir of basePaths) {
-        try {
-          // 最後のスラグ部分のみを使用してセクションディレクトリ内を検索
-          const sectionPath = path.join(
-            process.cwd(),
-            "content/neurology",
-            baseDir,
-            decodedSlug[decodedSlug.length - 1]
-          );
-          const sectionMdPath = sectionPath.endsWith(".md")
-            ? sectionPath
-            : `${sectionPath}.md`;
-
-          const content = await fs.readFile(sectionMdPath, "utf-8");
-          // 見つかったファイルのパスに基づいて画像パスを調整
-          return {
-            content: processContent(content, [
-              baseDir,
-              decodedSlug[decodedSlug.length - 1],
-            ]),
-            section: baseDir,
-          };
-        } catch (e) {
-          continue;
-        }
-      }
+      console.error(`File not found at path: ${mdPath}`);
+      return null;
     }
-
-    throw new Error("File not found in any section directory");
   } catch (error) {
     console.error("Error reading markdown file:", error);
     return null;
