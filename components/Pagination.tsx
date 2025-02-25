@@ -48,7 +48,7 @@ export default function Pagination({
 
   return (
     <nav
-      className="flex justify-center items-center space-x-2"
+      className="flex justify-center items-center space-x-2 my-8"
       aria-label="ページナビゲーション"
     >
       {/* 前のページへのリンク */}

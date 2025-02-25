@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="ja" suppressHydrationWarning={true}>
       <body className={`${inter.className}`} suppressHydrationWarning={true}>
         <Navigation />
-        <main className="container mx-auto px-4 md:px-6 pt-8 md:pt-12">
+        <main className="container mx-auto px-4 md:px-6 pt-8 md:pt-12 pb-16">
           {children}
         </main>
         <Analytics />

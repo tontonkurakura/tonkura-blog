@@ -93,7 +93,7 @@ export default async function RecipesPage({
   const totalPages = Math.ceil(filteredRecipes.length / recipesPerPage);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 pb-16">
+    <div className="max-w-6xl mx-auto px-4">
       <div className="flex flex-col md:flex-row gap-8">
         {/* メインコンテンツ */}
         <main className="md:w-3/4">
@@ -111,7 +111,7 @@ export default async function RecipesPage({
             </p>
           )}
 
-          <div className="grid grid-cols-1 gap-6 mb-8">
+          <div className="grid grid-cols-1 gap-6">
             {paginatedRecipes.length > 0 ? (
               paginatedRecipes.map((recipe) => (
                 <article

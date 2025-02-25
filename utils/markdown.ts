@@ -158,11 +158,39 @@ export function getDirectoryStructure(
 }
 
 export async function getPostData(id: string): Promise<PostData> {
-  // idにはサブディレクトリのパスが含まれている可能性がある
-  const fullPath = path.join(blogDirectory, `${id}.md`);
+  // 検索対象のディレクトリを定義
+  const searchDirectories = [
+    path.join(contentDirectory, "blog"),
+    path.join(contentDirectory, "neurology"),
+  ];
 
-  // ファイルが存在するか確認
-  if (!fs.existsSync(fullPath)) {
+  let fullPath = "";
+  let fileExists = false;
+
+  // 各ディレクトリで記事を検索
+  for (const dir of searchDirectories) {
+    const testPath = path.join(dir, `${id}.md`);
+    if (fs.existsSync(testPath)) {
+      fullPath = testPath;
+      fileExists = true;
+      break;
+    }
+
+    // サブディレクトリも検索
+    const subDirs = getAllSubdirectories(dir);
+    for (const subDir of subDirs) {
+      const subPath = path.join(subDir, `${id}.md`);
+      if (fs.existsSync(subPath)) {
+        fullPath = subPath;
+        fileExists = true;
+        break;
+      }
+    }
+
+    if (fileExists) break;
+  }
+
+  if (!fileExists) {
     throw new Error(`Post not found: ${id}`);
   }
 
@@ -191,31 +219,55 @@ export async function getPostData(id: string): Promise<PostData> {
   };
 }
 
-export async function getAllPosts(): Promise<PostData[]> {
-  const posts: PostData[] = [];
+// サブディレクトリを再帰的に取得する関数
+function getAllSubdirectories(dir: string): string[] {
+  let results: string[] = [];
+  const items = fs.readdirSync(dir, { withFileTypes: true });
 
-  async function traverseDirectory(dir: string) {
-    const items = await fs.promises.readdir(dir, { withFileTypes: true });
-
-    for (const item of items) {
+  for (const item of items) {
+    if (item.isDirectory()) {
       const fullPath = path.join(dir, item.name);
-      if (item.isDirectory()) {
-        await traverseDirectory(fullPath);
-      } else if (item.isFile() && item.name.endsWith(".md")) {
-        try {
-          const relativePath = path.relative(blogDirectory, fullPath);
-          const id = relativePath.replace(/\.md$/, "");
-          const post = await getPostData(id);
-          posts.push(post);
-        } catch (error) {
-          console.error(`記事の読み込みに失敗しました: ${fullPath}`, error);
-          continue;
-        }
-      }
+      results.push(fullPath);
+      results = results.concat(getAllSubdirectories(fullPath));
     }
   }
 
-  await traverseDirectory(blogDirectory);
+  return results;
+}
+
+export async function getAllPosts(): Promise<PostData[]> {
+  const posts: PostData[] = [];
+  const searchDirectories = [
+    path.join(contentDirectory, "blog"),
+    path.join(contentDirectory, "neurology"),
+  ];
+
+  for (const baseDir of searchDirectories) {
+    async function traverseDirectory(dir: string) {
+      const items = await fs.promises.readdir(dir, { withFileTypes: true });
+
+      for (const item of items) {
+        const fullPath = path.join(dir, item.name);
+        if (item.isDirectory()) {
+          await traverseDirectory(fullPath);
+        } else if (item.isFile() && item.name.endsWith(".md")) {
+          try {
+            const relativePath = path
+              .relative(contentDirectory, fullPath)
+              .replace(/\.md$/, "")
+              .replace(/^(blog|neurology)\//, ""); // contentディレクトリからの相対パスを取得
+            const post = await getPostData(relativePath);
+            posts.push(post);
+          } catch (error) {
+            console.error(`記事の読み込みに失敗しました: ${fullPath}`, error);
+            continue;
+          }
+        }
+      }
+    }
+
+    await traverseDirectory(baseDir);
+  }
 
   // 日付でソート（同じ日付の場合はタイトルでソート）
   return posts.sort((a, b) => {
