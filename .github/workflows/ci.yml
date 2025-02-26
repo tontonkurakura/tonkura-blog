@@ -31,6 +31,17 @@ jobs:
       - name: Format check
         run: npx prettier --check .
 
+      - name: Run tests
+        run: npm run test:coverage
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          directory: ./coverage/
+          fail_ci_if_error: false
+
       - name: Build
         run: npm run build
 
@@ -42,6 +53,11 @@ jobs:
             echo "Next.js cache missing ❌"
             exit 1
           fi
+
+      - name: Bundle analysis
+        run: npm run analyze
+        env:
+          ANALYZE: true
 
       - name: Send Slack Notification
         if: always()
@@ -68,6 +84,10 @@ jobs:
                     {
                       "type": "mrkdwn",
                       "text": "*コミット:*\n${{ github.sha }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*テスト結果:*\n${{ steps.test.outcome == 'success' && '✅ 成功' || '❌ 失敗' }}"
                     }
                   ]
                 }

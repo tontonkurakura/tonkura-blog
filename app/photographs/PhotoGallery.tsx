@@ -173,6 +173,14 @@ export default function PhotoGallery({
                         "0 12px 40px rgba(255, 255, 255, 0.1), 0 4px 12px rgba(255, 255, 255, 0.05)",
                     }}
                     onClick={() => setSelectedPhoto(photo)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        setSelectedPhoto(photo);
+                      }
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`写真: ${photo.title || "無題"}`}
                   >
                     <Image
                       src={photo.path}

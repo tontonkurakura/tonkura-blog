@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import IgGIndexCalculator from "@/components/tools/IgGIndexCalculator";
 import HDSRCalculator from "@/components/tools/HDSRCalculator";
 
@@ -33,6 +33,15 @@ const tools: Tool[] = [
 export default function ToolsPage() {
   const [selectedTool, setSelectedTool] = useState<string | null>(null);
 
+  // ページ読み込み時に最初のツールを自動選択
+  useEffect(() => {
+    // 初回レンダリング時のみ実行するため、条件チェックを追加
+    if (tools.length > 0 && selectedTool === null) {
+      setSelectedTool(tools[0].id);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // 依存配列を空にして初回レンダリング時のみ実行
+
   const handleToolSelect = (toolId: string) => {
     setSelectedTool(toolId === selectedTool ? null : toolId);
   };
@@ -56,38 +65,49 @@ export default function ToolsPage() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold mb-8 font-mplus">Clinical Tools</h1>
 
-      {/* ツール一覧のナビゲーション */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-        {tools.map((tool) => (
-          <button
-            key={tool.id}
-            onClick={() => handleToolSelect(tool.id)}
-            className={`p-4 text-left bg-white rounded-lg border shadow-sm transition-colors ${
-              selectedTool === tool.id
-                ? "border-blue-500 ring-2 ring-blue-200"
-                : "border-gray-200 hover:border-blue-500"
-            }`}
-          >
-            <h2 className="text-xl font-bold mb-2 font-mplus">{tool.name}</h2>
-            <p className="text-gray-600 text-sm">{tool.description}</p>
-          </button>
-        ))}
-      </div>
-
-      {/* 選択されたツールの表示エリア */}
-      {selectedToolData && (
-        <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
-          <div className="mb-6">
-            <h2 className="text-2xl font-bold font-mplus">
-              {selectedToolData.name}
-            </h2>
+      <div className="flex flex-col md:flex-row gap-6">
+        {/* サイドバー */}
+        <div className="w-full md:w-64 flex-shrink-0">
+          <div className="bg-gray-50 rounded-lg border border-gray-200 p-4 sticky top-4">
+            <h2 className="text-xl font-bold mb-4 font-mplus">ツール一覧</h2>
+            <div className="flex flex-col gap-2">
+              {tools.map((tool) => (
+                <button
+                  key={tool.id}
+                  onClick={() => handleToolSelect(tool.id)}
+                  className={`p-3 text-left rounded-md transition-colors ${
+                    selectedTool === tool.id
+                      ? "bg-blue-100 text-blue-800 font-medium"
+                      : "hover:bg-gray-100"
+                  }`}
+                >
+                  <div className="font-medium">{tool.name}</div>
+                </button>
+              ))}
+            </div>
           </div>
-          {renderSelectedTool()}
         </div>
-      )}
+
+        {/* メインコンテンツエリア */}
+        <div className="flex-grow">
+          {selectedToolData && (
+            <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+              <div className="mb-6">
+                <h2 className="text-2xl font-bold font-mplus">
+                  {selectedToolData.name}
+                </h2>
+                <p className="text-gray-600 mt-1">
+                  {selectedToolData.description}
+                </p>
+              </div>
+              {renderSelectedTool()}
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

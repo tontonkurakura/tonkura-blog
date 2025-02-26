@@ -40,23 +40,20 @@ body {
 
 /* Code blocks */
 .prose pre {
-  @apply bg-[#1a1b26] text-white p-4 rounded-lg overflow-x-auto my-4 relative pt-11;
+  @apply bg-[#1a1b26] text-white p-4 rounded-lg overflow-x-auto my-4 relative;
   max-width: 100vw;
   margin-left: calc(-1 * min(1rem, 5vw));
   margin-right: calc(-1 * min(1rem, 5vw));
+  font-family:
+    "JetBrains Mono", "Fira Code", "Consolas", "Monaco", "Andale Mono",
+    "Ubuntu Mono", monospace;
 }
 
 @media (max-width: 768px) {
   .prose pre {
     font-size: 0.85rem;
     padding: 0.75rem;
-    padding-top: 2.5rem;
   }
-}
-
-.prose pre::before {
-  content: attr(data-language);
-  @apply absolute top-2 right-2 px-3 py-1 text-xs text-white bg-[#2a2b36] rounded-lg font-mono font-medium tracking-wide;
 }
 
 /* proseのコードブロックのデフォルトスタイルをオーバーライド */
@@ -70,6 +67,7 @@ body {
 /* 外側の余分なスタイルを削除 */
 .prose pre > code {
   @apply border-0 bg-transparent p-0 shadow-none;
+  font-family: inherit;
 }
 
 .prose > pre {
@@ -82,6 +80,9 @@ body {
 
 .prose p code {
   @apply bg-gray-100 text-gray-900 px-1 py-0.5 rounded;
+  font-family:
+    "JetBrains Mono", "Fira Code", "Consolas", "Monaco", "Andale Mono",
+    "Ubuntu Mono", monospace;
 }
 
 .hljs {

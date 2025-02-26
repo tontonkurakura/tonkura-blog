@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import sharp from "sharp";
-import exifReader from "exifreader";
+import ExifReader from "exifreader";
 
 export interface ImageMetadata {
   shootingDate: Date | undefined;
@@ -64,62 +64,65 @@ async function getExifData(filePath: string): Promise<Partial<ImageMetadata>> {
       return {};
     }
 
-    const exifData = exifReader(metadata.exif);
-    console.log("Raw EXIF data:", JSON.stringify(exifData, null, 2));
+    const tags = ExifReader.load(metadata.exif);
+    console.log("Raw EXIF data:", JSON.stringify(tags, null, 2));
 
     const result: Partial<ImageMetadata> = {};
 
-    // カメラ情報
-    if (exifData.image?.Make || exifData.image?.Model) {
-      const make = exifData.image?.Make?.trim();
-      const model = exifData.image?.Model?.trim();
+    // カメラ情報の取得
+    if (tags.Make?.description || tags.Model?.description) {
+      const make = tags.Make?.description?.trim();
+      const model = tags.Model?.description?.trim();
       result.camera = [make, model].filter(Boolean).join(" ");
     }
 
-    // レンズ情報
-    if (exifData.exif?.LensModel) {
-      result.lens = exifData.exif.LensModel.trim();
+    // レンズ情報の取得
+    if (tags.LensModel?.description) {
+      result.lens = tags.LensModel.description.trim();
     }
 
-    // 焦点距離
-    if (exifData.exif?.FocalLength) {
+    // 焦点距離の取得
+    if (tags.FocalLength?.description) {
       const focalLength =
-        typeof exifData.exif.FocalLength === "number"
-          ? exifData.exif.FocalLength
-          : parseFloat(exifData.exif.FocalLength);
-      result.focalLength = `${Math.round(focalLength)}mm`;
+        typeof tags.FocalLength.description === "string"
+          ? parseFloat(tags.FocalLength.description)
+          : tags.FocalLength.description;
+      result.focalLength = `${focalLength}mm`;
     }
 
-    // 絞り値
-    if (exifData.exif?.FNumber) {
+    // 絞り値の取得
+    if (tags.FNumber?.description) {
       const fNumber =
-        typeof exifData.exif.FNumber === "number"
-          ? exifData.exif.FNumber
-          : parseFloat(exifData.exif.FNumber);
-      result.aperture = `f/${fNumber.toFixed(1)}`;
+        typeof tags.FNumber.description === "string"
+          ? parseFloat(tags.FNumber.description)
+          : tags.FNumber.description;
+      result.aperture = `f/${fNumber}`;
     }
 
-    // シャッタースピード
-    if (exifData.exif?.ExposureTime) {
+    // シャッタースピードの取得
+    if (tags.ExposureTime?.description) {
       const exposureTime =
-        typeof exifData.exif.ExposureTime === "number"
-          ? exifData.exif.ExposureTime
-          : parseFloat(exifData.exif.ExposureTime);
+        typeof tags.ExposureTime.description === "string"
+          ? parseFloat(tags.ExposureTime.description)
+          : tags.ExposureTime.description;
+
+      // シャッタースピードを分数形式に変換
       if (exposureTime < 1) {
-        result.shutterSpeed = `1/${Math.round(1 / exposureTime)}`;
+        const denominator = Math.round(1 / exposureTime);
+        result.shutterSpeed = `1/${denominator}s`;
       } else {
-        result.shutterSpeed = exposureTime.toString();
+        result.shutterSpeed = `${exposureTime}s`;
       }
     }
 
-    // ISO感度
-    if (exifData.exif?.ISO) {
-      result.iso = `ISO ${exifData.exif.ISO}`;
+    // ISO感度の取得
+    if (tags.ISOSpeedRatings?.description) {
+      result.iso = `ISO ${tags.ISOSpeedRatings.description}`;
     }
 
-    // 撮影日時
-    if (exifData.exif?.DateTimeOriginal) {
-      const dateStr = exifData.exif.DateTimeOriginal;
+    // 撮影日時の取得
+    if (tags.DateTimeOriginal?.description) {
+      const dateStr = tags.DateTimeOriginal.description;
       // YYYY:MM:DD HH:mm:ss 形式の文字列を解析
       const [date, time] = dateStr.split(" ");
       const [year, month, day] = date.split(":");

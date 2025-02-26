@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useCallback, useState } from "react";
+import { useEffect, useCallback } from "react";
 import Image from "next/image";
 import type { Photo } from "@/types/photo";
 
@@ -10,8 +10,6 @@ interface PhotoModalProps {
 }
 
 export default function PhotoModal({ photo, onClose }: PhotoModalProps) {
-  const [imageAspectRatio, setImageAspectRatio] = useState<number | null>(null);
-
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -31,48 +29,48 @@ export default function PhotoModal({ photo, onClose }: PhotoModalProps) {
     };
   }, [handleKeyDown]);
 
-  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const img = e.target as HTMLImageElement;
-    setImageAspectRatio(img.naturalWidth / img.naturalHeight);
-  };
-
-  const isPortrait = imageAspectRatio ? imageAspectRatio < 1 : false;
-
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4"
       onClick={onClose}
+      onKeyDown={(e) => {
+        if (e.key === "Escape") {
+          onClose();
+        }
+      }}
+      role="dialog"
+      aria-modal="true"
+      aria-label="写真詳細"
+      tabIndex={0}
     >
       <div
-        className="relative flex items-center justify-center h-full"
+        className="relative flex items-center justify-center w-full h-full"
         onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => e.stopPropagation()}
+        role="button"
+        tabIndex={0}
+        aria-label="モーダルコンテンツ"
       >
-        <div className="relative flex items-center gap-4 max-h-[calc(100vh-2rem)]">
+        <div className="relative flex items-center gap-6 w-full max-h-[calc(100vh-2rem)]">
           <div
-            className="relative flex-shrink-0 flex items-center"
+            className="relative flex-grow flex items-center justify-center"
             style={{
-              maxWidth: isPortrait ? "min(45vw, 800px)" : "min(75vw, 1200px)",
-              height: "fit-content",
+              height: "calc(100vh - 8rem)",
             }}
           >
             <div className="relative">
               <Image
-                src={photo.webpPath}
+                src={photo.path}
                 alt={photo.description || photo.path}
-                width={1920}
-                height={1080}
-                className="object-contain max-h-[calc(100vh-4rem)]"
-                sizes={
-                  isPortrait
-                    ? "(max-width: 800px) 45vw, 800px"
-                    : "(max-width: 1200px) 75vw, 1200px"
-                }
+                width={2400}
+                height={1600}
+                className="object-contain max-h-[calc(100vh-8rem)] max-w-[calc(100vw-24rem)]"
+                sizes="(max-width: 1600px) 90vw, 1600px"
                 priority
-                onLoad={handleImageLoad}
               />
             </div>
           </div>
-          <div className="bg-black/50 backdrop-blur-sm p-4 text-white rounded-lg w-64 flex-shrink-0 self-center">
+          <div className="bg-black/50 backdrop-blur-sm p-4 text-white rounded-lg w-80 flex-shrink-0 self-center">
             {photo.description && (
               <p className="text-lg font-medium mb-4">{photo.description}</p>
             )}

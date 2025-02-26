@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
-import { useWindowSize } from "@/hooks/useWindowSize";
 import type { ExifData } from "@/types/photo";
 
 interface ImageModalProps {
@@ -18,34 +17,6 @@ export default function ImageModal({
   exif,
   onClose,
 }: ImageModalProps) {
-  const { width: windowWidth, height: windowHeight } = useWindowSize();
-  const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
-
-  useEffect(() => {
-    // 画像のサイズを取得
-    const imageElement = document.createElement("img");
-    imageElement.onload = () => {
-      const aspectRatio =
-        imageElement.naturalWidth / imageElement.naturalHeight;
-
-      // モーダルの最大サイズ（ウィンドウの85%に調整）
-      const maxWidth = windowWidth * 0.85;
-      const maxHeight = windowHeight * 0.85;
-
-      // アスペクト比を保ちながら、最適なサイズを計算
-      let width = maxWidth;
-      let height = width / aspectRatio;
-
-      if (height > maxHeight) {
-        height = maxHeight;
-        width = height * aspectRatio;
-      }
-
-      setImageSize({ width, height });
-    };
-    imageElement.src = src;
-  }, [src, windowWidth, windowHeight]);
-
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -58,24 +29,39 @@ export default function ImageModal({
     <div
       className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-8"
       onClick={onClose}
+      onKeyDown={(e) => {
+        if (e.key === "Escape") {
+          onClose();
+        }
+      }}
+      role="dialog"
+      aria-modal="true"
+      aria-label="画像詳細"
+      tabIndex={0}
     >
-      <div className="flex items-center gap-6 max-h-full">
+      <div className="flex items-center gap-6 max-h-full w-full">
         <div
-          className="relative"
+          className="relative flex-grow"
           style={{
-            width: imageSize.width,
-            height: imageSize.height,
+            height: "calc(100vh - 8rem)",
+            maxWidth: "calc(100vw - 24rem)",
           }}
           onClick={(e) => e.stopPropagation()}
+          onKeyDown={(e) => e.stopPropagation()}
+          role="button"
+          tabIndex={0}
+          aria-label="画像コンテナ"
         >
-          <Image
-            src={src}
-            alt={alt}
-            fill
-            style={{ objectFit: "contain" }}
-            quality={100}
-            priority
-          />
+          <div className="relative w-full h-full">
+            <Image
+              src={src}
+              alt={alt}
+              fill
+              style={{ objectFit: "contain" }}
+              quality={100}
+              priority
+            />
+          </div>
           {/* 閉じるボタン */}
           <button
             className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 transition-all"
@@ -100,7 +86,7 @@ export default function ImageModal({
         </div>
 
         {/* EXIF情報（右側） */}
-        <div className="bg-black/50 p-6 rounded-lg text-white min-w-[300px] h-fit">
+        <div className="bg-black/50 p-6 rounded-lg text-white w-80 h-fit flex-shrink-0">
           <div className="space-y-2">
             <div>
               <span className="text-gray-400">Location: </span>
