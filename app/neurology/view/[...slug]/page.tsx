@@ -2,6 +2,8 @@ import { promises as fs } from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { serialize } from "next-mdx-remote/serialize";
+import rehypeSanitize from "rehype-sanitize";
 import Link from "next/link";
 import FrontMatter from "@/components/ui/FrontMatter";
 
@@ -158,9 +160,18 @@ async function getMarkdownContent(slug: string[]) {
 
     // ファイルを読み込む
     const content = await fs.readFile(mdPath, "utf-8");
+    const processedContent = processContent(content, mdPath.split(path.sep));
+
+    // MDXのセキュアな処理
+    const mdxSource = await serialize(processedContent, {
+      mdxOptions: {
+        rehypePlugins: [rehypeSanitize],
+      },
+      parseFrontmatter: true,
+    });
 
     return {
-      content: processContent(content, mdPath.split(path.sep)),
+      content: mdxSource,
       section,
     };
   } catch (error) {

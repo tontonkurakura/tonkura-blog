@@ -1,0 +1,41 @@
+name: Slack Notification Test
+
+on:
+  workflow_dispatch: # 手動実行可能
+
+jobs:
+  test-slack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send test message
+        uses: slackapi/slack-github-action@v1.25.0
+        with:
+          payload: |
+            {
+              "text": "🎉 Slack通知のテスト",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Slack通知のテスト*\nGitHub ActionsからSlackへの通知テストです。"
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*送信元:*\nGitHub Actions"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*ステータス:*\n✅ 成功"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK

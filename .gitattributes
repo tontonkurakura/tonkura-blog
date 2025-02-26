@@ -1,0 +1,21 @@
+# デフォルトですべてのテキストファイルの改行コードを自動的に正規化
+* text=auto
+
+# 特定のファイル形式の改行コードをLFに固定
+*.md text eol=lf
+*.tsx text eol=lf
+*.ts text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+
+# バイナリファイルは改行コード変換しない
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.pdf binary 

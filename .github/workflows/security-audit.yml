@@ -1,0 +1,107 @@
+name: Security Audit
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # 毎週日曜日の午前0時に実行
+  push:
+    paths:
+      - "package.json"
+      - "package-lock.json"
+      - "yarn.lock"
+  pull_request:
+    branches: [main]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run security audit
+        id: audit
+        run: |
+          echo "Running npm audit..."
+          if npm audit; then
+            echo "status=success" >> $GITHUB_OUTPUT
+            echo "message=セキュリティチェックが正常に完了しました ✅" >> $GITHUB_OUTPUT
+          else
+            echo "status=failure" >> $GITHUB_OUTPUT
+            echo "message=セキュリティの問題が見つかりました ⚠️" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
+      - name: Run tests
+        run: npm run test --if-present
+
+      - name: Check code format
+        run: |
+          npx prettier --check "**/*.{js,jsx,ts,tsx,json,md}"
+          npm run lint
+
+      - name: Send notification if audit fails
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '🚨 Security Audit Failed',
+              body: 'Security vulnerabilities were found in dependencies. Please run `npm audit` locally for details.'
+            });
+
+      - name: Send Slack Notification
+        if: always()
+        uses: slackapi/slack-github-action@v1.25.0
+        with:
+          payload: |
+            {
+              "text": "*GitHub Actions 実行結果*",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*${{ github.repository }}* の実行結果:\n${{ steps.audit.outputs.message }}"
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*ブランチ:*\n${{ github.ref_name }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*トリガー:*\n${{ github.event_name }}"
+                    }
+                  ]
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "GitHub Actionsを確認"
+                      },
+                      "url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
