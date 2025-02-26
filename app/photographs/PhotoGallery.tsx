@@ -175,7 +175,7 @@ export default function PhotoGallery({
                     onClick={() => setSelectedPhoto(photo)}
                   >
                     <Image
-                      src={photo.webpPath}
+                      src={photo.path}
                       alt={photo.description || "Photo"}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -222,7 +222,7 @@ export default function PhotoGallery({
 
       {selectedPhoto && (
         <ImageModal
-          src={selectedPhoto.webpPath}
+          src={selectedPhoto.path}
           alt={selectedPhoto.description}
           exif={selectedPhoto.exif}
           onClose={() => setSelectedPhoto(null)}

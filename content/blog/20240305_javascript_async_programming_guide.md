@@ -8,7 +8,7 @@ tags:
   - Promise
   - async/await
 description: JavaScriptにおける非同期プログラミングの概念と、Promise、async/awaitを使用した実装方法について詳しく解説します。
-lastmod: '2025-02-25'
+lastmod: '2025-02-26'
 ---
 
 JavaScript の非同期プログラミングは、モダンな Web 開発において重要な概念です。この記事では、Promise と async/await を中心に、非同期処理の実装方法について解説します。

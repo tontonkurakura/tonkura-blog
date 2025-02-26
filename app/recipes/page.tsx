@@ -15,10 +15,13 @@ export default async function RecipesPage({
 }: {
   searchParams: { tag?: string; q?: string; page?: string };
 }) {
+  // searchParamsをawaitする
+  const params = await searchParams;
+
   const recipes = await getAllRecipes();
-  const selectedTag = searchParams.tag;
-  const searchQuery = searchParams.q?.toLowerCase();
-  const currentPage = Number(searchParams.page) || 1;
+  const selectedTag = params?.tag;
+  const searchQuery = params?.q?.toLowerCase();
+  const currentPage = Number(params?.page || "1");
   const recipesPerPage = 10;
 
   // タグの集計
@@ -101,8 +104,8 @@ export default async function RecipesPage({
             {selectedTag
               ? `${selectedTag}のレシピ`
               : searchQuery
-              ? `「${searchQuery}」の検索結果`
-              : "Recipes"}
+                ? `「${searchQuery}」の検索結果`
+                : "Recipes"}
           </h1>
 
           {!selectedTag && !searchQuery && (

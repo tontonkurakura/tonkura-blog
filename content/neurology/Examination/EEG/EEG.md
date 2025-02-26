@@ -1,7 +1,7 @@
 ---
 Owner: Toru Miyake
 Last edited time: '2024-05-29T14:02'
-lastmod: '2025-02-25'
+lastmod: '2025-02-26'
 ---
 > [!important]  
 > 脳波のチェック項目

@@ -12,10 +12,17 @@ export default async function BlogPage({
 }: {
   searchParams: { tag?: string; q?: string; page?: string };
 }) {
-  const currentPage = Number(searchParams.page) || 1;
+  // searchParamsをawaitする
+  const params = await searchParams;
+
+  const page = params?.page || "1";
+  const tag = params?.tag;
+  const query = params?.q;
+
+  const currentPage = Number(page);
   const { posts, totalPages } = await getPostList(currentPage, 10, {
-    tag: searchParams.tag,
-    searchQuery: searchParams.q,
+    tag: tag,
+    searchQuery: query,
   });
 
   const tagCounts = await getTagCounts();
@@ -26,11 +33,11 @@ export default async function BlogPage({
         {/* メインコンテンツ */}
         <main className="md:w-3/4">
           <h1 className="text-3xl font-bold mb-8 font-mplus">
-            {searchParams.tag
-              ? `${searchParams.tag}の記事一覧`
-              : searchParams.q
-              ? `「${searchParams.q}」の検索結果`
-              : "ブログ記事一覧"}
+            {tag
+              ? `${tag}の記事一覧`
+              : query
+                ? `「${query}」の検索結果`
+                : "ブログ記事一覧"}
           </h1>
 
           <div className="grid grid-cols-1 gap-6">
@@ -60,17 +67,17 @@ export default async function BlogPage({
 
                   {post.tags && post.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2">
-                      {post.tags.map((tag) => (
+                      {post.tags.map((postTag) => (
                         <Link
-                          key={tag}
-                          href={`/blog?tag=${encodeURIComponent(tag)}`}
+                          key={postTag}
+                          href={`/blog?tag=${encodeURIComponent(postTag)}`}
                           className={`px-2 py-1 rounded-full text-xs ${
-                            tag === searchParams.tag
+                            postTag === tag
                               ? "bg-blue-600 text-white"
                               : "bg-blue-50 text-blue-600 hover:bg-blue-100"
                           }`}
                         >
-                          {tag}
+                          {postTag}
                         </Link>
                       ))}
                     </div>
@@ -79,7 +86,7 @@ export default async function BlogPage({
               ))
             ) : (
               <p className="text-gray-500">
-                {searchParams.q
+                {query
                   ? "検索条件に一致する記事が見つかりませんでした。"
                   : "記事がありません。"}
               </p>
@@ -92,8 +99,8 @@ export default async function BlogPage({
                 currentPage={currentPage}
                 totalPages={totalPages}
                 baseUrl={`/blog${
-                  searchParams.tag ? `?tag=${searchParams.tag}` : ""
-                }${searchParams.q ? `?q=${searchParams.q}` : ""}`}
+                  tag ? `?tag=${tag}` : ""
+                }${query ? `?q=${query}` : ""}`}
               />
             </div>
           )}
@@ -103,7 +110,7 @@ export default async function BlogPage({
         <aside className="md:w-1/4">
           <Suspense fallback={<div>Loading...</div>}>
             <SearchBox />
-            <TagSidebar tagCounts={tagCounts} selectedTag={searchParams.tag} />
+            <TagSidebar tagCounts={tagCounts} selectedTag={tag} />
           </Suspense>
         </aside>
       </div>

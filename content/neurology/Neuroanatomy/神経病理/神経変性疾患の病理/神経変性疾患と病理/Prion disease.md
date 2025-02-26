@@ -6,6 +6,6 @@
   - Prion
 部位:
   - Neuropil
-lastmod: '2025-02-25'
+lastmod: '2025-02-26'
 ---
 

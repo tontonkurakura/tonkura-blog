@@ -2,7 +2,7 @@
 局在: 大脳皮質・白質，淡蒼球，黒漆，視床下核
 蓄積蛋白:
   - 4R-tau
-lastmod: '2025-02-25'
+lastmod: '2025-02-26'
 ---
 部位:: Neurons, Glia
 蛋白沈着形式/封入体:: Pretangles, Astrocytic plaques

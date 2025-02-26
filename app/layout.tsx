@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import "highlight.js/styles/github-dark.css";
 import Navigation from "./components/Navigation";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +25,7 @@ export default function RootLayout({
       <body className={`${inter.className}`} suppressHydrationWarning={true}>
         <Navigation />
         <main className="container mx-auto px-4 md:px-6 pt-8 md:pt-12 pb-16">
-          {children}
+          <ErrorBoundary>{children}</ErrorBoundary>
         </main>
         <Analytics />
         <SpeedInsights />

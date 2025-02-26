@@ -3,15 +3,10 @@
 import Link from "next/link";
 import { format } from "date-fns";
 import { ja } from "date-fns/locale";
+import { PostMeta } from "@/types/blog";
 
 interface BlogPostProps {
-  post: {
-    id: string;
-    title: string;
-    description?: string;
-    date?: string;
-    tags?: string[];
-  };
+  post: PostMeta;
   selectedTag?: string;
 }
 
@@ -59,4 +54,4 @@ export default function BlogPost({ post, selectedTag }: BlogPostProps) {
       </div>
     </article>
   );
-} 
+}

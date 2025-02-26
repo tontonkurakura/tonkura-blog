@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import React from "react";
 import type { HDSRScores } from "@/types/calculator";
 
-const HDSRCalculator: React.FC = () => {
+export default function HDSRCalculator() {
   const [scores, setScores] = useState<HDSRScores>({
     age: 0,
     date_weekday: 0,
@@ -72,24 +73,30 @@ const HDSRCalculator: React.FC = () => {
     );
   };
 
-  const ScoreButton: React.FC<{
+  function ScoreButton({
+    name,
+    value,
+    currentScore,
+  }: {
     name: keyof HDSRScores;
     value: number;
     currentScore: number;
-  }> = ({ name, value, currentScore }) => (
-    <button
-      data-name={name}
-      value={value}
-      onClick={handleChange}
-      className={`border rounded px-3 py-1.5 transition-colors ${
-        currentScore === value
-          ? "bg-blue-600 text-white border-blue-600"
-          : "hover:bg-gray-100 border-gray-300"
-      }`}
-    >
-      {value}点
-    </button>
-  );
+  }) {
+    return (
+      <button
+        data-name={name}
+        value={value}
+        onClick={handleChange}
+        className={`border rounded px-3 py-1.5 transition-colors ${
+          currentScore === value
+            ? "bg-blue-600 text-white border-blue-600"
+            : "hover:bg-gray-100 border-gray-300"
+        }`}
+      >
+        {value}点
+      </button>
+    );
+  }
 
   return (
     <div className="bg-white border rounded-lg p-6 shadow-md">
@@ -524,6 +531,4 @@ const HDSRCalculator: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default HDSRCalculator;
+}

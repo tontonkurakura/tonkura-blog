@@ -8,8 +8,9 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const routeParams = await params;
   const fullPath =
-    path.join(process.cwd(), "content", "recipes", ...params.slug) + ".md";
+    path.join(process.cwd(), "content", "recipes", ...routeParams.slug) + ".md";
   const recipe = await getRecipeData(fullPath);
 
   return {
@@ -19,8 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function RecipePage({ params }: Props) {
+  const routeParams = await params;
   const fullPath =
-    path.join(process.cwd(), "content", "recipes", ...params.slug) + ".md";
+    path.join(process.cwd(), "content", "recipes", ...routeParams.slug) + ".md";
   const recipe = await getRecipeData(fullPath);
 
   return (

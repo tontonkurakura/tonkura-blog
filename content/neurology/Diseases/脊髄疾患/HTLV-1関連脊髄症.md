@@ -1,5 +1,5 @@
 ---
-lastmod: '2025-02-25'
+lastmod: '2025-02-26'
 ---
 英名：HTLV-1-associated myelopathy（HAM）
 

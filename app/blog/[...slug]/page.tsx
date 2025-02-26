@@ -8,8 +8,16 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const id = params.slug.join("/");
+  const routeParams = await params;
+  const id = routeParams.slug.join("/");
   const post = await getPostData(id);
+
+  if (!post) {
+    return {
+      title: "記事が見つかりません",
+      description: "お探しの記事は見つかりませんでした。",
+    };
+  }
 
   return {
     title: post.title,
@@ -18,8 +26,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const id = params.slug.join("/");
+  const routeParams = await params;
+  const id = routeParams.slug.join("/");
   const post = await getPostData(id);
+
+  if (!post) {
+    return (
+      <div className="max-w-4xl mx-auto text-center py-12">
+        <h1 className="text-3xl font-bold mb-4">記事が見つかりません</h1>
+        <p className="mb-6">お探しの記事は見つかりませんでした。</p>
+        <Link
+          href="/blog"
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+        >
+          ブログ一覧に戻る
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mx-auto">

@@ -3,6 +3,6 @@
   - Lewy neurites
 部位:
   - Neurites
-lastmod: '2025-02-25'
+lastmod: '2025-02-26'
 ---
 

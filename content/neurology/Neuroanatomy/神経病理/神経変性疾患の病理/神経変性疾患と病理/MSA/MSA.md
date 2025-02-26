@@ -5,7 +5,7 @@
   - α-synuclein
 部位:
   - Oligodendroglia
-lastmod: '2025-02-25'
+lastmod: '2025-02-26'
 ---
 ### ■ MSA
 

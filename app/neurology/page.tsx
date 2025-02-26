@@ -7,14 +7,17 @@ export default async function NeurologyPage({
 }: {
   searchParams: { tab?: string };
 }) {
+  // searchParamsをawaitする
+  const params = await searchParams;
+
   // デフォルトのタブ値を設定（URLパラメータがない場合は'anatomy'）
-  const defaultTab = searchParams.tab || "anatomy";
+  const tab = params?.tab || "anatomy";
 
   return (
     <div className="max-w-7xl mx-auto px-6">
       <h1 className="text-3xl font-bold mb-8">Neurology Notes</h1>
 
-      <Tabs defaultValue={defaultTab} className="w-full">
+      <Tabs defaultValue={tab} className="w-full">
         <TabsList className="grid w-full grid-cols-5 mb-8 h-auto p-1">
           <TabsTrigger value="anatomy" asChild>
             <a

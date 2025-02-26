@@ -2,12 +2,8 @@
 
 import Link from "next/link";
 
-interface TagCount {
-  [key: string]: number;
-}
-
 interface TagSidebarProps {
-  tagCounts: TagCount;
+  tagCounts: { [key: string]: number };
   selectedTag?: string;
 }
 

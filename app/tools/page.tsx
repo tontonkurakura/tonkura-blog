@@ -4,7 +4,16 @@ import React, { useState } from "react";
 import IgGIndexCalculator from "@/components/tools/IgGIndexCalculator";
 import HDSRCalculator from "@/components/tools/HDSRCalculator";
 
-const tools = [
+type ToolComponent = React.ComponentType<{}>;
+
+interface Tool {
+  id: string;
+  name: string;
+  description: string;
+  component: ToolComponent;
+}
+
+const tools: Tool[] = [
   {
     id: "igg-index",
     name: "IgG Index",
@@ -28,9 +37,23 @@ export default function ToolsPage() {
     setSelectedTool(toolId === selectedTool ? null : toolId);
   };
 
-  const SelectedComponent = selectedTool
-    ? tools.find((tool) => tool.id === selectedTool)?.component
+  // 選択されたツールのコンポーネントを取得
+  const selectedToolData = selectedTool
+    ? tools.find((tool) => tool.id === selectedTool)
     : null;
+
+  // 選択されたツールのコンポーネントを動的にレンダリング
+  const renderSelectedTool = () => {
+    if (!selectedToolData) return null;
+
+    if (selectedToolData.id === "igg-index") {
+      return <IgGIndexCalculator />;
+    } else if (selectedToolData.id === "hds-r") {
+      return <HDSRCalculator />;
+    }
+
+    return null;
+  };
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -55,24 +78,16 @@ export default function ToolsPage() {
       </div>
 
       {/* 選択されたツールの表示エリア */}
-      <div
-        className={`transition-all duration-300 ${
-          selectedTool ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        {SelectedComponent && (
-          <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
-            {selectedTool && (
-              <div className="mb-6">
-                <h2 className="text-2xl font-bold font-mplus">
-                  {tools.find((tool) => tool.id === selectedTool)?.name}
-                </h2>
-              </div>
-            )}
-            <SelectedComponent />
+      {selectedToolData && (
+        <div className="bg-gray-50 p-8 rounded-lg border border-gray-200">
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold font-mplus">
+              {selectedToolData.name}
+            </h2>
           </div>
-        )}
-      </div>
+          {renderSelectedTool()}
+        </div>
+      )}
     </div>
   );
 }

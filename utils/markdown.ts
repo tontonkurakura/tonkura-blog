@@ -8,9 +8,36 @@ import rehypeStringify from "rehype-stringify";
 import highlight from "rehype-highlight";
 import { visit } from "unist-util-visit";
 import remarkGfm from "remark-gfm";
+import {
+  PostMeta,
+  PostData,
+  PostListResponse,
+  PostListOptions,
+  DirectoryStructure,
+  OrderConfig,
+} from "@/types/blog";
 
 const contentDirectory = path.join(process.cwd(), "content");
 const blogDirectory = path.join(contentDirectory, "blog");
+
+// メモリキャッシュの追加
+interface MemoryCache {
+  postMeta: PostMeta[] | null;
+  tagCounts: { [key: string]: number } | null;
+  postContent: { [key: string]: PostData } | null;
+  lastUpdated: number;
+}
+
+// キャッシュの有効期限（5分）
+const CACHE_TTL = 5 * 60 * 1000;
+
+// メモリキャッシュの初期化
+const memoryCache: MemoryCache = {
+  postMeta: null,
+  tagCounts: null,
+  postContent: null,
+  lastUpdated: 0,
+};
 
 // 環境に応じてキャッシュディレクトリを設定
 const getCacheDir = () => {
@@ -22,309 +49,15 @@ const getCacheDir = () => {
 
 const CACHE_FILE = path.join(getCacheDir(), "posts-meta.json");
 
-export interface PostData {
-  id: string;
-  title: string;
-  content: string;
-  date?: string;
-  tags?: string[];
-  description?: string;
-}
-
-export interface DirectoryStructure {
-  [key: string]: DirectoryStructure | "file";
-}
-
-interface PostListItem {
-  id: string;
-  title: string;
-  date?: string;
-  tags?: string[];
-  description?: string;
-}
-
-// コードブロックに言語情報を追加するプラグイン
-function rehypeAddLanguage() {
-  return (tree: any) => {
-    visit(tree, "element", (node) => {
-      if (node.tagName === "pre") {
-        const [codeEl] = node.children;
-        if (codeEl?.tagName === "code") {
-          const classes = codeEl.properties.className || [];
-          const language = classes
-            .find((c: string) => c.startsWith("language-"))
-            ?.replace("language-", "");
-          if (language) {
-            // 言語名を大文字始まりに変換（例：javascript → JavaScript）
-            const formattedLanguage =
-              language.charAt(0).toUpperCase() + language.slice(1);
-            // preタグにクラスを追加
-            node.properties.className = [
-              ...(node.properties.className || []),
-              "relative",
-            ];
-            node.properties["data-language"] = formattedLanguage;
-            // コピーボタンを追加
-            node.children = [
-              {
-                type: "element",
-                tagName: "button",
-                properties: {
-                  className: [
-                    "absolute",
-                    "top-6",
-                    "right-2",
-                    "p-2",
-                    "text-xs",
-                    "text-white",
-                    "bg-[#2a2b36]",
-                    "hover:bg-[#3a3b46]",
-                    "transition-colors",
-                    "rounded-lg",
-                    "font-mono",
-                    "font-medium",
-                    "tracking-wide",
-                    "copy-button",
-                    "flex",
-                    "items-center",
-                    "justify-center",
-                  ],
-                  "data-code": codeEl.children[0]?.value || "",
-                },
-                children: [
-                  {
-                    type: "element",
-                    tagName: "svg",
-                    properties: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      fill: "none",
-                      viewBox: "0 0 24 24",
-                      strokeWidth: "1.5",
-                      stroke: "currentColor",
-                      className: "w-4 h-4",
-                    },
-                    children: [
-                      {
-                        type: "element",
-                        tagName: "path",
-                        properties: {
-                          strokeLinecap: "round",
-                          strokeLinejoin: "round",
-                          d: "M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75",
-                        },
-                      },
-                    ],
-                  },
-                ],
-              },
-              ...node.children,
-            ];
-          }
-        }
-      }
-    });
-  };
-}
-
-// Markdownのコードブロックに言語クラスを追加するプラグイン
-function remarkAddLanguageClass() {
-  return (tree: any) => {
-    visit(tree, "code", (node: any) => {
-      if (node.lang) {
-        node.data = node.data || {};
-        node.data.hProperties = node.data.hProperties || {};
-        node.data.hProperties.className = ["hljs", `language-${node.lang}`];
-      }
-    });
-  };
-}
-
-export function getDirectoryStructure(
-  baseDir: string = blogDirectory
-): DirectoryStructure {
-  const items = fs.readdirSync(baseDir, { withFileTypes: true });
-  const structure: DirectoryStructure = {};
-
-  for (const item of items) {
-    const fullPath = path.join(baseDir, item.name);
-    if (item.isDirectory()) {
-      structure[item.name] = getDirectoryStructure(fullPath);
-    } else if (item.isFile() && item.name.endsWith(".md")) {
-      structure[item.name] = "file";
-    }
-  }
-
-  return structure;
-}
-
-export async function getPostData(id: string): Promise<PostData> {
-  // 検索対象のディレクトリを定義
-  const searchDirectories = [
-    path.join(contentDirectory, "blog"),
-    path.join(contentDirectory, "neurology"),
-  ];
-
-  let fullPath = "";
-  let fileExists = false;
-
-  // 各ディレクトリで記事を検索
-  for (const dir of searchDirectories) {
-    // 1. 完全なパスでの検索
-    const fullPathWithExt = path.join(dir, `${id}.md`);
-    if (fs.existsSync(fullPathWithExt)) {
-      fullPath = fullPathWithExt;
-      fileExists = true;
-      break;
-    }
-
-    // 2. パス部分とファイル名を分離
-    const pathParts = id.split("/");
-    const fileName = pathParts[pathParts.length - 1];
-
-    // 3. ベースディレクトリにパス部分を追加
-    const searchPath =
-      pathParts.length > 1 ? path.join(dir, ...pathParts.slice(0, -1)) : dir;
-
-    // 4. 指定されたパスが存在する場合、そのディレクトリ内でファイルを検索
-    if (fs.existsSync(searchPath)) {
-      const items = fs.readdirSync(searchPath, { withFileTypes: true });
-      for (const item of items) {
-        if (item.isFile()) {
-          const itemName = item.name.replace(/\.md$/, "");
-          if (itemName === fileName) {
-            fullPath = path.join(searchPath, item.name);
-            fileExists = true;
-            break;
-          }
-        }
-      }
-    }
-
-    if (fileExists) break;
-
-    // 5. 完全一致で見つからない場合は、再帰的に検索
-    const findFileRecursively = (searchDir: string): string | null => {
-      const items = fs.readdirSync(searchDir, { withFileTypes: true });
-
-      for (const item of items) {
-        const itemPath = path.join(searchDir, item.name);
-
-        if (item.isDirectory()) {
-          const found = findFileRecursively(itemPath);
-          if (found) return found;
-        } else if (item.isFile()) {
-          const itemName = item.name.replace(/\.md$/, "");
-          if (itemName === fileName) {
-            return itemPath;
-          }
-        }
-      }
-
-      return null;
-    };
-
-    const foundPath = findFileRecursively(dir);
-    if (foundPath) {
-      fullPath = foundPath;
-      fileExists = true;
-      break;
-    }
-  }
-
-  if (!fileExists) {
-    console.error(`Post not found: ${id}`);
-    throw new Error(`Post not found: ${id}`);
-  }
-
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
-
-  const processedContent = await unified()
-    .use(remarkParse)
-    .use(remarkGfm)
-    .use(remarkAddLanguageClass)
-    .use(remarkRehype)
-    .use(highlight)
-    .use(rehypeAddLanguage)
-    .use(rehypeStringify)
-    .process(content);
-
-  const contentHtml = processedContent.toString();
-
-  return {
-    id,
-    title: data.title || path.basename(fullPath, ".md"),
-    content: contentHtml,
-    date: data.date,
-    tags: data.tags,
-    description: data.description,
-  };
-}
-
-// サブディレクトリを再帰的に取得する関数
-function getAllSubdirectories(dir: string): string[] {
-  let results: string[] = [];
-  const items = fs.readdirSync(dir, { withFileTypes: true });
-
-  for (const item of items) {
-    if (item.isDirectory()) {
-      const fullPath = path.join(dir, item.name);
-      results.push(fullPath);
-      results = results.concat(getAllSubdirectories(fullPath));
-    }
-  }
-
-  return results;
-}
-
-export async function getAllPosts(): Promise<PostData[]> {
-  const posts: PostData[] = [];
-  const searchDirectories = [
-    path.join(contentDirectory, "blog"),
-    path.join(contentDirectory, "neurology"),
-  ];
-
-  for (const baseDir of searchDirectories) {
-    async function traverseDirectory(dir: string) {
-      const items = await fs.promises.readdir(dir, { withFileTypes: true });
-
-      for (const item of items) {
-        const fullPath = path.join(dir, item.name);
-        if (item.isDirectory()) {
-          await traverseDirectory(fullPath);
-        } else if (item.isFile() && item.name.endsWith(".md")) {
-          try {
-            const relativePath = path
-              .relative(contentDirectory, fullPath)
-              .replace(/\.md$/, "")
-              .replace(/^(blog|neurology)\//, ""); // contentディレクトリからの相対パスを取得
-            const post = await getPostData(relativePath);
-            posts.push(post);
-          } catch (error) {
-            console.error(`記事の読み込みに失敗しました: ${fullPath}`, error);
-            continue;
-          }
-        }
-      }
-    }
-
-    await traverseDirectory(baseDir);
-  }
-
-  // 日付でソート（同じ日付の場合はタイトルでソート）
-  return posts.sort((a, b) => {
-    const dateA = a.date ? new Date(a.date).getTime() : 0;
-    const dateB = b.date ? new Date(b.date).getTime() : 0;
-    if (dateA === dateB) {
-      return a.title.localeCompare(b.title, "ja");
-    }
-    return dateB - dateA;
-  });
-}
-
 // メタデータのキャッシュを作成
-export async function generatePostMetaCache(): Promise<PostListItem[]> {
-  const posts: PostListItem[] = [];
+export async function generatePostMetaCache(): Promise<PostMeta[]> {
+  // メモリキャッシュが有効な場合はそれを返す
+  const now = Date.now();
+  if (memoryCache.postMeta && now - memoryCache.lastUpdated < CACHE_TTL) {
+    return memoryCache.postMeta;
+  }
+
+  const posts: PostMeta[] = [];
 
   // キャッシュディレクトリを作成
   const cacheDir = getCacheDir();
@@ -370,7 +103,7 @@ export async function generatePostMetaCache(): Promise<PostListItem[]> {
   await traverseDirectory(blogDirectory);
 
   // 日付でソート
-  return posts.sort((a, b) => {
+  const sortedPosts = posts.sort((a, b) => {
     const dateA = a.date ? new Date(a.date).getTime() : 0;
     const dateB = b.date ? new Date(b.date).getTime() : 0;
     if (dateA === dateB) {
@@ -378,10 +111,16 @@ export async function generatePostMetaCache(): Promise<PostListItem[]> {
     }
     return dateB - dateA;
   });
+
+  // メモリキャッシュを更新
+  memoryCache.postMeta = sortedPosts;
+  memoryCache.lastUpdated = now;
+
+  return sortedPosts;
 }
 
 // キャッシュからメタデータを取得（キャッシュがない場合は直接生成）
-export async function getPostMetaFromCache(): Promise<PostListItem[]> {
+export async function getPostMetaFromCache(): Promise<PostMeta[]> {
   return generatePostMetaCache();
 }
 
@@ -389,15 +128,8 @@ export async function getPostMetaFromCache(): Promise<PostListItem[]> {
 export async function getPostList(
   page: number = 1,
   limit: number = 10,
-  options: {
-    tag?: string;
-    searchQuery?: string;
-  } = {}
-): Promise<{
-  posts: PostListItem[];
-  total: number;
-  totalPages: number;
-}> {
+  options: PostListOptions = {}
+): Promise<PostListResponse> {
   try {
     const allPosts = await getPostMetaFromCache();
     let filteredPosts = [...allPosts]; // 配列のコピーを作成
@@ -421,20 +153,10 @@ export async function getPostList(
       });
     }
 
-    // 日付でソート（同じ日付の場合はタイトルでソート）
-    const sortedPosts = [...filteredPosts].sort((a, b) => {
-      const dateA = a.date ? new Date(a.date).getTime() : 0;
-      const dateB = b.date ? new Date(b.date).getTime() : 0;
-      if (dateA === dateB) {
-        return a.title.localeCompare(b.title, "ja");
-      }
-      return dateB - dateA;
-    });
-
-    const total = sortedPosts.length;
+    const total = filteredPosts.length;
     const totalPages = Math.ceil(total / limit);
     const startIndex = (page - 1) * limit;
-    const paginatedPosts = sortedPosts.slice(startIndex, startIndex + limit);
+    const paginatedPosts = filteredPosts.slice(startIndex, startIndex + limit);
 
     return {
       posts: paginatedPosts,
@@ -447,21 +169,156 @@ export async function getPostList(
   }
 }
 
-// タグの集計用関数
-export async function getTagCounts(): Promise<{ [key: string]: number }> {
-  try {
-    const allPosts = await getPostMetaFromCache();
-    const tagCounts: { [key: string]: number } = {};
+// 記事の詳細を取得
+export async function getPostData(id: string): Promise<PostData | null> {
+  // メモリキャッシュをチェック
+  if (
+    memoryCache.postContent &&
+    memoryCache.postContent[id] &&
+    Date.now() - memoryCache.lastUpdated < CACHE_TTL
+  ) {
+    return memoryCache.postContent[id];
+  }
 
-    allPosts.forEach((post) => {
-      post.tags?.forEach((tag) => {
+  try {
+    const fullPath = path.join(blogDirectory, `${id}.md`);
+    const fileContent = await fs.promises.readFile(fullPath, "utf-8");
+    const { data, content } = matter(fileContent);
+
+    // Markdownをパース
+    const processedContent = await unified()
+      .use(remarkParse)
+      .use(remarkGfm)
+      .use(remarkRehype)
+      .use(highlight)
+      .use(rehypeStringify)
+      .process(content);
+
+    const htmlContent = processedContent.toString();
+
+    // キャッシュを初期化
+    if (!memoryCache.postContent) {
+      memoryCache.postContent = {};
+    }
+
+    const postData: PostData = {
+      id,
+      title: data.title || path.basename(fullPath, ".md"),
+      date: data.date,
+      tags: data.tags || [],
+      description: data.description || "",
+      content: htmlContent,
+    };
+
+    // メモリキャッシュに追加
+    memoryCache.postContent[id] = postData;
+
+    return postData;
+  } catch (error) {
+    console.error(`記事の取得に失敗しました: ${id}`, error);
+    return null;
+  }
+}
+
+// タグごとの記事数を取得
+export async function getTagCounts(): Promise<{ [key: string]: number }> {
+  // メモリキャッシュをチェック
+  if (
+    memoryCache.tagCounts &&
+    Date.now() - memoryCache.lastUpdated < CACHE_TTL
+  ) {
+    return memoryCache.tagCounts;
+  }
+
+  const posts = await getPostMetaFromCache();
+  const tagCounts: { [key: string]: number } = {};
+
+  posts.forEach((post) => {
+    if (post.tags) {
+      post.tags.forEach((tag) => {
         tagCounts[tag] = (tagCounts[tag] || 0) + 1;
       });
-    });
+    }
+  });
 
-    return tagCounts;
-  } catch (error) {
-    console.error("タグの集計に失敗しました:", error);
-    throw error;
+  // メモリキャッシュに追加
+  memoryCache.tagCounts = tagCounts;
+
+  return tagCounts;
+}
+
+// ディレクトリ構造を取得
+export async function getDirectoryStructure(
+  baseDir: string = contentDirectory
+): Promise<DirectoryStructure> {
+  const structure: DirectoryStructure = {};
+
+  async function traverseDirectory(
+    dir: string,
+    currentStructure: DirectoryStructure
+  ): Promise<void> {
+    try {
+      const items = await fs.promises.readdir(dir, { withFileTypes: true });
+
+      for (const item of items) {
+        const fullPath = path.join(dir, item.name);
+        if (item.isDirectory()) {
+          currentStructure[item.name] = {};
+          await traverseDirectory(
+            fullPath,
+            currentStructure[item.name] as DirectoryStructure
+          );
+        } else if (
+          item.isFile() &&
+          (item.name.endsWith(".md") || item.name === "order.json")
+        ) {
+          currentStructure[item.name] = "file";
+        }
+      }
+    } catch (error) {
+      console.error(`ディレクトリの読み込みに失敗しました: ${dir}`, error);
+    }
+  }
+
+  await traverseDirectory(baseDir, structure);
+  return structure;
+}
+
+// 記事の並び順設定
+export const orderConfig: OrderConfig = {
+  defaultOrder: "date-desc",
+  options: [
+    { value: "date-desc", label: "新しい順" },
+    { value: "date-asc", label: "古い順" },
+    { value: "title-asc", label: "タイトル昇順" },
+    { value: "title-desc", label: "タイトル降順" },
+  ],
+};
+
+// 記事を並び替える
+export function sortPosts(
+  posts: PostMeta[],
+  order: string = orderConfig.defaultOrder
+): PostMeta[] {
+  const sortedPosts = [...posts]; // 配列のコピーを作成
+
+  switch (order) {
+    case "date-asc":
+      return sortedPosts.sort((a, b) => {
+        const dateA = a.date ? new Date(a.date).getTime() : 0;
+        const dateB = b.date ? new Date(b.date).getTime() : 0;
+        return dateA - dateB;
+      });
+    case "title-asc":
+      return sortedPosts.sort((a, b) => a.title.localeCompare(b.title, "ja"));
+    case "title-desc":
+      return sortedPosts.sort((a, b) => b.title.localeCompare(a.title, "ja"));
+    case "date-desc":
+    default:
+      return sortedPosts.sort((a, b) => {
+        const dateA = a.date ? new Date(a.date).getTime() : 0;
+        const dateB = b.date ? new Date(b.date).getTime() : 0;
+        return dateB - dateA;
+      });
   }
 }

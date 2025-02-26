@@ -1,6 +1,6 @@
 ---
 last_edited: YYYY-MM-DD
-lastmod: '2025-02-25'
+lastmod: '2025-02-26'
 ---
 
 ## はじめに

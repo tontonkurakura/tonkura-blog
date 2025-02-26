@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { DirectoryStructure } from "@/utils/markdown";
+import { DirectoryStructure } from "@/types/blog";
 
 interface BlogTreeProps {
   structure: DirectoryStructure;
@@ -10,9 +10,9 @@ export default function BlogTree({ structure }: BlogTreeProps) {
   const renderTree = (node: DirectoryStructure, path: string = "") => {
     return (
       <ul className="space-y-2">
-        {Object.entries(node).map(([key, value]) => {
-          const currentPath = path ? `${path}/${key}` : key;
-          const isFile = typeof value === "string";
+        {node.children.map((item) => {
+          const currentPath = path ? `${path}/${item.name}` : item.name;
+          const isFile = item.type === "file";
 
           return (
             <li key={currentPath} className="pl-4">
@@ -21,12 +21,12 @@ export default function BlogTree({ structure }: BlogTreeProps) {
                   href={`/blog/${currentPath}`}
                   className="text-blue-600 hover:text-blue-800"
                 >
-                  {key}
+                  {item.name}
                 </Link>
               ) : (
                 <>
-                  <span className="font-semibold">{key}</span>
-                  {renderTree(value as DirectoryStructure, currentPath)}
+                  <span className="font-semibold">{item.name}</span>
+                  {item.children && renderTree(item, currentPath)}
                 </>
               )}
             </li>

@@ -1,9 +1,10 @@
 import { promises as fs } from "fs";
 import path from "path";
-import matter from "gray-matter";
+// 未使用のimportをコメントアウト
+// import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { serialize } from "next-mdx-remote/serialize";
-import rehypeSanitize from "rehype-sanitize";
+// import { serialize } from "next-mdx-remote/serialize";
+// import rehypeSanitize from "rehype-sanitize";
 import Link from "next/link";
 import FrontMatter from "@/components/ui/FrontMatter";
 
@@ -100,7 +101,7 @@ async function getMarkdownContent(slug: string[]) {
         await fs.access(diseasePathWithExt);
         mdPath = diseasePathWithExt;
         section = "Diseases"; // セクションをDiseasesに設定
-      } catch (error) {
+      } catch {
         // Differentialsで見つからない場合は続行
       }
     }
@@ -127,7 +128,7 @@ async function getMarkdownContent(slug: string[]) {
             mdPath = testPathWithExt;
             section = mainSection;
             break;
-          } catch (error) {
+          } catch {
             // このセクションでは見つからなかった場合は続行
             continue;
           }
@@ -147,56 +148,57 @@ async function getMarkdownContent(slug: string[]) {
         try {
           await fs.access(normalPathWithExt);
           mdPath = normalPathWithExt;
-        } catch (error) {
-          // 指定されたパスで見つからない場合
+        } catch {
+          // 見つからない場合は続行
         }
       }
     }
 
+    // ファイルが見つからなかった場合
     if (!mdPath) {
-      console.error(`File not found: ${decodedSlug.join("/")}`);
-      return null;
+      return {
+        content: "# Not Found\n\nThe requested content could not be found.",
+        section: "Unknown",
+        metadata: {},
+      };
     }
 
-    // ファイルを読み込む
-    const content = await fs.readFile(mdPath, "utf-8");
-    const processedContent = processContent(content, mdPath.split(path.sep));
+    // ファイルの読み込み
+    const fileContent = await fs.readFile(mdPath, "utf8");
 
-    // MDXのセキュアな処理
-    const mdxSource = await serialize(processedContent, {
-      mdxOptions: {
-        rehypePlugins: [rehypeSanitize],
-      },
-      parseFrontmatter: true,
-    });
+    // 正規表現でフロントマターを抽出
+    const frontMatterRegex = /^---\n([\s\S]*?)\n---/;
+    const match = fileContent.match(frontMatterRegex);
 
+    let metadata = {};
+    let content = fileContent;
+
+    if (match) {
+      // フロントマターをパース
+      const frontMatterText = match[1];
+      const frontMatterLines = frontMatterText.split("\n");
+
+      // 簡易的なYAMLパーサー
+      frontMatterLines.forEach((line) => {
+        const [key, ...valueParts] = line.split(":");
+        if (key && valueParts.length > 0) {
+          const value = valueParts.join(":").trim();
+          metadata = { ...metadata, [key.trim()]: value };
+        }
+      });
+
+      // フロントマターを除去したコンテンツ
+      content = fileContent.replace(match[0], "").trim();
+    }
+
+    return { content, section, metadata };
+  } catch {
     return {
-      content: mdxSource,
-      section,
+      content: "# Error\n\nAn error occurred while loading the content.",
+      section: "Error",
+      metadata: {},
     };
-  } catch (error) {
-    console.error("Error reading markdown file:", error);
-    return null;
   }
-}
-
-// コンテンツの処理を別関数に分離
-function processContent(content: string, pathParts: string[]) {
-  // 画像パスの処理のためのディレクトリパスを構築
-  const currentDir = pathParts.join("/");
-
-  return content.replace(
-    /!\[([^\]]*)\]\((\.\/)?assets\/([^)]+)\)/g,
-    (match, alt, prefix, imagePath) => {
-      // 画像の相対パスを構築（日本語のパスをエンコード）
-      const encodedPath = `${currentDir}/assets/${imagePath}`
-        .split("/")
-        .map((part) => encodeURIComponent(part))
-        .join("/");
-      const imageUrl = `/api/images/${encodedPath}`;
-      return `![${alt}](${imageUrl})`;
-    }
-  );
 }
 
 export default async function NeurologyView({
@@ -204,7 +206,9 @@ export default async function NeurologyView({
 }: {
   params: { slug: string[] };
 }) {
-  const result = await getMarkdownContent(params.slug);
+  // paramsをawaitする
+  const routeParams = await params;
+  const result = await getMarkdownContent(routeParams.slug);
 
   if (!result) {
     return (
@@ -221,9 +225,6 @@ export default async function NeurologyView({
     );
   }
 
-  // gray-matterを使用してフロントマターを抽出
-  const { data: frontMatter } = matter(result.content);
-
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-4">
@@ -232,15 +233,15 @@ export default async function NeurologyView({
         </Link>
       </div>
 
-      <Breadcrumbs slug={params.slug} section={result.section} />
+      <Breadcrumbs slug={routeParams.slug} section={result.section} />
 
       <article className="bg-white rounded-lg shadow p-6">
         <div className="mb-8 text-right">
-          <FrontMatter frontMatter={frontMatter} />
+          <FrontMatter frontMatter={result.metadata} />
         </div>
 
         <div className="prose prose-lg max-w-none">
-          <MDXRemote source={result.content} />
+          <MDXRemote source={result.content} components={{}} />
         </div>
       </article>
     </div>

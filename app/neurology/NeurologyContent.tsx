@@ -100,9 +100,8 @@ export default async function NeurologyContent({
 }: {
   basePath?: string;
 }) {
-  const structure = await getDirectoryStructure(
-    path.join(process.cwd(), "content")
-  );
+  const neurologyPath = path.join(process.cwd(), "content", "neurology");
+  const structure = await getDirectoryStructure(neurologyPath);
 
   // 開発環境の場合のみorder.jsonを更新
   if (process.env.NODE_ENV === "development") {
@@ -110,16 +109,14 @@ export default async function NeurologyContent({
   }
 
   // neurologyディレクトリの内容を取得
-  const neurologyContent = structure["neurology"] || {};
-
   // basePathが指定されている場合、そのパス以下のコンテンツのみを表示
-  let filteredContent = neurologyContent;
+  let filteredContent = structure;
   if (basePath) {
     const pathParts = basePath.split("/");
-    let current = neurologyContent;
+    let current = structure;
     for (const part of pathParts) {
       if (current[part]) {
-        current = current[part];
+        current = current[part] as DirectoryStructure;
       } else {
         current = {};
         break;

@@ -1,5 +1,5 @@
 ---
-lastmod: '2025-02-25'
+lastmod: '2025-02-26'
 ---
 ■ Chronic Progressive External Ophthalmoplegia（CPEO）  
 慢性進行性外眼筋麻痺

@@ -21,6 +21,10 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     formats: ["image/webp"],
   },
+  // Next.js 15でのMDXサポート
+  experimental: {
+    mdxRs: true,
+  },
   async rewrites() {
     return [
       {
@@ -58,6 +62,11 @@ const nextConfig = {
           {
             key: "Strict-Transport-Security",
             value: "max-age=31536000; includeSubDomains",
+          },
+          {
+            key: "Content-Security-Policy",
+            value:
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vercel.live; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://tonkura.blog; font-src 'self' data:; connect-src 'self' https://va.vercel-insights.com; frame-ancestors 'none';",
           },
         ],
       },
