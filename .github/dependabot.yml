@@ -7,12 +7,15 @@ updates:
       day: "monday"
       time: "09:00"
       timezone: "Asia/Tokyo"
-    open-pull-requests-limit: 10
-    versioning-strategy: auto
+    open-pull-requests-limit: 3
+    groups:
+      dependencies:
+        patterns:
+          - "*"
     labels:
       - "dependencies"
       - "security"
     commit-message:
       prefix: "⬆️"
       prefix-development: "⬆️"
-      include: "scope" 
+      include: "scope"
