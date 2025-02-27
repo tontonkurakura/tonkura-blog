@@ -4,6 +4,7 @@ last_edited: 2025-02-27T00:00:00.000Z
 
 
 
+
 神経痛性筋萎縮症
 
 - 突然の肩～上肢の激痛で発症し，その後上肢帯を中心とする弛緩性の麻痺を呈する疾患．Parsonage-Turner syndrome, Idiopathic brachial plexopathyという呼び方もされた．

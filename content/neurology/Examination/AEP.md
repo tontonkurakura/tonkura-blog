@@ -4,6 +4,7 @@ last_edited: 2022-06-02T00:00:00.000Z
 
 
 
+
 Auditory Evoked Potential, 聴性誘発電位
 
 1. 渦電図（Electrocochleogram: ECochG）：内耳有毛細胞，蝸牛神経

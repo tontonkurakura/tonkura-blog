@@ -4,6 +4,7 @@ last_edited: 2025-02-27T00:00:00.000Z
 
 
 
+
 部位:: Neurons, Glia
 蛋白沈着形式/封入体:: NFTs, Tufted astrocytes
 ![[Neurology/神経病理/神経変性疾患の病理/神経変性疾患と病理/PSP/media/Untitled.png|Untitled.png]]

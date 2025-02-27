@@ -4,6 +4,7 @@ last_edited: 2025-02-27T00:00:00.000Z
 
 
 
+
 ## ■ Synucleinopathy
 
 - 異常α-synucleinが蓄積する疾患群。具体的にはPD、DLB、MSAが包括される。

@@ -4,6 +4,7 @@ last_edited: 2025-02-27T00:00:00.000Z
 
 
 
+
 部位:: Neurons, Glia
 蛋白沈着形式/封入体:: Pretangles, Astrocytic plaques
 - マクロでは、肉眼的にも左右差のある前頭葉・側頭葉の萎縮、側脳室の拡大を呈する。
