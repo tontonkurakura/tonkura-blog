@@ -1,6 +1,9 @@
 ---
-lastmod: '2025-02-26'
+last_edited: 2025-02-27T00:00:00.000Z
 ---
+
+
+
 **神経軸索スフェロイド形成を伴う遺伝性びまん性白質脳症**
 Hereditary diffuse leukoencephalopathy with spheroids spheroids
 

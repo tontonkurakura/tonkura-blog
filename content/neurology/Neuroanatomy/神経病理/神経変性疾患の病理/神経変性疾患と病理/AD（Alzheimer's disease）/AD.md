@@ -1,13 +1,9 @@
 ---
-蛋白沈着形式/封入体:
-  - Senile plaques
-局在: 嗅内野（Stage I/II）後頭側頭回（Stage III）島皮質（Stage IV/V）一次視覚野，運動野（Stage VI）
-蓄積蛋白:
-  - Aβ
-部位:
-  - Neuropil
-lastmod: '2025-02-26'
+last_edited: 2025-02-27T00:00:00.000Z
 ---
+
+
+
 - 前頭側頭葉と頭頂葉（特に頭頂連合野）の萎縮、海馬領域の萎縮と側脳室下角の拡大が目立つ。進行すると大脳皮質の菲薄化、白質の萎縮を呈する。
 - 大脳皮質を中心に、老人斑（Senile plaque）と神経原線維変化（Neurofibrillary tangle：NFT）が生理的な範囲を超えて多数形成される。
 

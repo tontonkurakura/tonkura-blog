@@ -1,13 +1,9 @@
 ---
-蛋白沈着形式/封入体:
-  - TDP-43 positive inclusions
-蓄積蛋白:
-  - TDP-43
-部位:
-  - Glia
-  - Neurons
-lastmod: '2025-02-26'
+last_edited: 2025-02-27T00:00:00.000Z
 ---
+
+
+
 ### ■ TDP-43 proteinopathy
 
 - TDP-43は不均一核内リボ核酸蛋白の1つ。HIV-1遺伝子の末端反復配列内にあるTAR（transactivation responsive region）に結合する因子として同定された。

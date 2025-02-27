@@ -1,8 +1,9 @@
 ---
-Owner: Toru Miyake
-Last edited time: '2023-10-08T17:27'
-lastmod: '2025-02-26'
+last_edited: 2023-10-08T00:00:00.000Z
 ---
+
+
+
 [[筋生検]]
 
 筋タイプ別

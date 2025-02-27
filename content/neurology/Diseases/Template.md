@@ -1,15 +1,9 @@
 ---
-title: 記事タイトル
-description: 記事の簡単な説明
-date: YYYY-MM-DD
-lastmod: '2025-02-26'
-tags:
-  - 神経学
-  - 臨床
-  - 症例
-category: neurology
-draft: true
+last_edited: 2025-02-27T00:00:00.000Z
 ---
+
+
+
 
 ## はじめに
 

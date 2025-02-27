@@ -1,8 +1,9 @@
 ---
-Owner: Toru Miyake
-Last edited time: '2022-06-10T00:53'
-lastmod: '2025-02-26'
+last_edited: 2022-06-10T00:00:00.000Z
 ---
+
+
+
   
 
 [[bvFTD]]

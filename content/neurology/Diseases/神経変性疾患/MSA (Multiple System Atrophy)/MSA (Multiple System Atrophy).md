@@ -1,8 +1,9 @@
 ---
-Owner: Toru Miyake
-Last edited time: '2023-06-23T19:44'
-lastmod: '2025-02-26'
+last_edited: 2023-06-23T00:00:00.000Z
 ---
+
+
+
   
 
   

@@ -1,8 +1,9 @@
 ---
-Owner: Toru Miyake
-Last edited time: '2022-06-10T01:20'
-lastmod: '2025-02-26'
+last_edited: 2022-06-10T00:00:00.000Z
 ---
+
+
+
   
 
 - 最新の国際診断基準では，原発性進行性失語症（progressive progressive aphasia: PPA）の非流暢/失文法型（non-fluent/agrammatic variant PPA: nfvPPA）に該当する．

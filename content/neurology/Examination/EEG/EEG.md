@@ -1,8 +1,9 @@
 ---
-Owner: Toru Miyake
-Last edited time: '2024-05-29T14:02'
-lastmod: '2025-02-26'
+last_edited: 2024-05-29T00:00:00.000Z
 ---
+
+
+
 > [!important]  
 > 脳波のチェック項目
 > - 背景脳波

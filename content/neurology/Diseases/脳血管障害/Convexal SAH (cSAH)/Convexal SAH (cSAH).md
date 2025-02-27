@@ -1,8 +1,9 @@
 ---
-Owner: Toru Miyake
-Last edited time: '2023-09-07T19:35'
-lastmod: '2025-02-26'
+last_edited: 2023-09-07T00:00:00.000Z
 ---
+
+
+
 ■ 円蓋部クモ膜下出血
 
 円蓋部の脳溝に生じる非外傷性クモ膜下出血．

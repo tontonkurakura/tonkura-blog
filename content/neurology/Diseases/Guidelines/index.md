@@ -1,12 +1,9 @@
 ---
-title: 神経疾患診療ガイドライン
-date: '2024-02-24'
-description: 各神経疾患の診療ガイドラインをまとめたページです
-tags:
-  - Neurology
-  - Guidelines
-lastmod: '2025-02-26'
+last_edited: 2025-02-27T00:00:00.000Z
 ---
+
+
+
 
 # 神経疾患診療ガイドライン
 

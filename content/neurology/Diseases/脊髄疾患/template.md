@@ -1,8 +1,9 @@
 ---
-Owner: Toru Miyake
-Last edited time: '2021-08-17T19:36'
-lastmod: '2025-02-26'
+last_edited: 2021-08-17T00:00:00.000Z
 ---
+
+
+
 ## 総論
 
 ## 症状

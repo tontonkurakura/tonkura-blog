@@ -1,6 +1,9 @@
 ---
-lastmod: '2025-02-26'
+last_edited: 2025-02-27T00:00:00.000Z
 ---
+
+
+
 ●概要・遺伝
 
 - **1型：**19q13.3上の**D****MPK遺伝子**（Dystrophia Myotonica Protein Kinase）の3’ non-coding regionにおける**CTGリピート**（通常は35以下のリピートが、100-1000程度のリピートへ）
