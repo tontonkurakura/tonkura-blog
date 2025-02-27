@@ -34,10 +34,9 @@ export default function ImageModal({
           onClose();
         }
       }}
-      role="dialog"
-      aria-modal="true"
-      aria-label="画像詳細"
+      role="button"
       tabIndex={0}
+      aria-label="画像を閉じる"
     >
       <div className="flex items-center gap-6 max-h-full w-full">
         <div

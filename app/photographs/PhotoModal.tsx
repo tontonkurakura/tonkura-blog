@@ -38,10 +38,9 @@ export default function PhotoModal({ photo, onClose }: PhotoModalProps) {
           onClose();
         }
       }}
-      role="dialog"
-      aria-modal="true"
-      aria-label="写真詳細"
+      role="button"
       tabIndex={0}
+      aria-label="閉じる"
     >
       <div
         className="relative flex items-center justify-center w-full h-full"

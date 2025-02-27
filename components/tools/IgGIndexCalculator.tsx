@@ -105,8 +105,70 @@ export default function IgGIndexCalculator() {
     setTouched((prev) => ({ ...prev, [field]: true }));
   };
 
+  // スコアに基づいて色を決定する関数
+  const getResultColorClass = () => {
+    if (!iggIndex || iggIndex === "計算エラー") return "bg-gray-600";
+
+    const index = parseFloat(iggIndex);
+    if (index >= 0.3 && index <= 0.7) return "bg-green-600";
+    if (index < 0.3) return "bg-blue-600";
+    if (index > 0.7 && index <= 1.0) return "bg-yellow-600";
+    return "bg-red-600";
+  };
+
+  // 結果のテキストを取得する関数
+  const getResultText = () => {
+    if (!iggIndex || iggIndex === "計算エラー") return "計算エラー";
+
+    const index = parseFloat(iggIndex);
+    if (index >= 0.3 && index <= 0.7) return "正常範囲";
+    if (index < 0.3) return "正常下限以下";
+    if (index > 0.7 && index <= 1.0) return "軽度上昇";
+    return "明らかな上昇";
+  };
+
+  // 結果に基づいてテキスト色を決定する関数
+  const getResultTextColorClass = (type: string) => {
+    if (type === "iggIndex" && iggIndex && iggIndex !== "計算エラー") {
+      const index = parseFloat(iggIndex);
+      if (index >= 0.3 && index <= 0.7) return "";
+      if (index < 0.3) return "text-blue-600";
+      if (index > 0.7 && index <= 1.0) return "text-yellow-600";
+      return "text-red-600";
+    }
+
+    if (type === "qAlb" && qAlb && qAlb !== "計算エラー") {
+      const qAlbValue = parseFloat(qAlb);
+      if (qAlbValue >= 2.0 && qAlbValue <= 9.0) return "";
+      if (qAlbValue < 2.0) return "text-blue-600";
+      return "text-red-600";
+    }
+
+    return "";
+  };
+
+  // 結果に基づいて背景色を決定する関数
+  const getResultBgClass = (type: string) => {
+    if (type === "iggIndex" && iggIndex && iggIndex !== "計算エラー") {
+      const index = parseFloat(iggIndex);
+      if (index >= 0.3 && index <= 0.7) return "";
+      if (index < 0.3) return "bg-blue-50";
+      if (index > 0.7 && index <= 1.0) return "bg-yellow-50";
+      return "bg-red-50";
+    }
+
+    if (type === "qAlb" && qAlb && qAlb !== "計算エラー") {
+      const qAlbValue = parseFloat(qAlb);
+      if (qAlbValue >= 2.0 && qAlbValue <= 9.0) return "";
+      if (qAlbValue < 2.0) return "bg-blue-50";
+      return "bg-red-50";
+    }
+
+    return "";
+  };
+
   return (
-    <div className="bg-white border rounded-lg p-6 shadow-md">
+    <div className="bg-white rounded-lg p-6 relative">
       <h3 className="text-2xl font-bold mb-6 font-mplus">
         IgG Index Calculator
       </h3>
@@ -196,22 +258,137 @@ export default function IgGIndexCalculator() {
           )}
         </div>
       </div>
-      <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <h4 className="text-lg font-semibold text-gray-700">IgG Index</h4>
-            <p className="text-2xl font-bold text-blue-600">
-              {iggIndex || "-"}
-            </p>
-            <p className="text-sm text-gray-500">基準値: 0.3-0.7</p>
+
+      {/* フローティングスコア表示 */}
+      {iggIndex && qAlb && (
+        <div
+          className={`mt-8 sticky bottom-4 z-10 ${getResultColorClass()} bg-opacity-90 text-white p-4 rounded-xl shadow-xl mb-6 flex flex-col sm:flex-row sm:justify-between items-center gap-2`}
+        >
+          <div className="flex items-center text-xl">
+            <span className="font-bold mr-2">IgG Index:</span>
+            <span className="text-3xl font-extrabold mx-1">{iggIndex}</span>
+            <span className="font-medium">(基準値: 0.3-0.7)</span>
           </div>
-          <div>
-            <h4 className="text-lg font-semibold text-gray-700">
-              Q-Alb (×10³)
-            </h4>
-            <p className="text-2xl font-bold text-blue-600">{qAlb || "-"}</p>
-            <p className="text-sm text-gray-500">基準値: 2.0-9.0</p>
+          <div className="flex flex-col sm:flex-row items-center gap-2">
+            <div className="px-3 py-1 bg-white bg-opacity-20 rounded-lg text-sm">
+              <span className="font-medium">
+                Q-Alb: {qAlb} ×10³ (基準値: 2.0-9.0)
+              </span>
+            </div>
+            <button
+              onClick={() => {
+                setCsfIgG("");
+                setCsfAlb("");
+                setSerumIgG("");
+                setSerumAlb("");
+                setIggIndex("");
+                setQAlb("");
+                setErrors({});
+                setTouched({});
+              }}
+              className="px-3 py-1 bg-white bg-opacity-30 hover:bg-opacity-40 rounded-lg text-sm font-medium transition-colors"
+            >
+              入力をクリア
+            </button>
+            <div className="sm:border-l sm:border-white sm:pl-4 font-semibold text-lg">
+              {getResultText()}
+            </div>
           </div>
+        </div>
+      )}
+
+      {/* 結果表示 */}
+      <div className="mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div className="bg-white p-3 rounded-lg shadow-sm border">
+            <h3 className="font-semibold mb-2 text-center">計算結果</h3>
+            <div className="grid grid-cols-1 gap-2 text-sm">
+              <div
+                className={`flex justify-between p-1.5 rounded ${getResultBgClass("iggIndex")}`}
+              >
+                <span
+                  className={`font-bold ${getResultTextColorClass("iggIndex")}`}
+                >
+                  IgG Index:
+                </span>
+                <span
+                  className={`font-medium ${getResultTextColorClass("iggIndex")}`}
+                >
+                  {iggIndex || "-"}
+                </span>
+              </div>
+              <div
+                className={`flex justify-between p-1.5 rounded ${getResultBgClass("qAlb")}`}
+              >
+                <span
+                  className={`font-bold ${getResultTextColorClass("qAlb")}`}
+                >
+                  Q-Alb (×10³):
+                </span>
+                <span
+                  className={`font-medium ${getResultTextColorClass("qAlb")}`}
+                >
+                  {qAlb || "-"}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white p-3 rounded-lg shadow-sm border md:col-span-2">
+            <h3 className="font-semibold mb-2 text-center">評価基準</h3>
+            <div className="grid grid-cols-1 gap-2 text-sm">
+              <div
+                className={`p-2 rounded ${
+                  iggIndex && parseFloat(iggIndex) < 0.3
+                    ? "bg-blue-100 text-blue-800 font-medium"
+                    : "bg-gray-50"
+                }`}
+              >
+                <span className="font-semibold">IgG Index &lt; 0.3:</span>{" "}
+                正常下限以下
+              </div>
+              <div
+                className={`p-2 rounded ${
+                  iggIndex &&
+                  parseFloat(iggIndex) >= 0.3 &&
+                  parseFloat(iggIndex) <= 0.7
+                    ? "bg-green-100 text-green-800 font-medium"
+                    : "bg-gray-50"
+                }`}
+              >
+                <span className="font-semibold">IgG Index 0.3-0.7:</span>{" "}
+                正常範囲
+              </div>
+              <div
+                className={`p-2 rounded ${
+                  iggIndex &&
+                  parseFloat(iggIndex) > 0.7 &&
+                  parseFloat(iggIndex) <= 1.0
+                    ? "bg-yellow-100 text-yellow-800 font-medium"
+                    : "bg-gray-50"
+                }`}
+              >
+                <span className="font-semibold">IgG Index 0.7-1.0:</span>{" "}
+                軽度上昇
+              </div>
+              <div
+                className={`p-2 rounded ${
+                  iggIndex && parseFloat(iggIndex) > 1.0
+                    ? "bg-red-100 text-red-800 font-medium"
+                    : "bg-gray-50"
+                }`}
+              >
+                <span className="font-semibold">IgG Index &gt; 1.0:</span>{" "}
+                明らかな上昇（髄腔内IgG産生亢進）
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="text-sm text-gray-600 mt-4">
+          <p>
+            ※ IgG
+            Indexは多発性硬化症などの中枢神経系の炎症性疾患の診断に有用です。最終的な診断は医療専門家によって行われるべきです。
+          </p>
         </div>
       </div>
     </div>

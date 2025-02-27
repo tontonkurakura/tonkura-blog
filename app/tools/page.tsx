@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from "react";
 import IgGIndexCalculator from "@/components/tools/IgGIndexCalculator";
 import HDSRCalculator from "@/components/tools/HDSRCalculator";
+import MMSECalculator from "@/components/tools/MMSECalculator";
+import NIHSSCalculator from "@/components/tools/NIHSSCalculator";
 
 type ToolComponent = React.ComponentType<{}>;
 
@@ -27,6 +29,20 @@ const tools: Tool[] = [
     description:
       "改訂 長谷川式簡易認知能評価スケール (HDS-R) による認知機能評価を行います。",
     component: HDSRCalculator,
+  },
+  {
+    id: "mmse",
+    name: "MMSE",
+    description:
+      "Mini-Mental State Examination (MMSE) による認知機能評価を行います。",
+    component: MMSECalculator,
+  },
+  {
+    id: "nihss",
+    name: "NIHSS",
+    description:
+      "NIH Stroke Scale (NIHSS) による脳卒中の重症度評価を行います。",
+    component: NIHSSCalculator,
   },
 ];
 
@@ -59,6 +75,10 @@ export default function ToolsPage() {
       return <IgGIndexCalculator />;
     } else if (selectedToolData.id === "hds-r") {
       return <HDSRCalculator />;
+    } else if (selectedToolData.id === "mmse") {
+      return <MMSECalculator />;
+    } else if (selectedToolData.id === "nihss") {
+      return <NIHSSCalculator />;
     }
 
     return null;
