@@ -1,11 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 export default function DatabasePage() {
-  const pathname = usePathname();
-
   return (
     <div className="max-w-7xl mx-auto px-6 py-8">
       <h1 className="text-3xl font-bold mb-8">Database</h1>
@@ -32,11 +29,10 @@ export default function DatabasePage() {
           <div className="p-6">
             <h2 className="text-xl font-semibold mb-3">脳機能データベース</h2>
             <p className="text-gray-600 mb-4">
-              MNI152標準脳とAALアトラス（116 ROI）を用いた脳領域の3D可視化システムです。
-              解剖学的な名称と視覚的な領域分割を提供します。
+              脳の解剖学的構造と機能領域を3Dマップで表示します。MNI152標準脳とAALパーセレーションを使用しています。
             </p>
             <Link
-              href="/database/brain-atlas"
+              href="/database/brain"
               className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               詳細を見る

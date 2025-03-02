@@ -4,11 +4,12 @@ import path from "path";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { path: string[] } }
 ) {
   try {
-    // パスの各部分をデコード
-    const decodedPath = params.path.map((part) => decodeURIComponent(part));
+    // URLからパスパラメータを取得
+    const url = new URL(request.url);
+    const pathSegments = url.pathname.replace('/api/images/', '').split('/');
+    const decodedPath = pathSegments.map((part) => decodeURIComponent(part));
 
     // パスの構築（セクションディレクトリを考慮）
     const imagePath = path.join(

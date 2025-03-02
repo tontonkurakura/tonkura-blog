@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
-import type { Photo } from "@/types/photo";
+import type { Photo, ExifData, AspectRatio } from "@/types/photo";
 import { PHOTO_HEIGHTS } from "@/constants/photo";
 
 // シンプルなモーダルコンポーネント
@@ -14,11 +14,7 @@ function SimpleImageModal({
 }: { 
   src: string; 
   alt?: string; 
-  exif: {
-    date?: string;
-    camera?: string;
-    lens?: string;
-  } | null; 
+  exif: ExifData | null; 
   onClose: () => void;
 }) {
   useEffect(() => {
@@ -31,29 +27,25 @@ function SimpleImageModal({
   }, [onClose]);
 
   return (
-    <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90" 
+    <button 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 w-full h-full" 
       onClick={onClose}
-      role="dialog"
-      aria-modal="true"
-      aria-label="画像詳細"
-      onKeyDown={(e) => {
-        if (e.key === 'Escape') onClose();
-      }}
-      tabIndex={0}
+      aria-label="画像詳細を閉じる"
     >
       <div 
-        className="relative max-w-[90vw] max-h-[90vh]" 
+        className="relative max-w-[95vw] max-h-[95vh] flex flex-col md:flex-row gap-4 items-center" 
         onClick={e => e.stopPropagation()}
         role="presentation"
+        tabIndex={-1}
       >
-        <div className="max-h-[85vh] w-auto">
+        <div className="max-h-[85vh] max-w-[90vw] md:max-w-[70vw] flex items-center justify-center">
           <Image
             src={src}
             alt={alt || "Photo"}
             width={1200}
             height={800}
-            className="object-contain"
+            className="object-contain max-h-[85vh] max-w-full"
+            style={{ width: 'auto', height: 'auto' }}
           />
         </div>
         <button
@@ -66,14 +58,21 @@ function SimpleImageModal({
           </svg>
         </button>
         {exif && (
-          <div className="absolute bottom-4 left-4 text-white bg-black/50 p-2 rounded text-sm">
-            {exif.date && <p>撮影日: {new Date(exif.date).toLocaleDateString()}</p>}
-            {exif.camera && <p>カメラ: {exif.camera}</p>}
-            {exif.lens && <p>レンズ: {exif.lens}</p>}
+          <div className="text-white bg-black/50 p-4 rounded-lg text-sm w-full md:w-56 self-center max-h-[85vh] overflow-y-auto">
+            {alt && <p className="mb-2 font-medium">{alt}</p>}
+            <div className="space-y-1.5">
+              {exif.date && <p><span className="text-gray-400">Date:</span> {new Date(exif.date).toLocaleDateString("en-US")}</p>}
+              {exif.camera && <p><span className="text-gray-400">Camera:</span> {exif.camera}</p>}
+              {exif.lens && exif.lens !== "Unknown" && <p><span className="text-gray-400">Lens:</span> {exif.lens}</p>}
+              {exif.focalLength && exif.focalLength !== "Unknown" && <p><span className="text-gray-400">Focal Length:</span> {exif.focalLength}</p>}
+              {exif.aperture && exif.aperture !== "Unknown" && <p><span className="text-gray-400">Aperture:</span> {exif.aperture}</p>}
+              {exif.shutterSpeed && exif.shutterSpeed !== "Unknown" && <p><span className="text-gray-400">Shutter Speed:</span> {exif.shutterSpeed}</p>}
+              {exif.iso && exif.iso !== "Unknown" && <p><span className="text-gray-400">ISO:</span> {exif.iso}</p>}
+            </div>
           </div>
         )}
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -82,11 +81,8 @@ interface PhotoGalleryProps {
   heroPhoto: Photo;
 }
 
-const getPhotoHeight = (aspectRatio: string): number => {
-  return (
-    PHOTO_HEIGHTS[aspectRatio as keyof typeof PHOTO_HEIGHTS] ||
-    PHOTO_HEIGHTS.landscape
-  );
+const getPhotoHeight = (aspectRatio: AspectRatio): number => {
+  return PHOTO_HEIGHTS[aspectRatio];
 };
 
 const distributePhotos = (photos: Photo[]): Photo[][] => {

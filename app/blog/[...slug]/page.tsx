@@ -3,13 +3,16 @@ import { getPostData } from "@/utils/markdown";
 import Link from "next/link";
 import CodeBlockProcessor from "@/components/CodeBlockProcessor";
 
-interface Props {
-  params: { slug: string[] };
-}
+type PageParams = {
+  slug: string[];
+};
+
+type Props = {
+  params: PageParams;
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const routeParams = await params;
-  const id = routeParams.slug.join("/");
+  const id = params.slug.join("/");
   const post = await getPostData(id);
 
   if (!post) {
@@ -26,8 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const routeParams = await params;
-  const id = routeParams.slug.join("/");
+  const id = params.slug.join("/");
   const post = await getPostData(id);
 
   if (!post) {

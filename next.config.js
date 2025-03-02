@@ -6,6 +6,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const nextConfig = {
   output: "standalone",
   typescript: {
+    // 一時的に型チェックを無効化（後で段階的に修正）
     ignoreBuildErrors: true,
   },
   serverRuntimeConfig: {
