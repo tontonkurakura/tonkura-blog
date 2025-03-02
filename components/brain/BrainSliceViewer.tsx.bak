@@ -1,0 +1,406 @@
+"use client";
+
+import { useEffect, useRef, useState } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { loadNiftiFile } from '@/utils/niftiUtils';
+
+interface BrainSliceViewerProps {
+  mniUrl: string;
+  aalUrl: string;
+  aalLabels: { index: number; name: string; color: string }[];
+  selectedRegion: number | null;
+  sliceType: 'axial' | 'coronal' | 'sagittal';
+  sliceIndex?: number;
+  onRegionClick: (regionIndex: number) => void;
+}
+
+export default function BrainSliceViewer({
+  mniUrl,
+  aalUrl,
+  aalLabels,
+  selectedRegion,
+  sliceType,
+  sliceIndex,
+  onRegionClick
+}: BrainSliceViewerProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [dimensions, setDimensions] = useState<[number, number, number]>([0, 0, 0]);
+  const [currentSliceIndex, setCurrentSliceIndex] = useState<number>(0);
+  const [mniData, setMniData] = useState<any>(null);
+  const [mniVolume, setMniVolume] = useState<Uint8Array | Int16Array | Uint16Array | Int32Array | Float32Array | Float64Array | null>(null);
+  const [maxIntensity, setMaxIntensity] = useState<number>(255);
+  const [cursorPosition, setCursorPosition] = useState<{ voxel: [number, number, number]; mni: [number, number, number] } | null>(null);
+
+  // データの読み込み
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        setIsLoading(true);
+        
+        // MNI標準脳の読み込み
+        const mni = await loadNiftiFile(mniUrl);
+        setMniData(mni);
+        
+        // NIFTIデータの詳細情報をコンソールに出力（デバッグ用）
+        console.log('NIFTI Header情報:', {
+          dimensions: [mni.dims[1], mni.dims[2], mni.dims[3]],
+          pixelDimensions: [mni.pixDims[1], mni.pixDims[2], mni.pixDims[3]],
+          datatype: mni.datatypeCode,
+          voxOffset: mni.voxOffset,
+          qformCode: mni.qformCode,
+          sformCode: mni.sformCode,
+          xyzt_units: mni.xyzt_units,
+          imageSize: mni.image ? mni.image.byteLength : 0
+        });
+        
+        // typedImageを使用
+        setMniVolume(mni.typedImage);
+        
+        // 最大輝度値を計算（コントラスト調整用）
+        let max = 0;
+        const typedArray = mni.typedImage;
+        for (let i = 0; i < typedArray.length; i++) {
+          if (typedArray[i] > max) max = typedArray[i];
+        }
+        setMaxIntensity(max);
+        console.log('最大輝度値:', max);
+        
+        // 次元情報の設定
+        const dims: [number, number, number] = [mni.dims[1], mni.dims[2], mni.dims[3]];
+        setDimensions(dims);
+        
+        // スライスインデックスの初期化
+        const initialIndex = Math.floor(dims[getSliceAxis()] / 2);
+        setCurrentSliceIndex(sliceIndex !== undefined ? sliceIndex : initialIndex);
+        
+        setIsLoading(false);
+      } catch (err) {
+        console.error('Error loading brain data:', err);
+        setError('脳データの読み込み中にエラーが発生しました。');
+        setIsLoading(false);
+      }
+    };
+
+    loadData();
+  }, [mniUrl, sliceType]);
+
+  // スライスインデックスの更新
+  useEffect(() => {
+    if (sliceIndex !== undefined && dimensions[getSliceAxis()] > 0) {
+      setCurrentSliceIndex(Math.min(Math.max(0, sliceIndex), dimensions[getSliceAxis()] - 1));
+    }
+  }, [sliceIndex, dimensions, sliceType]);
+
+  // スライス軸のインデックスを取得
+  const getSliceAxis = () => {
+    switch (sliceType) {
+      case 'sagittal': return 0; // X軸
+      case 'coronal': return 1;  // Y軸
+      case 'axial': return 2;    // Z軸
+      default: return 2;
+    }
+  };
+
+  // スライスの描画
+  useEffect(() => {
+    if (!canvasRef.current || !mniVolume || dimensions[0] === 0) return;
+
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // キャンバスのサイズを設定
+    const axis = getSliceAxis();
+    let width, height;
+    
+    switch (sliceType) {
+      case 'sagittal': // X軸に垂直なスライス (YZ平面)
+        width = dimensions[1];
+        height = dimensions[2];
+        break;
+      case 'coronal': // Y軸に垂直なスライス (XZ平面)
+        width = dimensions[0];
+        height = dimensions[2];
+        break;
+      case 'axial': // Z軸に垂直なスライス (XY平面)
+      default:
+        width = dimensions[0];
+        height = dimensions[1];
+        break;
+    }
+    
+    canvas.width = width;
+    canvas.height = height;
+    
+    // イメージデータの作成
+    const imageData = ctx.createImageData(width, height);
+    const data = imageData.data;
+    
+    // コントラスト調整のためのスケーリング係数
+    const scaleFactor = 255 / maxIntensity;
+    
+    // スライスデータの抽出と描画
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        // 画像を180度回転させるために座標を反転
+        const flippedX = width - 1 - x;
+        const flippedY = height - 1 - y;
+        
+        const pixelIndex = (y * width + x) * 4;
+        
+        // ボリュームデータ内の位置を計算
+        let volumeIndex;
+        
+        // 各スライスタイプに応じた3次元→1次元インデックス変換
+        const dimX = dimensions[0];
+        const dimY = dimensions[1];
+        const dimZ = dimensions[2];
+        const slicePos = currentSliceIndex;
+        
+        switch (sliceType) {
+          case 'sagittal': // YZ平面 (x固定)
+            // x=slicePos, y=flippedX, z=flippedY としてインデックスを計算
+            volumeIndex = slicePos + flippedX * dimX + flippedY * dimX * dimY;
+            break;
+          case 'coronal': // XZ平面 (y固定)
+            // x=flippedX, y=slicePos, z=flippedY としてインデックスを計算
+            volumeIndex = flippedX + slicePos * dimX + flippedY * dimX * dimY;
+            break;
+          case 'axial': // XY平面 (z固定)
+            // x=flippedX, y=flippedY, z=slicePos としてインデックスを計算
+            volumeIndex = flippedX + flippedY * dimX + slicePos * dimX * dimY;
+            break;
+        }
+        
+        // インデックスが範囲外でないか確認
+        if (volumeIndex >= 0 && volumeIndex < mniVolume.length) {
+          // MNIデータの値を取得
+          const mniValue = mniVolume[volumeIndex];
+          
+          // 閾値以上の値のみ表示（背景を除去）
+          if (mniValue > 10) {
+            // コントラスト調整
+            const adjustedValue = Math.min(255, Math.floor(mniValue * scaleFactor));
+            
+            // グレースケールで表示
+            data[pixelIndex] = adjustedValue;
+            data[pixelIndex + 1] = adjustedValue;
+            data[pixelIndex + 2] = adjustedValue;
+            data[pixelIndex + 3] = 255; // 完全不透明
+          } else {
+            // 背景は透明
+            data[pixelIndex] = 0;
+            data[pixelIndex + 1] = 0;
+            data[pixelIndex + 2] = 0;
+            data[pixelIndex + 3] = 0;
+          }
+        } else {
+          // 範囲外のインデックスは透明に
+          data[pixelIndex] = 0;
+          data[pixelIndex + 1] = 0;
+          data[pixelIndex + 2] = 0;
+          data[pixelIndex + 3] = 0;
+        }
+      }
+    }
+    
+    // イメージデータの描画
+    ctx.putImageData(imageData, 0, 0);
+    
+    // キャンバスをコンテナに合わせてスケーリング
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.clientWidth;
+      const containerHeight = containerRef.current.clientHeight;
+      const scale = Math.min(containerWidth / width, containerHeight / height);
+      
+      canvas.style.width = `${width * scale}px`;
+      canvas.style.height = `${height * scale}px`;
+    }
+  }, [mniVolume, dimensions, currentSliceIndex, sliceType, maxIntensity]);
+
+  // キャンバスクリックイベントハンドラ
+  const handleCanvasClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    // 一時的に無効化（MNIのみの表示に集中するため）
+    return;
+  };
+
+  // マウスホイールイベントハンドラ
+  const handleWheel = (e: React.WheelEvent<HTMLCanvasElement>) => {
+    e.preventDefault(); // ページ全体のスクロールを防止
+    
+    // ホイールの方向に応じてスライスインデックスを増減（感度を調整）
+    // Math.sign()を使用して、小さな変化でも方向を検出
+    const delta = Math.sign(e.deltaY);
+    const maxIndex = dimensions[getSliceAxis()] - 1;
+    const newIndex = Math.min(Math.max(0, currentSliceIndex + delta), maxIndex);
+    
+    setCurrentSliceIndex(newIndex);
+  };
+
+  // スライダーの変更イベントハンドラ
+  const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newIndex = parseInt(e.target.value, 10);
+    setCurrentSliceIndex(newIndex);
+  };
+
+  // マウス移動イベントハンドラ
+  const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    if (!canvasRef.current || !mniData || dimensions[0] === 0) return;
+    
+    const canvas = canvasRef.current;
+    const rect = canvas.getBoundingClientRect();
+    
+    // キャンバス上の相対位置を計算
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    
+    const x = Math.floor((e.clientX - rect.left) * scaleX);
+    const y = Math.floor((e.clientY - rect.top) * scaleY);
+    
+    // 画像が180度回転しているため、座標を反転
+    const width = canvas.width;
+    const height = canvas.height;
+    const flippedX = width - 1 - x;
+    const flippedY = height - 1 - y;
+    
+    // 各スライスタイプに応じたVoxel座標を計算
+    let voxelX, voxelY, voxelZ;
+    
+    switch (sliceType) {
+      case 'sagittal': // YZ平面 (x固定)
+        voxelX = currentSliceIndex;
+        voxelY = flippedX;
+        voxelZ = flippedY;
+        break;
+      case 'coronal': // XZ平面 (y固定)
+        voxelX = flippedX;
+        voxelY = currentSliceIndex;
+        voxelZ = flippedY;
+        break;
+      case 'axial': // XY平面 (z固定)
+      default:
+        voxelX = flippedX;
+        voxelY = flippedY;
+        voxelZ = currentSliceIndex;
+        break;
+    }
+    
+    // 範囲外チェック
+    if (
+      voxelX < 0 || voxelX >= dimensions[0] ||
+      voxelY < 0 || voxelY >= dimensions[1] ||
+      voxelZ < 0 || voxelZ >= dimensions[2]
+    ) {
+      setCursorPosition(null);
+      return;
+    }
+    
+    // Voxel座標からMNI座標への変換
+    // MNI座標系は通常、原点が脳の中心付近にあり、単位はミリメートル
+    // 変換行列はNIfTIヘッダーのsform/qformから取得するのが理想的ですが、
+    // 簡易的な実装として、ピクセル寸法を使用した線形変換を行います
+    
+    // ピクセル寸法を取得
+    const pixDims = [mniData.pixDims[1], mniData.pixDims[2], mniData.pixDims[3]];
+    
+    // MNI空間の原点（通常は脳の中心付近）
+    // 実際のNIfTIファイルでは、sform/qformの4列目に格納されています
+    // ここでは簡易的に、ボリュームの中心を原点とします
+    const originX = -(dimensions[0] / 2) * pixDims[0];
+    const originY = -(dimensions[1] / 2) * pixDims[1];
+    const originZ = -(dimensions[2] / 2) * pixDims[2];
+    
+    // Voxel座標からMNI座標への変換
+    // MNI座標系では、X軸は左から右、Y軸は後ろから前、Z軸は下から上
+    const mniX = originX + voxelX * pixDims[0];
+    const mniY = originY + voxelY * pixDims[1];
+    const mniZ = originZ + voxelZ * pixDims[2];
+    
+    setCursorPosition({
+      voxel: [voxelX, voxelY, voxelZ],
+      mni: [mniX, mniY, mniZ]
+    });
+  };
+  
+  // マウス離脱イベントハンドラ
+  const handleMouseLeave = () => {
+    setCursorPosition(null);
+  };
+
+  return (
+    <div className="relative w-full h-[300px] flex flex-col">
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 bg-opacity-75 z-10">
+          <div className="text-center">
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mb-2"></div>
+            <p>脳データを読み込み中...</p>
+          </div>
+        </div>
+      )}
+      
+      {error && (
+        <div className="absolute inset-0 flex items-center justify-center bg-red-100 bg-opacity-75 z-10">
+          <div className="text-center text-red-600 p-4">
+            <p className="font-bold">エラー</p>
+            <p>{error}</p>
+          </div>
+        </div>
+      )}
+      
+      <div className="text-center mb-2">
+        <h3 className="font-semibold">
+          {sliceType === 'axial' ? '水平断面' : sliceType === 'coronal' ? '冠状断面' : '矢状断面'}
+        </h3>
+      </div>
+      
+      <div ref={containerRef} className="flex-1 flex items-center justify-center relative">
+        <canvas 
+          ref={canvasRef} 
+          onClick={handleCanvasClick}
+          onWheel={handleWheel}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className="max-w-full max-h-full cursor-ns-resize"
+          title="マウスホイールでスクロールするとスライス位置を変更できます"
+        />
+      </div>
+      
+      {/* 座標表示を脳画像の下に配置 */}
+      <div className="h-8 flex items-center justify-center">
+        {cursorPosition ? (
+          <div className="text-xs text-gray-700 font-medium">
+            <span>Voxel: [{cursorPosition.voxel[0]}, {cursorPosition.voxel[1]}, {cursorPosition.voxel[2]}]</span>
+            <span className="mx-2">|</span>
+            <span>MNI: [{cursorPosition.mni[0].toFixed(1)}, {cursorPosition.mni[1].toFixed(1)}, {cursorPosition.mni[2].toFixed(1)}] mm</span>
+          </div>
+        ) : (
+          <div className="h-4"></div> {/* 座標がない時の高さ確保 */}
+        )}
+      </div>
+      
+      {!isLoading && dimensions[getSliceAxis()] > 0 && (
+        <div className="mt-1 px-4">
+          <div className="flex justify-between text-xs text-gray-600">
+            <span>スライス: {currentSliceIndex}</span>
+          </div>
+          <input
+            type="range"
+            min="0"
+            max={dimensions[getSliceAxis()] - 1}
+            value={currentSliceIndex}
+            onChange={handleSliderChange}
+            className="w-full"
+          />
+          <div className="flex justify-between text-xs text-gray-500">
+            <span>0</span>
+            <span>{dimensions[getSliceAxis()] - 1}</span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+} 

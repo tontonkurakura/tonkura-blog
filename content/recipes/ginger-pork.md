@@ -40,7 +40,7 @@ ingredients:
         amount: 4個
       - name: レモン
         amount: 1/4個
-lastmod: '2025-03-02'
+lastmod: '2025-03-03'
 ---
 
 ## 下準備

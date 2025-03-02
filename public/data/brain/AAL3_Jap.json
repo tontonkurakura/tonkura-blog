@@ -1,0 +1,1022 @@
+[
+  {
+    "englishLabel": "Precentral_L",
+    "japaneseLabel": "中心前回",
+    "laterality": "左",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Precentral_R",
+    "japaneseLabel": "中心前回",
+    "laterality": "右",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Frontal_Sup_2_L",
+    "japaneseLabel": "上前頭回2",
+    "laterality": "左",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Frontal_Sup_2_R",
+    "japaneseLabel": "上前頭回2",
+    "laterality": "右",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Frontal_Mid_2_L",
+    "japaneseLabel": "中前頭回2",
+    "laterality": "左",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Frontal_Mid_2_R",
+    "japaneseLabel": "中前頭回2",
+    "laterality": "右",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Frontal_Inf_Oper_L",
+    "japaneseLabel": "下前頭回 (弁蓋部)",
+    "laterality": "左",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Frontal_Inf_Oper_R",
+    "japaneseLabel": "下前頭回 (弁蓋部)",
+    "laterality": "右",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Frontal_Inf_Tri_L",
+    "japaneseLabel": "下前頭回 (三角部)",
+    "laterality": "左",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Frontal_Inf_Tri_R",
+    "japaneseLabel": "下前頭回 (三角部)",
+    "laterality": "右",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Frontal_Inf_Orb_2_L",
+    "japaneseLabel": "下前頭回 (眼窩部2)",
+    "laterality": "左",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Frontal_Inf_Orb_2_R",
+    "japaneseLabel": "下前頭回 (眼窩部2)",
+    "laterality": "右",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Rolandic_Oper_L",
+    "japaneseLabel": "ローランド裂弁蓋部",
+    "laterality": "左",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Rolandic_Oper_R",
+    "japaneseLabel": "ローランド裂弁蓋部",
+    "laterality": "右",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Supp_Motor_Area_L",
+    "japaneseLabel": "補足運動野",
+    "laterality": "左",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Supp_Motor_Area_R",
+    "japaneseLabel": "補足運動野",
+    "laterality": "右",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Olfactory_L",
+    "japaneseLabel": "嗅皮質",
+    "laterality": "左",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "Olfactory_R",
+    "japaneseLabel": "嗅皮質",
+    "laterality": "右",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "Frontal_Sup_Medial_L",
+    "japaneseLabel": "内側上前頭回",
+    "laterality": "左",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Frontal_Sup_Medial_R",
+    "japaneseLabel": "内側上前頭回",
+    "laterality": "右",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Frontal_Med_Orb_L",
+    "japaneseLabel": "内側前頭眼窩野",
+    "laterality": "左",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Frontal_Med_Orb_R",
+    "japaneseLabel": "内側前頭眼窩野",
+    "laterality": "右",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Rectus_L",
+    "japaneseLabel": "直回",
+    "laterality": "左",
+    "category": "未分類"
+  },
+  {
+    "englishLabel": "Rectus_R",
+    "japaneseLabel": "直回",
+    "laterality": "右",
+    "category": "未分類"
+  },
+  {
+    "englishLabel": "OFCmed_L",
+    "japaneseLabel": "内側眼窩前頭皮質",
+    "laterality": "左",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "OFCmed_R",
+    "japaneseLabel": "内側眼窩前頭皮質",
+    "laterality": "右",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "OFCant_L",
+    "japaneseLabel": "前眼窩前頭皮質",
+    "laterality": "左",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "OFCant_R",
+    "japaneseLabel": "前眼窩前頭皮質",
+    "laterality": "右",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "OFCpost_L",
+    "japaneseLabel": "後眼窩前頭皮質",
+    "laterality": "左",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "OFCpost_R",
+    "japaneseLabel": "後眼窩前頭皮質",
+    "laterality": "右",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "OFClat_L",
+    "japaneseLabel": "外側眼窩前頭皮質",
+    "laterality": "左",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "OFClat_R",
+    "japaneseLabel": "外側眼窩前頭皮質",
+    "laterality": "右",
+    "category": "前頭葉"
+  },
+  {
+    "englishLabel": "Insula_L",
+    "japaneseLabel": "島皮質",
+    "laterality": "左",
+    "category": "島皮質"
+  },
+  {
+    "englishLabel": "Insula_R",
+    "japaneseLabel": "島皮質",
+    "laterality": "右",
+    "category": "島皮質"
+  },
+  {
+    "englishLabel": "Cingulate_Ant_L",
+    "japaneseLabel": "前帯状回",
+    "laterality": "左",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "Cingulate_Ant_R",
+    "japaneseLabel": "前帯状回",
+    "laterality": "右",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "Cingulate_Mid_L",
+    "japaneseLabel": "中帯状回",
+    "laterality": "左",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "Cingulate_Mid_R",
+    "japaneseLabel": "中帯状回",
+    "laterality": "右",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "Cingulate_Post_L",
+    "japaneseLabel": "後帯状回",
+    "laterality": "左",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "Cingulate_Post_R",
+    "japaneseLabel": "後帯状回",
+    "laterality": "右",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "Hippocampus_L",
+    "japaneseLabel": "海馬",
+    "laterality": "左",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "Hippocampus_R",
+    "japaneseLabel": "海馬",
+    "laterality": "右",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "ParaHippocampal_L",
+    "japaneseLabel": "傍海馬回",
+    "laterality": "左",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "ParaHippocampal_R",
+    "japaneseLabel": "傍海馬回",
+    "laterality": "右",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "Amygdala_L",
+    "japaneseLabel": "扁桃体",
+    "laterality": "左",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "Amygdala_R",
+    "japaneseLabel": "扁桃体",
+    "laterality": "右",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "Calcarine_L",
+    "japaneseLabel": "鳥距溝",
+    "laterality": "左",
+    "category": "後頭葉"
+  },
+  {
+    "englishLabel": "Calcarine_R",
+    "japaneseLabel": "鳥距溝",
+    "laterality": "右",
+    "category": "後頭葉"
+  },
+  {
+    "englishLabel": "Cuneus_L",
+    "japaneseLabel": "楔前部",
+    "laterality": "左",
+    "category": "後頭葉"
+  },
+  {
+    "englishLabel": "Cuneus_R",
+    "japaneseLabel": "楔前部",
+    "laterality": "右",
+    "category": "後頭葉"
+  },
+  {
+    "englishLabel": "Lingual_L",
+    "japaneseLabel": "舌状回",
+    "laterality": "左",
+    "category": "後頭葉"
+  },
+  {
+    "englishLabel": "Lingual_R",
+    "japaneseLabel": "舌状回",
+    "laterality": "右",
+    "category": "後頭葉"
+  },
+  {
+    "englishLabel": "Occipital_Sup_L",
+    "japaneseLabel": "上後頭回",
+    "laterality": "左",
+    "category": "後頭葉"
+  },
+  {
+    "englishLabel": "Occipital_Sup_R",
+    "japaneseLabel": "上後頭回",
+    "laterality": "右",
+    "category": "後頭葉"
+  },
+  {
+    "englishLabel": "Occipital_Mid_L",
+    "japaneseLabel": "中後頭回",
+    "laterality": "左",
+    "category": "後頭葉"
+  },
+  {
+    "englishLabel": "Occipital_Mid_R",
+    "japaneseLabel": "中後頭回",
+    "laterality": "右",
+    "category": "後頭葉"
+  },
+  {
+    "englishLabel": "Occipital_Inf_L",
+    "japaneseLabel": "下後頭回",
+    "laterality": "左",
+    "category": "後頭葉"
+  },
+  {
+    "englishLabel": "Occipital_Inf_R",
+    "japaneseLabel": "下後頭回",
+    "laterality": "右",
+    "category": "後頭葉"
+  },
+  {
+    "englishLabel": "Fusiform_L",
+    "japaneseLabel": "紡錘状回",
+    "laterality": "左",
+    "category": "後頭葉"
+  },
+  {
+    "englishLabel": "Fusiform_R",
+    "japaneseLabel": "紡錘状回",
+    "laterality": "右",
+    "category": "後頭葉"
+  },
+  {
+    "englishLabel": "Postcentral_L",
+    "japaneseLabel": "中心後回",
+    "laterality": "左",
+    "category": "頭頂葉"
+  },
+  {
+    "englishLabel": "Postcentral_R",
+    "japaneseLabel": "中心後回",
+    "laterality": "右",
+    "category": "頭頂葉"
+  },
+  {
+    "englishLabel": "Parietal_Sup_L",
+    "japaneseLabel": "上頭頂小葉",
+    "laterality": "左",
+    "category": "頭頂葉"
+  },
+  {
+    "englishLabel": "Parietal_Sup_R",
+    "japaneseLabel": "上頭頂小葉",
+    "laterality": "右",
+    "category": "頭頂葉"
+  },
+  {
+    "englishLabel": "Parietal_Inf_L",
+    "japaneseLabel": "下頭頂小葉",
+    "laterality": "左",
+    "category": "頭頂葉"
+  },
+  {
+    "englishLabel": "Parietal_Inf_R",
+    "japaneseLabel": "下頭頂小葉",
+    "laterality": "右",
+    "category": "頭頂葉"
+  },
+  {
+    "englishLabel": "SupraMarginal_L",
+    "japaneseLabel": "縁上回",
+    "laterality": "左",
+    "category": "頭頂葉"
+  },
+  {
+    "englishLabel": "SupraMarginal_R",
+    "japaneseLabel": "縁上回",
+    "laterality": "右",
+    "category": "頭頂葉"
+  },
+  {
+    "englishLabel": "Angular_L",
+    "japaneseLabel": "角回",
+    "laterality": "左",
+    "category": "頭頂葉"
+  },
+  {
+    "englishLabel": "Angular_R",
+    "japaneseLabel": "角回",
+    "laterality": "右",
+    "category": "頭頂葉"
+  },
+  {
+    "englishLabel": "Precuneus_L",
+    "japaneseLabel": "楔前部",
+    "laterality": "左",
+    "category": "頭頂葉"
+  },
+  {
+    "englishLabel": "Precuneus_R",
+    "japaneseLabel": "楔前部",
+    "laterality": "右",
+    "category": "頭頂葉"
+  },
+  {
+    "englishLabel": "Paracentral_Lobule_L",
+    "japaneseLabel": "中心傍小葉",
+    "laterality": "左",
+    "category": "頭頂葉"
+  },
+  {
+    "englishLabel": "Paracentral_Lobule_R",
+    "japaneseLabel": "中心傍小葉",
+    "laterality": "右",
+    "category": "頭頂葉"
+  },
+  {
+    "englishLabel": "Caudate_L",
+    "japaneseLabel": "尾状核",
+    "laterality": "左",
+    "category": "大脳基底核"
+  },
+  {
+    "englishLabel": "Caudate_R",
+    "japaneseLabel": "尾状核",
+    "laterality": "右",
+    "category": "大脳基底核"
+  },
+  {
+    "englishLabel": "Putamen_L",
+    "japaneseLabel": "被殻",
+    "laterality": "左",
+    "category": "大脳基底核"
+  },
+  {
+    "englishLabel": "Putamen_R",
+    "japaneseLabel": "被殻",
+    "laterality": "右",
+    "category": "大脳基底核"
+  },
+  {
+    "englishLabel": "Pallidum_L",
+    "japaneseLabel": "淡蒼球",
+    "laterality": "左",
+    "category": "大脳基底核"
+  },
+  {
+    "englishLabel": "Pallidum_R",
+    "japaneseLabel": "淡蒼球",
+    "laterality": "右",
+    "category": "大脳基底核"
+  },
+  {
+    "englishLabel": "Thalamus_L",
+    "japaneseLabel": "視床",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thalamus_R",
+    "japaneseLabel": "視床",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Heschl_L",
+    "japaneseLabel": "ヘッシュ回",
+    "laterality": "左",
+    "category": "側頭葉"
+  },
+  {
+    "englishLabel": "Heschl_R",
+    "japaneseLabel": "ヘッシュ回",
+    "laterality": "右",
+    "category": "側頭葉"
+  },
+  {
+    "englishLabel": "Temporal_Sup_L",
+    "japaneseLabel": "上側頭回",
+    "laterality": "左",
+    "category": "側頭葉"
+  },
+  {
+    "englishLabel": "Temporal_Sup_R",
+    "japaneseLabel": "上側頭回",
+    "laterality": "右",
+    "category": "側頭葉"
+  },
+  {
+    "englishLabel": "Temporal_Pole_Sup_L",
+    "japaneseLabel": "上側頭極",
+    "laterality": "左",
+    "category": "側頭葉"
+  },
+  {
+    "englishLabel": "Temporal_Pole_Sup_R",
+    "japaneseLabel": "上側頭極",
+    "laterality": "右",
+    "category": "側頭葉"
+  },
+  {
+    "englishLabel": "Temporal_Mid_L",
+    "japaneseLabel": "中側頭回",
+    "laterality": "左",
+    "category": "側頭葉"
+  },
+  {
+    "englishLabel": "Temporal_Mid_R",
+    "japaneseLabel": "中側頭回",
+    "laterality": "右",
+    "category": "側頭葉"
+  },
+  {
+    "englishLabel": "Temporal_Pole_Mid_L",
+    "japaneseLabel": "中側頭極",
+    "laterality": "左",
+    "category": "側頭葉"
+  },
+  {
+    "englishLabel": "Temporal_Pole_Mid_R",
+    "japaneseLabel": "中側頭極",
+    "laterality": "右",
+    "category": "側頭葉"
+  },
+  {
+    "englishLabel": "Temporal_Inf_L",
+    "japaneseLabel": "下側頭回",
+    "laterality": "左",
+    "category": "側頭葉"
+  },
+  {
+    "englishLabel": "Temporal_Inf_R",
+    "japaneseLabel": "下側頭回",
+    "laterality": "右",
+    "category": "側頭葉"
+  },
+  {
+    "englishLabel": "Cerebellum_Crus1_L",
+    "japaneseLabel": "小脳Crus1",
+    "laterality": "左",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_Crus1_R",
+    "japaneseLabel": "小脳Crus1",
+    "laterality": "右",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_Crus2_L",
+    "japaneseLabel": "小脳Crus2",
+    "laterality": "左",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_Crus2_R",
+    "japaneseLabel": "小脳Crus2",
+    "laterality": "右",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_3_L",
+    "japaneseLabel": "小脳3",
+    "laterality": "左",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_3_R",
+    "japaneseLabel": "小脳3",
+    "laterality": "右",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_4_5_L",
+    "japaneseLabel": "小脳4_5",
+    "laterality": "左",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_4_5_R",
+    "japaneseLabel": "小脳4_5",
+    "laterality": "右",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_6_L",
+    "japaneseLabel": "小脳6",
+    "laterality": "左",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_6_R",
+    "japaneseLabel": "小脳6",
+    "laterality": "右",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_7b_L",
+    "japaneseLabel": "小脳7b",
+    "laterality": "左",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_7b_R",
+    "japaneseLabel": "小脳7b",
+    "laterality": "右",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_8_L",
+    "japaneseLabel": "小脳8",
+    "laterality": "左",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_8_R",
+    "japaneseLabel": "小脳8",
+    "laterality": "右",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_9_L",
+    "japaneseLabel": "小脳9",
+    "laterality": "左",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_9_R",
+    "japaneseLabel": "小脳9",
+    "laterality": "右",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_10_L",
+    "japaneseLabel": "小脳10",
+    "laterality": "左",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Cerebellum_10_R",
+    "japaneseLabel": "小脳10",
+    "laterality": "右",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Vermis_1_2",
+    "japaneseLabel": "小脳虫部 1_2",
+    "laterality": "",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Vermis_3",
+    "japaneseLabel": "小脳虫部 3",
+    "laterality": "",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Vermis_4_5",
+    "japaneseLabel": "小脳虫部 4_5",
+    "laterality": "",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Vermis_6",
+    "japaneseLabel": "小脳虫部 6",
+    "laterality": "",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Vermis_7",
+    "japaneseLabel": "小脳虫部 7",
+    "laterality": "",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Vermis_8",
+    "japaneseLabel": "小脳虫部 8",
+    "laterality": "",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Vermis_9",
+    "japaneseLabel": "小脳虫部 9",
+    "laterality": "",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Vermis_10",
+    "japaneseLabel": "小脳虫部 10",
+    "laterality": "",
+    "category": "小脳"
+  },
+  {
+    "englishLabel": "Thal_AV_L",
+    "japaneseLabel": "前腹側視床核",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_AV_R",
+    "japaneseLabel": "前腹側視床核",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_LP_L",
+    "japaneseLabel": "外側後視床核",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_LP_R",
+    "japaneseLabel": "外側後視床核",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_VA_L",
+    "japaneseLabel": "腹側前視床核",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_VA_R",
+    "japaneseLabel": "腹側前視床核",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_VL_L",
+    "japaneseLabel": "腹側外側視床核",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_VL_R",
+    "japaneseLabel": "腹側外側視床核",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_VPL_L",
+    "japaneseLabel": "腹側後外側視床核",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_VPL_R",
+    "japaneseLabel": "腹側後外側視床核",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_IL_L",
+    "japaneseLabel": "内側視床髄板核",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_IL_R",
+    "japaneseLabel": "内側視床髄板核",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_Re_L",
+    "japaneseLabel": "視床正中核",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_Re_R",
+    "japaneseLabel": "視床正中核",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_MDm_L",
+    "japaneseLabel": "内側背側視床核 (内側部)",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_MDm_R",
+    "japaneseLabel": "内側背側視床核 (内側部)",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_MDl_L",
+    "japaneseLabel": "内側背側視床核 (外側部)",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_MDl_R",
+    "japaneseLabel": "内側背側視床核 (外側部)",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_LGN_L",
+    "japaneseLabel": "外側膝状体核",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_LGN_R",
+    "japaneseLabel": "外側膝状体核",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_MGN_L",
+    "japaneseLabel": "内側膝状体核",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_MGN_R",
+    "japaneseLabel": "内側膝状体核",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_PuI_L",
+    "japaneseLabel": "視床枕下部核",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_PuI_R",
+    "japaneseLabel": "視床枕下部核",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_PuM_L",
+    "japaneseLabel": "視床枕内側部核",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_PuM_R",
+    "japaneseLabel": "視床枕内側部核",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_PuA_L",
+    "japaneseLabel": "視床枕前部核",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_PuA_R",
+    "japaneseLabel": "視床枕前部核",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_PuL_L",
+    "japaneseLabel": "視床枕外側部核",
+    "laterality": "左",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "Thal_PuL_R",
+    "japaneseLabel": "視床枕外側部核",
+    "laterality": "右",
+    "category": "間脳"
+  },
+  {
+    "englishLabel": "ACC_sub_L",
+    "japaneseLabel": "前帯状皮質 (下部)",
+    "laterality": "左",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "ACC_sub_R",
+    "japaneseLabel": "前帯状皮質 (下部)",
+    "laterality": "右",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "ACC_pre_L",
+    "japaneseLabel": "前帯状皮質 (前部)",
+    "laterality": "左",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "ACC_pre_R",
+    "japaneseLabel": "前帯状皮質 (前部)",
+    "laterality": "右",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "ACC_sup_L",
+    "japaneseLabel": "前帯状皮質 (上部)",
+    "laterality": "左",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "ACC_sup_R",
+    "japaneseLabel": "前帯状皮質 (上部)",
+    "laterality": "右",
+    "category": "大脳辺縁系"
+  },
+  {
+    "englishLabel": "N_Acc_L",
+    "japaneseLabel": "側坐核",
+    "laterality": "左",
+    "category": "大脳基底核"
+  },
+  {
+    "englishLabel": "N_Acc_R",
+    "japaneseLabel": "側坐核",
+    "laterality": "右",
+    "category": "大脳基底核"
+  },
+  {
+    "englishLabel": "VTA_L",
+    "japaneseLabel": "腹側被蓋野",
+    "laterality": "左",
+    "category": "脳幹"
+  },
+  {
+    "englishLabel": "VTA_R",
+    "japaneseLabel": "腹側被蓋野",
+    "laterality": "右",
+    "category": "脳幹"
+  },
+  {
+    "englishLabel": "SN_pc_L",
+    "japaneseLabel": "黒質 (緻密部)",
+    "laterality": "左",
+    "category": "脳幹"
+  },
+  {
+    "englishLabel": "SN_pc_R",
+    "japaneseLabel": "黒質 (緻密部)",
+    "laterality": "右",
+    "category": "脳幹"
+  },
+  {
+    "englishLabel": "SN_pr_L",
+    "japaneseLabel": "黒質 (網様部)",
+    "laterality": "左",
+    "category": "脳幹"
+  },
+  {
+    "englishLabel": "SN_pr_R",
+    "japaneseLabel": "黒質 (網様部)",
+    "laterality": "右",
+    "category": "脳幹"
+  },
+  {
+    "englishLabel": "Red_N_L",
+    "japaneseLabel": "赤核",
+    "laterality": "左",
+    "category": "脳幹"
+  },
+  {
+    "englishLabel": "Red_N_R",
+    "japaneseLabel": "赤核",
+    "laterality": "右",
+    "category": "脳幹"
+  },
+  {
+    "englishLabel": "LC_L",
+    "japaneseLabel": "青斑核",
+    "laterality": "左",
+    "category": "脳幹"
+  },
+  {
+    "englishLabel": "LC_R",
+    "japaneseLabel": "青斑核",
+    "laterality": "右",
+    "category": "脳幹"
+  },
+  {
+    "englishLabel": "Raphe_D",
+    "japaneseLabel": "縫線核 (背側)",
+    "laterality": "",
+    "category": "脳幹"
+  },
+  {
+    "englishLabel": "Raphe_M",
+    "japaneseLabel": "縫線核 (正中)",
+    "laterality": "",
+    "category": "脳幹"
+  }
+]

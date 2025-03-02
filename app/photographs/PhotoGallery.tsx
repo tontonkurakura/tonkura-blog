@@ -27,10 +27,12 @@ function SimpleImageModal({
   }, [onClose]);
 
   return (
-    <button 
+    <div 
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 w-full h-full" 
       onClick={onClose}
-      aria-label="画像詳細を閉じる"
+      role="dialog"
+      aria-modal="true"
+      aria-label="画像詳細"
     >
       <div 
         className="relative max-w-[95vw] max-h-[95vh] flex flex-col md:flex-row gap-4 items-center" 
@@ -72,7 +74,7 @@ function SimpleImageModal({
           </div>
         )}
       </div>
-    </button>
+    </div>
   );
 }
 
