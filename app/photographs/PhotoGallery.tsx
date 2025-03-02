@@ -2,13 +2,80 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import type { Photo } from "@/types/photo";
 import { PHOTO_HEIGHTS } from "@/constants/photo";
 
-const ImageModal = dynamic(() => import("@/components/ImageModal"), {
-  loading: () => <div>Loading...</div>,
-});
+// シンプルなモーダルコンポーネント
+function SimpleImageModal({ 
+  src, 
+  alt, 
+  exif, 
+  onClose 
+}: { 
+  src: string; 
+  alt?: string; 
+  exif: {
+    date?: string;
+    camera?: string;
+    lens?: string;
+  } | null; 
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    // ESCキーでモーダルを閉じる
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [onClose]);
+
+  return (
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90" 
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="画像詳細"
+      onKeyDown={(e) => {
+        if (e.key === 'Escape') onClose();
+      }}
+      tabIndex={0}
+    >
+      <div 
+        className="relative max-w-[90vw] max-h-[90vh]" 
+        onClick={e => e.stopPropagation()}
+        role="presentation"
+      >
+        <div className="max-h-[85vh] w-auto">
+          <Image
+            src={src}
+            alt={alt || "Photo"}
+            width={1200}
+            height={800}
+            className="object-contain"
+          />
+        </div>
+        <button
+          className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70"
+          onClick={onClose}
+          aria-label="閉じる"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        {exif && (
+          <div className="absolute bottom-4 left-4 text-white bg-black/50 p-2 rounded text-sm">
+            {exif.date && <p>撮影日: {new Date(exif.date).toLocaleDateString()}</p>}
+            {exif.camera && <p>カメラ: {exif.camera}</p>}
+            {exif.lens && <p>レンズ: {exif.lens}</p>}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 interface PhotoGalleryProps {
   initialPhotos: Photo[];
@@ -229,7 +296,7 @@ export default function PhotoGallery({
       </div>
 
       {selectedPhoto && (
-        <ImageModal
+        <SimpleImageModal
           src={selectedPhoto.path}
           alt={selectedPhoto.description}
           exif={selectedPhoto.exif}
