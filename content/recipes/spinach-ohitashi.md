@@ -28,7 +28,7 @@ ingredients:
         amount: 大さじ1
       - name: みりん
         amount: 小さじ1
-lastmod: '2025-02-27'
+lastmod: '2025-03-02'
 ---
 
 ## 下準備

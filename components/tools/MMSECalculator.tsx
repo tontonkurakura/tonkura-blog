@@ -49,120 +49,39 @@ export default function MMSECalculator() {
   };
 
   const calculateScore = (): number => {
-    const timeScore =
-      scores.time_year +
-      scores.time_season +
-      scores.time_day +
-      scores.time_month +
-      scores.time_date;
-
-    const placeScore =
-      scores.place_prefecture +
-      scores.place_city +
-      scores.place_hospital +
-      scores.place_floor +
-      scores.place_region;
-
-    const recallScore = scores.recall_1 + scores.recall_2 + scores.recall_3;
-
-    const calculationScore =
-      scores.calculation_1 +
-      scores.calculation_2 +
-      scores.calculation_3 +
-      scores.calculation_4 +
-      scores.calculation_5;
-
-    const delayedRecallScore =
-      scores.delayed_recall_1 +
-      scores.delayed_recall_2 +
-      scores.delayed_recall_3;
-
-    const namingScore = scores.naming_1 + scores.naming_2;
-
-    const followCommandScore =
-      scores.follow_command_1 +
-      scores.follow_command_2 +
-      scores.follow_command_3;
-
-    return (
-      timeScore +
-      placeScore +
-      recallScore +
-      calculationScore +
-      delayedRecallScore +
-      namingScore +
-      scores.repeat_sentence +
-      followCommandScore +
-      scores.read_follow +
-      scores.write_sentence +
-      scores.copy_figure
-    );
+    return Object.values(scores).reduce((acc, curr) => acc + curr, 0);
   };
 
   // 各カテゴリーのスコアを計算する関数
   const calculateCategoryScores = () => {
-    const timeScore =
-      scores.time_year +
-      scores.time_season +
-      scores.time_day +
-      scores.time_month +
-      scores.time_date;
-
-    const placeScore =
-      scores.place_prefecture +
-      scores.place_city +
-      scores.place_hospital +
-      scores.place_floor +
-      scores.place_region;
-
-    const recallScore = scores.recall_1 + scores.recall_2 + scores.recall_3;
-
-    const calculationScore =
-      scores.calculation_1 +
-      scores.calculation_2 +
-      scores.calculation_3 +
-      scores.calculation_4 +
-      scores.calculation_5;
-
-    const delayedRecallScore =
-      scores.delayed_recall_1 +
-      scores.delayed_recall_2 +
-      scores.delayed_recall_3;
-
-    const namingScore = scores.naming_1 + scores.naming_2;
-
-    const followCommandScore =
-      scores.follow_command_1 +
-      scores.follow_command_2 +
-      scores.follow_command_3;
-
-    const repeatSentenceScore = scores.repeat_sentence;
-    const readFollowScore = scores.read_follow;
-    const writeSentenceScore = scores.write_sentence;
-    const copyFigureScore = scores.copy_figure;
-
     return {
-      timeScore,
-      placeScore,
-      recallScore,
-      calculationScore,
-      delayedRecallScore,
-      namingScore,
-      followCommandScore,
-      repeatSentenceScore,
-      readFollowScore,
-      writeSentenceScore,
-      copyFigureScore,
+      timeOrientation:
+        scores.time_year +
+        scores.time_season +
+        scores.time_day +
+        scores.time_month +
+        scores.time_date,
+      placeOrientation:
+        scores.place_prefecture +
+        scores.place_city +
+        scores.place_hospital +
+        scores.place_floor +
+        scores.place_region,
+      memory: scores.memory_1 + scores.memory_2 + scores.memory_3,
+      attention:
+        scores.attention_1 +
+        scores.attention_2 +
+        scores.attention_3 +
+        scores.attention_4 +
+        scores.attention_5,
+      recall: scores.recall_1 + scores.recall_2 + scores.recall_3,
+      naming: scores.naming_1 + scores.naming_2,
+      repeat: scores.repeat,
+      command: scores.command_1 + scores.command_2 + scores.command_3,
+      read: scores.read,
+      write: scores.write,
+      copy: scores.copy,
     };
-  };
-
-  // 選択された項目数を計算
-  const calculateSelectedItems = (): number => {
-    let count = 0;
-    Object.values(scores).forEach((score) => {
-      if (score > 0) count++;
-    });
-    return count;
   };
 
   function ScoreButton({
@@ -191,25 +110,24 @@ export default function MMSECalculator() {
   }
 
   const totalScore = calculateScore();
-  const selectedItems = calculateSelectedItems();
   const categoryScores = calculateCategoryScores();
 
   // スコアに基づいて色を決定する関数
   const getScoreColorClass = () => {
-    if (totalScore >= 27) return "bg-blue-600";
-    if (totalScore >= 24 && totalScore < 27) return "bg-green-600";
-    if (totalScore >= 20 && totalScore < 24) return "bg-yellow-600";
+    if (totalScore > 27) return "bg-blue-600";
+    if (totalScore > 23 && totalScore <= 27) return "bg-green-600";
+    if (totalScore >= 20 && totalScore <= 23) return "bg-yellow-600";
     if (totalScore >= 10 && totalScore < 20) return "bg-orange-600";
     return "bg-red-600";
   };
 
   // 重症度のテキストを取得する関数
   const getSeverityText = () => {
-    if (totalScore >= 27) return "正常";
-    if (totalScore >= 24 && totalScore < 27) return "軽度認知機能障害の疑い";
-    if (totalScore >= 20 && totalScore < 24) return "軽度認知症";
-    if (totalScore >= 10 && totalScore < 20) return "中等度認知症";
-    return "重度認知症";
+    if (totalScore > 27) return "正常";
+    if (totalScore > 23 && totalScore <= 27) return "軽度認知障害(MCI)の疑い";
+    if (totalScore >= 20 && totalScore <= 23) return "軽度認知症の疑い";
+    if (totalScore >= 10 && totalScore < 20) return "中等度認知症の疑い";
+    return "高度認知症の疑い";
   };
 
   // カテゴリーごとのスコアに基づいて色を決定する関数
@@ -848,9 +766,6 @@ export default function MMSECalculator() {
           <span className="font-medium">/30</span>
         </div>
         <div className="flex flex-col sm:flex-row items-center gap-2">
-          <div className="px-3 py-1 bg-white bg-opacity-20 rounded-lg text-sm">
-            <span className="font-medium">{selectedItems}/30 項目選択済み</span>
-          </div>
           <button
             onClick={() => {
               setScores({
@@ -905,157 +820,157 @@ export default function MMSECalculator() {
             </h3>
             <div className="grid grid-cols-1 gap-2 text-sm">
               <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.timeScore, 5)}`}
+                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.timeOrientation, 5)}`}
               >
                 <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.timeScore, 5)}`}
+                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.timeOrientation, 5)}`}
                 >
                   時間の見当識:
                 </span>
                 <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.timeScore, 5)}`}
+                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.timeOrientation, 5)}`}
                 >
-                  {categoryScores.timeScore}/5
+                  {categoryScores.timeOrientation}/5
                 </span>
               </div>
               <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.placeScore, 5)}`}
+                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.placeOrientation, 5)}`}
               >
                 <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.placeScore, 5)}`}
+                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.placeOrientation, 5)}`}
                 >
                   場所の見当識:
                 </span>
                 <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.placeScore, 5)}`}
+                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.placeOrientation, 5)}`}
                 >
-                  {categoryScores.placeScore}/5
+                  {categoryScores.placeOrientation}/5
                 </span>
               </div>
               <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.recallScore, 3)}`}
+                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.memory, 3)}`}
               >
                 <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.recallScore, 3)}`}
+                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.memory, 3)}`}
                 >
                   即時記憶:
                 </span>
                 <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.recallScore, 3)}`}
+                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.memory, 3)}`}
                 >
-                  {categoryScores.recallScore}/3
+                  {categoryScores.memory}/3
                 </span>
               </div>
               <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.calculationScore, 5)}`}
+                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.attention, 5)}`}
               >
                 <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.calculationScore, 5)}`}
+                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.attention, 5)}`}
                 >
                   計算:
                 </span>
                 <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.calculationScore, 5)}`}
+                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.attention, 5)}`}
                 >
-                  {categoryScores.calculationScore}/5
+                  {categoryScores.attention}/5
                 </span>
               </div>
               <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.delayedRecallScore, 3)}`}
+                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.recall, 3)}`}
               >
                 <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.delayedRecallScore, 3)}`}
+                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.recall, 3)}`}
                 >
                   遅延再生:
                 </span>
                 <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.delayedRecallScore, 3)}`}
+                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.recall, 3)}`}
                 >
-                  {categoryScores.delayedRecallScore}/3
+                  {categoryScores.recall}/3
                 </span>
               </div>
               <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.namingScore, 2)}`}
+                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.naming, 2)}`}
               >
                 <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.namingScore, 2)}`}
+                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.naming, 2)}`}
                 >
                   物品呼称:
                 </span>
                 <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.namingScore, 2)}`}
+                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.naming, 2)}`}
                 >
-                  {categoryScores.namingScore}/2
+                  {categoryScores.naming}/2
                 </span>
               </div>
               <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.repeatSentenceScore, 1)}`}
+                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.repeat, 1)}`}
               >
                 <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.repeatSentenceScore, 1)}`}
+                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.repeat, 1)}`}
                 >
                   文の復唱:
                 </span>
                 <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.repeatSentenceScore, 1)}`}
+                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.repeat, 1)}`}
                 >
-                  {categoryScores.repeatSentenceScore}/1
+                  {categoryScores.repeat}/1
                 </span>
               </div>
               <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.followCommandScore, 3)}`}
+                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.command, 3)}`}
               >
                 <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.followCommandScore, 3)}`}
+                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.command, 3)}`}
                 >
                   3段階命令:
                 </span>
                 <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.followCommandScore, 3)}`}
+                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.command, 3)}`}
                 >
-                  {categoryScores.followCommandScore}/3
+                  {categoryScores.command}/3
                 </span>
               </div>
               <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.readFollowScore, 1)}`}
+                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.read, 1)}`}
               >
                 <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.readFollowScore, 1)}`}
+                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.read, 1)}`}
                 >
                   読字・理解:
                 </span>
                 <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.readFollowScore, 1)}`}
+                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.read, 1)}`}
                 >
-                  {categoryScores.readFollowScore}/1
+                  {categoryScores.read}/1
                 </span>
               </div>
               <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.writeSentenceScore, 1)}`}
+                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.write, 1)}`}
               >
                 <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.writeSentenceScore, 1)}`}
+                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.write, 1)}`}
                 >
                   文章作成:
                 </span>
                 <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.writeSentenceScore, 1)}`}
+                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.write, 1)}`}
                 >
-                  {categoryScores.writeSentenceScore}/1
+                  {categoryScores.write}/1
                 </span>
               </div>
               <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.copyFigureScore, 1)}`}
+                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.copy, 1)}`}
               >
                 <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.copyFigureScore, 1)}`}
+                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.copy, 1)}`}
                 >
                   図形模写:
                 </span>
                 <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.copyFigureScore, 1)}`}
+                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.copy, 1)}`}
                 >
-                  {categoryScores.copyFigureScore}/1
+                  {categoryScores.copy}/1
                 </span>
               </div>
             </div>
@@ -1066,49 +981,66 @@ export default function MMSECalculator() {
             <div className="grid grid-cols-1 gap-2 text-sm">
               <div
                 className={`p-2 rounded ${
-                  totalScore >= 27
+                  totalScore > 27
                     ? "bg-blue-100 text-blue-800 font-medium"
                     : "bg-gray-50"
                 }`}
               >
-                <span className="font-semibold">27-30点:</span> 正常
+                <span className="font-semibold">28-30点:</span> 正常
               </div>
               <div
                 className={`p-2 rounded ${
-                  totalScore >= 24 && totalScore < 27
+                  totalScore > 23 && totalScore <= 27
                     ? "bg-green-100 text-green-800 font-medium"
                     : "bg-gray-50"
                 }`}
               >
-                <span className="font-semibold">24-26点:</span>{" "}
-                軽度認知機能障害の疑い
+                <span className="font-semibold">24-27点:</span>{" "}
+                軽度認知障害(MCI)の疑い（感度45-60%、特異度65-90%）
               </div>
               <div
                 className={`p-2 rounded ${
-                  totalScore >= 20 && totalScore < 24
-                    ? "bg-yellow-100 text-yellow-800 font-medium"
+                  totalScore <= 23
+                    ? "bg-red-50 text-red-800 font-medium"
                     : "bg-gray-50"
                 }`}
               >
-                <span className="font-semibold">20-23点:</span> 軽度認知症
-              </div>
-              <div
-                className={`p-2 rounded ${
-                  totalScore >= 10 && totalScore < 20
-                    ? "bg-orange-100 text-orange-800 font-medium"
-                    : "bg-gray-50"
-                }`}
-              >
-                <span className="font-semibold">10-19点:</span> 中等度認知症
-              </div>
-              <div
-                className={`p-2 rounded ${
-                  totalScore < 10
-                    ? "bg-red-100 text-red-800 font-medium"
-                    : "bg-gray-50"
-                }`}
-              >
-                <span className="font-semibold">0-9点:</span> 重度認知症
+                <div className="mb-2">
+                  <span className="font-semibold">23点以下:</span>{" "}
+                  認知症の疑い（感度81％、特異度89%）
+                </div>
+                <div className="space-y-2 pl-4 border-red-100">
+                  <div
+                    className={`p-2 rounded ${
+                      totalScore >= 20 && totalScore <= 23
+                        ? "bg-yellow-100 text-yellow-900 font-medium border-l-4 border-yellow-500"
+                        : "bg-gray-50"
+                    }`}
+                  >
+                    <span className="font-semibold">20-23点:</span>{" "}
+                    軽度認知症の疑い
+                  </div>
+                  <div
+                    className={`p-2 rounded ${
+                      totalScore >= 10 && totalScore < 20
+                        ? "bg-orange-200 text-orange-900 font-medium border-l-4 border-orange-500"
+                        : "bg-gray-50"
+                    }`}
+                  >
+                    <span className="font-semibold">10-19点:</span>{" "}
+                    中等度認知症の疑い
+                  </div>
+                  <div
+                    className={`p-2 rounded ${
+                      totalScore < 10
+                        ? "bg-red-200 text-red-900 font-medium border-l-4 border-red-500"
+                        : "bg-gray-50"
+                    }`}
+                  >
+                    <span className="font-semibold">0-9点:</span>{" "}
+                    高度認知症の疑い
+                  </div>
+                </div>
               </div>
             </div>
           </div>

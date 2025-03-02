@@ -1,0 +1,1497 @@
+[
+  {
+    "id": 1,
+    "name": "Precentral_R",
+    "name_ja": "中心前回（右）",
+    "function": "随意運動の制御",
+    "coordinates": {
+      "x": 41.100857734398105,
+      "y": -9.549837326234837,
+      "z": 50.80981958000592
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 2,
+    "name": "Frontal_Sup_L",
+    "name_ja": "上前頭回（左）",
+    "function": "実行機能、計画、意思決定",
+    "coordinates": {
+      "x": -18.772992497916093,
+      "y": 33.48985829397054,
+      "z": 40.95415393164768
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 3,
+    "name": "Frontal_Sup_R",
+    "name_ja": "上前頭回（右）",
+    "function": "実行機能、計画、意思決定",
+    "coordinates": {
+      "x": 21.60305719921105,
+      "y": 29.91025641025641,
+      "z": 42.50443786982248
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 4,
+    "name": "Frontal_Sup_Orb_L",
+    "name_ja": "上前頭回（左）",
+    "function": "実行機能、計画、意思決定",
+    "coordinates": {
+      "x": -16.824506749740394,
+      "y": 45.919003115264786,
+      "z": -14.718587746625133
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 5,
+    "name": "Frontal_Sup_Orb_R",
+    "name_ja": "上前頭回（右）",
+    "function": "実行機能、計画、意思決定",
+    "coordinates": {
+      "x": 18.17853560682046,
+      "y": 46.61785356068205,
+      "z": -15.494483450351055
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 6,
+    "name": "Frontal_Mid_L",
+    "name_ja": "中前頭回（左）",
+    "function": "ワーキングメモリ、注意制御",
+    "coordinates": {
+      "x": -33.7589965042155,
+      "y": 31.489204194941408,
+      "z": 34.13078346699568
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 7,
+    "name": "Frontal_Mid_R",
+    "name_ja": "中前頭回（右）",
+    "function": "ワーキングメモリ、注意制御",
+    "coordinates": {
+      "x": 37.391849529780565,
+      "y": 31.750783699059554,
+      "z": 32.81426332288402
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 8,
+    "name": "Frontal_Mid_Orb_L",
+    "name_ja": "中前頭回（左）",
+    "function": "ワーキングメモリ、注意制御",
+    "coordinates": {
+      "x": -30.88513513513513,
+      "y": 49.1418918918919,
+      "z": -10.986486486486484
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 9,
+    "name": "Frontal_Mid_Orb_R",
+    "name_ja": "中前頭回（右）",
+    "function": "ワーキングメモリ、注意制御",
+    "coordinates": {
+      "x": 32.89458128078818,
+      "y": 51.27487684729064,
+      "z": -12.141871921182265
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 10,
+    "name": "Frontal_Inf_Oper_L",
+    "name_ja": "下前頭回（左）",
+    "function": "言語処理（特に左半球）、実行制御",
+    "coordinates": {
+      "x": -48.79576107899808,
+      "y": 11.49132947976878,
+      "z": 17.801541425818883
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 11,
+    "name": "Frontal_Inf_Oper_R",
+    "name_ja": "下前頭回（右）",
+    "function": "言語処理（特に左半球）、実行制御",
+    "coordinates": {
+      "x": 49.92709077912795,
+      "y": 13.675482487491053,
+      "z": 20.19585418155826
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 12,
+    "name": "Frontal_Inf_Tri_L",
+    "name_ja": "下前頭回（左）",
+    "function": "言語処理（特に左半球）、実行制御",
+    "coordinates": {
+      "x": -45.890075128509295,
+      "y": 28.666666666666657,
+      "z": 12.582839066824832
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 13,
+    "name": "Frontal_Inf_Tri_R",
+    "name_ja": "下前頭回（右）",
+    "function": "言語処理（特に左半球）、実行制御",
+    "coordinates": {
+      "x": 50.06136680613668,
+      "y": 28.901906090190607,
+      "z": 12.817294281729431
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 14,
+    "name": "Frontal_Inf_Orb_L",
+    "name_ja": "下前頭回（左）",
+    "function": "言語処理（特に左半球）、実行制御",
+    "coordinates": {
+      "x": -36.24023668639053,
+      "y": 29.49230769230769,
+      "z": -13.459171597633137
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 15,
+    "name": "Frontal_Inf_Orb_R",
+    "name_ja": "下前頭回（右）",
+    "function": "言語処理（特に左半球）、実行制御",
+    "coordinates": {
+      "x": 40.9103690685413,
+      "y": 30.99472759226714,
+      "z": -13.258347978910372
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 16,
+    "name": "Rolandic_Oper_L",
+    "name_ja": "ローランド溝周辺部（左）",
+    "function": "感覚運動の統合",
+    "coordinates": {
+      "x": -47.406060606060606,
+      "y": -9.77575757575758,
+      "z": 12.638383838383845
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 17,
+    "name": "Rolandic_Oper_R",
+    "name_ja": "ローランド溝周辺部（右）",
+    "function": "感覚運動の統合",
+    "coordinates": {
+      "x": 52.381667918858,
+      "y": -7.537190082644628,
+      "z": 13.32982719759579
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 18,
+    "name": "Supp_Motor_Area_L",
+    "name_ja": "補足運動野（左）",
+    "function": "運動の計画と実行",
+    "coordinates": {
+      "x": -5.690731252911036,
+      "y": 3.550069864927792,
+      "z": 60.06427573358175
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 19,
+    "name": "Supp_Motor_Area_R",
+    "name_ja": "補足運動野（右）",
+    "function": "運動の計画と実行",
+    "coordinates": {
+      "x": 8.246309574019406,
+      "y": -1.0932096161956935,
+      "z": 60.512863770560955
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 20,
+    "name": "Olfactory_L",
+    "name_ja": "（左）",
+    "function": "",
+    "coordinates": {
+      "x": -8.26428571428572,
+      "y": 13.864285714285728,
+      "z": -12.685714285714283
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 21,
+    "name": "Olfactory_R",
+    "name_ja": "（右）",
+    "function": "",
+    "coordinates": {
+      "x": 10.124567474048447,
+      "y": 14.664359861591691,
+      "z": -12.560553633217992
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 22,
+    "name": "Frontal_Sup_Medial_L",
+    "name_ja": "上前頭回（左）",
+    "function": "実行機能、計画、意思決定",
+    "coordinates": {
+      "x": -5.1737967914438485,
+      "y": 47.887032085561486,
+      "z": 29.63636363636364
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 23,
+    "name": "Frontal_Sup_Medial_R",
+    "name_ja": "上前頭回（右）",
+    "function": "実行機能、計画、意思決定",
+    "coordinates": {
+      "x": 8.75070290534208,
+      "y": 49.52858481724462,
+      "z": 28.92689784442362
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 24,
+    "name": "Frontal_Med_Orb_L",
+    "name_ja": "（左）",
+    "function": "",
+    "coordinates": {
+      "x": -5.438108484005568,
+      "y": 52.51738525730181,
+      "z": -8.856745479833101
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 25,
+    "name": "Frontal_Med_Orb_R",
+    "name_ja": "（右）",
+    "function": "",
+    "coordinates": {
+      "x": 7.834112149532714,
+      "y": 50.406542056074755,
+      "z": -8.516355140186917
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 26,
+    "name": "Rectus_L",
+    "name_ja": "（左）",
+    "function": "",
+    "coordinates": {
+      "x": -5.441314553990608,
+      "y": 35.706572769953056,
+      "z": -19.568075117370896
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 27,
+    "name": "Rectus_R",
+    "name_ja": "（右）",
+    "function": "",
+    "coordinates": {
+      "x": 8.002684563758393,
+      "y": 34.451006711409406,
+      "z": -19.436241610738257
+    },
+    "color": "#CCCCCC",
+    "region_type": "Frontal"
+  },
+  {
+    "id": 28,
+    "name": "Insula_L",
+    "name_ja": "（左）",
+    "function": "",
+    "coordinates": {
+      "x": -35.410118406889126,
+      "y": 5.440258342303565,
+      "z": 2.1722282023681316
+    },
+    "color": "#CCCCCC",
+    "region_type": "Limbic"
+  },
+  {
+    "id": 29,
+    "name": "Insula_R",
+    "name_ja": "（右）",
+    "function": "",
+    "coordinates": {
+      "x": 38.722033898305085,
+      "y": 5.020338983050834,
+      "z": 0.8135593220338961
+    },
+    "color": "#CCCCCC",
+    "region_type": "Limbic"
+  },
+  {
+    "id": 30,
+    "name": "Cingulum_Ant_L",
+    "name_ja": "帯状回（左）",
+    "function": "感情処理、記憶、学習",
+    "coordinates": {
+      "x": -4.364285714285714,
+      "y": 34.195714285714274,
+      "z": 12.535714285714292
+    },
+    "color": "#CCCCCC",
+    "region_type": "Limbic"
+  },
+  {
+    "id": 31,
+    "name": "Cingulum_Ant_R",
+    "name_ja": "帯状回（右）",
+    "function": "感情処理、記憶、学習",
+    "coordinates": {
+      "x": 8.117288651942118,
+      "y": 35.72277227722773,
+      "z": 14.432597105864431
+    },
+    "color": "#CCCCCC",
+    "region_type": "Limbic"
+  },
+  {
+    "id": 32,
+    "name": "Cingulum_Mid_L",
+    "name_ja": "帯状回（左）",
+    "function": "感情処理、記憶、学習",
+    "coordinates": {
+      "x": -5.882534775888715,
+      "y": -16.1009788768676,
+      "z": 40.21432251416796
+    },
+    "color": "#CCCCCC",
+    "region_type": "Limbic"
+  },
+  {
+    "id": 33,
+    "name": "Cingulum_Mid_R",
+    "name_ja": "帯状回（右）",
+    "function": "感情処理、記憶、学習",
+    "coordinates": {
+      "x": 7.664094416704501,
+      "y": -10.197004085338179,
+      "z": 38.43758511121199
+    },
+    "color": "#CCCCCC",
+    "region_type": "Limbic"
+  },
+  {
+    "id": 34,
+    "name": "Cingulum_Post_L",
+    "name_ja": "帯状回（左）",
+    "function": "感情処理、記憶、学習",
+    "coordinates": {
+      "x": -5.205183585313179,
+      "y": -44.172786177105834,
+      "z": 23.27861771058315
+    },
+    "color": "#CCCCCC",
+    "region_type": "Limbic"
+  },
+  {
+    "id": 35,
+    "name": "Cingulum_Post_R",
+    "name_ja": "帯状回（右）",
+    "function": "感情処理、記憶、学習",
+    "coordinates": {
+      "x": 7.17611940298508,
+      "y": -43.0865671641791,
+      "z": 20.471641791044775
+    },
+    "color": "#CCCCCC",
+    "region_type": "Limbic"
+  },
+  {
+    "id": 36,
+    "name": "Hippocampus_L",
+    "name_ja": "海馬（左）",
+    "function": "記憶の形成と固定",
+    "coordinates": {
+      "x": -25.25536480686695,
+      "y": -21.963519313304715,
+      "z": -11.384120171673821
+    },
+    "color": "#CCCCCC",
+    "region_type": "Limbic"
+  },
+  {
+    "id": 37,
+    "name": "Hippocampus_R",
+    "name_ja": "海馬（右）",
+    "function": "記憶の形成と固定",
+    "coordinates": {
+      "x": 28.945031712473572,
+      "y": -20.991543340380545,
+      "z": -11.577167019027485
+    },
+    "color": "#CCCCCC",
+    "region_type": "Limbic"
+  },
+  {
+    "id": 38,
+    "name": "ParaHippocampal_L",
+    "name_ja": "海馬傍回（左）",
+    "function": "空間記憶、場所認識",
+    "coordinates": {
+      "x": -21.492842535787318,
+      "y": -17.29243353783231,
+      "z": -21.918200408997954
+    },
+    "color": "#CCCCCC",
+    "region_type": "Limbic"
+  },
+  {
+    "id": 39,
+    "name": "ParaHippocampal_R",
+    "name_ja": "海馬傍回（右）",
+    "function": "空間記憶、場所認識",
+    "coordinates": {
+      "x": 25.148409893992934,
+      "y": -16.300353356890454,
+      "z": -21.743816254416963
+    },
+    "color": "#CCCCCC",
+    "region_type": "Limbic"
+  },
+  {
+    "id": 40,
+    "name": "Amygdala_L",
+    "name_ja": "扁桃体（左）",
+    "function": "感情処理、恐怖学習",
+    "coordinates": {
+      "x": -23.509090909090915,
+      "y": -1.9454545454545524,
+      "z": -18.454545454545453
+    },
+    "color": "#CCCCCC",
+    "region_type": "Limbic"
+  },
+  {
+    "id": 41,
+    "name": "Amygdala_R",
+    "name_ja": "扁桃体（右）",
+    "function": "感情処理、恐怖学習",
+    "coordinates": {
+      "x": 27.056451612903224,
+      "y": -0.5725806451612954,
+      "z": -18.806451612903224
+    },
+    "color": "#CCCCCC",
+    "region_type": "Limbic"
+  },
+  {
+    "id": 42,
+    "name": "Calcarine_L",
+    "name_ja": "鳥距溝（左）",
+    "function": "一次視覚野",
+    "coordinates": {
+      "x": -7.482728077945083,
+      "y": -79.82108060230291,
+      "z": 5.103631532329501
+    },
+    "color": "#CCCCCC",
+    "region_type": "Occipital"
+  },
+  {
+    "id": 43,
+    "name": "Calcarine_R",
+    "name_ja": "鳥距溝（右）",
+    "function": "一次視覚野",
+    "coordinates": {
+      "x": 15.709833422890924,
+      "y": -74.44922084900591,
+      "z": 8.019344438473937
+    },
+    "color": "#CCCCCC",
+    "region_type": "Occipital"
+  },
+  {
+    "id": 44,
+    "name": "Cuneus_L",
+    "name_ja": "楔前部（左）",
+    "function": "視覚情報処理",
+    "coordinates": {
+      "x": -6.2568807339449535,
+      "y": -81.42463958060289,
+      "z": 25.838794233289647
+    },
+    "color": "#CCCCCC",
+    "region_type": "Occipital"
+  },
+  {
+    "id": 45,
+    "name": "Cuneus_R",
+    "name_ja": "楔前部（右）",
+    "function": "視覚情報処理",
+    "coordinates": {
+      "x": 13.18960674157303,
+      "y": -80.58988764044943,
+      "z": 26.85252808988764
+    },
+    "color": "#CCCCCC",
+    "region_type": "Occipital"
+  },
+  {
+    "id": 46,
+    "name": "Lingual_L",
+    "name_ja": "舌状回（左）",
+    "function": "視覚処理、文字認識",
+    "coordinates": {
+      "x": -14.858233890214791,
+      "y": -68.86491646778043,
+      "z": -6.00763723150358
+    },
+    "color": "#CCCCCC",
+    "region_type": "Occipital"
+  },
+  {
+    "id": 47,
+    "name": "Lingual_R",
+    "name_ja": "舌状回（右）",
+    "function": "視覚処理、文字認識",
+    "coordinates": {
+      "x": 16.077391304347827,
+      "y": -68.14173913043479,
+      "z": -5.215652173913043
+    },
+    "color": "#CCCCCC",
+    "region_type": "Occipital"
+  },
+  {
+    "id": 48,
+    "name": "Occipital_Sup_L",
+    "name_ja": "上後頭回（左）",
+    "function": "視覚情報処理",
+    "coordinates": {
+      "x": -16.756954612005856,
+      "y": -85.61054172767203,
+      "z": 26.853587115666173
+    },
+    "color": "#CCCCCC",
+    "region_type": "Occipital"
+  },
+  {
+    "id": 49,
+    "name": "Occipital_Sup_R",
+    "name_ja": "上後頭回（右）",
+    "function": "視覚情報処理",
+    "coordinates": {
+      "x": 23.963198867657468,
+      "y": -82.206652512385,
+      "z": 29.26539278131635
+    },
+    "color": "#CCCCCC",
+    "region_type": "Occipital"
+  },
+  {
+    "id": 50,
+    "name": "Occipital_Mid_L",
+    "name_ja": "中後頭回（左）",
+    "function": "視覚情報の高次処理",
+    "coordinates": {
+      "x": -32.617125382263,
+      "y": -82.02140672782875,
+      "z": 14.767584097859327
+    },
+    "color": "#CCCCCC",
+    "region_type": "Occipital"
+  },
+  {
+    "id": 51,
+    "name": "Occipital_Mid_R",
+    "name_ja": "中後頭回（右）",
+    "function": "視覚情報の高次処理",
+    "coordinates": {
+      "x": 37.127740705433744,
+      "y": -80.99332697807435,
+      "z": 18.06768350810296
+    },
+    "color": "#CCCCCC",
+    "region_type": "Occipital"
+  },
+  {
+    "id": 52,
+    "name": "Occipital_Inf_L",
+    "name_ja": "下後頭回（左）",
+    "function": "視覚的形態認識",
+    "coordinates": {
+      "x": -36.48246546227418,
+      "y": -79.56854410201913,
+      "z": -9.164718384697132
+    },
+    "color": "#CCCCCC",
+    "region_type": "Occipital"
+  },
+  {
+    "id": 53,
+    "name": "Occipital_Inf_R",
+    "name_ja": "下後頭回（右）",
+    "function": "視覚的形態認識",
+    "coordinates": {
+      "x": 37.870576339737106,
+      "y": -83.19110212335693,
+      "z": -8.99292214357937
+    },
+    "color": "#CCCCCC",
+    "region_type": "Occipital"
+  },
+  {
+    "id": 54,
+    "name": "Fusiform_L",
+    "name_ja": "紡錘状回（左）",
+    "function": "顔認識、文字認識",
+    "coordinates": {
+      "x": -31.389610389610397,
+      "y": -41.40519480519481,
+      "z": -21.60606060606061
+    },
+    "color": "#CCCCCC",
+    "region_type": "Occipital"
+  },
+  {
+    "id": 55,
+    "name": "Fusiform_R",
+    "name_ja": "紡錘状回（右）",
+    "function": "顔認識、文字認識",
+    "coordinates": {
+      "x": 33.659253375694995,
+      "y": -40.19857029388403,
+      "z": -21.533756949960285
+    },
+    "color": "#CCCCCC",
+    "region_type": "Occipital"
+  },
+  {
+    "id": 56,
+    "name": "Postcentral_L",
+    "name_ja": "中心後回（左）",
+    "function": "体性感覚の処理",
+    "coordinates": {
+      "x": -42.90441932168551,
+      "y": -23.7754367934224,
+      "z": 47.4568345323741
+    },
+    "color": "#CCCCCC",
+    "region_type": "Parietal"
+  },
+  {
+    "id": 57,
+    "name": "Postcentral_R",
+    "name_ja": "中心後回（右）",
+    "function": "体性感覚の処理",
+    "coordinates": {
+      "x": 41.15825268114047,
+      "y": -26.772691603452785,
+      "z": 51.25398901386346
+    },
+    "color": "#CCCCCC",
+    "region_type": "Parietal"
+  },
+  {
+    "id": 58,
+    "name": "Parietal_Sup_L",
+    "name_ja": "上頭頂小葉（左）",
+    "function": "空間認知、視覚的注意",
+    "coordinates": {
+      "x": -23.713317191283295,
+      "y": -60.807748184019374,
+      "z": 57.657142857142844
+    },
+    "color": "#CCCCCC",
+    "region_type": "Parietal"
+  },
+  {
+    "id": 59,
+    "name": "Parietal_Sup_R",
+    "name_ja": "上頭頂小葉（右）",
+    "function": "空間認知、視覚的注意",
+    "coordinates": {
+      "x": 25.84248424842484,
+      "y": -60.42844284428443,
+      "z": 60.713771377137704
+    },
+    "color": "#CCCCCC",
+    "region_type": "Parietal"
+  },
+  {
+    "id": 60,
+    "name": "Parietal_Inf_L",
+    "name_ja": "下頭頂小葉（左）",
+    "function": "空間処理、数的処理",
+    "coordinates": {
+      "x": -43.10666121781773,
+      "y": -47.01920719248059,
+      "z": 45.42296689824275
+    },
+    "color": "#CCCCCC",
+    "region_type": "Parietal"
+  },
+  {
+    "id": 61,
+    "name": "Parietal_Inf_R",
+    "name_ja": "下頭頂小葉（右）",
+    "function": "空間処理、数的処理",
+    "coordinates": {
+      "x": 46.291449814126395,
+      "y": -47.58810408921933,
+      "z": 48.19182156133829
+    },
+    "color": "#CCCCCC",
+    "region_type": "Parietal"
+  },
+  {
+    "id": 62,
+    "name": "SupraMarginal_L",
+    "name_ja": "（左）",
+    "function": "",
+    "coordinates": {
+      "x": -56.14649681528661,
+      "y": -34.93630573248407,
+      "z": 29.119426751592357
+    },
+    "color": "#CCCCCC",
+    "region_type": "Parietal"
+  },
+  {
+    "id": 63,
+    "name": "SupraMarginal_R",
+    "name_ja": "（右）",
+    "function": "",
+    "coordinates": {
+      "x": 57.262411347517734,
+      "y": -32.817629179331306,
+      "z": 33.13475177304964
+    },
+    "color": "#CCCCCC",
+    "region_type": "Parietal"
+  },
+  {
+    "id": 64,
+    "name": "Angular_L",
+    "name_ja": "（左）",
+    "function": "",
+    "coordinates": {
+      "x": -44.434782608695656,
+      "y": -62.08184143222506,
+      "z": 34.28303495311168
+    },
+    "color": "#CCCCCC",
+    "region_type": "Parietal"
+  },
+  {
+    "id": 65,
+    "name": "Angular_R",
+    "name_ja": "（右）",
+    "function": "",
+    "coordinates": {
+      "x": 45.22831050228311,
+      "y": -61.23858447488584,
+      "z": 37.31506849315069
+    },
+    "color": "#CCCCCC",
+    "region_type": "Parietal"
+  },
+  {
+    "id": 66,
+    "name": "Precuneus_L",
+    "name_ja": "（左）",
+    "function": "",
+    "coordinates": {
+      "x": -7.590702947845799,
+      "y": -57.324829931972786,
+      "z": 46.64002267573696
+    },
+    "color": "#CCCCCC",
+    "region_type": "Parietal"
+  },
+  {
+    "id": 67,
+    "name": "Precuneus_R",
+    "name_ja": "（右）",
+    "function": "",
+    "coordinates": {
+      "x": 9.688820826952522,
+      "y": -57.31393568147014,
+      "z": 42.36079632465544
+    },
+    "color": "#CCCCCC",
+    "region_type": "Parietal"
+  },
+  {
+    "id": 68,
+    "name": "Paracentral_Lobule_L",
+    "name_ja": "（左）",
+    "function": "",
+    "coordinates": {
+      "x": -7.974796145292814,
+      "y": -26.650852483320975,
+      "z": 68.6923647146034
+    },
+    "color": "#CCCCCC",
+    "region_type": "Parietal"
+  },
+  {
+    "id": 69,
+    "name": "Paracentral_Lobule_R",
+    "name_ja": "（左）",
+    "function": "",
+    "coordinates": {
+      "x": 7.126794258373209,
+      "y": -32.942583732057415,
+      "z": 66.79186602870814
+    },
+    "color": "#CCCCCC",
+    "region_type": "Parietal"
+  },
+  {
+    "id": 70,
+    "name": "Caudate_L",
+    "name_ja": "尾状核（左）",
+    "function": "運動制御、学習",
+    "coordinates": {
+      "x": -11.767151767151773,
+      "y": 9.723492723492711,
+      "z": 8.070686070686065
+    },
+    "color": "#CCCCCC",
+    "region_type": "Sub-cortical"
+  },
+  {
+    "id": 71,
+    "name": "Caudate_R",
+    "name_ja": "尾状核（右）",
+    "function": "運動制御、学習",
+    "coordinates": {
+      "x": 14.494969818913475,
+      "y": 10.776659959758547,
+      "z": 8.148893360160969
+    },
+    "color": "#CCCCCC",
+    "region_type": "Sub-cortical"
+  },
+  {
+    "id": 72,
+    "name": "Putamen_L",
+    "name_ja": "被殻（左）",
+    "function": "運動制御、手続き学習",
+    "coordinates": {
+      "x": -24.20812685827552,
+      "y": 2.600594648166492,
+      "z": 1.0703666997026744
+    },
+    "color": "#CCCCCC",
+    "region_type": "Sub-cortical"
+  },
+  {
+    "id": 73,
+    "name": "Putamen_R",
+    "name_ja": "被殻（右）",
+    "function": "運動制御、手続き学習",
+    "coordinates": {
+      "x": 27.484962406015036,
+      "y": 3.6785714285714164,
+      "z": 1.1936090225563873
+    },
+    "color": "#CCCCCC",
+    "region_type": "Sub-cortical"
+  },
+  {
+    "id": 74,
+    "name": "Pallidum_L",
+    "name_ja": "淡蒼球（左）",
+    "function": "運動制御",
+    "coordinates": {
+      "x": -18.061433447098977,
+      "y": -1.3583617747440258,
+      "z": -1.0443686006825885
+    },
+    "color": "#CCCCCC",
+    "region_type": "Sub-cortical"
+  },
+  {
+    "id": 75,
+    "name": "Pallidum_R",
+    "name_ja": "淡蒼球（右）",
+    "function": "運動制御",
+    "coordinates": {
+      "x": 20.921428571428578,
+      "y": -1.057142857142864,
+      "z": -1.085714285714289
+    },
+    "color": "#CCCCCC",
+    "region_type": "Sub-cortical"
+  },
+  {
+    "id": 76,
+    "name": "Thalamus_L",
+    "name_ja": "視床（左）",
+    "function": "感覚情報の中継、統合",
+    "coordinates": {
+      "x": -11.198181818181823,
+      "y": -18.843636363636364,
+      "z": 6.607272727272729
+    },
+    "color": "#CCCCCC",
+    "region_type": "Sub-cortical"
+  },
+  {
+    "id": 77,
+    "name": "Thalamus_R",
+    "name_ja": "視床（右）",
+    "function": "感覚情報の中継、統合",
+    "coordinates": {
+      "x": 12.703878902554393,
+      "y": -18.768211920529808,
+      "z": 6.7284768211920465
+    },
+    "color": "#CCCCCC",
+    "region_type": "Sub-cortical"
+  },
+  {
+    "id": 78,
+    "name": "Heschl_L",
+    "name_ja": "（左）",
+    "function": "",
+    "coordinates": {
+      "x": -42.346666666666664,
+      "y": -20.03555555555556,
+      "z": 8.675555555555562
+    },
+    "color": "#CCCCCC",
+    "region_type": "Temporal"
+  },
+  {
+    "id": 79,
+    "name": "Heschl_R",
+    "name_ja": "（右）",
+    "function": "",
+    "coordinates": {
+      "x": 45.87951807228916,
+      "y": -18.144578313253007,
+      "z": 9.044176706827315
+    },
+    "color": "#CCCCCC",
+    "region_type": "Temporal"
+  },
+  {
+    "id": 80,
+    "name": "Temporal_Sup_L",
+    "name_ja": "上側頭回（左）",
+    "function": "聴覚処理、言語理解",
+    "coordinates": {
+      "x": -53.435540069686425,
+      "y": -22.009581881533094,
+      "z": 5.840592334494772
+    },
+    "color": "#CCCCCC",
+    "region_type": "Temporal"
+  },
+  {
+    "id": 81,
+    "name": "Temporal_Sup_R",
+    "name_ja": "上側頭回（右）",
+    "function": "聴覚処理、言語理解",
+    "coordinates": {
+      "x": 57.83253740846864,
+      "y": -23.01050620821394,
+      "z": 5.418656478828396
+    },
+    "color": "#CCCCCC",
+    "region_type": "Temporal"
+  },
+  {
+    "id": 82,
+    "name": "Temporal_Pole_Sup_L",
+    "name_ja": "（左）",
+    "function": "",
+    "coordinates": {
+      "x": -40.15408560311283,
+      "y": 13.867704280155635,
+      "z": -21.436575875486383
+    },
+    "color": "#CCCCCC",
+    "region_type": "Temporal"
+  },
+  {
+    "id": 83,
+    "name": "Temporal_Pole_Sup_R",
+    "name_ja": "（右）",
+    "function": "",
+    "coordinates": {
+      "x": 47.937219730941706,
+      "y": 13.45739910313901,
+      "z": -18.1898355754858
+    },
+    "color": "#CCCCCC",
+    "region_type": "Temporal"
+  },
+  {
+    "id": 84,
+    "name": "Temporal_Mid_L",
+    "name_ja": "中側頭回（左）",
+    "function": "意味記憶、言語理解",
+    "coordinates": {
+      "x": -55.86887899635775,
+      "y": -34.98421691622825,
+      "z": -3.584783488466215
+    },
+    "color": "#CCCCCC",
+    "region_type": "Temporal"
+  },
+  {
+    "id": 85,
+    "name": "Temporal_Mid_R",
+    "name_ja": "中側頭回（右）",
+    "function": "意味記憶、言語理解",
+    "coordinates": {
+      "x": 57.15990020412792,
+      "y": -38.565661147652534,
+      "z": -2.7752324790201897
+    },
+    "color": "#CCCCCC",
+    "region_type": "Temporal"
+  },
+  {
+    "id": 86,
+    "name": "Temporal_Pole_Mid_L",
+    "name_ja": "（左）",
+    "function": "",
+    "coordinates": {
+      "x": -36.74437086092715,
+      "y": 13.300662251655638,
+      "z": -35.36688741721854
+    },
+    "color": "#CCCCCC",
+    "region_type": "Temporal"
+  },
+  {
+    "id": 87,
+    "name": "Temporal_Pole_Mid_R",
+    "name_ja": "（右）",
+    "function": "",
+    "coordinates": {
+      "x": 44.04043807919124,
+      "y": 13.246840775063191,
+      "z": -33.51811288963774
+    },
+    "color": "#CCCCCC",
+    "region_type": "Temporal"
+  },
+  {
+    "id": 88,
+    "name": "Temporal_Inf_L",
+    "name_ja": "下側頭回（左）",
+    "function": "視覚的物体認識",
+    "coordinates": {
+      "x": -50.036249999999995,
+      "y": -29.291875000000005,
+      "z": -24.519374999999997
+    },
+    "color": "#CCCCCC",
+    "region_type": "Temporal"
+  },
+  {
+    "id": 89,
+    "name": "Temporal_Inf_R",
+    "name_ja": "下側頭回（右）",
+    "function": "視覚的物体認識",
+    "coordinates": {
+      "x": 53.38206353668822,
+      "y": -32.13888107956143,
+      "z": -23.730671914534717
+    },
+    "color": "#CCCCCC",
+    "region_type": "Temporal"
+  },
+  {
+    "id": 90,
+    "name": "Cerebelum_Crus1_L",
+    "name_ja": "小脳（左）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": -35.38532462543219,
+      "y": -67.94314252785247,
+      "z": -30.262773722627735
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 91,
+    "name": "Cerebelum_Crus1_R",
+    "name_ja": "小脳（右）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": 38.21450151057402,
+      "y": -68.37160120845923,
+      "z": -30.849697885196377
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 92,
+    "name": "Cerebelum_Crus2_L",
+    "name_ja": "小脳（左）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": -27.768743400211193,
+      "y": -74.57972544878564,
+      "z": -39.44350580781415
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 93,
+    "name": "Cerebelum_Crus2_R",
+    "name_ja": "小脳（右）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": 32.673594709494566,
+      "y": -70.39678790741615,
+      "z": -41.20170051960321
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 94,
+    "name": "Cerebelum_3_L",
+    "name_ja": "小脳（左）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": -8.117647058823536,
+      "y": -38.367647058823536,
+      "z": -19.779411764705884
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 95,
+    "name": "Cerebelum_3_R",
+    "name_ja": "小脳（右）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": 13.062801932367151,
+      "y": -35.710144927536234,
+      "z": -20.59903381642512
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 96,
+    "name": "Cerebelum_4_5_L",
+    "name_ja": "小脳（左）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": -14.343111111111114,
+      "y": -44.66311111111111,
+      "z": -18.261333333333333
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 97,
+    "name": "Cerebelum_4_5_R",
+    "name_ja": "小脳（右）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": 17.888501742160273,
+      "y": -44.16492450638792,
+      "z": -19.354239256678284
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 98,
+    "name": "Cerebelum_6_L",
+    "name_ja": "小脳（左）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": -22.525383707201883,
+      "y": -60.25855962219599,
+      "z": -23.480519480519483
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 99,
+    "name": "Cerebelum_6_R",
+    "name_ja": "小脳（右）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": 25.429526462395543,
+      "y": -59.53760445682451,
+      "z": -24.94038997214485
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 100,
+    "name": "Cerebelum_7b_L",
+    "name_ja": "小脳（左）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": -31.58974358974359,
+      "y": -61.04957264957265,
+      "z": -46.75213675213675
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 101,
+    "name": "Cerebelum_7b_R",
+    "name_ja": "小脳（右）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": 33.92883895131086,
+      "y": -64.40823970037454,
+      "z": -49.760299625468164
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 102,
+    "name": "Cerebelum_8_L",
+    "name_ja": "小脳（左）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": -25.029146793852675,
+      "y": -55.77106518282989,
+      "z": -49.05458399576047
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 103,
+    "name": "Cerebelum_8_R",
+    "name_ja": "小脳（右）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": 25.77296360485269,
+      "y": -57.63084922010398,
+      "z": -50.79809358752166
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 104,
+    "name": "Cerebelum_9_L",
+    "name_ja": "小脳（左）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": -10.25316455696202,
+      "y": -50.18872266973533,
+      "z": -47.23590333716916
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 105,
+    "name": "Cerebelum_9_R",
+    "name_ja": "小脳（右）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": 10.190358467243513,
+      "y": -50.75154511742892,
+      "z": -47.62422744128554
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 106,
+    "name": "Cerebelum_10_L",
+    "name_ja": "小脳（左）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": -21.79166666666667,
+      "y": -35.0,
+      "z": -43.06944444444444
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 107,
+    "name": "Cerebelum_10_R",
+    "name_ja": "小脳（右）",
+    "function": "運動制御、学習、認知機能",
+    "coordinates": {
+      "x": 26.80503144654088,
+      "y": -35.01886792452831,
+      "z": -42.64150943396226
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 108,
+    "name": "Vermis_1_2",
+    "name_ja": "小脳虫部",
+    "function": "姿勢と歩行の制御",
+    "coordinates": {
+      "x": 1.5094339622641542,
+      "y": -40.11320754716981,
+      "z": -21.358490566037737
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 109,
+    "name": "Vermis_3",
+    "name_ja": "小脳虫部",
+    "function": "姿勢と歩行の制御",
+    "coordinates": {
+      "x": 2.05263157894737,
+      "y": -41.28947368421052,
+      "z": -12.719298245614034
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 110,
+    "name": "Vermis_4_5",
+    "name_ja": "小脳虫部",
+    "function": "姿勢と歩行の制御",
+    "coordinates": {
+      "x": 1.834586466165419,
+      "y": -53.59398496240601,
+      "z": -7.401503759398494
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 111,
+    "name": "Vermis_6",
+    "name_ja": "小脳虫部",
+    "function": "姿勢と歩行の制御",
+    "coordinates": {
+      "x": 1.7681940700808667,
+      "y": -68.35040431266847,
+      "z": -16.39353099730458
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 112,
+    "name": "Vermis_7",
+    "name_ja": "小脳虫部",
+    "function": "姿勢と歩行の制御",
+    "coordinates": {
+      "x": 1.865979381443296,
+      "y": -73.1958762886598,
+      "z": -26.350515463917525
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 113,
+    "name": "Vermis_8",
+    "name_ja": "小脳虫部",
+    "function": "姿勢と歩行の制御",
+    "coordinates": {
+      "x": 1.8106995884773625,
+      "y": -65.65432098765433,
+      "z": -35.349794238683124
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 114,
+    "name": "Vermis_9",
+    "name_ja": "小脳虫部",
+    "function": "姿勢と歩行の制御",
+    "coordinates": {
+      "x": 1.6091954022988517,
+      "y": -56.172413793103445,
+      "z": -36.298850574712645
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  },
+  {
+    "id": 115,
+    "name": "Vermis_10",
+    "name_ja": "小脳虫部",
+    "function": "姿勢と歩行の制御",
+    "coordinates": {
+      "x": 1.1428571428571388,
+      "y": -47.125,
+      "z": -32.875
+    },
+    "color": "#CCCCCC",
+    "region_type": "Cerebellum"
+  }
+]
