@@ -1,6 +1,13 @@
 import * as nifti from 'nifti-reader-js';
 import pako from 'pako';
 
+// NIFTIファイルのキャッシュ
+const niftiCache: Record<string, any> = {};
+// 先読みキュー
+const preloadQueue: string[] = [];
+// 先読み中かどうかのフラグ
+let isPreloading = false;
+
 /**
  * NIfTIファイルを読み込む関数
  * @param url NIfTIファイルのURL
@@ -8,9 +15,16 @@ import pako from 'pako';
  */
 export async function loadNiftiFile(url: string): Promise<any> {
   try {
+    // キャッシュにあればそれを返す
+    if (niftiCache[url]) {
+      console.log(`キャッシュからNIFTIデータを取得: ${url}`);
+      return niftiCache[url];
+    }
+    
+    console.log(`NIFTIファイルを読み込み中: ${url}`);
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+      throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
     }
     
     const arrayBuffer = await response.arrayBuffer();
@@ -18,14 +32,19 @@ export async function loadNiftiFile(url: string): Promise<any> {
     
     // .nii.gz形式の場合は解凍する
     if (url.endsWith('.nii.gz')) {
-      // gzipデータの先頭をスキップ
-      const dataView = new DataView(arrayBuffer);
-      if (dataView.getUint16(0, true) === 0x8b1f) {
-        const inflated = pako.inflate(new Uint8Array(arrayBuffer));
-        data = nifti.readHeader(inflated.buffer);
-        data.image = nifti.readImage(data, inflated.buffer);
-      } else {
-        throw new Error('Invalid gzip format');
+      try {
+        // gzipデータの先頭をスキップ
+        const dataView = new DataView(arrayBuffer);
+        if (dataView.getUint16(0, true) === 0x8b1f) {
+          const inflated = pako.inflate(new Uint8Array(arrayBuffer));
+          data = nifti.readHeader(inflated.buffer);
+          data.image = nifti.readImage(data, inflated.buffer);
+        } else {
+          throw new Error('Invalid gzip format');
+        }
+      } catch (gzipError) {
+        console.error('GZIPデータの解凍中にエラーが発生しました:', gzipError);
+        throw new Error(`GZIPデータの解凍に失敗しました: ${url}`);
       }
     } else {
       // 通常の.niiファイルの場合
@@ -63,10 +82,70 @@ export async function loadNiftiFile(url: string): Promise<any> {
     // qformとsformの情報を使用して変換行列を計算
     data.affine = calculateAffineMatrix(data);
     
+    // キャッシュに保存
+    niftiCache[url] = data;
+    console.log(`NIFTIファイルの読み込みが完了しました: ${url}`);
+    
     return data;
   } catch (error) {
-    console.error('Error loading NIfTI file:', error);
+    console.error(`NIFTIファイルの読み込み中にエラーが発生しました: ${url}`, error);
     throw error;
+  }
+}
+
+/**
+ * バックグラウンドでNIFTIファイルを先読みする関数
+ * @param urls 先読みするNIFTIファイルのURL配列
+ */
+export function preloadNiftiFiles(urls: string[]): void {
+  // キューに追加
+  urls.forEach(url => {
+    if (!niftiCache[url] && !preloadQueue.includes(url)) {
+      console.log(`先読みキューに追加: ${url}`);
+      preloadQueue.push(url);
+    }
+  });
+  
+  // 先読み処理が実行中でなければ開始
+  if (!isPreloading) {
+    processPreloadQueue();
+  }
+}
+
+/**
+ * 先読みキューを処理する関数
+ */
+async function processPreloadQueue(): Promise<void> {
+  if (preloadQueue.length === 0) {
+    isPreloading = false;
+    return;
+  }
+  
+  isPreloading = true;
+  const url = preloadQueue.shift()!;
+  
+  try {
+    console.log(`バックグラウンドでNIFTIファイルを先読み中: ${url}`);
+    
+    // ファイルが存在するか確認
+    try {
+      const checkResponse = await fetch(url, { method: 'HEAD' });
+      if (!checkResponse.ok) {
+        throw new Error(`ファイルが見つかりません: ${url} (${checkResponse.status})`);
+      }
+      
+      await loadNiftiFile(url);
+      console.log(`NIFTIファイルの先読み完了: ${url}`);
+    } catch (fetchError) {
+      console.error(`ファイルの存在確認中にエラーが発生: ${url}`, fetchError);
+    }
+  } catch (error) {
+    console.error(`NIFTIファイルの先読み中にエラーが発生: ${url}`, error);
+  } finally {
+    // 次のファイルを処理
+    setTimeout(() => {
+      processPreloadQueue();
+    }, 100); // 少し間隔を空けて次のファイルを処理
   }
 }
 
@@ -181,8 +260,8 @@ export async function loadAALLabels(url: string): Promise<{ index: number; name:
       occipital: ['#AA55AA', '#CC77CC', '#EE99EE'],
       // 小脳 - 黄色系
       cerebellum: ['#AAAA00', '#CCCC00', '#EEEE00'],
-      // 帯状回 - オレンジ系
-      cingulate: ['#FF7700', '#FF9933', '#FFBB66'],
+      // 帯状回 - オレンジ系（より統一感のある色に変更）
+      cingulate: ['#FF8800', '#FF9933', '#FFAA55'],
       // 島 - 青緑系
       insula: ['#00AAAA', '#00CCCC', '#00EEEE'],
       // 基底核 - 茶系
@@ -278,6 +357,10 @@ export async function loadAALLabels(url: string): Promise<{ index: number; name:
         const color = baseNameColorMap[baseName] || colorPalettes.other[0];
         
         return { index, name, color };
+      })
+      // AAL3で空になっている領域（前部帯状回(35, 36)と視床(81, 82)）を除外
+      .filter(label => {
+        return ![35, 36, 81, 82].includes(label.index);
       });
     
     return labels;

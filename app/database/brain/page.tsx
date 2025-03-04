@@ -4,7 +4,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import BrainSliceViewer from "@/components/brain/BrainSliceViewer";
 import BrainRegionList from "@/components/brain/BrainRegionList";
-import { loadAALLabels, loadAALJapaneseLabelsJson } from "@/utils/niftiUtils";
+import {
+  loadAALLabels,
+  loadAALJapaneseLabelsJson,
+  preloadNiftiFiles,
+  loadNiftiFile,
+} from "@/utils/niftiUtils";
 
 // AALラベルの型定義
 interface AALLabel {
@@ -19,55 +24,214 @@ interface AALJapaneseLabel {
   japaneseLabel: string;
   laterality: string;
   category: string;
+  englishName?: string;
+  functionalRole?: string;
+  connections?: string[];
+  relatedDisorders?: string[];
+  references?: string[];
+}
+
+// NIFTIデータの型定義
+interface NiftiData {
+  dims: number[];
+  pixDims: number[];
+  datatypeCode: number;
+  typedImage:
+    | Uint8Array
+    | Int16Array
+    | Uint16Array
+    | Int32Array
+    | Float32Array
+    | Float64Array;
 }
 
 export default function BrainDatabasePage() {
-  const [activeTab, setActiveTab] = useState<'viewer' | 'about'>('viewer');
+  const [activeTab, setActiveTab] = useState<"viewer" | "about">("viewer");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [aalLabels, setAalLabels] = useState<AALLabel[]>([]);
   const [selectedRegion, setSelectedRegion] = useState<number | null>(null);
-  const [showAAL, setShowAAL] = useState(true); // AAL表示の状態を管理
-  const [japaneseLabels, setJapaneseLabels] = useState<Record<string, string>>({});
-  const [japaneseLabelsData, setJapaneseLabelsData] = useState<AALJapaneseLabel[]>([]);
+  const [showAAL, setShowAAL] = useState(true);
+  const [japaneseLabels, setJapaneseLabels] = useState<Record<string, string>>(
+    {}
+  );
+  const [japaneseLabelsData, setJapaneseLabelsData] = useState<
+    AALJapaneseLabel[]
+  >([]);
+  const [mniData, setMniData] = useState<NiftiData | null>(null);
+  const [aalVolume, setAalVolume] = useState<
+    | Uint8Array
+    | Int16Array
+    | Uint16Array
+    | Int32Array
+    | Float32Array
+    | Float64Array
+    | null
+  >(null);
+  const [crosshairPosition, setCrosshairPosition] = useState<
+    [number, number, number]
+  >([91, 109, 91]);
+  const [brightness, setBrightness] = useState<number>(0);
+  const [contrast, setContrast] = useState<number>(0);
+  const [hoveredRegion, setHoveredRegion] = useState<number | null>(null);
+  const [cursorInfo, setCursorInfo] = useState<{
+    voxel: [number, number, number];
+    mni: [number, number, number];
+    sliceType: string;
+    regionIndex: number | null;
+  } | null>({
+    voxel: [91, 109, 91],
+    mni: [0, 0, 0],
+    sliceType: "axial",
+    regionIndex: null,
+  });
 
   // AALラベルの読み込み
   useEffect(() => {
     const loadLabels = async () => {
       try {
-        const labels = await loadAALLabels('/data/brain/AAL3v1.nii.txt');
+        const labels = await loadAALLabels("/data/brain/AAL3v1.nii.txt");
         setAalLabels(labels);
-        
+
         // 日本語ラベルの読み込み（JSONファイルから）
-        const japLabelsData = await loadAALJapaneseLabelsJson('/data/brain/AAL3_Jap.json');
+        const japLabelsData = await loadAALJapaneseLabelsJson(
+          "/data/brain/AAL3_Jap.json"
+        );
         setJapaneseLabelsData(japLabelsData);
-        
+
         // 後方互換性のために従来の形式のマッピングも作成
         const japLabelsMap: Record<string, string> = {};
-        japLabelsData.forEach(item => {
-          const fullLabel = item.laterality ? `${item.japaneseLabel} ${item.laterality}` : item.japaneseLabel;
+        japLabelsData.forEach((item) => {
+          const fullLabel = item.laterality
+            ? `${item.japaneseLabel} ${item.laterality}`
+            : item.japaneseLabel;
           japLabelsMap[item.englishLabel] = fullLabel;
         });
         setJapaneseLabels(japLabelsMap);
-        
+
+        // NIFTIデータの読み込み
+        try {
+          // MNIデータの読み込み
+          const mni = await loadNiftiFile(
+            "/data/brain/MNI152NLin6Asym_T1w_1mm.nii.gz"
+          );
+          setMniData(mni);
+
+          // AALデータの読み込み
+          const aal = await loadNiftiFile("/data/brain/AAL3v1_1mm.nii.gz");
+          setAalVolume(aal.typedImage);
+
+          console.log("NIFTIデータの読み込みが完了しました");
+        } catch (niftiError) {
+          console.error(
+            "NIFTIデータの読み込み中にエラーが発生しました:",
+            niftiError
+          );
+        }
+
         setIsLoading(false);
+
+        // NIFTIファイルの先読み
+        try {
+          console.log("NIFTIファイルの先読みを開始します...");
+          preloadNiftiFiles([
+            "/data/brain/MNI152NLin6Asym_T1w_1mm.nii.gz",
+            "/data/brain/AAL3v1_1mm.nii.gz",
+          ]);
+        } catch (preloadError) {
+          console.error("先読み処理中にエラーが発生しました:", preloadError);
+          // 先読みエラーはユーザー体験に影響しないので、エラー表示はしない
+        }
       } catch (err) {
-        console.error('Error loading AAL labels:', err);
-        setError('AALラベルの読み込み中にエラーが発生しました。');
+        console.error("Error loading AAL labels:", err);
+        setError("AALラベルの読み込み中にエラーが発生しました。");
         setIsLoading(false);
       }
     };
-    
+
     loadLabels();
   }, []);
-  
+
+  // 各スライスタイプの初期座標情報を設定
+  useEffect(() => {
+    // クロスヘア位置が設定されたら、各スライスタイプの座標情報も初期化
+    if (crosshairPosition) {
+      // axial用の座標情報
+      setCursorInfo({
+        voxel: crosshairPosition,
+        mni: crosshairPosition,
+        sliceType: "axial",
+        regionIndex: null,
+      });
+    }
+  }, [crosshairPosition]);
+
   // 領域選択ハンドラ
-  const handleRegionSelect = (regionIndex: number | null) => {
-    // 同じ領域が選択された場合は選択解除
+  const handleRegionSelect = (
+    regionIndex: number | null,
+    clickPosition?: [number, number, number]
+  ) => {
+    // 同じ領域が選択された場合は選択解除（クロスヘア位置は変更しない）
     if (selectedRegion === regionIndex) {
       setSelectedRegion(null);
+      return; // クロスヘア位置を変更せずに終了
     } else {
       setSelectedRegion(regionIndex);
+
+      // クリック位置が指定されている場合は、その位置を使用
+      if (clickPosition) {
+        setCrosshairPosition(clickPosition);
+        console.log(
+          `クリック位置にクロスヘアを設定: [${clickPosition[0]}, ${clickPosition[1]}, ${clickPosition[2]}]`
+        );
+        return;
+      }
+
+      // 選択された領域の中心座標を取得して、クロスヘア位置を更新
+      if (regionIndex && aalVolume && mniData) {
+        // 選択された領域のすべてのボクセルを見つける
+        const voxels: [number, number, number][] = [];
+
+        // ボリュームデータをスキャンして、選択された領域のボクセルを収集
+        for (let z = 0; z < mniData.dims[3]; z++) {
+          for (let y = 0; y < mniData.dims[2]; y++) {
+            for (let x = 0; x < mniData.dims[1]; x++) {
+              const index =
+                x + y * mniData.dims[1] + z * mniData.dims[1] * mniData.dims[2];
+              if (aalVolume[index] === regionIndex) {
+                voxels.push([x, y, z]);
+              }
+            }
+          }
+        }
+
+        // 領域の中心座標を計算
+        if (voxels.length > 0) {
+          let sumX = 0,
+            sumY = 0,
+            sumZ = 0;
+          voxels.forEach((voxel) => {
+            sumX += voxel[0];
+            sumY += voxel[1];
+            sumZ += voxel[2];
+          });
+
+          const centerX = Math.round(sumX / voxels.length);
+          const centerY = Math.round(sumY / voxels.length);
+          const centerZ = Math.round(sumZ / voxels.length);
+
+          // クロスヘア位置を更新して、すべての断面ビューワーを中心に移動
+          const newPosition: [number, number, number] = [
+            centerX,
+            centerY,
+            centerZ,
+          ];
+          setCrosshairPosition(newPosition);
+          console.log(
+            `領域 ${regionIndex} の中心に移動: [${centerX}, ${centerY}, ${centerZ}]`
+          );
+        }
+      }
     }
   };
 
@@ -76,36 +240,87 @@ export default function BrainDatabasePage() {
     setShowAAL(!showAAL);
   };
 
-  // 英語名から日本語名を取得する関数
-  // 現在は直接使用されていませんが、将来的に必要になる可能性があるため残しています
-  /* 
-  const getJapaneseName = (englishName: string): string => {
-    // JSONデータから検索
-    const labelData = japaneseLabelsData.find(item => item.englishLabel === englishName);
-    if (labelData) {
-      return labelData.japaneseLabel;
+  // クロスヘア位置更新ハンドラ
+  const handleCrosshairPositionChange = (
+    position: [number, number, number]
+  ) => {
+    // 前の位置と同じ場合は更新しない
+    if (
+      crosshairPosition &&
+      position[0] === crosshairPosition[0] &&
+      position[1] === crosshairPosition[1] &&
+      position[2] === crosshairPosition[2]
+    ) {
+      return;
     }
-    
-    // 見つからない場合はカテゴリ名を返す
-    const lowerName = englishName.toLowerCase();
-    if (lowerName.includes('frontal')) return '前頭葉領域';
-    if (lowerName.includes('temporal')) return '側頭葉領域';
-    if (lowerName.includes('parietal')) return '頭頂葉領域';
-    if (lowerName.includes('occipital')) return '後頭葉領域';
-    if (lowerName.includes('cerebellum')) return '小脳領域';
-    if (lowerName.includes('cingulate')) return '帯状回領域';
-    if (lowerName.includes('insula')) return '島皮質領域';
-    if (lowerName.includes('thalamus')) return '視床領域';
-    
-    return '脳領域';
+
+    // クロスヘア位置を更新
+    setCrosshairPosition(position);
+    console.log("クロスヘア位置が更新されました:", position);
+
+    // 他の断面のビューアーに対して、クロスヘア位置を中心に表示するように指示
+    // これは各ビューアーコンポーネントで処理される
+    // クロスヘア位置の状態を更新するだけで、各ビューアーは自動的に更新される
   };
-  */
+
+  // 明るさ調整ハンドラ
+  const handleBrightnessChange = (value: number) => {
+    setBrightness(value);
+  };
+
+  // コントラスト調整ハンドラ
+  const handleContrastChange = (value: number) => {
+    setContrast(value);
+  };
+
+  // 領域ホバーハンドラ
+  const handleRegionHover = (
+    regionIndex: number | null,
+    position?: {
+      voxel: [number, number, number];
+      mni: [number, number, number];
+      sliceType: string;
+    }
+  ) => {
+    setHoveredRegion(regionIndex);
+    // カーソル情報を更新
+    if (position) {
+      setCursorInfo({
+        voxel: position.voxel,
+        mni: position.mni,
+        sliceType: position.sliceType,
+        regionIndex: regionIndex,
+      });
+    } else if (cursorInfo) {
+      setCursorInfo({
+        ...cursorInfo,
+        regionIndex: regionIndex,
+      });
+    }
+  };
+
+  // 領域の詳細情報を取得する関数
+  const getRegionDetails = (
+    regionIndex: number | null
+  ): AALJapaneseLabel | null => {
+    if (!regionIndex) return null;
+
+    const region = aalLabels.find((l) => l.index === regionIndex);
+    if (!region) return null;
+
+    const details = japaneseLabelsData.find(
+      (item) => item.englishLabel === region.name
+    );
+    return details || null;
+  };
 
   // 英語名から左右の接頭辞付き日本語名を取得する関数
   const getJapaneseNameWithPrefix = (englishName: string): string => {
     // JSONデータから検索
-    const labelData = japaneseLabelsData.find(item => item.englishLabel === englishName);
-    
+    const labelData = japaneseLabelsData.find(
+      (item) => item.englishLabel === englishName
+    );
+
     if (labelData) {
       // lateralityが存在する場合は接頭辞として追加
       if (labelData.laterality) {
@@ -113,19 +328,19 @@ export default function BrainDatabasePage() {
       }
       return labelData.japaneseLabel;
     }
-    
+
     // 見つからない場合はカテゴリ名を返す
     const lowerName = englishName.toLowerCase();
-    if (lowerName.includes('frontal')) return '前頭葉領域';
-    if (lowerName.includes('temporal')) return '側頭葉領域';
-    if (lowerName.includes('parietal')) return '頭頂葉領域';
-    if (lowerName.includes('occipital')) return '後頭葉領域';
-    if (lowerName.includes('cerebellum')) return '小脳領域';
-    if (lowerName.includes('cingulate')) return '帯状回領域';
-    if (lowerName.includes('insula')) return '島皮質領域';
-    if (lowerName.includes('thalamus')) return '視床領域';
-    
-    return '脳領域';
+    if (lowerName.includes("frontal")) return "前頭葉領域";
+    if (lowerName.includes("temporal")) return "側頭葉領域";
+    if (lowerName.includes("parietal")) return "頭頂葉領域";
+    if (lowerName.includes("occipital")) return "後頭葉領域";
+    if (lowerName.includes("cerebellum")) return "小脳領域";
+    if (lowerName.includes("cingulate")) return "帯状回領域";
+    if (lowerName.includes("insula")) return "島皮質領域";
+    if (lowerName.includes("thalamus")) return "視床領域";
+
+    return "脳領域";
   };
 
   return (
@@ -152,27 +367,27 @@ export default function BrainDatabasePage() {
           データベース一覧に戻る
         </Link>
       </div>
-      
+
       <h1 className="text-3xl font-bold mb-6">脳機能データベース</h1>
-      
+
       <div className="mb-6">
         <div className="flex border-b">
           <button
-            className={`px-4 py-2 ${activeTab === 'viewer' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-500'}`}
-            onClick={() => setActiveTab('viewer')}
+            className={`px-4 py-2 ${activeTab === "viewer" ? "border-b-2 border-blue-500 text-blue-500" : "text-gray-500"}`}
+            onClick={() => setActiveTab("viewer")}
           >
             ビューワー
           </button>
           <button
-            className={`px-4 py-2 ${activeTab === 'about' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-500'}`}
-            onClick={() => setActiveTab('about')}
+            className={`px-4 py-2 ${activeTab === "about" ? "border-b-2 border-blue-500 text-blue-500" : "text-gray-500"}`}
+            onClick={() => setActiveTab("about")}
           >
             データについて
           </button>
         </div>
       </div>
-      
-      {activeTab === 'viewer' ? (
+
+      {activeTab === "viewer" ? (
         <div>
           {isLoading ? (
             <div className="flex justify-center items-center h-64">
@@ -187,38 +402,157 @@ export default function BrainDatabasePage() {
               <p>{error}</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <div className="lg:col-span-2">
-                <div className="bg-white rounded-lg shadow-md p-4 mb-6">
-                  <h2 className="text-xl font-semibold mb-4">3Dビューワー</h2>
-                  <div className="border rounded-md">
-                    <div className="h-[400px] w-full flex items-center justify-center bg-gray-100">
-                      <p className="text-gray-500">3Dビューワーは現在開発中です</p>
+            <div className="grid grid-cols-1 gap-6">
+              <div className="bg-white rounded-lg shadow-md p-4">
+                <h2 className="text-xl font-semibold mb-4">脳断面ビューワー</h2>
+                <div className="space-y-4">
+                  {/* コントロールパネル */}
+                  <div className="flex items-center space-x-4 mb-4">
+                    <button
+                      className={`px-3 py-1 rounded ${
+                        showAAL ? "bg-blue-500 text-white" : "bg-gray-200"
+                      }`}
+                      onClick={handleToggleAAL}
+                    >
+                      AAL表示 {showAAL ? "ON" : "OFF"}
+                    </button>
+                    <div className="flex-1">
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        明るさ
+                      </label>
+                      <input
+                        type="range"
+                        min="-100"
+                        max="100"
+                        value={brightness}
+                        onChange={(e) =>
+                          handleBrightnessChange(Number(e.target.value))
+                        }
+                        className="w-full"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        コントラスト
+                      </label>
+                      <input
+                        type="range"
+                        min="-100"
+                        max="100"
+                        value={contrast}
+                        onChange={(e) =>
+                          handleContrastChange(Number(e.target.value))
+                        }
+                        className="w-full"
+                      />
                     </div>
                   </div>
-                </div>
-                
-                <div className="bg-white rounded-lg shadow-md p-4">
-                  <h2 className="text-xl font-semibold mb-4">断面ビューワー</h2>
-                  
-                  {/* AAL表示切り替えボタンを共通で1箇所に配置 */}
-                  <div className="mb-4 flex justify-end">
-                    <label className="inline-flex items-center cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={showAAL}
-                        onChange={handleToggleAAL}
-                        className="sr-only peer"
-                      />
-                      <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                      <span className="ml-2 text-sm font-medium">AAL領域表示</span>
-                    </label>
-                  </div>
-                  
+                  {/* 選択された領域の情報表示 - 上部に配置 */}
+                  {selectedRegion && (
+                    <div className="mb-4 p-4 bg-white border border-blue-300 rounded-md shadow-md">
+                      {/* 領域名を日本語で大きく表示し、英語名も併記 */}
+                      <h3 className="font-bold text-2xl text-blue-700 mb-1">
+                        {(() => {
+                          const selectedLabel = aalLabels.find(
+                            (l) => l.index === selectedRegion
+                          );
+                          const name = selectedLabel?.name || "";
+
+                          // CSVから読み込んだ日本語名を使用
+                          return getJapaneseNameWithPrefix(name);
+                        })()}
+                      </h3>
+                      {/* 英語名称の表示 */}
+                      {(() => {
+                        const details = getRegionDetails(selectedRegion);
+                        if (!details) return null;
+                        return (
+                          <p className="text-md text-gray-600 mb-3 italic">
+                            {details.englishName || ""}
+                          </p>
+                        );
+                      })()}
+
+                      {/* 詳細情報の表示 */}
+                      {(() => {
+                        const details = getRegionDetails(selectedRegion);
+                        if (!details || !details.functionalRole) return null;
+
+                        return (
+                          <div className="mt-4">
+                            <div className="mb-3">
+                              <h4 className="font-semibold text-gray-800">
+                                機能的役割
+                              </h4>
+                              <p className="text-gray-700">
+                                {details.functionalRole}
+                              </p>
+                            </div>
+
+                            {details.connections &&
+                              details.connections.length > 0 && (
+                                <div className="mb-3">
+                                  <h4 className="font-semibold text-gray-800">
+                                    主な神経接続
+                                  </h4>
+                                  <ul className="list-disc pl-5">
+                                    {details.connections.map((conn, i) => (
+                                      <li key={i} className="text-gray-700">
+                                        {conn}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+
+                            {details.relatedDisorders &&
+                              details.relatedDisorders.length > 0 && (
+                                <div className="mb-3">
+                                  <h4 className="font-semibold text-gray-800">
+                                    関連疾患
+                                  </h4>
+                                  <ul className="list-disc pl-5">
+                                    {details.relatedDisorders.map(
+                                      (disorder, i) => (
+                                        <li key={i} className="text-gray-700">
+                                          {disorder}
+                                        </li>
+                                      )
+                                    )}
+                                  </ul>
+                                </div>
+                              )}
+
+                            {details.references &&
+                              details.references.length > 0 && (
+                                <div>
+                                  <h4 className="font-semibold text-gray-800">
+                                    参考文献
+                                  </h4>
+                                  <ul className="list-disc pl-5 text-xs">
+                                    {details.references.map((ref, i) => (
+                                      <li key={i} className="text-gray-600">
+                                        {ref}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+                          </div>
+                        );
+                      })()}
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="border rounded-md">
+                    <div className="border rounded-md shadow-sm hover:shadow-md transition-shadow duration-300">
+                      <div className="bg-gray-50 py-1 px-2 border-b text-center">
+                        <span className="text-sm font-medium text-gray-700">
+                          軸位断 (Axial)
+                        </span>
+                      </div>
                       <BrainSliceViewer
-                        mniUrl="/data/brain/MNI152_1mm_brain.nii.gz"
+                        mniUrl="/data/brain/MNI152NLin6Asym_T1w_1mm.nii.gz"
                         aalUrl="/data/brain/AAL3v1_1mm.nii.gz"
                         aalLabels={aalLabels}
                         selectedRegion={selectedRegion}
@@ -226,11 +560,47 @@ export default function BrainDatabasePage() {
                         onRegionClick={handleRegionSelect}
                         showAAL={showAAL}
                         japaneseLabelsData={japaneseLabelsData}
+                        crosshairPosition={crosshairPosition}
+                        onCrosshairPositionChange={
+                          handleCrosshairPositionChange
+                        }
+                        brightness={brightness}
+                        contrast={contrast}
+                        hoveredRegion={hoveredRegion}
+                        onRegionHover={handleRegionHover}
                       />
+                      {/* 座標情報パネル - 軸位断 */}
+                      <div className="bg-gray-50 text-sm py-2 px-3 border-t">
+                        <div className="flex items-center justify-center">
+                          <span className="text-gray-600 font-medium w-16 text-right pr-2">
+                            Voxel:
+                          </span>
+                          <span className="font-mono w-28 text-left">
+                            {cursorInfo && cursorInfo.sliceType === "axial"
+                              ? `[${cursorInfo.voxel[0]}, ${cursorInfo.voxel[1]}, ${cursorInfo.voxel[2]}]`
+                              : "[-, -, -]"}
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-center mt-1">
+                          <span className="text-gray-600 font-medium w-16 text-right pr-2">
+                            MNI:
+                          </span>
+                          <span className="font-mono w-28 text-left">
+                            {cursorInfo && cursorInfo.sliceType === "axial"
+                              ? `[${Math.round(cursorInfo.mni[0])}, ${Math.round(cursorInfo.mni[1])}, ${Math.round(cursorInfo.mni[2])}]`
+                              : "[-, -, -]"}
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <div className="border rounded-md">
+                    <div className="border rounded-md shadow-sm hover:shadow-md transition-shadow duration-300">
+                      <div className="bg-gray-50 py-1 px-2 border-b text-center">
+                        <span className="text-sm font-medium text-gray-700">
+                          冠状断 (Coronal)
+                        </span>
+                      </div>
                       <BrainSliceViewer
-                        mniUrl="/data/brain/MNI152_1mm_brain.nii.gz"
+                        mniUrl="/data/brain/MNI152NLin6Asym_T1w_1mm.nii.gz"
                         aalUrl="/data/brain/AAL3v1_1mm.nii.gz"
                         aalLabels={aalLabels}
                         selectedRegion={selectedRegion}
@@ -238,11 +608,47 @@ export default function BrainDatabasePage() {
                         onRegionClick={handleRegionSelect}
                         showAAL={showAAL}
                         japaneseLabelsData={japaneseLabelsData}
+                        crosshairPosition={crosshairPosition}
+                        onCrosshairPositionChange={
+                          handleCrosshairPositionChange
+                        }
+                        brightness={brightness}
+                        contrast={contrast}
+                        hoveredRegion={hoveredRegion}
+                        onRegionHover={handleRegionHover}
                       />
+                      {/* 座標情報パネル - 冠状断 */}
+                      <div className="bg-gray-50 text-sm py-2 px-3 border-t">
+                        <div className="flex items-center justify-center">
+                          <span className="text-gray-600 font-medium w-16 text-right pr-2">
+                            Voxel:
+                          </span>
+                          <span className="font-mono w-28 text-left">
+                            {cursorInfo && cursorInfo.sliceType === "coronal"
+                              ? `[${cursorInfo.voxel[0]}, ${cursorInfo.voxel[1]}, ${cursorInfo.voxel[2]}]`
+                              : "[-, -, -]"}
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-center mt-1">
+                          <span className="text-gray-600 font-medium w-16 text-right pr-2">
+                            MNI:
+                          </span>
+                          <span className="font-mono w-28 text-left">
+                            {cursorInfo && cursorInfo.sliceType === "coronal"
+                              ? `[${Math.round(cursorInfo.mni[0])}, ${Math.round(cursorInfo.mni[1])}, ${Math.round(cursorInfo.mni[2])}]`
+                              : "[-, -, -]"}
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <div className="border rounded-md">
+                    <div className="border rounded-md shadow-sm hover:shadow-md transition-shadow duration-300">
+                      <div className="bg-gray-50 py-1 px-2 border-b text-center">
+                        <span className="text-sm font-medium text-gray-700">
+                          矢状断 (Sagittal)
+                        </span>
+                      </div>
                       <BrainSliceViewer
-                        mniUrl="/data/brain/MNI152_1mm_brain.nii.gz"
+                        mniUrl="/data/brain/MNI152NLin6Asym_T1w_1mm.nii.gz"
                         aalUrl="/data/brain/AAL3v1_1mm.nii.gz"
                         aalLabels={aalLabels}
                         selectedRegion={selectedRegion}
@@ -250,34 +656,47 @@ export default function BrainDatabasePage() {
                         onRegionClick={handleRegionSelect}
                         showAAL={showAAL}
                         japaneseLabelsData={japaneseLabelsData}
+                        crosshairPosition={crosshairPosition}
+                        onCrosshairPositionChange={
+                          handleCrosshairPositionChange
+                        }
+                        brightness={brightness}
+                        contrast={contrast}
+                        hoveredRegion={hoveredRegion}
+                        onRegionHover={handleRegionHover}
                       />
+                      {/* 座標情報パネル - 矢状断 */}
+                      <div className="bg-gray-50 text-sm py-2 px-3 border-t">
+                        <div className="flex items-center justify-center">
+                          <span className="text-gray-600 font-medium w-16 text-right pr-2">
+                            Voxel:
+                          </span>
+                          <span className="font-mono w-28 text-left">
+                            {cursorInfo && cursorInfo.sliceType === "sagittal"
+                              ? `[${cursorInfo.voxel[0]}, ${cursorInfo.voxel[1]}, ${cursorInfo.voxel[2]}]`
+                              : "[-, -, -]"}
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-center mt-1">
+                          <span className="text-gray-600 font-medium w-16 text-right pr-2">
+                            MNI:
+                          </span>
+                          <span className="font-mono w-28 text-left">
+                            {cursorInfo && cursorInfo.sliceType === "sagittal"
+                              ? `[${Math.round(cursorInfo.mni[0])}, ${Math.round(cursorInfo.mni[1])}, ${Math.round(cursorInfo.mni[2])}]`
+                              : "[-, -, -]"}
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  
-                  {/* 選択された領域の情報表示 - 断面ビューワーの下に共通で1つだけ配置 */}
-                  {selectedRegion && (
-                    <div className="mt-6 p-4 bg-white border border-blue-300 rounded-md shadow-md">
-                      {/* 領域名を日本語で大きく表示し、英語名も併記 */}
-                      <h3 className="font-bold text-2xl text-blue-700 mb-1">
-                        {(() => {
-                          const selectedLabel = aalLabels.find(l => l.index === selectedRegion);
-                          const name = selectedLabel?.name || '';
-                          
-                          // CSVから読み込んだ日本語名を使用
-                          return getJapaneseNameWithPrefix(name);
-                        })()}
-                      </h3>
-                      <p className="text-md text-gray-600 mb-3">
-                        {aalLabels.find(l => l.index === selectedRegion)?.name || `Region ${selectedRegion}`}
-                      </p>
-                    </div>
-                  )}
                 </div>
               </div>
-              
-              <div className="bg-white rounded-lg shadow-md p-4 h-full">
+
+              {/* 脳領域情報を下部に移動 */}
+              <div className="bg-white rounded-lg shadow-md p-4">
                 <h2 className="text-xl font-semibold mb-4">脳領域情報</h2>
-                <div className="h-[600px]">
+                <div className="h-[400px]">
                   <BrainRegionList
                     regions={aalLabels}
                     selectedRegion={selectedRegion}
@@ -289,20 +708,27 @@ export default function BrainDatabasePage() {
               </div>
             </div>
           )}
-          
+
           <div className="mt-6 bg-green-50 border-l-4 border-green-500 p-4">
             <p className="font-bold">更新情報</p>
-            <p>AAL領域の表示機能が有効になりました。断面ビューワーで常に脳領域が表示されるようになりました。3Dビューワーは現在開発中のため一時的に無効化しています。</p>
+            <p>
+              クロスヘアナビゲーション、コントラスト・明るさ調整機能、詳細な領域情報表示機能が追加されました。断面ビューワーで脳領域をクリックすると、他の断面でも同じ位置が表示されるようになりました。
+            </p>
           </div>
         </div>
       ) : (
         <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-bold mb-4">脳機能データベースについて</h2>
-          
+          <h2 className="text-2xl font-bold mb-4">
+            脳機能データベースについて
+          </h2>
+
           <div className="mb-6">
-            <h3 className="text-xl font-semibold mb-2">MNI152標準脳テンプレート</h3>
+            <h3 className="text-xl font-semibold mb-2">
+              MNI152標準脳テンプレート
+            </h3>
             <p className="mb-2">
-              MNI152は、モントリオール神経学研究所（Montreal Neurological Institute）で開発された標準脳テンプレートです。
+              MNI152は、モントリオール神経学研究所（Montreal Neurological
+              Institute）で開発された標準脳テンプレートです。
               152人の健常者の脳MRIを平均化して作成されており、脳画像研究における標準的な座標系として広く使用されています。
             </p>
             <p>
@@ -310,11 +736,12 @@ export default function BrainDatabasePage() {
               1mm等方性の高解像度バージョンを使用しており、詳細な解剖学的構造を確認できます。
             </p>
           </div>
-          
+
           <div className="mb-6">
             <h3 className="text-xl font-semibold mb-2">AAL3パーセレーション</h3>
             <p className="mb-2">
-              AAL（Automated Anatomical Labeling）は、脳の解剖学的領域を自動的にラベル付けするためのアトラスです。
+              AAL（Automated Anatomical
+              Labeling）は、脳の解剖学的領域を自動的にラベル付けするためのアトラスです。
               AAL3は最新バージョンで、脳の皮質および皮質下構造を170の領域に分割しています。
             </p>
             <p>
@@ -322,7 +749,7 @@ export default function BrainDatabasePage() {
               このデータベースでは、AAL3アトラスを使用して脳領域を視覚化し、各領域の解剖学的位置を確認できます。
             </p>
           </div>
-          
+
           <div>
             <h3 className="text-xl font-semibold mb-2">データソース</h3>
             <p className="mb-2">
@@ -331,21 +758,22 @@ export default function BrainDatabasePage() {
             </p>
             <ul className="list-disc pl-6">
               <li>
-                Fonov V, Evans AC, Botteron K, Almli CR, McKinstry RC, Collins DL. 
-                Unbiased average age-appropriate atlases for pediatric studies. 
-                NeuroImage, 54(1):313-327, 2011.
+                Fonov V, Evans AC, Botteron K, Almli CR, McKinstry RC, Collins
+                DL. Unbiased average age-appropriate atlases for pediatric
+                studies. NeuroImage, 54(1):313-327, 2011.
               </li>
               <li>
-                Rolls ET, Huang CC, Lin CP, Feng J, Joliot M. 
-                Automated anatomical labelling atlas 3. 
-                NeuroImage, 206:116189, 2020.
+                Rolls ET, Huang CC, Lin CP, Feng J, Joliot M. Automated
+                anatomical labelling atlas 3. NeuroImage, 206:116189, 2020.
               </li>
             </ul>
           </div>
-          
+
           <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500">
             <p className="font-bold">開発状況</p>
-            <p>現在、3Dビューワー機能は開発中のため一時的に無効化しています。今後のアップデートで実装予定です。</p>
+            <p>
+              現在、3Dビューワー機能は開発中のため一時的に無効化しています。今後のアップデートで実装予定です。
+            </p>
           </div>
         </div>
       )}

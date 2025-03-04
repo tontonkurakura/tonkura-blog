@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from "react";
 
 interface AALJapaneseLabel {
   englishLabel: string;
   japaneseLabel: string;
   laterality: string;
   category: string;
+  englishName?: string;
 }
 
 interface BrainRegionListProps {
@@ -22,71 +23,82 @@ export default function BrainRegionList({
   selectedRegion,
   onRegionSelect,
   japaneseLabels = {},
-  japaneseLabelsData = []
+  japaneseLabelsData = [],
 }: BrainRegionListProps) {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [filteredRegions, setFilteredRegions] = useState(regions);
-  const [sortOrder, setSortOrder] = useState<'index' | 'name'>('index');
-  
-  // 英語名から日本語名を取得する関数
-  const getJapaneseName = (englishName: string): string => {
-    // 新しいJSONデータから検索
-    const labelData = japaneseLabelsData.find(item => item.englishLabel === englishName);
-    if (labelData) {
-      // lateralityが存在する場合は接頭辞として追加
-      if (labelData.laterality) {
-        return labelData.laterality + labelData.japaneseLabel;
-      }
-      return labelData.japaneseLabel;
-    }
-    
-    // 後方互換性のために従来の方法も残す
-    // 完全一致で検索
-    if (japaneseLabels[englishName]) {
-      return japaneseLabels[englishName];
-    }
-    
-    // 部分一致で検索（左右の情報を考慮）
-    for (const key in japaneseLabels) {
-      if (englishName.includes(key)) {
-        // 左右の情報を接頭辞に変更
-        const japaneseName = japaneseLabels[key];
-        if (englishName.includes('_L')) {
-          return '左' + japaneseName.replace(' 左', '');
-        } else if (englishName.includes('_R')) {
-          return '右' + japaneseName.replace(' 右', '');
+  const [sortOrder, setSortOrder] = useState<"index" | "name">("index");
+
+  // 英語名から日本語名を取得する関数をuseCallbackでメモ化
+  const getJapaneseName = useCallback(
+    (englishName: string): string => {
+      // 新しいJSONデータから検索
+      const labelData = japaneseLabelsData.find(
+        (item) => item.englishLabel === englishName
+      );
+      if (labelData) {
+        // lateralityが存在する場合は接頭辞として追加
+        if (labelData.laterality) {
+          return labelData.laterality + labelData.japaneseLabel;
         }
-        return japaneseName;
+        return labelData.japaneseLabel;
       }
-    }
-    
-    return '';
-  };
+
+      // 後方互換性のために従来の方法も残す
+      // 完全一致で検索
+      if (japaneseLabels[englishName]) {
+        return japaneseLabels[englishName];
+      }
+
+      // 部分一致で検索（左右の情報を考慮）
+      for (const key in japaneseLabels) {
+        if (englishName.includes(key)) {
+          // 左右の情報を接頭辞に変更
+          const japaneseName = japaneseLabels[key];
+          if (englishName.includes("_L")) {
+            return "左" + japaneseName.replace(" 左", "");
+          } else if (englishName.includes("_R")) {
+            return "右" + japaneseName.replace(" 右", "");
+          }
+          return japaneseName;
+        }
+      }
+
+      return "";
+    },
+    [japaneseLabels, japaneseLabelsData]
+  );
 
   // 検索語や並び順が変更されたときにリージョンをフィルタリング
   useEffect(() => {
-    let filtered = [...regions];
-    
+    // AAL3で空になっている領域（前部帯状回(35, 36)と視床(81, 82)）を除外
+    let filtered = regions.filter(
+      (region) => ![35, 36, 81, 82].includes(region.index)
+    );
+
     // 検索語でフィルタリング
     if (searchTerm) {
       const lowerSearchTerm = searchTerm.toLowerCase();
-      filtered = filtered.filter(region => {
-        const englishNameMatch = region.name.toLowerCase().includes(lowerSearchTerm);
+      filtered = filtered.filter((region) => {
+        const englishNameMatch = region.name
+          .toLowerCase()
+          .includes(lowerSearchTerm);
         const japaneseName = getJapaneseName(region.name);
-        const japaneseNameMatch = japaneseName && japaneseName.includes(lowerSearchTerm);
+        const japaneseNameMatch =
+          japaneseName && japaneseName.includes(lowerSearchTerm);
         return englishNameMatch || japaneseNameMatch;
       });
     }
-    
+
     // 並び順でソート
-    if (sortOrder === 'index') {
+    if (sortOrder === "index") {
       filtered.sort((a, b) => a.index - b.index);
     } else {
       filtered.sort((a, b) => a.name.localeCompare(b.name));
     }
-    
+
     setFilteredRegions(filtered);
-  }, [regions, searchTerm, sortOrder, japaneseLabels, japaneseLabelsData]);
+  }, [regions, searchTerm, sortOrder, getJapaneseName]);
 
   return (
     <div className="h-full flex flex-col">
@@ -99,7 +111,7 @@ export default function BrainRegionList({
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-      
+
       <div className="mb-2 flex justify-between">
         <div className="text-sm text-gray-500">
           {filteredRegions.length} / {regions.length} 領域
@@ -109,27 +121,35 @@ export default function BrainRegionList({
           <select
             className="text-sm border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={sortOrder}
-            onChange={(e) => setSortOrder(e.target.value as 'index' | 'name')}
+            onChange={(e) => setSortOrder(e.target.value as "index" | "name")}
           >
             <option value="index">インデックス</option>
             <option value="name">名前</option>
           </select>
         </div>
       </div>
-      
+
       <div className="flex-1 overflow-y-auto border border-gray-200 rounded-md">
         <ul className="divide-y divide-gray-200">
           {filteredRegions.map((region) => {
             const isSelected = selectedRegion === region.index;
             const japaneseName = getJapaneseName(region.name);
-            
+
             return (
               <li
                 key={region.index}
+                role="button"
+                tabIndex={0}
                 className={`px-4 py-2 cursor-pointer hover:bg-gray-50 ${
-                  isSelected ? 'bg-blue-50' : ''
+                  isSelected ? "bg-blue-50" : ""
                 }`}
                 onClick={() => onRegionSelect(region.index)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    onRegionSelect(region.index);
+                  }
+                }}
               >
                 <div className="flex items-center">
                   <div
@@ -147,7 +167,9 @@ export default function BrainRegionList({
                     {japaneseName && (
                       <div className="text-xs text-gray-500">{region.name}</div>
                     )}
-                    <div className="text-xs text-gray-500">ID: {region.index}</div>
+                    <div className="text-xs text-gray-500">
+                      ID: {region.index}
+                    </div>
                   </div>
                 </div>
               </li>
@@ -157,4 +179,4 @@ export default function BrainRegionList({
       </div>
     </div>
   );
-} 
+}

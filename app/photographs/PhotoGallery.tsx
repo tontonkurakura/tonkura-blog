@@ -1,42 +1,100 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import Image from "next/image";
 import type { Photo, ExifData, AspectRatio } from "@/types/photo";
 import { PHOTO_HEIGHTS } from "@/constants/photo";
 
 // シンプルなモーダルコンポーネント
-function SimpleImageModal({ 
-  src, 
-  alt, 
-  exif, 
-  onClose 
-}: { 
-  src: string; 
-  alt?: string; 
-  exif: ExifData | null; 
+function SimpleImageModal({
+  src,
+  alt,
+  exif,
+  onClose,
+}: {
+  src: string;
+  alt?: string;
+  exif: ExifData | null;
   onClose: () => void;
 }) {
+  // モーダルの内部要素への参照
+  const modalRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     // ESCキーでモーダルを閉じる
     const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === "Escape") onClose();
     };
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
+    window.addEventListener("keydown", handleEsc);
+
+    // モーダルが開いたときにスクロールを無効化
+    document.body.style.overflow = "hidden";
+
+    // クリーンアップ関数
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+      document.body.style.overflow = "";
+    };
   }, [onClose]);
 
+  // モーダルが開いたときに閉じるボタンにフォーカス
+  useEffect(() => {
+    if (closeButtonRef.current) {
+      closeButtonRef.current.focus();
+    }
+  }, []);
+
+  // モーダル内でのフォーカストラップを実装
+  const handleTabKey = (e: React.KeyboardEvent) => {
+    if (e.key === "Tab" && modalRef.current) {
+      const focusableElements = modalRef.current.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+
+      if (focusableElements.length === 0) return;
+
+      const firstElement = focusableElements[0] as HTMLElement;
+      const lastElement = focusableElements[
+        focusableElements.length - 1
+      ] as HTMLElement;
+
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
+      }
+    }
+  };
+
   return (
-    <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 w-full h-full" 
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 w-full h-full"
       onClick={onClose}
+      onKeyDown={(e) => {
+        if (e.key === "Escape") onClose();
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onClose();
+        }
+      }}
       role="dialog"
       aria-modal="true"
       aria-label="画像詳細"
+      tabIndex={0}
+      aria-describedby="modal-description"
     >
-      <div 
-        className="relative max-w-[95vw] max-h-[95vh] flex flex-col md:flex-row gap-4 items-center" 
-        onClick={e => e.stopPropagation()}
+      <span id="modal-description" className="sr-only">
+        画像を拡大表示しています。閉じるには、ESCキーを押すか、画面の任意の場所をクリックしてください。
+      </span>
+      <div
+        ref={modalRef}
+        className="relative max-w-[95vw] max-h-[95vh] flex flex-col md:flex-row gap-4 items-center"
+        onClick={(e) => e.stopPropagation()}
+        onKeyDown={handleTabKey}
         role="presentation"
         tabIndex={-1}
       >
@@ -47,29 +105,73 @@ function SimpleImageModal({
             width={1200}
             height={800}
             className="object-contain max-h-[85vh] max-w-full"
-            style={{ width: 'auto', height: 'auto' }}
+            style={{ width: "auto", height: "auto" }}
           />
         </div>
         <button
+          ref={closeButtonRef}
           className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70"
           onClick={onClose}
           aria-label="閉じる"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         </button>
         {exif && (
           <div className="text-white bg-black/50 p-4 rounded-lg text-sm w-full md:w-56 self-center max-h-[85vh] overflow-y-auto">
             {alt && <p className="mb-2 font-medium">{alt}</p>}
             <div className="space-y-1.5">
-              {exif.date && <p><span className="text-gray-400">Date:</span> {new Date(exif.date).toLocaleDateString("en-US")}</p>}
-              {exif.camera && <p><span className="text-gray-400">Camera:</span> {exif.camera}</p>}
-              {exif.lens && exif.lens !== "Unknown" && <p><span className="text-gray-400">Lens:</span> {exif.lens}</p>}
-              {exif.focalLength && exif.focalLength !== "Unknown" && <p><span className="text-gray-400">Focal Length:</span> {exif.focalLength}</p>}
-              {exif.aperture && exif.aperture !== "Unknown" && <p><span className="text-gray-400">Aperture:</span> {exif.aperture}</p>}
-              {exif.shutterSpeed && exif.shutterSpeed !== "Unknown" && <p><span className="text-gray-400">Shutter Speed:</span> {exif.shutterSpeed}</p>}
-              {exif.iso && exif.iso !== "Unknown" && <p><span className="text-gray-400">ISO:</span> {exif.iso}</p>}
+              {exif.date && (
+                <p>
+                  <span className="text-gray-400">Date:</span>{" "}
+                  {new Date(exif.date).toLocaleDateString("en-US")}
+                </p>
+              )}
+              {exif.camera && (
+                <p>
+                  <span className="text-gray-400">Camera:</span> {exif.camera}
+                </p>
+              )}
+              {exif.lens && exif.lens !== "Unknown" && (
+                <p>
+                  <span className="text-gray-400">Lens:</span> {exif.lens}
+                </p>
+              )}
+              {exif.focalLength && exif.focalLength !== "Unknown" && (
+                <p>
+                  <span className="text-gray-400">Focal Length:</span>{" "}
+                  {exif.focalLength}
+                </p>
+              )}
+              {exif.aperture && exif.aperture !== "Unknown" && (
+                <p>
+                  <span className="text-gray-400">Aperture:</span>{" "}
+                  {exif.aperture}
+                </p>
+              )}
+              {exif.shutterSpeed && exif.shutterSpeed !== "Unknown" && (
+                <p>
+                  <span className="text-gray-400">Shutter Speed:</span>{" "}
+                  {exif.shutterSpeed}
+                </p>
+              )}
+              {exif.iso && exif.iso !== "Unknown" && (
+                <p>
+                  <span className="text-gray-400">ISO:</span> {exif.iso}
+                </p>
+              )}
             </div>
           </div>
         )}
@@ -224,7 +326,7 @@ export default function PhotoGallery({
               {column.map((photo, photoIndex) => {
                 const height = getPhotoHeight(photo.aspectRatio);
                 return (
-                  <div
+                  <button
                     key={photo.path}
                     className="relative w-full rounded-xl overflow-hidden cursor-pointer opacity-0 animate-fadeIn [animation-fill-mode:forwards] hover:z-10 group transition-all duration-700 before:absolute before:inset-0 before:z-10 before:bg-gradient-to-t before:from-black/50 before:via-black/20 before:to-transparent before:opacity-0 before:transition-opacity before:duration-700 hover:before:opacity-100 after:absolute after:inset-0 after:rounded-xl after:ring-1 after:ring-white/15 after:transition-all after:duration-700 hover:after:ring-white/30"
                     style={{
@@ -243,8 +345,6 @@ export default function PhotoGallery({
                         setSelectedPhoto(photo);
                       }
                     }}
-                    role="button"
-                    tabIndex={0}
                     aria-label={`写真: ${photo.title || "無題"}`}
                   >
                     <Image
@@ -285,7 +385,7 @@ export default function PhotoGallery({
                         {photo.description || "Unknown location"}
                       </span>
                     </div>
-                  </div>
+                  </button>
                 );
               })}
             </div>
