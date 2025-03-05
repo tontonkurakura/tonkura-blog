@@ -245,7 +245,7 @@
     "englishLabel": "Rectus_L",
     "japaneseLabel": "直回",
     "laterality": "左",
-    "category": "未分類",
+    "category": "前頭葉",
     "englishName": "Gyrus rectus",
     "functionalRole": "嗅覚・報酬情報の処理、意思決定など",
     "references": [
@@ -256,7 +256,7 @@
     "englishLabel": "Rectus_R",
     "japaneseLabel": "直回",
     "laterality": "右",
-    "category": "未分類",
+    "category": "前頭葉",
     "englishName": "Gyrus rectus",
     "functionalRole": "嗅覚・報酬情報の処理、意思決定など",
     "references": [

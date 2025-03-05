@@ -71,8 +71,8 @@ export default function BrainDatabasePage() {
   const [crosshairPosition, setCrosshairPosition] = useState<
     [number, number, number]
   >([91, 109, 91]);
-  const [brightness, setBrightness] = useState<number>(0);
-  const [contrast, setContrast] = useState<number>(0);
+  const [aalOpacity, setAalOpacity] = useState<number>(30);
+  const [mniOpacity, setMniOpacity] = useState<number>(0);
   const [hoveredRegion, setHoveredRegion] = useState<number | null>(null);
   const [cursorInfo, setCursorInfo] = useState<{
     voxel: [number, number, number];
@@ -263,14 +263,14 @@ export default function BrainDatabasePage() {
     // クロスヘア位置の状態を更新するだけで、各ビューアーは自動的に更新される
   };
 
-  // 明るさ調整ハンドラ
-  const handleBrightnessChange = (value: number) => {
-    setBrightness(value);
+  // AAL透明度調整ハンドラ
+  const handleAalOpacityChange = (value: number) => {
+    setAalOpacity(value);
   };
 
-  // コントラスト調整ハンドラ
-  const handleContrastChange = (value: number) => {
-    setContrast(value);
+  // MNI透明度調整ハンドラ
+  const handleMniOpacityChange = (value: number) => {
+    setMniOpacity(value);
   };
 
   // 領域ホバーハンドラ
@@ -407,142 +407,154 @@ export default function BrainDatabasePage() {
                 <h2 className="text-xl font-semibold mb-4">脳断面ビューワー</h2>
                 <div className="space-y-4">
                   {/* コントロールパネル */}
-                  <div className="flex items-center space-x-4 mb-4">
-                    <button
-                      className={`px-3 py-1 rounded ${
-                        showAAL ? "bg-blue-500 text-white" : "bg-gray-200"
-                      }`}
-                      onClick={handleToggleAAL}
-                    >
-                      AAL表示 {showAAL ? "ON" : "OFF"}
-                    </button>
-                    <div className="flex-1">
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        明るさ
-                      </label>
-                      <input
-                        type="range"
-                        min="-100"
-                        max="100"
-                        value={brightness}
-                        onChange={(e) =>
-                          handleBrightnessChange(Number(e.target.value))
-                        }
-                        className="w-full"
-                      />
+                  <div className="flex flex-col space-y-3 mb-4">
+                    <div className="flex items-center space-x-4">
+                      <button
+                        className={`px-3 py-1 rounded ${
+                          showAAL ? "bg-blue-500 text-white" : "bg-gray-200"
+                        }`}
+                        onClick={handleToggleAAL}
+                      >
+                        ラベル表示 {showAAL ? "ON" : "OFF"}
+                      </button>
                     </div>
-                    <div className="flex-1">
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        コントラスト
-                      </label>
-                      <input
-                        type="range"
-                        min="-100"
-                        max="100"
-                        value={contrast}
-                        onChange={(e) =>
-                          handleContrastChange(Number(e.target.value))
-                        }
-                        className="w-full"
-                      />
+                    <div className="flex items-center space-x-4">
+                      <div className="flex-1">
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          ラベル透明度
+                        </label>
+                        <input
+                          type="range"
+                          min="0"
+                          max="100"
+                          value={aalOpacity}
+                          onChange={(e) =>
+                            handleAalOpacityChange(Number(e.target.value))
+                          }
+                          className="w-full"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                          MRI透明度
+                        </label>
+                        <input
+                          type="range"
+                          min="0"
+                          max="100"
+                          value={mniOpacity}
+                          onChange={(e) =>
+                            handleMniOpacityChange(Number(e.target.value))
+                          }
+                          className="w-full"
+                        />
+                      </div>
                     </div>
                   </div>
                   {/* 選択された領域の情報表示 - 上部に配置 */}
-                  {selectedRegion && (
-                    <div className="mb-4 p-4 bg-white border border-blue-300 rounded-md shadow-md">
-                      {/* 領域名を日本語で大きく表示し、英語名も併記 */}
-                      <h3 className="font-bold text-2xl text-blue-700 mb-1">
+                  <div className="mb-4 p-4 bg-white border border-blue-300 rounded-md shadow-md h-64 overflow-y-auto">
+                    {selectedRegion ? (
+                      <>
+                        {/* 領域名を日本語で大きく表示し、英語名も併記 */}
+                        <h3 className="font-bold text-2xl text-blue-700 mb-1">
+                          {(() => {
+                            const selectedLabel = aalLabels.find(
+                              (l) => l.index === selectedRegion
+                            );
+                            const name = selectedLabel?.name || "";
+
+                            // CSVから読み込んだ日本語名を使用
+                            return getJapaneseNameWithPrefix(name);
+                          })()}
+                        </h3>
+                        {/* 英語名称の表示 */}
                         {(() => {
-                          const selectedLabel = aalLabels.find(
-                            (l) => l.index === selectedRegion
+                          const details = getRegionDetails(selectedRegion);
+                          if (!details) return null;
+                          return (
+                            <p className="text-md text-gray-600 mb-3 italic">
+                              {details.englishName || ""}
+                            </p>
                           );
-                          const name = selectedLabel?.name || "";
-
-                          // CSVから読み込んだ日本語名を使用
-                          return getJapaneseNameWithPrefix(name);
                         })()}
-                      </h3>
-                      {/* 英語名称の表示 */}
-                      {(() => {
-                        const details = getRegionDetails(selectedRegion);
-                        if (!details) return null;
-                        return (
-                          <p className="text-md text-gray-600 mb-3 italic">
-                            {details.englishName || ""}
-                          </p>
-                        );
-                      })()}
 
-                      {/* 詳細情報の表示 */}
-                      {(() => {
-                        const details = getRegionDetails(selectedRegion);
-                        if (!details || !details.functionalRole) return null;
+                        {/* 詳細情報の表示 */}
+                        {(() => {
+                          const details = getRegionDetails(selectedRegion);
+                          if (!details || !details.functionalRole) return null;
 
-                        return (
-                          <div className="mt-4">
-                            <div className="mb-3">
-                              <h4 className="font-semibold text-gray-800">
-                                機能的役割
-                              </h4>
-                              <p className="text-gray-700">
-                                {details.functionalRole}
-                              </p>
-                            </div>
+                          return (
+                            <div className="mt-4">
+                              <div className="mb-3">
+                                <h4 className="font-semibold text-gray-800">
+                                  機能的役割
+                                </h4>
+                                <p className="text-gray-700">
+                                  {details.functionalRole}
+                                </p>
+                              </div>
 
-                            {details.connections &&
-                              details.connections.length > 0 && (
-                                <div className="mb-3">
-                                  <h4 className="font-semibold text-gray-800">
-                                    主な神経接続
-                                  </h4>
-                                  <ul className="list-disc pl-5">
-                                    {details.connections.map((conn, i) => (
-                                      <li key={i} className="text-gray-700">
-                                        {conn}
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              )}
-
-                            {details.relatedDisorders &&
-                              details.relatedDisorders.length > 0 && (
-                                <div className="mb-3">
-                                  <h4 className="font-semibold text-gray-800">
-                                    関連疾患
-                                  </h4>
-                                  <ul className="list-disc pl-5">
-                                    {details.relatedDisorders.map(
-                                      (disorder, i) => (
+                              {details.connections &&
+                                details.connections.length > 0 && (
+                                  <div className="mb-3">
+                                    <h4 className="font-semibold text-gray-800">
+                                      主な神経接続
+                                    </h4>
+                                    <ul className="list-disc pl-5">
+                                      {details.connections.map((conn, i) => (
                                         <li key={i} className="text-gray-700">
-                                          {disorder}
+                                          {conn}
                                         </li>
-                                      )
-                                    )}
-                                  </ul>
-                                </div>
-                              )}
+                                      ))}
+                                    </ul>
+                                  </div>
+                                )}
 
-                            {details.references &&
-                              details.references.length > 0 && (
-                                <div>
-                                  <h4 className="font-semibold text-gray-800">
-                                    参考文献
-                                  </h4>
-                                  <ul className="list-disc pl-5 text-xs">
-                                    {details.references.map((ref, i) => (
-                                      <li key={i} className="text-gray-600">
-                                        {ref}
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              )}
-                          </div>
-                        );
-                      })()}
-                    </div>
-                  )}
+                              {details.relatedDisorders &&
+                                details.relatedDisorders.length > 0 && (
+                                  <div className="mb-3">
+                                    <h4 className="font-semibold text-gray-800">
+                                      関連する疾患
+                                    </h4>
+                                    <ul className="list-disc pl-5">
+                                      {details.relatedDisorders.map(
+                                        (disorder, i) => (
+                                          <li key={i} className="text-gray-700">
+                                            {disorder}
+                                          </li>
+                                        )
+                                      )}
+                                    </ul>
+                                  </div>
+                                )}
+
+                              {details.references &&
+                                details.references.length > 0 && (
+                                  <div>
+                                    <h4 className="font-semibold text-gray-800">
+                                      参考文献
+                                    </h4>
+                                    <ul className="list-disc pl-5">
+                                      {details.references.map((ref, i) => (
+                                        <li key={i} className="text-gray-700">
+                                          {ref}
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                )}
+                            </div>
+                          );
+                        })()}
+                      </>
+                    ) : (
+                      <div className="h-full flex items-center justify-center">
+                        <p className="text-lg text-gray-500 font-medium">
+                          領域を選択してください
+                        </p>
+                      </div>
+                    )}
+                  </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="border rounded-md shadow-sm hover:shadow-md transition-shadow duration-300">
@@ -564,8 +576,8 @@ export default function BrainDatabasePage() {
                         onCrosshairPositionChange={
                           handleCrosshairPositionChange
                         }
-                        brightness={brightness}
-                        contrast={contrast}
+                        aalOpacity={aalOpacity}
+                        mniOpacity={mniOpacity}
                         hoveredRegion={hoveredRegion}
                         onRegionHover={handleRegionHover}
                       />
@@ -612,8 +624,8 @@ export default function BrainDatabasePage() {
                         onCrosshairPositionChange={
                           handleCrosshairPositionChange
                         }
-                        brightness={brightness}
-                        contrast={contrast}
+                        aalOpacity={aalOpacity}
+                        mniOpacity={mniOpacity}
                         hoveredRegion={hoveredRegion}
                         onRegionHover={handleRegionHover}
                       />
@@ -660,8 +672,8 @@ export default function BrainDatabasePage() {
                         onCrosshairPositionChange={
                           handleCrosshairPositionChange
                         }
-                        brightness={brightness}
-                        contrast={contrast}
+                        aalOpacity={aalOpacity}
+                        mniOpacity={mniOpacity}
                         hoveredRegion={hoveredRegion}
                         onRegionHover={handleRegionHover}
                       />
@@ -712,7 +724,7 @@ export default function BrainDatabasePage() {
           <div className="mt-6 bg-green-50 border-l-4 border-green-500 p-4">
             <p className="font-bold">更新情報</p>
             <p>
-              クロスヘアナビゲーション、コントラスト・明るさ調整機能、詳細な領域情報表示機能が追加されました。断面ビューワーで脳領域をクリックすると、他の断面でも同じ位置が表示されるようになりました。
+              クロスヘアナビゲーション、透明度調整機能、詳細な領域情報表示機能が追加されました。断面ビューワーで脳領域をクリックすると、他の断面でも同じ位置が表示されるようになりました。
             </p>
           </div>
         </div>

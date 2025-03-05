@@ -63,9 +63,9 @@ interface BrainSliceViewerProps {
   // クロスヘアナビゲーション用のプロパティ
   crosshairPosition?: [number, number, number];
   onCrosshairPositionChange?: (position: [number, number, number]) => void;
-  // コントラスト・明るさ調整用のプロパティ
-  brightness?: number; // -100〜100
-  contrast?: number; // -100〜100
+  // 透明度調整用のプロパティ
+  aalOpacity?: number; // 0〜100
+  mniOpacity?: number; // 0〜100
   // 詳細な領域情報表示用のプロパティ
   onRegionHover?: (
     regionIndex: number | null,
@@ -91,9 +91,9 @@ export default function BrainSliceViewer({
   // クロスヘアナビゲーション用のプロパティ
   crosshairPosition,
   onCrosshairPositionChange,
-  // コントラスト・明るさ調整用のプロパティ
-  brightness = 0,
-  contrast = 0,
+  // 透明度調整用のプロパティ
+  aalOpacity = 30,
+  mniOpacity = 0,
   // 詳細な領域情報表示用のプロパティ
   onRegionHover,
 }: BrainSliceViewerProps) {
@@ -494,12 +494,9 @@ export default function BrainSliceViewer({
                 Math.floor(mniValue * scaleFactor)
               );
 
-              // 明るさとコントラストの調整を適用
-              adjustedValue = applyBrightnessContrast(
-                adjustedValue,
-                brightness,
-                contrast
-              );
+              // MRI透明度の適用方法を修正
+              // 透明度が高いほど実際に透明になるように変更
+              const mriAlpha = 1 - mniOpacity / 100;
 
               // AAL領域の表示
               if (aalValue > 0) {
@@ -515,7 +512,22 @@ export default function BrainSliceViewer({
                     const r = parseInt(hex.substring(0, 2), 16);
                     const g = parseInt(hex.substring(2, 4), 16);
                     const b = parseInt(hex.substring(4, 6), 16);
-                    color = { r, g, b };
+                    color = { r, g, b, a: 1 }; // アルファ値を追加
+                  } else if (labelInfo.color.startsWith("rgba")) {
+                    // RGBA形式の場合
+                    const rgbaMatch = labelInfo.color.match(
+                      /rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)/
+                    );
+                    if (rgbaMatch) {
+                      const r = parseInt(rgbaMatch[1], 10);
+                      const g = parseInt(rgbaMatch[2], 10);
+                      const b = parseInt(rgbaMatch[3], 10);
+                      const a = parseFloat(rgbaMatch[4]);
+                      color = { r, g, b, a };
+                    } else {
+                      // デフォルト色
+                      color = { r: 50, g: 100, b: 200, a: 0.7 };
+                    }
                   } else if (labelInfo.color.startsWith("hsl")) {
                     // HSL形式の場合はRGBに変換
                     const hslMatch = labelInfo.color.match(
@@ -528,63 +540,86 @@ export default function BrainSliceViewer({
 
                       // HSL to RGB変換
                       const rgb = hslToRgb(h, s, l);
-                      color = { r: rgb[0], g: rgb[1], b: rgb[2] };
+                      color = { r: rgb[0], g: rgb[1], b: rgb[2], a: 0.7 };
                     } else {
                       // デフォルト色
-                      color = { r: 50, g: 100, b: 200 };
+                      color = { r: 50, g: 100, b: 200, a: 0.7 };
                     }
                   } else {
                     // デフォルト色
-                    color = { r: 50, g: 100, b: 200 };
+                    color = { r: 50, g: 100, b: 200, a: 0.7 };
                   }
 
                   if (showAAL) {
                     // 選択された領域は強調表示
                     if (isSelectedRegion) {
-                      // 選択された領域は鮮やかに表示
-                      data[pixelIndex] = Math.min(255, color.r + 80);
-                      data[pixelIndex + 1] = Math.min(255, color.g + 80);
-                      data[pixelIndex + 2] = Math.min(255, color.b + 80);
+                      // 選択された領域は白色に近い最大明度で表示
+                      data[pixelIndex] = Math.min(255, color.r + 150);
+                      data[pixelIndex + 1] = Math.min(255, color.g + 150);
+                      data[pixelIndex + 2] = Math.min(255, color.b + 150);
                       data[pixelIndex + 3] = 255; // 完全不透明
                     }
                     // ホバーしている領域も強調表示
                     else if (isHoveredRegion) {
-                      // ホバーしている領域は明るく表示（均一に光るように修正）
-                      data[pixelIndex] = Math.min(255, color.r + 70);
-                      data[pixelIndex + 1] = Math.min(255, color.g + 70);
-                      data[pixelIndex + 2] = Math.min(255, color.b + 70);
+                      // ホバーしている領域は元の色の最大明度バージョンで表示
+                      data[pixelIndex] = Math.min(255, color.r + 150);
+                      data[pixelIndex + 1] = Math.min(255, color.g + 150);
+                      data[pixelIndex + 2] = Math.min(255, color.b + 150);
                       data[pixelIndex + 3] = 255; // 完全不透明
                     } else {
+                      // 修正: AALラベルの透明度のみを変更し、MRI画像の透明度は別途適用
+                      // AALラベルの透明度を計算
+                      const aalAlpha = (1 - aalOpacity / 100) * color.a;
+
                       // 選択されていない領域は半透明でオーバーレイ
-                      // AAL領域をより見分けやすくするために色の比率を調整
-                      data[pixelIndex] = Math.floor(
-                        adjustedValue * 0.3 + color.r * 0.7
-                      );
-                      data[pixelIndex + 1] = Math.floor(
-                        adjustedValue * 0.3 + color.g * 0.7
-                      );
-                      data[pixelIndex + 2] = Math.floor(
-                        adjustedValue * 0.3 + color.b * 0.7
-                      );
-                      data[pixelIndex + 3] = 255; // 完全不透明
+                      if (showAAL) {
+                        // AALラベルが表示されている場合、MRI透明度はAALラベルに影響しないようにする
+                        // AALラベルの色を適用
+                        data[pixelIndex] = Math.floor(
+                          adjustedValue * (1 - aalAlpha) + color.r * aalAlpha
+                        );
+                        data[pixelIndex + 1] = Math.floor(
+                          adjustedValue * (1 - aalAlpha) + color.g * aalAlpha
+                        );
+                        data[pixelIndex + 2] = Math.floor(
+                          adjustedValue * (1 - aalAlpha) + color.b * aalAlpha
+                        );
+                        // AALラベルがある部分は常に不透明に
+                        data[pixelIndex + 3] = 255;
+                      } else {
+                        // AAL表示がオフの場合はグレースケールで表示し、MRI透明度を適用
+                        data[pixelIndex] = adjustedValue;
+                        data[pixelIndex + 1] = adjustedValue;
+                        data[pixelIndex + 2] = adjustedValue;
+                        data[pixelIndex + 3] = Math.round(255 * mriAlpha);
+                      }
                     }
                   } else {
                     // AAL表示がオフの場合はグレースケールで表示
+                    // MRI透明度をアルファチャンネルに適用
                     data[pixelIndex] = adjustedValue;
                     data[pixelIndex + 1] = adjustedValue;
                     data[pixelIndex + 2] = adjustedValue;
-                    data[pixelIndex + 3] = 255; // 完全不透明
+                    data[pixelIndex + 3] = Math.round(255 * mriAlpha);
                   }
+                } else {
+                  // AALラベルが見つからない場合はグレースケールで表示
+                  // MRI透明度をアルファチャンネルに適用
+                  data[pixelIndex] = adjustedValue;
+                  data[pixelIndex + 1] = adjustedValue;
+                  data[pixelIndex + 2] = adjustedValue;
+                  data[pixelIndex + 3] = Math.round(255 * mriAlpha);
                 }
               } else {
                 // AAL領域外はグレースケールで表示
+                // MRI透明度をアルファチャンネルに適用
                 data[pixelIndex] = adjustedValue;
                 data[pixelIndex + 1] = adjustedValue;
                 data[pixelIndex + 2] = adjustedValue;
-                data[pixelIndex + 3] = 255; // 完全不透明
+                data[pixelIndex + 3] = Math.round(255 * mriAlpha);
               }
             } else {
-              // 背景は透明
+              // 背景（値が低い領域）は透明に
               data[pixelIndex] = 0;
               data[pixelIndex + 1] = 0;
               data[pixelIndex + 2] = 0;
@@ -626,8 +661,8 @@ export default function BrainSliceViewer({
     aalData,
     aalLabels,
     aalVolume,
-    brightness,
-    contrast,
+    aalOpacity,
+    mniOpacity,
     crosshairPosition,
     currentSliceIndex,
     dimensions,
@@ -640,28 +675,6 @@ export default function BrainSliceViewer({
     sliceType,
     transformMniToAalCoordinates,
   ]);
-
-  // 明るさとコントラストを適用する関数
-  const applyBrightnessContrast = (
-    value: number,
-    brightness: number,
-    contrast: number
-  ): number => {
-    // コントラスト係数の計算 (-100〜100 を 0.5〜1.5 の範囲に変換)
-    const contrastFactor = 1 + contrast / 100;
-
-    // 明るさオフセットの計算 (-100〜100 を -50〜50 の範囲に変換)
-    const brightnessOffset = brightness / 2;
-
-    // コントラスト適用: (値 - 128) * 係数 + 128
-    let adjustedValue = (value - 128) * contrastFactor + 128;
-
-    // 明るさ適用: 値 + オフセット
-    adjustedValue += brightnessOffset;
-
-    // 0-255の範囲に収める
-    return Math.max(0, Math.min(255, Math.round(adjustedValue)));
-  };
 
   // HSLからRGBへの変換関数
   const hslToRgb = (
