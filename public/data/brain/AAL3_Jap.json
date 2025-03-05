@@ -23,10 +23,10 @@
   },
   {
     "englishLabel": "Frontal_Sup_2_L",
-    "japaneseLabel": "背外側前頭前野(DLPFC)",
+    "japaneseLabel": "背外側前頭前野",
     "laterality": "左",
     "category": "前頭葉",
-    "englishName": "Superior frontal gyrus, dorsolateral",
+    "englishName": "Superior frontal gyrus, dorsolateral (dlPFC)",
     "functionalRole": "自己意識、実行機能（注意制御・ワーキングメモリなど）",
     "references": [
       "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
@@ -34,10 +34,10 @@
   },
   {
     "englishLabel": "Frontal_Sup_2_R",
-    "japaneseLabel": "背外側前頭前野(DLPFC)",
+    "japaneseLabel": "背外側前頭前野",
     "laterality": "右",
     "category": "前頭葉",
-    "englishName": "Superior frontal gyrus, dorsolateral",
+    "englishName": "Superior frontal gyrus, dorsolateral (dlPFC)",
     "functionalRole": "自己意識、実行機能（注意制御・ワーキングメモリなど）",
     "references": [
       "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
@@ -203,7 +203,13 @@
     "laterality": "左",
     "category": "前頭葉",
     "englishName": "Superior frontal gyrus, medial (mSFG)",
-    "functionalRole": "自己関連処理、意思決定・メタ認知、社会的認知、情動制御、タスク・注意制御など",
+    "functionalRole": [
+      "課題構造の理解：環境内の要素間の関係を学習し、推論を可能にする​。",
+      "抽象的関係のシミュレーション：過去の経験をもとに、新しい状況を仮想的に試行し、最適な行動を予測する​。",
+      "意思決定の柔軟性：異なる状況に応じて適切な意思決定を行う​。",
+      "未来の予測：選択肢の結果をシミュレーションし、報酬の期待値を推定する​。",
+      "非報酬関連情報の処理：報酬に直接結びつかない情報も統合し、意思決定を支える​。"
+    ],
     "references": [
       "Etkin A, Egner T, Kalisch R. Emotional processing in anterior cingulate and medial prefrontal cortex. Trends Cogn Sci. 2011;15(2):85–93."
     ]
@@ -214,7 +220,13 @@
     "laterality": "右",
     "category": "前頭葉",
     "englishName": "Superior frontal gyrus, medial (mSFG)",
-    "functionalRole": "自己関連処理、意思決定・メタ認知、社会的認知、情動制御、タスク・注意制御など",
+    "functionalRole": [
+      "課題構造の理解：環境内の要素間の関係を学習し、推論を可能にする​。",
+      "抽象的関係のシミュレーション：過去の経験をもとに、新しい状況を仮想的に試行し、最適な行動を予測する​。",
+      "意思決定の柔軟性：異なる状況に応じて適切な意思決定を行う​。",
+      "未来の予測：選択肢の結果をシミュレーションし、報酬の期待値を推定する​。",
+      "非報酬関連情報の処理：報酬に直接結びつかない情報も統合し、意思決定を支える​。"
+    ],
     "references": [
       "Etkin A, Egner T, Kalisch R. Emotional processing in anterior cingulate and medial prefrontal cortex. Trends Cogn Sci. 2011;15(2):85–93."
     ]
@@ -224,10 +236,16 @@
     "japaneseLabel": "内側前頭眼窩野",
     "laterality": "左",
     "category": "前頭葉",
-    "englishName": "Superior frontal gyrus, medial orbital (mOFG) [ventromedial prefrontal cortex]",
-    "functionalRole": "報酬・価値評価、情動調節、社会的意思決定、リスク評価など",
+    "englishName": "Superior frontal cortex, medial orbital (mOFC) [ventromedial prefrontal cortex (vmPFC)]",
+    "functionalRole": [
+      "報酬価値の評価：選択肢の報酬価値を評価し、最適な行動選択を行う​。",
+      "期待と結果の比較：選択の結果が期待通りであったかを評価し、学習に活用する​。",
+      "リスクと確率の処理：成功の可能性やリスクを考慮し、適応的な判断を行う​。",
+      "意思決定の柔軟性：報酬の変化に応じて価値評価を更新し、行動を調整する​。",
+      "社会的報酬の処理：他者からの評価や社会的フィードバックを統合し、行動に反映させる​。"
+    ],
     "references": [
-      "Zald DH, Rauch SL. The Orbitofrontal Cortex. Oxford University Press; 2006."
+      "Klein-Flügge MC, Bongioanni A, Rushworth MFS. Medial and orbital frontal cortex in decision-making and flexible behavior. Neuron. 2022 Sep 7;110(17):2743-2770. doi: 10.1016/j.neuron.2022.05.022. Epub 2022 Jun 14. PMID: 35705077."
     ]
   },
   {
@@ -235,10 +253,16 @@
     "japaneseLabel": "内側前頭眼窩野",
     "laterality": "右",
     "category": "前頭葉",
-    "englishName": "Superior frontal gyrus, medial orbital (mOFG) [ventromedial prefrontal cortex]",
-    "functionalRole": "報酬・価値評価、情動調節、社会的意思決定、リスク評価など",
+    "englishName": "Superior frontal cortex, medial orbital (mOFC) [ventromedial prefrontal cortex (vmPFC)]",
+    "functionalRole": [
+      "報酬価値の評価：選択肢の報酬価値を評価し、最適な行動選択を行う​。",
+      "期待と結果の比較：選択の結果が期待通りであったかを評価し、学習に活用する​。",
+      "リスクと確率の処理：成功の可能性やリスクを考慮し、適応的な判断を行う​。",
+      "意思決定の柔軟性：報酬の変化に応じて価値評価を更新し、行動を調整する​。",
+      "社会的報酬の処理：他者からの評価や社会的フィードバックを統合し、行動に反映させる​。"
+    ],
     "references": [
-      "Zald DH, Rauch SL. The Orbitofrontal Cortex. Oxford University Press; 2006."
+      "Klein-Flügge MC, Bongioanni A, Rushworth MFS. Medial and orbital frontal cortex in decision-making and flexible behavior. Neuron. 2022 Sep 7;110(17):2743-2770. doi: 10.1016/j.neuron.2022.05.022. Epub 2022 Jun 14. PMID: 35705077."
     ]
   },
   {
@@ -400,7 +424,7 @@
     "japaneseLabel": "後帯状回",
     "laterality": "左",
     "category": "大脳辺縁系",
-    "englishName": "Posterior cingulate gyrus",
+    "englishName": "Posterior cingulate cortex (PCC)",
     "functionalRole": "自伝的記憶、内的思考（デフォルトモード）など",
     "references": [
       "Raichle ME, Snyder AZ. A default mode of brain function: A brief history of an evolving idea. Neuroimage. 2007;37(4):1083–1090."
@@ -411,7 +435,7 @@
     "japaneseLabel": "後帯状回",
     "laterality": "右",
     "category": "大脳辺縁系",
-    "englishName": "Posterior cingulate gyrus",
+    "englishName": "Posterior cingulate cortex (PCC)",
     "functionalRole": "自伝的記憶、内的思考（デフォルトモード）など",
     "references": [
       "Raichle ME, Snyder AZ. A default mode of brain function: A brief history of an evolving idea. Neuroimage. 2007;37(4):1083–1090."
@@ -1632,10 +1656,16 @@
     "japaneseLabel": "前帯状皮質 (膝前部)",
     "laterality": "左",
     "category": "大脳辺縁系",
-    "englishName": "Anterior cingulate cortex, pregeminal",
-    "functionalRole": "情動の評価、意思決定など（認知・情動の中継）",
+    "englishName": "Anterior cingulate cortex, pregeminal (pgACC)",
+    "functionalRole": [
+      "コスト・利益の統合：行動にかかるコストと得られる利益を統合し、最適な行動を選択する​。",
+      "自己モニタリング：自身のパフォーマンスを評価し、必要に応じて調整する​。",
+      "ストレス応答の調整：ストレス下での意思決定を支援し、不安や回避行動を制御する​。",
+      "動機付けの維持：長期的な目標に向けた努力を維持し、持続的な行動を可能にする​。",
+      "社会的適応：他者からのフィードバックを統合し、社会的な意思決定を調整する​。"
+    ],
     "references": [
-      "Etkin A, Egner T, Kalisch R. Emotional processing in anterior cingulate and medial prefrontal cortex. Trends Cogn Sci. 2011;15(2):85–93."
+      "Klein-Flügge MC, Bongioanni A, Rushworth MFS. Medial and orbital frontal cortex in decision-making and flexible behavior. Neuron. 2022 Sep 7;110(17):2743-2770. doi: 10.1016/j.neuron.2022.05.022. Epub 2022 Jun 14. PMID: 35705077."
     ]
   },
   {
@@ -1643,10 +1673,16 @@
     "japaneseLabel": "前帯状皮質 (膝前部)",
     "laterality": "右",
     "category": "大脳辺縁系",
-    "englishName": "Anterior cingulate cortex, pregeminal",
-    "functionalRole": "情動の評価、意思決定など（認知・情動の中継）",
+    "englishName": "Anterior cingulate cortex, pregeminal (pgACC)",
+    "functionalRole": [
+      "コスト・利益の統合：行動にかかるコストと得られる利益を統合し、最適な行動を選択する​。",
+      "自己モニタリング：自身のパフォーマンスを評価し、必要に応じて調整する​。",
+      "ストレス応答の調整：ストレス下での意思決定を支援し、不安や回避行動を制御する​。",
+      "動機付けの維持：長期的な目標に向けた努力を維持し、持続的な行動を可能にする​。",
+      "社会的適応：他者からのフィードバックを統合し、社会的な意思決定を調整する​。"
+    ],
     "references": [
-      "Etkin A, Egner T, Kalisch R. Emotional processing in anterior cingulate and medial prefrontal cortex. Trends Cogn Sci. 2011;15(2):85–93."
+      "Klein-Flügge MC, Bongioanni A, Rushworth MFS. Medial and orbital frontal cortex in decision-making and flexible behavior. Neuron. 2022 Sep 7;110(17):2743-2770. doi: 10.1016/j.neuron.2022.05.022. Epub 2022 Jun 14. PMID: 35705077."
     ]
   },
   {
@@ -1654,21 +1690,33 @@
     "japaneseLabel": "前帯状皮質 (背側)",
     "laterality": "左",
     "category": "大脳辺縁系",
-    "englishName": "Anterior cingulate cortex, supracallosal",
-    "functionalRole": "エラー検出、葛藤モニタリング、認知制御など",
+    "englishName": "Anterior cingulate cortex, dorsal (dACC)",
+    "functionalRole": [
+      "環境価値の評価：環境内の報酬機会を分布として表現し、価値を計算する​。",
+      "行動の切り替え：現在の行動を維持するか、新しい選択肢を探索するかを決定する​。",
+      "情報探索の制御：不確実な状況で追加情報を取得するための行動を促す​。",
+      "長期・短期の価値比較：異なる時間スケールでの報酬価値を評価し、意思決定を最適化する​。",
+      "努力の決定：行動のためにどれだけの努力を費やすかを調整する​。"
+    ],
     "references": [
-      "Bush G, Shin LM. The Multi-Source Interference Task: an fMRI task that reliably activates the cingulate cortex. Nat Protoc. 2006;1(1):308–313."
+      "Klein-Flügge MC, Bongioanni A, Rushworth MFS. Medial and orbital frontal cortex in decision-making and flexible behavior. Neuron. 2022 Sep 7;110(17):2743-2770. doi: 10.1016/j.neuron.2022.05.022. Epub 2022 Jun 14. PMID: 35705077."
     ]
   },
   {
     "englishLabel": "ACC_sup_R",
-    "japaneseLabel": "前帯状皮質 (上部)",
+    "japaneseLabel": "前帯状皮質 (背側)",
     "laterality": "右",
     "category": "大脳辺縁系",
-    "englishName": "Anterior cingulate cortex, supracallosal",
-    "functionalRole": "エラー検出、葛藤モニタリング、認知制御など",
+    "englishName": "Anterior cingulate cortex, dorsal (dACC)",
+    "functionalRole": [
+      "環境価値の評価：環境内の報酬機会を分布として表現し、価値を計算する​。",
+      "行動の切り替え：現在の行動を維持するか、新しい選択肢を探索するかを決定する​。",
+      "情報探索の制御：不確実な状況で追加情報を取得するための行動を促す​。",
+      "長期・短期の価値比較：異なる時間スケールでの報酬価値を評価し、意思決定を最適化する​。",
+      "努力の決定：行動のためにどれだけの努力を費やすかを調整する​。"
+    ],
     "references": [
-      "Bush G, Shin LM. The Multi-Source Interference Task: an fMRI task that reliably activates the cingulate cortex. Nat Protoc. 2006;1(1):308–313."
+      "Klein-Flügge MC, Bongioanni A, Rushworth MFS. Medial and orbital frontal cortex in decision-making and flexible behavior. Neuron. 2022 Sep 7;110(17):2743-2770. doi: 10.1016/j.neuron.2022.05.022. Epub 2022 Jun 14. PMID: 35705077."
     ]
   },
   {

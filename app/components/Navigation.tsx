@@ -7,36 +7,44 @@ import { usePathname } from "next/navigation";
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showDaisetsu, setShowDaisetsu] = useState(false);
+  const [showRecipes, setShowRecipes] = useState(false);
   const [keySequence, setKeySequence] = useState("");
   const [isDiscovered, setIsDiscovered] = useState(false);
+  const [isRecipesDiscovered, setIsRecipesDiscovered] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
 
-  // ローカルストレージからDaisetsuの表示状態を復元
+  // ローカルストレージからDaisetsuとRecipesの表示状態を復元
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedShowDaisetsu = localStorage.getItem("showDaisetsu");
       if (savedShowDaisetsu === "true") {
         setShowDaisetsu(true);
       }
+
+      const savedShowRecipes = localStorage.getItem("showRecipes");
+      if (savedShowRecipes === "true") {
+        setShowRecipes(true);
+      }
     }
   }, []);
 
-  // Daisetsuの表示状態をローカルストレージに保存
+  // DaisetsuとRecipesの表示状態をローカルストレージに保存
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem("showDaisetsu", showDaisetsu.toString());
+      localStorage.setItem("showRecipes", showRecipes.toString());
     }
-  }, [showDaisetsu]);
+  }, [showDaisetsu, showRecipes]);
 
   useEffect(() => {
     const handleKeyPress = (event: globalThis.KeyboardEvent) => {
       const newSequence = keySequence + event.key.toLowerCase();
       setKeySequence(newSequence);
 
-      // 最後の3文字のみを保持
-      if (newSequence.length > 3) {
-        setKeySequence(newSequence.slice(-3));
+      // 最後の4文字のみを保持（cookのために4文字に変更）
+      if (newSequence.length > 4) {
+        setKeySequence(newSequence.slice(-4));
       }
 
       // キーシーケンスが"zen"の場合、Daisetsuを表示
@@ -50,6 +58,20 @@ export default function Navigation() {
         // 3秒後にディスカバーエフェクトを消す
         setTimeout(() => {
           setIsDiscovered(false);
+        }, 3000);
+      }
+
+      // キーシーケンスが"cook"の場合、Recipesを表示
+      if (newSequence.endsWith("cook")) {
+        setShowRecipes(true);
+        setIsRecipesDiscovered(true);
+        // ローカルストレージに保存
+        if (typeof window !== "undefined") {
+          localStorage.setItem("showRecipes", "true");
+        }
+        // 3秒後にディスカバーエフェクトを消す
+        setTimeout(() => {
+          setIsRecipesDiscovered(false);
         }, 3000);
       }
     };
@@ -206,9 +228,7 @@ export default function Navigation() {
                     tabIndex={0}
                     onKeyDown={handleKeyDown}
                     aria-current={
-                      pathname.startsWith("/database")
-                        ? "page"
-                        : undefined
+                      pathname.startsWith("/database") ? "page" : undefined
                     }
                   >
                     Database
@@ -251,10 +271,15 @@ export default function Navigation() {
                     Photographs
                   </Link>
                 </li>
+                {showRecipes && (
                 <li className="w-full md:w-auto text-center" role="none">
                   <Link
                     href="/recipes"
-                    className="block px-3 py-1 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-orange-800 to-yellow-800 hover:shadow-inner text-sm md:text-base font-bold"
+                      className={`block px-3 py-1 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-orange-800 to-yellow-800 hover:shadow-inner text-sm md:text-base font-bold ${
+                        isRecipesDiscovered
+                          ? "animate-[discover_2s_ease-out] bg-gradient-to-r from-orange-800/50 to-yellow-800/50"
+                          : ""
+                      }`}
                     onClick={() => setIsMenuOpen(false)}
                     role="menuitem"
                     tabIndex={0}
@@ -266,6 +291,7 @@ export default function Navigation() {
                     Recipes
                   </Link>
                 </li>
+                )}
                 {showDaisetsu && (
                   <li className="w-full md:w-auto text-center" role="none">
                     <Link

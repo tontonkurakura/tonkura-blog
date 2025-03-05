@@ -1,3 +1,5 @@
+"use server";
+
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -69,7 +71,7 @@ const GENRE_TAGS = new Set([
 ]);
 
 // タグを分類する関数
-export function categorizeTag(tag: string): "genre" | "ingredient" {
+export async function categorizeTag(tag: string): Promise<"genre" | "ingredient"> {
   return GENRE_TAGS.has(tag) ? "genre" : "ingredient";
 }
 

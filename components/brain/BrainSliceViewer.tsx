@@ -953,50 +953,65 @@ export default function BrainSliceViewer({
     // }
   };
 
-  // マウスホイールイベントハンドラ - スライスを移動するために使用
-  const handleWheel = (e: React.WheelEvent<HTMLCanvasElement>) => {
-    e.preventDefault();
-    if (!currentSliceIndex) return;
-
-    const delta = e.deltaY > 0 ? 1 : -1;
-    const maxIndex = getMaxSliceIndex();
-    const newIndex = Math.min(Math.max(0, currentSliceIndex + delta), maxIndex);
-    setCurrentSliceIndex(newIndex);
-  };
-
   // 最大スライスインデックスを取得
   const getMaxSliceIndex = () => {
-    if (dimensions[0] === 0) return 0;
-
     switch (sliceType) {
-      case "sagittal": // X軸方向
+      case "sagittal":
         return dimensions[0] - 1;
-      case "coronal": // Y軸方向
+      case "coronal":
         return dimensions[1] - 1;
-      case "axial": // Z軸方向
+      case "axial":
       default:
         return dimensions[2] - 1;
     }
   };
 
+  // マウスホイールイベントハンドラ - スライスを移動するために使用
+  const handleWheel = useCallback(
+    (e: React.WheelEvent<HTMLCanvasElement>) => {
+      e.preventDefault();
+      if (!currentSliceIndex) return;
+
+      const delta = e.deltaY > 0 ? 1 : -1;
+      const maxIndex = getMaxSliceIndex();
+      const newIndex = Math.min(
+        Math.max(0, currentSliceIndex + delta),
+        maxIndex
+      );
+      setCurrentSliceIndex(newIndex);
+
+      // クロスヘア位置も更新する（選択された領域がある場合でも）
+      if (onCrosshairPositionChange && crosshairPosition) {
+        const newPosition: [number, number, number] = [
+          crosshairPosition[0],
+          crosshairPosition[1],
+          crosshairPosition[2],
+        ];
+        newPosition[getSliceAxis()] = newIndex;
+        onCrosshairPositionChange(newPosition);
+      }
+    },
+    [
+      currentSliceIndex,
+      getSliceAxis,
+      onCrosshairPositionChange,
+      crosshairPosition,
+    ]
+  );
+
   // 行列の逆行列を計算する関数
-  const invertMatrix = (m: number[][]) => {
+  const invertMatrix = (m: number[][]): number[][] => {
     // 入力チェック
     if (
       !m ||
       !Array.isArray(m) ||
-      m.length < 3 ||
+      m.length < 4 ||
       !m[0] ||
-      !Array.isArray(m[0]) ||
-      m[0].length < 4 ||
       !m[1] ||
-      !Array.isArray(m[1]) ||
-      m[1].length < 4 ||
       !m[2] ||
-      !Array.isArray(m[2]) ||
-      m[2].length < 4
+      !m[3]
     ) {
-      console.error("無効な行列形式:", m);
+      console.warn("無効な行列形式、単位行列を返します:", m);
       return [
         [1, 0, 0, 0],
         [0, 1, 0, 0],
@@ -1005,15 +1020,71 @@ export default function BrainSliceViewer({
       ];
     }
 
-    // 4x4行列の逆行列を計算（簡易版）
-    // 実際の実装では完全な逆行列計算が必要
-    const det =
-      m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1]) -
-      m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0]) +
-      m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]);
+    try {
+      // 4x4アフィン変換行列の逆行列を計算
+      // 回転・スケール部分（3x3）と平行移動部分を分離
+      const r = [
+        [m[0][0], m[0][1], m[0][2]],
+        [m[1][0], m[1][1], m[1][2]],
+        [m[2][0], m[2][1], m[2][2]],
+      ];
+      const t = [m[0][3], m[1][3], m[2][3]];
 
-    if (Math.abs(det) < 1e-10) {
-      console.error("行列の逆行列が計算できません（特異行列）");
+      // 3x3部分の行列式を計算
+      const det =
+        r[0][0] * (r[1][1] * r[2][2] - r[1][2] * r[2][1]) -
+        r[0][1] * (r[1][0] * r[2][2] - r[1][2] * r[2][0]) +
+        r[0][2] * (r[1][0] * r[2][1] - r[1][1] * r[2][0]);
+
+      if (Math.abs(det) < 1e-10) {
+        console.warn("行列式がゼロに近いため、単位行列を返します");
+        return [
+          [1, 0, 0, 0],
+          [0, 1, 0, 0],
+          [0, 0, 1, 0],
+          [0, 0, 0, 1],
+        ];
+      }
+
+      // 3x3部分の余因子行列を計算
+      const adj = [
+        [
+          r[1][1] * r[2][2] - r[1][2] * r[2][1],
+          r[0][2] * r[2][1] - r[0][1] * r[2][2],
+          r[0][1] * r[1][2] - r[0][2] * r[1][1],
+        ],
+        [
+          r[1][2] * r[2][0] - r[1][0] * r[2][2],
+          r[0][0] * r[2][2] - r[0][2] * r[2][0],
+          r[0][2] * r[1][0] - r[0][0] * r[1][2],
+        ],
+        [
+          r[1][0] * r[2][1] - r[1][1] * r[2][0],
+          r[0][1] * r[2][0] - r[0][0] * r[2][1],
+          r[0][0] * r[1][1] - r[0][1] * r[1][0],
+        ],
+      ];
+
+      // 3x3部分の逆行列を計算
+      const invDet = 1.0 / det;
+      const invR = adj.map((row) => row.map((val) => val * invDet));
+
+      // 平行移動部分の逆変換を計算
+      const invT = [
+        -(t[0] * invR[0][0] + t[1] * invR[0][1] + t[2] * invR[0][2]),
+        -(t[0] * invR[1][0] + t[1] * invR[1][1] + t[2] * invR[1][2]),
+        -(t[0] * invR[2][0] + t[1] * invR[2][1] + t[2] * invR[2][2]),
+      ];
+
+      // 4x4逆行列を構築
+      return [
+        [invR[0][0], invR[0][1], invR[0][2], invT[0]],
+        [invR[1][0], invR[1][1], invR[1][2], invT[1]],
+        [invR[2][0], invR[2][1], invR[2][2], invT[2]],
+        [0, 0, 0, 1],
+      ];
+    } catch (error) {
+      console.warn("行列の逆行列計算中にエラーが発生しました:", error);
       return [
         [1, 0, 0, 0],
         [0, 1, 0, 0],
@@ -1021,50 +1092,6 @@ export default function BrainSliceViewer({
         [0, 0, 0, 1],
       ];
     }
-
-    const invDet = 1 / det;
-
-    // 3x3部分の逆行列を計算
-    const inv = [
-      [
-        invDet * (m[1][1] * m[2][2] - m[1][2] * m[2][1]),
-        invDet * (m[0][2] * m[2][1] - m[0][1] * m[2][2]),
-        invDet * (m[0][1] * m[1][2] - m[0][2] * m[1][1]),
-        0,
-      ],
-      [
-        invDet * (m[1][2] * m[2][0] - m[1][0] * m[2][2]),
-        invDet * (m[0][0] * m[2][2] - m[0][2] * m[2][0]),
-        invDet * (m[0][2] * m[1][0] - m[0][0] * m[1][2]),
-        0,
-      ],
-      [
-        invDet * (m[1][0] * m[2][1] - m[1][1] * m[2][0]),
-        invDet * (m[0][1] * m[2][0] - m[0][0] * m[2][1]),
-        invDet * (m[0][0] * m[1][1] - m[0][1] * m[1][0]),
-        0,
-      ],
-      [0, 0, 0, 1],
-    ];
-
-    // 平行移動成分の計算
-    inv[0][3] = -(
-      inv[0][0] * m[0][3] +
-      inv[0][1] * m[1][3] +
-      inv[0][2] * m[2][3]
-    );
-    inv[1][3] = -(
-      inv[1][0] * m[0][3] +
-      inv[1][1] * m[1][3] +
-      inv[1][2] * m[2][3]
-    );
-    inv[2][3] = -(
-      inv[2][0] * m[0][3] +
-      inv[2][1] * m[1][3] +
-      inv[2][2] * m[2][3]
-    );
-
-    return inv;
   };
 
   // 行列の乗算を行う関数
@@ -1125,6 +1152,46 @@ export default function BrainSliceViewer({
 
     return result;
   };
+
+  // キャンバスのスケーリング処理を修正
+  const updateCanvasScale = useCallback(() => {
+    if (!canvasRef.current || !containerRef.current) return;
+
+    const canvas = canvasRef.current;
+    const container = containerRef.current;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    // コンテナのサイズを取得
+    const containerWidth = container.clientWidth;
+    const containerHeight = container.clientHeight - 3; // スライダー用のスペースを確保
+
+    // キャンバスのサイズを固定
+    canvas.style.width = `${containerWidth}px`;
+    canvas.style.height = `${containerHeight}px`;
+
+    // キャンバスの実際のサイズを設定（ピクセル比を考慮）
+    const scale = window.devicePixelRatio || 1;
+    canvas.width = Math.floor(containerWidth * scale);
+    canvas.height = Math.floor(containerHeight * scale);
+
+    // コンテキストのスケールを設定
+    ctx.scale(scale, scale);
+  }, []);
+
+  // キャンバスのリサイズ処理を追加
+  useEffect(() => {
+    updateCanvasScale();
+
+    const handleResize = () => {
+      updateCanvasScale();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [updateCanvasScale]);
 
   return (
     <div

@@ -5,6 +5,8 @@ import { ja } from "date-fns/locale";
 import SearchBox from "../blog/SearchBox";
 import { Suspense } from "react";
 import Pagination from "@/components/Pagination";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 interface TagCount {
   [key: string]: number;
@@ -15,20 +17,27 @@ export default async function RecipesPage({
 }: {
   searchParams: { tag?: string; q?: string; page?: string };
 }) {
-  // searchParamsをawaitする
-  const params = await searchParams;
+  // クッキーからRecipesの表示状態を確認
+  const cookieStore = cookies();
+  const showRecipes = cookieStore.get("showRecipes")?.value === "true";
 
-  const recipes = await getAllRecipes();
-  const selectedTag = params?.tag;
-  const searchQuery = params?.q?.toLowerCase();
-  const currentPage = Number(params?.page || "1");
+  if (!showRecipes) {
+    redirect("/");
+  }
+
+  const selectedTag = searchParams?.tag;
+  const searchQuery = searchParams?.q?.toLowerCase();
+  const currentPage = Number(searchParams?.page || "1");
   const recipesPerPage = 10;
+
+  // データの取得
+  const allRecipes = await getAllRecipes();
 
   // タグの集計
   const genreTagCounts: TagCount = {};
   const ingredientTagCounts: TagCount = {};
 
-  recipes.forEach((recipe) => {
+  allRecipes.forEach((recipe) => {
     recipe.tags?.forEach((tag) => {
       if (categorizeTag(tag) === "genre") {
         genreTagCounts[tag] = (genreTagCounts[tag] || 0) + 1;
@@ -39,7 +48,7 @@ export default async function RecipesPage({
   });
 
   // 検索とタグでフィルタリング
-  let filteredRecipes = recipes;
+  let filteredRecipes = allRecipes;
 
   if (searchQuery) {
     filteredRecipes = filteredRecipes.filter((recipe) => {
@@ -75,6 +84,14 @@ export default async function RecipesPage({
     );
   }
 
+  // ページネーション用のレシピの抽出
+  const startIndex = (currentPage - 1) * recipesPerPage;
+  const paginatedRecipes = filteredRecipes.slice(
+    startIndex,
+    startIndex + recipesPerPage
+  );
+  const totalPages = Math.ceil(filteredRecipes.length / recipesPerPage);
+
   // タグを記事数で降順ソート
   const sortTags = (tagCounts: TagCount) =>
     Object.entries(tagCounts).sort((a, b) => {
@@ -86,14 +103,6 @@ export default async function RecipesPage({
 
   const sortedGenreTags = sortTags(genreTagCounts);
   const sortedIngredientTags = sortTags(ingredientTagCounts);
-
-  // ページネーション用のレシピの抽出
-  const startIndex = (currentPage - 1) * recipesPerPage;
-  const paginatedRecipes = filteredRecipes.slice(
-    startIndex,
-    startIndex + recipesPerPage
-  );
-  const totalPages = Math.ceil(filteredRecipes.length / recipesPerPage);
 
   return (
     <div className="max-w-6xl mx-auto px-4">
