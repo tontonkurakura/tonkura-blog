@@ -67,20 +67,26 @@ export default function MMSECalculator() {
         scores.place_hospital +
         scores.place_floor +
         scores.place_region,
-      memory: scores.memory_1 + scores.memory_2 + scores.memory_3,
+      memory: scores.recall_1 + scores.recall_2 + scores.recall_3,
       attention:
-        scores.attention_1 +
-        scores.attention_2 +
-        scores.attention_3 +
-        scores.attention_4 +
-        scores.attention_5,
-      recall: scores.recall_1 + scores.recall_2 + scores.recall_3,
+        scores.calculation_1 +
+        scores.calculation_2 +
+        scores.calculation_3 +
+        scores.calculation_4 +
+        scores.calculation_5,
+      recall:
+        scores.delayed_recall_1 +
+        scores.delayed_recall_2 +
+        scores.delayed_recall_3,
       naming: scores.naming_1 + scores.naming_2,
-      repeat: scores.repeat,
-      command: scores.command_1 + scores.command_2 + scores.command_3,
-      read: scores.read,
-      write: scores.write,
-      copy: scores.copy,
+      repeat: scores.repeat_sentence,
+      command:
+        scores.follow_command_1 +
+        scores.follow_command_2 +
+        scores.follow_command_3,
+      read: scores.read_follow,
+      write: scores.write_sentence,
+      copy: scores.copy_figure,
     };
   };
 
@@ -98,7 +104,7 @@ export default function MMSECalculator() {
         data-name={name}
         value={value}
         onClick={handleChange}
-        className={`border rounded px-3 py-1.5 transition-colors ${
+        className={`border rounded px-2 py-1.5 transition-colors ${
           currentScore === value
             ? "bg-blue-600 text-white border-blue-600"
             : "hover:bg-gray-100 border-gray-300"
@@ -769,36 +775,36 @@ export default function MMSECalculator() {
           <button
             onClick={() => {
               setScores({
-                time_year: 0,
-                time_season: 0,
-                time_day: 0,
-                time_month: 0,
-                time_date: 0,
-                place_prefecture: 0,
-                place_city: 0,
-                place_hospital: 0,
-                place_floor: 0,
-                place_region: 0,
-                recall_1: 0,
-                recall_2: 0,
-                recall_3: 0,
-                calculation_1: 0,
-                calculation_2: 0,
-                calculation_3: 0,
-                calculation_4: 0,
-                calculation_5: 0,
-                delayed_recall_1: 0,
-                delayed_recall_2: 0,
-                delayed_recall_3: 0,
-                naming_1: 0,
-                naming_2: 0,
-                repeat_sentence: 0,
-                follow_command_1: 0,
-                follow_command_2: 0,
-                follow_command_3: 0,
-                read_follow: 0,
-                write_sentence: 0,
-                copy_figure: 0,
+                time_year: 1,
+                time_season: 1,
+                time_day: 1,
+                time_month: 1,
+                time_date: 1,
+                place_prefecture: 1,
+                place_city: 1,
+                place_hospital: 1,
+                place_floor: 1,
+                place_region: 1,
+                recall_1: 1,
+                recall_2: 1,
+                recall_3: 1,
+                calculation_1: 1,
+                calculation_2: 1,
+                calculation_3: 1,
+                calculation_4: 1,
+                calculation_5: 1,
+                delayed_recall_1: 1,
+                delayed_recall_2: 1,
+                delayed_recall_3: 1,
+                naming_1: 1,
+                naming_2: 1,
+                repeat_sentence: 1,
+                follow_command_1: 1,
+                follow_command_2: 1,
+                follow_command_3: 1,
+                read_follow: 1,
+                write_sentence: 1,
+                copy_figure: 1,
               });
             }}
             className="px-3 py-1 bg-white bg-opacity-30 hover:bg-opacity-40 rounded-lg text-sm font-medium transition-colors"
@@ -1047,8 +1053,19 @@ export default function MMSECalculator() {
         </div>
         <div className="text-sm text-gray-600 mt-4">
           <p>
-            ※
-            MMSEは認知症のスクリーニング検査です。最終的な診断は医療専門家によって行われるべきです。
+            ※注意事項
+            <li className="ml-3 text-sm text-gray-600">
+              本ツールは、臨床業務で使用されるスコアの計算補助を行うためのものです。
+            </li>
+            <li className="ml-3 text-sm text-gray-600">
+              計算結果や重症度判定はあくまで参考所見であり、医学的な診断を保証するものではありません。
+            </li>
+            <li className="ml-3 text-sm text-gray-600">
+              症状に関してご不安がある場合は、必ず医師や専門の医療機関にご相談ください。
+            </li>
+            <li className="ml-3 text-sm text-gray-600">
+              本ツールの利用により生じた如何なる結果についても、当サイトは責任を負いかねます。
+            </li>
           </p>
         </div>
       </div>

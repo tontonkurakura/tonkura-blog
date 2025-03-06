@@ -76,16 +76,23 @@ export default function HDSRCalculator() {
   // 各カテゴリーのスコアを計算する関数
   const calculateCategoryScores = () => {
     return {
-      orientation:
-        scores.age +
+      age: scores.age,
+      timeOrientation:
         scores.date_weekday +
         scores.date_day +
         scores.date_month +
-        scores.date_year +
-        scores.location,
-      memory: scores.words_1 + scores.words_2 + scores.words_3,
+        scores.date_year,
+      placeOrientation: scores.location,
+      immediateRecall: scores.words_1 + scores.words_2 + scores.words_3,
       calculation: scores.calc_1 + scores.calc_2,
       recall: scores.recall_1 + scores.recall_2 + scores.recall_3,
+      reverse: scores.reverse_3digit + scores.reverse_4digit,
+      items:
+        scores.items_1 +
+        scores.items_2 +
+        scores.items_3 +
+        scores.items_4 +
+        scores.items_5,
       verbal: scores.vegetables,
     };
   };
@@ -630,31 +637,59 @@ export default function HDSRCalculator() {
               </h3>
               <div className="grid grid-cols-1 gap-2 text-sm">
                 <div
-                  className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.orientation, 6)}`}
+                  className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.age, 1)}`}
                 >
                   <span
-                    className={`font-bold ${getCategoryScoreColorClass(categoryScores.orientation, 6)}`}
+                    className={`font-bold ${getCategoryScoreColorClass(categoryScores.age, 1)}`}
                   >
-                    方向性:
+                    年齢:
                   </span>
                   <span
-                    className={`font-medium ${getCategoryScoreColorClass(categoryScores.orientation, 6)}`}
+                    className={`font-medium ${getCategoryScoreColorClass(categoryScores.age, 1)}`}
                   >
-                    {categoryScores.orientation}/6
+                    {categoryScores.age}/1
                   </span>
                 </div>
                 <div
-                  className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.memory, 3)}`}
+                  className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.timeOrientation, 4)}`}
                 >
                   <span
-                    className={`font-bold ${getCategoryScoreColorClass(categoryScores.memory, 3)}`}
+                    className={`font-bold ${getCategoryScoreColorClass(categoryScores.timeOrientation, 4)}`}
                   >
-                    記憶:
+                    時間の見当識:
                   </span>
                   <span
-                    className={`font-medium ${getCategoryScoreColorClass(categoryScores.memory, 3)}`}
+                    className={`font-medium ${getCategoryScoreColorClass(categoryScores.timeOrientation, 4)}`}
                   >
-                    {categoryScores.memory}/3
+                    {categoryScores.timeOrientation}/4
+                  </span>
+                </div>
+                <div
+                  className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.placeOrientation, 2)}`}
+                >
+                  <span
+                    className={`font-bold ${getCategoryScoreColorClass(categoryScores.placeOrientation, 2)}`}
+                  >
+                    場所の見当識:
+                  </span>
+                  <span
+                    className={`font-medium ${getCategoryScoreColorClass(categoryScores.placeOrientation, 2)}`}
+                  >
+                    {categoryScores.placeOrientation}/2
+                  </span>
+                </div>
+                <div
+                  className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.immediateRecall, 3)}`}
+                >
+                  <span
+                    className={`font-bold ${getCategoryScoreColorClass(categoryScores.immediateRecall, 3)}`}
+                  >
+                    即時記憶:
+                  </span>
+                  <span
+                    className={`font-medium ${getCategoryScoreColorClass(categoryScores.immediateRecall, 3)}`}
+                  >
+                    {categoryScores.immediateRecall}/3
                   </span>
                 </div>
                 <div
@@ -683,6 +718,34 @@ export default function HDSRCalculator() {
                     className={`font-medium ${getCategoryScoreColorClass(categoryScores.recall, 6)}`}
                   >
                     {categoryScores.recall}/6
+                  </span>
+                </div>
+                <div
+                  className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.reverse, 2)}`}
+                >
+                  <span
+                    className={`font-bold ${getCategoryScoreColorClass(categoryScores.reverse, 2)}`}
+                  >
+                    数字の逆唱:
+                  </span>
+                  <span
+                    className={`font-medium ${getCategoryScoreColorClass(categoryScores.reverse, 2)}`}
+                  >
+                    {categoryScores.reverse}/2
+                  </span>
+                </div>
+                <div
+                  className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.items, 5)}`}
+                >
+                  <span
+                    className={`font-bold ${getCategoryScoreColorClass(categoryScores.items, 5)}`}
+                  >
+                    視覚性記憶:
+                  </span>
+                  <span
+                    className={`font-medium ${getCategoryScoreColorClass(categoryScores.items, 5)}`}
+                  >
+                    {categoryScores.items}/5
                   </span>
                 </div>
                 <div
@@ -764,8 +827,19 @@ export default function HDSRCalculator() {
           </div>
           <div className="text-sm text-gray-600 mt-4">
             <p>
-              ※
-              HDS-Rは認知症のスクリーニング検査です。最終的な診断は医療専門家によって行われるべきです。
+              ※注意事項
+              <li className="ml-3 text-sm text-gray-600">
+                本ツールは、臨床業務で使用されるスコアの計算補助を行うためのものです。
+              </li>
+              <li className="ml-3 text-sm text-gray-600">
+                計算結果や重症度判定はあくまで参考所見であり、医学的な診断を保証するものではありません。
+              </li>
+              <li className="ml-3 text-sm text-gray-600">
+                症状に関してご不安がある場合は、必ず医師や専門の医療機関にご相談ください。
+              </li>
+              <li className="ml-3 text-sm text-gray-600">
+                本ツールの利用により生じた如何なる結果についても、当サイトは責任を負いかねます。
+              </li>
             </p>
           </div>
         </div>

@@ -130,13 +130,17 @@ function SimpleImageModal({
           </svg>
         </button>
         {exif && (
-          <div className="text-white bg-black/50 p-4 rounded-lg text-sm w-full md:w-56 self-center max-h-[85vh] overflow-y-auto">
+          <div className="text-white bg-black/50 p-4 rounded-lg text-sm w-full md:w-80 self-center max-h-[85vh] overflow-y-auto">
             {alt && <p className="mb-2 font-medium">{alt}</p>}
             <div className="space-y-1.5">
               {exif.date && (
                 <p>
                   <span className="text-gray-400">Date:</span>{" "}
-                  {new Date(exif.date).toLocaleDateString("en-US")}
+                  {new Date(exif.date).toLocaleDateString("ja-JP", {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                  })}
                 </p>
               )}
               {exif.camera && (

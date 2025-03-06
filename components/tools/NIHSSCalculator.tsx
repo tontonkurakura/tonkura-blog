@@ -133,36 +133,22 @@ export default function NIHSSCalculator() {
 
   // 各カテゴリーのスコアを計算する関数
   const calculateCategoryScores = () => {
-    const consciousnessScore =
-      scores.consciousness_level +
-      scores.consciousness_questions +
-      scores.consciousness_commands;
-
-    const motorScore =
-      scores.left_arm_motor +
-      scores.right_arm_motor +
-      scores.left_leg_motor +
-      scores.right_leg_motor;
-
-    const cranialNerveScore =
-      scores.gaze + scores.visual_fields + scores.facial_palsy;
-
-    const sensoryScore = scores.sensory;
-
-    const languageScore = scores.language + scores.dysarthria;
-
-    const ataxiaScore = scores.limb_ataxia;
-
-    const neglectScore = scores.neglect;
-
     return {
-      consciousnessScore,
-      motorScore,
-      cranialNerveScore,
-      sensoryScore,
-      languageScore,
-      ataxiaScore,
-      neglectScore,
+      consciousness_level: scores.consciousness_level, // 1a. 意識水準
+      consciousness_questions: scores.consciousness_questions, // 1b. 意識水準-質問
+      consciousness_commands: scores.consciousness_commands, // 1c. 意識水準-従命
+      gaze: scores.gaze, // 2. 最良の注視
+      visual_fields: scores.visual_fields, // 3. 視野
+      facial_palsy: scores.facial_palsy, // 4. 顔面麻痺
+      left_arm_motor: scores.left_arm_motor, // 5-1. 上肢の運動（左）
+      right_arm_motor: scores.right_arm_motor, // 5-2. 上肢の運動（右）
+      left_leg_motor: scores.left_leg_motor, // 6-1. 下肢の運動（左）
+      right_leg_motor: scores.right_leg_motor, // 6-2. 下肢の運動（右）
+      limb_ataxia: scores.limb_ataxia, // 7. 運動失調
+      sensory: scores.sensory, // 8. 感覚
+      language: scores.language, // 9. 最良の言語
+      dysarthria: scores.dysarthria, // 10. 構音障害
+      neglect: scores.neglect, // 11. 消去現象と注意障害
     };
   };
 
@@ -908,177 +894,161 @@ export default function NIHSSCalculator() {
       </div>
 
       {/* カテゴリー別スコアと評価基準 */}
-      <div className="mt-8">
-        <div className="flex justify-center items-center mb-4"></div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-          <div className="bg-white p-3 rounded-lg shadow-sm border">
-            <h3 className="font-semibold mb-2 text-center">
-              カテゴリー別スコア
-            </h3>
-            <div className="grid grid-cols-1 gap-2 text-sm">
-              <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.consciousnessScore, 9)}`}
-              >
-                <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.consciousnessScore, 9)}`}
-                >
-                  意識レベル:
-                </span>
-                <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.consciousnessScore, 9)}`}
-                >
-                  {categoryScores.consciousnessScore}/9
-                </span>
+      <div className="mt-8 space-y-4">
+        {/* 重症度分類（上部に配置） */}
+        <div className="bg-white p-4 rounded-lg shadow-sm border">
+          <h3 className="font-semibold mb-3 text-center">重症度分類</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+            <div
+              className={`p-3 rounded ${totalScore === 0 ? "bg-blue-100 text-blue-800 font-medium" : "bg-gray-50"}`}
+            >
+              <div className="font-semibold text-sm text-center">
+                0点
+                <br />
+                No stroke symptoms
               </div>
-              <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.motorScore, 16)}`}
-              >
-                <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.motorScore, 16)}`}
-                >
-                  運動機能:
-                </span>
-                <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.motorScore, 16)}`}
-                >
-                  {categoryScores.motorScore}/16
-                </span>
-              </div>
-              <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.cranialNerveScore, 8)}`}
-              >
-                <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.cranialNerveScore, 8)}`}
-                >
-                  脳神経:
-                </span>
-                <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.cranialNerveScore, 8)}`}
-                >
-                  {categoryScores.cranialNerveScore}/8
-                </span>
-              </div>
-              <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.sensoryScore, 2)}`}
-              >
-                <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.sensoryScore, 2)}`}
-                >
-                  感覚:
-                </span>
-                <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.sensoryScore, 2)}`}
-                >
-                  {categoryScores.sensoryScore}/2
-                </span>
-              </div>
-              <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.languageScore, 6)}`}
-              >
-                <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.languageScore, 6)}`}
-                >
-                  言語:
-                </span>
-                <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.languageScore, 6)}`}
-                >
-                  {categoryScores.languageScore}/6
-                </span>
-              </div>
-              <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.ataxiaScore, 2)}`}
-              >
-                <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.ataxiaScore, 2)}`}
-                >
-                  運動失調:
-                </span>
-                <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.ataxiaScore, 2)}`}
-                >
-                  {categoryScores.ataxiaScore}/2
-                </span>
-              </div>
-              <div
-                className={`flex justify-between p-1.5 rounded ${getCategoryScoreBgClass(categoryScores.neglectScore, 3)}`}
-              >
-                <span
-                  className={`font-bold ${getCategoryScoreColorClass(categoryScores.neglectScore, 3)}`}
-                >
-                  半側空間無視:
-                </span>
-                <span
-                  className={`font-medium ${getCategoryScoreColorClass(categoryScores.neglectScore, 3)}`}
-                >
-                  {categoryScores.neglectScore}/3
-                </span>
-              </div>
+              <div className="text-xs mt-1 text-center">（脳卒中症状なし）</div>
             </div>
-          </div>
-
-          <div className="bg-white p-3 rounded-lg shadow-sm border md:col-span-2">
-            <h3 className="font-semibold mb-2 text-center">重症度分類</h3>
-            <div className="grid grid-cols-1 gap-2 text-sm">
-              <div
-                className={`p-2 rounded ${
-                  totalScore === 0
-                    ? "bg-blue-100 text-blue-800 font-medium"
-                    : "bg-gray-50"
-                }`}
-              >
-                <span className="font-semibold">0点:</span> No stroke
-                symptoms（脳卒中症状なし）
+            <div
+              className={`p-3 rounded ${totalScore >= 1 && totalScore <= 4 ? "bg-green-100 text-green-800 font-medium" : "bg-gray-50"}`}
+            >
+              <div className="font-semibold text-sm text-center">
+                1-4点
+                <br />
+                Minor stroke
               </div>
-              <div
-                className={`p-2 rounded ${
-                  totalScore >= 1 && totalScore <= 4
-                    ? "bg-green-100 text-green-800 font-medium"
-                    : "bg-gray-50"
-                }`}
-              >
-                <span className="font-semibold">1-4点:</span> Minor
-                stroke（軽症脳卒中）
+              <div className="text-xs mt-1 text-center">（軽症脳卒中）</div>
+            </div>
+            <div
+              className={`p-3 rounded ${totalScore >= 5 && totalScore <= 15 ? "bg-yellow-100 text-yellow-800 font-medium" : "bg-gray-50"}`}
+            >
+              <div className="font-semibold text-sm text-center">
+                5-15点
+                <br />
+                Moderate stroke
               </div>
-              <div
-                className={`p-2 rounded ${
-                  totalScore >= 5 && totalScore <= 15
-                    ? "bg-yellow-100 text-yellow-800 font-medium"
-                    : "bg-gray-50"
-                }`}
-              >
-                <span className="font-semibold">5-15点:</span> Moderate
-                stroke（中等度脳卒中）
+              <div className="text-xs mt-1 text-center">（中等度脳卒中）</div>
+            </div>
+            <div
+              className={`p-3 rounded ${totalScore >= 16 ? "bg-red-100 text-red-800 font-medium" : "bg-gray-50"}`}
+            >
+              <div className="font-semibold text-sm text-center">
+                16点以上
+                <br />
+                Severe stroke
               </div>
-              <div
-                className={`p-2 rounded ${
-                  totalScore >= 16 && totalScore <= 20
-                    ? "bg-orange-100 text-orange-800 font-medium"
-                    : "bg-gray-50"
-                }`}
-              >
-                <span className="font-semibold">16-20点:</span> Moderate to
-                Severe stroke（中等度～重症脳卒中）
-              </div>
-              <div
-                className={`p-2 rounded ${
-                  totalScore >= 21
-                    ? "bg-red-100 text-red-800 font-medium"
-                    : "bg-gray-50"
-                }`}
-              >
-                <span className="font-semibold">21-42点:</span> Severe
-                stroke（重症脳卒中）
-              </div>
+              <div className="text-xs mt-1 text-center">（重症脳卒中）</div>
             </div>
           </div>
         </div>
-        <div className="text-sm text-gray-600 mt-4">
-          <p>
-            ※
-            NIHSSは脳卒中の重症度評価スケールです。最終的な診断は医療専門家によって行われるべきです。
-          </p>
+
+        {/* カテゴリー別スコア */}
+        <div className="bg-white p-4 rounded-lg shadow-sm border">
+          <h3 className="font-semibold mb-3 text-center">カテゴリー別スコア</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-0 gap-y-1 text-xs divide-x divide-gray-200">
+            <div className="px-6">
+              {[
+                { key: "consciousness_level", label: "1a. 意識水準", max: 3 },
+                {
+                  key: "consciousness_questions",
+                  label: "1b. 意識水準-質問",
+                  max: 2,
+                },
+                {
+                  key: "consciousness_commands",
+                  label: "1c. 意識水準-従命",
+                  max: 2,
+                },
+                { key: "gaze", label: "2. 最良の注視", max: 2 },
+                { key: "visual_fields", label: "3. 視野", max: 3 },
+              ].map((item) => (
+                <div
+                  key={item.key}
+                  className={`flex items-center p-1 rounded ${getCategoryScoreBgClass(categoryScores[item.key as keyof typeof categoryScores], item.max)}`}
+                >
+                  <span
+                    className={`font-medium min-w-[7.5rem] ${getCategoryScoreColorClass(categoryScores[item.key as keyof typeof categoryScores], item.max)}`}
+                  >
+                    {item.label}
+                  </span>
+                  <span
+                    className={`ml-auto tabular-nums ${getCategoryScoreColorClass(categoryScores[item.key as keyof typeof categoryScores], item.max)}`}
+                  >
+                    {categoryScores[item.key as keyof typeof categoryScores]}/
+                    {item.max}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="px-6">
+              {[
+                { key: "facial_palsy", label: "4. 顔面麻痺", max: 3 },
+                {
+                  key: "left_arm_motor",
+                  label: "5-1. 上肢の運動（左）",
+                  max: 4,
+                },
+                {
+                  key: "right_arm_motor",
+                  label: "5-2. 上肢の運動（右）",
+                  max: 4,
+                },
+                {
+                  key: "left_leg_motor",
+                  label: "6-1. 下肢の運動（左）",
+                  max: 4,
+                },
+                {
+                  key: "right_leg_motor",
+                  label: "6-2. 下肢の運動（右）",
+                  max: 4,
+                },
+              ].map((item) => (
+                <div
+                  key={item.key}
+                  className={`flex items-center p-1 rounded ${getCategoryScoreBgClass(categoryScores[item.key as keyof typeof categoryScores], item.max)}`}
+                >
+                  <span
+                    className={`font-medium min-w-[7.5rem] ${getCategoryScoreColorClass(categoryScores[item.key as keyof typeof categoryScores], item.max)}`}
+                  >
+                    {item.label}
+                  </span>
+                  <span
+                    className={`ml-auto tabular-nums ${getCategoryScoreColorClass(categoryScores[item.key as keyof typeof categoryScores], item.max)}`}
+                  >
+                    {categoryScores[item.key as keyof typeof categoryScores]}/
+                    {item.max}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="px-6">
+              {[
+                { key: "limb_ataxia", label: "7. 運動失調", max: 2 },
+                { key: "sensory", label: "8. 感覚", max: 2 },
+                { key: "language", label: "9. 最良の言語", max: 3 },
+                { key: "dysarthria", label: "10. 構音障害", max: 2 },
+                { key: "neglect", label: "11. 消去現象と注意障害", max: 2 },
+              ].map((item) => (
+                <div
+                  key={item.key}
+                  className={`flex items-center p-1 rounded ${getCategoryScoreBgClass(categoryScores[item.key as keyof typeof categoryScores], item.max)}`}
+                >
+                  <span
+                    className={`font-medium min-w-[7.5rem] ${getCategoryScoreColorClass(categoryScores[item.key as keyof typeof categoryScores], item.max)}`}
+                  >
+                    {item.label}
+                  </span>
+                  <span
+                    className={`ml-auto tabular-nums ${getCategoryScoreColorClass(categoryScores[item.key as keyof typeof categoryScores], item.max)}`}
+                  >
+                    {categoryScores[item.key as keyof typeof categoryScores]}/
+                    {item.max}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
