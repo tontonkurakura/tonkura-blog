@@ -11,31 +11,28 @@ export default function Navigation() {
   const [keySequence, setKeySequence] = useState("");
   const [isDiscovered, setIsDiscovered] = useState(false);
   const [isRecipesDiscovered, setIsRecipesDiscovered] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
 
-  // ローカルストレージからDaisetsuとRecipesの表示状態を復元
+  // クライアントサイドでの初期化
   useEffect(() => {
+    setIsClient(true);
     if (typeof window !== "undefined") {
-      const savedShowDaisetsu = localStorage.getItem("showDaisetsu");
-      if (savedShowDaisetsu === "true") {
-        setShowDaisetsu(true);
-      }
-
-      const savedShowRecipes = localStorage.getItem("showRecipes");
-      if (savedShowRecipes === "true") {
-        setShowRecipes(true);
-      }
+      const savedShowDaisetsu = localStorage.getItem("showDaisetsu") === "true";
+      const savedShowRecipes = localStorage.getItem("showRecipes") === "true";
+      setShowDaisetsu(savedShowDaisetsu);
+      setShowRecipes(savedShowRecipes);
     }
   }, []);
 
   // DaisetsuとRecipesの表示状態をローカルストレージに保存
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && isClient) {
       localStorage.setItem("showDaisetsu", showDaisetsu.toString());
       localStorage.setItem("showRecipes", showRecipes.toString());
     }
-  }, [showDaisetsu, showRecipes]);
+  }, [showDaisetsu, showRecipes, isClient]);
 
   useEffect(() => {
     const handleKeyPress = (event: globalThis.KeyboardEvent) => {
@@ -272,25 +269,25 @@ export default function Navigation() {
                   </Link>
                 </li>
                 {showRecipes && (
-                <li className="w-full md:w-auto text-center" role="none">
-                  <Link
-                    href="/recipes"
+                  <li className="w-full md:w-auto text-center" role="none">
+                    <Link
+                      href="/recipes"
                       className={`block px-3 py-1 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-orange-800 to-yellow-800 hover:shadow-inner text-sm md:text-base font-bold ${
                         isRecipesDiscovered
                           ? "animate-[discover_2s_ease-out] bg-gradient-to-r from-orange-800/50 to-yellow-800/50"
                           : ""
                       }`}
-                    onClick={() => setIsMenuOpen(false)}
-                    role="menuitem"
-                    tabIndex={0}
-                    onKeyDown={handleKeyDown}
-                    aria-current={
-                      pathname.startsWith("/recipes") ? "page" : undefined
-                    }
-                  >
-                    Recipes
-                  </Link>
-                </li>
+                      onClick={() => setIsMenuOpen(false)}
+                      role="menuitem"
+                      tabIndex={0}
+                      onKeyDown={handleKeyDown}
+                      aria-current={
+                        pathname.startsWith("/recipes") ? "page" : undefined
+                      }
+                    >
+                      Recipes
+                    </Link>
+                  </li>
                 )}
                 {showDaisetsu && (
                   <li className="w-full md:w-auto text-center" role="none">

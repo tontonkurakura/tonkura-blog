@@ -373,237 +373,257 @@ export default function BrainSliceViewer({
     [crosshairPosition, sliceType, dimensions]
   );
 
-  // useEffectの依存関係を修正
-  useEffect(() => {
-    const drawCanvas = () => {
-      if (!canvasRef.current || !mniVolume || dimensions[0] === 0) return;
+  // デバウンス関数の実装
+  const debounce = (func: Function, wait: number) => {
+    let timeout: NodeJS.Timeout;
+    return function executedFunction(...args: unknown[]) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  };
 
-      const canvas = canvasRef.current;
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
+  // スライスの最大インデックスを取得
+  const getMaxSliceIndex = () => {
+    if (!dimensions || dimensions.length < 3) return 0;
 
-      // キャンバスのサイズを設定
-      let width, height;
+    switch (sliceType) {
+      case "axial":
+        return dimensions[2] - 1;
+      case "coronal":
+        return dimensions[1] - 1;
+      case "sagittal":
+        return dimensions[0] - 1;
+      default:
+        return 0;
+    }
+  };
 
-      switch (sliceType) {
-        case "sagittal": // X軸に垂直なスライス (YZ平面)
-          width = dimensions[1];
-          height = dimensions[2];
-          break;
-        case "coronal": // Y軸に垂直なスライス (XZ平面)
-          width = dimensions[0];
-          height = dimensions[2];
-          break;
-        case "axial": // Z軸に垂直なスライス (XY平面)
-        default:
-          width = dimensions[0];
-          height = dimensions[1];
-          break;
-      }
+  // drawCanvas関数を分離
+  const drawCanvas = useCallback(() => {
+    if (!canvasRef.current || !mniVolume || dimensions[0] === 0) return;
 
-      canvas.width = width;
-      canvas.height = height;
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-      // イメージデータを作成
-      const imageData = ctx.createImageData(width, height);
-      const data = imageData.data;
+    // キャンバスのサイズを設定
+    let width, height;
 
-      // 最大輝度値に基づいてスケーリング係数を計算
-      const scaleFactor = 255 / maxIntensity;
+    switch (sliceType) {
+      case "sagittal": // X軸に垂直なスライス (YZ平面)
+        width = dimensions[1];
+        height = dimensions[2];
+        break;
+      case "coronal": // Y軸に垂直なスライス (XZ平面)
+        width = dimensions[0];
+        height = dimensions[2];
+        break;
+      case "axial": // Z軸に垂直なスライス (XY平面)
+      default:
+        width = dimensions[0];
+        height = dimensions[1];
+        break;
+    }
 
-      // スライスデータを取得して描画
-      for (let y = 0; y < height; y++) {
-        for (let x = 0; x < width; x++) {
-          // キャンバス座標からボクセル座標への変換
-          let voxelX, voxelY, voxelZ;
+    canvas.width = width;
+    canvas.height = height;
 
-          // Y座標を反転して正しい向きにする
-          const invertedY = height - y - 1;
-          // X座標も反転して左右を正しい向きにする
-          const invertedX = width - x - 1;
+    // イメージデータを作成
+    const imageData = ctx.createImageData(width, height);
+    const data = imageData.data;
 
-          switch (sliceType) {
-            case "sagittal": // X軸に垂直なスライス (YZ平面)
-              voxelX = currentSliceIndex;
-              voxelY = invertedX; // X座標を反転
-              voxelZ = invertedY;
-              break;
-            case "coronal": // Y軸に垂直なスライス (XZ平面)
-              voxelX = invertedX; // X座標を反転
-              voxelY = currentSliceIndex;
-              voxelZ = invertedY;
-              break;
-            case "axial": // Z軸に垂直なスライス (XY平面)
-            default:
-              voxelX = invertedX; // X座標を反転
-              voxelY = invertedY;
-              voxelZ = currentSliceIndex;
-              break;
+    // 最大輝度値に基づいてスケーリング係数を計算
+    const scaleFactor = 255 / maxIntensity;
+
+    // スライスデータを取得して描画
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        // キャンバス座標からボクセル座標への変換
+        let voxelX, voxelY, voxelZ;
+
+        // Y座標を反転して正しい向きにする
+        const invertedY = height - y - 1;
+        // X座標も反転して左右を正しい向きにする
+        const invertedX = width - x - 1;
+
+        switch (sliceType) {
+          case "sagittal": // X軸に垂直なスライス (YZ平面)
+            voxelX = currentSliceIndex;
+            voxelY = invertedX; // X座標を反転
+            voxelZ = invertedY;
+            break;
+          case "coronal": // Y軸に垂直なスライス (XZ平面)
+            voxelX = invertedX; // X座標を反転
+            voxelY = currentSliceIndex;
+            voxelZ = invertedY;
+            break;
+          case "axial": // Z軸に垂直なスライス (XY平面)
+          default:
+            voxelX = invertedX; // X座標を反転
+            voxelY = invertedY;
+            voxelZ = currentSliceIndex;
+            break;
+        }
+
+        // ピクセルインデックスを計算
+        const pixelIndex = (y * width + x) * 4;
+
+        // ボクセル座標が有効範囲内かチェック
+        if (
+          voxelX >= 0 &&
+          voxelX < dimensions[0] &&
+          voxelY >= 0 &&
+          voxelY < dimensions[1] &&
+          voxelZ >= 0 &&
+          voxelZ < dimensions[2]
+        ) {
+          // ボクセルインデックスを計算
+          const voxelIndex =
+            voxelX +
+            voxelY * dimensions[0] +
+            voxelZ * dimensions[0] * dimensions[1];
+
+          // MNIデータの値を取得
+          const mniValue = mniVolume[voxelIndex];
+
+          // AALデータの値を取得（存在する場合）
+          let aalValue = 0;
+          if (aalVolume) {
+            // MNIからAALへの座標変換
+            const [aalX, aalY, aalZ] = transformMniToAalCoordinates(
+              voxelX,
+              voxelY,
+              voxelZ
+            );
+
+            if (aalX >= 0 && aalY >= 0 && aalZ >= 0) {
+              const aalIndex =
+                aalX +
+                aalY * aalData!.dims[1] +
+                aalZ * aalData!.dims[1] * aalData!.dims[2];
+              aalValue = aalVolume[aalIndex];
+            }
           }
 
-          // ピクセルインデックスを計算
-          const pixelIndex = (y * width + x) * 4;
+          // 選択された領域かどうかを確認
+          const isSelectedRegion = selectedRegion === aalValue;
+          // ホバーしている領域かどうかを確認
+          const isHoveredRegion = hoveredRegion === aalValue;
 
-          // ボクセル座標が有効範囲内かチェック
-          if (
-            voxelX >= 0 &&
-            voxelX < dimensions[0] &&
-            voxelY >= 0 &&
-            voxelY < dimensions[1] &&
-            voxelZ >= 0 &&
-            voxelZ < dimensions[2]
-          ) {
-            // ボクセルインデックスを計算
-            const voxelIndex =
-              voxelX +
-              voxelY * dimensions[0] +
-              voxelZ * dimensions[0] * dimensions[1];
+          // 閾値以上の値のみ表示（背景を除去）
+          if (mniValue > 10) {
+            // コントラスト調整
+            let adjustedValue = Math.min(
+              255,
+              Math.floor(mniValue * scaleFactor)
+            );
 
-            // MNIデータの値を取得
-            const mniValue = mniVolume[voxelIndex];
+            // MRI透明度の適用方法を修正
+            // 透明度が高いほど実際に透明になるように変更
+            const mriAlpha = 1 - mniOpacity / 100;
 
-            // AALデータの値を取得（存在する場合）
-            let aalValue = 0;
-            if (aalVolume) {
-              // MNIからAALへの座標変換
-              const [aalX, aalY, aalZ] = transformMniToAalCoordinates(
-                voxelX,
-                voxelY,
-                voxelZ
-              );
+            // AAL領域の表示
+            if (aalValue > 0) {
+              // AALラベルに対応する色を取得
+              const labelInfo = aalLabels.find((l) => l.index === aalValue);
 
-              if (aalX >= 0 && aalY >= 0 && aalZ >= 0) {
-                const aalIndex =
-                  aalX +
-                  aalY * aalData!.dims[1] +
-                  aalZ * aalData!.dims[1] * aalData!.dims[2];
-                aalValue = aalVolume[aalIndex];
-              }
-            }
-
-            // 選択された領域かどうかを確認
-            const isSelectedRegion = selectedRegion === aalValue;
-            // ホバーしている領域かどうかを確認
-            const isHoveredRegion = hoveredRegion === aalValue;
-
-            // 閾値以上の値のみ表示（背景を除去）
-            if (mniValue > 10) {
-              // コントラスト調整
-              let adjustedValue = Math.min(
-                255,
-                Math.floor(mniValue * scaleFactor)
-              );
-
-              // MRI透明度の適用方法を修正
-              // 透明度が高いほど実際に透明になるように変更
-              const mriAlpha = 1 - mniOpacity / 100;
-
-              // AAL領域の表示
-              if (aalValue > 0) {
-                // AALラベルに対応する色を取得
-                const labelInfo = aalLabels.find((l) => l.index === aalValue);
-
-                if (labelInfo) {
-                  // 色文字列をRGB値に変換
-                  let color;
-                  if (labelInfo.color.startsWith("#")) {
-                    // HEX形式の場合
-                    const hex = labelInfo.color.substring(1);
-                    const r = parseInt(hex.substring(0, 2), 16);
-                    const g = parseInt(hex.substring(2, 4), 16);
-                    const b = parseInt(hex.substring(4, 6), 16);
-                    color = { r, g, b, a: 1 }; // アルファ値を追加
-                  } else if (labelInfo.color.startsWith("rgba")) {
-                    // RGBA形式の場合
-                    const rgbaMatch = labelInfo.color.match(
-                      /rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)/
-                    );
-                    if (rgbaMatch) {
-                      const r = parseInt(rgbaMatch[1], 10);
-                      const g = parseInt(rgbaMatch[2], 10);
-                      const b = parseInt(rgbaMatch[3], 10);
-                      const a = parseFloat(rgbaMatch[4]);
-                      color = { r, g, b, a };
-                    } else {
-                      // デフォルト色
-                      color = { r: 50, g: 100, b: 200, a: 0.7 };
-                    }
-                  } else if (labelInfo.color.startsWith("hsl")) {
-                    // HSL形式の場合はRGBに変換
-                    const hslMatch = labelInfo.color.match(
-                      /hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)/
-                    );
-                    if (hslMatch) {
-                      const h = parseInt(hslMatch[1], 10) / 360;
-                      const s = parseInt(hslMatch[2], 10) / 100;
-                      const l = parseInt(hslMatch[3], 10) / 100;
-
-                      // HSL to RGB変換
-                      const rgb = hslToRgb(h, s, l);
-                      color = { r: rgb[0], g: rgb[1], b: rgb[2], a: 0.7 };
-                    } else {
-                      // デフォルト色
-                      color = { r: 50, g: 100, b: 200, a: 0.7 };
-                    }
+              if (labelInfo) {
+                // 色文字列をRGB値に変換
+                let color;
+                if (labelInfo.color.startsWith("#")) {
+                  // HEX形式の場合
+                  const hex = labelInfo.color.substring(1);
+                  const r = parseInt(hex.substring(0, 2), 16);
+                  const g = parseInt(hex.substring(2, 4), 16);
+                  const b = parseInt(hex.substring(4, 6), 16);
+                  color = { r, g, b, a: 1 }; // アルファ値を追加
+                } else if (labelInfo.color.startsWith("rgba")) {
+                  // RGBA形式の場合
+                  const rgbaMatch = labelInfo.color.match(
+                    /rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)/
+                  );
+                  if (rgbaMatch) {
+                    const r = parseInt(rgbaMatch[1], 10);
+                    const g = parseInt(rgbaMatch[2], 10);
+                    const b = parseInt(rgbaMatch[3], 10);
+                    const a = parseFloat(rgbaMatch[4]);
+                    color = { r, g, b, a };
                   } else {
                     // デフォルト色
                     color = { r: 50, g: 100, b: 200, a: 0.7 };
                   }
+                } else if (labelInfo.color.startsWith("hsl")) {
+                  // HSL形式の場合はRGBに変換
+                  const hslMatch = labelInfo.color.match(
+                    /hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)/
+                  );
+                  if (hslMatch) {
+                    const h = parseInt(hslMatch[1], 10) / 360;
+                    const s = parseInt(hslMatch[2], 10) / 100;
+                    const l = parseInt(hslMatch[3], 10) / 100;
 
-                  if (showAAL) {
-                    // 選択された領域は強調表示
-                    if (isSelectedRegion) {
-                      // 選択された領域は白色に近い最大明度で表示
-                      data[pixelIndex] = Math.min(255, color.r + 150);
-                      data[pixelIndex + 1] = Math.min(255, color.g + 150);
-                      data[pixelIndex + 2] = Math.min(255, color.b + 150);
-                      data[pixelIndex + 3] = 255; // 完全不透明
-                    }
-                    // ホバーしている領域も強調表示
-                    else if (isHoveredRegion) {
-                      // ホバーしている領域は元の色の最大明度バージョンで表示
-                      data[pixelIndex] = Math.min(255, color.r + 150);
-                      data[pixelIndex + 1] = Math.min(255, color.g + 150);
-                      data[pixelIndex + 2] = Math.min(255, color.b + 150);
-                      data[pixelIndex + 3] = 255; // 完全不透明
-                    } else {
-                      // 修正: AALラベルの透明度のみを変更し、MRI画像の透明度は別途適用
-                      // AALラベルの透明度を計算
-                      const aalAlpha = (1 - aalOpacity / 100) * color.a;
-
-                      // 選択されていない領域は半透明でオーバーレイ
-                      if (showAAL) {
-                        // AALラベルが表示されている場合、MRI透明度はAALラベルに影響しないようにする
-                        // AALラベルの色を適用
-                        data[pixelIndex] = Math.floor(
-                          adjustedValue * (1 - aalAlpha) + color.r * aalAlpha
-                        );
-                        data[pixelIndex + 1] = Math.floor(
-                          adjustedValue * (1 - aalAlpha) + color.g * aalAlpha
-                        );
-                        data[pixelIndex + 2] = Math.floor(
-                          adjustedValue * (1 - aalAlpha) + color.b * aalAlpha
-                        );
-                        // AALラベルがある部分は常に不透明に
-                        data[pixelIndex + 3] = 255;
-                      } else {
-                        // AAL表示がオフの場合はグレースケールで表示し、MRI透明度を適用
-                        data[pixelIndex] = adjustedValue;
-                        data[pixelIndex + 1] = adjustedValue;
-                        data[pixelIndex + 2] = adjustedValue;
-                        data[pixelIndex + 3] = Math.round(255 * mriAlpha);
-                      }
-                    }
+                    // HSL to RGB変換
+                    const rgb = hslToRgb(h, s, l);
+                    color = { r: rgb[0], g: rgb[1], b: rgb[2], a: 0.7 };
                   } else {
-                    // AAL表示がオフの場合はグレースケールで表示
-                    // MRI透明度をアルファチャンネルに適用
-                    data[pixelIndex] = adjustedValue;
-                    data[pixelIndex + 1] = adjustedValue;
-                    data[pixelIndex + 2] = adjustedValue;
-                    data[pixelIndex + 3] = Math.round(255 * mriAlpha);
+                    // デフォルト色
+                    color = { r: 50, g: 100, b: 200, a: 0.7 };
                   }
                 } else {
-                  // AALラベルが見つからない場合はグレースケールで表示
+                  // デフォルト色
+                  color = { r: 50, g: 100, b: 200, a: 0.7 };
+                }
+
+                if (showAAL) {
+                  // 選択された領域は強調表示
+                  if (isSelectedRegion) {
+                    // 選択された領域は白色に近い最大明度で表示
+                    data[pixelIndex] = Math.min(255, color.r + 150);
+                    data[pixelIndex + 1] = Math.min(255, color.g + 150);
+                    data[pixelIndex + 2] = Math.min(255, color.b + 150);
+                    data[pixelIndex + 3] = 255; // 完全不透明
+                  }
+                  // ホバーしている領域も強調表示
+                  else if (isHoveredRegion) {
+                    // ホバーしている領域は元の色の最大明度バージョンで表示
+                    data[pixelIndex] = Math.min(255, color.r + 150);
+                    data[pixelIndex + 1] = Math.min(255, color.g + 150);
+                    data[pixelIndex + 2] = Math.min(255, color.b + 150);
+                    data[pixelIndex + 3] = 255; // 完全不透明
+                  } else {
+                    // 修正: AALラベルの透明度のみを変更し、MRI画像の透明度は別途適用
+                    // AALラベルの透明度を計算
+                    const aalAlpha = (1 - aalOpacity / 100) * color.a;
+
+                    // 選択されていない領域は半透明でオーバーレイ
+                    if (showAAL) {
+                      // AALラベルが表示されている場合、MRI透明度はAALラベルに影響しないようにする
+                      // AALラベルの色を適用
+                      data[pixelIndex] = Math.floor(
+                        adjustedValue * (1 - aalAlpha) + color.r * aalAlpha
+                      );
+                      data[pixelIndex + 1] = Math.floor(
+                        adjustedValue * (1 - aalAlpha) + color.g * aalAlpha
+                      );
+                      data[pixelIndex + 2] = Math.floor(
+                        adjustedValue * (1 - aalAlpha) + color.b * aalAlpha
+                      );
+                      // AALラベルがある部分は常に不透明に
+                      data[pixelIndex + 3] = 255;
+                    } else {
+                      // AAL表示がオフの場合はグレースケールで表示し、MRI透明度を適用
+                      data[pixelIndex] = adjustedValue;
+                      data[pixelIndex + 1] = adjustedValue;
+                      data[pixelIndex + 2] = adjustedValue;
+                      data[pixelIndex + 3] = Math.round(255 * mriAlpha);
+                    }
+                  }
+                } else {
+                  // AAL表示がオフの場合はグレースケールで表示
                   // MRI透明度をアルファチャンネルに適用
                   data[pixelIndex] = adjustedValue;
                   data[pixelIndex + 1] = adjustedValue;
@@ -611,7 +631,7 @@ export default function BrainSliceViewer({
                   data[pixelIndex + 3] = Math.round(255 * mriAlpha);
                 }
               } else {
-                // AAL領域外はグレースケールで表示
+                // AALラベルが見つからない場合はグレースケールで表示
                 // MRI透明度をアルファチャンネルに適用
                 data[pixelIndex] = adjustedValue;
                 data[pixelIndex + 1] = adjustedValue;
@@ -619,62 +639,108 @@ export default function BrainSliceViewer({
                 data[pixelIndex + 3] = Math.round(255 * mriAlpha);
               }
             } else {
-              // 背景（値が低い領域）は透明に
-              data[pixelIndex] = 0;
-              data[pixelIndex + 1] = 0;
-              data[pixelIndex + 2] = 0;
-              data[pixelIndex + 3] = 0;
+              // AAL領域外はグレースケールで表示
+              // MRI透明度をアルファチャンネルに適用
+              data[pixelIndex] = adjustedValue;
+              data[pixelIndex + 1] = adjustedValue;
+              data[pixelIndex + 2] = adjustedValue;
+              data[pixelIndex + 3] = Math.round(255 * mriAlpha);
             }
           } else {
-            // 範囲外のインデックスは透明に
+            // 背景（値が低い領域）は透明に
             data[pixelIndex] = 0;
             data[pixelIndex + 1] = 0;
             data[pixelIndex + 2] = 0;
             data[pixelIndex + 3] = 0;
           }
+        } else {
+          // 範囲外のインデックスは透明に
+          data[pixelIndex] = 0;
+          data[pixelIndex + 1] = 0;
+          data[pixelIndex + 2] = 0;
+          data[pixelIndex + 3] = 0;
         }
       }
+    }
 
-      // イメージデータの描画
-      ctx.putImageData(imageData, 0, 0);
+    // イメージデータの描画
+    ctx.putImageData(imageData, 0, 0);
 
-      // クロスヘアを描画
-      if (crosshairPosition) {
-        drawCrosshair(ctx, width, height);
-      }
+    // クロスヘアを描画
+    if (crosshairPosition) {
+      drawCrosshair(ctx, width, height);
+    }
 
-      // キャンバスをコンテナに合わせてスケーリング
-      if (containerRef.current) {
-        const containerWidth = containerRef.current.clientWidth;
-        const containerHeight = containerRef.current.clientHeight - 3; // スライダー用のスペースを確保（5→3に変更）
-        const scale = Math.min(
-          containerWidth / width,
-          containerHeight / height
-        );
+    // キャンバスをコンテナに合わせてスケーリング
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.clientWidth;
+      const containerHeight = containerRef.current.clientHeight - 3; // スライダー用のスペースを確保（5→3に変更）
+      const scale = Math.min(containerWidth / width, containerHeight / height);
 
-        canvas.style.width = `${width * scale}px`;
-        canvas.style.height = `${height * scale}px`;
-      }
-    };
-    drawCanvas();
+      canvas.style.width = `${width * scale}px`;
+      canvas.style.height = `${height * scale}px`;
+    }
   }, [
-    aalData,
-    aalLabels,
+    dimensions,
     aalVolume,
+    mniVolume,
+    maxIntensity,
+    currentSliceIndex,
+    showAAL,
     aalOpacity,
     mniOpacity,
-    crosshairPosition,
-    currentSliceIndex,
-    dimensions,
-    drawCrosshair,
-    hoveredRegion,
-    maxIntensity,
-    mniVolume,
     selectedRegion,
-    showAAL,
-    sliceType,
+    hoveredRegion,
+    crosshairPosition,
     transformMniToAalCoordinates,
+    getMaxSliceIndex,
   ]);
+
+  // キャンバスのスケーリング処理を修正
+  const updateCanvasScale = useCallback(() => {
+    if (!canvasRef.current || !containerRef.current) return;
+
+    const canvas = canvasRef.current;
+    const container = containerRef.current;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    // コンテナのサイズを取得
+    const containerWidth = container.clientWidth;
+    const containerHeight = container.clientHeight - 3; // スライダー用のスペースを確保
+
+    // キャンバスのサイズを固定
+    canvas.style.width = `${containerWidth}px`;
+    canvas.style.height = `${containerHeight}px`;
+
+    // キャンバスの実際のサイズを設定（ピクセル比を考慮）
+    const scale = window.devicePixelRatio || 1;
+    canvas.width = Math.floor(containerWidth * scale);
+    canvas.height = Math.floor(containerHeight * scale);
+
+    // コンテキストのスケールを設定
+    ctx.scale(scale, scale);
+
+    // 画像を再描画
+    drawCanvas();
+  }, [drawCanvas]);
+
+  // useEffectの依存関係を修正
+  useEffect(() => {
+    drawCanvas();
+  }, [drawCanvas]);
+
+  // キャンバスのリサイズ処理を追加
+  useEffect(() => {
+    const handleResize = debounce(() => {
+      updateCanvasScale();
+    }, 100); // 100msのデバウンス
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [updateCanvasScale]);
 
   // HSLからRGBへの変換関数
   const hslToRgb = (
@@ -953,19 +1019,6 @@ export default function BrainSliceViewer({
     // }
   };
 
-  // 最大スライスインデックスを取得
-  const getMaxSliceIndex = () => {
-    switch (sliceType) {
-      case "sagittal":
-        return dimensions[0] - 1;
-      case "coronal":
-        return dimensions[1] - 1;
-      case "axial":
-      default:
-        return dimensions[2] - 1;
-    }
-  };
-
   // マウスホイールイベントハンドラ - スライスを移動するために使用
   const handleWheel = useCallback(
     (e: React.WheelEvent<HTMLCanvasElement>) => {
@@ -1001,17 +1054,9 @@ export default function BrainSliceViewer({
 
   // 行列の逆行列を計算する関数
   const invertMatrix = (m: number[][]): number[][] => {
-    // 入力チェック
-    if (
-      !m ||
-      !Array.isArray(m) ||
-      m.length < 4 ||
-      !m[0] ||
-      !m[1] ||
-      !m[2] ||
-      !m[3]
-    ) {
-      console.warn("無効な行列形式、単位行列を返します:", m);
+    // 4x4行列のみサポート
+    if (!m || m.length !== 4 || !m[0] || m[0].length !== 4) {
+      console.warn("invertMatrix: 4x4行列のみサポートしています");
       return [
         [1, 0, 0, 0],
         [0, 1, 0, 0],
@@ -1021,8 +1066,7 @@ export default function BrainSliceViewer({
     }
 
     try {
-      // 4x4アフィン変換行列の逆行列を計算
-      // 回転・スケール部分（3x3）と平行移動部分を分離
+      // 回転部分（3x3）と平行移動部分を分離
       const r = [
         [m[0][0], m[0][1], m[0][2]],
         [m[1][0], m[1][1], m[1][2]],
@@ -1037,7 +1081,9 @@ export default function BrainSliceViewer({
         r[0][2] * (r[1][0] * r[2][1] - r[1][1] * r[2][0]);
 
       if (Math.abs(det) < 1e-10) {
-        console.warn("行列式がゼロに近いため、単位行列を返します");
+        console.warn(
+          "invertMatrix: 行列式がゼロに近いため逆行列を計算できません"
+        );
         return [
           [1, 0, 0, 0],
           [0, 1, 0, 0],
@@ -1046,8 +1092,8 @@ export default function BrainSliceViewer({
         ];
       }
 
-      // 3x3部分の余因子行列を計算
-      const adj = [
+      // 余因子行列を計算
+      const adjR = [
         [
           r[1][1] * r[2][2] - r[1][2] * r[2][1],
           r[0][2] * r[2][1] - r[0][1] * r[2][2],
@@ -1065,15 +1111,14 @@ export default function BrainSliceViewer({
         ],
       ];
 
-      // 3x3部分の逆行列を計算
-      const invDet = 1.0 / det;
-      const invR = adj.map((row) => row.map((val) => val * invDet));
+      // 回転部分の逆行列を計算
+      const invR = adjR.map((row) => row.map((val) => val / det));
 
       // 平行移動部分の逆変換を計算
       const invT = [
-        -(t[0] * invR[0][0] + t[1] * invR[0][1] + t[2] * invR[0][2]),
-        -(t[0] * invR[1][0] + t[1] * invR[1][1] + t[2] * invR[1][2]),
-        -(t[0] * invR[2][0] + t[1] * invR[2][1] + t[2] * invR[2][2]),
+        -(invR[0][0] * t[0] + invR[0][1] * t[1] + invR[0][2] * t[2]),
+        -(invR[1][0] * t[0] + invR[1][1] * t[1] + invR[1][2] * t[2]),
+        -(invR[2][0] * t[0] + invR[2][1] * t[1] + invR[2][2] * t[2]),
       ];
 
       // 4x4逆行列を構築
@@ -1084,7 +1129,7 @@ export default function BrainSliceViewer({
         [0, 0, 0, 1],
       ];
     } catch (error) {
-      console.warn("行列の逆行列計算中にエラーが発生しました:", error);
+      console.error("invertMatrix: エラーが発生しました", error);
       return [
         [1, 0, 0, 0],
         [0, 1, 0, 0],
@@ -1152,46 +1197,6 @@ export default function BrainSliceViewer({
 
     return result;
   };
-
-  // キャンバスのスケーリング処理を修正
-  const updateCanvasScale = useCallback(() => {
-    if (!canvasRef.current || !containerRef.current) return;
-
-    const canvas = canvasRef.current;
-    const container = containerRef.current;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    // コンテナのサイズを取得
-    const containerWidth = container.clientWidth;
-    const containerHeight = container.clientHeight - 3; // スライダー用のスペースを確保
-
-    // キャンバスのサイズを固定
-    canvas.style.width = `${containerWidth}px`;
-    canvas.style.height = `${containerHeight}px`;
-
-    // キャンバスの実際のサイズを設定（ピクセル比を考慮）
-    const scale = window.devicePixelRatio || 1;
-    canvas.width = Math.floor(containerWidth * scale);
-    canvas.height = Math.floor(containerHeight * scale);
-
-    // コンテキストのスケールを設定
-    ctx.scale(scale, scale);
-  }, []);
-
-  // キャンバスのリサイズ処理を追加
-  useEffect(() => {
-    updateCanvasScale();
-
-    const handleResize = () => {
-      updateCanvasScale();
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [updateCanvasScale]);
 
   return (
     <div

@@ -452,31 +452,32 @@ export default function BrainDatabasePage() {
                     </div>
                   </div>
                   {/* 選択された領域の情報表示 - 上部に配置 */}
-                  <div className="mb-4 p-4 bg-white border border-blue-300 rounded-md shadow-md h-64 overflow-y-auto">
+                  <div className="mb-4 p-4 bg-white border border-blue-300 rounded-md shadow-md h-96 overflow-y-auto">
                     {selectedRegion ? (
-                      <>
+                      <div className="space-y-4">
                         {/* 領域名を日本語で大きく表示し、英語名も併記 */}
-                        <h3 className="font-bold text-2xl text-blue-700 mb-1">
-                          {(() => {
-                            const selectedLabel = aalLabels.find(
-                              (l) => l.index === selectedRegion
-                            );
-                            const name = selectedLabel?.name || "";
-
-                            // CSVから読み込んだ日本語名を使用
-                            return getJapaneseNameWithPrefix(name);
-                          })()}
-                        </h3>
-                        {/* 英語名称の表示 */}
-                        {(() => {
-                          const details = getRegionDetails(selectedRegion);
-                          if (!details) return null;
-                          return (
-                            <p className="text-md text-gray-600 mb-3 italic">
-                              {details.englishName || ""}
-                            </p>
-                          );
-                        })()}
+                        <div>
+                          <h3 className="font-bold text-2xl text-blue-700 mb-3 flex flex-col md:flex-row md:items-baseline md:gap-3">
+                            <span>
+                              {(() => {
+                                const selectedLabel = aalLabels.find(
+                                  (l) => l.index === selectedRegion
+                                );
+                                const name = selectedLabel?.name || "";
+                                return getJapaneseNameWithPrefix(name);
+                              })()}
+                            </span>
+                            {(() => {
+                              const details = getRegionDetails(selectedRegion);
+                              if (!details) return null;
+                              return (
+                                <span className="ml-3 text-xl text-gray-600">
+                                  {details.englishName || ""}
+                                </span>
+                              );
+                            })()}
+                          </h3>
+                        </div>
 
                         {/* 詳細情報の表示 */}
                         {(() => {
@@ -484,23 +485,35 @@ export default function BrainDatabasePage() {
                           if (!details || !details.functionalRole) return null;
 
                           return (
-                            <div className="mt-4">
-                              <div className="mb-3">
-                                <h4 className="font-semibold text-gray-800">
-                                  機能的役割
-                                </h4>
-                                <p className="text-gray-700">
-                                  {details.functionalRole}
-                                </p>
-                              </div>
+                            <div className="space-y-6">
+                              {details.functionalRole && (
+                                <div>
+                                  <h4 className="font-semibold text-gray-800 mb-2">
+                                    機能
+                                  </h4>
+                                  <ul className="list-disc pl-5 space-y-2">
+                                    {Array.isArray(details.functionalRole) ? (
+                                      details.functionalRole.map((role, i) => (
+                                        <li key={i} className="text-gray-700">
+                                          {role}
+                                        </li>
+                                      ))
+                                    ) : (
+                                      <li className="text-gray-700">
+                                        {details.functionalRole}
+                                      </li>
+                                    )}
+                                  </ul>
+                                </div>
+                              )}
 
                               {details.connections &&
                                 details.connections.length > 0 && (
-                                  <div className="mb-3">
-                                    <h4 className="font-semibold text-gray-800">
+                                  <div>
+                                    <h4 className="font-semibold text-gray-800 mb-2">
                                       主な神経接続
                                     </h4>
-                                    <ul className="list-disc pl-5">
+                                    <ul className="list-disc pl-5 space-y-2">
                                       {details.connections.map((conn, i) => (
                                         <li key={i} className="text-gray-700">
                                           {conn}
@@ -512,11 +525,11 @@ export default function BrainDatabasePage() {
 
                               {details.relatedDisorders &&
                                 details.relatedDisorders.length > 0 && (
-                                  <div className="mb-3">
-                                    <h4 className="font-semibold text-gray-800">
+                                  <div>
+                                    <h4 className="font-semibold text-gray-800 mb-2">
                                       関連する疾患
                                     </h4>
-                                    <ul className="list-disc pl-5">
+                                    <ul className="list-disc pl-5 space-y-2">
                                       {details.relatedDisorders.map(
                                         (disorder, i) => (
                                           <li key={i} className="text-gray-700">
@@ -531,12 +544,15 @@ export default function BrainDatabasePage() {
                               {details.references &&
                                 details.references.length > 0 && (
                                   <div>
-                                    <h4 className="font-semibold text-gray-800">
+                                    <h4 className="font-semibold text-gray-800 mb-2">
                                       参考文献
                                     </h4>
-                                    <ul className="list-disc pl-5">
+                                    <ul className="list-disc pl-5 space-y-2">
                                       {details.references.map((ref, i) => (
-                                        <li key={i} className="text-gray-700">
+                                        <li
+                                          key={i}
+                                          className="text-gray-700 text-sm"
+                                        >
                                           {ref}
                                         </li>
                                       ))}
@@ -546,7 +562,7 @@ export default function BrainDatabasePage() {
                             </div>
                           );
                         })()}
-                      </>
+                      </div>
                     ) : (
                       <div className="h-full flex items-center justify-center">
                         <p className="text-lg text-gray-500 font-medium">
