@@ -51,7 +51,7 @@ ingredients:
         amount: 適量
       - name: からし
         amount: 適量
-lastmod: '2025-03-06'
+lastmod: '2025-03-08'
 ---
 
 ## 下準備

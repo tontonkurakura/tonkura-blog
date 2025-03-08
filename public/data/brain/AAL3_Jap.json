@@ -6,6 +6,7 @@
     "category": "前頭葉",
     "englishName": "Precentral gyrus",
     "functionalRole": "随意運動の企画・制御・遂行",
+    "symptoms": [],
     "references": [
       "Sallet J, Mars RB, Noonan MP, et al. The organization of dorsal frontal cortex in humans and macaques. J Neurosci. 2013;33(30):12255–12274."
     ]
@@ -17,6 +18,7 @@
     "category": "前頭葉",
     "englishName": "Precentral gyrus",
     "functionalRole": "随意運動の企画・制御・遂行",
+    "symptoms": [],
     "references": [
       "Sallet J, Mars RB, Noonan MP, et al. The organization of dorsal frontal cortex in humans and macaques. J Neurosci. 2013;33(30):12255–12274."
     ]
@@ -28,6 +30,7 @@
     "category": "前頭葉",
     "englishName": "Superior frontal gyrus, dorsolateral (dlPFC)",
     "functionalRole": "自己意識、実行機能（注意制御・ワーキングメモリなど）",
+    "symptoms": [],
     "references": [
       "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
     ]
@@ -149,6 +152,7 @@
     "category": "前頭葉",
     "englishName": "Rolandic operculum",
     "functionalRole": "味覚や口腔感覚の処理・統合",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -160,6 +164,7 @@
     "category": "前頭葉",
     "englishName": "Supplementary motor area",
     "functionalRole": "内部的な運動企画、運動シーケンスの計画など",
+    "symptoms": [],
     "references": [
       "Sallet J, Mars RB, Noonan MP, et al. The organization of dorsal frontal cortex in humans and macaques. J Neurosci. 2013;33(30):12255–12274."
     ]
@@ -171,6 +176,7 @@
     "category": "前頭葉",
     "englishName": "Supplementary motor area",
     "functionalRole": "内部的な運動企画、運動シーケンスの計画など",
+    "symptoms": [],
     "references": [
       "Sallet J, Mars RB, Noonan MP, et al. The organization of dorsal frontal cortex in humans and macaques. J Neurosci. 2013;33(30):12255–12274."
     ]
@@ -182,6 +188,7 @@
     "category": "大脳辺縁系",
     "englishName": "Olfactory cortex",
     "functionalRole": "嗅覚情報の初期処理、嗅覚記憶の形成",
+    "symptoms": [],
     "references": [
       "Gottfried JA, Zelano C. The value of identity: olfactory notes on orbitofrontal cortex function. Ann N Y Acad Sci. 2011;1239:138–148."
     ]
@@ -193,6 +200,7 @@
     "category": "大脳辺縁系",
     "englishName": "Olfactory cortex",
     "functionalRole": "嗅覚情報の初期処理、嗅覚記憶の形成",
+    "symptoms": [],
     "references": [
       "Gottfried JA, Zelano C. The value of identity: olfactory notes on orbitofrontal cortex function. Ann N Y Acad Sci. 2011;1239:138–148."
     ]
@@ -210,6 +218,7 @@
       "未来の予測：選択肢の結果をシミュレーションし、報酬の期待値を推定する​。",
       "非報酬関連情報の処理：報酬に直接結びつかない情報も統合し、意思決定を支える​。"
     ],
+    "symptoms": [],
     "references": [
       "Etkin A, Egner T, Kalisch R. Emotional processing in anterior cingulate and medial prefrontal cortex. Trends Cogn Sci. 2011;15(2):85–93."
     ]
@@ -227,6 +236,7 @@
       "未来の予測：選択肢の結果をシミュレーションし、報酬の期待値を推定する​。",
       "非報酬関連情報の処理：報酬に直接結びつかない情報も統合し、意思決定を支える​。"
     ],
+    "symptoms": [],
     "references": [
       "Etkin A, Egner T, Kalisch R. Emotional processing in anterior cingulate and medial prefrontal cortex. Trends Cogn Sci. 2011;15(2):85–93."
     ]
@@ -244,6 +254,7 @@
       "意思決定の柔軟性：報酬の変化に応じて価値評価を更新し、行動を調整する​。",
       "社会的報酬の処理：他者からの評価や社会的フィードバックを統合し、行動に反映させる​。"
     ],
+    "symptoms": [],
     "references": [
       "Klein-Flügge MC, Bongioanni A, Rushworth MFS. Medial and orbital frontal cortex in decision-making and flexible behavior. Neuron. 2022 Sep 7;110(17):2743-2770. doi: 10.1016/j.neuron.2022.05.022. Epub 2022 Jun 14. PMID: 35705077."
     ]
@@ -261,6 +272,7 @@
       "意思決定の柔軟性：報酬の変化に応じて価値評価を更新し、行動を調整する​。",
       "社会的報酬の処理：他者からの評価や社会的フィードバックを統合し、行動に反映させる​。"
     ],
+    "symptoms": [],
     "references": [
       "Klein-Flügge MC, Bongioanni A, Rushworth MFS. Medial and orbital frontal cortex in decision-making and flexible behavior. Neuron. 2022 Sep 7;110(17):2743-2770. doi: 10.1016/j.neuron.2022.05.022. Epub 2022 Jun 14. PMID: 35705077."
     ]
@@ -272,6 +284,7 @@
     "category": "前頭葉",
     "englishName": "Gyrus rectus",
     "functionalRole": "嗅覚・報酬情報の処理、意思決定など",
+    "symptoms": [],
     "references": [
       "Zald DH, Rauch SL. The Orbitofrontal Cortex. Oxford University Press; 2006."
     ]
@@ -283,6 +296,7 @@
     "category": "前頭葉",
     "englishName": "Gyrus rectus",
     "functionalRole": "嗅覚・報酬情報の処理、意思決定など",
+    "symptoms": [],
     "references": [
       "Zald DH, Rauch SL. The Orbitofrontal Cortex. Oxford University Press; 2006."
     ]
@@ -294,6 +308,7 @@
     "category": "前頭葉",
     "englishName": "Medial orbital gyrus",
     "functionalRole": "報酬評価、社会的意思決定、情動調節など",
+    "symptoms": [],
     "references": [
       "Zald DH, Rauch SL. The Orbitofrontal Cortex. Oxford University Press; 2006."
     ]
@@ -305,6 +320,7 @@
     "category": "前頭葉",
     "englishName": "Medial orbital gyrus",
     "functionalRole": "報酬評価、社会的意思決定、情動調節など",
+    "symptoms": [],
     "references": [
       "Zald DH, Rauch SL. The Orbitofrontal Cortex. Oxford University Press; 2006."
     ]
@@ -316,6 +332,7 @@
     "category": "前頭葉",
     "englishName": "Anterior orbital gyrus",
     "functionalRole": "報酬予測、意思決定、嗅覚情報の評価など",
+    "symptoms": [],
     "references": [
       "Zald DH, Rauch SL. The Orbitofrontal Cortex. Oxford University Press; 2006."
     ]
@@ -327,6 +344,7 @@
     "category": "前頭葉",
     "englishName": "Anterior orbital gyrus",
     "functionalRole": "報酬予測、意思決定、嗅覚情報の評価など",
+    "symptoms": [],
     "references": [
       "Zald DH, Rauch SL. The Orbitofrontal Cortex. Oxford University Press; 2006."
     ]
@@ -338,6 +356,7 @@
     "category": "前頭葉",
     "englishName": "Posterior orbital gyrus",
     "functionalRole": "報酬期待の更新、意思決定の調整など",
+    "symptoms": [],
     "references": [
       "Zald DH, Rauch SL. The Orbitofrontal Cortex. Oxford University Press; 2006."
     ]
@@ -349,6 +368,7 @@
     "category": "前頭葉",
     "englishName": "Posterior orbital gyrus",
     "functionalRole": "報酬期待の更新、意思決定の調整など",
+    "symptoms": [],
     "references": [
       "Zald DH, Rauch SL. The Orbitofrontal Cortex. Oxford University Press; 2006."
     ]
@@ -360,6 +380,7 @@
     "category": "前頭葉",
     "englishName": "Lateral orbital gyrus",
     "functionalRole": "罰則・負の報酬の評価、行動抑制など",
+    "symptoms": [],
     "references": [
       "Zald DH, Rauch SL. The Orbitofrontal Cortex. Oxford University Press; 2006."
     ]
@@ -371,6 +392,7 @@
     "category": "前頭葉",
     "englishName": "Lateral orbital gyrus",
     "functionalRole": "罰則・負の報酬の評価、行動抑制など",
+    "symptoms": [],
     "references": [
       "Zald DH, Rauch SL. The Orbitofrontal Cortex. Oxford University Press; 2006."
     ]
@@ -382,6 +404,7 @@
     "category": "島皮質",
     "englishName": "Insula",
     "functionalRole": "内受容感覚の処理、情動処理、味覚・嗅覚処理、自律神経制御、社会的認知・共感など",
+    "symptoms": [],
     "references": [
       "Chang LJ, Yarkoni T, Khaw MW, Sanfey AG. Decoding the role of the insula in human cognition: functional parcellation and large-scale reverse inference. Cereb Cortex. 2013;23(3):739–749."
     ]
@@ -393,6 +416,7 @@
     "category": "島皮質",
     "englishName": "Insula",
     "functionalRole": "内受容感覚の処理、情動処理、味覚・嗅覚処理、自律神経制御、社会的認知・共感など",
+    "symptoms": [],
     "references": [
       "Chang LJ, Yarkoni T, Khaw MW, Sanfey AG. Decoding the role of the insula in human cognition: functional parcellation and large-scale reverse inference. Cereb Cortex. 2013;23(3):739–749."
     ]
@@ -404,6 +428,7 @@
     "category": "大脳辺縁系",
     "englishName": "Middle cingulate & paracingulate gyri",
     "functionalRole": "疼痛の処理、運動制御と葛藤モニタリングなど",
+    "symptoms": [],
     "references": [
       "Bush G, Shin LM. The Multi-Source Interference Task: an fMRI task that reliably activates the cingulate cortex. Nat Protoc. 2006;1(1):308–313."
     ]
@@ -415,6 +440,7 @@
     "category": "大脳辺縁系",
     "englishName": "Middle cingulate & paracingulate gyri",
     "functionalRole": "疼痛の処理、運動制御と葛藤モニタリングなど",
+    "symptoms": [],
     "references": [
       "Bush G, Shin LM. The Multi-Source Interference Task: an fMRI task that reliably activates the cingulate cortex. Nat Protoc. 2006;1(1):308–313."
     ]
@@ -426,6 +452,7 @@
     "category": "大脳辺縁系",
     "englishName": "Posterior cingulate cortex (PCC)",
     "functionalRole": "自伝的記憶、内的思考（デフォルトモード）など",
+    "symptoms": [],
     "references": [
       "Raichle ME, Snyder AZ. A default mode of brain function: A brief history of an evolving idea. Neuroimage. 2007;37(4):1083–1090."
     ]
@@ -437,6 +464,7 @@
     "category": "大脳辺縁系",
     "englishName": "Posterior cingulate cortex (PCC)",
     "functionalRole": "自伝的記憶、内的思考（デフォルトモード）など",
+    "symptoms": [],
     "references": [
       "Raichle ME, Snyder AZ. A default mode of brain function: A brief history of an evolving idea. Neuroimage. 2007;37(4):1083–1090."
     ]
@@ -448,6 +476,7 @@
     "category": "大脳辺縁系",
     "englishName": "Hippocampus",
     "functionalRole": "エピソード記憶形成、空間ナビゲーションなど",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -459,6 +488,7 @@
     "category": "大脳辺縁系",
     "englishName": "Hippocampus",
     "functionalRole": "エピソード記憶形成、空間ナビゲーションなど",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -470,6 +500,7 @@
     "category": "大脳辺縁系",
     "englishName": "Parahippocampal gyrus",
     "functionalRole": "シーン記憶、文脈処理など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -481,6 +512,7 @@
     "category": "大脳辺縁系",
     "englishName": "Parahippocampal gyrus",
     "functionalRole": "シーン記憶、文脈処理など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -492,6 +524,7 @@
     "category": "大脳辺縁系",
     "englishName": "Amygdala",
     "functionalRole": "恐怖・不安の処理、情動記憶、社会的認知など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -503,6 +536,7 @@
     "category": "大脳辺縁系",
     "englishName": "Amygdala",
     "functionalRole": "恐怖・不安の処理、情動記憶、社会的認知など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -514,6 +548,7 @@
     "category": "後頭葉",
     "englishName": "Calcarine fissure and surrounding cortex (primary visual cortex)",
     "functionalRole": "視覚情報の初期処理（一次視覚野）",
+    "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -525,6 +560,7 @@
     "category": "後頭葉",
     "englishName": "Calcarine fissure and surrounding cortex (primary visual cortex)",
     "functionalRole": "視覚情報の初期処理（一次視覚野）",
+    "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -536,6 +572,7 @@
     "category": "後頭葉",
     "englishName": "Cuneus",
     "functionalRole": "視覚情報の処理、視覚的注意の制御など",
+    "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -547,6 +584,7 @@
     "category": "後頭葉",
     "englishName": "Cuneus",
     "functionalRole": "視覚情報の処理、視覚的注意の制御など",
+    "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -558,6 +596,9 @@
     "category": "後頭葉",
     "englishName": "Lingual gyrus",
     "functionalRole": "高次視覚処理（色覚、文字認知など）",
+    "symptoms": [
+      "大脳性色覚障害：色の波長の区分が困難となり、色の呼称ができないが、異なる色の区別は自体は可能である。"
+    ],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -569,6 +610,9 @@
     "category": "後頭葉",
     "englishName": "Lingual gyrus",
     "functionalRole": "高次視覚処理（色覚、文字認知など）",
+    "symptoms": [
+      "大脳性色覚障害：色の波長の区分が困難となり、色の呼称ができないが、異なる色の区別は自体は可能である。"
+    ],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -580,6 +624,7 @@
     "category": "後頭葉",
     "englishName": "Superior occipital gyrus",
     "functionalRole": "視覚情報の高次処理（空間・運動の認知など）",
+    "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -591,6 +636,7 @@
     "category": "後頭葉",
     "englishName": "Superior occipital gyrus",
     "functionalRole": "視覚情報の高次処理（空間・運動の認知など）",
+    "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -602,6 +648,7 @@
     "category": "後頭葉",
     "englishName": "Middle occipital gyrus",
     "functionalRole": "視覚情報の高次処理（形状・色の統合など）",
+    "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -624,6 +671,7 @@
     "category": "後頭葉",
     "englishName": "Inferior occipital gyrus",
     "functionalRole": "視覚情報の高次処理（物体・顔の認知など）",
+    "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -635,6 +683,7 @@
     "category": "後頭葉",
     "englishName": "Inferior occipital gyrus",
     "functionalRole": "視覚情報の高次処理（物体・顔の認知など）",
+    "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -643,22 +692,52 @@
     "englishLabel": "Fusiform_L",
     "japaneseLabel": "紡錘状回",
     "laterality": "左",
-    "category": "後頭葉",
+    "category": "側頭葉",
     "englishName": "Fusiform gyrus",
-    "functionalRole": "顔認知、視覚パターン認知など",
+    "functionalRole": [
+      "顔認知：顔の知覚と認識",
+      "視覚的物体認知：物体の形状や色の処理",
+      "文字認知：文字や単語の視覚的処理",
+      "視覚的意味処理：視覚情報と意味の統合"
+    ],
+    "symptoms": {
+      "外側部": [
+        "相貌失認：顔の認識が困難になる",
+        "物体失認：物体の視覚的認識が困難になる"
+      ],
+      "内側部": ["純粋失読：文字の視覚的認識が困難になる"],
+      "後内側部": ["大脳性色覚障害：色の認識が困難になる"]
+    },
     "references": [
-      "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
+      "Kanwisher N, Yovel G. The fusiform face area: a cortical region specialized for the perception of faces. Philos Trans R Soc Lond B Biol Sci. 2006;361(1476):2109-2128.",
+      "Cohen L, Dehaene S. Specialization within the ventral stream: the case for the visual word form area. Neuroimage. 2004;22(1):466-476."
     ]
   },
   {
     "englishLabel": "Fusiform_R",
     "japaneseLabel": "紡錘状回",
     "laterality": "右",
-    "category": "後頭葉",
+    "category": "側頭葉",
     "englishName": "Fusiform gyrus",
-    "functionalRole": "顔認知、視覚パターン認知など",
+    "functionalRole": [
+      "顔認知：顔の知覚と認識",
+      "視覚的物体認知：物体の形状や色の処理",
+      "文字認知：文字や単語の視覚的処理",
+      "視覚的意味処理：視覚情報と意味の統合"
+    ],
+    "symptoms": {
+      "外側部": [
+        "相貌失認：顔の認識が困難になる",
+        "物体失認：物体の視覚的認識が困難になる"
+      ],
+      "内側部": ["純粋失読：文字の視覚的認識が困難になる"],
+      "後内側部": [
+        "大脳性色覚障害：色の認識が困難になる。色の波長の区分が困難となり、色の呼称ができないが、異なる色の区別は自体は可能である。"
+      ]
+    },
     "references": [
-      "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
+      "Kanwisher N, Yovel G. The fusiform face area: a cortical region specialized for the perception of faces. Philos Trans R Soc Lond B Biol Sci. 2006;361(1476):2109-2128.",
+      "Cohen L, Dehaene S. Specialization within the ventral stream: the case for the visual word form area. Neuroimage. 2004;22(1):466-476."
     ]
   },
   {
@@ -668,6 +747,7 @@
     "category": "頭頂葉",
     "englishName": "Postcentral gyrus",
     "functionalRole": "体性感覚（触覚・位置覚など）の受容と処理",
+    "symptoms": [],
     "references": [
       "Sallet J, Mars RB, Noonan MP, et al. The organization of dorsal frontal cortex in humans and macaques. J Neurosci. 2013;33(30):12255–12274."
     ]
@@ -679,6 +759,7 @@
     "category": "頭頂葉",
     "englishName": "Postcentral gyrus",
     "functionalRole": "体性感覚（触覚・位置覚など）の受容と処理",
+    "symptoms": [],
     "references": [
       "Sallet J, Mars RB, Noonan MP, et al. The organization of dorsal frontal cortex in humans and macaques. J Neurosci. 2013;33(30):12255–12274."
     ]
@@ -690,6 +771,7 @@
     "category": "頭頂葉",
     "englishName": "Superior parietal gyrus",
     "functionalRole": "立体空間認知、視覚と運動の統合など",
+    "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -701,6 +783,7 @@
     "category": "頭頂葉",
     "englishName": "Superior parietal gyrus",
     "functionalRole": "立体空間認知、視覚と運動の統合など",
+    "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -712,6 +795,7 @@
     "category": "頭頂葉",
     "englishName": "Inferior parietal lobule, excluding supramarginal gyrus and angular gyri",
     "functionalRole": "感覚情報統合、言語および数の処理など",
+    "symptoms": [],
     "references": [
       "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
     ]
@@ -723,6 +807,7 @@
     "category": "頭頂葉",
     "englishName": "Inferior parietal lobule, excluding supramarginal gyrus and angular gyri",
     "functionalRole": "感覚情報統合、言語および数の処理など",
+    "symptoms": [],
     "references": [
       "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
     ]
@@ -734,6 +819,7 @@
     "category": "頭頂葉",
     "englishName": "Supramarginal gyrus",
     "functionalRole": "感覚情報の統合、音韻処理など",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -745,6 +831,7 @@
     "category": "頭頂葉",
     "englishName": "Supramarginal gyrus",
     "functionalRole": "感覚情報の統合、音韻処理など",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -756,6 +843,7 @@
     "category": "頭頂葉",
     "englishName": "Angular gyrus",
     "functionalRole": "言語の意味処理、読字、書字、計算、内省的思考など",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -767,6 +855,7 @@
     "category": "頭頂葉",
     "englishName": "Angular gyrus",
     "functionalRole": "言語の意味処理、読字、書字、計算、内省的思考など",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -778,6 +867,7 @@
     "category": "頭頂葉",
     "englishName": "Precuneus",
     "functionalRole": "視空間イメージ、自己関連的思考など",
+    "symptoms": [],
     "references": [
       "Raichle ME, Snyder AZ. A default mode of brain function: A brief history of an evolving idea. Neuroimage. 2007;37(4):1083–1090."
     ]
@@ -789,6 +879,7 @@
     "category": "頭頂葉",
     "englishName": "Precuneus",
     "functionalRole": "視空間イメージ、自己関連的思考など",
+    "symptoms": [],
     "references": [
       "Raichle ME, Snyder AZ. A default mode of brain function: A brief history of an evolving idea. Neuroimage. 2007;37(4):1083–1090."
     ]
@@ -800,6 +891,7 @@
     "category": "頭頂葉",
     "englishName": "Paracentral lobule",
     "functionalRole": "下肢領域の運動および体性感覚の制御",
+    "symptoms": [],
     "references": [
       "Sallet J, Mars RB, Noonan MP, et al. The organization of dorsal frontal cortex in humans and macaques. J Neurosci. 2013;33(30):12255–12274."
     ]
@@ -811,6 +903,7 @@
     "category": "頭頂葉",
     "englishName": "Paracentral lobule",
     "functionalRole": "下肢領域の運動および体性感覚の制御",
+    "symptoms": [],
     "references": [
       "Sallet J, Mars RB, Noonan MP, et al. The organization of dorsal frontal cortex in humans and macaques. J Neurosci. 2013;33(30):12255–12274."
     ]
@@ -822,6 +915,7 @@
     "category": "大脳基底核",
     "englishName": "Caudate nucleus",
     "functionalRole": "運動計画・実行の調節、学習と報酬予測など",
+    "symptoms": [],
     "references": [
       "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
     ]
@@ -833,6 +927,7 @@
     "category": "大脳基底核",
     "englishName": "Caudate nucleus",
     "functionalRole": "運動計画・実行の調節、学習と報酬予測など",
+    "symptoms": [],
     "references": [
       "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
     ]
@@ -844,6 +939,7 @@
     "category": "大脳基底核",
     "englishName": "Lenticular nucleus, Putamen",
     "functionalRole": "運動遂行と手続き学習の促進など",
+    "symptoms": [],
     "references": [
       "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
     ]
@@ -855,6 +951,7 @@
     "category": "大脳基底核",
     "englishName": "Lenticular nucleus, Putamen",
     "functionalRole": "運動遂行と手続き学習の促進など",
+    "symptoms": [],
     "references": [
       "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
     ]
@@ -866,6 +963,7 @@
     "category": "大脳基底核",
     "englishName": "Lenticular nucleus, Globus pallidus",
     "functionalRole": "随意運動の出力調節、筋緊張の制御など",
+    "symptoms": [],
     "references": [
       "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
     ]
@@ -877,6 +975,7 @@
     "category": "大脳基底核",
     "englishName": "Lenticular nucleus, Globus pallidus",
     "functionalRole": "随意運動の出力調節、筋緊張の制御など",
+    "symptoms": [],
     "references": [
       "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
     ]
@@ -888,6 +987,7 @@
     "category": "側頭葉",
     "englishName": "Heschl's gyrus (transverse temporal gyrus)",
     "functionalRole": "聴覚情報の処理（一次聴覚野）",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -899,6 +999,7 @@
     "category": "側頭葉",
     "englishName": "Heschl's gyrus (transverse temporal gyrus)",
     "functionalRole": "聴覚情報の処理（一次聴覚野）",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -910,6 +1011,7 @@
     "category": "側頭葉",
     "englishName": "Superior temporal gyrus",
     "functionalRole": "聴覚の高次処理、言語理解など",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -921,6 +1023,7 @@
     "category": "側頭葉",
     "englishName": "Superior temporal gyrus",
     "functionalRole": "聴覚の高次処理、言語理解など",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -932,6 +1035,7 @@
     "category": "側頭葉",
     "englishName": "Temporal pole (superior temporal gyrus)",
     "functionalRole": "社会的・感情的情報の処理、意味記憶の統合など",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -943,6 +1047,7 @@
     "category": "側頭葉",
     "englishName": "Temporal pole (superior temporal gyrus)",
     "functionalRole": "社会的・感情的情報の処理、意味記憶の統合など",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -954,6 +1059,7 @@
     "category": "側頭葉",
     "englishName": "Middle temporal gyrus",
     "functionalRole": "言語の意味処理、視覚情報との統合など",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -965,6 +1071,7 @@
     "category": "側頭葉",
     "englishName": "Middle temporal gyrus",
     "functionalRole": "言語の意味処理、視覚情報との統合など",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -976,6 +1083,7 @@
     "category": "側頭葉",
     "englishName": "Temporal pole (middle temporal gyrus)",
     "functionalRole": "社会的・感情的情報の処理、意味記憶の統合など",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -987,6 +1095,7 @@
     "category": "側頭葉",
     "englishName": "Temporal pole (middle temporal gyrus)",
     "functionalRole": "社会的・感情的情報の処理、意味記憶の統合など",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -998,6 +1107,7 @@
     "category": "側頭葉",
     "englishName": "Inferior temporal gyrus",
     "functionalRole": "物体認知、視覚的記憶など",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -1009,6 +1119,7 @@
     "category": "側頭葉",
     "englishName": "Inferior temporal gyrus",
     "functionalRole": "物体認知、視覚的記憶など",
+    "symptoms": [],
     "references": [
       "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
     ]
@@ -1031,6 +1142,7 @@
     "category": "小脳",
     "englishName": "Crus I of cerebellar hemisphere",
     "functionalRole": "運動協調、注意・言語など高次認知機能への関与",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1042,6 +1154,7 @@
     "category": "小脳",
     "englishName": "Crus II of cerebellar hemisphere",
     "functionalRole": "運動協調、高次認知機能との関連など",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1052,7 +1165,8 @@
     "laterality": "右",
     "category": "小脳",
     "englishName": "Crus II of cerebellar hemisphere",
-    "functionalRole": "運動協調、高次認知機能との関連など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1064,6 +1178,7 @@
     "category": "小脳",
     "englishName": "Lobule III of cerebellar hemisphere",
     "functionalRole": "四肢運動の協調、姿勢制御など",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1074,7 +1189,8 @@
     "laterality": "右",
     "category": "小脳",
     "englishName": "Lobule III of cerebellar hemisphere",
-    "functionalRole": "四肢運動の協調、姿勢制御など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1085,7 +1201,8 @@
     "laterality": "左",
     "category": "小脳",
     "englishName": "Lobules IV, V of cerebellar hemisphere",
-    "functionalRole": "四肢の運動協調、姿勢制御など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1096,7 +1213,8 @@
     "laterality": "右",
     "category": "小脳",
     "englishName": "Lobules IV, V of cerebellar hemisphere",
-    "functionalRole": "四肢の運動協調、姿勢制御など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1107,7 +1225,8 @@
     "laterality": "左",
     "category": "小脳",
     "englishName": "Lobule VI of cerebellar hemisphere",
-    "functionalRole": "運動協調、運動学習への関与など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1130,6 +1249,7 @@
     "category": "小脳",
     "englishName": "Lobule VIIB of cerebellar hemisphere",
     "functionalRole": "運動のタイミング調整、高次認知への関与など",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1140,7 +1260,8 @@
     "laterality": "右",
     "category": "小脳",
     "englishName": "Lobule VIIb of cerebellar hemisphere",
-    "functionalRole": "運動のタイミング調整、高次認知への関与など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1151,7 +1272,8 @@
     "laterality": "左",
     "category": "小脳",
     "englishName": "Lobule VIII of cerebellar hemisphere",
-    "functionalRole": "姿勢とバランスの制御など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1162,7 +1284,8 @@
     "laterality": "右",
     "category": "小脳",
     "englishName": "Lobule VIII of cerebellar hemisphere",
-    "functionalRole": "姿勢とバランスの制御など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1173,7 +1296,8 @@
     "laterality": "左",
     "category": "小脳",
     "englishName": "Lobule IX of cerebellar hemisphere",
-    "functionalRole": "平衡感覚や眼球運動の調節など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1184,7 +1308,8 @@
     "laterality": "右",
     "category": "小脳",
     "englishName": "Lobule IX of cerebellar hemisphere",
-    "functionalRole": "平衡感覚や眼球運動の調節など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1195,7 +1320,8 @@
     "laterality": "左",
     "category": "小脳",
     "englishName": "Lobule X of cerebellar hemisphere",
-    "functionalRole": "平衡（前庭）反射の維持など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1206,7 +1332,8 @@
     "laterality": "右",
     "category": "小脳",
     "englishName": "Lobule X of cerebellar hemisphere",
-    "functionalRole": "平衡（前庭）反射の維持など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1217,7 +1344,8 @@
     "laterality": "",
     "category": "小脳",
     "englishName": "Lobules I, II of vermis",
-    "functionalRole": "体幹の平衡と姿勢制御など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1228,7 +1356,8 @@
     "laterality": "",
     "category": "小脳",
     "englishName": "Lobule III of vermis",
-    "functionalRole": "体幹の運動協調など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1239,7 +1368,8 @@
     "laterality": "",
     "category": "小脳",
     "englishName": "Lobules IV, V of vermis",
-    "functionalRole": "姿勢制御など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1250,7 +1380,8 @@
     "laterality": "",
     "category": "小脳",
     "englishName": "Lobule VI of vermis",
-    "functionalRole": "姿勢制御、自律反射の調節など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1261,7 +1392,8 @@
     "laterality": "",
     "category": "小脳",
     "englishName": "Lobule VII of vermis",
-    "functionalRole": "運動協調、感情調節などへの関与",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1272,7 +1404,8 @@
     "laterality": "",
     "category": "小脳",
     "englishName": "Lobule VIII of vermis",
-    "functionalRole": "姿勢とバランスの調節など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1283,7 +1416,8 @@
     "laterality": "",
     "category": "小脳",
     "englishName": "Lobule IX of vermis",
-    "functionalRole": "平衡感覚の調節など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1294,7 +1428,8 @@
     "laterality": "",
     "category": "小脳",
     "englishName": "Lobule X of vermis",
-    "functionalRole": "前庭反射の維持など",
+    "functionalRole": "",
+    "symptoms": [],
     "references": [
       "Diedrichsen J, King M, Hernandez-Castillo C, Sereno M, IvryRB. Universal Transform or Multiple Functionality? Understanding the Contribution of the Cerebellum across Task Domains. Neuron. 2019;102(5):918–928."
     ]
@@ -1306,6 +1441,7 @@
     "category": "間脳",
     "englishName": "Thalamus, anteroventral nucleus",
     "functionalRole": "空間ナビゲーション、記憶など（パペッツ回路）",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1317,6 +1453,7 @@
     "category": "間脳",
     "englishName": "Thalamus, anteroventral nucleus",
     "functionalRole": "空間ナビゲーション、記憶など（パペッツ回路）",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1328,6 +1465,7 @@
     "category": "間脳",
     "englishName": "Thalamus, lateral posterior nucleus",
     "functionalRole": "視覚注意や感覚統合の制御など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1339,6 +1477,7 @@
     "category": "間脳",
     "englishName": "Thalamus, lateral posterior nucleus",
     "functionalRole": "視覚注意や感覚統合の制御など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1350,6 +1489,7 @@
     "category": "間脳",
     "englishName": "Thalamus, ventral anterior nucleus",
     "functionalRole": "運動の計画と調節（基底核-運動野ループ）など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1361,6 +1501,7 @@
     "category": "間脳",
     "englishName": "Thalamus, ventral anterior nucleus",
     "functionalRole": "運動の計画と調節（基底核-運動野ループ）など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1372,6 +1513,7 @@
     "category": "間脳",
     "englishName": "Thalamus, ventral lateral nucleus",
     "functionalRole": "運動出力の中継（小脳-運動野連関）など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1383,6 +1525,7 @@
     "category": "間脳",
     "englishName": "Thalamus, ventral lateral nucleus",
     "functionalRole": "運動出力の中継（小脳-運動野連関）など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1394,6 +1537,7 @@
     "category": "間脳",
     "englishName": "Thalamus, ventral posterolateral nucleus",
     "functionalRole": "体性感覚情報の中継など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1405,6 +1549,7 @@
     "category": "間脳",
     "englishName": "Thalamus, ventral posterolateral nucleus",
     "functionalRole": "体性感覚情報の中継など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1416,6 +1561,7 @@
     "category": "間脳",
     "englishName": "Thalamus, intralaminar nucleus",
     "functionalRole": "覚醒・意識状態の調節、痛覚情報の伝達など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1427,6 +1573,7 @@
     "category": "間脳",
     "englishName": "Thalamus, intralaminar nucleus",
     "functionalRole": "覚醒・意識状態の調節、痛覚情報の伝達など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1438,6 +1585,7 @@
     "category": "間脳",
     "englishName": "Thalamus, reuniens nucleus",
     "functionalRole": "海馬-前頭前野間の連携（記憶の統合）など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1449,6 +1597,7 @@
     "category": "間脳",
     "englishName": "Thalamus, reuniens nucleus",
     "functionalRole": "海馬-前頭前野間の連携（記憶の統合）など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1460,6 +1609,7 @@
     "category": "間脳",
     "englishName": "Thalamus, medial magnocellular nucleus",
     "functionalRole": "情動・記憶の調節（前頭前野への入力）など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1471,6 +1621,7 @@
     "category": "間脳",
     "englishName": "Thalamus, medial magnocellular nucleus",
     "functionalRole": "情動・記憶の調節（前頭前野への入力）など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1482,6 +1633,7 @@
     "category": "間脳",
     "englishName": "Thalamus, lateral parvocellular nucleus",
     "functionalRole": "実行機能（作業記憶・意思決定）のサポートなど",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1493,6 +1645,7 @@
     "category": "間脳",
     "englishName": "Thalamus, lateral parvocellular nucleus",
     "functionalRole": "実行機能（作業記憶・意思決定）のサポートなど",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1504,6 +1657,7 @@
     "category": "間脳",
     "englishName": "Thalamus, lateral geniculate nucleus",
     "functionalRole": "視覚情報の中継（網膜→一次視覚野）など",
+    "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -1515,6 +1669,7 @@
     "category": "間脳",
     "englishName": "Thalamus, lateral geniculate nucleus",
     "functionalRole": "視覚情報の中継（網膜→一次視覚野）など",
+    "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -1526,6 +1681,7 @@
     "category": "間脳",
     "englishName": "Thalamus, medial geniculate nucleus",
     "functionalRole": "聴覚情報の中継（下丘→聴覚皮質）など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1537,6 +1693,7 @@
     "category": "間脳",
     "englishName": "Thalamus, medial geniculate nucleus",
     "functionalRole": "聴覚情報の中継（下丘→聴覚皮質）など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1548,6 +1705,7 @@
     "category": "間脳",
     "englishName": "Thalamus, pulvinar inferior",
     "functionalRole": "視覚信号の処理と視覚的注意の制御など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1559,6 +1717,7 @@
     "category": "間脳",
     "englishName": "Thalamus, pulvinar inferior",
     "functionalRole": "視覚信号の処理と視覚的注意の制御など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1570,6 +1729,7 @@
     "category": "間脳",
     "englishName": "Thalamus, pulvinar medial",
     "functionalRole": "高次視覚情報の統合、マルチモーダル注意など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1581,6 +1741,7 @@
     "category": "間脳",
     "englishName": "Thalamus, pulvinar medial",
     "functionalRole": "高次視覚情報の統合、マルチモーダル注意など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1592,6 +1753,7 @@
     "category": "間脳",
     "englishName": "Thalamus, pulvinar anterior",
     "functionalRole": "視覚情報と注意の統合など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1603,6 +1765,7 @@
     "category": "間脳",
     "englishName": "Thalamus, pulvinar anterior",
     "functionalRole": "視覚情報と注意の統合など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1614,6 +1777,7 @@
     "category": "間脳",
     "englishName": "Thalamus, pulvinar lateral",
     "functionalRole": "視覚注意（視覚空間の選択的処理）など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1625,6 +1789,7 @@
     "category": "間脳",
     "englishName": "Thalamus, pulvinar lateral",
     "functionalRole": "視覚注意（視覚空間の選択的処理）など",
+    "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
@@ -1636,6 +1801,7 @@
     "category": "大脳辺縁系",
     "englishName": "Anterior cingulate cortex, subgenual",
     "functionalRole": "情動調節、報酬処理など（気分の制御）",
+    "symptoms": [],
     "references": [
       "Etkin A, Egner T, Kalisch R. Emotional processing in anterior cingulate and medial prefrontal cortex. Trends Cogn Sci. 2011;15(2):85–93."
     ]
@@ -1647,6 +1813,7 @@
     "category": "大脳辺縁系",
     "englishName": "Anterior cingulate cortex, subgenual",
     "functionalRole": "情動調節、報酬処理など（気分の制御）",
+    "symptoms": [],
     "references": [
       "Etkin A, Egner T, Kalisch R. Emotional processing in anterior cingulate and medial prefrontal cortex. Trends Cogn Sci. 2011;15(2):85–93."
     ]
@@ -1664,6 +1831,7 @@
       "動機付けの維持：長期的な目標に向けた努力を維持し、持続的な行動を可能にする​。",
       "社会的適応：他者からのフィードバックを統合し、社会的な意思決定を調整する​。"
     ],
+    "symptoms": [],
     "references": [
       "Klein-Flügge MC, Bongioanni A, Rushworth MFS. Medial and orbital frontal cortex in decision-making and flexible behavior. Neuron. 2022 Sep 7;110(17):2743-2770. doi: 10.1016/j.neuron.2022.05.022. Epub 2022 Jun 14. PMID: 35705077."
     ]
@@ -1681,6 +1849,7 @@
       "動機付けの維持：長期的な目標に向けた努力を維持し、持続的な行動を可能にする​。",
       "社会的適応：他者からのフィードバックを統合し、社会的な意思決定を調整する​。"
     ],
+    "symptoms": [],
     "references": [
       "Klein-Flügge MC, Bongioanni A, Rushworth MFS. Medial and orbital frontal cortex in decision-making and flexible behavior. Neuron. 2022 Sep 7;110(17):2743-2770. doi: 10.1016/j.neuron.2022.05.022. Epub 2022 Jun 14. PMID: 35705077."
     ]
@@ -1698,6 +1867,7 @@
       "長期・短期の価値比較：異なる時間スケールでの報酬価値を評価し、意思決定を最適化する​。",
       "努力の決定：行動のためにどれだけの努力を費やすかを調整する​。"
     ],
+    "symptoms": [],
     "references": [
       "Klein-Flügge MC, Bongioanni A, Rushworth MFS. Medial and orbital frontal cortex in decision-making and flexible behavior. Neuron. 2022 Sep 7;110(17):2743-2770. doi: 10.1016/j.neuron.2022.05.022. Epub 2022 Jun 14. PMID: 35705077."
     ]
@@ -1715,6 +1885,7 @@
       "長期・短期の価値比較：異なる時間スケールでの報酬価値を評価し、意思決定を最適化する​。",
       "努力の決定：行動のためにどれだけの努力を費やすかを調整する​。"
     ],
+    "symptoms": [],
     "references": [
       "Klein-Flügge MC, Bongioanni A, Rushworth MFS. Medial and orbital frontal cortex in decision-making and flexible behavior. Neuron. 2022 Sep 7;110(17):2743-2770. doi: 10.1016/j.neuron.2022.05.022. Epub 2022 Jun 14. PMID: 35705077."
     ]
@@ -1726,6 +1897,7 @@
     "category": "大脳基底核",
     "englishName": "Nucleus accumbens",
     "functionalRole": "報酬評価・学習、動機づけ、快感の処理など",
+    "symptoms": [],
     "references": [
       "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
     ]
@@ -1737,6 +1909,7 @@
     "category": "大脳基底核",
     "englishName": "Nucleus accumbens",
     "functionalRole": "報酬評価・学習、動機づけ、快感の処理など",
+    "symptoms": [],
     "references": [
       "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
     ]
@@ -1748,6 +1921,7 @@
     "category": "脳幹",
     "englishName": "Ventral tegmental area",
     "functionalRole": "ドーパミン放出による報酬・動機づけの調節など",
+    "symptoms": [],
     "references": [
       "Lammel S, Lim BK, Malenka RC. Reward and aversion in a heterogeneous midbrain dopamine system. Neuropharmacology. 2014;76 Pt B:351–359."
     ]
@@ -1759,6 +1933,7 @@
     "category": "脳幹",
     "englishName": "Ventral tegmental area",
     "functionalRole": "ドーパミン放出による報酬・動機づけの調節など",
+    "symptoms": [],
     "references": [
       "Lammel S, Lim BK, Malenka RC. Reward and aversion in a heterogeneous midbrain dopamine system. Neuropharmacology. 2014;76 Pt B:351–359."
     ]
@@ -1770,6 +1945,7 @@
     "category": "脳幹",
     "englishName": "Substantia nigra, pars compacta",
     "functionalRole": "ドーパミン供給による運動制御と報酬調節など",
+    "symptoms": [],
     "references": [
       "Lammel S, Lim BK, Malenka RC. Reward and aversion in a heterogeneous midbrain dopamine system. Neuropharmacology. 2014;76 Pt B:351–359."
     ]
@@ -1781,6 +1957,7 @@
     "category": "脳幹",
     "englishName": "Substantia nigra, pars compacta",
     "functionalRole": "ドーパミン供給による運動制御と報酬調節など",
+    "symptoms": [],
     "references": [
       "Lammel S, Lim BK, Malenka RC. Reward and aversion in a heterogeneous midbrain dopamine system. Neuropharmacology. 2014;76 Pt B:351–359."
     ]
@@ -1792,6 +1969,7 @@
     "category": "脳幹",
     "englishName": "Substantia nigra, pars reticulata",
     "functionalRole": "運動出力の調節（特に眼球運動）など",
+    "symptoms": [],
     "references": [
       "Lammel S, Lim BK, Malenka RC. Reward and aversion in a heterogeneous midbrain dopamine system. Neuropharmacology. 2014;76 Pt B:351–359."
     ]
@@ -1803,6 +1981,7 @@
     "category": "脳幹",
     "englishName": "Substantia nigra, pars reticulata",
     "functionalRole": "運動出力の調節（特に眼球運動）など",
+    "symptoms": [],
     "references": [
       "Lammel S, Lim BK, Malenka RC. Reward and aversion in a heterogeneous midbrain dopamine system. Neuropharmacology. 2014;76 Pt B:351–359."
     ]
@@ -1814,6 +1993,7 @@
     "category": "脳幹",
     "englishName": "Red nucleus",
     "functionalRole": "四肢運動の調節（赤核脊髄路）など",
+    "symptoms": [],
     "references": [
       "Schenker ND, Allemang-Grand R, Freedman EG. The Red Nucleus: A review. Brain Res. 2022;1792:148071."
     ]
@@ -1825,6 +2005,7 @@
     "category": "脳幹",
     "englishName": "Red nucleus",
     "functionalRole": "四肢運動の調節（赤核脊髄路）など",
+    "symptoms": [],
     "references": [
       "Schenker ND, Allemang-Grand R, Freedman EG. The Red Nucleus: A review. Brain Res. 2022;1792:148071."
     ]
@@ -1836,6 +2017,7 @@
     "category": "脳幹",
     "englishName": "Locus coeruleus",
     "functionalRole": "覚醒度と注意の調節（ノルアドレナリン系）など",
+    "symptoms": [],
     "references": [
       "Aston-Jones G, Cohen JD. An integrative theory of locus coeruleus-norepinephrine function: Adaptive gain and optimal performance. Annu Rev Neurosci. 2005;28:403–450."
     ]
@@ -1847,6 +2029,7 @@
     "category": "脳幹",
     "englishName": "Locus coeruleus",
     "functionalRole": "覚醒度と注意の調節（ノルアドレナリン系）など",
+    "symptoms": [],
     "references": [
       "Aston-Jones G, Cohen JD. An integrative theory of locus coeruleus-norepinephrine function: Adaptive gain and optimal performance. Annu Rev Neurosci. 2005;28:403–450."
     ]
@@ -1858,6 +2041,7 @@
     "category": "脳幹",
     "englishName": "Raphe nucleus, dorsal",
     "functionalRole": "睡眠覚醒レベルの調節",
+    "symptoms": [],
     "references": [
       "Hornung JP. The human raphe nuclei and the serotonergic system. J Chem Neuroanat. 2010;39(4):241–259."
     ]
@@ -1869,6 +2053,7 @@
     "category": "脳幹",
     "englishName": "Raphe nucleus, median",
     "functionalRole": "睡眠覚醒レベルの調節",
+    "symptoms": [],
     "references": [
       "Hornung JP. The human raphe nuclei and the serotonergic system. J Chem Neuroanat. 2010;39(4):241–259."
     ]

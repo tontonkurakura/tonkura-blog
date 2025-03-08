@@ -71,7 +71,9 @@ const GENRE_TAGS = new Set([
 ]);
 
 // タグを分類する関数
-export async function categorizeTag(tag: string): Promise<"genre" | "ingredient"> {
+export async function categorizeTag(
+  tag: string
+): Promise<"genre" | "ingredient"> {
   return GENRE_TAGS.has(tag) ? "genre" : "ingredient";
 }
 
@@ -88,11 +90,19 @@ export async function getRecipeData(fullPath: string): Promise<RecipeData> {
   const contentHtml = processedContent.toString();
 
   // タグを分類
-  const genreTags =
-    data.tags?.filter((tag: string) => categorizeTag(tag) === "genre") || [];
-  const ingredientTags =
-    data.tags?.filter((tag: string) => categorizeTag(tag) === "ingredient") ||
-    [];
+  const genreTags = [];
+  const ingredientTags = [];
+
+  if (data.tags) {
+    for (const tag of data.tags) {
+      const category = await categorizeTag(tag);
+      if (category === "genre") {
+        genreTags.push(tag);
+      } else {
+        ingredientTags.push(tag);
+      }
+    }
+  }
 
   return {
     id: path.relative(recipeDirectory, fullPath).replace(/\.md$/, ""),

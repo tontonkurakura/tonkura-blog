@@ -12,9 +12,6 @@ Sentry.init({
   // Adjust sampling rate in production
   tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 1.0,
 
-  // Enable performance monitoring
-  enableTracing: true,
-
   // Additional production settings
   autoSessionTracking: true,
   sendDefaultPii: false,

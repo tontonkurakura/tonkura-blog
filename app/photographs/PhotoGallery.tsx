@@ -349,7 +349,7 @@ export default function PhotoGallery({
                         setSelectedPhoto(photo);
                       }
                     }}
-                    aria-label={`写真: ${photo.title || "無題"}`}
+                    aria-label={`写真: ${photo.description || "無題"}`}
                   >
                     <Image
                       src={photo.path}

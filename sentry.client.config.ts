@@ -18,15 +18,13 @@ Sentry.init({
   enableTracing: true,
 
   integrations: [
-    new Sentry.BrowserTracing({
-      // Adjust sampling rate for browser performance monitoring
-      tracePropagationTargets: ["localhost", "tonkura.blog"],
-    }),
-    new Sentry.Replay({
-      // Additional Replay configuration
-      maskAllText: true,
-      blockAllMedia: true,
-      maskAllInputs: true,
+    new Sentry.Breadcrumbs({
+      console: true,
+      dom: true,
+      fetch: true,
+      history: true,
+      sentry: true,
+      xhr: true,
     }),
   ],
 

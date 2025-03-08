@@ -1,17 +1,10 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-
-interface AALJapaneseLabel {
-  englishLabel: string;
-  japaneseLabel: string;
-  laterality: string;
-  category: string;
-  englishName?: string;
-}
+import { AALLabel, AALJapaneseLabel } from "@/types/brain";
 
 interface BrainRegionListProps {
-  regions: { index: number; name: string; color: string }[];
+  regions: AALLabel[];
   selectedRegion: number | null;
   onRegionSelect: (regionIndex: number) => void;
   japaneseLabels?: Record<string, string>;

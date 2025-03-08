@@ -19,7 +19,7 @@ export default async function RecipesPage({
 }) {
   // クッキーからRecipesの表示状態を確認
   const cookieStore = cookies();
-  const showRecipes = cookieStore.get("showRecipes")?.value === "true";
+  const showRecipes = (await cookieStore.get("showRecipes"))?.value === "true";
 
   if (!showRecipes) {
     redirect("/");
@@ -37,15 +37,18 @@ export default async function RecipesPage({
   const genreTagCounts: TagCount = {};
   const ingredientTagCounts: TagCount = {};
 
-  allRecipes.forEach((recipe) => {
-    recipe.tags?.forEach((tag) => {
-      if (categorizeTag(tag) === "genre") {
-        genreTagCounts[tag] = (genreTagCounts[tag] || 0) + 1;
-      } else {
-        ingredientTagCounts[tag] = (ingredientTagCounts[tag] || 0) + 1;
+  for (const recipe of allRecipes) {
+    if (recipe.tags) {
+      for (const tag of recipe.tags) {
+        const category = await categorizeTag(tag);
+        if (category === "genre") {
+          genreTagCounts[tag] = (genreTagCounts[tag] || 0) + 1;
+        } else {
+          ingredientTagCounts[tag] = (ingredientTagCounts[tag] || 0) + 1;
+        }
       }
-    });
-  });
+    }
+  }
 
   // 検索とタグでフィルタリング
   let filteredRecipes = allRecipes;

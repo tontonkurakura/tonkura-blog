@@ -2,14 +2,16 @@
 
 import Link from "next/link";
 
-interface TreeNode {
+export interface TreeNode {
   name: string;
   type: "file" | "directory";
+  path: string;
   children?: TreeNode[];
 }
 
 interface TreeViewProps {
   node: TreeNode;
+  level?: number;
 }
 
 function buildPath(parts: string[]): string {
