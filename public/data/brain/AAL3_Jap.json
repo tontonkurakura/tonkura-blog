@@ -212,11 +212,11 @@
     "category": "前頭葉",
     "englishName": "Superior frontal gyrus, medial (mSFG)",
     "functionalRole": [
-      "課題構造の理解：環境内の要素間の関係を学習し、推論を可能にする​。",
-      "抽象的関係のシミュレーション：過去の経験をもとに、新しい状況を仮想的に試行し、最適な行動を予測する​。",
-      "意思決定の柔軟性：異なる状況に応じて適切な意思決定を行う​。",
-      "未来の予測：選択肢の結果をシミュレーションし、報酬の期待値を推定する​。",
-      "非報酬関連情報の処理：報酬に直接結びつかない情報も統合し、意思決定を支える​。"
+      "課題構造の理解",
+      "抽象的関係のシミュレーション",
+      "意思決定の柔軟性",
+      "未来の予測",
+      "非報酬関連情報の処理"
     ],
     "symptoms": [],
     "references": [
@@ -230,11 +230,11 @@
     "category": "前頭葉",
     "englishName": "Superior frontal gyrus, medial (mSFG)",
     "functionalRole": [
-      "課題構造の理解：環境内の要素間の関係を学習し、推論を可能にする​。",
-      "抽象的関係のシミュレーション：過去の経験をもとに、新しい状況を仮想的に試行し、最適な行動を予測する​。",
-      "意思決定の柔軟性：異なる状況に応じて適切な意思決定を行う​。",
-      "未来の予測：選択肢の結果をシミュレーションし、報酬の期待値を推定する​。",
-      "非報酬関連情報の処理：報酬に直接結びつかない情報も統合し、意思決定を支える​。"
+      "課題構造の理解",
+      "抽象的関係のシミュレーション",
+      "意思決定の柔軟性",
+      "未来の予測",
+      "非報酬関連情報の処理"
     ],
     "symptoms": [],
     "references": [
@@ -248,11 +248,11 @@
     "category": "前頭葉",
     "englishName": "Superior frontal cortex, medial orbital (mOFC) [ventromedial prefrontal cortex (vmPFC)]",
     "functionalRole": [
-      "報酬価値の評価：選択肢の報酬価値を評価し、最適な行動選択を行う​。",
-      "期待と結果の比較：選択の結果が期待通りであったかを評価し、学習に活用する​。",
-      "リスクと確率の処理：成功の可能性やリスクを考慮し、適応的な判断を行う​。",
-      "意思決定の柔軟性：報酬の変化に応じて価値評価を更新し、行動を調整する​。",
-      "社会的報酬の処理：他者からの評価や社会的フィードバックを統合し、行動に反映させる​。"
+      "報酬価値の評価",
+      "期待と結果の比較",
+      "リスクと確率の処理",
+      "意思決定の柔軟性",
+      "社会的報酬の処理"
     ],
     "symptoms": [],
     "references": [
@@ -266,11 +266,11 @@
     "category": "前頭葉",
     "englishName": "Superior frontal cortex, medial orbital (mOFC) [ventromedial prefrontal cortex (vmPFC)]",
     "functionalRole": [
-      "報酬価値の評価：選択肢の報酬価値を評価し、最適な行動選択を行う​。",
-      "期待と結果の比較：選択の結果が期待通りであったかを評価し、学習に活用する​。",
-      "リスクと確率の処理：成功の可能性やリスクを考慮し、適応的な判断を行う​。",
-      "意思決定の柔軟性：報酬の変化に応じて価値評価を更新し、行動を調整する​。",
-      "社会的報酬の処理：他者からの評価や社会的フィードバックを統合し、行動に反映させる​。"
+      "報酬価値の評価",
+      "期待と結果の比較",
+      "リスクと確率の処理",
+      "意思決定の柔軟性",
+      "社会的報酬の処理"
     ],
     "symptoms": [],
     "references": [
@@ -596,9 +596,7 @@
     "category": "後頭葉",
     "englishName": "Lingual gyrus",
     "functionalRole": "高次視覚処理（色覚、文字認知など）",
-    "symptoms": [
-      "大脳性色覚障害：色の波長の区分が困難となり、色の呼称ができないが、異なる色の区別は自体は可能である。"
-    ],
+    "symptoms": ["大脳性色覚障害"],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -610,9 +608,7 @@
     "category": "後頭葉",
     "englishName": "Lingual gyrus",
     "functionalRole": "高次視覚処理（色覚、文字認知など）",
-    "symptoms": [
-      "大脳性色覚障害：色の波長の区分が困難となり、色の呼称ができないが、異なる色の区別は自体は可能である。"
-    ],
+    "symptoms": ["大脳性色覚障害"],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -695,18 +691,17 @@
     "category": "側頭葉",
     "englishName": "Fusiform gyrus",
     "functionalRole": [
-      "顔認知：顔の知覚と認識",
-      "視覚的物体認知：物体の形状や色の処理",
-      "文字認知：文字や単語の視覚的処理",
-      "視覚的意味処理：視覚情報と意味の統合"
+      "顔認知",
+      "視覚的物体認知",
+      "文字認知",
+      "視覚的意味処理"
     ],
     "symptoms": {
-      "外側部": [
-        "相貌失認：顔の認識が困難になる",
-        "物体失認：物体の視覚的認識が困難になる"
-      ],
-      "内側部": ["純粋失読：文字の視覚的認識が困難になる"],
-      "後内側部": ["大脳性色覚障害：色の認識が困難になる"]
+      "外側部": ["相貌失認", "物体失認"],
+      "内側部": ["純粋失読"],
+      "中部": ["統合型視覚性物体失認"],
+
+      "後内側部": ["大脳性色覚障害"]
     },
     "references": [
       "Kanwisher N, Yovel G. The fusiform face area: a cortical region specialized for the perception of faces. Philos Trans R Soc Lond B Biol Sci. 2006;361(1476):2109-2128.",
@@ -720,20 +715,16 @@
     "category": "側頭葉",
     "englishName": "Fusiform gyrus",
     "functionalRole": [
-      "顔認知：顔の知覚と認識",
-      "視覚的物体認知：物体の形状や色の処理",
-      "文字認知：文字や単語の視覚的処理",
-      "視覚的意味処理：視覚情報と意味の統合"
+      "顔認知",
+      "視覚的物体認知",
+      "文字認知",
+      "視覚的意味処理"
     ],
     "symptoms": {
-      "外側部": [
-        "相貌失認：顔の認識が困難になる",
-        "物体失認：物体の視覚的認識が困難になる"
-      ],
-      "内側部": ["純粋失読：文字の視覚的認識が困難になる"],
-      "後内側部": [
-        "大脳性色覚障害：色の認識が困難になる。色の波長の区分が困難となり、色の呼称ができないが、異なる色の区別は自体は可能である。"
-      ]
+      "外側部": ["相貌失認", "物体失認"],
+      "内側部": ["純粋失読"],
+      "中部": ["統合型視覚性物体失認"],
+      "後内側部": ["大脳性色覚障害"]
     },
     "references": [
       "Kanwisher N, Yovel G. The fusiform face area: a cortical region specialized for the perception of faces. Philos Trans R Soc Lond B Biol Sci. 2006;361(1476):2109-2128.",
@@ -1436,151 +1427,205 @@
   },
   {
     "englishLabel": "Thal_AV_L",
-    "japaneseLabel": "前腹側視床核",
+    "japaneseLabel": "視床前核",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, anteroventral nucleus",
-    "functionalRole": "空間ナビゲーション、記憶など（パペッツ回路）",
-    "symptoms": [],
-    "references": [
-      "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
-    ]
+    "functionalRole": "記憶",
+    "connections": ["乳頭視床路からの入力", "脳弓からの入力", "帯状回への出力"],
+    "symptoms": [
+      "記憶障害",
+      "自発性低下",
+      "失見当識",
+      "失計算",
+      "視空間認知障害"
+    ],
+    "references": ["BRAIN and NERVE 67(12)：1459-1469，2015"]
   },
   {
     "englishLabel": "Thal_AV_R",
-    "japaneseLabel": "前腹側視床核",
+    "japaneseLabel": "視床前核",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, anteroventral nucleus",
-    "functionalRole": "空間ナビゲーション、記憶など（パペッツ回路）",
-    "symptoms": [],
-    "references": [
-      "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
-    ]
+    "functionalRole": "記憶",
+    "connections": ["乳頭視床路からの入力", "脳弓からの入力", "帯状回への出力"],
+    "symptoms": [
+      "記憶障害",
+      "自発性低下",
+      "失見当識",
+      "失計算",
+      "視空間認知障害"
+    ],
+    "references": ["BRAIN and NERVE 67(12)：1459-1469，2015"]
   },
   {
     "englishLabel": "Thal_LP_L",
-    "japaneseLabel": "外側後視床核",
+    "japaneseLabel": "視床後外側核",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, lateral posterior nucleus",
-    "functionalRole": "視覚注意や感覚統合の制御など",
-    "symptoms": [],
-    "references": [
-      "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
-    ]
+    "functionalRole": "空間認知、記憶",
+    "connections": ["頭頂葉からの入力", "頭頂葉連合野（上頭頂小葉）への出力"],
+    "symptoms": ["空間認知障害", "記憶障害"],
+    "references": ["BRAIN and NERVE 67(12)：1459-1469，2015"]
   },
   {
     "englishLabel": "Thal_LP_R",
-    "japaneseLabel": "外側後視床核",
+    "japaneseLabel": "視床後外側核",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, lateral posterior nucleus",
-    "functionalRole": "視覚注意や感覚統合の制御など",
-    "symptoms": [],
-    "references": [
-      "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
-    ]
+    "functionalRole": "空間認知、記憶",
+    "connections": ["頭頂葉からの入力", "頭頂葉連合野（上頭頂小葉）への出力"],
+    "symptoms": ["空間認知障害", "記憶障害"],
+    "references": ["BRAIN and NERVE 67(12)：1459-1469，2015"]
   },
   {
     "englishLabel": "Thal_VA_L",
-    "japaneseLabel": "腹側前視床核",
+    "japaneseLabel": "視床前腹側核",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, ventral anterior nucleus",
-    "functionalRole": "運動の計画と調節（基底核-運動野ループ）など",
-    "symptoms": [],
-    "references": [
-      "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
-    ]
+    "functionalRole": "運動プログラム、姿勢制御",
+    "connections": [
+      "淡蒼球からの入力",
+      "黒質からの入力",
+      "運動前野への出力",
+      "一次運動野への出力"
+    ],
+    "symptoms": [
+      "運動障害",
+      "姿勢制御障害",
+      "ジストニー（一定期間後に発症することがある）"
+    ],
+    "references": ["BRAIN and NERVE 67(12)：1459-1469，2015"]
   },
   {
     "englishLabel": "Thal_VA_R",
-    "japaneseLabel": "腹側前視床核",
+    "japaneseLabel": "視床前腹側核",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, ventral anterior nucleus",
-    "functionalRole": "運動の計画と調節（基底核-運動野ループ）など",
-    "symptoms": [],
-    "references": [
-      "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
-    ]
+    "functionalRole": "運動プログラム、姿勢制御",
+    "connections": [
+      "淡蒼球からの入力",
+      "黒質からの入力",
+      "運動前野への出力",
+      "一次運動野への出力"
+    ],
+    "symptoms": [
+      "運動障害",
+      "姿勢制御障害",
+      "ジストニー（一定期間後に発症することがある）"
+    ],
+    "references": ["BRAIN and NERVE 67(12)：1459-1469，2015"]
   },
   {
     "englishLabel": "Thal_VL_L",
-    "japaneseLabel": "腹側外側視床核",
+    "japaneseLabel": "視床外側腹側核",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, ventral lateral nucleus",
-    "functionalRole": "運動出力の中継（小脳-運動野連関）など",
-    "symptoms": [],
+    "functionalRole": "精緻運動",
+    "connections": [
+      "歯状核赤核視床路からの入力",
+      "淡蒼球からの入力",
+      "黒質からの入力",
+      "小脳からの入力",
+      "運動前野への出力",
+      "一次運動野への出力"
+    ],
+    "symptoms": ["運動障害", "構音障害"],
     "references": [
+      "BRAIN and NERVE 67(12)：1459-1469，2015",
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
   },
   {
     "englishLabel": "Thal_VL_R",
-    "japaneseLabel": "腹側外側視床核",
+    "japaneseLabel": "視床外側腹側核",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, ventral lateral nucleus",
-    "functionalRole": "運動出力の中継（小脳-運動野連関）など",
-    "symptoms": [],
+    "functionalRole": "精緻運動",
+    "connections": [
+      "歯状核赤核視床路からの入力",
+      "淡蒼球からの入力",
+      "黒質からの入力",
+      "小脳からの入力",
+      "運動前野への出力",
+      "一次運動野への出力"
+    ],
+    "symptoms": ["運動障害", "構音障害"],
     "references": [
+      "BRAIN and NERVE 67(12)：1459-1469，2015",
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
   },
   {
     "englishLabel": "Thal_VPL_L",
-    "japaneseLabel": "腹側後外側視床核",
+    "japaneseLabel": "視床後外側腹側核",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, ventral posterolateral nucleus",
-    "functionalRole": "体性感覚情報の中継など",
-    "symptoms": [],
-    "references": [
-      "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
-    ]
+    "functionalRole": "上下肢・体幹の感覚、平衡機能",
+    "connections": [
+      "内側毛帯からの入力",
+      "外側脊髄視床路からの入力",
+      "一次感覚野への出力",
+      "頭頂島前庭皮質（平衡覚）への出力"
+    ],
+    "symptoms": ["対側の感覚障害", "Cheiro-oral syndrome", "視床痛"],
+    "references": ["BRAIN and NERVE 67(12)：1459-1469，2015"]
   },
   {
     "englishLabel": "Thal_VPL_R",
-    "japaneseLabel": "腹側後外側視床核",
+    "japaneseLabel": "視床後外側腹側核",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, ventral posterolateral nucleus",
-    "functionalRole": "体性感覚情報の中継など",
-    "symptoms": [],
-    "references": [
-      "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
-    ]
+    "functionalRole": "上下肢・体幹の感覚、平衡機能",
+    "connections": [
+      "内側毛帯からの入力",
+      "外側脊髄視床路からの入力",
+      "一次感覚野への出力",
+      "頭頂島前庭皮質（平衡覚）への出力"
+    ],
+    "symptoms": ["対側の感覚障害", "Cheiro-oral syndrome", "視床痛"],
+    "references": ["BRAIN and NERVE 67(12)：1459-1469，2015"]
   },
   {
     "englishLabel": "Thal_IL_L",
-    "japaneseLabel": "内側視床髄板核",
+    "japaneseLabel": "視床髄板内核群",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, intralaminar nucleus",
-    "functionalRole": "覚醒・意識状態の調節、痛覚情報の伝達など",
-    "symptoms": [],
+    "functionalRole": "覚醒",
+    "connections": ["脳幹網様体からの入力", "大脳皮質全般への出力"],
+    "symptoms": ["意識障害", "覚醒度の低下"],
     "references": [
+      "BRAIN and NERVE 67(12)：1459-1469，2015",
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
   },
   {
     "englishLabel": "Thal_IL_R",
-    "japaneseLabel": "内側視床髄板核",
+    "japaneseLabel": "視床髄板内核群",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, intralaminar nucleus",
-    "functionalRole": "覚醒・意識状態の調節、痛覚情報の伝達など",
-    "symptoms": [],
+    "functionalRole": "覚醒",
+    "connections": ["脳幹網様体からの入力", "大脳皮質全般への出力"],
+    "symptoms": ["意識障害", "覚醒度の低下"],
     "references": [
+      "BRAIN and NERVE 67(12)：1459-1469，2015",
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
   },
   {
     "englishLabel": "Thal_Re_L",
-    "japaneseLabel": "視床正中核",
+    "japaneseLabel": "視床正中核群結合核",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, reuniens nucleus",
@@ -1592,7 +1637,7 @@
   },
   {
     "englishLabel": "Thal_Re_R",
-    "japaneseLabel": "視床正中核",
+    "japaneseLabel": "視床正中核群結合核",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, reuniens nucleus",
@@ -1604,7 +1649,7 @@
   },
   {
     "englishLabel": "Thal_MDm_L",
-    "japaneseLabel": "内側背側視床核 (内側部)",
+    "japaneseLabel": "視床背内側核（内側部）",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, medial magnocellular nucleus",
@@ -1616,7 +1661,7 @@
   },
   {
     "englishLabel": "Thal_MDm_R",
-    "japaneseLabel": "内側背側視床核 (内側部)",
+    "japaneseLabel": "視床背内側核（内側部）",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, medial magnocellular nucleus",
@@ -1628,7 +1673,7 @@
   },
   {
     "englishLabel": "Thal_MDl_L",
-    "japaneseLabel": "内側背側視床核 (外側部)",
+    "japaneseLabel": "視床背内側核（外側部）",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, lateral parvocellular nucleus",
@@ -1640,7 +1685,7 @@
   },
   {
     "englishLabel": "Thal_MDl_R",
-    "japaneseLabel": "内側背側視床核 (外側部)",
+    "japaneseLabel": "視床背内側核（外側部）",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, lateral parvocellular nucleus",
@@ -1652,79 +1697,101 @@
   },
   {
     "englishLabel": "Thal_LGN_L",
-    "japaneseLabel": "外側膝状体核",
+    "japaneseLabel": "外側膝状体",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, lateral geniculate nucleus",
-    "functionalRole": "視覚情報の中継（網膜→一次視覚野）など",
-    "symptoms": [],
+    "functionalRole": "視覚",
+    "connections": ["視索からの入力", "視覚野への出力"],
+    "symptoms": ["視野障害"],
     "references": [
-      "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
+      "BRAIN and NERVE 67(12)：1459-1469，2015",
+      "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
   },
   {
     "englishLabel": "Thal_LGN_R",
-    "japaneseLabel": "外側膝状体核",
+    "japaneseLabel": "外側膝状体",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, lateral geniculate nucleus",
-    "functionalRole": "視覚情報の中継（網膜→一次視覚野）など",
-    "symptoms": [],
+    "functionalRole": "視覚",
+    "connections": ["視索からの入力", "視覚野への出力"],
+    "symptoms": ["視野障害"],
     "references": [
-      "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
+      "BRAIN and NERVE 67(12)：1459-1469，2015",
+      "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
   },
   {
     "englishLabel": "Thal_MGN_L",
-    "japaneseLabel": "内側膝状体核",
+    "japaneseLabel": "内側膝状体",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, medial geniculate nucleus",
-    "functionalRole": "聴覚情報の中継（下丘→聴覚皮質）など",
-    "symptoms": [],
+    "functionalRole": "聴覚",
+    "connections": ["外側毛帯からの入力", "下丘からの入力", "聴覚野への出力"],
+    "symptoms": ["聴覚障害"],
     "references": [
+      "BRAIN and NERVE 67(12)：1459-1469，2015",
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
   },
   {
     "englishLabel": "Thal_MGN_R",
-    "japaneseLabel": "内側膝状体核",
+    "japaneseLabel": "内側膝状体",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, medial geniculate nucleus",
-    "functionalRole": "聴覚情報の中継（下丘→聴覚皮質）など",
-    "symptoms": [],
+    "functionalRole": "聴覚",
+    "connections": ["外側毛帯からの入力", "下丘からの入力", "聴覚野への出力"],
+    "symptoms": ["聴覚障害"],
     "references": [
+      "BRAIN and NERVE 67(12)：1459-1469，2015",
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
   },
   {
     "englishLabel": "Thal_PuI_L",
-    "japaneseLabel": "視床枕下部核",
+    "japaneseLabel": "視床枕（下部）",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, pulvinar inferior",
-    "functionalRole": "視覚信号の処理と視覚的注意の制御など",
-    "symptoms": [],
+    "functionalRole": "視覚的注意、言語、平衡機能",
+    "connections": [
+      "後頭葉からの入力",
+      "上丘からの入力",
+      "下頭頂小葉への出力",
+      "後頭葉への出力"
+    ],
+    "symptoms": ["視覚認知障害", "注意障害"],
     "references": [
+      "BRAIN and NERVE 67(12)：1459-1469，2015",
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
   },
   {
     "englishLabel": "Thal_PuI_R",
-    "japaneseLabel": "視床枕下部核",
+    "japaneseLabel": "視床枕（下部）",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, pulvinar inferior",
-    "functionalRole": "視覚信号の処理と視覚的注意の制御など",
-    "symptoms": [],
+    "functionalRole": "視覚的注意、言語、平衡機能",
+    "connections": [
+      "後頭葉からの入力",
+      "上丘からの入力",
+      "下頭頂小葉への出力",
+      "後頭葉への出力"
+    ],
+    "symptoms": ["視覚認知障害", "注意障害"],
     "references": [
+      "BRAIN and NERVE 67(12)：1459-1469，2015",
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
     ]
   },
   {
     "englishLabel": "Thal_PuM_L",
-    "japaneseLabel": "視床枕内側部核",
+    "japaneseLabel": "視床枕（内側部）",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, pulvinar medial",
@@ -1736,7 +1803,7 @@
   },
   {
     "englishLabel": "Thal_PuM_R",
-    "japaneseLabel": "視床枕内側部核",
+    "japaneseLabel": "視床枕（内側部）",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, pulvinar medial",
@@ -1748,7 +1815,7 @@
   },
   {
     "englishLabel": "Thal_PuA_L",
-    "japaneseLabel": "視床枕前部核",
+    "japaneseLabel": "視床枕（前部）",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, pulvinar anterior",
@@ -1760,7 +1827,7 @@
   },
   {
     "englishLabel": "Thal_PuA_R",
-    "japaneseLabel": "視床枕前部核",
+    "japaneseLabel": "視床枕（前部）",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, pulvinar anterior",
@@ -1772,7 +1839,7 @@
   },
   {
     "englishLabel": "Thal_PuL_L",
-    "japaneseLabel": "視床枕外側部核",
+    "japaneseLabel": "視床枕",
     "laterality": "左",
     "category": "間脳",
     "englishName": "Thalamus, pulvinar lateral",
@@ -1784,7 +1851,7 @@
   },
   {
     "englishLabel": "Thal_PuL_R",
-    "japaneseLabel": "視床枕外側部核",
+    "japaneseLabel": "視床枕",
     "laterality": "右",
     "category": "間脳",
     "englishName": "Thalamus, pulvinar lateral",
@@ -1825,11 +1892,11 @@
     "category": "大脳辺縁系",
     "englishName": "Anterior cingulate cortex, pregeminal (pgACC)",
     "functionalRole": [
-      "コスト・利益の統合：行動にかかるコストと得られる利益を統合し、最適な行動を選択する​。",
-      "自己モニタリング：自身のパフォーマンスを評価し、必要に応じて調整する​。",
-      "ストレス応答の調整：ストレス下での意思決定を支援し、不安や回避行動を制御する​。",
-      "動機付けの維持：長期的な目標に向けた努力を維持し、持続的な行動を可能にする​。",
-      "社会的適応：他者からのフィードバックを統合し、社会的な意思決定を調整する​。"
+      "コスト・利益の統合",
+      "自己モニタリング",
+      "ストレス応答の調整",
+      "動機付けの維持",
+      "社会的適応"
     ],
     "symptoms": [],
     "references": [
@@ -1843,11 +1910,11 @@
     "category": "大脳辺縁系",
     "englishName": "Anterior cingulate cortex, pregeminal (pgACC)",
     "functionalRole": [
-      "コスト・利益の統合：行動にかかるコストと得られる利益を統合し、最適な行動を選択する​。",
-      "自己モニタリング：自身のパフォーマンスを評価し、必要に応じて調整する​。",
-      "ストレス応答の調整：ストレス下での意思決定を支援し、不安や回避行動を制御する​。",
-      "動機付けの維持：長期的な目標に向けた努力を維持し、持続的な行動を可能にする​。",
-      "社会的適応：他者からのフィードバックを統合し、社会的な意思決定を調整する​。"
+      "コスト・利益の統合",
+      "自己モニタリング",
+      "ストレス応答の調整",
+      "動機付けの維持",
+      "社会的適応"
     ],
     "symptoms": [],
     "references": [
@@ -1861,11 +1928,11 @@
     "category": "大脳辺縁系",
     "englishName": "Anterior cingulate cortex, dorsal (dACC)",
     "functionalRole": [
-      "環境価値の評価：環境内の報酬機会を分布として表現し、価値を計算する​。",
-      "行動の切り替え：現在の行動を維持するか、新しい選択肢を探索するかを決定する​。",
-      "情報探索の制御：不確実な状況で追加情報を取得するための行動を促す​。",
-      "長期・短期の価値比較：異なる時間スケールでの報酬価値を評価し、意思決定を最適化する​。",
-      "努力の決定：行動のためにどれだけの努力を費やすかを調整する​。"
+      "環境価値の評価",
+      "行動の切り替え",
+      "情報探索の制御",
+      "長期・短期の価値比較",
+      "努力の決定"
     ],
     "symptoms": [],
     "references": [
@@ -1879,11 +1946,11 @@
     "category": "大脳辺縁系",
     "englishName": "Anterior cingulate cortex, dorsal (dACC)",
     "functionalRole": [
-      "環境価値の評価：環境内の報酬機会を分布として表現し、価値を計算する​。",
-      "行動の切り替え：現在の行動を維持するか、新しい選択肢を探索するかを決定する​。",
-      "情報探索の制御：不確実な状況で追加情報を取得するための行動を促す​。",
-      "長期・短期の価値比較：異なる時間スケールでの報酬価値を評価し、意思決定を最適化する​。",
-      "努力の決定：行動のためにどれだけの努力を費やすかを調整する​。"
+      "環境価値の評価",
+      "行動の切り替え",
+      "情報探索の制御",
+      "長期・短期の価値比較",
+      "努力の決定"
     ],
     "symptoms": [],
     "references": [

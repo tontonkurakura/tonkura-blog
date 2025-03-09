@@ -125,10 +125,16 @@ export default function BrainDatabasePage() {
   useEffect(() => {
     // クロスヘア位置が設定されたら、各スライスタイプの座標情報も初期化
     if (crosshairPosition) {
-      // axial用の座標情報
+      // MNI座標に変換（1mm等方ボクセル、原点は[91, 109, 91]を想定）
+      const mniCoords: [number, number, number] = [
+        (crosshairPosition[0] - 91) * 1,
+        (crosshairPosition[1] - 109) * 1,
+        (crosshairPosition[2] - 91) * 1,
+      ];
+
       setCursorInfo({
         voxel: crosshairPosition,
-        mni: crosshairPosition,
+        mni: mniCoords,
         sliceType: "axial",
         regionIndex: null,
       });
@@ -252,18 +258,29 @@ export default function BrainDatabasePage() {
     }
   ) => {
     setHoveredRegion(regionIndex);
-    // カーソル情報を更新
-    if (position) {
+
+    // クロスヘア位置のMNI座標を計算
+    const crosshairMNI: [number, number, number] = [
+      (crosshairPosition[0] - 91) * 1,
+      (crosshairPosition[1] - 109) * 1,
+      (crosshairPosition[2] - 91) * 1,
+    ];
+
+    if (position?.voxel) {
+      // カーソルがビューワー内にある場合はその位置の座標を表示
       setCursorInfo({
         voxel: position.voxel,
         mni: position.mni,
         sliceType: position.sliceType,
         regionIndex: regionIndex,
       });
-    } else if (cursorInfo) {
+    } else {
+      // カーソルがビューワーから外れた場合は、クロスヘア位置の座標を表示
       setCursorInfo({
-        ...cursorInfo,
-        regionIndex: regionIndex,
+        voxel: crosshairPosition,
+        mni: crosshairMNI,
+        sliceType: cursorInfo?.sliceType || "axial",
+        regionIndex: null,
       });
     }
   };
@@ -312,6 +329,16 @@ export default function BrainDatabasePage() {
     return "脳領域";
   };
 
+  // 座標表示用のフォーマット関数
+  const formatCoordinates = (coords: [number, number, number]): string => {
+    return `[${coords[0]}, ${coords[1]}, ${coords[2]}]`;
+  };
+
+  // MNI座標のフォーマット関数（小数点以下を丸める）
+  const formatMNICoordinates = (coords: [number, number, number]): string => {
+    return `[${coords.map((c) => Math.round(c)).join(", ")}]`;
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-6">
@@ -338,90 +365,157 @@ export default function BrainDatabasePage() {
       </div>
 
       <div className="mb-6">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-800">
-              脳機能データベース
-            </h1>
-            <p className="text-gray-600 mt-2">
-              脳の解剖学的構造と機能的役割を探索するためのインタラクティブツール
-            </p>
+        <div>
+          <h1 className="text-3xl font-bold text-gray-800">
+            脳機能データベース
+          </h1>
+          <p className="text-gray-600 mt-2">
+            脳の解剖学的構造と機能的役割を探索するためのインタラクティブツール
+          </p>
+        </div>
+
+        {/* コントロールパネル、座標表示、検索窓を横一列に配置 */}
+        <div className="mt-4 grid grid-cols-1 md:grid-cols-12 gap-4 h-[72px]">
+          {/* コントロールパネル - 幅を広げ、ボタンと透過性バーを中央配置 */}
+          <div className="md:col-span-5 bg-gray-50 rounded-md border border-gray-200 shadow-sm flex items-center px-4">
+            <div className="flex items-center pr-6">
+              <button
+                className={`px-3 py-1.5 text-sm rounded ${
+                  showAAL ? "bg-blue-500 text-white" : "bg-gray-200"
+                }`}
+                onClick={handleToggleAAL}
+              >
+                ラベル {showAAL ? "ON" : "OFF"}
+              </button>
+            </div>
+
+            <div className="flex-1 flex flex-col justify-center gap-2">
+              <div className="flex items-center">
+                <span className="text-sm text-gray-600 w-24">
+                  ラベル透過性:
+                </span>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={aalOpacity}
+                  onChange={(e) =>
+                    handleAalOpacityChange(Number(e.target.value))
+                  }
+                  className="flex-1 mx-2"
+                  title={`透過性: ${aalOpacity}%`}
+                />
+                <span className="text-sm text-gray-500 w-8 text-right">
+                  {aalOpacity}%
+                </span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-sm text-gray-600 w-24">MRI透過性:</span>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={mniOpacity}
+                  onChange={(e) =>
+                    handleMniOpacityChange(Number(e.target.value))
+                  }
+                  className="flex-1 mx-2"
+                  title={`透過性: ${mniOpacity}%`}
+                />
+                <span className="text-sm text-gray-500 w-8 text-right">
+                  {mniOpacity}%
+                </span>
+              </div>
+            </div>
           </div>
 
-          {/* 検索窓 - タイトルの右側に配置 */}
-          <div className="mt-4 md:mt-0 md:ml-4 w-full md:w-64 lg:w-80">
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <svg
-                  className="h-5 w-5 text-gray-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-              <input
-                type="text"
-                placeholder="脳領域を検索..."
-                value={searchQuery}
-                onChange={(e) => {
-                  const query = e.target.value;
-                  setSearchQuery(query);
-
-                  if (query.trim() === "") {
-                    setSearchResults([]);
-                    return;
-                  }
-
-                  // インクリメンタルサーチの実装
-                  const results = aalLabels
-                    .filter((label) => {
-                      const japaneseName = getJapaneseNameWithPrefix(
-                        label.name
-                      );
-                      return (
-                        japaneseName
-                          .toLowerCase()
-                          .includes(query.toLowerCase()) ||
-                        label.name.toLowerCase().includes(query.toLowerCase())
-                      );
-                    })
-                    .slice(0, 10); // 最大10件まで表示
-
-                  setSearchResults(results);
-                }}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white shadow-sm"
-              />
-              {searchResults.length > 0 && (
-                <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto">
-                  <ul>
-                    {searchResults.map((result) => (
-                      <li
-                        key={result.index}
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                        onClick={() => {
-                          // 領域を選択し、その領域の中央にクロスヘアを移動させる
-                          handleRegionSelect(result.index);
-                          setSearchQuery("");
-                          setSearchResults([]);
-                        }}
-                      >
-                        <span className="font-medium">
-                          {getJapaneseNameWithPrefix(result.name)}
-                        </span>
-                        <span className="text-sm text-gray-500 ml-2">
-                          ({result.name})
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+          {/* 座標表示パネル - 高さを合わせて中央配置 */}
+          <div className="md:col-span-3 bg-gray-50 rounded-md border border-gray-200 shadow-sm flex flex-col justify-center px-3">
+            <div className="flex items-center space-x-2 mb-1">
+              <span className="text-gray-600 font-medium w-12">Voxel:</span>
+              <span className="font-mono">
+                {cursorInfo ? formatCoordinates(cursorInfo.voxel) : "[-, -, -]"}
+              </span>
             </div>
+            <div className="flex items-center space-x-2">
+              <span className="text-gray-600 font-medium w-12">MNI:</span>
+              <span className="font-mono">
+                {cursorInfo
+                  ? formatMNICoordinates(cursorInfo.mni)
+                  : "[-, -, -]"}
+              </span>
+            </div>
+          </div>
+
+          {/* 検索窓 - 高さを合わせる */}
+          <div className="md:col-span-4 relative h-full">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg
+                className="h-5 w-5 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              placeholder="脳領域を検索..."
+              value={searchQuery}
+              onChange={(e) => {
+                const query = e.target.value;
+                setSearchQuery(query);
+
+                if (query.trim() === "") {
+                  setSearchResults([]);
+                  return;
+                }
+
+                // インクリメンタルサーチの実装
+                const results = aalLabels
+                  .filter((label) => {
+                    const japaneseName = getJapaneseNameWithPrefix(label.name);
+                    return (
+                      japaneseName
+                        .toLowerCase()
+                        .includes(query.toLowerCase()) ||
+                      label.name.toLowerCase().includes(query.toLowerCase())
+                    );
+                  })
+                  .slice(0, 10); // 最大10件まで表示
+
+                setSearchResults(results);
+              }}
+              className="w-full h-full pl-10 pr-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white shadow-sm"
+            />
+            {searchResults.length > 0 && (
+              <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto">
+                <ul>
+                  {searchResults.map((result) => (
+                    <li
+                      key={result.index}
+                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                      onClick={() => {
+                        handleRegionSelect(result.index);
+                        setSearchQuery("");
+                        setSearchResults([]);
+                      }}
+                    >
+                      <span className="font-medium">
+                        {getJapaneseNameWithPrefix(result.name)}
+                      </span>
+                      <span className="text-sm text-gray-500 ml-2">
+                        ({result.name})
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -466,29 +560,6 @@ export default function BrainDatabasePage() {
                       hoveredRegion={hoveredRegion}
                       onRegionHover={handleRegionHover}
                     />
-                    {/* 座標情報パネル - 軸位断 */}
-                    <div className="bg-gray-50 text-sm py-2 px-3 border-t">
-                      <div className="flex items-center justify-center">
-                        <span className="text-gray-600 font-medium w-16 text-right pr-2">
-                          Voxel:
-                        </span>
-                        <span className="font-mono w-28 text-left">
-                          {cursorInfo && cursorInfo.sliceType === "axial"
-                            ? `[${cursorInfo.voxel[0]}, ${cursorInfo.voxel[1]}, ${cursorInfo.voxel[2]}]`
-                            : "[-, -, -]"}
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-center mt-1">
-                        <span className="text-gray-600 font-medium w-16 text-right pr-2">
-                          MNI:
-                        </span>
-                        <span className="font-mono w-28 text-left">
-                          {cursorInfo && cursorInfo.sliceType === "axial"
-                            ? `[${Math.round(cursorInfo.mni[0])}, ${Math.round(cursorInfo.mni[1])}, ${Math.round(cursorInfo.mni[2])}]`
-                            : "[-, -, -]"}
-                        </span>
-                      </div>
-                    </div>
                   </div>
                   <div className="border rounded-md shadow-sm hover:shadow-md transition-shadow duration-300">
                     <div className="bg-gray-50 py-1 px-2 border-b text-center">
@@ -512,29 +583,6 @@ export default function BrainDatabasePage() {
                       hoveredRegion={hoveredRegion}
                       onRegionHover={handleRegionHover}
                     />
-                    {/* 座標情報パネル - 冠状断 */}
-                    <div className="bg-gray-50 text-sm py-2 px-3 border-t">
-                      <div className="flex items-center justify-center">
-                        <span className="text-gray-600 font-medium w-16 text-right pr-2">
-                          Voxel:
-                        </span>
-                        <span className="font-mono w-28 text-left">
-                          {cursorInfo && cursorInfo.sliceType === "coronal"
-                            ? `[${cursorInfo.voxel[0]}, ${cursorInfo.voxel[1]}, ${cursorInfo.voxel[2]}]`
-                            : "[-, -, -]"}
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-center mt-1">
-                        <span className="text-gray-600 font-medium w-16 text-right pr-2">
-                          MNI:
-                        </span>
-                        <span className="font-mono w-28 text-left">
-                          {cursorInfo && cursorInfo.sliceType === "coronal"
-                            ? `[${Math.round(cursorInfo.mni[0])}, ${Math.round(cursorInfo.mni[1])}, ${Math.round(cursorInfo.mni[2])}]`
-                            : "[-, -, -]"}
-                        </span>
-                      </div>
-                    </div>
                   </div>
                   <div className="border rounded-md shadow-sm hover:shadow-md transition-shadow duration-300">
                     <div className="bg-gray-50 py-1 px-2 border-b text-center">
@@ -557,69 +605,6 @@ export default function BrainDatabasePage() {
                       mniOpacity={mniOpacity}
                       hoveredRegion={hoveredRegion}
                       onRegionHover={handleRegionHover}
-                    />
-                    {/* 座標情報パネル - 矢状断 */}
-                    <div className="bg-gray-50 text-sm py-2 px-3 border-t">
-                      <div className="flex items-center justify-center">
-                        <span className="text-gray-600 font-medium w-16 text-right pr-2">
-                          Voxel:
-                        </span>
-                        <span className="font-mono w-28 text-left">
-                          {cursorInfo && cursorInfo.sliceType === "sagittal"
-                            ? `[${cursorInfo.voxel[0]}, ${cursorInfo.voxel[1]}, ${cursorInfo.voxel[2]}]`
-                            : "[-, -, -]"}
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-center mt-1">
-                        <span className="text-gray-600 font-medium w-16 text-right pr-2">
-                          MNI:
-                        </span>
-                        <span className="font-mono w-28 text-left">
-                          {cursorInfo && cursorInfo.sliceType === "sagittal"
-                            ? `[${Math.round(cursorInfo.mni[0])}, ${Math.round(cursorInfo.mni[1])}, ${Math.round(cursorInfo.mni[2])}]`
-                            : "[-, -, -]"}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* コントロールパネル - 脳画像の下に配置 */}
-                <div className="flex justify-center items-center space-x-6 mt-2 mb-2 bg-gray-50 py-2 px-4 rounded-md border border-gray-200">
-                  <button
-                    className={`px-2 py-1 text-sm rounded ${
-                      showAAL ? "bg-blue-500 text-white" : "bg-gray-200"
-                    }`}
-                    onClick={handleToggleAAL}
-                  >
-                    ラベル {showAAL ? "ON" : "OFF"}
-                  </button>
-
-                  <div className="flex items-center space-x-2">
-                    <span className="text-xs text-gray-600">ラベル:</span>
-                    <input
-                      type="range"
-                      min="0"
-                      max="100"
-                      value={aalOpacity}
-                      onChange={(e) =>
-                        handleAalOpacityChange(Number(e.target.value))
-                      }
-                      className="w-24"
-                    />
-                  </div>
-
-                  <div className="flex items-center space-x-2">
-                    <span className="text-xs text-gray-600">MRI:</span>
-                    <input
-                      type="range"
-                      min="0"
-                      max="100"
-                      value={mniOpacity}
-                      onChange={(e) =>
-                        handleMniOpacityChange(Number(e.target.value))
-                      }
-                      className="w-24"
                     />
                   </div>
                 </div>
@@ -679,10 +664,7 @@ export default function BrainDatabasePage() {
                                               <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 mt-[0.45rem]"></span>
                                               <div>
                                                 <span className="font-bold">
-                                                  {role.split("：")[0]}
-                                                </span>
-                                                <span>
-                                                  ：{role.split("：")[1]}
+                                                  {role}
                                                 </span>
                                               </div>
                                             </li>
@@ -693,19 +675,7 @@ export default function BrainDatabasePage() {
                                           <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 mt-[0.45rem]"></span>
                                           <div>
                                             <span className="font-bold">
-                                              {
-                                                details.functionalRole.split(
-                                                  "："
-                                                )[0]
-                                              }
-                                            </span>
-                                            <span>
-                                              ：
-                                              {
-                                                details.functionalRole.split(
-                                                  "："
-                                                )[1]
-                                              }
+                                              {details.functionalRole}
                                             </span>
                                           </div>
                                         </li>
@@ -757,10 +727,7 @@ export default function BrainDatabasePage() {
                                                 <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 mt-[0.45rem]"></span>
                                                 <div>
                                                   <span className="font-bold">
-                                                    {symptom.split("：")[0]}
-                                                  </span>
-                                                  <span>
-                                                    ：{symptom.split("：")[1]}
+                                                    {symptom}
                                                   </span>
                                                 </div>
                                               </li>
@@ -794,19 +761,7 @@ export default function BrainDatabasePage() {
                                                             <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 mt-[0.45rem]"></span>
                                                             <div>
                                                               <span className="font-bold">
-                                                                {
-                                                                  symptom.split(
-                                                                    "："
-                                                                  )[0]
-                                                                }
-                                                              </span>
-                                                              <span>
-                                                                ：
-                                                                {
-                                                                  symptom.split(
-                                                                    "："
-                                                                  )[1]
-                                                                }
+                                                                {symptom}
                                                               </span>
                                                             </div>
                                                           </li>

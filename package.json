@@ -57,6 +57,7 @@
     "js-yaml": "^4.1.0",
     "lil-gui": "^0.20.0",
     "lucide-react": "^0.477.0",
+    "marked": "^15.0.7",
     "next": "15.1.7",
     "next-mdx-remote": "5.0.0",
     "nifti-reader-js": "^0.8.0",

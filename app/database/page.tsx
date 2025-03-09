@@ -40,6 +40,24 @@ export default function DatabasePage() {
           </div>
         </div>
 
+        {/* 高次脳機能データベースカード */}
+        <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div className="p-6">
+            <h2 className="text-xl font-semibold mb-3">
+              高次脳機能データベース
+            </h2>
+            <p className="text-gray-600 mb-4">
+              高次脳機能障害の症候、機能解剖、検査についての包括的なデータベースです。
+            </p>
+            <Link
+              href="/database/higher-brain-function"
+              className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              詳細を見る
+            </Link>
+          </div>
+        </div>
+
         {/* 将来的に他のデータベースコンテンツを追加する場合はここに追加 */}
       </div>
     </div>

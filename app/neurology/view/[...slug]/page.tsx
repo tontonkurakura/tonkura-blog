@@ -7,6 +7,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 // import rehypeSanitize from "rehype-sanitize";
 import Link from "next/link";
 import FrontMatter from "@/components/ui/FrontMatter";
+import remarkGfm from "remark-gfm";
 
 function Breadcrumbs({ slug, section }: { slug: string[]; section: string }) {
   // スラグの各部分をデコード
@@ -241,7 +242,14 @@ export default async function NeurologyView({
         </div>
 
         <div className="prose prose-lg max-w-none">
-          <MDXRemote source={result.content} components={{}} />
+          <MDXRemote
+            source={result.content}
+            options={{
+              mdxOptions: {
+                remarkPlugins: [remarkGfm],
+              },
+            }}
+          />
         </div>
       </article>
     </div>
