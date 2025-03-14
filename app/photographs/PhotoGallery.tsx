@@ -294,10 +294,10 @@ export default function PhotoGallery({
           </div>
           <div className="absolute inset-0 flex flex-col items-center justify-center translate-y-16">
             <h1 className="text-white text-8xl font-bold tracking-wider opacity-0 animate-fadeIn [animation-fill-mode:forwards] [animation-delay:500ms] drop-shadow-lg">
-              Photographs
+              Ephemera
             </h1>
             <p className="text-white/90 text-2xl tracking-widest mt-8 opacity-0 animate-fadeIn [animation-fill-mode:forwards] [animation-delay:1000ms] drop-shadow-md font-light">
-              - a fragment of consciousness -
+              - Fragments of Consciousness -
             </p>
             <div className="opacity-0 animate-fadeIn [animation-fill-mode:forwards] [animation-delay:1500ms] mt-28">
               <div className="animate-bounce">
