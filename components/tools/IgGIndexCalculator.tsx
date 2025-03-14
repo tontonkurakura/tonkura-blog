@@ -386,8 +386,13 @@ export default function IgGIndexCalculator() {
         </div>
         <div className="text-sm text-gray-600 mt-4">
           <p>
-            ※ IgG
-            Indexは多発性硬化症などの中枢神経系の炎症性疾患の診断に有用です。最終的な診断は医療専門家によって行われるべきです。
+            ※注意事項
+            <li className="ml-3 text-sm text-gray-600">
+              本ツールは、臨床業務で使用されるスコアの計算補助を行うためのものです。
+            </li>
+            <li className="ml-3 text-sm text-gray-600">
+              本ツールの利用により生じた如何なる結果についても、当サイトは責任を負いかねます。
+            </li>
           </p>
         </div>
       </div>
