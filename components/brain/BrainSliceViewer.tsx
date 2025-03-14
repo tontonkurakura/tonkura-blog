@@ -1032,7 +1032,7 @@ export default function BrainSliceViewer({
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-3/4 flex flex-col justify-between"
+      className="relative w-full h-5/6 flex flex-col justify-between"
       onWheel={(e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -1120,14 +1120,7 @@ export default function BrainSliceViewer({
 
       <div className="px-1 mb-1">
         <div className="flex items-center justify-between mb-0.5">
-          <span className="text-[10px] font-medium text-gray-700">
-            {sliceType === "axial"
-              ? "軸位断"
-              : sliceType === "coronal"
-                ? "冠状断"
-                : "矢状断"}
-          </span>
-          <span className="text-[10px] font-medium text-blue-600">
+          <span className="text-sm font-medium text-blue-600">
             {currentSliceIndex} / {getMaxSliceIndex()}
           </span>
         </div>

@@ -201,6 +201,7 @@ export default function Navigation() {
                     Blog
                   </Link>
                 </li>
+                {/* 開発中のためNeurologyリンクを一時的に非表示
                 <li className="w-full md:w-auto text-center" role="none">
                   <Link
                     href="/neurology"
@@ -216,6 +217,7 @@ export default function Navigation() {
                     Neurology
                   </Link>
                 </li>
+                */}
                 <li className="w-full md:w-auto text-center" role="none">
                   <Link
                     href="/database"
@@ -314,8 +316,8 @@ export default function Navigation() {
             </div>
           </nav>
 
-          {/* 神経学関連ページの場合のみ表示するサブナビゲーション */}
-          {isNeurologyPage && (
+          {/* 神経学関連ページの場合のみ表示するサブナビゲーション - 開発中のため非表示 */}
+          {false && isNeurologyPage && (
             <nav className="w-full mt-1 bg-[#0a2647]/80 rounded-lg p-1">
               <ul className="flex flex-wrap justify-center space-x-2 md:space-x-3">
                 {/* 将来的に他のサブメニューを追加する場合はここに追加 */}

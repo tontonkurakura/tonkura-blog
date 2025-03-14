@@ -6,10 +6,14 @@
     "category": "前頭葉",
     "englishName": "Precentral gyrus",
     "functionalRole": "随意運動の企画・制御・遂行",
-    "symptoms": [],
-    "references": [
-      "Sallet J, Mars RB, Noonan MP, et al. The organization of dorsal frontal cortex in humans and macaques. J Neurosci. 2013;33(30):12255–12274."
-    ]
+    "network": "Sensorimotor Network",
+    "connections": [],
+    "symptoms": {
+      "内側": "対側下肢の運動麻痺",
+      "外側": "対側顔面・上肢の運動麻痺",
+      "下部": "発語失行"
+    },
+    "references": []
   },
   {
     "englishLabel": "Precentral_R",
@@ -17,11 +21,14 @@
     "laterality": "右",
     "category": "前頭葉",
     "englishName": "Precentral gyrus",
-    "functionalRole": "随意運動の企画・制御・遂行",
-    "symptoms": [],
-    "references": [
-      "Sallet J, Mars RB, Noonan MP, et al. The organization of dorsal frontal cortex in humans and macaques. J Neurosci. 2013;33(30):12255–12274."
-    ]
+    "functionalRole": ["対側の身体の随意運動実行"],
+    "network": "Sensorimotor Network",
+    "symptoms": {
+      "内側": "対側下肢の運動麻痺",
+      "外側": "対側顔面・上肢の運動麻痺",
+      "下部": "発語失行"
+    },
+    "references": []
   },
   {
     "englishLabel": "Frontal_Sup_2_L",
@@ -29,10 +36,36 @@
     "laterality": "左",
     "category": "前頭葉",
     "englishName": "Superior frontal gyrus, dorsolateral (dlPFC)",
-    "functionalRole": "自己意識、実行機能（注意制御・ワーキングメモリなど）",
+    "functionalRole": [
+      "実行機能（計画、作業記憶、注意の制御、抑制制御）",
+      "認知的柔軟性（ルール変更への適応、問題解決）",
+      "意思決定（論理的推論、リスク評価、報酬の考慮）",
+      "作業記憶（情報の保持と操作）",
+      "注意制御（集中、不要な刺激の抑制、注意の転換）",
+      "感情調節（感情の抑制と調整、ストレス管理）",
+      "社会的認知（他者の意図や感情の推測、倫理的判断）"
+    ],
+    "network": [
+      "Central Executive Network (CEN)",
+      "Frontoparietal Network (FPN)"
+    ],
+    "connections": [
+      "内側前頭前野（mPFC）",
+      "前帯状皮質（ACC）",
+      "補足運動野（SMA）",
+      "後頭頂葉（PPC）",
+      "尾状核",
+      "視床（特に背内側核）",
+      "扁桃体",
+      "海馬",
+      "小脳"
+    ],
     "symptoms": [],
     "references": [
-      "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
+      "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704.",
+      "Miller EK, Cohen JD. An integrative theory of prefrontal cortex function. Annu Rev Neurosci. 2001;24:167-202.",
+      "Fuster JM. The Prefrontal Cortex. 4th ed. London: Academic Press; 2008.",
+      "Seeley WW, Menon V, Schatzberg AF, Keller J, Glover GH, Kenna H, Reiss AL, Greicius MD. Dissociable intrinsic connectivity networks for salience processing and executive control. J Neurosci. 2007;27(9):2349-56."
     ]
   },
   {
@@ -41,9 +74,36 @@
     "laterality": "右",
     "category": "前頭葉",
     "englishName": "Superior frontal gyrus, dorsolateral (dlPFC)",
-    "functionalRole": "自己意識、実行機能（注意制御・ワーキングメモリなど）",
+    "functionalRole": [
+      "実行機能（計画、作業記憶、注意の制御、抑制制御）",
+      "認知的柔軟性（ルール変更への適応、問題解決）",
+      "意思決定（論理的推論、リスク評価、報酬の考慮）",
+      "作業記憶（情報の保持と操作）",
+      "注意制御（集中、不要な刺激の抑制、注意の転換）",
+      "感情調節（感情の抑制と調整、ストレス管理）",
+      "社会的認知（他者の意図や感情の推測、倫理的判断）"
+    ],
+    "network": [
+      "Central Executive Network (CEN)",
+      "Frontoparietal Network (FPN)"
+    ],
+    "connections": [
+      "内側前頭前野（mPFC）",
+      "前帯状皮質（ACC）",
+      "補足運動野（SMA）",
+      "後頭頂葉（PPC）",
+      "尾状核",
+      "視床（特に背内側核）",
+      "扁桃体",
+      "海馬",
+      "小脳"
+    ],
+    "symptoms": [],
     "references": [
-      "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
+      "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704.",
+      "Miller EK, Cohen JD. An integrative theory of prefrontal cortex function. Annu Rev Neurosci. 2001;24:167-202.",
+      "Fuster JM. The Prefrontal Cortex. 4th ed. London: Academic Press; 2008.",
+      "Seeley WW, Menon V, Schatzberg AF, Keller J, Glover GH, Kenna H, Reiss AL, Greicius MD. Dissociable intrinsic connectivity networks for salience processing and executive control. J Neurosci. 2007;27(9):2349-56."
     ]
   },
   {
@@ -52,9 +112,21 @@
     "laterality": "左",
     "category": "前頭葉",
     "englishName": "Middle frontal gyrus",
-    "functionalRole": "注意制御、ワーキングメモリ、計画などの実行機能",
+    "functionalRole": "注意制御、ワーキングメモリ、計画、意思決定、言語処理",
+    "network": "Central Executive Network (CEN), Dorsal Attention Network (DAN)",
+    "connections": [
+      "背外側前頭前野（dlPFC）",
+      "頭頂間溝（IPS）",
+      "前帯状皮質（ACC）",
+      "視床",
+      "ブローカ野"
+    ],
+    "symptoms": [],
     "references": [
-      "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
+      "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704.",
+      "Badre D, Nee DE. Frontal Cortex and the Hierarchical Control of Behavior. Trends Cogn Sci. 2018;22(2):170-188.",
+      "Fuster JM. The Prefrontal Cortex. 4th ed. London: Academic Press; 2008.",
+      "Fedorenko E, Duncan J, Kanwisher N. Language-selective and domain-general regions lie side by side within Broca’s area. Curr Biol. 2012;22(21):2059-2062."
     ]
   },
   {
@@ -63,9 +135,21 @@
     "laterality": "右",
     "category": "前頭葉",
     "englishName": "Middle frontal gyrus",
-    "functionalRole": "注意制御、ワーキングメモリ、計画などの実行機能",
+    "functionalRole": "注意制御、ワーキングメモリ、計画、意思決定、言語処理",
+    "network": "Central Executive Network (CEN), Dorsal Attention Network (DAN)",
+    "connections": [
+      "背外側前頭前野（dlPFC）",
+      "頭頂間溝（IPS）",
+      "前帯状皮質（ACC）",
+      "視床",
+      "ブローカ野"
+    ],
+    "symptoms": [],
     "references": [
-      "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704."
+      "Neubert FX, Mars RB, Sallet J, Rushworth MF. Connectivity reveals relationship of brain areas for reward-guided learning and decision making in human and monkey frontal cortex. Proc Natl Acad Sci USA. 2015;112(20):E2695–E2704.",
+      "Badre D, Nee DE. Frontal Cortex and the Hierarchical Control of Behavior. Trends Cogn Sci. 2018;22(2):170-188.",
+      "Fuster JM. The Prefrontal Cortex. 4th ed. London: Academic Press; 2008.",
+      "Fedorenko E, Duncan J, Kanwisher N. Language-selective and domain-general regions lie side by side within Broca’s area. Curr Biol. 2012;22(21):2059-2062."
     ]
   },
   {
@@ -75,8 +159,19 @@
     "category": "前頭葉",
     "englishName": "Inferior frontal gyrus, opercular part",
     "functionalRole": "音韻制御、運動制御、言語制御、構文処理、行動の模倣・制御",
+    "network": "Language Network, Motor Network",
+    "connections": [
+      "ブローカ野",
+      "運動前野",
+      "前帯状皮質（ACC）",
+      "上側頭回（STG）",
+      "島皮質"
+    ],
+    "symptoms": [],
     "references": [
-      "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421."
+      "Eickhoff SB, Heim S, Zilles K, Amunts K. A systems perspective on the effective connectivity of overt speech production. Philos Trans A Math Phys Eng Sci. 2009;367(1896):2399–2421.",
+      "Friederici AD. The cortical language circuit: from auditory perception to sentence comprehension. Trends Cogn Sci. 2011;15(5):238-246.",
+      "Hickok G, Poeppel D. The cortical organization of speech processing. Nat Rev Neurosci. 2007;8(5):393-402."
     ]
   },
   {
@@ -163,7 +258,18 @@
     "laterality": "左",
     "category": "前頭葉",
     "englishName": "Supplementary motor area",
-    "functionalRole": "内部的な運動企画、運動シーケンスの計画など",
+    "functionalRole": [
+      "運動の計画と準備",
+      "自己発動的な運動の開始",
+      "両手協調運動の調整",
+      "運動のシーケンス制御",
+      "学習した運動パターンの想起"
+    ],
+    "network": [
+      "Sensorimotor Network (SMN)",
+      "Fronto-Parietal Network (FPN)",
+      "Central Executive Network (CEN)"
+    ],
     "symptoms": [],
     "references": [
       "Sallet J, Mars RB, Noonan MP, et al. The organization of dorsal frontal cortex in humans and macaques. J Neurosci. 2013;33(30):12255–12274."
@@ -175,7 +281,18 @@
     "laterality": "右",
     "category": "前頭葉",
     "englishName": "Supplementary motor area",
-    "functionalRole": "内部的な運動企画、運動シーケンスの計画など",
+    "functionalRole": [
+      "運動の計画と準備",
+      "自己発動的な運動の開始",
+      "両手協調運動の調整",
+      "運動のシーケンス制御",
+      "学習した運動パターンの想起"
+    ],
+    "network": [
+      "Sensorimotor Network (SMN)",
+      "Fronto-Parietal Network (FPN)",
+      "Central Executive Network (CEN)"
+    ],
     "symptoms": [],
     "references": [
       "Sallet J, Mars RB, Noonan MP, et al. The organization of dorsal frontal cortex in humans and macaques. J Neurosci. 2013;33(30):12255–12274."
@@ -283,7 +400,13 @@
     "laterality": "左",
     "category": "前頭葉",
     "englishName": "Gyrus rectus",
-    "functionalRole": "嗅覚・報酬情報の処理、意思決定など",
+    "functionalRole": [
+      "嗅覚情報の処理（嗅球からの入力を受け取る）",
+      "嗅覚記憶と関連付け（海馬・扁桃体との連携）",
+      "情動反応の調節（においと感情の結びつき）",
+      "摂食行動の制御（食物の匂いによる食欲調節）",
+      "自律神経反応の調整（嗅覚刺激による唾液分泌や消化促進）"
+    ],
     "symptoms": [],
     "references": [
       "Zald DH, Rauch SL. The Orbitofrontal Cortex. Oxford University Press; 2006."
@@ -295,7 +418,13 @@
     "laterality": "右",
     "category": "前頭葉",
     "englishName": "Gyrus rectus",
-    "functionalRole": "嗅覚・報酬情報の処理、意思決定など",
+    "functionalRole": [
+      "嗅覚情報の処理（嗅球からの入力を受け取る）",
+      "嗅覚記憶と関連付け（海馬・扁桃体との連携）",
+      "情動反応の調節（においと感情の結びつき）",
+      "摂食行動の制御（食物の匂いによる食欲調節）",
+      "自律神経反応の調整（嗅覚刺激による唾液分泌や消化促進）"
+    ],
     "symptoms": [],
     "references": [
       "Zald DH, Rauch SL. The Orbitofrontal Cortex. Oxford University Press; 2006."
@@ -403,7 +532,16 @@
     "laterality": "左",
     "category": "島皮質",
     "englishName": "Insula",
-    "functionalRole": "内受容感覚の処理、情動処理、味覚・嗅覚処理、自律神経制御、社会的認知・共感など",
+    "functionalRole": [
+      "内受容感覚の処理（体内状態の認識）",
+      "情動の処理（不安・嫌悪感・共感）",
+      "痛みの知覚と評価",
+      "味覚の処理（食物の味の識別）",
+      "自律神経調節（心拍・呼吸の制御）",
+      "運動制御（随意運動・発話の調整）",
+      "意思決定（リスク評価・直感的判断）"
+    ],
+    "network": ["Salience Network (SN)", "Sensorimotor Network (SMN)"],
     "symptoms": [],
     "references": [
       "Chang LJ, Yarkoni T, Khaw MW, Sanfey AG. Decoding the role of the insula in human cognition: functional parcellation and large-scale reverse inference. Cereb Cortex. 2013;23(3):739–749."
@@ -415,7 +553,16 @@
     "laterality": "右",
     "category": "島皮質",
     "englishName": "Insula",
-    "functionalRole": "内受容感覚の処理、情動処理、味覚・嗅覚処理、自律神経制御、社会的認知・共感など",
+    "functionalRole": [
+      "内受容感覚の処理（体内状態の認識）",
+      "情動の処理（不安・嫌悪感・共感）",
+      "痛みの知覚と評価",
+      "味覚の処理（食物の味の識別）",
+      "自律神経調節（心拍・呼吸の制御）",
+      "運動制御（随意運動・発話の調整）",
+      "意思決定（リスク評価・直感的判断）"
+    ],
+    "network": ["Salience Network (SN)", "Sensorimotor Network (SMN)"],
     "symptoms": [],
     "references": [
       "Chang LJ, Yarkoni T, Khaw MW, Sanfey AG. Decoding the role of the insula in human cognition: functional parcellation and large-scale reverse inference. Cereb Cortex. 2013;23(3):739–749."
@@ -451,7 +598,16 @@
     "laterality": "左",
     "category": "大脳辺縁系",
     "englishName": "Posterior cingulate cortex (PCC)",
-    "functionalRole": "自伝的記憶、内的思考（デフォルトモード）など",
+    "functionalRole": [
+      "自己関連的思考（自分の記憶や経験の想起）",
+      "エピソード記憶の統合と想起",
+      "注意の内向きシフト（内的思考への集中）",
+      "デフォルト・モード・ネットワーク（DMN）の中心的役割",
+      "意思決定（過去の経験に基づく評価）",
+      "空間的ナビゲーション（環境の認識と記憶）",
+      "意識の維持と覚醒レベルの調整"
+    ],
+    "network": "Default Mode Network (DMN)",
     "symptoms": [],
     "references": [
       "Raichle ME, Snyder AZ. A default mode of brain function: A brief history of an evolving idea. Neuroimage. 2007;37(4):1083–1090."
@@ -463,7 +619,16 @@
     "laterality": "右",
     "category": "大脳辺縁系",
     "englishName": "Posterior cingulate cortex (PCC)",
-    "functionalRole": "自伝的記憶、内的思考（デフォルトモード）など",
+    "functionalRole": [
+      "自己関連的思考（自分の記憶や経験の想起）",
+      "エピソード記憶の統合と想起",
+      "注意の内向きシフト（内的思考への集中）",
+      "デフォルト・モード・ネットワーク（DMN）の中心的役割",
+      "意思決定（過去の経験に基づく評価）",
+      "空間的ナビゲーション（環境の認識と記憶）",
+      "意識の維持と覚醒レベルの調整"
+    ],
+    "network": "Default Mode Network (DMN)",
     "symptoms": [],
     "references": [
       "Raichle ME, Snyder AZ. A default mode of brain function: A brief history of an evolving idea. Neuroimage. 2007;37(4):1083–1090."
@@ -523,7 +688,7 @@
     "laterality": "左",
     "category": "大脳辺縁系",
     "englishName": "Amygdala",
-    "functionalRole": "恐怖・不安の処理、情動記憶、社会的認知など",
+    "functionalRole": "恐怖・不安の処理、情動記憶など",
     "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
@@ -535,7 +700,7 @@
     "laterality": "右",
     "category": "大脳辺縁系",
     "englishName": "Amygdala",
-    "functionalRole": "恐怖・不安の処理、情動記憶、社会的認知など",
+    "functionalRole": "恐怖・不安の処理、情動記憶など",
     "symptoms": [],
     "references": [
       "Van Essen DC, Glasser MF. Parcellating Cerebral Cortex: How Invasive Animal Studies Inform Noninvasive Mapmaking in Humans. Neuron. 2018;99(4):640–663."
@@ -548,6 +713,7 @@
     "category": "後頭葉",
     "englishName": "Calcarine fissure and surrounding cortex (primary visual cortex)",
     "functionalRole": "視覚情報の初期処理（一次視覚野）",
+    "network": "Visual Network (VN)",
     "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
@@ -560,6 +726,7 @@
     "category": "後頭葉",
     "englishName": "Calcarine fissure and surrounding cortex (primary visual cortex)",
     "functionalRole": "視覚情報の初期処理（一次視覚野）",
+    "network": "Visual Network (VN)",
     "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
@@ -571,7 +738,14 @@
     "laterality": "左",
     "category": "後頭葉",
     "englishName": "Cuneus",
-    "functionalRole": "視覚情報の処理、視覚的注意の制御など",
+    "functionalRole": [
+      "基本的な視覚処理（一次視覚野と連携）",
+      "視覚注意の制御（選択的注意の調整）",
+      "視覚イメージの生成（記憶や想像による視覚情報の再現）",
+      "空間認識と視覚誘導運動の調整",
+      "視覚記憶の統合（後頭葉・頭頂葉との連携）"
+    ],
+    "network": "Visual Network (VN)",
     "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
@@ -583,7 +757,14 @@
     "laterality": "右",
     "category": "後頭葉",
     "englishName": "Cuneus",
-    "functionalRole": "視覚情報の処理、視覚的注意の制御など",
+    "functionalRole": [
+      "基本的な視覚処理（一次視覚野と連携）",
+      "視覚注意の制御（選択的注意の調整）",
+      "視覚イメージの生成（記憶や想像による視覚情報の再現）",
+      "空間認識と視覚誘導運動の調整",
+      "視覚記憶の統合（後頭葉・頭頂葉との連携）"
+    ],
+    "network": "Visual Network (VN)",
     "symptoms": [],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
@@ -595,8 +776,15 @@
     "laterality": "左",
     "category": "後頭葉",
     "englishName": "Lingual gyrus",
-    "functionalRole": "高次視覚処理（色覚、文字認知など）",
-    "symptoms": ["大脳性色覚障害"],
+    "functionalRole": [
+      "視覚情報の処理（特に高次視覚領域）",
+      "文字認識（読字能力に関与）",
+      "形状・色・物体の識別",
+      "視覚記憶の統合",
+      "夢や視覚イメージの生成"
+    ],
+    "network": "Visual Network (VN)",
+    "symptoms": ["純粋失読", "相貌失認", "大脳性色覚障害"],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]
@@ -607,8 +795,14 @@
     "laterality": "右",
     "category": "後頭葉",
     "englishName": "Lingual gyrus",
-    "functionalRole": "高次視覚処理（色覚、文字認知など）",
-    "symptoms": ["大脳性色覚障害"],
+    "functionalRole": [
+      "視覚情報の処理（特に高次視覚領域）",
+      "文字認識（読字能力に関与）",
+      "形状・色・物体の識別",
+      "視覚記憶の統合",
+      "夢や視覚イメージの生成"
+    ],
+    "symptoms": ["純粋失読", "相貌失認", "大脳性色覚障害"],
     "references": [
       "Yeo BTT, Krienen FM, Sepulcre J, et al. The organization of the human cerebral cortex estimated by functional connectivity. J Neurophysiol. 2011;106(3):1125–1165."
     ]

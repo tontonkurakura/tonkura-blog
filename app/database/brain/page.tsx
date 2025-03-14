@@ -612,7 +612,7 @@ export default function BrainDatabasePage() {
                 {/* 選択された領域の情報表示と脳領域リストを横並びに配置 */}
                 <div className="grid grid-cols-1 gap-4">
                   {/* 選択された領域の情報表示 */}
-                  <div className="p-4 bg-white border border-blue-300 rounded-md shadow-md h-96 overflow-y-auto">
+                  <div className="p-4 bg-white border border-blue-300 rounded-md shadow-md min-h-[400px] max-h-[800px] overflow-y-auto">
                     {selectedRegion ? (
                       <div className="space-y-4">
                         {/* 領域名を日本語で大きく表示し、英語名も併記 */}
@@ -734,7 +734,8 @@ export default function BrainDatabasePage() {
                                             )
                                           )}
                                         </ul>
-                                      ) : (
+                                      ) : typeof details.symptoms ===
+                                        "object" ? (
                                         <div className="space-y-4">
                                           {Object.entries(details.symptoms).map(
                                             (
@@ -752,20 +753,33 @@ export default function BrainDatabasePage() {
                                                   </h5>
                                                   <div className="flex-1">
                                                     <ul className="space-y-2">
-                                                      {symptoms.map(
-                                                        (symptom, i) => (
-                                                          <li
-                                                            key={i}
-                                                            className="text-gray-600 text-[0.95rem] leading-relaxed flex items-start"
-                                                          >
-                                                            <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 mt-[0.45rem]"></span>
-                                                            <div>
-                                                              <span className="font-bold">
-                                                                {symptom}
-                                                              </span>
-                                                            </div>
-                                                          </li>
+                                                      {Array.isArray(
+                                                        symptoms
+                                                      ) ? (
+                                                        symptoms.map(
+                                                          (symptom, i) => (
+                                                            <li
+                                                              key={i}
+                                                              className="text-gray-600 text-[0.95rem] leading-relaxed flex items-start"
+                                                            >
+                                                              <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 mt-[0.45rem]"></span>
+                                                              <div>
+                                                                <span className="font-bold">
+                                                                  {symptom}
+                                                                </span>
+                                                              </div>
+                                                            </li>
+                                                          )
                                                         )
+                                                      ) : (
+                                                        <li className="text-gray-600 text-[0.95rem] leading-relaxed flex items-start">
+                                                          <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 mt-[0.45rem]"></span>
+                                                          <div>
+                                                            <span className="font-bold">
+                                                              {symptoms}
+                                                            </span>
+                                                          </div>
+                                                        </li>
                                                       )}
                                                     </ul>
                                                   </div>
@@ -773,6 +787,10 @@ export default function BrainDatabasePage() {
                                               </div>
                                             )
                                           )}
+                                        </div>
+                                      ) : (
+                                        <div className="text-gray-600 text-[0.95rem] leading-relaxed">
+                                          {details.symptoms}
                                         </div>
                                       )}
                                     </div>

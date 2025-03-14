@@ -5,7 +5,7 @@ relatedSymptoms:
   - 失語症
 standardized: true
 timeRequired: 60-90分
-lastmod: '2025-03-09'
+lastmod: '2025-03-14'
 ---
 
 # WAB失語症検査（Western Aphasia Battery）

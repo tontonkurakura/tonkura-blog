@@ -8,6 +8,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import FrontMatter from "@/components/ui/FrontMatter";
 import remarkGfm from "remark-gfm";
+import { redirect } from "next/navigation";
 
 function Breadcrumbs({ slug, section }: { slug: string[]; section: string }) {
   // スラグの各部分をデコード
@@ -207,6 +208,9 @@ export default async function NeurologyView({
 }: {
   params: { slug: string[] };
 }) {
+  // 開発中のページなのでホームページにリダイレクト
+  redirect("/");
+
   // paramsをawaitする
   const routeParams = await params;
   const result = await getMarkdownContent(routeParams.slug);

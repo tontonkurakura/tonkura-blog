@@ -1,12 +1,16 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import NeurologyContent from "./NeurologyContent";
 import ScrollHandler from "./ScrollHandler";
+import { redirect } from "next/navigation";
 
 export default async function NeurologyPage({
   searchParams,
 }: {
   searchParams: { tab?: string };
 }) {
+  // 開発中のページなのでホームページにリダイレクト
+  redirect("/");
+
   // searchParamsをawaitする
   const params = await searchParams;
 
