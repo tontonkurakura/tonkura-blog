@@ -229,17 +229,17 @@ export default function Navigation() {
                 </li>
                 <li className="w-full md:w-auto text-center" role="none">
                   <Link
-                    href="/photographs"
+                    href="/gallery"
                     className="block px-3 py-1 rounded-lg transition-all duration-300 hover:bg-gradient-to-r from-pink-800/80 to-orange-800/80 hover:shadow-inner text-sm md:text-base font-bold"
                     onClick={() => setIsMenuOpen(false)}
                     role="menuitem"
                     tabIndex={0}
                     onKeyDown={handleKeyDown}
                     aria-current={
-                      pathname.startsWith("/photographs") ? "page" : undefined
+                      pathname.startsWith("/gallery") ? "page" : undefined
                     }
                   >
-                    Photographs
+                    Gallery
                   </Link>
                 </li>
                 {showRecipes && (

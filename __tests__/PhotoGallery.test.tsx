@@ -1,4 +1,4 @@
-import { getPhotoHeight } from "@/app/photographs/PhotoGallery";
+import { getPhotoHeight } from "@/app/gallery/PhotoGallery";
 import { PHOTO_HEIGHTS } from "@/constants/photo";
 
 describe("PhotoGallery", () => {

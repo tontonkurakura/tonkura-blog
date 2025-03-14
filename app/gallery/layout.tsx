@@ -1,6 +1,6 @@
 "use client";
 
-export default function PhotographsLayout({
+export default function GalleryLayout({
   children,
 }: {
   children: React.ReactNode;

@@ -7,9 +7,9 @@ export default function RecipeClient() {
   const router = useRouter();
 
   useEffect(() => {
-    // 認証されていない場合はホームページにリダイレクト
+      // 認証されていない場合はホームページにリダイレクト
     router.push("/");
   }, [router]);
 
   return null;
-}
+} 
