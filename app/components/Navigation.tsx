@@ -233,13 +233,6 @@ export default function Navigation() {
                     Database
                   </Link>
                 </li>
-              </ul>
-
-              {/* 2行目 */}
-              <ul
-                className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 py-2 md:py-1"
-                role="menubar"
-              >
                 <li className="w-full md:w-auto text-center" role="none">
                   <Link
                     href="/tools"
