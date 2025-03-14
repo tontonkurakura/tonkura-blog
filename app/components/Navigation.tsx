@@ -18,22 +18,9 @@ export default function Navigation() {
   // クライアントサイドでの初期化
   useEffect(() => {
     setIsClient(true);
-    if (typeof window !== "undefined") {
-      const savedShowDaisetsu = localStorage.getItem("showDaisetsu") === "true";
-      const savedShowRecipes = localStorage.getItem("showRecipes") === "true";
-      setShowDaisetsu(savedShowDaisetsu);
-      setShowRecipes(savedShowRecipes);
-    }
   }, []);
 
-  // DaisetsuとRecipesの表示状態をローカルストレージに保存
-  useEffect(() => {
-    if (typeof window !== "undefined" && isClient) {
-      localStorage.setItem("showDaisetsu", showDaisetsu.toString());
-      localStorage.setItem("showRecipes", showRecipes.toString());
-    }
-  }, [showDaisetsu, showRecipes, isClient]);
-
+  // キーシーケンスのイベントリスナー
   useEffect(() => {
     const handleKeyPress = (event: globalThis.KeyboardEvent) => {
       const newSequence = keySequence + event.key.toLowerCase();
@@ -48,10 +35,6 @@ export default function Navigation() {
       if (newSequence.endsWith("zen")) {
         setShowDaisetsu(true);
         setIsDiscovered(true);
-        // ローカルストレージに保存
-        if (typeof window !== "undefined") {
-          localStorage.setItem("showDaisetsu", "true");
-        }
         // 3秒後にディスカバーエフェクトを消す
         setTimeout(() => {
           setIsDiscovered(false);
@@ -62,10 +45,6 @@ export default function Navigation() {
       if (newSequence.endsWith("cook")) {
         setShowRecipes(true);
         setIsRecipesDiscovered(true);
-        // ローカルストレージに保存
-        if (typeof window !== "undefined") {
-          localStorage.setItem("showRecipes", "true");
-        }
         // 3秒後にディスカバーエフェクトを消す
         setTimeout(() => {
           setIsRecipesDiscovered(false);

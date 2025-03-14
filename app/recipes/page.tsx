@@ -17,14 +17,10 @@ export default async function RecipesPage({
 }: {
   searchParams: { tag?: string; q?: string; page?: string };
 }) {
-  // クッキーからRecipesの表示状態を確認
-  const cookieStore = cookies();
-  const showRecipes = (await cookieStore.get("showRecipes"))?.value === "true";
+  // 常にホームページにリダイレクト
+  redirect("/");
 
-  if (!showRecipes) {
-    redirect("/");
-  }
-
+  // 以下のコードは到達不能
   const selectedTag = searchParams?.tag;
   const searchQuery = searchParams?.q?.toLowerCase();
   const currentPage = Number(searchParams?.page || "1");
