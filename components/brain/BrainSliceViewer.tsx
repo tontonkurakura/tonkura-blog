@@ -13,10 +13,7 @@ interface BrainSliceViewerProps {
   showAAL?: boolean;
   selectedRegion?: number | null;
   hoveredRegion?: number | null;
-  onRegionClick?: (
-    regionIndex: number | null,
-    clickPosition?: [number, number, number]
-  ) => void;
+  onRegionClick?: (regionIndex: number) => void;
   japaneseLabelsData?: AALJapaneseLabel[];
   crosshairPosition?: [number, number, number];
   onCrosshairPositionChange?: (position: [number, number, number]) => void;
@@ -25,8 +22,6 @@ interface BrainSliceViewerProps {
   onRegionHover?: (
     regionIndex: number | null,
     position: {
-      voxel: [number, number, number];
-      mni: [number, number, number];
       sliceType: string;
     }
   ) => void;
@@ -79,9 +74,6 @@ export default function BrainSliceViewer({
     | null
   >(null);
   const [maxIntensity, setMaxIntensity] = useState<number>(255);
-  const [cursorPosition, setCursorPosition] = useState<
-    [number, number, number]
-  >([0, 0, 0]);
   const [mniToAalTransform, setMniToAalTransform] = useState<number[][]>([
     [1, 0, 0, 0],
     [0, 1, 0, 0],
@@ -94,6 +86,10 @@ export default function BrainSliceViewer({
   } | null>(null);
   const [tooltipContent, setTooltipContent] = useState<string>("");
   const [forceUpdate, setForceUpdate] = useState<number>(0);
+  const [initialCanvasSize, setInitialCanvasSize] = useState<{
+    width: number;
+    height: number;
+  } | null>(null);
 
   const getSliceAxis = useCallback(() => {
     switch (sliceType) {
@@ -169,133 +165,63 @@ export default function BrainSliceViewer({
   }, []);
 
   useEffect(() => {
-    const loadData = async () => {
+    const loadNiftiFiles = async () => {
       try {
         setIsLoading(true);
-        setLoadingProgress(0);
         setError(null);
 
-        setLoadingProgress(10);
-        const mniData = await loadNiftiFile(mniUrl);
-        setMniData(mniData);
-        setLoadingProgress(40);
+        // MNIデータの読み込み
+        const mni = await loadNiftiFile(mniUrl);
+        setMniData(mni);
+        setMniVolume(mni.typedImage);
+        setDimensions([mni.dims[1], mni.dims[2], mni.dims[3]]);
 
-        const dims: [number, number, number] = [
-          mniData.dims[1],
-          mniData.dims[2],
-          mniData.dims[3],
-        ];
-        setDimensions(dims);
-
-        setMniVolume(mniData.typedImage);
-
-        let maxVal = 0;
-        for (let i = 0; i < mniData.typedImage.length; i++) {
-          if (mniData.typedImage[i] > maxVal) {
-            maxVal = mniData.typedImage[i];
-          }
+        // 最大輝度値を計算
+        let max = 0;
+        for (let i = 0; i < mni.typedImage.length; i++) {
+          max = Math.max(max, mni.typedImage[i]);
         }
-        setMaxIntensity(maxVal);
+        setMaxIntensity(max);
+
+        // AALデータの読み込み
+        const aal = await loadNiftiFile(aalUrl);
+        setAalData(aal);
+        setAalVolume(aal.typedImage);
 
         if (sliceIndex !== undefined) {
-          setCurrentSliceIndex(sliceIndex);
-        } else {
-          const axis = getSliceAxis();
-          setCurrentSliceIndex(Math.floor(dims[axis] / 2));
-        }
-
-        setLoadingProgress(70);
-
-        if (aalUrl) {
-          const aalData = await loadNiftiFile(aalUrl);
-          setAalData(aalData);
-          setAalVolume(aalData.typedImage);
-
-          if (mniData.affine && aalData.affine) {
-            const aalInv = invertMatrix(aalData.affine);
-            const mniToAal = multiplyMatrices(aalInv, mniData.affine);
-            setMniToAalTransform(mniToAal);
+          switch (sliceType) {
+            case "sagittal":
+              setCurrentSliceIndex(
+                Math.min(Math.max(0, sliceIndex), mni.dims[1] - 1)
+              );
+              break;
+            case "coronal":
+              setCurrentSliceIndex(
+                Math.min(Math.max(0, sliceIndex), mni.dims[2] - 1)
+              );
+              break;
+            case "axial":
+            default:
+              setCurrentSliceIndex(
+                Math.min(Math.max(0, sliceIndex), mni.dims[3] - 1)
+              );
+              break;
           }
+        } else if (crosshairPosition) {
+          const sliceAxis = getSliceAxis();
+          setCurrentSliceIndex(crosshairPosition[sliceAxis]);
         }
 
-        setLoadingProgress(100);
         setIsLoading(false);
       } catch (err) {
-        console.error("Error loading NIFTI data:", err);
-        setError("NIFTIデータの読み込み中にエラーが発生しました。");
+        console.error("Error loading NIFTI files:", err);
+        setError("NIFTIファイルの読み込み中にエラーが発生しました");
         setIsLoading(false);
       }
     };
 
-    loadData();
-  }, [mniUrl, aalUrl, sliceType, sliceIndex, getSliceAxis]);
-
-  useEffect(() => {
-    if (sliceIndex !== undefined && dimensions[getSliceAxis()] > 0) {
-      setCurrentSliceIndex(
-        Math.min(Math.max(0, sliceIndex), dimensions[getSliceAxis()] - 1)
-      );
-    }
-  }, [sliceIndex, dimensions, getSliceAxis]);
-
-  useEffect(() => {
-    const axis = getSliceAxis();
-    if (crosshairPosition) {
-      setCurrentSliceIndex(crosshairPosition[axis]);
-    }
-  }, [crosshairPosition, getSliceAxis]);
-
-  const drawCrosshair = useCallback(
-    (ctx: CanvasRenderingContext2D, width: number, height: number) => {
-      if (!crosshairPosition) return;
-
-      let x = 0;
-      let y = 0;
-
-      switch (sliceType) {
-        case "sagittal":
-          x = width - crosshairPosition[1] - 1;
-          y = dimensions[2] - crosshairPosition[2];
-          break;
-        case "coronal":
-          x = width - crosshairPosition[0] - 1;
-          y = dimensions[2] - crosshairPosition[2];
-          break;
-        case "axial":
-          x = width - crosshairPosition[0] - 1;
-          y = dimensions[1] - crosshairPosition[1];
-          break;
-      }
-
-      ctx.strokeStyle = "rgba(255, 0, 0, 1.0)";
-      ctx.lineWidth = 1;
-
-      ctx.beginPath();
-      ctx.moveTo(x, 0);
-      ctx.lineTo(x, height);
-      ctx.moveTo(0, y);
-      ctx.lineTo(width, y);
-      ctx.stroke();
-
-      ctx.fillStyle = "rgba(255, 0, 0, 1.0)";
-      ctx.beginPath();
-      ctx.arc(x, y, 2, 0, Math.PI * 2);
-      ctx.fill();
-    },
-    [crosshairPosition, sliceType, dimensions]
-  );
-
-  const debounce = (func: Function, wait: number) => {
-    let timeout: NodeJS.Timeout;
-    return function executedFunction(...args: unknown[]) {
-      const later = () => {
-        clearTimeout(timeout);
-        func(...args);
-      };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-    };
-  };
+    loadNiftiFiles();
+  }, [mniUrl, aalUrl, sliceType, sliceIndex, crosshairPosition, getSliceAxis]);
 
   const getMaxSliceIndex = useCallback(() => {
     switch (sliceType) {
@@ -309,6 +235,85 @@ export default function BrainSliceViewer({
     }
   }, [dimensions, sliceType]);
 
+  // 先にhslToRgbを定義（依存しない純粋な関数）
+  const hslToRgb = (
+    h: number,
+    s: number,
+    l: number
+  ): [number, number, number] => {
+    let r, g, b;
+
+    if (s === 0) {
+      r = g = b = l;
+    } else {
+      const hue2rgb = (p: number, q: number, t: number) => {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1 / 6) return p + (q - p) * 6 * t;
+        if (t < 1 / 2) return q;
+        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+        return p;
+      };
+
+      const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+      const p = 2 * l - q;
+      r = hue2rgb(p, q, h + 1 / 3);
+      g = hue2rgb(p, q, h);
+      b = hue2rgb(p, q, h - 1 / 3);
+    }
+
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+  };
+
+  // drawCrosshair関数を定義
+  const drawCrosshair = useCallback(
+    (ctx: CanvasRenderingContext2D, width: number, height: number) => {
+      if (!crosshairPosition) return;
+
+      const axis = getSliceAxis();
+      let xPos, yPos;
+
+      switch (sliceType) {
+        case "sagittal":
+          xPos = width - crosshairPosition[1] - 1;
+          yPos = height - crosshairPosition[2] - 1;
+          break;
+        case "coronal":
+          xPos = width - crosshairPosition[0] - 1;
+          yPos = height - crosshairPosition[2] - 1;
+          break;
+        case "axial":
+        default:
+          xPos = width - crosshairPosition[0] - 1;
+          yPos = height - crosshairPosition[1] - 1;
+          break;
+      }
+
+      // 範囲外チェック
+      if (xPos < 0 || xPos >= width || yPos < 0 || yPos >= height) {
+        return;
+      }
+
+      ctx.save();
+      ctx.strokeStyle = "red";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+
+      // 水平線
+      ctx.moveTo(0, yPos);
+      ctx.lineTo(width, yPos);
+
+      // 垂直線
+      ctx.moveTo(xPos, 0);
+      ctx.lineTo(xPos, height);
+
+      ctx.stroke();
+      ctx.restore();
+    },
+    [crosshairPosition, sliceType, getSliceAxis]
+  );
+
+  // 最後にdrawCanvas関数を定義
   const drawCanvas = useCallback(() => {
     if (!canvasRef.current || !mniVolume || dimensions[0] === 0) return;
 
@@ -522,11 +527,12 @@ export default function BrainSliceViewer({
 
     ctx.putImageData(imageData, 0, 0);
 
+    // ここではdrawCrosshair関数を直接使用
     if (crosshairPosition) {
       drawCrosshair(ctx, width, height);
     }
 
-    if (containerRef.current) {
+    if (containerRef.current && !canvas.style.width) {
       const containerWidth = containerRef.current.clientWidth;
       const containerHeight = containerRef.current.clientHeight - 3;
       const scale = Math.min(containerWidth / width, containerHeight / height);
@@ -548,6 +554,9 @@ export default function BrainSliceViewer({
     crosshairPosition,
     transformMniToAalCoordinates,
     getMaxSliceIndex,
+    aalData,
+    aalLabels,
+    drawCrosshair, // drawCrosshairを依存配列に追加
   ]);
 
   const updateCanvasScale = useCallback(() => {
@@ -555,27 +564,80 @@ export default function BrainSliceViewer({
 
     const canvas = canvasRef.current;
     const container = containerRef.current;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
 
-    const containerWidth = container.clientWidth;
-    const containerHeight = container.clientHeight - 3;
+    if (!initialCanvasSize) {
+      const width = canvas.width;
+      const height = canvas.height;
+      const containerWidth = container.clientWidth;
+      const containerHeight = container.clientHeight - 3;
+      const scale = Math.min(containerWidth / width, containerHeight / height);
 
-    canvas.style.width = `${containerWidth}px`;
-    canvas.style.height = `${containerHeight}px`;
+      setInitialCanvasSize({
+        width: width * scale,
+        height: height * scale,
+      });
+
+      canvas.style.width = `${width * scale}px`;
+      canvas.style.height = `${height * scale}px`;
+    } else {
+      canvas.style.width = `${initialCanvasSize.width}px`;
+      canvas.style.height = `${initialCanvasSize.height}px`;
+    }
 
     const scale = window.devicePixelRatio || 1;
-    canvas.width = Math.floor(containerWidth * scale);
-    canvas.height = Math.floor(containerHeight * scale);
-
-    ctx.scale(scale, scale);
+    if (scale !== 1) {
+      canvas.width = canvas.width * scale;
+      canvas.height = canvas.height * scale;
+      const ctx = canvas.getContext("2d");
+      if (ctx) {
+        ctx.scale(scale, scale);
+      }
+    }
 
     drawCanvas();
-  }, [drawCanvas]);
+  }, [drawCanvas, initialCanvasSize]);
 
   useEffect(() => {
-    drawCanvas();
-  }, [drawCanvas]);
+    if (!isLoading && mniVolume && aalVolume) {
+      drawCanvas();
+      updateCanvasScale();
+    }
+  }, [isLoading, mniVolume, aalVolume, drawCanvas, updateCanvasScale]);
+
+  useEffect(() => {
+    if (sliceIndex !== undefined && dimensions[getSliceAxis()] > 0) {
+      setCurrentSliceIndex(
+        Math.min(Math.max(0, sliceIndex), dimensions[getSliceAxis()] - 1)
+      );
+    }
+  }, [sliceIndex, dimensions, getSliceAxis]);
+
+  useEffect(() => {
+    if (crosshairPosition) {
+      const sliceAxis = getSliceAxis();
+      const slicePos = crosshairPosition[sliceAxis];
+
+      // 現在のスライス位置と異なる場合のみ更新
+      if (slicePos !== currentSliceIndex) {
+        setCurrentSliceIndex(slicePos);
+      } else {
+        // 同じスライス位置でも十字線の位置が変わった場合は再描画
+        drawCanvas();
+      }
+    }
+  }, [crosshairPosition, getSliceAxis, currentSliceIndex, drawCanvas]);
+
+  const debounce = (func: Function, wait: number) => {
+    let timeout: NodeJS.Timeout;
+    return function executedFunction(...args: unknown[]) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  };
 
   useEffect(() => {
     const handleResize = debounce(() => {
@@ -587,35 +649,6 @@ export default function BrainSliceViewer({
       window.removeEventListener("resize", handleResize);
     };
   }, [updateCanvasScale]);
-
-  const hslToRgb = (
-    h: number,
-    s: number,
-    l: number
-  ): [number, number, number] => {
-    let r, g, b;
-
-    if (s === 0) {
-      r = g = b = l;
-    } else {
-      const hue2rgb = (p: number, q: number, t: number) => {
-        if (t < 0) t += 1;
-        if (t > 1) t -= 1;
-        if (t < 1 / 6) return p + (q - p) * 6 * t;
-        if (t < 1 / 2) return q;
-        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-        return p;
-      };
-
-      const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-      const p = 2 * l - q;
-      r = hue2rgb(p, q, h + 1 / 3);
-      g = hue2rgb(p, q, h);
-      b = hue2rgb(p, q, h - 1 / 3);
-    }
-
-    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
-  };
 
   const handleCanvasClick = useCallback(
     (e: React.MouseEvent<HTMLCanvasElement>) => {
@@ -681,7 +714,7 @@ export default function BrainSliceViewer({
         }
 
         if (onRegionClick && aalValue > 0) {
-          onRegionClick(aalValue, [voxelX, voxelY, voxelZ]);
+          onRegionClick(aalValue);
         }
 
         if (onCrosshairPositionChange) {
@@ -695,8 +728,6 @@ export default function BrainSliceViewer({
             `${sliceType}断面でクリック: クロスヘア位置を更新 [${voxelX}, ${voxelY}, ${voxelZ}]`
           );
         }
-
-        setCursorPosition([voxelX, voxelY, voxelZ]);
       }
     },
     [
@@ -790,10 +821,6 @@ export default function BrainSliceViewer({
         voxelZ >= 0 &&
         voxelZ < dimensions[2]
       ) {
-        const mniX = Math.round((voxelX - 91) * 2.0);
-        const mniY = Math.round((voxelY - 109) * 2.0);
-        const mniZ = Math.round((voxelZ - 91) * 2.0);
-
         let aalValue = 0;
         if (aalVolume) {
           const [aalX, aalY, aalZ] = transformMniToAalCoordinates(
@@ -824,13 +851,9 @@ export default function BrainSliceViewer({
 
         if (onRegionHover) {
           onRegionHover(aalValue > 0 ? aalValue : null, {
-            voxel: [voxelX, voxelY, voxelZ],
-            mni: [mniX, mniY, mniZ],
             sliceType: sliceType,
           });
         }
-
-        setCursorPosition([voxelX, voxelY, voxelZ]);
       }
     },
     [
@@ -839,15 +862,14 @@ export default function BrainSliceViewer({
       aalVolume,
       currentSliceIndex,
       dimensions,
+      getJapaneseNameWithPrefix,
       onRegionHover,
       sliceType,
       transformMniToAalCoordinates,
-      getJapaneseNameWithPrefix,
     ]
   );
 
   const handleMouseLeave = () => {
-    setCursorPosition([0, 0, 0]);
     setTooltipPosition(null);
     setTooltipContent("");
   };
@@ -855,7 +877,7 @@ export default function BrainSliceViewer({
   const handleWheel = useCallback(
     (e: React.WheelEvent<HTMLCanvasElement>) => {
       e.preventDefault();
-      if (!currentSliceIndex) return;
+      e.stopPropagation();
 
       const delta = e.deltaY > 0 ? 1 : -1;
       const maxIndex = getMaxSliceIndex();
@@ -863,16 +885,19 @@ export default function BrainSliceViewer({
         Math.max(0, currentSliceIndex + delta),
         maxIndex
       );
-      setCurrentSliceIndex(newIndex);
 
-      if (onCrosshairPositionChange && crosshairPosition) {
-        const newPosition: [number, number, number] = [
-          crosshairPosition[0],
-          crosshairPosition[1],
-          crosshairPosition[2],
-        ];
-        newPosition[getSliceAxis()] = newIndex;
-        onCrosshairPositionChange(newPosition);
+      if (newIndex !== currentSliceIndex) {
+        setCurrentSliceIndex(newIndex);
+
+        if (onCrosshairPositionChange && crosshairPosition) {
+          const newPosition: [number, number, number] = [
+            crosshairPosition[0],
+            crosshairPosition[1],
+            crosshairPosition[2],
+          ];
+          newPosition[getSliceAxis()] = newIndex;
+          onCrosshairPositionChange(newPosition);
+        }
       }
     },
     [
@@ -880,6 +905,7 @@ export default function BrainSliceViewer({
       getSliceAxis,
       onCrosshairPositionChange,
       crosshairPosition,
+      getMaxSliceIndex,
     ]
   );
 
@@ -1032,7 +1058,7 @@ export default function BrainSliceViewer({
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-5/6 flex flex-col justify-between"
+      className="relative w-full h-full flex flex-col justify-between"
       onWheel={(e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -1069,27 +1095,30 @@ export default function BrainSliceViewer({
                 0,
                 Math.min(getMaxSliceIndex(), currentSliceIndex + delta)
               );
-              setCurrentSliceIndex(newIndex);
 
-              if (onCrosshairPositionChange && crosshairPosition) {
-                let newPosition: [number, number, number] = [
-                  ...crosshairPosition,
-                ];
+              if (newIndex !== currentSliceIndex) {
+                setCurrentSliceIndex(newIndex);
 
-                switch (sliceType) {
-                  case "sagittal":
-                    newPosition[0] = newIndex;
-                    break;
-                  case "coronal":
-                    newPosition[1] = newIndex;
-                    break;
-                  case "axial":
-                  default:
-                    newPosition[2] = newIndex;
-                    break;
+                if (onCrosshairPositionChange && crosshairPosition) {
+                  let newPosition: [number, number, number] = [
+                    ...crosshairPosition,
+                  ];
+
+                  switch (sliceType) {
+                    case "sagittal":
+                      newPosition[0] = newIndex;
+                      break;
+                    case "coronal":
+                      newPosition[1] = newIndex;
+                      break;
+                    case "axial":
+                    default:
+                      newPosition[2] = newIndex;
+                      break;
+                  }
+
+                  onCrosshairPositionChange(newPosition);
                 }
-
-                onCrosshairPositionChange(newPosition);
               }
             }}
           >
@@ -1118,7 +1147,7 @@ export default function BrainSliceViewer({
         )}
       </div>
 
-      <div className="px-1 mb-1">
+      <div className="px-1 mb-1 mt-1">
         <div className="flex items-center justify-between mb-0.5">
           <span className="text-sm font-medium text-blue-600">
             {currentSliceIndex} / {getMaxSliceIndex()}
