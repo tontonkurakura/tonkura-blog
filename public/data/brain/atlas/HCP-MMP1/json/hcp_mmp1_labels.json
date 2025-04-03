@@ -1,0 +1,2522 @@
+{
+  "1": {
+    "id": 1,
+    "hemisphere": "L",
+    "english_name": "Primary Visual Cortex",
+    "network": "visual",
+    "label_id": "V1"
+  },
+  "2": {
+    "id": 2,
+    "hemisphere": "L",
+    "english_name": "Medial Superior Temporal Area",
+    "network": "visual",
+    "label_id": "MST"
+  },
+  "3": {
+    "id": 3,
+    "hemisphere": "L",
+    "english_name": "Sixth Visual Area",
+    "network": "visual",
+    "label_id": "V6"
+  },
+  "4": {
+    "id": 4,
+    "hemisphere": "L",
+    "english_name": "Second Visual Area",
+    "network": "visual",
+    "label_id": "V2"
+  },
+  "5": {
+    "id": 5,
+    "hemisphere": "L",
+    "english_name": "Third Visual Area",
+    "network": "visual",
+    "label_id": "V3"
+  },
+  "6": {
+    "id": 6,
+    "hemisphere": "L",
+    "english_name": "Fourth Visual Area",
+    "network": "visual",
+    "label_id": "V4"
+  },
+  "7": {
+    "id": 7,
+    "hemisphere": "L",
+    "english_name": "Eighth Visual Area",
+    "network": "visual",
+    "label_id": "V8"
+  },
+  "8": {
+    "id": 8,
+    "hemisphere": "L",
+    "english_name": "Primary Motor Cortex",
+    "network": "somatosensory",
+    "label_id": "4"
+  },
+  "9": {
+    "id": 9,
+    "hemisphere": "L",
+    "english_name": "Primary Sensory Cortex",
+    "network": "somatosensory",
+    "label_id": "3b"
+  },
+  "10": {
+    "id": 10,
+    "hemisphere": "L",
+    "english_name": "Frontal Eye Fields",
+    "network": "dorsal attention",
+    "label_id": "FEF"
+  },
+  "11": {
+    "id": 11,
+    "hemisphere": "L",
+    "english_name": "Premotor Eye Field",
+    "network": "dorsal attention",
+    "label_id": "PEF"
+  },
+  "12": {
+    "id": 12,
+    "hemisphere": "L",
+    "english_name": "Area 55b",
+    "network": "ventral attention",
+    "label_id": "55b"
+  },
+  "13": {
+    "id": 13,
+    "hemisphere": "L",
+    "english_name": "Area V3A",
+    "network": "visual",
+    "label_id": "V3A"
+  },
+  "14": {
+    "id": 14,
+    "hemisphere": "L",
+    "english_name": "RetroSplenial Complex",
+    "network": "default mode",
+    "label_id": "RSC"
+  },
+  "15": {
+    "id": 15,
+    "hemisphere": "L",
+    "english_name": "Parieto-Occipital Sulcus Area 2",
+    "network": "frontoparietal",
+    "label_id": "POS2"
+  },
+  "16": {
+    "id": 16,
+    "hemisphere": "L",
+    "english_name": "Seventh Visual Area",
+    "network": "visual",
+    "label_id": "V7"
+  },
+  "17": {
+    "id": 17,
+    "hemisphere": "L",
+    "english_name": "IntraParietal Sulcus Area 1",
+    "network": "dorsal attention",
+    "label_id": "IPS1"
+  },
+  "18": {
+    "id": 18,
+    "hemisphere": "L",
+    "english_name": "Fusiform Face Complex",
+    "network": "visual",
+    "label_id": "FFC"
+  },
+  "19": {
+    "id": 19,
+    "hemisphere": "L",
+    "english_name": "Area V3B",
+    "network": "visual",
+    "label_id": "V3B"
+  },
+  "20": {
+    "id": 20,
+    "hemisphere": "L",
+    "english_name": "Area Lateral Occipital 1",
+    "network": "visual",
+    "label_id": "LO1"
+  },
+  "21": {
+    "id": 21,
+    "hemisphere": "L",
+    "english_name": "Area Lateral Occipital 2",
+    "network": "visual",
+    "label_id": "LO2"
+  },
+  "22": {
+    "id": 22,
+    "hemisphere": "L",
+    "english_name": "Posterior InferoTemporal complex",
+    "network": "visual",
+    "label_id": "PIT"
+  },
+  "23": {
+    "id": 23,
+    "hemisphere": "L",
+    "english_name": "Middle Temporal Area",
+    "network": "visual",
+    "label_id": "MT"
+  },
+  "24": {
+    "id": 24,
+    "hemisphere": "L",
+    "english_name": "Primary Auditory Cortex",
+    "network": "somatosensory",
+    "label_id": "A1"
+  },
+  "25": {
+    "id": 25,
+    "hemisphere": "L",
+    "english_name": "PeriSylvian Language Area",
+    "network": "ventral attention",
+    "label_id": "PSL"
+  },
+  "26": {
+    "id": 26,
+    "hemisphere": "L",
+    "english_name": "Superior Frontal Language Area",
+    "network": "default mode",
+    "label_id": "SFL"
+  },
+  "27": {
+    "id": 27,
+    "hemisphere": "L",
+    "english_name": "PreCuneus Visual Area",
+    "network": "dorsal attention",
+    "label_id": "PCV"
+  },
+  "28": {
+    "id": 28,
+    "hemisphere": "L",
+    "english_name": "Superior Temporal Visual Area",
+    "network": "ventral attention",
+    "label_id": "STV"
+  },
+  "29": {
+    "id": 29,
+    "hemisphere": "L",
+    "english_name": "Medial Area 7P",
+    "network": "frontoparietal",
+    "label_id": "7Pm"
+  },
+  "30": {
+    "id": 30,
+    "hemisphere": "L",
+    "english_name": "Area 7m",
+    "network": "default mode",
+    "label_id": "7m"
+  },
+  "31": {
+    "id": 31,
+    "hemisphere": "L",
+    "english_name": "Parieto-Occipital Sulcus Area 1",
+    "network": "default mode",
+    "label_id": "POS1"
+  },
+  "32": {
+    "id": 32,
+    "hemisphere": "L",
+    "english_name": "Area 23d",
+    "network": "default mode",
+    "label_id": "23d"
+  },
+  "33": {
+    "id": 33,
+    "hemisphere": "L",
+    "english_name": "Area ventral 23 a+b",
+    "network": "default mode",
+    "label_id": "v23ab"
+  },
+  "34": {
+    "id": 34,
+    "hemisphere": "L",
+    "english_name": "Area dorsal 23 a+b",
+    "network": "default mode",
+    "label_id": "d23ab"
+  },
+  "35": {
+    "id": 35,
+    "hemisphere": "L",
+    "english_name": "Area 31p ventral",
+    "network": "default mode",
+    "label_id": "31pv"
+  },
+  "36": {
+    "id": 36,
+    "hemisphere": "L",
+    "english_name": "Area 5m",
+    "network": "somatosensory",
+    "label_id": "5m"
+  },
+  "37": {
+    "id": 37,
+    "hemisphere": "L",
+    "english_name": "Area 5m ventral",
+    "network": "ventral attention",
+    "label_id": "5mv"
+  },
+  "38": {
+    "id": 38,
+    "hemisphere": "L",
+    "english_name": "Area 23c",
+    "network": "ventral attention",
+    "label_id": "23c"
+  },
+  "39": {
+    "id": 39,
+    "hemisphere": "L",
+    "english_name": "Area 5L",
+    "network": "somatosensory",
+    "label_id": "5L"
+  },
+  "40": {
+    "id": 40,
+    "hemisphere": "L",
+    "english_name": "Dorsal Area 24d",
+    "network": "somatosensory",
+    "label_id": "24dd"
+  },
+  "41": {
+    "id": 41,
+    "hemisphere": "L",
+    "english_name": "Ventral Area 24d",
+    "network": "somatosensory",
+    "label_id": "24dv"
+  },
+  "42": {
+    "id": 42,
+    "hemisphere": "L",
+    "english_name": "Lateral Area 7A",
+    "network": "dorsal attention",
+    "label_id": "7AL"
+  },
+  "43": {
+    "id": 43,
+    "hemisphere": "L",
+    "english_name": "Supplementary and Cingulate Eye Field",
+    "network": "ventral attention",
+    "label_id": "SCEF"
+  },
+  "44": {
+    "id": 44,
+    "hemisphere": "L",
+    "english_name": "Area 6m anterior",
+    "network": "ventral attention",
+    "label_id": "6ma"
+  },
+  "45": {
+    "id": 45,
+    "hemisphere": "L",
+    "english_name": "Medial Area 7A",
+    "network": "dorsal attention",
+    "label_id": "7Am"
+  },
+  "46": {
+    "id": 46,
+    "hemisphere": "L",
+    "english_name": "Lateral Area 7P",
+    "network": "dorsal attention",
+    "label_id": "7PL"
+  },
+  "47": {
+    "id": 47,
+    "hemisphere": "L",
+    "english_name": "Area 7PC",
+    "network": "dorsal attention",
+    "label_id": "7PC"
+  },
+  "48": {
+    "id": 48,
+    "hemisphere": "L",
+    "english_name": "Area Lateral IntraParietal ventral",
+    "network": "dorsal attention",
+    "label_id": "LIPv"
+  },
+  "49": {
+    "id": 49,
+    "hemisphere": "L",
+    "english_name": "Ventral IntraParietal Complex",
+    "network": "dorsal attention",
+    "label_id": "VIP"
+  },
+  "50": {
+    "id": 50,
+    "hemisphere": "L",
+    "english_name": "Medial IntraParietal Area",
+    "network": "dorsal attention",
+    "label_id": "MIP"
+  },
+  "51": {
+    "id": 51,
+    "hemisphere": "L",
+    "english_name": "Area 1",
+    "network": "somatosensory",
+    "label_id": "1"
+  },
+  "52": {
+    "id": 52,
+    "hemisphere": "L",
+    "english_name": "Area 2",
+    "network": "somatosensory",
+    "label_id": "2"
+  },
+  "53": {
+    "id": 53,
+    "hemisphere": "L",
+    "english_name": "Area 3a",
+    "network": "somatosensory",
+    "label_id": "3a"
+  },
+  "54": {
+    "id": 54,
+    "hemisphere": "L",
+    "english_name": "Dorsal area 6",
+    "network": "somatosensory",
+    "label_id": "6d"
+  },
+  "55": {
+    "id": 55,
+    "hemisphere": "L",
+    "english_name": "Area 6mp",
+    "network": "somatosensory",
+    "label_id": "6mp"
+  },
+  "56": {
+    "id": 56,
+    "hemisphere": "L",
+    "english_name": "Ventral Area 6",
+    "network": "somatosensory",
+    "label_id": "6v"
+  },
+  "57": {
+    "id": 57,
+    "hemisphere": "L",
+    "english_name": "Area Posterior 24 prime",
+    "network": "ventral attention",
+    "label_id": "p24pr"
+  },
+  "58": {
+    "id": 58,
+    "hemisphere": "L",
+    "english_name": "Area 33 prime",
+    "network": "ventral attention",
+    "label_id": "33pr"
+  },
+  "59": {
+    "id": 59,
+    "hemisphere": "L",
+    "english_name": "Anterior 24 prime",
+    "network": "ventral attention",
+    "label_id": "a24pr"
+  },
+  "60": {
+    "id": 60,
+    "hemisphere": "L",
+    "english_name": "Area p32 prime",
+    "network": "ventral attention",
+    "label_id": "p32pr"
+  },
+  "61": {
+    "id": 61,
+    "hemisphere": "L",
+    "english_name": "Area a24",
+    "network": "default mode",
+    "label_id": "a24"
+  },
+  "62": {
+    "id": 62,
+    "hemisphere": "L",
+    "english_name": "Area dorsal 32",
+    "network": "default mode",
+    "label_id": "d32"
+  },
+  "63": {
+    "id": 63,
+    "hemisphere": "L",
+    "english_name": "Area 8BM",
+    "network": "frontoparietal",
+    "label_id": "8BM"
+  },
+  "64": {
+    "id": 64,
+    "hemisphere": "L",
+    "english_name": "Area p32",
+    "network": "default mode",
+    "label_id": "p32"
+  },
+  "65": {
+    "id": 65,
+    "hemisphere": "L",
+    "english_name": "Area 10r",
+    "network": "default mode",
+    "label_id": "10r"
+  },
+  "66": {
+    "id": 66,
+    "hemisphere": "L",
+    "english_name": "Area 47m",
+    "network": "default mode",
+    "label_id": "47m"
+  },
+  "67": {
+    "id": 67,
+    "hemisphere": "L",
+    "english_name": "Area 8Av",
+    "network": "frontoparietal",
+    "label_id": "8Av"
+  },
+  "68": {
+    "id": 68,
+    "hemisphere": "L",
+    "english_name": "Area 8Ad",
+    "network": "default mode",
+    "label_id": "8Ad"
+  },
+  "69": {
+    "id": 69,
+    "hemisphere": "L",
+    "english_name": "Area 9 Middle",
+    "network": "default mode",
+    "label_id": "9m"
+  },
+  "70": {
+    "id": 70,
+    "hemisphere": "L",
+    "english_name": "Area 8B Lateral",
+    "network": "default mode",
+    "label_id": "8BL"
+  },
+  "71": {
+    "id": 71,
+    "hemisphere": "L",
+    "english_name": "Area 9 Posterior",
+    "network": "default mode",
+    "label_id": "9p"
+  },
+  "72": {
+    "id": 72,
+    "hemisphere": "L",
+    "english_name": "Area 10d",
+    "network": "default mode",
+    "label_id": "10d"
+  },
+  "73": {
+    "id": 73,
+    "hemisphere": "L",
+    "english_name": "Area 8C",
+    "network": "frontoparietal",
+    "label_id": "8C"
+  },
+  "74": {
+    "id": 74,
+    "hemisphere": "L",
+    "english_name": "Area 44",
+    "network": "frontoparietal",
+    "label_id": "44"
+  },
+  "75": {
+    "id": 75,
+    "hemisphere": "L",
+    "english_name": "Area 45",
+    "network": "default mode",
+    "label_id": "45"
+  },
+  "76": {
+    "id": 76,
+    "hemisphere": "L",
+    "english_name": "Area 47l (47 lateral)",
+    "network": "default mode",
+    "label_id": "47l"
+  },
+  "77": {
+    "id": 77,
+    "hemisphere": "L",
+    "english_name": "Area anterior 47r",
+    "network": "frontoparietal",
+    "label_id": "a47r"
+  },
+  "78": {
+    "id": 78,
+    "hemisphere": "L",
+    "english_name": "Rostral Area 6",
+    "network": "ventral attention",
+    "label_id": "6r"
+  },
+  "79": {
+    "id": 79,
+    "hemisphere": "L",
+    "english_name": "Area IFJa",
+    "network": "frontoparietal",
+    "label_id": "IFJa"
+  },
+  "80": {
+    "id": 80,
+    "hemisphere": "L",
+    "english_name": "Area IFJp",
+    "network": "dorsal attention",
+    "label_id": "IFJp"
+  },
+  "81": {
+    "id": 81,
+    "hemisphere": "L",
+    "english_name": "Area IFSp",
+    "network": "frontoparietal",
+    "label_id": "IFSp"
+  },
+  "82": {
+    "id": 82,
+    "hemisphere": "L",
+    "english_name": "Area IFSa",
+    "network": "frontoparietal",
+    "label_id": "IFSa"
+  },
+  "83": {
+    "id": 83,
+    "hemisphere": "L",
+    "english_name": "Area posterior  9-46v",
+    "network": "frontoparietal",
+    "label_id": "p9-46v"
+  },
+  "84": {
+    "id": 84,
+    "hemisphere": "L",
+    "english_name": "Area 46",
+    "network": "frontoparietal",
+    "label_id": "46"
+  },
+  "85": {
+    "id": 85,
+    "hemisphere": "L",
+    "english_name": "Area anterior  9-46v",
+    "network": "frontoparietal",
+    "label_id": "a9-46v"
+  },
+  "86": {
+    "id": 86,
+    "hemisphere": "L",
+    "english_name": "Area 9-46d",
+    "network": "frontoparietal",
+    "label_id": "9-46d"
+  },
+  "87": {
+    "id": 87,
+    "hemisphere": "L",
+    "english_name": "Area 9 anterior",
+    "network": "default mode",
+    "label_id": "9a"
+  },
+  "88": {
+    "id": 88,
+    "hemisphere": "L",
+    "english_name": "Area 10v",
+    "network": "limbic",
+    "label_id": "10v"
+  },
+  "89": {
+    "id": 89,
+    "hemisphere": "L",
+    "english_name": "Area anterior 10p",
+    "network": "frontoparietal",
+    "label_id": "a10p"
+  },
+  "90": {
+    "id": 90,
+    "hemisphere": "L",
+    "english_name": "Polar 10p",
+    "network": "limbic",
+    "label_id": "10pp"
+  },
+  "91": {
+    "id": 91,
+    "hemisphere": "L",
+    "english_name": "Area 11l",
+    "network": "frontoparietal",
+    "label_id": "11l"
+  },
+  "92": {
+    "id": 92,
+    "hemisphere": "L",
+    "english_name": "Area 13l",
+    "network": "limbic",
+    "label_id": "13l"
+  },
+  "93": {
+    "id": 93,
+    "hemisphere": "L",
+    "english_name": "Orbital Frontal Complex",
+    "network": "limbic",
+    "label_id": "OFC"
+  },
+  "94": {
+    "id": 94,
+    "hemisphere": "L",
+    "english_name": "Area 47s",
+    "network": "default mode",
+    "label_id": "47s"
+  },
+  "95": {
+    "id": 95,
+    "hemisphere": "L",
+    "english_name": "Area Lateral IntraParietal dorsal",
+    "network": "dorsal attention",
+    "label_id": "LIPd"
+  },
+  "96": {
+    "id": 96,
+    "hemisphere": "L",
+    "english_name": "Area 6 anterior",
+    "network": "dorsal attention",
+    "label_id": "6a"
+  },
+  "97": {
+    "id": 97,
+    "hemisphere": "L",
+    "english_name": "Inferior 6-8 Transitional Area",
+    "network": "frontoparietal",
+    "label_id": "i6-8"
+  },
+  "98": {
+    "id": 98,
+    "hemisphere": "L",
+    "english_name": "Superior 6-8 Transitional Area",
+    "network": "frontoparietal",
+    "label_id": "s6-8"
+  },
+  "99": {
+    "id": 99,
+    "hemisphere": "L",
+    "english_name": "Area 43",
+    "network": "somatosensory",
+    "label_id": "43"
+  },
+  "100": {
+    "id": 100,
+    "hemisphere": "L",
+    "english_name": "Area OP4/PV",
+    "network": "somatosensory",
+    "label_id": "OP4"
+  },
+  "101": {
+    "id": 101,
+    "hemisphere": "L",
+    "english_name": "Area OP1/SII",
+    "network": "somatosensory",
+    "label_id": "OP1"
+  },
+  "102": {
+    "id": 102,
+    "hemisphere": "L",
+    "english_name": "Area OP2-3/VS",
+    "network": "somatosensory",
+    "label_id": "OP2-3"
+  },
+  "103": {
+    "id": 103,
+    "hemisphere": "L",
+    "english_name": "Area 52",
+    "network": "somatosensory",
+    "label_id": "52"
+  },
+  "104": {
+    "id": 104,
+    "hemisphere": "L",
+    "english_name": "RetroInsular Cortex",
+    "network": "somatosensory",
+    "label_id": "RI"
+  },
+  "105": {
+    "id": 105,
+    "hemisphere": "L",
+    "english_name": "Area PFcm",
+    "network": "somatosensory",
+    "label_id": "PFcm"
+  },
+  "106": {
+    "id": 106,
+    "hemisphere": "L",
+    "english_name": "Posterior Insular Area 2",
+    "network": "ventral attention",
+    "label_id": "PoI2"
+  },
+  "107": {
+    "id": 107,
+    "hemisphere": "L",
+    "english_name": "Area TA2",
+    "network": "somatosensory",
+    "label_id": "TA2"
+  },
+  "108": {
+    "id": 108,
+    "hemisphere": "L",
+    "english_name": "Frontal OPercular Area 4",
+    "network": "ventral attention",
+    "label_id": "FOP4"
+  },
+  "109": {
+    "id": 109,
+    "hemisphere": "L",
+    "english_name": "Middle Insular Area",
+    "network": "ventral attention",
+    "label_id": "MI"
+  },
+  "110": {
+    "id": 110,
+    "hemisphere": "L",
+    "english_name": "Pirform Cortex",
+    "network": "ventral attention",
+    "label_id": "Pir"
+  },
+  "111": {
+    "id": 111,
+    "hemisphere": "L",
+    "english_name": "Anterior Ventral Insular Area",
+    "network": "frontoparietal",
+    "label_id": "AVI"
+  },
+  "112": {
+    "id": 112,
+    "hemisphere": "L",
+    "english_name": "Anterior Agranular Insula Complex",
+    "network": "ventral attention",
+    "label_id": "AAIC"
+  },
+  "113": {
+    "id": 113,
+    "hemisphere": "L",
+    "english_name": "Frontal OPercular Area 1",
+    "network": "ventral attention",
+    "label_id": "FOP1"
+  },
+  "114": {
+    "id": 114,
+    "hemisphere": "L",
+    "english_name": "Frontal OPercular Area 3",
+    "network": "ventral attention",
+    "label_id": "FOP3"
+  },
+  "115": {
+    "id": 115,
+    "hemisphere": "L",
+    "english_name": "Frontal OPercular Area 2",
+    "network": "somatosensory",
+    "label_id": "FOP2"
+  },
+  "116": {
+    "id": 116,
+    "hemisphere": "L",
+    "english_name": "Area PFt",
+    "network": "dorsal attention",
+    "label_id": "PFt"
+  },
+  "117": {
+    "id": 117,
+    "hemisphere": "L",
+    "english_name": "Anterior IntraParietal Area",
+    "network": "dorsal attention",
+    "label_id": "AIP"
+  },
+  "118": {
+    "id": 118,
+    "hemisphere": "L",
+    "english_name": "Entorhinal Cortex",
+    "network": "limbic",
+    "label_id": "EC"
+  },
+  "119": {
+    "id": 119,
+    "hemisphere": "L",
+    "english_name": "PreSubiculum",
+    "network": "visual",
+    "label_id": "PreS"
+  },
+  "120": {
+    "id": 120,
+    "hemisphere": "L",
+    "english_name": "Hippocampus",
+    "network": "limbic",
+    "label_id": "H"
+  },
+  "121": {
+    "id": 121,
+    "hemisphere": "L",
+    "english_name": "ProStriate Area",
+    "network": "visual",
+    "label_id": "ProS"
+  },
+  "122": {
+    "id": 122,
+    "hemisphere": "L",
+    "english_name": "Perirhinal Ectorhinal Cortex",
+    "network": "limbic",
+    "label_id": "PeEc"
+  },
+  "123": {
+    "id": 123,
+    "hemisphere": "L",
+    "english_name": "Area STGa",
+    "network": "default mode",
+    "label_id": "STGa"
+  },
+  "124": {
+    "id": 124,
+    "hemisphere": "L",
+    "english_name": "ParaBelt Complex",
+    "network": "somatosensory",
+    "label_id": "PBelt"
+  },
+  "125": {
+    "id": 125,
+    "hemisphere": "L",
+    "english_name": "Auditory 5 Complex",
+    "network": "somatosensory",
+    "label_id": "A5"
+  },
+  "126": {
+    "id": 126,
+    "hemisphere": "L",
+    "english_name": "ParaHippocampal Area 1",
+    "network": "visual",
+    "label_id": "PHA1"
+  },
+  "127": {
+    "id": 127,
+    "hemisphere": "L",
+    "english_name": "ParaHippocampal Area 3",
+    "network": "visual",
+    "label_id": "PHA3"
+  },
+  "128": {
+    "id": 128,
+    "hemisphere": "L",
+    "english_name": "Area STSd anterior",
+    "network": "default mode",
+    "label_id": "STSda"
+  },
+  "129": {
+    "id": 129,
+    "hemisphere": "L",
+    "english_name": "Area STSd posterior",
+    "network": "default mode",
+    "label_id": "STSdp"
+  },
+  "130": {
+    "id": 130,
+    "hemisphere": "L",
+    "english_name": "Area STSv posterior",
+    "network": "default mode",
+    "label_id": "STSvp"
+  },
+  "131": {
+    "id": 131,
+    "hemisphere": "L",
+    "english_name": "Area TG dorsal",
+    "network": "limbic",
+    "label_id": "TGd"
+  },
+  "132": {
+    "id": 132,
+    "hemisphere": "L",
+    "english_name": "Area TE1 anterior",
+    "network": "default mode",
+    "label_id": "TE1a"
+  },
+  "133": {
+    "id": 133,
+    "hemisphere": "L",
+    "english_name": "Area TE1 posterior",
+    "network": "frontoparietal",
+    "label_id": "TE1p"
+  },
+  "134": {
+    "id": 134,
+    "hemisphere": "L",
+    "english_name": "Area TE2 anterior",
+    "network": "limbic",
+    "label_id": "TE2a"
+  },
+  "135": {
+    "id": 135,
+    "hemisphere": "L",
+    "english_name": "Area TF",
+    "network": "limbic",
+    "label_id": "TF"
+  },
+  "136": {
+    "id": 136,
+    "hemisphere": "L",
+    "english_name": "Area TE2 posterior",
+    "network": "dorsal attention",
+    "label_id": "TE2p"
+  },
+  "137": {
+    "id": 137,
+    "hemisphere": "L",
+    "english_name": "Area PHT",
+    "network": "dorsal attention",
+    "label_id": "PHT"
+  },
+  "138": {
+    "id": 138,
+    "hemisphere": "L",
+    "english_name": "Area PH",
+    "network": "dorsal attention",
+    "label_id": "PH"
+  },
+  "139": {
+    "id": 139,
+    "hemisphere": "L",
+    "english_name": "Area TemporoParietoOcci pital Junction 1",
+    "network": "ventral attention",
+    "label_id": "TPOJ1"
+  },
+  "140": {
+    "id": 140,
+    "hemisphere": "L",
+    "english_name": "Area TemporoParietoOcci pital Junction 2",
+    "network": "dorsal attention",
+    "label_id": "TPOJ2"
+  },
+  "141": {
+    "id": 141,
+    "hemisphere": "L",
+    "english_name": "Area TemporoParietoOcci pital Junction 3",
+    "network": "dorsal attention",
+    "label_id": "TPOJ3"
+  },
+  "142": {
+    "id": 142,
+    "hemisphere": "L",
+    "english_name": "Dorsal Transitional Visual Area",
+    "network": "visual",
+    "label_id": "DVT"
+  },
+  "143": {
+    "id": 143,
+    "hemisphere": "L",
+    "english_name": "Area PGp",
+    "network": "dorsal attention",
+    "label_id": "PGp"
+  },
+  "144": {
+    "id": 144,
+    "hemisphere": "L",
+    "english_name": "Area IntraParietal 2",
+    "network": "frontoparietal",
+    "label_id": "IP2"
+  },
+  "145": {
+    "id": 145,
+    "hemisphere": "L",
+    "english_name": "Area IntraParietal 1",
+    "network": "frontoparietal",
+    "label_id": "IP1"
+  },
+  "146": {
+    "id": 146,
+    "hemisphere": "L",
+    "english_name": "Area IntraParietal 0",
+    "network": "dorsal attention",
+    "label_id": "IP0"
+  },
+  "147": {
+    "id": 147,
+    "hemisphere": "L",
+    "english_name": "Area PF opercular",
+    "network": "ventral attention",
+    "label_id": "PFop"
+  },
+  "148": {
+    "id": 148,
+    "hemisphere": "L",
+    "english_name": "Area PF Complex",
+    "network": "ventral attention",
+    "label_id": "PF"
+  },
+  "149": {
+    "id": 149,
+    "hemisphere": "L",
+    "english_name": "Area PFm Complex",
+    "network": "frontoparietal",
+    "label_id": "PFm"
+  },
+  "150": {
+    "id": 150,
+    "hemisphere": "L",
+    "english_name": "Area PGi",
+    "network": "default mode",
+    "label_id": "PGi"
+  },
+  "151": {
+    "id": 151,
+    "hemisphere": "L",
+    "english_name": "Area PGs",
+    "network": "default mode",
+    "label_id": "PGs"
+  },
+  "152": {
+    "id": 152,
+    "hemisphere": "L",
+    "english_name": "Area V6A",
+    "network": "visual",
+    "label_id": "V6A"
+  },
+  "153": {
+    "id": 153,
+    "hemisphere": "L",
+    "english_name": "VentroMedial Visual Area 1",
+    "network": "visual",
+    "label_id": "VMV1"
+  },
+  "154": {
+    "id": 154,
+    "hemisphere": "L",
+    "english_name": "VentroMedial Visual Area 3",
+    "network": "visual",
+    "label_id": "VMV3"
+  },
+  "155": {
+    "id": 155,
+    "hemisphere": "L",
+    "english_name": "ParaHippocampal Area 2",
+    "network": "visual",
+    "label_id": "PHA2"
+  },
+  "156": {
+    "id": 156,
+    "hemisphere": "L",
+    "english_name": "Area V4t",
+    "network": "visual",
+    "label_id": "V4t"
+  },
+  "157": {
+    "id": 157,
+    "hemisphere": "L",
+    "english_name": "Area FST",
+    "network": "dorsal attention",
+    "label_id": "FST"
+  },
+  "158": {
+    "id": 158,
+    "hemisphere": "L",
+    "english_name": "Area V3CD",
+    "network": "visual",
+    "label_id": "V3CD"
+  },
+  "159": {
+    "id": 159,
+    "hemisphere": "L",
+    "english_name": "Area Lateral Occipital 3",
+    "network": "visual",
+    "label_id": "LO3"
+  },
+  "160": {
+    "id": 160,
+    "hemisphere": "L",
+    "english_name": "VentroMedial Visual Area 2",
+    "network": "visual",
+    "label_id": "VMV2"
+  },
+  "161": {
+    "id": 161,
+    "hemisphere": "L",
+    "english_name": "Area 31pd",
+    "network": "default mode",
+    "label_id": "31pd"
+  },
+  "162": {
+    "id": 162,
+    "hemisphere": "L",
+    "english_name": "Area 31a",
+    "network": "frontoparietal",
+    "label_id": "31a"
+  },
+  "163": {
+    "id": 163,
+    "hemisphere": "L",
+    "english_name": "Ventral Visual Complex",
+    "network": "visual",
+    "label_id": "VVC"
+  },
+  "164": {
+    "id": 164,
+    "hemisphere": "L",
+    "english_name": "Area 25",
+    "network": "limbic",
+    "label_id": "25"
+  },
+  "165": {
+    "id": 165,
+    "hemisphere": "L",
+    "english_name": "Area s32",
+    "network": "default mode",
+    "label_id": "s32"
+  },
+  "166": {
+    "id": 166,
+    "hemisphere": "L",
+    "english_name": "posterior OFC Complex",
+    "network": "limbic",
+    "label_id": "pOFC"
+  },
+  "167": {
+    "id": 167,
+    "hemisphere": "L",
+    "english_name": "Area Posterior Insular 1",
+    "network": "ventral attention",
+    "label_id": "PoI1"
+  },
+  "168": {
+    "id": 168,
+    "hemisphere": "L",
+    "english_name": "Insular Granular Complex",
+    "network": "somatosensory",
+    "label_id": "Ig"
+  },
+  "169": {
+    "id": 169,
+    "hemisphere": "L",
+    "english_name": "Area Frontal Opercular 5",
+    "network": "ventral attention",
+    "label_id": "FOP5"
+  },
+  "170": {
+    "id": 170,
+    "hemisphere": "L",
+    "english_name": "Area posterior 10p",
+    "network": "frontoparietal",
+    "label_id": "p10p"
+  },
+  "171": {
+    "id": 171,
+    "hemisphere": "L",
+    "english_name": "Area posterior 47r",
+    "network": "frontoparietal",
+    "label_id": "p47r"
+  },
+  "172": {
+    "id": 172,
+    "hemisphere": "L",
+    "english_name": "Area TG Ventral",
+    "network": "limbic",
+    "label_id": "TGv"
+  },
+  "173": {
+    "id": 173,
+    "hemisphere": "L",
+    "english_name": "Medial Belt Complex",
+    "network": "somatosensory",
+    "label_id": "MBelt"
+  },
+  "174": {
+    "id": 174,
+    "hemisphere": "L",
+    "english_name": "Lateral Belt Complex",
+    "network": "somatosensory",
+    "label_id": "LBelt"
+  },
+  "175": {
+    "id": 175,
+    "hemisphere": "L",
+    "english_name": "Auditory 4 Complex",
+    "network": "somatosensory",
+    "label_id": "A4"
+  },
+  "176": {
+    "id": 176,
+    "hemisphere": "L",
+    "english_name": "Area STSv anterior",
+    "network": "default mode",
+    "label_id": "STSva"
+  },
+  "177": {
+    "id": 177,
+    "hemisphere": "L",
+    "english_name": "Area TE1 Middle",
+    "network": "default mode",
+    "label_id": "TE1m"
+  },
+  "178": {
+    "id": 178,
+    "hemisphere": "L",
+    "english_name": "Para-Insular Area",
+    "network": "ventral attention",
+    "label_id": "PI"
+  },
+  "179": {
+    "id": 179,
+    "hemisphere": "L",
+    "english_name": "Area anterior 32 prime",
+    "network": "frontoparietal",
+    "label_id": "a32pr"
+  },
+  "180": {
+    "id": 180,
+    "hemisphere": "L",
+    "english_name": "Area posterior 24",
+    "network": "default mode",
+    "label_id": "p24"
+  },
+  "201": {
+    "id": 201,
+    "hemisphere": "R",
+    "english_name": "Primary Visual Cortex",
+    "network": "visual",
+    "label_id": "V1"
+  },
+  "202": {
+    "id": 202,
+    "hemisphere": "R",
+    "english_name": "Medial Superior Temporal Area",
+    "network": "dorsal attention",
+    "label_id": "MST"
+  },
+  "203": {
+    "id": 203,
+    "hemisphere": "R",
+    "english_name": "Sixth Visual Area",
+    "network": "visual",
+    "label_id": "V6"
+  },
+  "204": {
+    "id": 204,
+    "hemisphere": "R",
+    "english_name": "Second Visual Area",
+    "network": "visual",
+    "label_id": "V2"
+  },
+  "205": {
+    "id": 205,
+    "hemisphere": "R",
+    "english_name": "Third Visual Area",
+    "network": "visual",
+    "label_id": "V3"
+  },
+  "206": {
+    "id": 206,
+    "hemisphere": "R",
+    "english_name": "Fourth Visual Area",
+    "network": "visual",
+    "label_id": "V4"
+  },
+  "207": {
+    "id": 207,
+    "hemisphere": "R",
+    "english_name": "Eighth Visual Area",
+    "network": "visual",
+    "label_id": "V8"
+  },
+  "208": {
+    "id": 208,
+    "hemisphere": "R",
+    "english_name": "Primary Motor Cortex",
+    "network": "somatosensory",
+    "label_id": "4"
+  },
+  "209": {
+    "id": 209,
+    "hemisphere": "R",
+    "english_name": "Primary Sensory Cortex",
+    "network": "somatosensory",
+    "label_id": "3b"
+  },
+  "210": {
+    "id": 210,
+    "hemisphere": "R",
+    "english_name": "Frontal Eye Fields",
+    "network": "dorsal attention",
+    "label_id": "FEF"
+  },
+  "211": {
+    "id": 211,
+    "hemisphere": "R",
+    "english_name": "Premotor Eye Field",
+    "network": "dorsal attention",
+    "label_id": "PEF"
+  },
+  "212": {
+    "id": 212,
+    "hemisphere": "R",
+    "english_name": "Area 55b",
+    "network": "somatosensory",
+    "label_id": "55b"
+  },
+  "213": {
+    "id": 213,
+    "hemisphere": "R",
+    "english_name": "Area V3A",
+    "network": "visual",
+    "label_id": "V3A"
+  },
+  "214": {
+    "id": 214,
+    "hemisphere": "R",
+    "english_name": "RetroSplenial Complex",
+    "network": "default mode",
+    "label_id": "RSC"
+  },
+  "215": {
+    "id": 215,
+    "hemisphere": "R",
+    "english_name": "Parieto-Occipital Sulcus Area 2",
+    "network": "default mode",
+    "label_id": "POS2"
+  },
+  "216": {
+    "id": 216,
+    "hemisphere": "R",
+    "english_name": "Seventh Visual Area",
+    "network": "visual",
+    "label_id": "V7"
+  },
+  "217": {
+    "id": 217,
+    "hemisphere": "R",
+    "english_name": "IntraParietal Sulcus Area 1",
+    "network": "dorsal attention",
+    "label_id": "IPS1"
+  },
+  "218": {
+    "id": 218,
+    "hemisphere": "R",
+    "english_name": "Fusiform Face Complex",
+    "network": "visual",
+    "label_id": "FFC"
+  },
+  "219": {
+    "id": 219,
+    "hemisphere": "R",
+    "english_name": "Area V3B",
+    "network": "visual",
+    "label_id": "V3B"
+  },
+  "220": {
+    "id": 220,
+    "hemisphere": "R",
+    "english_name": "Area Lateral Occipital 1",
+    "network": "visual",
+    "label_id": "LO1"
+  },
+  "221": {
+    "id": 221,
+    "hemisphere": "R",
+    "english_name": "Area Lateral Occipital 2",
+    "network": "visual",
+    "label_id": "LO2"
+  },
+  "222": {
+    "id": 222,
+    "hemisphere": "R",
+    "english_name": "Posterior InferoTemporal complex",
+    "network": "visual",
+    "label_id": "PIT"
+  },
+  "223": {
+    "id": 223,
+    "hemisphere": "R",
+    "english_name": "Middle Temporal Area",
+    "network": "visual",
+    "label_id": "MT"
+  },
+  "224": {
+    "id": 224,
+    "hemisphere": "R",
+    "english_name": "Primary Auditory Cortex",
+    "network": "somatosensory",
+    "label_id": "A1"
+  },
+  "225": {
+    "id": 225,
+    "hemisphere": "R",
+    "english_name": "PeriSylvian Language Area",
+    "network": "ventral attention",
+    "label_id": "PSL"
+  },
+  "226": {
+    "id": 226,
+    "hemisphere": "R",
+    "english_name": "Superior Frontal Language Area",
+    "network": "default mode",
+    "label_id": "SFL"
+  },
+  "227": {
+    "id": 227,
+    "hemisphere": "R",
+    "english_name": "PreCuneus Visual Area",
+    "network": "default mode",
+    "label_id": "PCV"
+  },
+  "228": {
+    "id": 228,
+    "hemisphere": "R",
+    "english_name": "Superior Temporal Visual Area",
+    "network": "default mode",
+    "label_id": "STV"
+  },
+  "229": {
+    "id": 229,
+    "hemisphere": "R",
+    "english_name": "Medial Area 7P",
+    "network": "frontoparietal",
+    "label_id": "7Pm"
+  },
+  "230": {
+    "id": 230,
+    "hemisphere": "R",
+    "english_name": "Area 7m",
+    "network": "default mode",
+    "label_id": "7m"
+  },
+  "231": {
+    "id": 231,
+    "hemisphere": "R",
+    "english_name": "Parieto-Occipital Sulcus Area 1",
+    "network": "default mode",
+    "label_id": "POS1"
+  },
+  "232": {
+    "id": 232,
+    "hemisphere": "R",
+    "english_name": "Area 23d",
+    "network": "default mode",
+    "label_id": "23d"
+  },
+  "233": {
+    "id": 233,
+    "hemisphere": "R",
+    "english_name": "Area ventral 23 a+b",
+    "network": "default mode",
+    "label_id": "v23ab"
+  },
+  "234": {
+    "id": 234,
+    "hemisphere": "R",
+    "english_name": "Area dorsal 23 a+b",
+    "network": "default mode",
+    "label_id": "d23ab"
+  },
+  "235": {
+    "id": 235,
+    "hemisphere": "R",
+    "english_name": "Area 31p ventral",
+    "network": "default mode",
+    "label_id": "31pv"
+  },
+  "236": {
+    "id": 236,
+    "hemisphere": "R",
+    "english_name": "Area 5m",
+    "network": "somatosensory",
+    "label_id": "5m"
+  },
+  "237": {
+    "id": 237,
+    "hemisphere": "R",
+    "english_name": "Area 5m ventral",
+    "network": "ventral attention",
+    "label_id": "5mv"
+  },
+  "238": {
+    "id": 238,
+    "hemisphere": "R",
+    "english_name": "Area 23c",
+    "network": "ventral attention",
+    "label_id": "23c"
+  },
+  "239": {
+    "id": 239,
+    "hemisphere": "R",
+    "english_name": "Area 5L",
+    "network": "somatosensory",
+    "label_id": "5L"
+  },
+  "240": {
+    "id": 240,
+    "hemisphere": "R",
+    "english_name": "Dorsal Area 24d",
+    "network": "somatosensory",
+    "label_id": "24dd"
+  },
+  "241": {
+    "id": 241,
+    "hemisphere": "R",
+    "english_name": "Ventral Area 24d",
+    "network": "somatosensory",
+    "label_id": "24dv"
+  },
+  "242": {
+    "id": 242,
+    "hemisphere": "R",
+    "english_name": "Lateral Area 7A",
+    "network": "dorsal attention",
+    "label_id": "7AL"
+  },
+  "243": {
+    "id": 243,
+    "hemisphere": "R",
+    "english_name": "Supplementary and Cingulate Eye Field",
+    "network": "ventral attention",
+    "label_id": "SCEF"
+  },
+  "244": {
+    "id": 244,
+    "hemisphere": "R",
+    "english_name": "Area 6m anterior",
+    "network": "ventral attention",
+    "label_id": "6ma"
+  },
+  "245": {
+    "id": 245,
+    "hemisphere": "R",
+    "english_name": "Medial Area 7A",
+    "network": "dorsal attention",
+    "label_id": "7Am"
+  },
+  "246": {
+    "id": 246,
+    "hemisphere": "R",
+    "english_name": "Lateral Area 7P",
+    "network": "dorsal attention",
+    "label_id": "7PL"
+  },
+  "247": {
+    "id": 247,
+    "hemisphere": "R",
+    "english_name": "Area 7PC",
+    "network": "dorsal attention",
+    "label_id": "7PC"
+  },
+  "248": {
+    "id": 248,
+    "hemisphere": "R",
+    "english_name": "Area Lateral IntraParietal ventral",
+    "network": "dorsal attention",
+    "label_id": "LIPv"
+  },
+  "249": {
+    "id": 249,
+    "hemisphere": "R",
+    "english_name": "Ventral IntraParietal Complex",
+    "network": "dorsal attention",
+    "label_id": "VIP"
+  },
+  "250": {
+    "id": 250,
+    "hemisphere": "R",
+    "english_name": "Medial IntraParietal Area",
+    "network": "dorsal attention",
+    "label_id": "MIP"
+  },
+  "251": {
+    "id": 251,
+    "hemisphere": "R",
+    "english_name": "Area 1",
+    "network": "somatosensory",
+    "label_id": "1"
+  },
+  "252": {
+    "id": 252,
+    "hemisphere": "R",
+    "english_name": "Area 2",
+    "network": "somatosensory",
+    "label_id": "2"
+  },
+  "253": {
+    "id": 253,
+    "hemisphere": "R",
+    "english_name": "Area 3a",
+    "network": "somatosensory",
+    "label_id": "3a"
+  },
+  "254": {
+    "id": 254,
+    "hemisphere": "R",
+    "english_name": "Dorsal area 6",
+    "network": "somatosensory",
+    "label_id": "6d"
+  },
+  "255": {
+    "id": 255,
+    "hemisphere": "R",
+    "english_name": "Area 6mp",
+    "network": "somatosensory",
+    "label_id": "6mp"
+  },
+  "256": {
+    "id": 256,
+    "hemisphere": "R",
+    "english_name": "Ventral Area 6",
+    "network": "somatosensory",
+    "label_id": "6v"
+  },
+  "257": {
+    "id": 257,
+    "hemisphere": "R",
+    "english_name": "Area Posterior 24 prime",
+    "network": "ventral attention",
+    "label_id": "p24pr"
+  },
+  "258": {
+    "id": 258,
+    "hemisphere": "R",
+    "english_name": "Area 33 prime",
+    "network": "frontoparietal",
+    "label_id": "33pr"
+  },
+  "259": {
+    "id": 259,
+    "hemisphere": "R",
+    "english_name": "Anterior 24 prime",
+    "network": "ventral attention",
+    "label_id": "a24pr"
+  },
+  "260": {
+    "id": 260,
+    "hemisphere": "R",
+    "english_name": "Area p32 prime",
+    "network": "ventral attention",
+    "label_id": "p32pr"
+  },
+  "261": {
+    "id": 261,
+    "hemisphere": "R",
+    "english_name": "Area a24",
+    "network": "default mode",
+    "label_id": "a24"
+  },
+  "262": {
+    "id": 262,
+    "hemisphere": "R",
+    "english_name": "Area dorsal 32",
+    "network": "default mode",
+    "label_id": "d32"
+  },
+  "263": {
+    "id": 263,
+    "hemisphere": "R",
+    "english_name": "Area 8BM",
+    "network": "frontoparietal",
+    "label_id": "8BM"
+  },
+  "264": {
+    "id": 264,
+    "hemisphere": "R",
+    "english_name": "Area p32",
+    "network": "default mode",
+    "label_id": "p32"
+  },
+  "265": {
+    "id": 265,
+    "hemisphere": "R",
+    "english_name": "Area 10r",
+    "network": "default mode",
+    "label_id": "10r"
+  },
+  "266": {
+    "id": 266,
+    "hemisphere": "R",
+    "english_name": "Area 47m",
+    "network": "default mode",
+    "label_id": "47m"
+  },
+  "267": {
+    "id": 267,
+    "hemisphere": "R",
+    "english_name": "Area 8Av",
+    "network": "default mode",
+    "label_id": "8Av"
+  },
+  "268": {
+    "id": 268,
+    "hemisphere": "R",
+    "english_name": "Area 8Ad",
+    "network": "default mode",
+    "label_id": "8Ad"
+  },
+  "269": {
+    "id": 269,
+    "hemisphere": "R",
+    "english_name": "Area 9 Middle",
+    "network": "default mode",
+    "label_id": "9m"
+  },
+  "270": {
+    "id": 270,
+    "hemisphere": "R",
+    "english_name": "Area 8B Lateral",
+    "network": "default mode",
+    "label_id": "8BL"
+  },
+  "271": {
+    "id": 271,
+    "hemisphere": "R",
+    "english_name": "Area 9 Posterior",
+    "network": "default mode",
+    "label_id": "9p"
+  },
+  "272": {
+    "id": 272,
+    "hemisphere": "R",
+    "english_name": "Area 10d",
+    "network": "default mode",
+    "label_id": "10d"
+  },
+  "273": {
+    "id": 273,
+    "hemisphere": "R",
+    "english_name": "Area 8C",
+    "network": "frontoparietal",
+    "label_id": "8C"
+  },
+  "274": {
+    "id": 274,
+    "hemisphere": "R",
+    "english_name": "Area 44",
+    "network": "default mode",
+    "label_id": "44"
+  },
+  "275": {
+    "id": 275,
+    "hemisphere": "R",
+    "english_name": "Area 45",
+    "network": "default mode",
+    "label_id": "45"
+  },
+  "276": {
+    "id": 276,
+    "hemisphere": "R",
+    "english_name": "Area 47l (47 lateral)",
+    "network": "default mode",
+    "label_id": "47l"
+  },
+  "277": {
+    "id": 277,
+    "hemisphere": "R",
+    "english_name": "Area anterior 47r",
+    "network": "default mode",
+    "label_id": "a47r"
+  },
+  "278": {
+    "id": 278,
+    "hemisphere": "R",
+    "english_name": "Rostral Area 6",
+    "network": "ventral attention",
+    "label_id": "6r"
+  },
+  "279": {
+    "id": 279,
+    "hemisphere": "R",
+    "english_name": "Area IFJa",
+    "network": "frontoparietal",
+    "label_id": "IFJa"
+  },
+  "280": {
+    "id": 280,
+    "hemisphere": "R",
+    "english_name": "Area IFJp",
+    "network": "dorsal attention",
+    "label_id": "IFJp"
+  },
+  "281": {
+    "id": 281,
+    "hemisphere": "R",
+    "english_name": "Area IFSp",
+    "network": "frontoparietal",
+    "label_id": "IFSp"
+  },
+  "282": {
+    "id": 282,
+    "hemisphere": "R",
+    "english_name": "Area IFSa",
+    "network": "frontoparietal",
+    "label_id": "IFSa"
+  },
+  "283": {
+    "id": 283,
+    "hemisphere": "R",
+    "english_name": "Area posterior  9-46v",
+    "network": "frontoparietal",
+    "label_id": "p9-46v"
+  },
+  "284": {
+    "id": 284,
+    "hemisphere": "R",
+    "english_name": "Area 46",
+    "network": "frontoparietal",
+    "label_id": "46"
+  },
+  "285": {
+    "id": 285,
+    "hemisphere": "R",
+    "english_name": "Area anterior  9-46v",
+    "network": "frontoparietal",
+    "label_id": "a9-46v"
+  },
+  "286": {
+    "id": 286,
+    "hemisphere": "R",
+    "english_name": "Area 9-46d",
+    "network": "frontoparietal",
+    "label_id": "9-46d"
+  },
+  "287": {
+    "id": 287,
+    "hemisphere": "R",
+    "english_name": "Area 9 anterior",
+    "network": "default mode",
+    "label_id": "9a"
+  },
+  "288": {
+    "id": 288,
+    "hemisphere": "R",
+    "english_name": "Area 10v",
+    "network": "limbic",
+    "label_id": "10v"
+  },
+  "289": {
+    "id": 289,
+    "hemisphere": "R",
+    "english_name": "Area anterior 10p",
+    "network": "default mode",
+    "label_id": "a10p"
+  },
+  "290": {
+    "id": 290,
+    "hemisphere": "R",
+    "english_name": "Polar 10p",
+    "network": "limbic",
+    "label_id": "10pp"
+  },
+  "291": {
+    "id": 291,
+    "hemisphere": "R",
+    "english_name": "Area 11l",
+    "network": "frontoparietal",
+    "label_id": "11l"
+  },
+  "292": {
+    "id": 292,
+    "hemisphere": "R",
+    "english_name": "Area 13l",
+    "network": "limbic",
+    "label_id": "13l"
+  },
+  "293": {
+    "id": 293,
+    "hemisphere": "R",
+    "english_name": "Orbital Frontal Complex",
+    "network": "limbic",
+    "label_id": "OFC"
+  },
+  "294": {
+    "id": 294,
+    "hemisphere": "R",
+    "english_name": "Area 47s",
+    "network": "default mode",
+    "label_id": "47s"
+  },
+  "295": {
+    "id": 295,
+    "hemisphere": "R",
+    "english_name": "Area Lateral IntraParietal dorsal",
+    "network": "dorsal attention",
+    "label_id": "LIPd"
+  },
+  "296": {
+    "id": 296,
+    "hemisphere": "R",
+    "english_name": "Area 6 anterior",
+    "network": "dorsal attention",
+    "label_id": "6a"
+  },
+  "297": {
+    "id": 297,
+    "hemisphere": "R",
+    "english_name": "Inferior 6-8 Transitional Area",
+    "network": "frontoparietal",
+    "label_id": "i6-8"
+  },
+  "298": {
+    "id": 298,
+    "hemisphere": "R",
+    "english_name": "Superior 6-8 Transitional Area",
+    "network": "default mode",
+    "label_id": "s6-8"
+  },
+  "299": {
+    "id": 299,
+    "hemisphere": "R",
+    "english_name": "Area 43",
+    "network": "ventral attention",
+    "label_id": "43"
+  },
+  "300": {
+    "id": 300,
+    "hemisphere": "R",
+    "english_name": "Area OP4/PV",
+    "network": "somatosensory",
+    "label_id": "OP4"
+  },
+  "301": {
+    "id": 301,
+    "hemisphere": "R",
+    "english_name": "Area OP1/SII",
+    "network": "somatosensory",
+    "label_id": "OP1"
+  },
+  "302": {
+    "id": 302,
+    "hemisphere": "R",
+    "english_name": "Area OP2-3/VS",
+    "network": "somatosensory",
+    "label_id": "OP2-3"
+  },
+  "303": {
+    "id": 303,
+    "hemisphere": "R",
+    "english_name": "Area 52",
+    "network": "somatosensory",
+    "label_id": "52"
+  },
+  "304": {
+    "id": 304,
+    "hemisphere": "R",
+    "english_name": "RetroInsular Cortex",
+    "network": "somatosensory",
+    "label_id": "RI"
+  },
+  "305": {
+    "id": 305,
+    "hemisphere": "R",
+    "english_name": "Area PFcm",
+    "network": "ventral attention",
+    "label_id": "PFcm"
+  },
+  "306": {
+    "id": 306,
+    "hemisphere": "R",
+    "english_name": "Posterior Insular Area 2",
+    "network": "ventral attention",
+    "label_id": "PoI2"
+  },
+  "307": {
+    "id": 307,
+    "hemisphere": "R",
+    "english_name": "Area TA2",
+    "network": "somatosensory",
+    "label_id": "TA2"
+  },
+  "308": {
+    "id": 308,
+    "hemisphere": "R",
+    "english_name": "Frontal OPercular Area 4",
+    "network": "ventral attention",
+    "label_id": "FOP4"
+  },
+  "309": {
+    "id": 309,
+    "hemisphere": "R",
+    "english_name": "Middle Insular Area",
+    "network": "ventral attention",
+    "label_id": "MI"
+  },
+  "310": {
+    "id": 310,
+    "hemisphere": "R",
+    "english_name": "Pirform Cortex",
+    "network": "limbic",
+    "label_id": "Pir"
+  },
+  "311": {
+    "id": 311,
+    "hemisphere": "R",
+    "english_name": "Anterior Ventral Insular Area",
+    "network": "frontoparietal",
+    "label_id": "AVI"
+  },
+  "312": {
+    "id": 312,
+    "hemisphere": "R",
+    "english_name": "Anterior Agranular Insula Complex",
+    "network": "default mode",
+    "label_id": "AAIC"
+  },
+  "313": {
+    "id": 313,
+    "hemisphere": "R",
+    "english_name": "Frontal OPercular Area 1",
+    "network": "ventral attention",
+    "label_id": "FOP1"
+  },
+  "314": {
+    "id": 314,
+    "hemisphere": "R",
+    "english_name": "Frontal OPercular Area 3",
+    "network": "ventral attention",
+    "label_id": "FOP3"
+  },
+  "315": {
+    "id": 315,
+    "hemisphere": "R",
+    "english_name": "Frontal OPercular Area 2",
+    "network": "somatosensory",
+    "label_id": "FOP2"
+  },
+  "316": {
+    "id": 316,
+    "hemisphere": "R",
+    "english_name": "Area PFt",
+    "network": "dorsal attention",
+    "label_id": "PFt"
+  },
+  "317": {
+    "id": 317,
+    "hemisphere": "R",
+    "english_name": "Anterior IntraParietal Area",
+    "network": "dorsal attention",
+    "label_id": "AIP"
+  },
+  "318": {
+    "id": 318,
+    "hemisphere": "R",
+    "english_name": "Entorhinal Cortex",
+    "network": "limbic",
+    "label_id": "EC"
+  },
+  "319": {
+    "id": 319,
+    "hemisphere": "R",
+    "english_name": "PreSubiculum",
+    "network": "default mode",
+    "label_id": "PreS"
+  },
+  "320": {
+    "id": 320,
+    "hemisphere": "R",
+    "english_name": "Hippocampus",
+    "network": "limbic",
+    "label_id": "H"
+  },
+  "321": {
+    "id": 321,
+    "hemisphere": "R",
+    "english_name": "ProStriate Area",
+    "network": "visual",
+    "label_id": "ProS"
+  },
+  "322": {
+    "id": 322,
+    "hemisphere": "R",
+    "english_name": "Perirhinal Ectorhinal Cortex",
+    "network": "limbic",
+    "label_id": "PeEc"
+  },
+  "323": {
+    "id": 323,
+    "hemisphere": "R",
+    "english_name": "Area STGa",
+    "network": "default mode",
+    "label_id": "STGa"
+  },
+  "324": {
+    "id": 324,
+    "hemisphere": "R",
+    "english_name": "ParaBelt Complex",
+    "network": "somatosensory",
+    "label_id": "PBelt"
+  },
+  "325": {
+    "id": 325,
+    "hemisphere": "R",
+    "english_name": "Auditory 5 Complex",
+    "network": "somatosensory",
+    "label_id": "A5"
+  },
+  "326": {
+    "id": 326,
+    "hemisphere": "R",
+    "english_name": "ParaHippocampal Area 1",
+    "network": "default mode",
+    "label_id": "PHA1"
+  },
+  "327": {
+    "id": 327,
+    "hemisphere": "R",
+    "english_name": "ParaHippocampal Area 3",
+    "network": "visual",
+    "label_id": "PHA3"
+  },
+  "328": {
+    "id": 328,
+    "hemisphere": "R",
+    "english_name": "Area STSd anterior",
+    "network": "default mode",
+    "label_id": "STSda"
+  },
+  "329": {
+    "id": 329,
+    "hemisphere": "R",
+    "english_name": "Area STSd posterior",
+    "network": "default mode",
+    "label_id": "STSdp"
+  },
+  "330": {
+    "id": 330,
+    "hemisphere": "R",
+    "english_name": "Area STSv posterior",
+    "network": "default mode",
+    "label_id": "STSvp"
+  },
+  "331": {
+    "id": 331,
+    "hemisphere": "R",
+    "english_name": "Area TG dorsal",
+    "network": "limbic",
+    "label_id": "TGd"
+  },
+  "332": {
+    "id": 332,
+    "hemisphere": "R",
+    "english_name": "Area TE1 anterior",
+    "network": "default mode",
+    "label_id": "TE1a"
+  },
+  "333": {
+    "id": 333,
+    "hemisphere": "R",
+    "english_name": "Area TE1 posterior",
+    "network": "default mode",
+    "label_id": "TE1p"
+  },
+  "334": {
+    "id": 334,
+    "hemisphere": "R",
+    "english_name": "Area TE2 anterior",
+    "network": "limbic",
+    "label_id": "TE2a"
+  },
+  "335": {
+    "id": 335,
+    "hemisphere": "R",
+    "english_name": "Area TF",
+    "network": "limbic",
+    "label_id": "TF"
+  },
+  "336": {
+    "id": 336,
+    "hemisphere": "R",
+    "english_name": "Area TE2 posterior",
+    "network": "dorsal attention",
+    "label_id": "TE2p"
+  },
+  "337": {
+    "id": 337,
+    "hemisphere": "R",
+    "english_name": "Area PHT",
+    "network": "dorsal attention",
+    "label_id": "PHT"
+  },
+  "338": {
+    "id": 338,
+    "hemisphere": "R",
+    "english_name": "Area PH",
+    "network": "dorsal attention",
+    "label_id": "PH"
+  },
+  "339": {
+    "id": 339,
+    "hemisphere": "R",
+    "english_name": "Area TemporoParietoOcci pital Junction 1",
+    "network": "somatosensory",
+    "label_id": "TPOJ1"
+  },
+  "340": {
+    "id": 340,
+    "hemisphere": "R",
+    "english_name": "Area TemporoParietoOcci pital Junction 2",
+    "network": "dorsal attention",
+    "label_id": "TPOJ2"
+  },
+  "341": {
+    "id": 341,
+    "hemisphere": "R",
+    "english_name": "Area TemporoParietoOcci pital Junction 3",
+    "network": "dorsal attention",
+    "label_id": "TPOJ3"
+  },
+  "342": {
+    "id": 342,
+    "hemisphere": "R",
+    "english_name": "Dorsal Transitional Visual Area",
+    "network": "visual",
+    "label_id": "DVT"
+  },
+  "343": {
+    "id": 343,
+    "hemisphere": "R",
+    "english_name": "Area PGp",
+    "network": "dorsal attention",
+    "label_id": "PGp"
+  },
+  "344": {
+    "id": 344,
+    "hemisphere": "R",
+    "english_name": "Area IntraParietal 2",
+    "network": "frontoparietal",
+    "label_id": "IP2"
+  },
+  "345": {
+    "id": 345,
+    "hemisphere": "R",
+    "english_name": "Area IntraParietal 1",
+    "network": "frontoparietal",
+    "label_id": "IP1"
+  },
+  "346": {
+    "id": 346,
+    "hemisphere": "R",
+    "english_name": "Area IntraParietal 0",
+    "network": "dorsal attention",
+    "label_id": "IP0"
+  },
+  "347": {
+    "id": 347,
+    "hemisphere": "R",
+    "english_name": "Area PF opercular",
+    "network": "ventral attention",
+    "label_id": "PFop"
+  },
+  "348": {
+    "id": 348,
+    "hemisphere": "R",
+    "english_name": "Area PF Complex",
+    "network": "ventral attention",
+    "label_id": "PF"
+  },
+  "349": {
+    "id": 349,
+    "hemisphere": "R",
+    "english_name": "Area PFm Complex",
+    "network": "default mode",
+    "label_id": "PFm"
+  },
+  "350": {
+    "id": 350,
+    "hemisphere": "R",
+    "english_name": "Area PGi",
+    "network": "default mode",
+    "label_id": "PGi"
+  },
+  "351": {
+    "id": 351,
+    "hemisphere": "R",
+    "english_name": "Area PGs",
+    "network": "default mode",
+    "label_id": "PGs"
+  },
+  "352": {
+    "id": 352,
+    "hemisphere": "R",
+    "english_name": "Area V6A",
+    "network": "visual",
+    "label_id": "V6A"
+  },
+  "353": {
+    "id": 353,
+    "hemisphere": "R",
+    "english_name": "VentroMedial Visual Area 1",
+    "network": "visual",
+    "label_id": "VMV1"
+  },
+  "354": {
+    "id": 354,
+    "hemisphere": "R",
+    "english_name": "VentroMedial Visual Area 3",
+    "network": "visual",
+    "label_id": "VMV3"
+  },
+  "355": {
+    "id": 355,
+    "hemisphere": "R",
+    "english_name": "ParaHippocampal Area 2",
+    "network": "default mode",
+    "label_id": "PHA2"
+  },
+  "356": {
+    "id": 356,
+    "hemisphere": "R",
+    "english_name": "Area V4t",
+    "network": "visual",
+    "label_id": "V4t"
+  },
+  "357": {
+    "id": 357,
+    "hemisphere": "R",
+    "english_name": "Area FST",
+    "network": "dorsal attention",
+    "label_id": "FST"
+  },
+  "358": {
+    "id": 358,
+    "hemisphere": "R",
+    "english_name": "Area V3CD",
+    "network": "visual",
+    "label_id": "V3CD"
+  },
+  "359": {
+    "id": 359,
+    "hemisphere": "R",
+    "english_name": "Area Lateral Occipital 3",
+    "network": "visual",
+    "label_id": "LO3"
+  },
+  "360": {
+    "id": 360,
+    "hemisphere": "R",
+    "english_name": "VentroMedial Visual Area 2",
+    "network": "visual",
+    "label_id": "VMV2"
+  },
+  "361": {
+    "id": 361,
+    "hemisphere": "R",
+    "english_name": "Area 31pd",
+    "network": "default mode",
+    "label_id": "31pd"
+  },
+  "362": {
+    "id": 362,
+    "hemisphere": "R",
+    "english_name": "Area 31a",
+    "network": "default mode",
+    "label_id": "31a"
+  },
+  "363": {
+    "id": 363,
+    "hemisphere": "R",
+    "english_name": "Ventral Visual Complex",
+    "network": "visual",
+    "label_id": "VVC"
+  },
+  "364": {
+    "id": 364,
+    "hemisphere": "R",
+    "english_name": "Area 25",
+    "network": "limbic",
+    "label_id": "25"
+  },
+  "365": {
+    "id": 365,
+    "hemisphere": "R",
+    "english_name": "Area s32",
+    "network": "limbic",
+    "label_id": "s32"
+  },
+  "366": {
+    "id": 366,
+    "hemisphere": "R",
+    "english_name": "posterior OFC Complex",
+    "network": "limbic",
+    "label_id": "pOFC"
+  },
+  "367": {
+    "id": 367,
+    "hemisphere": "R",
+    "english_name": "Area Posterior Insular 1",
+    "network": "ventral attention",
+    "label_id": "PoI1"
+  },
+  "368": {
+    "id": 368,
+    "hemisphere": "R",
+    "english_name": "Insular Granular Complex",
+    "network": "somatosensory",
+    "label_id": "Ig"
+  },
+  "369": {
+    "id": 369,
+    "hemisphere": "R",
+    "english_name": "Area Frontal Opercular 5",
+    "network": "ventral attention",
+    "label_id": "FOP5"
+  },
+  "370": {
+    "id": 370,
+    "hemisphere": "R",
+    "english_name": "Area posterior 10p",
+    "network": "default mode",
+    "label_id": "p10p"
+  },
+  "371": {
+    "id": 371,
+    "hemisphere": "R",
+    "english_name": "Area posterior 47r",
+    "network": "frontoparietal",
+    "label_id": "p47r"
+  },
+  "372": {
+    "id": 372,
+    "hemisphere": "R",
+    "english_name": "Area TG Ventral",
+    "network": "limbic",
+    "label_id": "TGv"
+  },
+  "373": {
+    "id": 373,
+    "hemisphere": "R",
+    "english_name": "Medial Belt Complex",
+    "network": "somatosensory",
+    "label_id": "MBelt"
+  },
+  "374": {
+    "id": 374,
+    "hemisphere": "R",
+    "english_name": "Lateral Belt Complex",
+    "network": "somatosensory",
+    "label_id": "LBelt"
+  },
+  "375": {
+    "id": 375,
+    "hemisphere": "R",
+    "english_name": "Auditory 4 Complex",
+    "network": "somatosensory",
+    "label_id": "A4"
+  },
+  "376": {
+    "id": 376,
+    "hemisphere": "R",
+    "english_name": "Area STSv anterior",
+    "network": "default mode",
+    "label_id": "STSva"
+  },
+  "377": {
+    "id": 377,
+    "hemisphere": "R",
+    "english_name": "Area TE1 Middle",
+    "network": "default mode",
+    "label_id": "TE1m"
+  },
+  "378": {
+    "id": 378,
+    "hemisphere": "R",
+    "english_name": "Para-Insular Area",
+    "network": "ventral attention",
+    "label_id": "PI"
+  },
+  "379": {
+    "id": 379,
+    "hemisphere": "R",
+    "english_name": "Area anterior 32 prime",
+    "network": "frontoparietal",
+    "label_id": "a32pr"
+  },
+  "380": {
+    "id": 380,
+    "hemisphere": "R",
+    "english_name": "Area posterior 24",
+    "network": "default mode",
+    "label_id": "p24"
+  }
+}

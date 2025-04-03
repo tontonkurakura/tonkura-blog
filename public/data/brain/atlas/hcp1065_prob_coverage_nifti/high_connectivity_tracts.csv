@@ -1,0 +1,816 @@
+Region,Hemisphere,Tract,Tract Full Name,Connectivity (%)
+6mp,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",100.0
+3b,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",100.0
+PreS,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",100.0
+PreS,LEFT,C_PH,"Cingulum, Parahippocampal Segment",100.0
+PreS,LEFT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",100.0
+PreS,LEFT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",100.0
+PHA1,RIGHT,C_PH,"Cingulum, Parahippocampal Segment",100.0
+PHA1,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",100.0
+PHA1,LEFT,C_PH,"Cingulum, Parahippocampal Segment",100.0
+4,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",100.0
+PHA1,LEFT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",100.0
+POS1,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",100.0
+TF,RIGHT,ILF,Inferior Longitudinal Fasciculus,100.0
+3b,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",100.0
+3b,LEFT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+d23ab,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+PreS,RIGHT,C_PH,"Cingulum, Parahippocampal Segment",100.0
+POS1,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+H,LEFT,C_PH,"Cingulum, Parahippocampal Segment",100.0
+4,LEFT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+4,LEFT,CST,Corticospinal Tract,100.0
+H,RIGHT,C_PH,"Cingulum, Parahippocampal Segment",100.0
+8BL,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",100.0
+v23ab,RIGHT,C_R,C_R,100.0
+PeEc,LEFT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",100.0
+PeEc,LEFT,C_PH,"Cingulum, Parahippocampal Segment",100.0
+v23ab,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+v23ab,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+8BL,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",100.0
+PeEc,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",100.0
+PeEc,RIGHT,C_PH,"Cingulum, Parahippocampal Segment",100.0
+PeEc,RIGHT,ILF,Inferior Longitudinal Fasciculus,100.0
+7m,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+RSC,LEFT,C_R,C_R,100.0
+V6,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",100.0
+RSC,LEFT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",100.0
+1,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",100.0
+V4,RIGHT,VOF,Vertical Occipital Fasciculus,100.0
+OP4,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,100.0
+d32,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+FOP4,LEFT,FAT,Frontal Aslant Tract,100.0
+45,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",100.0
+a32pr,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+V6A,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",100.0
+a32pr,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+43,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,100.0
+45,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+FOP5,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+1,LEFT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+V3A,RIGHT,ILF,Inferior Longitudinal Fasciculus,100.0
+V3A,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+V3A,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",100.0
+3a,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,100.0
+V3A,RIGHT,CTh_P,"Coricothalamic Tract, Posterior Segment",100.0
+V3,LEFT,ILF,Inferior Longitudinal Fasciculus,100.0
+V3,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+Pir,RIGHT,UF,Uncinate Fasciculus,100.0
+Pir,LEFT,UF,Uncinate Fasciculus,100.0
+RSC,RIGHT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",100.0
+RSC,RIGHT,C_R,C_R,100.0
+V3,RIGHT,ILF,Inferior Longitudinal Fasciculus,100.0
+V3,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+1,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",100.0
+V3,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",100.0
+RSC,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+3a,LEFT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+RSC,LEFT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",100.0
+7m,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+4,LEFT,CTh_S,"Coricothalamic Tract, Superior Segment",100.0
+V4,RIGHT,ILF,Inferior Longitudinal Fasciculus,100.0
+PFm,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,100.0
+23c,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+23c,RIGHT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+IP2,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+IP2,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,100.0
+IP2,LEFT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+PFm,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+PFm,RIGHT,PTAT,PTAT,100.0
+31pd,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+PFm,LEFT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+PFm,LEFT,PTAT,PTAT,100.0
+PGi,RIGHT,PTAT,PTAT,100.0
+PGi,LEFT,PTAT,PTAT,100.0
+V1,RIGHT,OR,Optic Radiation,100.0
+23c,LEFT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+23d,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+p32pr,LEFT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+p32pr,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+23d,LEFT,C_R,C_R,100.0
+33pr,RIGHT,C_R,C_R,100.0
+33pr,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+33pr,LEFT,C_R,C_R,100.0
+p24pr,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+p32pr,RIGHT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+p24pr,LEFT,C_R,C_R,100.0
+p32pr,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+24dv,LEFT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+24dv,RIGHT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+2,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",100.0
+a24pr,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+2,LEFT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+a24pr,LEFT,C_R,C_R,100.0
+V1,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+V1,RIGHT,ILF,Inferior Longitudinal Fasciculus,100.0
+V1,LEFT,OR,Optic Radiation,100.0
+PCV,RIGHT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+EC,RIGHT,C_PH,"Cingulum, Parahippocampal Segment",100.0
+31pd,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+31pv,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+31pv,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+POS2,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",100.0
+4,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,100.0
+6mp,LEFT,CST,Corticospinal Tract,100.0
+POS2,LEFT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",100.0
+4,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+7PL,LEFT,CTh_P,"Coricothalamic Tract, Posterior Segment",100.0
+DVT,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",100.0
+4,RIGHT,CST,Corticospinal Tract,100.0
+4,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",100.0
+4,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",100.0
+V2,LEFT,ILF,Inferior Longitudinal Fasciculus,100.0
+31a,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+V2,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+PCV,LEFT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+24dd,LEFT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+V2,LEFT,OR,Optic Radiation,100.0
+5mv,RIGHT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+24dd,RIGHT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+5mv,LEFT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+V2,RIGHT,ILF,Inferior Longitudinal Fasciculus,100.0
+V2,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+7Am,RIGHT,CTh_P,"Coricothalamic Tract, Posterior Segment",100.0
+31a,LEFT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+V2,RIGHT,OR,Optic Radiation,100.0
+V1,LEFT,ILF,Inferior Longitudinal Fasciculus,100.0
+V1,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+V4,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+43,LEFT,SLF_III,Superior Longitudinal Fasciculus3,100.0
+V4,LEFT,VOF,Vertical Occipital Fasciculus,100.0
+a10p,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",100.0
+TE1p,LEFT,AF,Arcuate Fasciculus,100.0
+AVI,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+A1,RIGHT,MdLF,Middle Longitudinal Fasciculus,100.0
+a10p,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+LBelt,RIGHT,MdLF,Middle Longitudinal Fasciculus,100.0
+a10p,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",100.0
+PBelt,RIGHT,MdLF,Middle Longitudinal Fasciculus,100.0
+a47r,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+6ma,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",100.0
+s6-8,RIGHT,FAT,Frontal Aslant Tract,100.0
+a10p,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+A4,RIGHT,MdLF,Middle Longitudinal Fasciculus,100.0
+a10p,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",100.0
+A4,LEFT,AF,Arcuate Fasciculus,100.0
+TE1p,LEFT,PTAT,PTAT,100.0
+AVI,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+TE1p,RIGHT,PTAT,PTAT,100.0
+6ma,LEFT,CTh_S,"Coricothalamic Tract, Superior Segment",100.0
+STSvp,LEFT,AF,Arcuate Fasciculus,100.0
+6ma,RIGHT,FAT,Frontal Aslant Tract,100.0
+p10p,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",100.0
+p10p,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",100.0
+6v,RIGHT,CBT,Corticobulbar Tract,100.0
+p10p,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",100.0
+6v,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,100.0
+6ma,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",100.0
+OP4,LEFT,SLF_III,Superior Longitudinal Fasciculus3,100.0
+A5,LEFT,ILF,Inferior Longitudinal Fasciculus,100.0
+6v,LEFT,FAT,Frontal Aslant Tract,100.0
+6ma,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",100.0
+6d,LEFT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+6ma,LEFT,FAT,Frontal Aslant Tract,100.0
+a47r,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",100.0
+TPOJ2,RIGHT,PTAT,PTAT,100.0
+STSda,LEFT,ILF,Inferior Longitudinal Fasciculus,100.0
+PoI1,LEFT,ILF,Inferior Longitudinal Fasciculus,100.0
+SFL,LEFT,CTh_S,"Coricothalamic Tract, Superior Segment",100.0
+STGa,RIGHT,ILF,Inferior Longitudinal Fasciculus,100.0
+STGa,LEFT,UF,Uncinate Fasciculus,100.0
+STGa,LEFT,ILF,Inferior Longitudinal Fasciculus,100.0
+STSda,RIGHT,ILF,Inferior Longitudinal Fasciculus,100.0
+47l,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",100.0
+52,LEFT,ILF,Inferior Longitudinal Fasciculus,100.0
+SFL,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",100.0
+SFL,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",100.0
+47l,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+TGd,RIGHT,UF,Uncinate Fasciculus,100.0
+TGd,RIGHT,ILF,Inferior Longitudinal Fasciculus,100.0
+TGd,LEFT,UF,Uncinate Fasciculus,100.0
+47l,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+SFL,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",100.0
+6mp,RIGHT,CST,Corticospinal Tract,100.0
+SFL,LEFT,FAT,Frontal Aslant Tract,100.0
+PoI1,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+6mp,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",100.0
+PI,LEFT,ILF,Inferior Longitudinal Fasciculus,100.0
+SCEF,RIGHT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+PI,RIGHT,ILF,Inferior Longitudinal Fasciculus,100.0
+11l,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+TA2,LEFT,ILF,Inferior Longitudinal Fasciculus,100.0
+a47r,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",100.0
+SCEF,LEFT,SLF_I,Superior Longitudinal Fasciculus1,100.0
+MBelt,LEFT,MdLF,Middle Longitudinal Fasciculus,100.0
+a47r,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,100.0
+MBelt,RIGHT,MdLF,Middle Longitudinal Fasciculus,100.0
+a47r,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",100.0
+55b,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+a24pr,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+6d,LEFT,CST,Corticospinal Tract,100.0
+TPOJ1,RIGHT,PTAT,PTAT,100.0
+6r,RIGHT,FAT,Frontal Aslant Tract,100.0
+p47r,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",100.0
+p24,LEFT,C_R,C_R,100.0
+MST,RIGHT,PTAT,PTAT,100.0
+p24,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+PFt,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,100.0
+PF,LEFT,SLF_III,Superior Longitudinal Fasciculus3,100.0
+6r,LEFT,AF,Arcuate Fasciculus,100.0
+PF,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,100.0
+PGp,RIGHT,PTAT,PTAT,100.0
+PHT,LEFT,PTAT,PTAT,100.0
+44,RIGHT,FAT,Frontal Aslant Tract,100.0
+44,LEFT,AF,Arcuate Fasciculus,100.0
+LO1,LEFT,VOF,Vertical Occipital Fasciculus,100.0
+LO1,RIGHT,VOF,Vertical Occipital Fasciculus,100.0
+44,LEFT,FAT,Frontal Aslant Tract,100.0
+p24,RIGHT,C_R,C_R,100.0
+V3B,LEFT,VOF,Vertical Occipital Fasciculus,100.0
+V3CD,RIGHT,VOF,Vertical Occipital Fasciculus,100.0
+V3CD,LEFT,VOF,Vertical Occipital Fasciculus,100.0
+a24,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+a24,RIGHT,C_R,C_R,100.0
+9a,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",100.0
+STV,RIGHT,PTAT,PTAT,100.0
+6r,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,100.0
+PH,LEFT,PTAT,PTAT,100.0
+PHT,RIGHT,PTAT,PTAT,100.0
+d32,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",100.0
+PFop,LEFT,SLF_III,Superior Longitudinal Fasciculus3,100.0
+6d,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",100.0
+TGd,LEFT,ILF,Inferior Longitudinal Fasciculus,100.0
+a9-46v,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",100.0
+6r,LEFT,FAT,Frontal Aslant Tract,100.0
+10pp,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",100.0
+55b,LEFT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+FST,RIGHT,PTAT,PTAT,100.0
+TPOJ3,RIGHT,PTAT,PTAT,100.0
+V4,LEFT,ILF,Inferior Longitudinal Fasciculus,100.0
+10pp,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",100.0
+FEF,LEFT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+V7,RIGHT,ILF,Inferior Longitudinal Fasciculus,100.0
+PHT,RIGHT,AF,Arcuate Fasciculus,100.0
+LO2,LEFT,VOF,Vertical Occipital Fasciculus,100.0
+8Av,LEFT,SLF_II,Superior Longitudinal Fasciculus2,100.0
+47s,LEFT,UF,Uncinate Fasciculus,100.0
+6mp,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",99.0
+43,LEFT,AF,Arcuate Fasciculus,99.0
+43,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",99.0
+2,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,99.0
+7PC,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,99.0
+6r,LEFT,SLF_III,Superior Longitudinal Fasciculus3,99.0
+45,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",99.0
+a24pr,RIGHT,C_R,C_R,99.0
+6mp,LEFT,CTh_S,"Coricothalamic Tract, Superior Segment",99.0
+SFL,RIGHT,FAT,Frontal Aslant Tract,99.0
+6a,RIGHT,FAT,Frontal Aslant Tract,99.0
+1,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,99.0
+IFSa,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",99.0
+8BL,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",99.0
+6d,RIGHT,CST,Corticospinal Tract,99.0
+6v,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,99.0
+6d,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",99.0
+8BL,LEFT,CTh_S,"Coricothalamic Tract, Superior Segment",99.0
+4,LEFT,SLF_III,Superior Longitudinal Fasciculus3,99.0
+8Av,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,99.0
+8BL,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",99.0
+FEF,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,99.0
+3a,RIGHT,CST,Corticospinal Tract,99.0
+RI,LEFT,AF,Arcuate Fasciculus,99.0
+7AL,LEFT,CTh_P,"Coricothalamic Tract, Posterior Segment",99.0
+6ma,LEFT,CST,Corticospinal Tract,99.0
+3a,LEFT,CST,Corticospinal Tract,99.0
+44,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,99.0
+3a,LEFT,SLF_III,Superior Longitudinal Fasciculus3,99.0
+6r,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",99.0
+6r,RIGHT,CBT,Corticobulbar Tract,99.0
+6a,LEFT,FAT,Frontal Aslant Tract,99.0
+SCEF,LEFT,CTh_S,"Coricothalamic Tract, Superior Segment",99.0
+7AL,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",99.0
+PFcm,LEFT,SLF_III,Superior Longitudinal Fasciculus3,99.0
+6v,LEFT,SLF_III,Superior Longitudinal Fasciculus3,99.0
+IFJa,LEFT,AF,Arcuate Fasciculus,99.0
+p24pr,LEFT,SLF_I,Superior Longitudinal Fasciculus1,99.0
+d23ab,LEFT,C_R,C_R,99.0
+V3,LEFT,VOF,Vertical Occipital Fasciculus,99.0
+V3,RIGHT,VOF,Vertical Occipital Fasciculus,99.0
+p47r,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",99.0
+LO2,RIGHT,VOF,Vertical Occipital Fasciculus,99.0
+V6,LEFT,CTh_P,"Coricothalamic Tract, Posterior Segment",99.0
+V6,RIGHT,ILF,Inferior Longitudinal Fasciculus,99.0
+FST,LEFT,PTAT,PTAT,99.0
+47s,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,99.0
+EC,LEFT,C_PH,"Cingulum, Parahippocampal Segment",99.0
+TGv,RIGHT,ILF,Inferior Longitudinal Fasciculus,99.0
+PHT,LEFT,AF,Arcuate Fasciculus,99.0
+TF,LEFT,ILF,Inferior Longitudinal Fasciculus,99.0
+TPOJ2,LEFT,PTAT,PTAT,99.0
+PreS,RIGHT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",99.0
+A5,RIGHT,ILF,Inferior Longitudinal Fasciculus,99.0
+H,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",99.0
+PH,RIGHT,PTAT,PTAT,99.0
+AAIC,LEFT,UF,Uncinate Fasciculus,99.0
+p47r,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,99.0
+p47r,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",99.0
+9a,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",99.0
+V7,LEFT,ILF,Inferior Longitudinal Fasciculus,99.0
+10d,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",99.0
+10d,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",99.0
+10d,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",99.0
+VIP,RIGHT,CTh_P,"Coricothalamic Tract, Posterior Segment",99.0
+PGp,RIGHT,ILF,Inferior Longitudinal Fasciculus,99.0
+V6A,LEFT,ILF,Inferior Longitudinal Fasciculus,99.0
+9m,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",99.0
+9m,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",99.0
+V6A,RIGHT,ILF,Inferior Longitudinal Fasciculus,99.0
+V3A,LEFT,ILF,Inferior Longitudinal Fasciculus,99.0
+V3A,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,99.0
+PGp,LEFT,VOF,Vertical Occipital Fasciculus,99.0
+p47r,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,99.0
+EC,LEFT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",99.0
+9a,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",99.0
+STGa,RIGHT,UF,Uncinate Fasciculus,99.0
+PGs,LEFT,PTAT,PTAT,99.0
+PGs,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,99.0
+p24pr,RIGHT,SLF_I,Superior Longitudinal Fasciculus1,99.0
+MIP,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",99.0
+a47r,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",99.0
+TA2,LEFT,MdLF,Middle Longitudinal Fasciculus,99.0
+7Am,LEFT,CTh_P,"Coricothalamic Tract, Posterior Segment",99.0
+TA2,RIGHT,ILF,Inferior Longitudinal Fasciculus,99.0
+52,LEFT,MdLF,Middle Longitudinal Fasciculus,99.0
+V1,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",99.0
+11l,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,99.0
+a10p,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",99.0
+A4,LEFT,MdLF,Middle Longitudinal Fasciculus,99.0
+PGs,RIGHT,PTAT,PTAT,99.0
+PBelt,LEFT,AF,Arcuate Fasciculus,99.0
+PBelt,LEFT,MdLF,Middle Longitudinal Fasciculus,99.0
+VIP,LEFT,MdLF,Middle Longitudinal Fasciculus,99.0
+TE1a,RIGHT,ILF,Inferior Longitudinal Fasciculus,99.0
+TE1m,LEFT,AF,Arcuate Fasciculus,99.0
+VIP,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",99.0
+TE1a,LEFT,ILF,Inferior Longitudinal Fasciculus,99.0
+DVT,LEFT,CTh_P,"Coricothalamic Tract, Posterior Segment",99.0
+7PL,RIGHT,CTh_P,"Coricothalamic Tract, Posterior Segment",99.0
+p10p,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",99.0
+STSva,LEFT,ILF,Inferior Longitudinal Fasciculus,99.0
+VIP,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",99.0
+PoI1,RIGHT,ILF,Inferior Longitudinal Fasciculus,98.0
+44,RIGHT,AF,Arcuate Fasciculus,98.0
+STSva,RIGHT,ILF,Inferior Longitudinal Fasciculus,98.0
+6v,RIGHT,FAT,Frontal Aslant Tract,98.0
+6a,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",98.0
+11l,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",98.0
+p47r,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",98.0
+PI,LEFT,UF,Uncinate Fasciculus,98.0
+8C,LEFT,SLF_II,Superior Longitudinal Fasciculus2,98.0
+TE2a,RIGHT,ILF,Inferior Longitudinal Fasciculus,98.0
+a9-46v,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",98.0
+IFJa,LEFT,FAT,Frontal Aslant Tract,98.0
+MT,RIGHT,PTAT,PTAT,98.0
+s6-8,LEFT,FAT,Frontal Aslant Tract,98.0
+PEF,LEFT,SLF_II,Superior Longitudinal Fasciculus2,98.0
+TPOJ2,RIGHT,AF,Arcuate Fasciculus,98.0
+STSvp,LEFT,PTAT,PTAT,98.0
+9a,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",98.0
+A5,LEFT,MdLF,Middle Longitudinal Fasciculus,98.0
+6v,LEFT,SLF_II,Superior Longitudinal Fasciculus2,98.0
+6v,LEFT,AF,Arcuate Fasciculus,98.0
+OP1,LEFT,SLF_III,Superior Longitudinal Fasciculus3,98.0
+H,LEFT,F,Fornix,98.0
+7PC,LEFT,SLF_II,Superior Longitudinal Fasciculus2,98.0
+AIP,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,98.0
+IFSa,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",98.0
+d23ab,RIGHT,C_R,C_R,98.0
+7AL,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",98.0
+AIP,LEFT,SLF_II,Superior Longitudinal Fasciculus2,98.0
+3a,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",98.0
+PFm,LEFT,SLF_III,Superior Longitudinal Fasciculus3,98.0
+3b,LEFT,CST,Corticospinal Tract,98.0
+3b,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,98.0
+6r,LEFT,CBT,Corticobulbar Tract,98.0
+V1,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",98.0
+7AL,RIGHT,CTh_P,"Coricothalamic Tract, Posterior Segment",98.0
+31a,RIGHT,SLF_I,Superior Longitudinal Fasciculus1,98.0
+7m,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",98.0
+V2,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",98.0
+31pv,RIGHT,C_R,C_R,98.0
+5m,RIGHT,SLF_I,Superior Longitudinal Fasciculus1,98.0
+POS2,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",98.0
+V2,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",98.0
+PCV,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",98.0
+MIP,RIGHT,CTh_P,"Coricothalamic Tract, Posterior Segment",98.0
+3a,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",98.0
+43,RIGHT,CBT,Corticobulbar Tract,98.0
+V3B,RIGHT,VOF,Vertical Occipital Fasciculus,98.0
+VIP,RIGHT,MdLF,Middle Longitudinal Fasciculus,98.0
+V7,RIGHT,VOF,Vertical Occipital Fasciculus,98.0
+2,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",98.0
+PFop,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,98.0
+VIP,LEFT,CTh_P,"Coricothalamic Tract, Posterior Segment",98.0
+V4,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,98.0
+V6A,LEFT,CTh_P,"Coricothalamic Tract, Posterior Segment",98.0
+pOFC,LEFT,UF,Uncinate Fasciculus,98.0
+V2,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",98.0
+25,RIGHT,C_R,C_R,98.0
+FOP5,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,98.0
+1,LEFT,SLF_III,Superior Longitudinal Fasciculus3,98.0
+25,LEFT,C_R,C_R,98.0
+V3A,RIGHT,VOF,Vertical Occipital Fasciculus,98.0
+V3,RIGHT,OR,Optic Radiation,98.0
+V6,LEFT,ILF,Inferior Longitudinal Fasciculus,98.0
+11l,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",97.0
+a24pr,LEFT,SLF_I,Superior Longitudinal Fasciculus1,97.0
+11l,LEFT,UF,Uncinate Fasciculus,97.0
+5m,LEFT,SLF_I,Superior Longitudinal Fasciculus1,97.0
+p24pr,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",97.0
+23c,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",97.0
+PSL,LEFT,AF,Arcuate Fasciculus,97.0
+DVT,LEFT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",97.0
+3a,LEFT,CTh_S,"Coricothalamic Tract, Superior Segment",97.0
+d32,RIGHT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",97.0
+PFcm,LEFT,AF,Arcuate Fasciculus,97.0
+10d,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",97.0
+STV,LEFT,AF,Arcuate Fasciculus,97.0
+TPOJ1,LEFT,PTAT,PTAT,97.0
+a9-46v,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",97.0
+10pp,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,97.0
+i6-8,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,97.0
+i6-8,LEFT,SLF_II,Superior Longitudinal Fasciculus2,97.0
+47s,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,97.0
+6ma,RIGHT,CST,Corticospinal Tract,97.0
+6d,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,97.0
+47m,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,97.0
+POS1,RIGHT,C_R,C_R,97.0
+47m,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,97.0
+POS1,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",97.0
+v23ab,RIGHT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",97.0
+10v,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",97.0
+POS2,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",97.0
+p10p,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,97.0
+POS2,LEFT,CTh_P,"Coricothalamic Tract, Posterior Segment",97.0
+47l,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",97.0
+8BL,LEFT,FAT,Frontal Aslant Tract,97.0
+V3A,LEFT,CTh_P,"Coricothalamic Tract, Posterior Segment",97.0
+IFSa,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,97.0
+H,RIGHT,F,Fornix,97.0
+FST,RIGHT,AF,Arcuate Fasciculus,97.0
+9-46d,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",97.0
+TE1p,RIGHT,AF,Arcuate Fasciculus,97.0
+V7,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,97.0
+LBelt,LEFT,MdLF,Middle Longitudinal Fasciculus,97.0
+V2,LEFT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",97.0
+9-46d,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",97.0
+PHA2,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",97.0
+A1,LEFT,MdLF,Middle Longitudinal Fasciculus,97.0
+LO3,RIGHT,PTAT,PTAT,97.0
+V6A,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,97.0
+9p,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",97.0
+LIPv,RIGHT,MdLF,Middle Longitudinal Fasciculus,97.0
+V3A,LEFT,VOF,Vertical Occipital Fasciculus,97.0
+SCEF,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",97.0
+9p,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",97.0
+V3,LEFT,OR,Optic Radiation,97.0
+9-46d,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",96.0
+Pir,RIGHT,ILF,Inferior Longitudinal Fasciculus,96.0
+PHA3,LEFT,ILF,Inferior Longitudinal Fasciculus,96.0
+V6,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,96.0
+PIT,RIGHT,VOF,Vertical Occipital Fasciculus,96.0
+3b,LEFT,SLF_III,Superior Longitudinal Fasciculus3,96.0
+8BL,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",96.0
+8BM,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",96.0
+FOP4,LEFT,AF,Arcuate Fasciculus,96.0
+PHA3,RIGHT,ILF,Inferior Longitudinal Fasciculus,96.0
+V2,LEFT,C_PH,"Cingulum, Parahippocampal Segment",96.0
+FOP1,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",96.0
+p9-46v,RIGHT,AF,Arcuate Fasciculus,96.0
+45,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,96.0
+IFSp,LEFT,FAT,Frontal Aslant Tract,96.0
+10pp,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,96.0
+FOP5,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",96.0
+a9-46v,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",96.0
+MBelt,LEFT,ILF,Inferior Longitudinal Fasciculus,96.0
+8Av,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",96.0
+AIP,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,96.0
+IP0,LEFT,VOF,Vertical Occipital Fasciculus,96.0
+A5,LEFT,AF,Arcuate Fasciculus,96.0
+V6,RIGHT,CTh_P,"Coricothalamic Tract, Posterior Segment",96.0
+p24,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",96.0
+10v,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",96.0
+PoI2,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",96.0
+s6-8,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",96.0
+s6-8,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",96.0
+MI,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",96.0
+V7,LEFT,VOF,Vertical Occipital Fasciculus,96.0
+6v,LEFT,CBT,Corticobulbar Tract,96.0
+7AL,RIGHT,MdLF,Middle Longitudinal Fasciculus,96.0
+7PL,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",96.0
+A4,LEFT,ILF,Inferior Longitudinal Fasciculus,96.0
+23d,RIGHT,C_R,C_R,96.0
+EC,LEFT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",96.0
+9p,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",96.0
+7m,RIGHT,C_R,C_R,96.0
+STSvp,RIGHT,PTAT,PTAT,95.0
+10pp,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",95.0
+IPS1,LEFT,CTh_P,"Coricothalamic Tract, Posterior Segment",95.0
+DVT,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",95.0
+ProS,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",95.0
+13l,LEFT,UF,Uncinate Fasciculus,95.0
+AAIC,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,95.0
+4,LEFT,AF,Arcuate Fasciculus,95.0
+IPS1,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",95.0
+3b,LEFT,CTh_S,"Coricothalamic Tract, Superior Segment",95.0
+3a,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",95.0
+24dv,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",95.0
+7Am,LEFT,SLF_I,Superior Longitudinal Fasciculus1,95.0
+3b,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",95.0
+5L,LEFT,CTh_P,"Coricothalamic Tract, Posterior Segment",95.0
+a24,LEFT,C_R,C_R,95.0
+RSC,LEFT,C_PH,"Cingulum, Parahippocampal Segment",95.0
+IFSa,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",95.0
+TE2a,LEFT,AF,Arcuate Fasciculus,95.0
+LBelt,LEFT,AF,Arcuate Fasciculus,95.0
+8BL,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",95.0
+MIP,RIGHT,MdLF,Middle Longitudinal Fasciculus,95.0
+6a,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",95.0
+8BM,RIGHT,SLF_I,Superior Longitudinal Fasciculus1,95.0
+8C,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,95.0
+V3,LEFT,CTh_P,"Coricothalamic Tract, Posterior Segment",95.0
+PH,LEFT,AF,Arcuate Fasciculus,95.0
+PoI1,LEFT,UF,Uncinate Fasciculus,95.0
+PSL,LEFT,PTAT,PTAT,95.0
+PSL,RIGHT,PTAT,PTAT,95.0
+PeEc,LEFT,UF,Uncinate Fasciculus,95.0
+PeEc,LEFT,ILF,Inferior Longitudinal Fasciculus,95.0
+52,RIGHT,MdLF,Middle Longitudinal Fasciculus,95.0
+PFt,LEFT,SLF_III,Superior Longitudinal Fasciculus3,95.0
+31pd,LEFT,SLF_I,Superior Longitudinal Fasciculus1,95.0
+PHA2,LEFT,C_PH,"Cingulum, Parahippocampal Segment",95.0
+PHA1,LEFT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",95.0
+V6,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,95.0
+V3,RIGHT,CTh_P,"Coricothalamic Tract, Posterior Segment",95.0
+45,LEFT,FAT,Frontal Aslant Tract,95.0
+9m,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",95.0
+IFJa,RIGHT,FAT,Frontal Aslant Tract,94.0
+p10p,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,94.0
+7PC,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",94.0
+TE1a,LEFT,AF,Arcuate Fasciculus,94.0
+PoI2,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",94.0
+a32pr,LEFT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",94.0
+7PC,RIGHT,MdLF,Middle Longitudinal Fasciculus,94.0
+STV,LEFT,PTAT,PTAT,94.0
+IP0,RIGHT,VOF,Vertical Occipital Fasciculus,94.0
+45,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",94.0
+43,LEFT,CBT,Corticobulbar Tract,94.0
+44,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,94.0
+FOP1,LEFT,AF,Arcuate Fasciculus,94.0
+1,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,94.0
+3b,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,94.0
+IFSp,LEFT,AF,Arcuate Fasciculus,94.0
+FOP3,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",94.0
+V6A,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,94.0
+p9-46v,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,93.0
+6d,LEFT,CTh_S,"Coricothalamic Tract, Superior Segment",93.0
+STSdp,LEFT,PTAT,PTAT,93.0
+V3B,RIGHT,ILF,Inferior Longitudinal Fasciculus,93.0
+POS1,RIGHT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",93.0
+STSdp,LEFT,AF,Arcuate Fasciculus,93.0
+SCEF,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",93.0
+1,LEFT,CTh_S,"Coricothalamic Tract, Superior Segment",93.0
+TGv,LEFT,ILF,Inferior Longitudinal Fasciculus,93.0
+7AL,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",93.0
+6d,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",93.0
+AAIC,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,93.0
+6a,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,93.0
+FOP4,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",93.0
+TA2,RIGHT,MdLF,Middle Longitudinal Fasciculus,93.0
+RSC,RIGHT,C_PH,"Cingulum, Parahippocampal Segment",93.0
+7m,LEFT,SLF_I,Superior Longitudinal Fasciculus1,93.0
+PI,LEFT,MdLF,Middle Longitudinal Fasciculus,93.0
+52,RIGHT,ILF,Inferior Longitudinal Fasciculus,93.0
+31pv,LEFT,C_R,C_R,93.0
+PoI1,RIGHT,UF,Uncinate Fasciculus,93.0
+MST,LEFT,PTAT,PTAT,93.0
+8C,LEFT,AF,Arcuate Fasciculus,93.0
+RSC,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",92.0
+PIT,LEFT,VOF,Vertical Occipital Fasciculus,92.0
+H,LEFT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",92.0
+PeEc,LEFT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",92.0
+47s,RIGHT,UF,Uncinate Fasciculus,92.0
+7Pm,LEFT,CTh_P,"Coricothalamic Tract, Posterior Segment",92.0
+V3,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",92.0
+7PL,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",92.0
+A5,RIGHT,MdLF,Middle Longitudinal Fasciculus,92.0
+31pd,RIGHT,C_R,C_R,92.0
+DVT,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",92.0
+6r,RIGHT,AF,Arcuate Fasciculus,92.0
+FOP2,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",92.0
+44,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",92.0
+55b,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",92.0
+47l,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",92.0
+PF,LEFT,AF,Arcuate Fasciculus,92.0
+IFSp,RIGHT,AF,Arcuate Fasciculus,91.0
+9m,LEFT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",91.0
+IFSa,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,91.0
+PGp,RIGHT,VOF,Vertical Occipital Fasciculus,91.0
+A4,RIGHT,ILF,Inferior Longitudinal Fasciculus,91.0
+1,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",91.0
+V6A,RIGHT,CTh_P,"Coricothalamic Tract, Posterior Segment",91.0
+IFSp,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,91.0
+8BM,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",91.0
+8C,RIGHT,AF,Arcuate Fasciculus,91.0
+LIPv,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",91.0
+43,LEFT,FAT,Frontal Aslant Tract,91.0
+6r,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",91.0
+10pp,RIGHT,UF,Uncinate Fasciculus,91.0
+8BL,RIGHT,FAT,Frontal Aslant Tract,91.0
+IFJa,RIGHT,AF,Arcuate Fasciculus,91.0
+9m,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",91.0
+IP1,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,91.0
+SFL,LEFT,SLF_I,Superior Longitudinal Fasciculus1,91.0
+SCEF,LEFT,FAT,Frontal Aslant Tract,91.0
+23d,RIGHT,SLF_I,Superior Longitudinal Fasciculus1,91.0
+31a,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",91.0
+5L,RIGHT,CTh_P,"Coricothalamic Tract, Posterior Segment",91.0
+6v,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",91.0
+PGi,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,91.0
+7Pm,LEFT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",91.0
+9m,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",91.0
+RSC,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",91.0
+3b,RIGHT,CST,Corticospinal Tract,91.0
+FEF,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",90.0
+PoI1,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,90.0
+PH,RIGHT,AF,Arcuate Fasciculus,90.0
+a32pr,LEFT,C_R,C_R,90.0
+V8,LEFT,ILF,Inferior Longitudinal Fasciculus,90.0
+IP0,RIGHT,ILF,Inferior Longitudinal Fasciculus,90.0
+i6-8,RIGHT,FAT,Frontal Aslant Tract,90.0
+i6-8,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",90.0
+SCEF,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",90.0
+IFJa,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,90.0
+45,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",90.0
+8BM,LEFT,SLF_I,Superior Longitudinal Fasciculus1,90.0
+IPS1,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",90.0
+7Pm,LEFT,SLF_I,Superior Longitudinal Fasciculus1,90.0
+5L,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",90.0
+7Pm,RIGHT,CTh_P,"Coricothalamic Tract, Posterior Segment",90.0
+PI,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,90.0
+8BM,LEFT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",90.0
+7Am,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",90.0
+7Am,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",90.0
+TE2a,LEFT,ILF,Inferior Longitudinal Fasciculus,90.0
+10pp,LEFT,UF,Uncinate Fasciculus,90.0
+1,LEFT,CST,Corticospinal Tract,90.0
+43,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",90.0
+43,RIGHT,FAT,Frontal Aslant Tract,90.0
+FOP1,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,90.0
+9p,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",90.0
+PHA1,RIGHT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",89.0
+SCEF,LEFT,CST,Corticospinal Tract,89.0
+7PC,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",89.0
+2,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",89.0
+10r,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",89.0
+p24,RIGHT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",89.0
+IPS1,RIGHT,ILF,Inferior Longitudinal Fasciculus,89.0
+7Pm,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",89.0
+V6A,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",89.0
+V2,LEFT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",89.0
+p9-46v,LEFT,AF,Arcuate Fasciculus,89.0
+a32pr,RIGHT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",89.0
+i6-8,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",89.0
+7PL,LEFT,MdLF,Middle Longitudinal Fasciculus,89.0
+FOP5,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",89.0
+PoI2,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,88.0
+7PC,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",88.0
+4,LEFT,CBT,Corticobulbar Tract,88.0
+TPOJ3,LEFT,PTAT,PTAT,88.0
+6a,LEFT,CST,Corticospinal Tract,88.0
+55b,LEFT,FAT,Frontal Aslant Tract,88.0
+i6-8,LEFT,FAT,Frontal Aslant Tract,88.0
+8Av,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",88.0
+FOP4,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,88.0
+p32pr,LEFT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",88.0
+LIPv,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,88.0
+23d,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",88.0
+V7,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",88.0
+H,RIGHT,ILF,Inferior Longitudinal Fasciculus,88.0
+SFL,RIGHT,SLF_I,Superior Longitudinal Fasciculus1,88.0
+V4t,RIGHT,VOF,Vertical Occipital Fasciculus,88.0
+PHA2,RIGHT,C_PH,"Cingulum, Parahippocampal Segment",88.0
+9a,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,87.0
+PoI1,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",87.0
+8Av,LEFT,FAT,Frontal Aslant Tract,87.0
+44,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",87.0
+PeEc,RIGHT,UF,Uncinate Fasciculus,87.0
+FOP1,LEFT,SLF_III,Superior Longitudinal Fasciculus3,87.0
+IFSa,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",87.0
+9-46d,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",87.0
+TE2p,LEFT,AF,Arcuate Fasciculus,87.0
+8Av,RIGHT,AF,Arcuate Fasciculus,87.0
+6v,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",87.0
+PGs,RIGHT,ILF,Inferior Longitudinal Fasciculus,87.0
+8Av,LEFT,CTh_S,"Coricothalamic Tract, Superior Segment",87.0
+6ma,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,86.0
+PEF,LEFT,FAT,Frontal Aslant Tract,86.0
+8Av,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",86.0
+VVC,LEFT,ILF,Inferior Longitudinal Fasciculus,86.0
+POS1,LEFT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",86.0
+6a,LEFT,SLF_II,Superior Longitudinal Fasciculus2,86.0
+8BM,RIGHT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",86.0
+6r,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,86.0
+V2,RIGHT,C_PH,"Cingulum, Parahippocampal Segment",86.0
+V3,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",86.0
+2,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,86.0
+2,LEFT,CTh_S,"Coricothalamic Tract, Superior Segment",86.0
+MIP,LEFT,MdLF,Middle Longitudinal Fasciculus,86.0
+PoI2,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",86.0
+FFC,LEFT,ILF,Inferior Longitudinal Fasciculus,86.0
+d23ab,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",86.0
+VMV3,LEFT,ILF,Inferior Longitudinal Fasciculus,85.0
+V7,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,85.0
+6mp,LEFT,FAT,Frontal Aslant Tract,85.0
+d32,LEFT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",85.0
+PeEc,RIGHT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",85.0
+s6-8,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",85.0
+FOP4,RIGHT,FAT,Frontal Aslant Tract,85.0
+4,RIGHT,CBT,Corticobulbar Tract,85.0
+5L,LEFT,CTh_S,"Coricothalamic Tract, Superior Segment",85.0
+7PC,RIGHT,SLF_III,Superior Longitudinal Fasciculus3,85.0
+IP1,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",85.0
+V2,LEFT,VOF,Vertical Occipital Fasciculus,85.0
+DVT,RIGHT,ILF,Inferior Longitudinal Fasciculus,85.0
+PHA3,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",85.0
+V2,RIGHT,VOF,Vertical Occipital Fasciculus,85.0
+a32pr,LEFT,SLF_I,Superior Longitudinal Fasciculus1,85.0
+8BM,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",85.0
+MI,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,85.0
+V8,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,84.0
+POS2,RIGHT,C_R,C_R,84.0
+10d,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,84.0
+TGv,RIGHT,C_PH,"Cingulum, Parahippocampal Segment",84.0
+MIP,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",84.0
+7AL,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",84.0
+11l,LEFT,CTh_A,"Coricothalamic Tract, Anterior Segment",84.0
+p9-46v,RIGHT,FAT,Frontal Aslant Tract,84.0
+IFSp,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",84.0
+DVT,LEFT,ILF,Inferior Longitudinal Fasciculus,84.0
+PI,RIGHT,UF,Uncinate Fasciculus,84.0
+OP2-3,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",83.0
+MBelt,RIGHT,ILF,Inferior Longitudinal Fasciculus,83.0
+V3A,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",83.0
+LIPv,RIGHT,CTh_P,"Coricothalamic Tract, Posterior Segment",83.0
+IFSp,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",83.0
+IPS1,LEFT,ILF,Inferior Longitudinal Fasciculus,83.0
+DVT,RIGHT,CTh_P,"Coricothalamic Tract, Posterior Segment",83.0
+PGp,LEFT,ILF,Inferior Longitudinal Fasciculus,83.0
+47l,LEFT,UF,Uncinate Fasciculus,83.0
+STSva,LEFT,AF,Arcuate Fasciculus,83.0
+Ig,RIGHT,CStr_S,"Corticostriatal Tract, Superior Segment",82.0
+Ig,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",82.0
+PF,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,82.0
+4,LEFT,FAT,Frontal Aslant Tract,82.0
+AVI,LEFT,UF,Uncinate Fasciculus,82.0
+p32,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",82.0
+IFJp,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,82.0
+V3A,LEFT,OR,Optic Radiation,82.0
+TGd,LEFT,C_PH,"Cingulum, Parahippocampal Segment",82.0
+IPS1,RIGHT,CTh_P,"Coricothalamic Tract, Posterior Segment",82.0
+PCV,LEFT,C_FP,"Cingulum, Frontal Parietal Segment",82.0
+10d,RIGHT,IFOF,Inferior Fronto Occipital Fasciculus,82.0
+PHA3,LEFT,C_PH,"Cingulum, Parahippocampal Segment",82.0
+VMV2,LEFT,ILF,Inferior Longitudinal Fasciculus,82.0
+10pp,RIGHT,CTh_A,"Coricothalamic Tract, Anterior Segment",82.0
+MI,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",82.0
+LIPd,RIGHT,SLF_II,Superior Longitudinal Fasciculus2,81.0
+EC,RIGHT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",81.0
+PHA2,RIGHT,ILF,Inferior Longitudinal Fasciculus,81.0
+TPOJ1,LEFT,AF,Arcuate Fasciculus,81.0
+AAIC,RIGHT,UF,Uncinate Fasciculus,81.0
+FEF,RIGHT,CTh_S,"Coricothalamic Tract, Superior Segment",81.0
+IFJp,LEFT,FAT,Frontal Aslant Tract,81.0
+POS1,LEFT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",81.0
+V6A,LEFT,VOF,Vertical Occipital Fasciculus,81.0
+TGv,LEFT,C_PH,"Cingulum, Parahippocampal Segment",81.0
+7PL,LEFT,C_PHP,"Cingulum, Parahippocampal Parietal Segment",81.0
+FOP1,LEFT,FAT,Frontal Aslant Tract,81.0
+7Pm,RIGHT,C_FP,"Cingulum, Frontal Parietal Segment",81.0
+PoI2,LEFT,IFOF,Inferior Fronto Occipital Fasciculus,81.0
+a24pr,RIGHT,SLF_I,Superior Longitudinal Fasciculus1,81.0
+V2,RIGHT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",81.0
+10r,LEFT,CStr_A,"Corticostriatal Tract, Anterior Segment",81.0
+46,RIGHT,CStr_A,"Corticostriatal Tract, Anterior Segment",81.0
+V4t,LEFT,VOF,Vertical Occipital Fasciculus,81.0
+VMV2,RIGHT,ILF,Inferior Longitudinal Fasciculus,80.0
+8Ad,RIGHT,FAT,Frontal Aslant Tract,80.0
+52,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",80.0
+5L,LEFT,CStr_P,"Corticostriatal Tract, Posterior Segment",80.0
+11l,RIGHT,UF,Uncinate Fasciculus,80.0
+LO3,RIGHT,VOF,Vertical Occipital Fasciculus,80.0
+7AL,LEFT,CStr_S,"Corticostriatal Tract, Superior Segment",80.0
+7AL,LEFT,MdLF,Middle Longitudinal Fasciculus,80.0
+9m,RIGHT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",80.0
+PGs,RIGHT,CStr_P,"Corticostriatal Tract, Posterior Segment",80.0
+ProS,RIGHT,C_PH,"Cingulum, Parahippocampal Segment",80.0
+a24pr,RIGHT,C_FPH,"Cingulum, Frontal Parahippocampal Segment",80.0

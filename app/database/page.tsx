@@ -24,22 +24,6 @@ export default function DatabasePage() {
           </div>
         </div>
 
-        {/* 脳機能データベースカード */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-          <div className="p-6">
-            <h2 className="text-xl font-semibold mb-3">脳機能データベース</h2>
-            <p className="text-gray-600 mb-4">
-              脳の解剖学的構造と機能領域を3Dマップで表示します。MNI152標準脳とAALパーセレーションを使用しています。
-            </p>
-            <Link
-              href="/database/brain"
-              className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              詳細を見る
-            </Link>
-          </div>
-        </div>
-
         {/* 高次脳機能データベースカード */}
         <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
           <div className="p-6">
