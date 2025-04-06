@@ -24,6 +24,22 @@ export default function DatabasePage() {
           </div>
         </div>
 
+        {/* ブロードマン脳地図カード */}
+        <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div className="p-6">
+            <h2 className="text-xl font-semibold mb-3">ブロードマン脳地図</h2>
+            <p className="text-gray-600 mb-4">
+              大脳皮質を52の領域に分類したブロードマン脳地図のデータベースです。機能局在の理解に役立ちます。
+            </p>
+            <Link
+              href="/database/brodmann"
+              className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              詳細を見る
+            </Link>
+          </div>
+        </div>
+
         {/* 高次脳機能データベースカード */}
         <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
           <div className="p-6">

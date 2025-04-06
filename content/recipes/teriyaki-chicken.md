@@ -38,7 +38,7 @@ ingredients:
         amount: 2枚
       - name: ミニトマト
         amount: 4個
-lastmod: '2025-04-03'
+lastmod: '2025-04-04'
 ---
 
 ## 下準備
