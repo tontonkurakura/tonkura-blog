@@ -35,7 +35,7 @@ ingredients:
         amount: 小さじ1.5
       - name: 砂糖
         amount: 小さじ1
-lastmod: '2025-04-04'
+lastmod: '2025-04-06'
 ---
 
 ## 下準備

@@ -3,7 +3,7 @@
 # - description: 写真の詳細な説明
 
 DSC00072.jpg:
-  description: Zojoji, Tokyo
+  description: Zojo-ji, Tokyo
 DSC00100.jpg:
   description: Tokyo Tower
 DSC00103.jpg:
@@ -19,19 +19,19 @@ DSC00363.jpg:
 DSC00498 (3).jpg:
   description: Shakotan, Hokkaido
 DSC00670.jpg:
-  description: Inokashira Park, Tokyo
+  description: Inokashira-park, Tokyo
 DSC00675.jpg:
-  description: Syowa Memorial Park, Tokyo
+  description: Syowa-memorial-park, Tokyo
 DSC01080.jpg:
   description: Okuno-jima, Hiroshima
 DSC01137.jpg:
   description: Okuno-jima, Hiroshima
 DSC01197.jpg:
-  description: Onioshidashien, Gunma
+  description: Onioshidashi-en, Gunma
 DSC01203.jpg:
-  description: Onioshidashien, Gunma
+  description: Onioshidashi-en, Gunma
 DSC01265.jpg:
-  description: Nabegataki, Gunma
+  description: Nabega-taki, Gunma
 DSC01376-Enhanced-NR.jpg:
   description: Goshiki-zakura ohashi, Tokyo
 DSC01388-Enhanced-NR.jpg:
@@ -61,7 +61,7 @@ DSC03624.jpg:
 DSC04738.jpg:
   description: Leeds, UK
 DSC05024.jpg:
-  description: citizenM hotel, Glasgow, UK
+  description: citizensM hotel, Glasgow, UK
 DSC05051.jpg:
   description: Glasgow Cathedral, Glasgow, UK
 DSC05210.jpg:
@@ -117,4 +117,12 @@ DSC09654.jpg:
 DSC09931.jpg:
   description: Tasmania, Australia
 DSC02359-Enhanced-NR-Pano-Edit.jpg:
-  description: 写真の説明を入力してください
+  description: Chillagoe, Australia
+DSC02808.jpg:
+  description: Institute of Science Tokyo
+DSC03082.jpg:
+  description: Musashi-kokubunji ato, Tokyo
+DSC03093.jpg:
+  description: Musashi-kokubunji ato, Tokyo
+DSC03097.jpg:
+  description: Musashi-kokubunji park, Tokyo

@@ -28,7 +28,7 @@ ingredients:
     amount: 適量
   - name: 塩
     amount: 適量
-lastmod: '2025-04-04'
+lastmod: '2025-04-06'
 ---
 
 ## 下準備
