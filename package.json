@@ -5,7 +5,7 @@
   "scripts": {
     "predev": "node scripts/update-lastmod.mjs",
     "dev": "next dev",
-    "prebuild": "npx ts-node -P scripts/tsconfig.json scripts/generate-cache.ts && npm audit",
+    "prebuild": "npx ts-node -P scripts/tsconfig.json scripts/generate-cache.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -13,7 +13,7 @@
     "new-post": "npx ts-node -T scripts/create-post.ts",
     "update-lastmod": "node scripts/update-lastmod.mjs",
     "watch-lastmod": "node scripts/update-lastmod.mjs --watch",
-    "prestart": "npm audit",
+    "prestart": "echo 'Starting production server...'",
     "security-check": "npm audit && npm outdated",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
