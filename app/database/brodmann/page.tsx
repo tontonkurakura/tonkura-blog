@@ -1,13 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 // データの型定義
 interface BrodmannArea {
   area: string;
   name: string;
   function: string;
+}
+
+interface QuizQuestion {
+  correctItem: BrodmannArea;
+  options: BrodmannArea[];
 }
 
 export default function BrodmannAreasPage() {
@@ -17,7 +22,9 @@ export default function BrodmannAreasPage() {
   const [quizMode, setQuizMode] = useState<"area" | "name" | "function">(
     "area"
   );
-  const [currentQuestion, setCurrentQuestion] = useState<any>(null);
+  const [currentQuestion, setCurrentQuestion] = useState<QuizQuestion | null>(
+    null
+  );
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [score, setScore] = useState({ correct: 0, total: 0 });
@@ -66,7 +73,7 @@ export default function BrodmannAreasPage() {
   });
 
   // 新しい問題を生成する関数
-  const generateNewQuestion = () => {
+  const generateNewQuestion = useCallback(() => {
     if (brodmannData.length === 0) return;
 
     setIsCorrect(null);
@@ -115,14 +122,14 @@ export default function BrodmannAreasPage() {
       correctItem,
       options,
     });
-  };
+  }, [brodmannData, quizMode]);
 
   // クイズモードの切り替え時に新しい問題を生成
   useEffect(() => {
     if (showQuiz && !isLoading && brodmannData.length > 0) {
       generateNewQuestion();
     }
-  }, [showQuiz, quizMode, isLoading, brodmannData]);
+  }, [showQuiz, quizMode, isLoading, brodmannData, generateNewQuestion]);
 
   // 回答をチェックする関数
   const checkAnswer = (answer: string) => {
@@ -286,52 +293,55 @@ export default function BrodmannAreasPage() {
 
               {/* 選択肢 */}
               <div className="grid gap-3">
-                {currentQuestion.options.map((option: any, index: number) => {
-                  const optionValue =
-                    quizMode === "area" ? option.name : option.area;
-                  const correctValue =
-                    quizMode === "area"
-                      ? currentQuestion.correctItem.name
-                      : currentQuestion.correctItem.area;
+                {currentQuestion.options.map(
+                  (option: BrodmannArea, index: number) => {
+                    const optionValue =
+                      quizMode === "area" ? option.name : option.area;
+                    const correctValue =
+                      quizMode === "area"
+                        ? currentQuestion.correctItem.name
+                        : currentQuestion.correctItem.area;
 
-                  // 正規化関数（上と同じ）
-                  const normalizeString = (str: string) => {
-                    return str.trim().toLowerCase().replace(/\s+/g, " ");
-                  };
+                    // 正規化関数（上と同じ）
+                    const normalizeString = (str: string) => {
+                      return str.trim().toLowerCase().replace(/\s+/g, " ");
+                    };
 
-                  // 選択した回答の正規化値
-                  const normalizedSelected = selectedAnswer
-                    ? normalizeString(selectedAnswer)
-                    : null;
-                  // このオプションの正規化値
-                  const normalizedOption = normalizeString(optionValue);
-                  // 正解の正規化値
-                  const normalizedCorrect = normalizeString(correctValue);
+                    // 選択した回答の正規化値
+                    const normalizedSelected = selectedAnswer
+                      ? normalizeString(selectedAnswer)
+                      : null;
+                    // このオプションの正規化値
+                    const normalizedOption = normalizeString(optionValue);
+                    // 正解の正規化値
+                    const normalizedCorrect = normalizeString(correctValue);
 
-                  // このオプションが選択されたものか
-                  const isSelected = normalizedSelected === normalizedOption;
-                  // このオプションが正解か
-                  const isThisCorrect = normalizedOption === normalizedCorrect;
+                    // このオプションが選択されたものか
+                    const isSelected = normalizedSelected === normalizedOption;
+                    // このオプションが正解か
+                    const isThisCorrect =
+                      normalizedOption === normalizedCorrect;
 
-                  return (
-                    <button
-                      key={index}
-                      onClick={() => checkAnswer(optionValue)}
-                      disabled={selectedAnswer !== null}
-                      className={`p-3 rounded text-left ${
-                        isSelected
-                          ? isCorrect
-                            ? "bg-green-100 border-2 border-green-500"
-                            : "bg-red-100 border-2 border-red-500"
-                          : selectedAnswer !== null && isThisCorrect
-                            ? "bg-green-100 border-2 border-green-500"
-                            : "bg-gray-100 hover:bg-gray-200"
-                      }`}
-                    >
-                      {optionValue}
-                    </button>
-                  );
-                })}
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => checkAnswer(optionValue)}
+                        disabled={selectedAnswer !== null}
+                        className={`p-3 rounded text-left ${
+                          isSelected
+                            ? isCorrect
+                              ? "bg-green-100 border-2 border-green-500"
+                              : "bg-red-100 border-2 border-red-500"
+                            : selectedAnswer !== null && isThisCorrect
+                              ? "bg-green-100 border-2 border-green-500"
+                              : "bg-gray-100 hover:bg-gray-200"
+                        }`}
+                      >
+                        {optionValue}
+                      </button>
+                    );
+                  }
+                )}
               </div>
 
               {/* 回答結果表示 */}

@@ -1,23 +1,17 @@
 ---
 last_edited: 2025-02-27T00:00:00.000Z
-lastmod: '2025-04-06'
+lastmod: "2025-10-02"
 ---
-
-
-
 
 ### ■ MSA
 
 - 病理学的には線条体黒質系、オリーブ橋小脳系、自律神経系が種々の程度・組み合わせで障害される。肉眼的には被殻の後半部・背外側の萎縮が明らかで、中脳黒質の脱色素を認める。橋底部や小脳も萎縮する。
 - 組織学的には、**オリゴデンドロサイトにα-synuclein陽性のGCIを認める**ことが特徴。オリゴデンドロサイト以外にも、
-    
-    - グリアの核内（glial nuclear inclusion）
-    - 神経細胞体（neuronal cytoplasmic inclusion: NCI）
-    - 神経細胞の核内（neuronal nuclear inclusion）
-    - 神経細胞の軸索内（neuroppil threads）
-    
-    などにも蓄積する。
-    
+  - グリアの核内（glial nuclear inclusion）
+  - 神経細胞体（neuronal cytoplasmic inclusion: NCI）
+  - 神経細胞の核内（neuronal nuclear inclusion）
+  - 神経細胞の軸索内（neuroppil threads）
+  などにも蓄積する。
 - **レヴィ小体病では核内にはα-synucleinは蓄積しない**ので、これは大きな違い。
 - 橋底部・小脳が病変の首座の場合、MSA-OPCA type（臨床的にはMSA-C）
 - 線条体・黒質が病変の首座の場合、MSA-SND type（臨床的にはMSA-P）

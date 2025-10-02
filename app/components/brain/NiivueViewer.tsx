@@ -1,6 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 import { Niivue } from "@niivue/niivue";
 import NiivueControlPanel from "./NiivueControlPanel";
 
@@ -16,6 +22,8 @@ import NiivueControlPanel from "./NiivueControlPanel";
  * @param {boolean} props.showControls - コントロールパネルを表示するかどうか
  * @param {string} props.atlasType - "hcp" または "aal3" または "tract" を指定
  * @param {boolean} props.isTractMode - 白質線維モードかどうか
+ * @param {ConnectedRegionInfo[]} props.connectedRegions - トラクトと接続性の高い皮質領域の情報
+ * @param {boolean} props.showCrosshair - クロスヘアを表示するかどうか
  */
 interface NiivueViewerProps {
   volumeUrl?: string;
@@ -25,6 +33,8 @@ interface NiivueViewerProps {
   showControls?: boolean;
   atlasType?: string; // "hcp" または "aal3" または "tract" を指定
   isTractMode?: boolean; // 白質線維モードかどうか
+  connectedRegions?: ConnectedRegionInfo[]; // トラクトと接続性の高い皮質領域の情報
+  showCrosshair?: boolean; // クロスヘアを表示するかどうか
 }
 
 // MNI座標とアトラス情報の型定義
@@ -54,15 +64,30 @@ interface AtlasLabels {
   [key: string]: AtlasLabel;
 }
 
-export default function NiivueViewer({
-  volumeUrl = "https://niivue.github.io/niivue/images/mni152.nii.gz",
-  overlayUrl,
-  width = 800,
-  height = 600,
-  showControls = true,
-  atlasType = "hcp", // デフォルトはHCP-MMP1アトラス
-  isTractMode = false, // デフォルトは白質線維モードではない
-}: NiivueViewerProps) {
+// 接続された皮質領域の情報の型定義
+interface ConnectedRegionInfo {
+  id: string;
+  numericId: number;
+  hemisphere: string;
+  name: string;
+  network?: string;
+}
+
+// forwardRefを使用して、親コンポーネントからアクセスできるようにする
+export default forwardRef(function NiivueViewer(
+  {
+    volumeUrl = "https://niivue.github.io/niivue/images/mni152.nii.gz",
+    overlayUrl,
+    width = 800,
+    height = 600,
+    showControls = true,
+    atlasType = "hcp", // デフォルトはHCP-MMP1アトラス
+    isTractMode = false, // デフォルトは白質線維モードではない
+    connectedRegions = [], // デフォルトは空の配列
+    showCrosshair = true, // デフォルトはクロスヘアを表示
+  }: NiivueViewerProps,
+  ref
+) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [niivue, setNiivue] = useState<Niivue | null>(null);
@@ -74,6 +99,8 @@ export default function NiivueViewer({
   const [highlightedRegion, setHighlightedRegion] = useState<number | null>(
     null
   ); // ハイライトされたリージョンのID
+  const [isCrosshairVisible, setIsCrosshairVisible] =
+    useState<boolean>(showCrosshair); // クロスヘアの表示状態
 
   // カスタムカラーマップを作成する関数
   const createCustomColormap = (niivueInstance: Niivue) => {
@@ -144,6 +171,136 @@ export default function NiivueViewer({
     }
   };
 
+  // 特定の領域のみをハイライトするカスタムカラーマップを作成
+  const createRegionSelectColormap = (
+    niivueInstance: Niivue,
+    regionIds: string[]
+  ) => {
+    try {
+      console.log(
+        `領域選択用カラーマップを作成します。選択された領域IDs: ${regionIds.join(", ")}`
+      );
+
+      // originalRegionIdsのロジックを修正
+      // NIFTIファイルでは左右半球ともに1-180の値が使用されているため
+      // 内部表現のID（左半球：1-180、右半球：201-380）を
+      // NIFTIファイルの実際の値（左右とも1-180）に変換する
+      const originalRegionIds: Set<string> = new Set();
+
+      // 左右半球の領域IDをマッピングするためのマップを作成
+      const hemisphereMapping: { [key: string]: string } = {};
+
+      // NIFTIファイルでの値のマッピング（デバッグ用）
+      const niftiValueMapping: { [key: string]: string } = {};
+
+      regionIds.forEach((id) => {
+        const numId = parseInt(id);
+        if (numId >= 201 && numId <= 380) {
+          // 右半球の場合、200を引いた値を追加
+          const originalId = numId - 200;
+          originalRegionIds.add(String(originalId));
+          // 右半球の領域を記録（デバッグ用）
+          hemisphereMapping[String(originalId)] = "右半球";
+          niftiValueMapping[id] = String(originalId);
+        } else {
+          // 左半球の場合はそのまま
+          originalRegionIds.add(id);
+          // 左半球の領域を記録（デバッグ用）
+          hemisphereMapping[id] = "左半球";
+          niftiValueMapping[id] = id;
+        }
+      });
+
+      console.log(
+        `変換後の領域IDs: ${Array.from(originalRegionIds).join(", ")}`
+      );
+      console.log(`半球情報: ${JSON.stringify(hemisphereMapping, null, 2)}`);
+      console.log(
+        `NIFTIでの値マッピング: ${JSON.stringify(niftiValueMapping, null, 2)}`
+      );
+
+      // 選択された領域のみを表示するカスタムカラーマップ
+      // 非選択領域は透明、選択された領域は通常の色で表示
+      const regionSelectColormap = {
+        R: Array(256)
+          .fill(0)
+          .map((_, i) => {
+            // 値が0の場合は背景なので透明に
+            if (i === 0) return 0;
+
+            // 選択された領域IDに含まれているかをチェック
+            const regionId = String(i);
+            if (originalRegionIds.has(regionId)) {
+              // 選択された領域はfreesurferカラーマップと同様の色づけ
+              return Math.min(
+                150 + Math.floor(Math.sin(i * 12.9898) * 105),
+                255
+              );
+            } else {
+              // 選択されていない領域は透明（黒）
+              return 0;
+            }
+          }),
+        G: Array(256)
+          .fill(0)
+          .map((_, i) => {
+            if (i === 0) return 0;
+
+            const regionId = String(i);
+            if (originalRegionIds.has(regionId)) {
+              return Math.min(
+                150 + Math.floor(Math.sin(i * 78.233) * 105),
+                255
+              );
+            } else {
+              return 0;
+            }
+          }),
+        B: Array(256)
+          .fill(0)
+          .map((_, i) => {
+            if (i === 0) return 0;
+
+            const regionId = String(i);
+            if (originalRegionIds.has(regionId)) {
+              return Math.min(
+                150 + Math.floor(Math.sin(i * 37.719) * 105),
+                255
+              );
+            } else {
+              return 0;
+            }
+          }),
+        A: Array(256)
+          .fill(0)
+          .map((_, i) => {
+            if (i === 0) return 0;
+
+            const regionId = String(i);
+            if (originalRegionIds.has(regionId)) {
+              // 選択された領域は不透明
+              return 200;
+            } else {
+              // 選択されていない領域は完全に透明
+              return 0;
+            }
+          }),
+        I: Array.from({ length: 256 }, (_, i) => i), // インデックス
+      };
+
+      // カラーマップをNiivueに追加
+      niivueInstance.addColormap("regionSelect", regionSelectColormap);
+      console.log(
+        `領域選択用カラーマップを追加しました（選択領域: ${originalRegionIds.size}個）`
+      );
+
+      return true;
+    } catch (error) {
+      console.error("領域選択用カラーマップの作成に失敗しました:", error);
+      return false;
+    }
+  };
+
   // キャンバスのリサイズを処理する関数
   const handleResize = () => {
     if (niivue && canvasRef.current && containerRef.current) {
@@ -200,7 +357,7 @@ export default function NiivueViewer({
           } else {
             // AAL3アトラスの場合は配列からオブジェクトに変換
             const formattedLabels: AtlasLabels = {};
-            data.forEach((item: any, index: number) => {
+            data.forEach((item: AtlasLabel, index: number) => {
               // インデックス+1をIDとして使用（AAL3のIDは1から始まる）
               const id = (index + 1).toString();
               formattedLabels[id] = {
@@ -238,7 +395,7 @@ export default function NiivueViewer({
   }, [overlayUrl, atlasType]);
 
   // アトラス領域名を取得する関数
-  const getAtlasRegionName = (value: number | any): string => {
+  const getAtlasRegionName = (value: number | null | undefined): string => {
     // 値がnullまたはundefinedの場合
     if (value === null || value === undefined) {
       return "不明な領域";
@@ -310,13 +467,16 @@ export default function NiivueViewer({
     // 現在の表示モードを更新
     setCurrentViewMode(mode);
 
-    // 3Dモードの場合、クロスヘアの色を明るい赤色に変更して目立たせる
-    if (mode === 4) {
-      // 3Dレンダリングモード
-      niivue.setCrosshairColor([1, 0, 0, 1]); // 完全な赤色（不透明度100%）
-    } else {
-      // 2Dモードの場合は元の色に戻す
-      niivue.setCrosshairColor([1, 0, 0, 0.8]); // 元の赤色（不透明度80%）
+    // クロスヘアが表示されている場合のみ色を変更
+    if (isCrosshairVisible) {
+      // 3Dモードの場合、クロスヘアの色を明るい赤色に変更して目立たせる
+      if (mode === 4) {
+        // 3Dレンダリングモード
+        niivue.setCrosshairColor([1, 0, 0, 1]); // 完全な赤色（不透明度100%）
+      } else {
+        // 2Dモードの場合は元の色に戻す
+        niivue.setCrosshairColor([1, 0, 0, 0.8]); // 元の赤色（不透明度80%）
+      }
     }
 
     // Niivueの表示モードを変更
@@ -324,7 +484,9 @@ export default function NiivueViewer({
   };
 
   // アトラスの詳細情報を取得する関数
-  const getAtlasDetails = (value: number | any): AtlasLabel | null => {
+  const getAtlasDetails = (
+    value: number | null | undefined
+  ): AtlasLabel | null => {
     if (value === null || value === undefined) {
       return null;
     }
@@ -394,9 +556,6 @@ export default function NiivueViewer({
       console.log(`リージョン ${regionId} をハイライトします`);
 
       // オーバーレイの不透明度を一時的に上げる
-      const overlayVolume = niivue.volumes[1]; // オーバーレイは通常2番目のボリューム
-      const originalOpacity = overlayVolume.opacity;
-
       // アトラスタイプに応じて不透明度を設定
       const highlightOpacity = 0.9;
 
@@ -420,6 +579,28 @@ export default function NiivueViewer({
     }
   };
 
+  // クロスヘアの表示/非表示を切り替える関数
+  const toggleCrosshair = () => {
+    if (!niivue) return;
+
+    const newVisibility = !isCrosshairVisible;
+    setIsCrosshairVisible(newVisibility);
+
+    // Niivueのネイティブ機能を使用してクロスヘアを表示/非表示
+    niivue.opts.crosshairWidth = newVisibility ? 2.0 : 0.0;
+    // 3Dレンダリング時のクロスヘア表示も同時に設定
+    niivue.opts.show3Dcrosshair = newVisibility;
+    niivue.drawScene();
+  };
+
+  // 親コンポーネントにメソッドを公開
+  useImperativeHandle(ref, () => ({
+    // 他のメソッドをここで公開できる
+    toggleCrosshair,
+    changeViewMode,
+    niivue, // Niivueインスタンス自体も公開（必要に応じて）
+  }));
+
   useEffect(() => {
     if (!canvasRef.current) return;
 
@@ -427,12 +608,12 @@ export default function NiivueViewer({
     const nv = new Niivue({
       // Niivueの初期設定
       backColor: [0, 0, 0, 1],
-      crosshairColor: [1, 0, 0, 0.8], // 赤色のクロスヘア
+      crosshairColor: [1, 0, 0, 0.8], // クロスヘアの色
       dragMode: 1, // ドラッグモード: 1=コントラスト調整
       isRadiologicalConvention: false,
       sliceType: 3, // 初期表示をマルチプラナー（MPR）に設定
-      show3Dcrosshair: true, // 3Dレンダリングモードでもクロスヘアを表示
-      crosshairWidth: 2.0, // クロスヘアの太さを設定
+      show3Dcrosshair: showCrosshair, // 3Dレンダリングモードでもクロスヘアを表示するかどうか
+      crosshairWidth: showCrosshair ? 2.0 : 0.0, // クロスヘアの太さを設定（0の場合は非表示）
     });
 
     // キャンバスの設定
@@ -442,7 +623,7 @@ export default function NiivueViewer({
     createCustomColormap(nv);
 
     // onLocationChangeコールバックの設定
-    nv.onLocationChange = (data: any) => {
+    nv.onLocationChange = (data: LocationData) => {
       // デバッグ情報
       if (data) {
         // 座標の型と正確な値を確認
@@ -540,13 +721,61 @@ export default function NiivueViewer({
               // 複数のオーバーレイを順次読み込む
               const loadOverlays = async () => {
                 try {
-                  for (const url of urls) {
+                  for (let i = 0; i < urls.length; i++) {
+                    const url = urls[i];
+
+                    // URLからクエリパラメータを解析して選択された領域IDを取得
+                    let selectedRegionIds: string[] = [];
+                    const isCorticalAtlas = url.includes(
+                      "HCP-MMP1_on_MNI152_ICBM2009a_nlin.nii.gz"
+                    );
+
+                    if (isCorticalAtlas && url.includes("?regions=")) {
+                      const match = url.match(/\?regions=([^&]+)/);
+                      if (match && match[1]) {
+                        selectedRegionIds = match[1].split(",");
+                        console.log(
+                          `URLから取得した選択領域IDs: ${selectedRegionIds.join(", ")}`
+                        );
+                      }
+                    }
+
+                    // 適切なカラーマップとオパシティを選択
+                    let colorMapToUse = colormapName;
+                    let opacityToUse = opacityValue;
+
+                    // トラクトモード時の皮質アトラスの場合
+                    if (isCorticalAtlas && isTractMode) {
+                      // URLから取得した選択領域があれば、それを使用する（トラクト接続性ベース）
+                      if (selectedRegionIds.length > 0) {
+                        // 選択された領域用のカスタムカラーマップを作成
+                        createRegionSelectColormap(nv, selectedRegionIds);
+                        colorMapToUse = "regionSelect";
+                        opacityToUse = 0.8; // 選択された領域を強調するために不透明度を上げる
+                        console.log(
+                          "トラクト接続性の高い皮質領域のみを表示します"
+                        );
+                      } else {
+                        // 選択された領域がない場合は標準的な皮質アトラス表示
+                        colorMapToUse = "freesurfer"; // 皮質アトラス用のカラーマップ
+                        opacityToUse = 0.4; // 白質線維が見えるよう透明度を上げる
+                        console.log(
+                          "皮質アトラス全体をオーバーレイとして表示します"
+                        );
+                      }
+                    }
+
+                    // URLからクエリパラメータを削除して実際のファイルパスだけを使用
+                    const cleanUrl = url.split("?")[0];
+
                     await nv.addVolumeFromUrl({
-                      url: url,
-                      colormap: colormapName,
-                      opacity: opacityValue,
+                      url: cleanUrl,
+                      colormap: colorMapToUse,
+                      opacity: opacityToUse,
                     });
-                    console.log(`オーバーレイの読み込みが完了しました: ${url}`);
+                    console.log(
+                      `オーバーレイの読み込みが完了しました: ${cleanUrl}`
+                    );
                   }
                   console.log(
                     `すべてのオーバーレイ(${urls.length}個)の読み込みが完了しました`
@@ -597,6 +826,7 @@ export default function NiivueViewer({
       }
       setNiivue(null);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [volumeUrl, overlayUrl]); // volumeUrlまたはoverlayUrlが変更されたときに再実行
 
   return (
@@ -625,6 +855,88 @@ export default function NiivueViewer({
           className="border border-gray-300 rounded-lg w-full h-full object-contain"
         />
       </div>
+
+      {/* トラクトモードで接続された皮質領域のラベルを表示 */}
+      {isTractMode && connectedRegions.length > 0 && (
+        <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+          <h3 className="font-bold text-sm mb-2">
+            接続性の高い皮質領域{" "}
+            <span className="text-blue-600 ml-1">
+              ({connectedRegions.length}領域)
+            </span>
+          </h3>
+
+          {/* ネットワークごとに領域をグループ化 */}
+          {(() => {
+            // 領域をネットワークごとにグループ化
+            const networkGroups: { [key: string]: ConnectedRegionInfo[] } = {};
+
+            // 不明なネットワークはその他として分類
+            connectedRegions.forEach((region) => {
+              const network = region.network || "その他";
+              if (!networkGroups[network]) {
+                networkGroups[network] = [];
+              }
+              networkGroups[network].push(region);
+            });
+
+            return (
+              <div className="space-y-3">
+                {Object.entries(networkGroups).map(([network, regions]) => (
+                  <div
+                    key={network}
+                    className="bg-white p-2 rounded-md border border-gray-200"
+                  >
+                    <div
+                      className="text-xs font-bold mb-2 pb-1 border-b flex items-center"
+                      style={{ color: getNetworkColor(network) }}
+                    >
+                      <div
+                        className="w-3 h-3 rounded-full mr-2"
+                        style={{ backgroundColor: getNetworkColor(network) }}
+                      ></div>
+                      {network === "dorsal attention"
+                        ? "背側注意ネットワーク"
+                        : network === "visual"
+                          ? "視覚ネットワーク"
+                          : network === "somatomotor"
+                            ? "体性感覚運動ネットワーク"
+                            : network === "default mode"
+                              ? "デフォルトモードネットワーク"
+                              : network === "frontoparietal"
+                                ? "前頭頭頂ネットワーク"
+                                : network === "limbic"
+                                  ? "辺縁系ネットワーク"
+                                  : network === "auditory"
+                                    ? "聴覚ネットワーク"
+                                    : network}
+                      <span className="ml-1 text-gray-500">
+                        ({regions.length})
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
+                      {regions.map((region) => (
+                        <div
+                          key={region.id}
+                          className="text-xs p-1 hover:bg-gray-50 rounded flex items-center"
+                        >
+                          <span className="font-medium">
+                            {region.hemisphere}
+                            {region.name}
+                          </span>
+                          <span className="text-gray-400 text-2xs ml-1">
+                            (ID:{region.id})
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            );
+          })()}
+        </div>
+      )}
 
       {/* MNI座標とアトラス情報の表示部分 - 白質線維モードでない場合のみ表示 */}
       {!isTractMode && locationData && locationData.mm && (
@@ -826,9 +1138,11 @@ export default function NiivueViewer({
           <NiivueControlPanel
             niivue={niivue}
             onViewModeChange={(mode: number) => changeViewMode(mode)}
+            onToggleCrosshair={toggleCrosshair}
+            isCrosshairVisible={isCrosshairVisible}
           />
         </div>
       )}
     </div>
   );
-}
+});

@@ -2,13 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { promises as fs } from "fs";
 import path from "path";
 
-export async function GET(
-  request: NextRequest,
-) {
+export async function GET(request: NextRequest) {
   try {
     // URLからパスパラメータを取得
     const url = new URL(request.url);
-    const pathSegments = url.pathname.replace('/api/images/', '').split('/');
+    const pathSegments = url.pathname.replace("/api/images/", "").split("/");
     const decodedPath = pathSegments.map((part) => decodeURIComponent(part));
 
     // パスの構築（セクションディレクトリを考慮）

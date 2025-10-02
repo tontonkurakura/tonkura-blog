@@ -189,8 +189,8 @@ interface PhotoGalleryProps {
   heroPhoto: Photo;
 }
 
-const getPhotoHeight = (aspectRatio: AspectRatio): number => {
-  return PHOTO_HEIGHTS[aspectRatio];
+export const getPhotoHeight = (aspectRatio: AspectRatio): number => {
+  return PHOTO_HEIGHTS[aspectRatio] || PHOTO_HEIGHTS.landscape;
 };
 
 const distributePhotos = (photos: Photo[]): Photo[][] => {

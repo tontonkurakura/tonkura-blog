@@ -1,10 +1,7 @@
 ---
 last_edited: 2025-02-27T00:00:00.000Z
-lastmod: '2025-04-06'
+lastmod: "2025-10-02"
 ---
-
-
-
 
 ## 総論
 
@@ -18,20 +15,18 @@ lastmod: '2025-04-06'
 ### 原因
 
 1. **純粋なsmall fiber neuropathy**
-    1. **代謝性**：耐糖能異常，脂質異常症，甲状腺機能低下症
-    2. **免疫介在性**：サルコイドーシス，Sjogren症候群，セリアック病，IBD，傍腫瘍性神経症候群
-    3. **感染性**：ハンセン病，EBV
-    4. **中毒・薬剤性**：抗レトロウイルス役，bortezomib，metronidazole，flecainide，nitrofurantoin，アルコール
-    5. **遺伝性**：Nav1.7変異，Fabry病，肢端紅痛症，Ross症候群，ヘモクロマトーシス
-    6. **特発性**：特発性small fiber neuropathy，口腔灼熱症候群
+   1. **代謝性**：耐糖能異常，脂質異常症，甲状腺機能低下症
+   2. **免疫介在性**：サルコイドーシス，Sjogren症候群，セリアック病，IBD，傍腫瘍性神経症候群
+   3. **感染性**：ハンセン病，EBV
+   4. **中毒・薬剤性**：抗レトロウイルス役，bortezomib，metronidazole，flecainide，nitrofurantoin，アルコール
+   5. **遺伝性**：Nav1.7変異，Fabry病，肢端紅痛症，Ross症候群，ヘモクロマトーシス
+   6. **特発性**：特発性small fiber neuropathy，口腔灼熱症候群
 2. **大径線維障害に進展するsmall fiber neuropathy**
-    1. **代謝性**：糖尿病，慢性腎臓病
-    2. **免疫介在性**：アミロイドーシス，血管炎，全身性エリテマトーデス，GBS
-    3. **感染性**：HIV，C型肝炎，Lyme神経ボレリア症
-    4. **中毒・薬剤性**：ビタミンB6過剰症
-    5. **遺伝性**：FAP，Fabry病，Tangier病，Friedrich運動失調症，[[脳腱黄色腫症]]，遺伝性感覚性自律神経性ニューロパチー
-
-  
+   1. **代謝性**：糖尿病，慢性腎臓病
+   2. **免疫介在性**：アミロイドーシス，血管炎，全身性エリテマトーデス，GBS
+   3. **感染性**：HIV，C型肝炎，Lyme神経ボレリア症
+   4. **中毒・薬剤性**：ビタミンB6過剰症
+   5. **遺伝性**：FAP，Fabry病，Tangier病，Friedrich運動失調症，[[脳腱黄色腫症]]，遺伝性感覚性自律神経性ニューロパチー
 
 ## 症状
 
@@ -45,36 +40,31 @@ lastmod: '2025-04-06'
 
 疼痛は温度の上昇で誘発されることがあり，こむら返り，RLS，掻痒を伴うこともある．
 
-  
-
 ## 診断
 
 1. **possible** small fiber neuropathy
-    
-    　length-dependentな神経症状の存在 and/or 小径線維障害の臨床的特徴
-    
-2. **probable** small fiber neuropathy
-    
-    　length-dependentな神経症状の存在
-    
-    　and 小径線維障害の臨床的特徴
-    
-    　and 腓腹神経伝導検査の正常所見
-    
-3. **definite** small fiber neuropathy
-    
-    　length-dependentな神経症状の存在
-    
-    　and 小径線維障害の臨床的特徴
-    
-    　and 腓腹神経伝導検査の正常所見
-    
-    　and 表皮内神経線維密度の減少（要生検）
-    
-    　and/or 定量的感覚検査の異常
-    
 
-  
+   　length-dependentな神経症状の存在 and/or 小径線維障害の臨床的特徴
+
+2. **probable** small fiber neuropathy
+
+   　length-dependentな神経症状の存在
+
+   　and 小径線維障害の臨床的特徴
+
+   　and 腓腹神経伝導検査の正常所見
+
+3. **definite** small fiber neuropathy
+
+   　length-dependentな神経症状の存在
+
+   　and 小径線維障害の臨床的特徴
+
+   　and 腓腹神経伝導検査の正常所見
+
+   　and 表皮内神経線維密度の減少（要生検）
+
+   　and/or 定量的感覚検査の異常
 
 ## 検査
 
@@ -84,13 +74,11 @@ lastmod: '2025-04-06'
 
 下2つはRoutineでは施行されない検査であり，診断が難しいのが現実．
 
-  
-
 ## 治療
 
 - 原因疾患の治療が原則
 - 対症療法のエビデンスは確立されておらず，神経障害性疼痛に対する対応と同じ．
-    - 三環系抗うつ薬
-    - SNRI
-    - プレガバリン
-    - ガバペンチン
+  - 三環系抗うつ薬
+  - SNRI
+  - プレガバリン
+  - ガバペンチン

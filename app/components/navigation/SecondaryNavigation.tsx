@@ -15,10 +15,10 @@ interface SecondaryNavigationProps {
  */
 export default function SecondaryNavigation({
   show,
-  children
+  children,
 }: SecondaryNavigationProps) {
   if (!show) return null;
-  
+
   return (
     <nav className="w-full mt-1 bg-[#0a2647]/80 rounded-lg p-1">
       <ul className="flex flex-wrap justify-center space-x-2 md:space-x-3">
@@ -49,4 +49,4 @@ export function NeurologySubNavigation() {
       {/* 将来的に他のサブメニューを追加する場合はここに追加 */}
     </SecondaryNavigation>
   );
-} 
+}

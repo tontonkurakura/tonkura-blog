@@ -1,14 +1,9 @@
 ---
 last_edited: 2022-08-24T00:00:00.000Z
-lastmod: '2025-04-06'
+lastmod: "2025-10-02"
 ---
 
-
-
-
 いわゆる脊髄長大病変．Longitudinally extensive spinal cord lesions (LESCL)とも言う．
-
-  
 
 - 視神経脊髄炎
 - 抗AQP4抗体陰性NMOSD

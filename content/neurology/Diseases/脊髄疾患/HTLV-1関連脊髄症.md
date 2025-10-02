@@ -1,10 +1,7 @@
 ---
 last_edited: 2025-02-27T00:00:00.000Z
-lastmod: '2025-04-06'
+lastmod: "2025-10-02"
 ---
-
-
-
 
 英名：HTLV-1-associated myelopathy（HAM）
 
@@ -15,9 +12,9 @@ lastmod: '2025-04-06'
 #### 資料
 
 - HTLV-1 関連脊髄症の診断と治療
-https://www.jstage.jst.go.jp/article/naika/106/7/106_1404/_pdf
+  https://www.jstage.jst.go.jp/article/naika/106/7/106_1404/_pdf
 
-- 
+-
 
 ### 概要
 
@@ -30,9 +27,7 @@ https://www.jstage.jst.go.jp/article/naika/106/7/106_1404/_pdf
 
 ### 原因
 
--
-
----
+- ***
 
 ### 症状
 

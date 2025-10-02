@@ -1,0 +1,5152 @@
+{
+  "C_PH": {
+    "tract_name": "C_PH",
+    "full_name": "Cingulum, Parahippocampal Segment",
+    "connections": {
+      "left": [
+        {
+          "region_name": "PHA1",
+          "description": "ParaHippocampal Area 1",
+          "probability": 100,
+          "region_number": 126
+        },
+        {
+          "region_name": "PreS",
+          "description": "PreSubiculum",
+          "probability": 100,
+          "region_number": 119
+        },
+        {
+          "region_name": "H",
+          "description": "Hippocampus",
+          "probability": 100,
+          "region_number": 120
+        },
+        {
+          "region_name": "PeEc",
+          "description": "Perirhinal Ectorhinal Cortex",
+          "probability": 100,
+          "region_number": 122
+        },
+        {
+          "region_name": "EC",
+          "description": "Entorhinal Cortex",
+          "probability": 99,
+          "region_number": 118
+        },
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 96,
+          "region_number": 4
+        },
+        {
+          "region_name": "PHA2",
+          "description": "ParaHippocampal Area 2",
+          "probability": 95,
+          "region_number": 155
+        },
+        {
+          "region_name": "RSC",
+          "description": "RetroSplenial Complex",
+          "probability": 95,
+          "region_number": 14
+        },
+        {
+          "region_name": "TGd",
+          "description": "Area TG dorsal",
+          "probability": 82,
+          "region_number": 131
+        },
+        {
+          "region_name": "PHA3",
+          "description": "ParaHippocampal Area 3",
+          "probability": 82,
+          "region_number": 127
+        },
+        {
+          "region_name": "TGv",
+          "description": "Area TG Ventral",
+          "probability": 81,
+          "region_number": 172
+        }
+      ],
+      "right": [
+        {
+          "region_name": "PHA1",
+          "description": "ParaHippocampal Area 1",
+          "probability": 100,
+          "region_number": 126
+        },
+        {
+          "region_name": "PreS",
+          "description": "PreSubiculum",
+          "probability": 100,
+          "region_number": 119
+        },
+        {
+          "region_name": "H",
+          "description": "Hippocampus",
+          "probability": 100,
+          "region_number": 120
+        },
+        {
+          "region_name": "PeEc",
+          "description": "Perirhinal Ectorhinal Cortex",
+          "probability": 100,
+          "region_number": 122
+        },
+        {
+          "region_name": "EC",
+          "description": "Entorhinal Cortex",
+          "probability": 100,
+          "region_number": 118
+        },
+        {
+          "region_name": "RSC",
+          "description": "RetroSplenial Complex",
+          "probability": 93,
+          "region_number": 14
+        },
+        {
+          "region_name": "PHA2",
+          "description": "ParaHippocampal Area 2",
+          "probability": 88,
+          "region_number": 155
+        },
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 86,
+          "region_number": 4
+        },
+        {
+          "region_name": "TGv",
+          "description": "Area TG Ventral",
+          "probability": 84,
+          "region_number": 172
+        },
+        {
+          "region_name": "ProS",
+          "description": "ProStriate Area",
+          "probability": 80,
+          "region_number": 121
+        }
+      ]
+    }
+  },
+  "ILF": {
+    "tract_name": "ILF",
+    "full_name": "Inferior Longitudinal Fasciculus",
+    "connections": {
+      "left": [
+        {
+          "region_name": "TGd",
+          "description": "Area TG dorsal",
+          "probability": 100,
+          "region_number": 131
+        },
+        {
+          "region_name": "STSda",
+          "description": "Area STSd anterior",
+          "probability": 100,
+          "region_number": 128
+        },
+        {
+          "region_name": "STGa",
+          "description": "Area STGa",
+          "probability": 100,
+          "region_number": 123
+        },
+        {
+          "region_name": "PoI1",
+          "description": "Area Posterior Insular 1",
+          "probability": 100,
+          "region_number": 167
+        },
+        {
+          "region_name": "PI",
+          "description": "Para-Insular Area",
+          "probability": 100,
+          "region_number": 178
+        },
+        {
+          "region_name": "TA2",
+          "description": "Area TA2",
+          "probability": 100,
+          "region_number": 107
+        },
+        {
+          "region_name": "52",
+          "description": "Area 52",
+          "probability": 100,
+          "region_number": 103
+        },
+        {
+          "region_name": "A5",
+          "description": "Auditory 5 Complex",
+          "probability": 100,
+          "region_number": 125
+        },
+        {
+          "region_name": "V4",
+          "description": "Fourth Visual Area",
+          "probability": 100,
+          "region_number": 6
+        },
+        {
+          "region_name": "V3",
+          "description": "Third Visual Area",
+          "probability": 100,
+          "region_number": 5
+        },
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 100,
+          "region_number": 4
+        },
+        {
+          "region_name": "V1",
+          "description": "Primary Visual Cortex",
+          "probability": 100,
+          "region_number": 1
+        },
+        {
+          "region_name": "STSva",
+          "description": "Area STSv anterior",
+          "probability": 99,
+          "region_number": 176
+        },
+        {
+          "region_name": "TE1a",
+          "description": "Area TE1 anterior",
+          "probability": 99,
+          "region_number": 132
+        },
+        {
+          "region_name": "V7",
+          "description": "Seventh Visual Area",
+          "probability": 99,
+          "region_number": 16
+        },
+        {
+          "region_name": "V6A",
+          "description": "Area V6A",
+          "probability": 99,
+          "region_number": 152
+        },
+        {
+          "region_name": "V3A",
+          "description": "Area V3A",
+          "probability": 99,
+          "region_number": 13
+        },
+        {
+          "region_name": "TF",
+          "description": "Area TF",
+          "probability": 99,
+          "region_number": 135
+        },
+        {
+          "region_name": "V6",
+          "description": "Sixth Visual Area",
+          "probability": 98,
+          "region_number": 3
+        },
+        {
+          "region_name": "MBelt",
+          "description": "Medial Belt Complex",
+          "probability": 96,
+          "region_number": 173
+        },
+        {
+          "region_name": "A4",
+          "description": "Auditory 4 Complex",
+          "probability": 96,
+          "region_number": 175
+        },
+        {
+          "region_name": "PHA3",
+          "description": "ParaHippocampal Area 3",
+          "probability": 96,
+          "region_number": 127
+        },
+        {
+          "region_name": "PeEc",
+          "description": "Perirhinal Ectorhinal Cortex",
+          "probability": 95,
+          "region_number": 122
+        },
+        {
+          "region_name": "TGv",
+          "description": "Area TG Ventral",
+          "probability": 93,
+          "region_number": 172
+        },
+        {
+          "region_name": "TE2a",
+          "description": "Area TE2 anterior",
+          "probability": 90,
+          "region_number": 134
+        },
+        {
+          "region_name": "V8",
+          "description": "Eighth Visual Area",
+          "probability": 90,
+          "region_number": 7
+        },
+        {
+          "region_name": "FFC",
+          "description": "Fusiform Face Complex",
+          "probability": 86,
+          "region_number": 18
+        },
+        {
+          "region_name": "VVC",
+          "description": "Ventral Visual Complex",
+          "probability": 86,
+          "region_number": 163
+        },
+        {
+          "region_name": "VMV3",
+          "description": "VentroMedial Visual Area 3",
+          "probability": 85,
+          "region_number": 154
+        },
+        {
+          "region_name": "DVT",
+          "description": "Dorsal Transitional Visual Area",
+          "probability": 84,
+          "region_number": 142
+        },
+        {
+          "region_name": "PGp",
+          "description": "Area PGp",
+          "probability": 83,
+          "region_number": 143
+        },
+        {
+          "region_name": "IPS1",
+          "description": "IntraParietal Sulcus Area 1",
+          "probability": 83,
+          "region_number": 17
+        },
+        {
+          "region_name": "VMV2",
+          "description": "VentroMedial Visual Area 2",
+          "probability": 82,
+          "region_number": 160
+        }
+      ],
+      "right": [
+        {
+          "region_name": "TGd",
+          "description": "Area TG dorsal",
+          "probability": 100,
+          "region_number": 131
+        },
+        {
+          "region_name": "STSda",
+          "description": "Area STSd anterior",
+          "probability": 100,
+          "region_number": 128
+        },
+        {
+          "region_name": "STGa",
+          "description": "Area STGa",
+          "probability": 100,
+          "region_number": 123
+        },
+        {
+          "region_name": "PI",
+          "description": "Para-Insular Area",
+          "probability": 100,
+          "region_number": 178
+        },
+        {
+          "region_name": "V7",
+          "description": "Seventh Visual Area",
+          "probability": 100,
+          "region_number": 16
+        },
+        {
+          "region_name": "V4",
+          "description": "Fourth Visual Area",
+          "probability": 100,
+          "region_number": 6
+        },
+        {
+          "region_name": "V3A",
+          "description": "Area V3A",
+          "probability": 100,
+          "region_number": 13
+        },
+        {
+          "region_name": "V3",
+          "description": "Third Visual Area",
+          "probability": 100,
+          "region_number": 5
+        },
+        {
+          "region_name": "TF",
+          "description": "Area TF",
+          "probability": 100,
+          "region_number": 135
+        },
+        {
+          "region_name": "PeEc",
+          "description": "Perirhinal Ectorhinal Cortex",
+          "probability": 100,
+          "region_number": 122
+        },
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 100,
+          "region_number": 4
+        },
+        {
+          "region_name": "V1",
+          "description": "Primary Visual Cortex",
+          "probability": 100,
+          "region_number": 1
+        },
+        {
+          "region_name": "TE1a",
+          "description": "Area TE1 anterior",
+          "probability": 99,
+          "region_number": 132
+        },
+        {
+          "region_name": "TA2",
+          "description": "Area TA2",
+          "probability": 99,
+          "region_number": 107
+        },
+        {
+          "region_name": "A5",
+          "description": "Auditory 5 Complex",
+          "probability": 99,
+          "region_number": 125
+        },
+        {
+          "region_name": "PGp",
+          "description": "Area PGp",
+          "probability": 99,
+          "region_number": 143
+        },
+        {
+          "region_name": "V6A",
+          "description": "Area V6A",
+          "probability": 99,
+          "region_number": 152
+        },
+        {
+          "region_name": "V6",
+          "description": "Sixth Visual Area",
+          "probability": 99,
+          "region_number": 3
+        },
+        {
+          "region_name": "TGv",
+          "description": "Area TG Ventral",
+          "probability": 99,
+          "region_number": 172
+        },
+        {
+          "region_name": "STSva",
+          "description": "Area STSv anterior",
+          "probability": 98,
+          "region_number": 176
+        },
+        {
+          "region_name": "PoI1",
+          "description": "Area Posterior Insular 1",
+          "probability": 98,
+          "region_number": 167
+        },
+        {
+          "region_name": "TE2a",
+          "description": "Area TE2 anterior",
+          "probability": 98,
+          "region_number": 134
+        },
+        {
+          "region_name": "PHA3",
+          "description": "ParaHippocampal Area 3",
+          "probability": 96,
+          "region_number": 127
+        },
+        {
+          "region_name": "Pir",
+          "description": "Pirform Cortex",
+          "probability": 96,
+          "region_number": 110
+        },
+        {
+          "region_name": "52",
+          "description": "Area 52",
+          "probability": 93,
+          "region_number": 103
+        },
+        {
+          "region_name": "V3B",
+          "description": "Area V3B",
+          "probability": 93,
+          "region_number": 19
+        },
+        {
+          "region_name": "A4",
+          "description": "Auditory 4 Complex",
+          "probability": 91,
+          "region_number": 175
+        },
+        {
+          "region_name": "IP0",
+          "description": "Area IntraParietal 0",
+          "probability": 90,
+          "region_number": 146
+        },
+        {
+          "region_name": "IPS1",
+          "description": "IntraParietal Sulcus Area 1",
+          "probability": 89,
+          "region_number": 17
+        },
+        {
+          "region_name": "H",
+          "description": "Hippocampus",
+          "probability": 88,
+          "region_number": 120
+        },
+        {
+          "region_name": "PGs",
+          "description": "Area PGs",
+          "probability": 87,
+          "region_number": 151
+        },
+        {
+          "region_name": "DVT",
+          "description": "Dorsal Transitional Visual Area",
+          "probability": 85,
+          "region_number": 142
+        },
+        {
+          "region_name": "MBelt",
+          "description": "Medial Belt Complex",
+          "probability": 83,
+          "region_number": 173
+        },
+        {
+          "region_name": "PHA2",
+          "description": "ParaHippocampal Area 2",
+          "probability": 81,
+          "region_number": 155
+        },
+        {
+          "region_name": "VMV2",
+          "description": "VentroMedial Visual Area 2",
+          "probability": 80,
+          "region_number": 160
+        }
+      ]
+    }
+  },
+  "UF": {
+    "tract_name": "UF",
+    "full_name": "Uncinate Fasciculus",
+    "connections": {
+      "left": [
+        {
+          "region_name": "TGd",
+          "description": "Area TG dorsal",
+          "probability": 100,
+          "region_number": 131
+        },
+        {
+          "region_name": "STGa",
+          "description": "Area STGa",
+          "probability": 100,
+          "region_number": 123
+        },
+        {
+          "region_name": "Pir",
+          "description": "Pirform Cortex",
+          "probability": 100,
+          "region_number": 110
+        },
+        {
+          "region_name": "47s",
+          "description": "Area 47s",
+          "probability": 100,
+          "region_number": 94
+        },
+        {
+          "region_name": "AAIC",
+          "description": "Anterior Agranular Insula Complex",
+          "probability": 99,
+          "region_number": 112
+        },
+        {
+          "region_name": "PI",
+          "description": "Para-Insular Area",
+          "probability": 98,
+          "region_number": 178
+        },
+        {
+          "region_name": "pOFC",
+          "description": "posterior OFC Complex",
+          "probability": 98,
+          "region_number": 166
+        },
+        {
+          "region_name": "11l",
+          "description": "Area 11l",
+          "probability": 97,
+          "region_number": 91
+        },
+        {
+          "region_name": "PoI1",
+          "description": "Area Posterior Insular 1",
+          "probability": 95,
+          "region_number": 167
+        },
+        {
+          "region_name": "PeEc",
+          "description": "Perirhinal Ectorhinal Cortex",
+          "probability": 95,
+          "region_number": 122
+        },
+        {
+          "region_name": "13l",
+          "description": "Area 13l",
+          "probability": 95,
+          "region_number": 92
+        },
+        {
+          "region_name": "10pp",
+          "description": "Polar 10p",
+          "probability": 90,
+          "region_number": 90
+        },
+        {
+          "region_name": "47l",
+          "description": "Area 47l (47 lateral)",
+          "probability": 83,
+          "region_number": 76
+        },
+        {
+          "region_name": "AVI",
+          "description": "Anterior Ventral Insular Area",
+          "probability": 82,
+          "region_number": 111
+        }
+      ],
+      "right": [
+        {
+          "region_name": "TGd",
+          "description": "Area TG dorsal",
+          "probability": 100,
+          "region_number": 131
+        },
+        {
+          "region_name": "Pir",
+          "description": "Pirform Cortex",
+          "probability": 100,
+          "region_number": 110
+        },
+        {
+          "region_name": "STGa",
+          "description": "Area STGa",
+          "probability": 99,
+          "region_number": 123
+        },
+        {
+          "region_name": "PoI1",
+          "description": "Area Posterior Insular 1",
+          "probability": 93,
+          "region_number": 167
+        },
+        {
+          "region_name": "47s",
+          "description": "Area 47s",
+          "probability": 92,
+          "region_number": 94
+        },
+        {
+          "region_name": "10pp",
+          "description": "Polar 10p",
+          "probability": 91,
+          "region_number": 90
+        },
+        {
+          "region_name": "PeEc",
+          "description": "Perirhinal Ectorhinal Cortex",
+          "probability": 87,
+          "region_number": 122
+        },
+        {
+          "region_name": "PI",
+          "description": "Para-Insular Area",
+          "probability": 84,
+          "region_number": 178
+        },
+        {
+          "region_name": "AAIC",
+          "description": "Anterior Agranular Insula Complex",
+          "probability": 81,
+          "region_number": 112
+        },
+        {
+          "region_name": "11l",
+          "description": "Area 11l",
+          "probability": 80,
+          "region_number": 91
+        }
+      ]
+    }
+  },
+  "AF": {
+    "tract_name": "AF",
+    "full_name": "Arcuate Fasciculus",
+    "connections": {
+      "left": [
+        {
+          "region_name": "A4",
+          "description": "Auditory 4 Complex",
+          "probability": 100,
+          "region_number": 175
+        },
+        {
+          "region_name": "TE1p",
+          "description": "Area TE1 posterior",
+          "probability": 100,
+          "region_number": 133
+        },
+        {
+          "region_name": "STSvp",
+          "description": "Area STSv posterior",
+          "probability": 100,
+          "region_number": 130
+        },
+        {
+          "region_name": "6r",
+          "description": "Rostral Area 6",
+          "probability": 100,
+          "region_number": 78
+        },
+        {
+          "region_name": "44",
+          "description": "Area 44",
+          "probability": 100,
+          "region_number": 74
+        },
+        {
+          "region_name": "PBelt",
+          "description": "ParaBelt Complex",
+          "probability": 99,
+          "region_number": 124
+        },
+        {
+          "region_name": "TE1m",
+          "description": "Area TE1 Middle",
+          "probability": 99,
+          "region_number": 177
+        },
+        {
+          "region_name": "PHT",
+          "description": "Area PHT",
+          "probability": 99,
+          "region_number": 137
+        },
+        {
+          "region_name": "IFJa",
+          "description": "Area IFJa",
+          "probability": 99,
+          "region_number": 79
+        },
+        {
+          "region_name": "RI",
+          "description": "RetroInsular Cortex",
+          "probability": 99,
+          "region_number": 104
+        },
+        {
+          "region_name": "43",
+          "description": "Area 43",
+          "probability": 99,
+          "region_number": 99
+        },
+        {
+          "region_name": "6v",
+          "description": "Ventral Area 6",
+          "probability": 98,
+          "region_number": 56
+        },
+        {
+          "region_name": "STV",
+          "description": "Superior Temporal Visual Area",
+          "probability": 97,
+          "region_number": 28
+        },
+        {
+          "region_name": "PFcm",
+          "description": "Area PFcm",
+          "probability": 97,
+          "region_number": 105
+        },
+        {
+          "region_name": "PSL",
+          "description": "PeriSylvian Language Area",
+          "probability": 97,
+          "region_number": 25
+        },
+        {
+          "region_name": "A5",
+          "description": "Auditory 5 Complex",
+          "probability": 96,
+          "region_number": 125
+        },
+        {
+          "region_name": "FOP4",
+          "description": "Frontal OPercular Area 4",
+          "probability": 96,
+          "region_number": 108
+        },
+        {
+          "region_name": "LBelt",
+          "description": "Lateral Belt Complex",
+          "probability": 95,
+          "region_number": 174
+        },
+        {
+          "region_name": "TE2a",
+          "description": "Area TE2 anterior",
+          "probability": 95,
+          "region_number": 134
+        },
+        {
+          "region_name": "PH",
+          "description": "Area PH",
+          "probability": 95,
+          "region_number": 138
+        },
+        {
+          "region_name": "4",
+          "description": "Primary Motor Cortex",
+          "probability": 95,
+          "region_number": 8
+        },
+        {
+          "region_name": "TE1a",
+          "description": "Area TE1 anterior",
+          "probability": 94,
+          "region_number": 132
+        },
+        {
+          "region_name": "IFSp",
+          "description": "Area IFSp",
+          "probability": 94,
+          "region_number": 81
+        },
+        {
+          "region_name": "FOP1",
+          "description": "Frontal OPercular Area 1",
+          "probability": 94,
+          "region_number": 113
+        },
+        {
+          "region_name": "STSdp",
+          "description": "Area STSd posterior",
+          "probability": 93,
+          "region_number": 129
+        },
+        {
+          "region_name": "8C",
+          "description": "Area 8C",
+          "probability": 93,
+          "region_number": 73
+        },
+        {
+          "region_name": "PF",
+          "description": "Area PF Complex",
+          "probability": 92,
+          "region_number": 148
+        },
+        {
+          "region_name": "p9-46v",
+          "description": "Area posterior 9-46v",
+          "probability": 89,
+          "region_number": 83
+        },
+        {
+          "region_name": "TE2p",
+          "description": "Area TE2 posterior",
+          "probability": 87,
+          "region_number": 136
+        },
+        {
+          "region_name": "STSva",
+          "description": "Area STSv anterior",
+          "probability": 83,
+          "region_number": 176
+        },
+        {
+          "region_name": "TPOJ1",
+          "description": "Area TemporoParietoOcci pital Junction 1",
+          "probability": 81,
+          "region_number": 139
+        }
+      ],
+      "right": [
+        {
+          "region_name": "PHT",
+          "description": "Area PHT",
+          "probability": 100,
+          "region_number": 137
+        },
+        {
+          "region_name": "TPOJ2",
+          "description": "Area TemporoParietoOcci pital Junction 2",
+          "probability": 98,
+          "region_number": 140
+        },
+        {
+          "region_name": "44",
+          "description": "Area 44",
+          "probability": 98,
+          "region_number": 74
+        },
+        {
+          "region_name": "TE1p",
+          "description": "Area TE1 posterior",
+          "probability": 97,
+          "region_number": 133
+        },
+        {
+          "region_name": "FST",
+          "description": "Area FST",
+          "probability": 97,
+          "region_number": 157
+        },
+        {
+          "region_name": "p9-46v",
+          "description": "Area posterior 9-46v",
+          "probability": 96,
+          "region_number": 83
+        },
+        {
+          "region_name": "6r",
+          "description": "Rostral Area 6",
+          "probability": 92,
+          "region_number": 78
+        },
+        {
+          "region_name": "IFSp",
+          "description": "Area IFSp",
+          "probability": 91,
+          "region_number": 81
+        },
+        {
+          "region_name": "8C",
+          "description": "Area 8C",
+          "probability": 91,
+          "region_number": 73
+        },
+        {
+          "region_name": "IFJa",
+          "description": "Area IFJa",
+          "probability": 91,
+          "region_number": 79
+        },
+        {
+          "region_name": "PH",
+          "description": "Area PH",
+          "probability": 90,
+          "region_number": 138
+        },
+        {
+          "region_name": "8Av",
+          "description": "Area 8Av",
+          "probability": 87,
+          "region_number": 67
+        }
+      ]
+    }
+  },
+  "IFOF": {
+    "tract_name": "IFOF",
+    "full_name": "Inferior Fronto Occipital Fasciculus",
+    "connections": {
+      "left": [
+        {
+          "region_name": "V3",
+          "description": "Third Visual Area",
+          "probability": 100,
+          "region_number": 5
+        },
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 100,
+          "region_number": 4
+        },
+        {
+          "region_name": "V1",
+          "description": "Primary Visual Cortex",
+          "probability": 100,
+          "region_number": 1
+        },
+        {
+          "region_name": "FOP5",
+          "description": "Area Frontal Opercular 5",
+          "probability": 100,
+          "region_number": 169
+        },
+        {
+          "region_name": "45",
+          "description": "Area 45",
+          "probability": 100,
+          "region_number": 75
+        },
+        {
+          "region_name": "AVI",
+          "description": "Anterior Ventral Insular Area",
+          "probability": 100,
+          "region_number": 111
+        },
+        {
+          "region_name": "a10p",
+          "description": "Area anterior 10p",
+          "probability": 100,
+          "region_number": 89
+        },
+        {
+          "region_name": "a47r",
+          "description": "Area anterior 47r",
+          "probability": 100,
+          "region_number": 77
+        },
+        {
+          "region_name": "11l",
+          "description": "Area 11l",
+          "probability": 100,
+          "region_number": 91
+        },
+        {
+          "region_name": "47l",
+          "description": "Area 47l (47 lateral)",
+          "probability": 100,
+          "region_number": 76
+        },
+        {
+          "region_name": "V3A",
+          "description": "Area V3A",
+          "probability": 99,
+          "region_number": 13
+        },
+        {
+          "region_name": "p47r",
+          "description": "Area posterior 47r",
+          "probability": 99,
+          "region_number": 171
+        },
+        {
+          "region_name": "V4",
+          "description": "Fourth Visual Area",
+          "probability": 98,
+          "region_number": 6
+        },
+        {
+          "region_name": "IFSa",
+          "description": "Area IFSa",
+          "probability": 97,
+          "region_number": 82
+        },
+        {
+          "region_name": "47s",
+          "description": "Area 47s",
+          "probability": 97,
+          "region_number": 94
+        },
+        {
+          "region_name": "47m",
+          "description": "Area 47m",
+          "probability": 97,
+          "region_number": 66
+        },
+        {
+          "region_name": "V6",
+          "description": "Sixth Visual Area",
+          "probability": 96,
+          "region_number": 3
+        },
+        {
+          "region_name": "10pp",
+          "description": "Polar 10p",
+          "probability": 96,
+          "region_number": 90
+        },
+        {
+          "region_name": "V6A",
+          "description": "Area V6A",
+          "probability": 94,
+          "region_number": 152
+        },
+        {
+          "region_name": "p10p",
+          "description": "Area posterior 10p",
+          "probability": 94,
+          "region_number": 170
+        },
+        {
+          "region_name": "AAIC",
+          "description": "Anterior Agranular Insula Complex",
+          "probability": 93,
+          "region_number": 112
+        },
+        {
+          "region_name": "PoI1",
+          "description": "Area Posterior Insular 1",
+          "probability": 90,
+          "region_number": 167
+        },
+        {
+          "region_name": "FOP4",
+          "description": "Frontal OPercular Area 4",
+          "probability": 88,
+          "region_number": 108
+        },
+        {
+          "region_name": "V7",
+          "description": "Seventh Visual Area",
+          "probability": 85,
+          "region_number": 16
+        },
+        {
+          "region_name": "MI",
+          "description": "Middle Insular Area",
+          "probability": 85,
+          "region_number": 109
+        },
+        {
+          "region_name": "10d",
+          "description": "Area 10d",
+          "probability": 84,
+          "region_number": 72
+        },
+        {
+          "region_name": "PoI2",
+          "description": "Posterior Insular Area 2",
+          "probability": 81,
+          "region_number": 106
+        }
+      ],
+      "right": [
+        {
+          "region_name": "PoI1",
+          "description": "Area Posterior Insular 1",
+          "probability": 100,
+          "region_number": 167
+        },
+        {
+          "region_name": "V4",
+          "description": "Fourth Visual Area",
+          "probability": 100,
+          "region_number": 6
+        },
+        {
+          "region_name": "V3A",
+          "description": "Area V3A",
+          "probability": 100,
+          "region_number": 13
+        },
+        {
+          "region_name": "V3",
+          "description": "Third Visual Area",
+          "probability": 100,
+          "region_number": 5
+        },
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 100,
+          "region_number": 4
+        },
+        {
+          "region_name": "V1",
+          "description": "Primary Visual Cortex",
+          "probability": 100,
+          "region_number": 1
+        },
+        {
+          "region_name": "AVI",
+          "description": "Anterior Ventral Insular Area",
+          "probability": 100,
+          "region_number": 111
+        },
+        {
+          "region_name": "a10p",
+          "description": "Area anterior 10p",
+          "probability": 100,
+          "region_number": 89
+        },
+        {
+          "region_name": "a47r",
+          "description": "Area anterior 47r",
+          "probability": 100,
+          "region_number": 77
+        },
+        {
+          "region_name": "47l",
+          "description": "Area 47l (47 lateral)",
+          "probability": 100,
+          "region_number": 76
+        },
+        {
+          "region_name": "p47r",
+          "description": "Area posterior 47r",
+          "probability": 99,
+          "region_number": 171
+        },
+        {
+          "region_name": "47s",
+          "description": "Area 47s",
+          "probability": 99,
+          "region_number": 94
+        },
+        {
+          "region_name": "11l",
+          "description": "Area 11l",
+          "probability": 99,
+          "region_number": 91
+        },
+        {
+          "region_name": "FOP5",
+          "description": "Area Frontal Opercular 5",
+          "probability": 98,
+          "region_number": 169
+        },
+        {
+          "region_name": "V7",
+          "description": "Seventh Visual Area",
+          "probability": 97,
+          "region_number": 16
+        },
+        {
+          "region_name": "V6A",
+          "description": "Area V6A",
+          "probability": 97,
+          "region_number": 152
+        },
+        {
+          "region_name": "10pp",
+          "description": "Polar 10p",
+          "probability": 97,
+          "region_number": 90
+        },
+        {
+          "region_name": "47m",
+          "description": "Area 47m",
+          "probability": 97,
+          "region_number": 66
+        },
+        {
+          "region_name": "p10p",
+          "description": "Area posterior 10p",
+          "probability": 97,
+          "region_number": 170
+        },
+        {
+          "region_name": "45",
+          "description": "Area 45",
+          "probability": 96,
+          "region_number": 75
+        },
+        {
+          "region_name": "V6",
+          "description": "Sixth Visual Area",
+          "probability": 95,
+          "region_number": 3
+        },
+        {
+          "region_name": "AAIC",
+          "description": "Anterior Agranular Insula Complex",
+          "probability": 95,
+          "region_number": 112
+        },
+        {
+          "region_name": "IFSa",
+          "description": "Area IFSa",
+          "probability": 91,
+          "region_number": 82
+        },
+        {
+          "region_name": "PI",
+          "description": "Para-Insular Area",
+          "probability": 90,
+          "region_number": 178
+        },
+        {
+          "region_name": "PoI2",
+          "description": "Posterior Insular Area 2",
+          "probability": 88,
+          "region_number": 106
+        },
+        {
+          "region_name": "9a",
+          "description": "Area 9 anterior",
+          "probability": 87,
+          "region_number": 87
+        },
+        {
+          "region_name": "V8",
+          "description": "Eighth Visual Area",
+          "probability": 84,
+          "region_number": 7
+        },
+        {
+          "region_name": "10d",
+          "description": "Area 10d",
+          "probability": 82,
+          "region_number": 72
+        }
+      ]
+    }
+  },
+  "CStr_P": {
+    "tract_name": "CStr_P",
+    "full_name": "Corticostriatal Tract, Posterior Segment",
+    "connections": {
+      "left": [
+        {
+          "region_name": "V1",
+          "description": "Primary Visual Cortex",
+          "probability": 99,
+          "region_number": 1
+        },
+        {
+          "region_name": "VIP",
+          "description": "Ventral IntraParietal Complex",
+          "probability": 99,
+          "region_number": 49
+        },
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 98,
+          "region_number": 4
+        },
+        {
+          "region_name": "7AL",
+          "description": "Lateral Area 7A",
+          "probability": 98,
+          "region_number": 42
+        },
+        {
+          "region_name": "7PL",
+          "description": "Lateral Area 7P",
+          "probability": 96,
+          "region_number": 46
+        },
+        {
+          "region_name": "V3",
+          "description": "Third Visual Area",
+          "probability": 92,
+          "region_number": 5
+        },
+        {
+          "region_name": "DVT",
+          "description": "Dorsal Transitional Visual Area",
+          "probability": 92,
+          "region_number": 142
+        },
+        {
+          "region_name": "IPS1",
+          "description": "IntraParietal Sulcus Area 1",
+          "probability": 90,
+          "region_number": 17
+        },
+        {
+          "region_name": "7Am",
+          "description": "Medial Area 7A",
+          "probability": 90,
+          "region_number": 45
+        },
+        {
+          "region_name": "V6A",
+          "description": "Area V6A",
+          "probability": 89,
+          "region_number": 152
+        },
+        {
+          "region_name": "7PC",
+          "description": "Area 7PC",
+          "probability": 88,
+          "region_number": 47
+        },
+        {
+          "region_name": "PoI1",
+          "description": "Area Posterior Insular 1",
+          "probability": 87,
+          "region_number": 167
+        },
+        {
+          "region_name": "PoI2",
+          "description": "Posterior Insular Area 2",
+          "probability": 86,
+          "region_number": 106
+        },
+        {
+          "region_name": "MIP",
+          "description": "Medial IntraParietal Area",
+          "probability": 84,
+          "region_number": 50
+        },
+        {
+          "region_name": "V3A",
+          "description": "Area V3A",
+          "probability": 83,
+          "region_number": 13
+        },
+        {
+          "region_name": "52",
+          "description": "Area 52",
+          "probability": 80,
+          "region_number": 103
+        },
+        {
+          "region_name": "5L",
+          "description": "Area 5L",
+          "probability": 80,
+          "region_number": 39
+        }
+      ],
+      "right": [
+        {
+          "region_name": "V6A",
+          "description": "Area V6A",
+          "probability": 100,
+          "region_number": 152
+        },
+        {
+          "region_name": "V3A",
+          "description": "Area V3A",
+          "probability": 100,
+          "region_number": 13
+        },
+        {
+          "region_name": "V3",
+          "description": "Third Visual Area",
+          "probability": 100,
+          "region_number": 5
+        },
+        {
+          "region_name": "V6",
+          "description": "Sixth Visual Area",
+          "probability": 100,
+          "region_number": 3
+        },
+        {
+          "region_name": "MIP",
+          "description": "Medial IntraParietal Area",
+          "probability": 99,
+          "region_number": 50
+        },
+        {
+          "region_name": "VIP",
+          "description": "Ventral IntraParietal Complex",
+          "probability": 99,
+          "region_number": 49
+        },
+        {
+          "region_name": "7AL",
+          "description": "Lateral Area 7A",
+          "probability": 99,
+          "region_number": 42
+        },
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 98,
+          "region_number": 4
+        },
+        {
+          "region_name": "V1",
+          "description": "Primary Visual Cortex",
+          "probability": 98,
+          "region_number": 1
+        },
+        {
+          "region_name": "IPS1",
+          "description": "IntraParietal Sulcus Area 1",
+          "probability": 95,
+          "region_number": 17
+        },
+        {
+          "region_name": "DVT",
+          "description": "Dorsal Transitional Visual Area",
+          "probability": 95,
+          "region_number": 142
+        },
+        {
+          "region_name": "7PL",
+          "description": "Lateral Area 7P",
+          "probability": 92,
+          "region_number": 46
+        },
+        {
+          "region_name": "LIPv",
+          "description": "Area Lateral IntraParietal ventral",
+          "probability": 91,
+          "region_number": 48
+        },
+        {
+          "region_name": "7Am",
+          "description": "Medial Area 7A",
+          "probability": 90,
+          "region_number": 45
+        },
+        {
+          "region_name": "7PC",
+          "description": "Area 7PC",
+          "probability": 89,
+          "region_number": 47
+        },
+        {
+          "region_name": "V7",
+          "description": "Seventh Visual Area",
+          "probability": 88,
+          "region_number": 16
+        },
+        {
+          "region_name": "IP1",
+          "description": "Area IntraParietal 1",
+          "probability": 85,
+          "region_number": 145
+        },
+        {
+          "region_name": "PGs",
+          "description": "Area PGs",
+          "probability": 80,
+          "region_number": 151
+        }
+      ]
+    }
+  },
+  "MdLF": {
+    "tract_name": "MdLF",
+    "full_name": "Middle Longitudinal Fasciculus",
+    "connections": {
+      "left": [
+        {
+          "region_name": "MBelt",
+          "description": "Medial Belt Complex",
+          "probability": 100,
+          "region_number": 173
+        },
+        {
+          "region_name": "TA2",
+          "description": "Area TA2",
+          "probability": 99,
+          "region_number": 107
+        },
+        {
+          "region_name": "52",
+          "description": "Area 52",
+          "probability": 99,
+          "region_number": 103
+        },
+        {
+          "region_name": "A4",
+          "description": "Auditory 4 Complex",
+          "probability": 99,
+          "region_number": 175
+        },
+        {
+          "region_name": "PBelt",
+          "description": "ParaBelt Complex",
+          "probability": 99,
+          "region_number": 124
+        },
+        {
+          "region_name": "VIP",
+          "description": "Ventral IntraParietal Complex",
+          "probability": 99,
+          "region_number": 49
+        },
+        {
+          "region_name": "A5",
+          "description": "Auditory 5 Complex",
+          "probability": 98,
+          "region_number": 125
+        },
+        {
+          "region_name": "LBelt",
+          "description": "Lateral Belt Complex",
+          "probability": 97,
+          "region_number": 174
+        },
+        {
+          "region_name": "A1",
+          "description": "Primary Auditory Cortex",
+          "probability": 97,
+          "region_number": 24
+        },
+        {
+          "region_name": "PI",
+          "description": "Para-Insular Area",
+          "probability": 93,
+          "region_number": 178
+        },
+        {
+          "region_name": "7PL",
+          "description": "Lateral Area 7P",
+          "probability": 89,
+          "region_number": 46
+        },
+        {
+          "region_name": "MIP",
+          "description": "Medial IntraParietal Area",
+          "probability": 86,
+          "region_number": 50
+        },
+        {
+          "region_name": "7AL",
+          "description": "Lateral Area 7A",
+          "probability": 80,
+          "region_number": 42
+        }
+      ],
+      "right": [
+        {
+          "region_name": "MBelt",
+          "description": "Medial Belt Complex",
+          "probability": 100,
+          "region_number": 173
+        },
+        {
+          "region_name": "A4",
+          "description": "Auditory 4 Complex",
+          "probability": 100,
+          "region_number": 175
+        },
+        {
+          "region_name": "PBelt",
+          "description": "ParaBelt Complex",
+          "probability": 100,
+          "region_number": 124
+        },
+        {
+          "region_name": "LBelt",
+          "description": "Lateral Belt Complex",
+          "probability": 100,
+          "region_number": 174
+        },
+        {
+          "region_name": "A1",
+          "description": "Primary Auditory Cortex",
+          "probability": 100,
+          "region_number": 24
+        },
+        {
+          "region_name": "VIP",
+          "description": "Ventral IntraParietal Complex",
+          "probability": 98,
+          "region_number": 49
+        },
+        {
+          "region_name": "LIPv",
+          "description": "Area Lateral IntraParietal ventral",
+          "probability": 97,
+          "region_number": 48
+        },
+        {
+          "region_name": "7AL",
+          "description": "Lateral Area 7A",
+          "probability": 96,
+          "region_number": 42
+        },
+        {
+          "region_name": "52",
+          "description": "Area 52",
+          "probability": 95,
+          "region_number": 103
+        },
+        {
+          "region_name": "MIP",
+          "description": "Medial IntraParietal Area",
+          "probability": 95,
+          "region_number": 50
+        },
+        {
+          "region_name": "7PC",
+          "description": "Area 7PC",
+          "probability": 94,
+          "region_number": 47
+        },
+        {
+          "region_name": "TA2",
+          "description": "Area TA2",
+          "probability": 93,
+          "region_number": 107
+        },
+        {
+          "region_name": "A5",
+          "description": "Auditory 5 Complex",
+          "probability": 92,
+          "region_number": 125
+        }
+      ]
+    }
+  },
+  "PTAT": {
+    "tract_name": "PTAT",
+    "full_name": "PTAT",
+    "connections": {
+      "left": [
+        {
+          "region_name": "TE1p",
+          "description": "Area TE1 posterior",
+          "probability": 100,
+          "region_number": 133
+        },
+        {
+          "region_name": "PHT",
+          "description": "Area PHT",
+          "probability": 100,
+          "region_number": 137
+        },
+        {
+          "region_name": "PH",
+          "description": "Area PH",
+          "probability": 100,
+          "region_number": 138
+        },
+        {
+          "region_name": "PGi",
+          "description": "Area PGi",
+          "probability": 100,
+          "region_number": 150
+        },
+        {
+          "region_name": "PFm",
+          "description": "Area PFm Complex",
+          "probability": 100,
+          "region_number": 149
+        },
+        {
+          "region_name": "TPOJ2",
+          "description": "Area TemporoParietoOcci pital Junction 2",
+          "probability": 99,
+          "region_number": 140
+        },
+        {
+          "region_name": "FST",
+          "description": "Area FST",
+          "probability": 99,
+          "region_number": 157
+        },
+        {
+          "region_name": "PGs",
+          "description": "Area PGs",
+          "probability": 99,
+          "region_number": 151
+        },
+        {
+          "region_name": "STSvp",
+          "description": "Area STSv posterior",
+          "probability": 98,
+          "region_number": 130
+        },
+        {
+          "region_name": "TPOJ1",
+          "description": "Area TemporoParietoOcci pital Junction 1",
+          "probability": 97,
+          "region_number": 139
+        },
+        {
+          "region_name": "PSL",
+          "description": "PeriSylvian Language Area",
+          "probability": 95,
+          "region_number": 25
+        },
+        {
+          "region_name": "STV",
+          "description": "Superior Temporal Visual Area",
+          "probability": 94,
+          "region_number": 28
+        },
+        {
+          "region_name": "STSdp",
+          "description": "Area STSd posterior",
+          "probability": 93,
+          "region_number": 129
+        },
+        {
+          "region_name": "MST",
+          "description": "Medial Superior Temporal Area",
+          "probability": 93,
+          "region_number": 2
+        },
+        {
+          "region_name": "TPOJ3",
+          "description": "Area TemporoParietoOcci pital Junction 3",
+          "probability": 88,
+          "region_number": 141
+        }
+      ],
+      "right": [
+        {
+          "region_name": "TE1p",
+          "description": "Area TE1 posterior",
+          "probability": 100,
+          "region_number": 133
+        },
+        {
+          "region_name": "TPOJ2",
+          "description": "Area TemporoParietoOcci pital Junction 2",
+          "probability": 100,
+          "region_number": 140
+        },
+        {
+          "region_name": "PHT",
+          "description": "Area PHT",
+          "probability": 100,
+          "region_number": 137
+        },
+        {
+          "region_name": "TPOJ3",
+          "description": "Area TemporoParietoOcci pital Junction 3",
+          "probability": 100,
+          "region_number": 141
+        },
+        {
+          "region_name": "FST",
+          "description": "Area FST",
+          "probability": 100,
+          "region_number": 157
+        },
+        {
+          "region_name": "MST",
+          "description": "Medial Superior Temporal Area",
+          "probability": 100,
+          "region_number": 2
+        },
+        {
+          "region_name": "PGp",
+          "description": "Area PGp",
+          "probability": 100,
+          "region_number": 143
+        },
+        {
+          "region_name": "PGi",
+          "description": "Area PGi",
+          "probability": 100,
+          "region_number": 150
+        },
+        {
+          "region_name": "PFm",
+          "description": "Area PFm Complex",
+          "probability": 100,
+          "region_number": 149
+        },
+        {
+          "region_name": "TPOJ1",
+          "description": "Area TemporoParietoOcci pital Junction 1",
+          "probability": 100,
+          "region_number": 139
+        },
+        {
+          "region_name": "STV",
+          "description": "Superior Temporal Visual Area",
+          "probability": 100,
+          "region_number": 28
+        },
+        {
+          "region_name": "PH",
+          "description": "Area PH",
+          "probability": 99,
+          "region_number": 138
+        },
+        {
+          "region_name": "PGs",
+          "description": "Area PGs",
+          "probability": 99,
+          "region_number": 151
+        },
+        {
+          "region_name": "MT",
+          "description": "Middle Temporal Area",
+          "probability": 98,
+          "region_number": 23
+        },
+        {
+          "region_name": "LO3",
+          "description": "Area Lateral Occipital 3",
+          "probability": 97,
+          "region_number": 159
+        },
+        {
+          "region_name": "STSvp",
+          "description": "Area STSv posterior",
+          "probability": 95,
+          "region_number": 130
+        },
+        {
+          "region_name": "PSL",
+          "description": "PeriSylvian Language Area",
+          "probability": 95,
+          "region_number": 25
+        }
+      ]
+    }
+  },
+  "VOF": {
+    "tract_name": "VOF",
+    "full_name": "Vertical Occipital Fasciculus",
+    "connections": {
+      "left": [
+        {
+          "region_name": "LO2",
+          "description": "Area Lateral Occipital 2",
+          "probability": 100,
+          "region_number": 21
+        },
+        {
+          "region_name": "LO1",
+          "description": "Area Lateral Occipital 1",
+          "probability": 100,
+          "region_number": 20
+        },
+        {
+          "region_name": "V3CD",
+          "description": "Area V3CD",
+          "probability": 100,
+          "region_number": 158
+        },
+        {
+          "region_name": "V3B",
+          "description": "Area V3B",
+          "probability": 100,
+          "region_number": 19
+        },
+        {
+          "region_name": "V4",
+          "description": "Fourth Visual Area",
+          "probability": 100,
+          "region_number": 6
+        },
+        {
+          "region_name": "PGp",
+          "description": "Area PGp",
+          "probability": 99,
+          "region_number": 143
+        },
+        {
+          "region_name": "V3",
+          "description": "Third Visual Area",
+          "probability": 99,
+          "region_number": 5
+        },
+        {
+          "region_name": "V3A",
+          "description": "Area V3A",
+          "probability": 97,
+          "region_number": 13
+        },
+        {
+          "region_name": "IP0",
+          "description": "Area IntraParietal 0",
+          "probability": 96,
+          "region_number": 146
+        },
+        {
+          "region_name": "V7",
+          "description": "Seventh Visual Area",
+          "probability": 96,
+          "region_number": 16
+        },
+        {
+          "region_name": "PIT",
+          "description": "Posterior InferoTemporal complex",
+          "probability": 92,
+          "region_number": 22
+        },
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 85,
+          "region_number": 4
+        },
+        {
+          "region_name": "V4t",
+          "description": "Area V4t",
+          "probability": 81,
+          "region_number": 156
+        },
+        {
+          "region_name": "V6A",
+          "description": "Area V6A",
+          "probability": 81,
+          "region_number": 152
+        }
+      ],
+      "right": [
+        {
+          "region_name": "LO1",
+          "description": "Area Lateral Occipital 1",
+          "probability": 100,
+          "region_number": 20
+        },
+        {
+          "region_name": "V3CD",
+          "description": "Area V3CD",
+          "probability": 100,
+          "region_number": 158
+        },
+        {
+          "region_name": "V4",
+          "description": "Fourth Visual Area",
+          "probability": 100,
+          "region_number": 6
+        },
+        {
+          "region_name": "LO2",
+          "description": "Area Lateral Occipital 2",
+          "probability": 99,
+          "region_number": 21
+        },
+        {
+          "region_name": "V3",
+          "description": "Third Visual Area",
+          "probability": 99,
+          "region_number": 5
+        },
+        {
+          "region_name": "V3B",
+          "description": "Area V3B",
+          "probability": 98,
+          "region_number": 19
+        },
+        {
+          "region_name": "V7",
+          "description": "Seventh Visual Area",
+          "probability": 98,
+          "region_number": 16
+        },
+        {
+          "region_name": "V3A",
+          "description": "Area V3A",
+          "probability": 98,
+          "region_number": 13
+        },
+        {
+          "region_name": "PIT",
+          "description": "Posterior InferoTemporal complex",
+          "probability": 96,
+          "region_number": 22
+        },
+        {
+          "region_name": "IP0",
+          "description": "Area IntraParietal 0",
+          "probability": 94,
+          "region_number": 146
+        },
+        {
+          "region_name": "PGp",
+          "description": "Area PGp",
+          "probability": 91,
+          "region_number": 143
+        },
+        {
+          "region_name": "V4t",
+          "description": "Area V4t",
+          "probability": 88,
+          "region_number": 156
+        },
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 85,
+          "region_number": 4
+        },
+        {
+          "region_name": "LO3",
+          "description": "Area Lateral Occipital 3",
+          "probability": 80,
+          "region_number": 159
+        }
+      ]
+    }
+  },
+  "CTh_P": {
+    "tract_name": "CTh_P",
+    "full_name": "Coricothalamic Tract, Posterior Segment",
+    "connections": {
+      "left": [
+        {
+          "region_name": "7PL",
+          "description": "Lateral Area 7P",
+          "probability": 100,
+          "region_number": 46
+        },
+        {
+          "region_name": "V6",
+          "description": "Sixth Visual Area",
+          "probability": 99,
+          "region_number": 3
+        },
+        {
+          "region_name": "7AL",
+          "description": "Lateral Area 7A",
+          "probability": 99,
+          "region_number": 42
+        },
+        {
+          "region_name": "7Am",
+          "description": "Medial Area 7A",
+          "probability": 99,
+          "region_number": 45
+        },
+        {
+          "region_name": "DVT",
+          "description": "Dorsal Transitional Visual Area",
+          "probability": 99,
+          "region_number": 142
+        },
+        {
+          "region_name": "V6A",
+          "description": "Area V6A",
+          "probability": 98,
+          "region_number": 152
+        },
+        {
+          "region_name": "VIP",
+          "description": "Ventral IntraParietal Complex",
+          "probability": 98,
+          "region_number": 49
+        },
+        {
+          "region_name": "V3A",
+          "description": "Area V3A",
+          "probability": 97,
+          "region_number": 13
+        },
+        {
+          "region_name": "POS2",
+          "description": "Parieto-Occipital Sulcus Area 2",
+          "probability": 97,
+          "region_number": 15
+        },
+        {
+          "region_name": "IPS1",
+          "description": "IntraParietal Sulcus Area 1",
+          "probability": 95,
+          "region_number": 17
+        },
+        {
+          "region_name": "V3",
+          "description": "Third Visual Area",
+          "probability": 95,
+          "region_number": 5
+        },
+        {
+          "region_name": "5L",
+          "description": "Area 5L",
+          "probability": 95,
+          "region_number": 39
+        },
+        {
+          "region_name": "7Pm",
+          "description": "Medial Area 7P",
+          "probability": 92,
+          "region_number": 29
+        }
+      ],
+      "right": [
+        {
+          "region_name": "V3A",
+          "description": "Area V3A",
+          "probability": 100,
+          "region_number": 13
+        },
+        {
+          "region_name": "7Am",
+          "description": "Medial Area 7A",
+          "probability": 100,
+          "region_number": 45
+        },
+        {
+          "region_name": "VIP",
+          "description": "Ventral IntraParietal Complex",
+          "probability": 99,
+          "region_number": 49
+        },
+        {
+          "region_name": "7PL",
+          "description": "Lateral Area 7P",
+          "probability": 99,
+          "region_number": 46
+        },
+        {
+          "region_name": "MIP",
+          "description": "Medial IntraParietal Area",
+          "probability": 98,
+          "region_number": 50
+        },
+        {
+          "region_name": "7AL",
+          "description": "Lateral Area 7A",
+          "probability": 98,
+          "region_number": 42
+        },
+        {
+          "region_name": "V6",
+          "description": "Sixth Visual Area",
+          "probability": 96,
+          "region_number": 3
+        },
+        {
+          "region_name": "V3",
+          "description": "Third Visual Area",
+          "probability": 95,
+          "region_number": 5
+        },
+        {
+          "region_name": "V6A",
+          "description": "Area V6A",
+          "probability": 91,
+          "region_number": 152
+        },
+        {
+          "region_name": "5L",
+          "description": "Area 5L",
+          "probability": 91,
+          "region_number": 39
+        },
+        {
+          "region_name": "7Pm",
+          "description": "Medial Area 7P",
+          "probability": 90,
+          "region_number": 29
+        },
+        {
+          "region_name": "LIPv",
+          "description": "Area Lateral IntraParietal ventral",
+          "probability": 83,
+          "region_number": 48
+        },
+        {
+          "region_name": "DVT",
+          "description": "Dorsal Transitional Visual Area",
+          "probability": 83,
+          "region_number": 142
+        },
+        {
+          "region_name": "IPS1",
+          "description": "IntraParietal Sulcus Area 1",
+          "probability": 82,
+          "region_number": 17
+        }
+      ]
+    }
+  },
+  "OR": {
+    "tract_name": "OR",
+    "full_name": "Optic Radiation",
+    "connections": {
+      "left": [
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 100,
+          "region_number": 4
+        },
+        {
+          "region_name": "V1",
+          "description": "Primary Visual Cortex",
+          "probability": 100,
+          "region_number": 1
+        },
+        {
+          "region_name": "V3",
+          "description": "Third Visual Area",
+          "probability": 97,
+          "region_number": 5
+        },
+        {
+          "region_name": "V3A",
+          "description": "Area V3A",
+          "probability": 82,
+          "region_number": 13
+        }
+      ],
+      "right": [
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 100,
+          "region_number": 4
+        },
+        {
+          "region_name": "V1",
+          "description": "Primary Visual Cortex",
+          "probability": 100,
+          "region_number": 1
+        },
+        {
+          "region_name": "V3",
+          "description": "Third Visual Area",
+          "probability": 98,
+          "region_number": 5
+        }
+      ]
+    }
+  },
+  "C_PHP": {
+    "tract_name": "C_PHP",
+    "full_name": "Cingulum, Parahippocampal Parietal Segment",
+    "connections": {
+      "left": [
+        {
+          "region_name": "PHA1",
+          "description": "ParaHippocampal Area 1",
+          "probability": 100,
+          "region_number": 126
+        },
+        {
+          "region_name": "PreS",
+          "description": "PreSubiculum",
+          "probability": 100,
+          "region_number": 119
+        },
+        {
+          "region_name": "PeEc",
+          "description": "Perirhinal Ectorhinal Cortex",
+          "probability": 100,
+          "region_number": 122
+        },
+        {
+          "region_name": "POS2",
+          "description": "Parieto-Occipital Sulcus Area 2",
+          "probability": 100,
+          "region_number": 15
+        },
+        {
+          "region_name": "RSC",
+          "description": "RetroSplenial Complex",
+          "probability": 100,
+          "region_number": 14
+        },
+        {
+          "region_name": "EC",
+          "description": "Entorhinal Cortex",
+          "probability": 99,
+          "region_number": 118
+        },
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 97,
+          "region_number": 4
+        },
+        {
+          "region_name": "DVT",
+          "description": "Dorsal Transitional Visual Area",
+          "probability": 97,
+          "region_number": 142
+        },
+        {
+          "region_name": "H",
+          "description": "Hippocampus",
+          "probability": 92,
+          "region_number": 120
+        },
+        {
+          "region_name": "7Pm",
+          "description": "Medial Area 7P",
+          "probability": 91,
+          "region_number": 29
+        },
+        {
+          "region_name": "POS1",
+          "description": "Parieto-Occipital Sulcus Area 1",
+          "probability": 86,
+          "region_number": 31
+        },
+        {
+          "region_name": "7PL",
+          "description": "Lateral Area 7P",
+          "probability": 81,
+          "region_number": 46
+        }
+      ],
+      "right": [
+        {
+          "region_name": "PHA1",
+          "description": "ParaHippocampal Area 1",
+          "probability": 100,
+          "region_number": 126
+        },
+        {
+          "region_name": "PreS",
+          "description": "PreSubiculum",
+          "probability": 100,
+          "region_number": 119
+        },
+        {
+          "region_name": "PeEc",
+          "description": "Perirhinal Ectorhinal Cortex",
+          "probability": 100,
+          "region_number": 122
+        },
+        {
+          "region_name": "DVT",
+          "description": "Dorsal Transitional Visual Area",
+          "probability": 100,
+          "region_number": 142
+        },
+        {
+          "region_name": "POS2",
+          "description": "Parieto-Occipital Sulcus Area 2",
+          "probability": 100,
+          "region_number": 15
+        },
+        {
+          "region_name": "POS1",
+          "description": "Parieto-Occipital Sulcus Area 1",
+          "probability": 100,
+          "region_number": 31
+        },
+        {
+          "region_name": "H",
+          "description": "Hippocampus",
+          "probability": 99,
+          "region_number": 120
+        },
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 98,
+          "region_number": 4
+        },
+        {
+          "region_name": "7m",
+          "description": "Area 7m",
+          "probability": 98,
+          "region_number": 30
+        },
+        {
+          "region_name": "PHA2",
+          "description": "ParaHippocampal Area 2",
+          "probability": 97,
+          "region_number": 155
+        },
+        {
+          "region_name": "ProS",
+          "description": "ProStriate Area",
+          "probability": 95,
+          "region_number": 121
+        },
+        {
+          "region_name": "RSC",
+          "description": "RetroSplenial Complex",
+          "probability": 91,
+          "region_number": 14
+        },
+        {
+          "region_name": "7Pm",
+          "description": "Medial Area 7P",
+          "probability": 89,
+          "region_number": 29
+        },
+        {
+          "region_name": "V3",
+          "description": "Third Visual Area",
+          "probability": 86,
+          "region_number": 5
+        },
+        {
+          "region_name": "PHA3",
+          "description": "ParaHippocampal Area 3",
+          "probability": 85,
+          "region_number": 127
+        },
+        {
+          "region_name": "EC",
+          "description": "Entorhinal Cortex",
+          "probability": 81,
+          "region_number": 118
+        }
+      ]
+    }
+  },
+  "C_FPH": {
+    "tract_name": "C_FPH",
+    "full_name": "Cingulum, Frontal Parahippocampal Segment",
+    "connections": {
+      "left": [
+        {
+          "region_name": "PreS",
+          "description": "PreSubiculum",
+          "probability": 100,
+          "region_number": 119
+        },
+        {
+          "region_name": "RSC",
+          "description": "RetroSplenial Complex",
+          "probability": 100,
+          "region_number": 14
+        },
+        {
+          "region_name": "EC",
+          "description": "Entorhinal Cortex",
+          "probability": 96,
+          "region_number": 118
+        },
+        {
+          "region_name": "PHA1",
+          "description": "ParaHippocampal Area 1",
+          "probability": 95,
+          "region_number": 126
+        },
+        {
+          "region_name": "a32pr",
+          "description": "Area anterior 32 prime",
+          "probability": 94,
+          "region_number": 179
+        },
+        {
+          "region_name": "PeEc",
+          "description": "Perirhinal Ectorhinal Cortex",
+          "probability": 92,
+          "region_number": 122
+        },
+        {
+          "region_name": "9m",
+          "description": "Area 9 Middle",
+          "probability": 91,
+          "region_number": 69
+        },
+        {
+          "region_name": "8BM",
+          "description": "Area 8BM",
+          "probability": 90,
+          "region_number": 63
+        },
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 89,
+          "region_number": 4
+        },
+        {
+          "region_name": "p32pr",
+          "description": "Area p32 prime",
+          "probability": 88,
+          "region_number": 60
+        },
+        {
+          "region_name": "d32",
+          "description": "Area dorsal 32",
+          "probability": 85,
+          "region_number": 62
+        },
+        {
+          "region_name": "POS1",
+          "description": "Parieto-Occipital Sulcus Area 1",
+          "probability": 81,
+          "region_number": 31
+        }
+      ],
+      "right": [
+        {
+          "region_name": "RSC",
+          "description": "RetroSplenial Complex",
+          "probability": 100,
+          "region_number": 14
+        },
+        {
+          "region_name": "PreS",
+          "description": "PreSubiculum",
+          "probability": 99,
+          "region_number": 119
+        },
+        {
+          "region_name": "v23ab",
+          "description": "Area ventral 23 a+b",
+          "probability": 97,
+          "region_number": 33
+        },
+        {
+          "region_name": "d32",
+          "description": "Area dorsal 32",
+          "probability": 97,
+          "region_number": 62
+        },
+        {
+          "region_name": "POS1",
+          "description": "Parieto-Occipital Sulcus Area 1",
+          "probability": 93,
+          "region_number": 31
+        },
+        {
+          "region_name": "PHA1",
+          "description": "ParaHippocampal Area 1",
+          "probability": 89,
+          "region_number": 126
+        },
+        {
+          "region_name": "a32pr",
+          "description": "Area anterior 32 prime",
+          "probability": 89,
+          "region_number": 179
+        },
+        {
+          "region_name": "p24",
+          "description": "Area posterior 24",
+          "probability": 89,
+          "region_number": 180
+        },
+        {
+          "region_name": "8BM",
+          "description": "Area 8BM",
+          "probability": 86,
+          "region_number": 63
+        },
+        {
+          "region_name": "PeEc",
+          "description": "Perirhinal Ectorhinal Cortex",
+          "probability": 85,
+          "region_number": 122
+        },
+        {
+          "region_name": "V2",
+          "description": "Second Visual Area",
+          "probability": 81,
+          "region_number": 4
+        },
+        {
+          "region_name": "a24pr",
+          "description": "Anterior 24 prime",
+          "probability": 80,
+          "region_number": 59
+        },
+        {
+          "region_name": "9m",
+          "description": "Area 9 Middle",
+          "probability": 80,
+          "region_number": 69
+        }
+      ]
+    }
+  },
+  "F": {
+    "tract_name": "F",
+    "full_name": "Fornix",
+    "connections": {
+      "left": [
+        {
+          "region_name": "H",
+          "description": "Hippocampus",
+          "probability": 98,
+          "region_number": 120
+        }
+      ],
+      "right": [
+        {
+          "region_name": "H",
+          "description": "Hippocampus",
+          "probability": 97,
+          "region_number": 120
+        }
+      ]
+    }
+  },
+  "SLF_II": {
+    "tract_name": "SLF_II",
+    "full_name": "Superior Longitudinal Fasciculus2",
+    "connections": {
+      "left": [
+        {
+          "region_name": "PFm",
+          "description": "Area PFm Complex",
+          "probability": 100,
+          "region_number": 149
+        },
+        {
+          "region_name": "IP2",
+          "description": "Area IntraParietal 2",
+          "probability": 100,
+          "region_number": 144
+        },
+        {
+          "region_name": "2",
+          "description": "Area 2",
+          "probability": 100,
+          "region_number": 52
+        },
+        {
+          "region_name": "8Av",
+          "description": "Area 8Av",
+          "probability": 100,
+          "region_number": 67
+        },
+        {
+          "region_name": "55b",
+          "description": "Area 55b",
+          "probability": 100,
+          "region_number": 12
+        },
+        {
+          "region_name": "6d",
+          "description": "Dorsal area 6",
+          "probability": 100,
+          "region_number": 54
+        },
+        {
+          "region_name": "FEF",
+          "description": "Frontal Eye Fields",
+          "probability": 100,
+          "region_number": 10
+        },
+        {
+          "region_name": "1",
+          "description": "Area 1",
+          "probability": 100,
+          "region_number": 51
+        },
+        {
+          "region_name": "3a",
+          "description": "Area 3a",
+          "probability": 100,
+          "region_number": 53
+        },
+        {
+          "region_name": "3b",
+          "description": "Primary Sensory Cortex",
+          "probability": 100,
+          "region_number": 9
+        },
+        {
+          "region_name": "4",
+          "description": "Primary Motor Cortex",
+          "probability": 100,
+          "region_number": 8
+        },
+        {
+          "region_name": "AIP",
+          "description": "Anterior IntraParietal Area",
+          "probability": 98,
+          "region_number": 117
+        },
+        {
+          "region_name": "7PC",
+          "description": "Area 7PC",
+          "probability": 98,
+          "region_number": 47
+        },
+        {
+          "region_name": "8C",
+          "description": "Area 8C",
+          "probability": 98,
+          "region_number": 73
+        },
+        {
+          "region_name": "6v",
+          "description": "Ventral Area 6",
+          "probability": 98,
+          "region_number": 56
+        },
+        {
+          "region_name": "PEF",
+          "description": "Premotor Eye Field",
+          "probability": 98,
+          "region_number": 11
+        },
+        {
+          "region_name": "i6-8",
+          "description": "Inferior 6-8 Transitional Area",
+          "probability": 97,
+          "region_number": 97
+        },
+        {
+          "region_name": "6a",
+          "description": "Area 6 anterior",
+          "probability": 86,
+          "region_number": 96
+        }
+      ],
+      "right": [
+        {
+          "region_name": "PFm",
+          "description": "Area PFm Complex",
+          "probability": 100,
+          "region_number": 149
+        },
+        {
+          "region_name": "IP2",
+          "description": "Area IntraParietal 2",
+          "probability": 100,
+          "region_number": 144
+        },
+        {
+          "region_name": "55b",
+          "description": "Area 55b",
+          "probability": 100,
+          "region_number": 12
+        },
+        {
+          "region_name": "4",
+          "description": "Primary Motor Cortex",
+          "probability": 100,
+          "region_number": 8
+        },
+        {
+          "region_name": "PGs",
+          "description": "Area PGs",
+          "probability": 99,
+          "region_number": 151
+        },
+        {
+          "region_name": "7PC",
+          "description": "Area 7PC",
+          "probability": 99,
+          "region_number": 47
+        },
+        {
+          "region_name": "8Av",
+          "description": "Area 8Av",
+          "probability": 99,
+          "region_number": 67
+        },
+        {
+          "region_name": "6v",
+          "description": "Ventral Area 6",
+          "probability": 99,
+          "region_number": 56
+        },
+        {
+          "region_name": "FEF",
+          "description": "Frontal Eye Fields",
+          "probability": 99,
+          "region_number": 10
+        },
+        {
+          "region_name": "6d",
+          "description": "Dorsal area 6",
+          "probability": 97,
+          "region_number": 54
+        },
+        {
+          "region_name": "i6-8",
+          "description": "Inferior 6-8 Transitional Area",
+          "probability": 97,
+          "region_number": 97
+        },
+        {
+          "region_name": "AIP",
+          "description": "Anterior IntraParietal Area",
+          "probability": 96,
+          "region_number": 117
+        },
+        {
+          "region_name": "8C",
+          "description": "Area 8C",
+          "probability": 95,
+          "region_number": 73
+        },
+        {
+          "region_name": "44",
+          "description": "Area 44",
+          "probability": 94,
+          "region_number": 74
+        },
+        {
+          "region_name": "1",
+          "description": "Area 1",
+          "probability": 94,
+          "region_number": 51
+        },
+        {
+          "region_name": "3b",
+          "description": "Primary Sensory Cortex",
+          "probability": 94,
+          "region_number": 9
+        },
+        {
+          "region_name": "p9-46v",
+          "description": "Area posterior 9-46v",
+          "probability": 93,
+          "region_number": 83
+        },
+        {
+          "region_name": "6a",
+          "description": "Area 6 anterior",
+          "probability": 93,
+          "region_number": 96
+        },
+        {
+          "region_name": "PGi",
+          "description": "Area PGi",
+          "probability": 91,
+          "region_number": 150
+        },
+        {
+          "region_name": "IP1",
+          "description": "Area IntraParietal 1",
+          "probability": 91,
+          "region_number": 145
+        },
+        {
+          "region_name": "IFSp",
+          "description": "Area IFSp",
+          "probability": 91,
+          "region_number": 81
+        },
+        {
+          "region_name": "IFJa",
+          "description": "Area IFJa",
+          "probability": 90,
+          "region_number": 79
+        },
+        {
+          "region_name": "LIPv",
+          "description": "Area Lateral IntraParietal ventral",
+          "probability": 88,
+          "region_number": 48
+        },
+        {
+          "region_name": "2",
+          "description": "Area 2",
+          "probability": 86,
+          "region_number": 52
+        },
+        {
+          "region_name": "6r",
+          "description": "Rostral Area 6",
+          "probability": 86,
+          "region_number": 78
+        },
+        {
+          "region_name": "6ma",
+          "description": "Area 6m anterior",
+          "probability": 86,
+          "region_number": 44
+        },
+        {
+          "region_name": "IFJp",
+          "description": "Area IFJp",
+          "probability": 82,
+          "region_number": 80
+        },
+        {
+          "region_name": "PF",
+          "description": "Area PF Complex",
+          "probability": 82,
+          "region_number": 148
+        },
+        {
+          "region_name": "LIPd",
+          "description": "Area Lateral IntraParietal dorsal",
+          "probability": 81,
+          "region_number": 95
+        }
+      ]
+    }
+  },
+  "SLF_III": {
+    "tract_name": "SLF_III",
+    "full_name": "Superior Longitudinal Fasciculus3",
+    "connections": {
+      "left": [
+        {
+          "region_name": "PF",
+          "description": "Area PF Complex",
+          "probability": 100,
+          "region_number": 148
+        },
+        {
+          "region_name": "PFop",
+          "description": "Area PF opercular",
+          "probability": 100,
+          "region_number": 147
+        },
+        {
+          "region_name": "OP4",
+          "description": "Area OP4/PV",
+          "probability": 100,
+          "region_number": 100
+        },
+        {
+          "region_name": "43",
+          "description": "Area 43",
+          "probability": 100,
+          "region_number": 99
+        },
+        {
+          "region_name": "6r",
+          "description": "Rostral Area 6",
+          "probability": 99,
+          "region_number": 78
+        },
+        {
+          "region_name": "6v",
+          "description": "Ventral Area 6",
+          "probability": 99,
+          "region_number": 56
+        },
+        {
+          "region_name": "PFcm",
+          "description": "Area PFcm",
+          "probability": 99,
+          "region_number": 105
+        },
+        {
+          "region_name": "3a",
+          "description": "Area 3a",
+          "probability": 99,
+          "region_number": 53
+        },
+        {
+          "region_name": "4",
+          "description": "Primary Motor Cortex",
+          "probability": 99,
+          "region_number": 8
+        },
+        {
+          "region_name": "PFm",
+          "description": "Area PFm Complex",
+          "probability": 98,
+          "region_number": 149
+        },
+        {
+          "region_name": "OP1",
+          "description": "Area OP1/SII",
+          "probability": 98,
+          "region_number": 101
+        },
+        {
+          "region_name": "1",
+          "description": "Area 1",
+          "probability": 98,
+          "region_number": 51
+        },
+        {
+          "region_name": "3b",
+          "description": "Primary Sensory Cortex",
+          "probability": 96,
+          "region_number": 9
+        },
+        {
+          "region_name": "PFt",
+          "description": "Area PFt",
+          "probability": 95,
+          "region_number": 116
+        },
+        {
+          "region_name": "FOP1",
+          "description": "Frontal OPercular Area 1",
+          "probability": 87,
+          "region_number": 113
+        }
+      ],
+      "right": [
+        {
+          "region_name": "PFm",
+          "description": "Area PFm Complex",
+          "probability": 100,
+          "region_number": 149
+        },
+        {
+          "region_name": "IP2",
+          "description": "Area IntraParietal 2",
+          "probability": 100,
+          "region_number": 144
+        },
+        {
+          "region_name": "6r",
+          "description": "Rostral Area 6",
+          "probability": 100,
+          "region_number": 78
+        },
+        {
+          "region_name": "6v",
+          "description": "Ventral Area 6",
+          "probability": 100,
+          "region_number": 56
+        },
+        {
+          "region_name": "PFt",
+          "description": "Area PFt",
+          "probability": 100,
+          "region_number": 116
+        },
+        {
+          "region_name": "PF",
+          "description": "Area PF Complex",
+          "probability": 100,
+          "region_number": 148
+        },
+        {
+          "region_name": "OP4",
+          "description": "Area OP4/PV",
+          "probability": 100,
+          "region_number": 100
+        },
+        {
+          "region_name": "43",
+          "description": "Area 43",
+          "probability": 100,
+          "region_number": 99
+        },
+        {
+          "region_name": "3a",
+          "description": "Area 3a",
+          "probability": 100,
+          "region_number": 53
+        },
+        {
+          "region_name": "4",
+          "description": "Primary Motor Cortex",
+          "probability": 100,
+          "region_number": 8
+        },
+        {
+          "region_name": "2",
+          "description": "Area 2",
+          "probability": 99,
+          "region_number": 52
+        },
+        {
+          "region_name": "44",
+          "description": "Area 44",
+          "probability": 99,
+          "region_number": 74
+        },
+        {
+          "region_name": "1",
+          "description": "Area 1",
+          "probability": 99,
+          "region_number": 51
+        },
+        {
+          "region_name": "AIP",
+          "description": "Anterior IntraParietal Area",
+          "probability": 98,
+          "region_number": 117
+        },
+        {
+          "region_name": "PFop",
+          "description": "Area PF opercular",
+          "probability": 98,
+          "region_number": 147
+        },
+        {
+          "region_name": "3b",
+          "description": "Primary Sensory Cortex",
+          "probability": 98,
+          "region_number": 9
+        },
+        {
+          "region_name": "FOP1",
+          "description": "Frontal OPercular Area 1",
+          "probability": 90,
+          "region_number": 113
+        },
+        {
+          "region_name": "7PC",
+          "description": "Area 7PC",
+          "probability": 85,
+          "region_number": 47
+        }
+      ]
+    }
+  },
+  "CStr_S": {
+    "tract_name": "CStr_S",
+    "full_name": "Corticostriatal Tract, Superior Segment",
+    "connections": {
+      "left": [
+        {
+          "region_name": "SFL",
+          "description": "Superior Frontal Language Area",
+          "probability": 100,
+          "region_number": 26
+        },
+        {
+          "region_name": "6mp",
+          "description": "Area 6mp",
+          "probability": 100,
+          "region_number": 55
+        },
+        {
+          "region_name": "6ma",
+          "description": "Area 6m anterior",
+          "probability": 100,
+          "region_number": 44
+        },
+        {
+          "region_name": "6d",
+          "description": "Dorsal area 6",
+          "probability": 100,
+          "region_number": 54
+        },
+        {
+          "region_name": "1",
+          "description": "Area 1",
+          "probability": 100,
+          "region_number": 51
+        },
+        {
+          "region_name": "3b",
+          "description": "Primary Sensory Cortex",
+          "probability": 100,
+          "region_number": 9
+        },
+        {
+          "region_name": "4",
+          "description": "Primary Motor Cortex",
+          "probability": 100,
+          "region_number": 8
+        },
+        {
+          "region_name": "8BL",
+          "description": "Area 8B Lateral",
+          "probability": 99,
+          "region_number": 70
+        },
+        {
+          "region_name": "2",
+          "description": "Area 2",
+          "probability": 98,
+          "region_number": 52
+        },
+        {
+          "region_name": "6a",
+          "description": "Area 6 anterior",
+          "probability": 98,
+          "region_number": 96
+        },
+        {
+          "region_name": "3a",
+          "description": "Area 3a",
+          "probability": 98,
+          "region_number": 53
+        },
+        {
+          "region_name": "8Av",
+          "description": "Area 8Av",
+          "probability": 96,
+          "region_number": 67
+        },
+        {
+          "region_name": "PoI2",
+          "description": "Posterior Insular Area 2",
+          "probability": 94,
+          "region_number": 106
+        },
+        {
+          "region_name": "SCEF",
+          "description": "Supplementary and Cingulate Eye Field",
+          "probability": 93,
+          "region_number": 43
+        },
+        {
+          "region_name": "55b",
+          "description": "Area 55b",
+          "probability": 92,
+          "region_number": 12
+        },
+        {
+          "region_name": "i6-8",
+          "description": "Inferior 6-8 Transitional Area",
+          "probability": 90,
+          "region_number": 97
+        },
+        {
+          "region_name": "FEF",
+          "description": "Frontal Eye Fields",
+          "probability": 90,
+          "region_number": 10
+        },
+        {
+          "region_name": "s6-8",
+          "description": "Superior 6-8 Transitional Area",
+          "probability": 85,
+          "region_number": 98
+        },
+        {
+          "region_name": "OP2-3",
+          "description": "Area OP2-3/VS",
+          "probability": 83,
+          "region_number": 102
+        },
+        {
+          "region_name": "Ig",
+          "description": "Insular Granular Complex",
+          "probability": 82,
+          "region_number": 168
+        },
+        {
+          "region_name": "MI",
+          "description": "Middle Insular Area",
+          "probability": 82,
+          "region_number": 109
+        },
+        {
+          "region_name": "7AL",
+          "description": "Lateral Area 7A",
+          "probability": 80,
+          "region_number": 42
+        }
+      ],
+      "right": [
+        {
+          "region_name": "2",
+          "description": "Area 2",
+          "probability": 100,
+          "region_number": 52
+        },
+        {
+          "region_name": "8BL",
+          "description": "Area 8B Lateral",
+          "probability": 100,
+          "region_number": 70
+        },
+        {
+          "region_name": "SFL",
+          "description": "Superior Frontal Language Area",
+          "probability": 100,
+          "region_number": 26
+        },
+        {
+          "region_name": "6ma",
+          "description": "Area 6m anterior",
+          "probability": 100,
+          "region_number": 44
+        },
+        {
+          "region_name": "1",
+          "description": "Area 1",
+          "probability": 100,
+          "region_number": 51
+        },
+        {
+          "region_name": "3b",
+          "description": "Primary Sensory Cortex",
+          "probability": 100,
+          "region_number": 9
+        },
+        {
+          "region_name": "4",
+          "description": "Primary Motor Cortex",
+          "probability": 100,
+          "region_number": 8
+        },
+        {
+          "region_name": "6r",
+          "description": "Rostral Area 6",
+          "probability": 99,
+          "region_number": 78
+        },
+        {
+          "region_name": "6mp",
+          "description": "Area 6mp",
+          "probability": 99,
+          "region_number": 55
+        },
+        {
+          "region_name": "6d",
+          "description": "Dorsal area 6",
+          "probability": 99,
+          "region_number": 54
+        },
+        {
+          "region_name": "43",
+          "description": "Area 43",
+          "probability": 99,
+          "region_number": 99
+        },
+        {
+          "region_name": "s6-8",
+          "description": "Superior 6-8 Transitional Area",
+          "probability": 96,
+          "region_number": 98
+        },
+        {
+          "region_name": "FOP1",
+          "description": "Frontal OPercular Area 1",
+          "probability": 96,
+          "region_number": 113
+        },
+        {
+          "region_name": "MI",
+          "description": "Middle Insular Area",
+          "probability": 96,
+          "region_number": 109
+        },
+        {
+          "region_name": "PoI2",
+          "description": "Posterior Insular Area 2",
+          "probability": 96,
+          "region_number": 106
+        },
+        {
+          "region_name": "6a",
+          "description": "Area 6 anterior",
+          "probability": 95,
+          "region_number": 96
+        },
+        {
+          "region_name": "3a",
+          "description": "Area 3a",
+          "probability": 95,
+          "region_number": 53
+        },
+        {
+          "region_name": "7PC",
+          "description": "Area 7PC",
+          "probability": 94,
+          "region_number": 47
+        },
+        {
+          "region_name": "FOP3",
+          "description": "Frontal OPercular Area 3",
+          "probability": 94,
+          "region_number": 114
+        },
+        {
+          "region_name": "7AL",
+          "description": "Lateral Area 7A",
+          "probability": 93,
+          "region_number": 42
+        },
+        {
+          "region_name": "FOP4",
+          "description": "Frontal OPercular Area 4",
+          "probability": 93,
+          "region_number": 108
+        },
+        {
+          "region_name": "44",
+          "description": "Area 44",
+          "probability": 92,
+          "region_number": 74
+        },
+        {
+          "region_name": "FOP2",
+          "description": "Frontal OPercular Area 2",
+          "probability": 92,
+          "region_number": 115
+        },
+        {
+          "region_name": "SCEF",
+          "description": "Supplementary and Cingulate Eye Field",
+          "probability": 90,
+          "region_number": 43
+        },
+        {
+          "region_name": "i6-8",
+          "description": "Inferior 6-8 Transitional Area",
+          "probability": 89,
+          "region_number": 97
+        },
+        {
+          "region_name": "8Av",
+          "description": "Area 8Av",
+          "probability": 88,
+          "region_number": 67
+        },
+        {
+          "region_name": "6v",
+          "description": "Ventral Area 6",
+          "probability": 87,
+          "region_number": 56
+        },
+        {
+          "region_name": "Ig",
+          "description": "Insular Granular Complex",
+          "probability": 82,
+          "region_number": 168
+        }
+      ]
+    }
+  },
+  "CTh_S": {
+    "tract_name": "CTh_S",
+    "full_name": "Coricothalamic Tract, Superior Segment",
+    "connections": {
+      "left": [
+        {
+          "region_name": "SFL",
+          "description": "Superior Frontal Language Area",
+          "probability": 100,
+          "region_number": 26
+        },
+        {
+          "region_name": "6ma",
+          "description": "Area 6m anterior",
+          "probability": 100,
+          "region_number": 44
+        },
+        {
+          "region_name": "4",
+          "description": "Primary Motor Cortex",
+          "probability": 100,
+          "region_number": 8
+        },
+        {
+          "region_name": "8BL",
+          "description": "Area 8B Lateral",
+          "probability": 99,
+          "region_number": 70
+        },
+        {
+          "region_name": "SCEF",
+          "description": "Supplementary and Cingulate Eye Field",
+          "probability": 99,
+          "region_number": 43
+        },
+        {
+          "region_name": "6mp",
+          "description": "Area 6mp",
+          "probability": 99,
+          "region_number": 55
+        },
+        {
+          "region_name": "3a",
+          "description": "Area 3a",
+          "probability": 97,
+          "region_number": 53
+        },
+        {
+          "region_name": "3b",
+          "description": "Primary Sensory Cortex",
+          "probability": 95,
+          "region_number": 9
+        },
+        {
+          "region_name": "6d",
+          "description": "Dorsal area 6",
+          "probability": 93,
+          "region_number": 54
+        },
+        {
+          "region_name": "1",
+          "description": "Area 1",
+          "probability": 93,
+          "region_number": 51
+        },
+        {
+          "region_name": "8Av",
+          "description": "Area 8Av",
+          "probability": 87,
+          "region_number": 67
+        },
+        {
+          "region_name": "2",
+          "description": "Area 2",
+          "probability": 86,
+          "region_number": 52
+        },
+        {
+          "region_name": "5L",
+          "description": "Area 5L",
+          "probability": 85,
+          "region_number": 39
+        }
+      ],
+      "right": [
+        {
+          "region_name": "8BL",
+          "description": "Area 8B Lateral",
+          "probability": 100,
+          "region_number": 70
+        },
+        {
+          "region_name": "SFL",
+          "description": "Superior Frontal Language Area",
+          "probability": 100,
+          "region_number": 26
+        },
+        {
+          "region_name": "6mp",
+          "description": "Area 6mp",
+          "probability": 100,
+          "region_number": 55
+        },
+        {
+          "region_name": "6ma",
+          "description": "Area 6m anterior",
+          "probability": 100,
+          "region_number": 44
+        },
+        {
+          "region_name": "4",
+          "description": "Primary Motor Cortex",
+          "probability": 100,
+          "region_number": 8
+        },
+        {
+          "region_name": "3a",
+          "description": "Area 3a",
+          "probability": 98,
+          "region_number": 53
+        },
+        {
+          "region_name": "SCEF",
+          "description": "Supplementary and Cingulate Eye Field",
+          "probability": 97,
+          "region_number": 43
+        },
+        {
+          "region_name": "s6-8",
+          "description": "Superior 6-8 Transitional Area",
+          "probability": 96,
+          "region_number": 98
+        },
+        {
+          "region_name": "3b",
+          "description": "Primary Sensory Cortex",
+          "probability": 95,
+          "region_number": 9
+        },
+        {
+          "region_name": "6d",
+          "description": "Dorsal area 6",
+          "probability": 93,
+          "region_number": 54
+        },
+        {
+          "region_name": "6r",
+          "description": "Rostral Area 6",
+          "probability": 91,
+          "region_number": 78
+        },
+        {
+          "region_name": "6v",
+          "description": "Ventral Area 6",
+          "probability": 91,
+          "region_number": 56
+        },
+        {
+          "region_name": "1",
+          "description": "Area 1",
+          "probability": 91,
+          "region_number": 51
+        },
+        {
+          "region_name": "5L",
+          "description": "Area 5L",
+          "probability": 90,
+          "region_number": 39
+        },
+        {
+          "region_name": "43",
+          "description": "Area 43",
+          "probability": 90,
+          "region_number": 99
+        },
+        {
+          "region_name": "2",
+          "description": "Area 2",
+          "probability": 89,
+          "region_number": 52
+        },
+        {
+          "region_name": "44",
+          "description": "Area 44",
+          "probability": 87,
+          "region_number": 74
+        },
+        {
+          "region_name": "8Av",
+          "description": "Area 8Av",
+          "probability": 86,
+          "region_number": 67
+        },
+        {
+          "region_name": "8BM",
+          "description": "Area 8BM",
+          "probability": 85,
+          "region_number": 63
+        },
+        {
+          "region_name": "7AL",
+          "description": "Lateral Area 7A",
+          "probability": 84,
+          "region_number": 42
+        },
+        {
+          "region_name": "FEF",
+          "description": "Frontal Eye Fields",
+          "probability": 81,
+          "region_number": 10
+        }
+      ]
+    }
+  },
+  "CStr_A": {
+    "tract_name": "CStr_A",
+    "full_name": "Corticostriatal Tract, Anterior Segment",
+    "connections": {
+      "left": [
+        {
+          "region_name": "a9-46v",
+          "description": "Area anterior 9-46v",
+          "probability": 100,
+          "region_number": 85
+        },
+        {
+          "region_name": "10pp",
+          "description": "Polar 10p",
+          "probability": 100,
+          "region_number": 90
+        },
+        {
+          "region_name": "p10p",
+          "description": "Area posterior 10p",
+          "probability": 100,
+          "region_number": 170
+        },
+        {
+          "region_name": "a10p",
+          "description": "Area anterior 10p",
+          "probability": 100,
+          "region_number": 89
+        },
+        {
+          "region_name": "a47r",
+          "description": "Area anterior 47r",
+          "probability": 100,
+          "region_number": 77
+        },
+        {
+          "region_name": "47l",
+          "description": "Area 47l (47 lateral)",
+          "probability": 100,
+          "region_number": 76
+        },
+        {
+          "region_name": "45",
+          "description": "Area 45",
+          "probability": 99,
+          "region_number": 75
+        },
+        {
+          "region_name": "10d",
+          "description": "Area 10d",
+          "probability": 99,
+          "region_number": 72
+        },
+        {
+          "region_name": "p47r",
+          "description": "Area posterior 47r",
+          "probability": 99,
+          "region_number": 171
+        },
+        {
+          "region_name": "9a",
+          "description": "Area 9 anterior",
+          "probability": 98,
+          "region_number": 87
+        },
+        {
+          "region_name": "11l",
+          "description": "Area 11l",
+          "probability": 98,
+          "region_number": 91
+        },
+        {
+          "region_name": "10v",
+          "description": "Area 10v",
+          "probability": 97,
+          "region_number": 88
+        },
+        {
+          "region_name": "9-46d",
+          "description": "Area 9-46d",
+          "probability": 96,
+          "region_number": 86
+        },
+        {
+          "region_name": "IFSa",
+          "description": "Area IFSa",
+          "probability": 95,
+          "region_number": 82
+        },
+        {
+          "region_name": "9p",
+          "description": "Area 9 Posterior",
+          "probability": 90,
+          "region_number": 71
+        },
+        {
+          "region_name": "FOP5",
+          "description": "Area Frontal Opercular 5",
+          "probability": 89,
+          "region_number": 169
+        },
+        {
+          "region_name": "10r",
+          "description": "Area 10r",
+          "probability": 81,
+          "region_number": 65
+        }
+      ],
+      "right": [
+        {
+          "region_name": "45",
+          "description": "Area 45",
+          "probability": 100,
+          "region_number": 75
+        },
+        {
+          "region_name": "9a",
+          "description": "Area 9 anterior",
+          "probability": 100,
+          "region_number": 87
+        },
+        {
+          "region_name": "p47r",
+          "description": "Area posterior 47r",
+          "probability": 100,
+          "region_number": 171
+        },
+        {
+          "region_name": "10pp",
+          "description": "Polar 10p",
+          "probability": 100,
+          "region_number": 90
+        },
+        {
+          "region_name": "p10p",
+          "description": "Area posterior 10p",
+          "probability": 100,
+          "region_number": 170
+        },
+        {
+          "region_name": "a10p",
+          "description": "Area anterior 10p",
+          "probability": 100,
+          "region_number": 89
+        },
+        {
+          "region_name": "a47r",
+          "description": "Area anterior 47r",
+          "probability": 100,
+          "region_number": 77
+        },
+        {
+          "region_name": "IFSa",
+          "description": "Area IFSa",
+          "probability": 99,
+          "region_number": 82
+        },
+        {
+          "region_name": "10d",
+          "description": "Area 10d",
+          "probability": 99,
+          "region_number": 72
+        },
+        {
+          "region_name": "9p",
+          "description": "Area 9 Posterior",
+          "probability": 97,
+          "region_number": 71
+        },
+        {
+          "region_name": "9-46d",
+          "description": "Area 9-46d",
+          "probability": 97,
+          "region_number": 86
+        },
+        {
+          "region_name": "11l",
+          "description": "Area 11l",
+          "probability": 97,
+          "region_number": 91
+        },
+        {
+          "region_name": "47l",
+          "description": "Area 47l (47 lateral)",
+          "probability": 97,
+          "region_number": 76
+        },
+        {
+          "region_name": "8BL",
+          "description": "Area 8B Lateral",
+          "probability": 96,
+          "region_number": 70
+        },
+        {
+          "region_name": "FOP5",
+          "description": "Area Frontal Opercular 5",
+          "probability": 96,
+          "region_number": 169
+        },
+        {
+          "region_name": "a9-46v",
+          "description": "Area anterior 9-46v",
+          "probability": 96,
+          "region_number": 85
+        },
+        {
+          "region_name": "10v",
+          "description": "Area 10v",
+          "probability": 96,
+          "region_number": 88
+        },
+        {
+          "region_name": "9m",
+          "description": "Area 9 Middle",
+          "probability": 91,
+          "region_number": 69
+        },
+        {
+          "region_name": "10r",
+          "description": "Area 10r",
+          "probability": 89,
+          "region_number": 65
+        },
+        {
+          "region_name": "IFSp",
+          "description": "Area IFSp",
+          "probability": 84,
+          "region_number": 81
+        },
+        {
+          "region_name": "46",
+          "description": "Area 46",
+          "probability": 81,
+          "region_number": 84
+        }
+      ]
+    }
+  },
+  "CTh_A": {
+    "tract_name": "CTh_A",
+    "full_name": "Coricothalamic Tract, Anterior Segment",
+    "connections": {
+      "left": [
+        {
+          "region_name": "a10p",
+          "description": "Area anterior 10p",
+          "probability": 100,
+          "region_number": 89
+        },
+        {
+          "region_name": "a47r",
+          "description": "Area anterior 47r",
+          "probability": 100,
+          "region_number": 77
+        },
+        {
+          "region_name": "9a",
+          "description": "Area 9 anterior",
+          "probability": 99,
+          "region_number": 87
+        },
+        {
+          "region_name": "10d",
+          "description": "Area 10d",
+          "probability": 99,
+          "region_number": 72
+        },
+        {
+          "region_name": "p10p",
+          "description": "Area posterior 10p",
+          "probability": 99,
+          "region_number": 170
+        },
+        {
+          "region_name": "p47r",
+          "description": "Area posterior 47r",
+          "probability": 98,
+          "region_number": 171
+        },
+        {
+          "region_name": "a9-46v",
+          "description": "Area anterior 9-46v",
+          "probability": 97,
+          "region_number": 85
+        },
+        {
+          "region_name": "9p",
+          "description": "Area 9 Posterior",
+          "probability": 96,
+          "region_number": 71
+        },
+        {
+          "region_name": "8BL",
+          "description": "Area 8B Lateral",
+          "probability": 95,
+          "region_number": 70
+        },
+        {
+          "region_name": "10pp",
+          "description": "Polar 10p",
+          "probability": 95,
+          "region_number": 90
+        },
+        {
+          "region_name": "45",
+          "description": "Area 45",
+          "probability": 94,
+          "region_number": 75
+        },
+        {
+          "region_name": "47l",
+          "description": "Area 47l (47 lateral)",
+          "probability": 92,
+          "region_number": 76
+        },
+        {
+          "region_name": "9m",
+          "description": "Area 9 Middle",
+          "probability": 91,
+          "region_number": 69
+        },
+        {
+          "region_name": "9-46d",
+          "description": "Area 9-46d",
+          "probability": 87,
+          "region_number": 86
+        },
+        {
+          "region_name": "IFSa",
+          "description": "Area IFSa",
+          "probability": 87,
+          "region_number": 82
+        },
+        {
+          "region_name": "11l",
+          "description": "Area 11l",
+          "probability": 84,
+          "region_number": 91
+        }
+      ],
+      "right": [
+        {
+          "region_name": "p10p",
+          "description": "Area posterior 10p",
+          "probability": 100,
+          "region_number": 170
+        },
+        {
+          "region_name": "8BL",
+          "description": "Area 8B Lateral",
+          "probability": 99,
+          "region_number": 70
+        },
+        {
+          "region_name": "9a",
+          "description": "Area 9 anterior",
+          "probability": 99,
+          "region_number": 87
+        },
+        {
+          "region_name": "p47r",
+          "description": "Area posterior 47r",
+          "probability": 99,
+          "region_number": 171
+        },
+        {
+          "region_name": "a10p",
+          "description": "Area anterior 10p",
+          "probability": 99,
+          "region_number": 89
+        },
+        {
+          "region_name": "a47r",
+          "description": "Area anterior 47r",
+          "probability": 99,
+          "region_number": 77
+        },
+        {
+          "region_name": "IFSa",
+          "description": "Area IFSa",
+          "probability": 98,
+          "region_number": 82
+        },
+        {
+          "region_name": "a9-46v",
+          "description": "Area anterior 9-46v",
+          "probability": 98,
+          "region_number": 85
+        },
+        {
+          "region_name": "9p",
+          "description": "Area 9 Posterior",
+          "probability": 97,
+          "region_number": 71
+        },
+        {
+          "region_name": "9-46d",
+          "description": "Area 9-46d",
+          "probability": 97,
+          "region_number": 86
+        },
+        {
+          "region_name": "10d",
+          "description": "Area 10d",
+          "probability": 97,
+          "region_number": 72
+        },
+        {
+          "region_name": "9m",
+          "description": "Area 9 Middle",
+          "probability": 95,
+          "region_number": 69
+        },
+        {
+          "region_name": "45",
+          "description": "Area 45",
+          "probability": 90,
+          "region_number": 75
+        },
+        {
+          "region_name": "IFSp",
+          "description": "Area IFSp",
+          "probability": 83,
+          "region_number": 81
+        },
+        {
+          "region_name": "10pp",
+          "description": "Polar 10p",
+          "probability": 82,
+          "region_number": 90
+        }
+      ]
+    }
+  },
+  "FAT": {
+    "tract_name": "FAT",
+    "full_name": "Frontal Aslant Tract",
+    "connections": {
+      "left": [
+        {
+          "region_name": "FOP4",
+          "description": "Frontal OPercular Area 4",
+          "probability": 100,
+          "region_number": 108
+        },
+        {
+          "region_name": "6r",
+          "description": "Rostral Area 6",
+          "probability": 100,
+          "region_number": 78
+        },
+        {
+          "region_name": "44",
+          "description": "Area 44",
+          "probability": 100,
+          "region_number": 74
+        },
+        {
+          "region_name": "6v",
+          "description": "Ventral Area 6",
+          "probability": 100,
+          "region_number": 56
+        },
+        {
+          "region_name": "SFL",
+          "description": "Superior Frontal Language Area",
+          "probability": 100,
+          "region_number": 26
+        },
+        {
+          "region_name": "6ma",
+          "description": "Area 6m anterior",
+          "probability": 100,
+          "region_number": 44
+        },
+        {
+          "region_name": "6a",
+          "description": "Area 6 anterior",
+          "probability": 99,
+          "region_number": 96
+        },
+        {
+          "region_name": "IFJa",
+          "description": "Area IFJa",
+          "probability": 98,
+          "region_number": 79
+        },
+        {
+          "region_name": "s6-8",
+          "description": "Superior 6-8 Transitional Area",
+          "probability": 98,
+          "region_number": 98
+        },
+        {
+          "region_name": "8BL",
+          "description": "Area 8B Lateral",
+          "probability": 97,
+          "region_number": 70
+        },
+        {
+          "region_name": "IFSp",
+          "description": "Area IFSp",
+          "probability": 96,
+          "region_number": 81
+        },
+        {
+          "region_name": "45",
+          "description": "Area 45",
+          "probability": 95,
+          "region_number": 75
+        },
+        {
+          "region_name": "SCEF",
+          "description": "Supplementary and Cingulate Eye Field",
+          "probability": 91,
+          "region_number": 43
+        },
+        {
+          "region_name": "43",
+          "description": "Area 43",
+          "probability": 91,
+          "region_number": 99
+        },
+        {
+          "region_name": "55b",
+          "description": "Area 55b",
+          "probability": 88,
+          "region_number": 12
+        },
+        {
+          "region_name": "i6-8",
+          "description": "Inferior 6-8 Transitional Area",
+          "probability": 88,
+          "region_number": 97
+        },
+        {
+          "region_name": "8Av",
+          "description": "Area 8Av",
+          "probability": 87,
+          "region_number": 67
+        },
+        {
+          "region_name": "PEF",
+          "description": "Premotor Eye Field",
+          "probability": 86,
+          "region_number": 11
+        },
+        {
+          "region_name": "6mp",
+          "description": "Area 6mp",
+          "probability": 85,
+          "region_number": 55
+        },
+        {
+          "region_name": "4",
+          "description": "Primary Motor Cortex",
+          "probability": 82,
+          "region_number": 8
+        },
+        {
+          "region_name": "IFJp",
+          "description": "Area IFJp",
+          "probability": 81,
+          "region_number": 80
+        },
+        {
+          "region_name": "FOP1",
+          "description": "Frontal OPercular Area 1",
+          "probability": 81,
+          "region_number": 113
+        }
+      ],
+      "right": [
+        {
+          "region_name": "6r",
+          "description": "Rostral Area 6",
+          "probability": 100,
+          "region_number": 78
+        },
+        {
+          "region_name": "44",
+          "description": "Area 44",
+          "probability": 100,
+          "region_number": 74
+        },
+        {
+          "region_name": "s6-8",
+          "description": "Superior 6-8 Transitional Area",
+          "probability": 100,
+          "region_number": 98
+        },
+        {
+          "region_name": "6ma",
+          "description": "Area 6m anterior",
+          "probability": 100,
+          "region_number": 44
+        },
+        {
+          "region_name": "SFL",
+          "description": "Superior Frontal Language Area",
+          "probability": 99,
+          "region_number": 26
+        },
+        {
+          "region_name": "6a",
+          "description": "Area 6 anterior",
+          "probability": 99,
+          "region_number": 96
+        },
+        {
+          "region_name": "6v",
+          "description": "Ventral Area 6",
+          "probability": 98,
+          "region_number": 56
+        },
+        {
+          "region_name": "IFJa",
+          "description": "Area IFJa",
+          "probability": 94,
+          "region_number": 79
+        },
+        {
+          "region_name": "8BL",
+          "description": "Area 8B Lateral",
+          "probability": 91,
+          "region_number": 70
+        },
+        {
+          "region_name": "i6-8",
+          "description": "Inferior 6-8 Transitional Area",
+          "probability": 90,
+          "region_number": 97
+        },
+        {
+          "region_name": "43",
+          "description": "Area 43",
+          "probability": 90,
+          "region_number": 99
+        },
+        {
+          "region_name": "FOP4",
+          "description": "Frontal OPercular Area 4",
+          "probability": 85,
+          "region_number": 108
+        },
+        {
+          "region_name": "p9-46v",
+          "description": "Area posterior 9-46v",
+          "probability": 84,
+          "region_number": 83
+        },
+        {
+          "region_name": "8Ad",
+          "description": "Area 8Ad",
+          "probability": 80,
+          "region_number": 68
+        }
+      ]
+    }
+  },
+  "CBT": {
+    "tract_name": "CBT",
+    "full_name": "Corticobulbar Tract",
+    "connections": {
+      "left": [
+        {
+          "region_name": "6r",
+          "description": "Rostral Area 6",
+          "probability": 98,
+          "region_number": 78
+        },
+        {
+          "region_name": "6v",
+          "description": "Ventral Area 6",
+          "probability": 96,
+          "region_number": 56
+        },
+        {
+          "region_name": "43",
+          "description": "Area 43",
+          "probability": 94,
+          "region_number": 99
+        },
+        {
+          "region_name": "4",
+          "description": "Primary Motor Cortex",
+          "probability": 88,
+          "region_number": 8
+        }
+      ],
+      "right": [
+        {
+          "region_name": "6v",
+          "description": "Ventral Area 6",
+          "probability": 100,
+          "region_number": 56
+        },
+        {
+          "region_name": "6r",
+          "description": "Rostral Area 6",
+          "probability": 99,
+          "region_number": 78
+        },
+        {
+          "region_name": "43",
+          "description": "Area 43",
+          "probability": 98,
+          "region_number": 99
+        },
+        {
+          "region_name": "4",
+          "description": "Primary Motor Cortex",
+          "probability": 85,
+          "region_number": 8
+        }
+      ]
+    }
+  },
+  "SLF_I": {
+    "tract_name": "SLF_I",
+    "full_name": "Superior Longitudinal Fasciculus1",
+    "connections": {
+      "left": [
+        {
+          "region_name": "SCEF",
+          "description": "Supplementary and Cingulate Eye Field",
+          "probability": 100,
+          "region_number": 43
+        },
+        {
+          "region_name": "24dd",
+          "description": "Dorsal Area 24d",
+          "probability": 100,
+          "region_number": 40
+        },
+        {
+          "region_name": "31a",
+          "description": "Area 31a",
+          "probability": 100,
+          "region_number": 162
+        },
+        {
+          "region_name": "23c",
+          "description": "Area 23c",
+          "probability": 100,
+          "region_number": 38
+        },
+        {
+          "region_name": "p32pr",
+          "description": "Area p32 prime",
+          "probability": 100,
+          "region_number": 60
+        },
+        {
+          "region_name": "24dv",
+          "description": "Ventral Area 24d",
+          "probability": 100,
+          "region_number": 41
+        },
+        {
+          "region_name": "5mv",
+          "description": "Area 5m ventral",
+          "probability": 100,
+          "region_number": 37
+        },
+        {
+          "region_name": "PCV",
+          "description": "PreCuneus Visual Area",
+          "probability": 100,
+          "region_number": 27
+        },
+        {
+          "region_name": "p24pr",
+          "description": "Area Posterior 24 prime",
+          "probability": 99,
+          "region_number": 57
+        },
+        {
+          "region_name": "5m",
+          "description": "Area 5m",
+          "probability": 97,
+          "region_number": 36
+        },
+        {
+          "region_name": "a24pr",
+          "description": "Anterior 24 prime",
+          "probability": 97,
+          "region_number": 59
+        },
+        {
+          "region_name": "7Am",
+          "description": "Medial Area 7A",
+          "probability": 95,
+          "region_number": 45
+        },
+        {
+          "region_name": "31pd",
+          "description": "Area 31pd",
+          "probability": 95,
+          "region_number": 161
+        },
+        {
+          "region_name": "7m",
+          "description": "Area 7m",
+          "probability": 93,
+          "region_number": 30
+        },
+        {
+          "region_name": "SFL",
+          "description": "Superior Frontal Language Area",
+          "probability": 91,
+          "region_number": 26
+        },
+        {
+          "region_name": "7Pm",
+          "description": "Medial Area 7P",
+          "probability": 90,
+          "region_number": 29
+        },
+        {
+          "region_name": "8BM",
+          "description": "Area 8BM",
+          "probability": 90,
+          "region_number": 63
+        },
+        {
+          "region_name": "a32pr",
+          "description": "Area anterior 32 prime",
+          "probability": 85,
+          "region_number": 179
+        }
+      ],
+      "right": [
+        {
+          "region_name": "SCEF",
+          "description": "Supplementary and Cingulate Eye Field",
+          "probability": 100,
+          "region_number": 43
+        },
+        {
+          "region_name": "24dd",
+          "description": "Dorsal Area 24d",
+          "probability": 100,
+          "region_number": 40
+        },
+        {
+          "region_name": "23c",
+          "description": "Area 23c",
+          "probability": 100,
+          "region_number": 38
+        },
+        {
+          "region_name": "p32pr",
+          "description": "Area p32 prime",
+          "probability": 100,
+          "region_number": 60
+        },
+        {
+          "region_name": "24dv",
+          "description": "Ventral Area 24d",
+          "probability": 100,
+          "region_number": 41
+        },
+        {
+          "region_name": "5mv",
+          "description": "Area 5m ventral",
+          "probability": 100,
+          "region_number": 37
+        },
+        {
+          "region_name": "PCV",
+          "description": "PreCuneus Visual Area",
+          "probability": 100,
+          "region_number": 27
+        },
+        {
+          "region_name": "p24pr",
+          "description": "Area Posterior 24 prime",
+          "probability": 99,
+          "region_number": 57
+        },
+        {
+          "region_name": "5m",
+          "description": "Area 5m",
+          "probability": 98,
+          "region_number": 36
+        },
+        {
+          "region_name": "31a",
+          "description": "Area 31a",
+          "probability": 98,
+          "region_number": 162
+        },
+        {
+          "region_name": "8BM",
+          "description": "Area 8BM",
+          "probability": 95,
+          "region_number": 63
+        },
+        {
+          "region_name": "23d",
+          "description": "Area 23d",
+          "probability": 91,
+          "region_number": 32
+        },
+        {
+          "region_name": "SFL",
+          "description": "Superior Frontal Language Area",
+          "probability": 88,
+          "region_number": 26
+        },
+        {
+          "region_name": "a24pr",
+          "description": "Anterior 24 prime",
+          "probability": 81,
+          "region_number": 59
+        }
+      ]
+    }
+  },
+  "CST": {
+    "tract_name": "CST",
+    "full_name": "Corticospinal Tract",
+    "connections": {
+      "left": [
+        {
+          "region_name": "6mp",
+          "description": "Area 6mp",
+          "probability": 100,
+          "region_number": 55
+        },
+        {
+          "region_name": "6d",
+          "description": "Dorsal area 6",
+          "probability": 100,
+          "region_number": 54
+        },
+        {
+          "region_name": "4",
+          "description": "Primary Motor Cortex",
+          "probability": 100,
+          "region_number": 8
+        },
+        {
+          "region_name": "6ma",
+          "description": "Area 6m anterior",
+          "probability": 99,
+          "region_number": 44
+        },
+        {
+          "region_name": "3a",
+          "description": "Area 3a",
+          "probability": 99,
+          "region_number": 53
+        },
+        {
+          "region_name": "3b",
+          "description": "Primary Sensory Cortex",
+          "probability": 98,
+          "region_number": 9
+        },
+        {
+          "region_name": "1",
+          "description": "Area 1",
+          "probability": 90,
+          "region_number": 51
+        },
+        {
+          "region_name": "SCEF",
+          "description": "Supplementary and Cingulate Eye Field",
+          "probability": 89,
+          "region_number": 43
+        },
+        {
+          "region_name": "6a",
+          "description": "Area 6 anterior",
+          "probability": 88,
+          "region_number": 96
+        }
+      ],
+      "right": [
+        {
+          "region_name": "6mp",
+          "description": "Area 6mp",
+          "probability": 100,
+          "region_number": 55
+        },
+        {
+          "region_name": "4",
+          "description": "Primary Motor Cortex",
+          "probability": 100,
+          "region_number": 8
+        },
+        {
+          "region_name": "6d",
+          "description": "Dorsal area 6",
+          "probability": 99,
+          "region_number": 54
+        },
+        {
+          "region_name": "3a",
+          "description": "Area 3a",
+          "probability": 99,
+          "region_number": 53
+        },
+        {
+          "region_name": "6ma",
+          "description": "Area 6m anterior",
+          "probability": 97,
+          "region_number": 44
+        },
+        {
+          "region_name": "3b",
+          "description": "Primary Sensory Cortex",
+          "probability": 91,
+          "region_number": 9
+        }
+      ]
+    }
+  },
+  "C_FP": {
+    "tract_name": "C_FP",
+    "full_name": "Cingulum, Frontal Parietal Segment",
+    "connections": {
+      "left": [
+        {
+          "region_name": "p32pr",
+          "description": "Area p32 prime",
+          "probability": 100,
+          "region_number": 60
+        },
+        {
+          "region_name": "a24pr",
+          "description": "Anterior 24 prime",
+          "probability": 100,
+          "region_number": 59
+        },
+        {
+          "region_name": "31pv",
+          "description": "Area 31p ventral",
+          "probability": 100,
+          "region_number": 35
+        },
+        {
+          "region_name": "31pd",
+          "description": "Area 31pd",
+          "probability": 100,
+          "region_number": 161
+        },
+        {
+          "region_name": "7m",
+          "description": "Area 7m",
+          "probability": 100,
+          "region_number": 30
+        },
+        {
+          "region_name": "v23ab",
+          "description": "Area ventral 23 a+b",
+          "probability": 100,
+          "region_number": 33
+        },
+        {
+          "region_name": "a32pr",
+          "description": "Area anterior 32 prime",
+          "probability": 100,
+          "region_number": 179
+        },
+        {
+          "region_name": "d32",
+          "description": "Area dorsal 32",
+          "probability": 100,
+          "region_number": 62
+        },
+        {
+          "region_name": "9m",
+          "description": "Area 9 Middle",
+          "probability": 99,
+          "region_number": 69
+        },
+        {
+          "region_name": "POS2",
+          "description": "Parieto-Occipital Sulcus Area 2",
+          "probability": 98,
+          "region_number": 15
+        },
+        {
+          "region_name": "23c",
+          "description": "Area 23c",
+          "probability": 97,
+          "region_number": 38
+        },
+        {
+          "region_name": "p24pr",
+          "description": "Area Posterior 24 prime",
+          "probability": 97,
+          "region_number": 57
+        },
+        {
+          "region_name": "POS1",
+          "description": "Parieto-Occipital Sulcus Area 1",
+          "probability": 97,
+          "region_number": 31
+        },
+        {
+          "region_name": "p24",
+          "description": "Area posterior 24",
+          "probability": 96,
+          "region_number": 180
+        },
+        {
+          "region_name": "24dv",
+          "description": "Ventral Area 24d",
+          "probability": 95,
+          "region_number": 41
+        },
+        {
+          "region_name": "RSC",
+          "description": "RetroSplenial Complex",
+          "probability": 92,
+          "region_number": 14
+        },
+        {
+          "region_name": "31a",
+          "description": "Area 31a",
+          "probability": 91,
+          "region_number": 162
+        },
+        {
+          "region_name": "8BM",
+          "description": "Area 8BM",
+          "probability": 91,
+          "region_number": 63
+        },
+        {
+          "region_name": "23d",
+          "description": "Area 23d",
+          "probability": 88,
+          "region_number": 32
+        },
+        {
+          "region_name": "d23ab",
+          "description": "Area dorsal 23 a+b",
+          "probability": 86,
+          "region_number": 34
+        },
+        {
+          "region_name": "PCV",
+          "description": "PreCuneus Visual Area",
+          "probability": 82,
+          "region_number": 27
+        }
+      ],
+      "right": [
+        {
+          "region_name": "31a",
+          "description": "Area 31a",
+          "probability": 100,
+          "region_number": 162
+        },
+        {
+          "region_name": "23c",
+          "description": "Area 23c",
+          "probability": 100,
+          "region_number": 38
+        },
+        {
+          "region_name": "p32pr",
+          "description": "Area p32 prime",
+          "probability": 100,
+          "region_number": 60
+        },
+        {
+          "region_name": "a24pr",
+          "description": "Anterior 24 prime",
+          "probability": 100,
+          "region_number": 59
+        },
+        {
+          "region_name": "p24pr",
+          "description": "Area Posterior 24 prime",
+          "probability": 100,
+          "region_number": 57
+        },
+        {
+          "region_name": "33pr",
+          "description": "Area 33 prime",
+          "probability": 100,
+          "region_number": 58
+        },
+        {
+          "region_name": "23d",
+          "description": "Area 23d",
+          "probability": 100,
+          "region_number": 32
+        },
+        {
+          "region_name": "31pv",
+          "description": "Area 31p ventral",
+          "probability": 100,
+          "region_number": 35
+        },
+        {
+          "region_name": "31pd",
+          "description": "Area 31pd",
+          "probability": 100,
+          "region_number": 161
+        },
+        {
+          "region_name": "7m",
+          "description": "Area 7m",
+          "probability": 100,
+          "region_number": 30
+        },
+        {
+          "region_name": "v23ab",
+          "description": "Area ventral 23 a+b",
+          "probability": 100,
+          "region_number": 33
+        },
+        {
+          "region_name": "POS1",
+          "description": "Parieto-Occipital Sulcus Area 1",
+          "probability": 100,
+          "region_number": 31
+        },
+        {
+          "region_name": "d23ab",
+          "description": "Area dorsal 23 a+b",
+          "probability": 100,
+          "region_number": 34
+        },
+        {
+          "region_name": "RSC",
+          "description": "RetroSplenial Complex",
+          "probability": 100,
+          "region_number": 14
+        },
+        {
+          "region_name": "a32pr",
+          "description": "Area anterior 32 prime",
+          "probability": 100,
+          "region_number": 179
+        },
+        {
+          "region_name": "d32",
+          "description": "Area dorsal 32",
+          "probability": 100,
+          "region_number": 62
+        },
+        {
+          "region_name": "p24",
+          "description": "Area posterior 24",
+          "probability": 100,
+          "region_number": 180
+        },
+        {
+          "region_name": "a24",
+          "description": "Area a24",
+          "probability": 100,
+          "region_number": 61
+        },
+        {
+          "region_name": "9m",
+          "description": "Area 9 Middle",
+          "probability": 99,
+          "region_number": 69
+        },
+        {
+          "region_name": "PCV",
+          "description": "PreCuneus Visual Area",
+          "probability": 98,
+          "region_number": 27
+        },
+        {
+          "region_name": "POS2",
+          "description": "Parieto-Occipital Sulcus Area 2",
+          "probability": 97,
+          "region_number": 15
+        },
+        {
+          "region_name": "8BM",
+          "description": "Area 8BM",
+          "probability": 96,
+          "region_number": 63
+        },
+        {
+          "region_name": "p32",
+          "description": "Area p32",
+          "probability": 82,
+          "region_number": 64
+        },
+        {
+          "region_name": "7Pm",
+          "description": "Medial Area 7P",
+          "probability": 81,
+          "region_number": 29
+        }
+      ]
+    }
+  },
+  "C_R": {
+    "tract_name": "C_R",
+    "full_name": "C_R",
+    "connections": {
+      "left": [
+        {
+          "region_name": "a24pr",
+          "description": "Anterior 24 prime",
+          "probability": 100,
+          "region_number": 59
+        },
+        {
+          "region_name": "p24pr",
+          "description": "Area Posterior 24 prime",
+          "probability": 100,
+          "region_number": 57
+        },
+        {
+          "region_name": "33pr",
+          "description": "Area 33 prime",
+          "probability": 100,
+          "region_number": 58
+        },
+        {
+          "region_name": "23d",
+          "description": "Area 23d",
+          "probability": 100,
+          "region_number": 32
+        },
+        {
+          "region_name": "RSC",
+          "description": "RetroSplenial Complex",
+          "probability": 100,
+          "region_number": 14
+        },
+        {
+          "region_name": "p24",
+          "description": "Area posterior 24",
+          "probability": 100,
+          "region_number": 180
+        },
+        {
+          "region_name": "d23ab",
+          "description": "Area dorsal 23 a+b",
+          "probability": 99,
+          "region_number": 34
+        },
+        {
+          "region_name": "25",
+          "description": "Area 25",
+          "probability": 98,
+          "region_number": 164
+        },
+        {
+          "region_name": "a24",
+          "description": "Area a24",
+          "probability": 95,
+          "region_number": 61
+        },
+        {
+          "region_name": "31pv",
+          "description": "Area 31p ventral",
+          "probability": 93,
+          "region_number": 35
+        },
+        {
+          "region_name": "a32pr",
+          "description": "Area anterior 32 prime",
+          "probability": 90,
+          "region_number": 179
+        }
+      ],
+      "right": [
+        {
+          "region_name": "33pr",
+          "description": "Area 33 prime",
+          "probability": 100,
+          "region_number": 58
+        },
+        {
+          "region_name": "v23ab",
+          "description": "Area ventral 23 a+b",
+          "probability": 100,
+          "region_number": 33
+        },
+        {
+          "region_name": "RSC",
+          "description": "RetroSplenial Complex",
+          "probability": 100,
+          "region_number": 14
+        },
+        {
+          "region_name": "p24",
+          "description": "Area posterior 24",
+          "probability": 100,
+          "region_number": 180
+        },
+        {
+          "region_name": "a24",
+          "description": "Area a24",
+          "probability": 100,
+          "region_number": 61
+        },
+        {
+          "region_name": "a24pr",
+          "description": "Anterior 24 prime",
+          "probability": 99,
+          "region_number": 59
+        },
+        {
+          "region_name": "31pv",
+          "description": "Area 31p ventral",
+          "probability": 98,
+          "region_number": 35
+        },
+        {
+          "region_name": "d23ab",
+          "description": "Area dorsal 23 a+b",
+          "probability": 98,
+          "region_number": 34
+        },
+        {
+          "region_name": "25",
+          "description": "Area 25",
+          "probability": 98,
+          "region_number": 164
+        },
+        {
+          "region_name": "POS1",
+          "description": "Parieto-Occipital Sulcus Area 1",
+          "probability": 97,
+          "region_number": 31
+        },
+        {
+          "region_name": "23d",
+          "description": "Area 23d",
+          "probability": 96,
+          "region_number": 32
+        },
+        {
+          "region_name": "7m",
+          "description": "Area 7m",
+          "probability": 96,
+          "region_number": 30
+        },
+        {
+          "region_name": "31pd",
+          "description": "Area 31pd",
+          "probability": 92,
+          "region_number": 161
+        },
+        {
+          "region_name": "POS2",
+          "description": "Parieto-Occipital Sulcus Area 2",
+          "probability": 84,
+          "region_number": 15
+        }
+      ]
+    }
+  }
+}

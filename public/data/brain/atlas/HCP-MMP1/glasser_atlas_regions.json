@@ -1,0 +1,1072 @@
+{
+  "regions": [
+    {
+      "id": 1,
+      "name": "V1",
+      "description": "Primary Visual Cortex",
+      "network": "visual"
+    },
+    {
+      "id": 2,
+      "name": "MST",
+      "description": "Medial Superior Temporal Area",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 3,
+      "name": "V6",
+      "description": "Sixth Visual Area",
+      "network": "visual"
+    },
+    {
+      "id": 4,
+      "name": "V2",
+      "description": "Second Visual Area",
+      "network": "visual"
+    },
+    {
+      "id": 5,
+      "name": "V3",
+      "description": "Third Visual Area",
+      "network": "visual"
+    },
+    {
+      "id": 6,
+      "name": "V4",
+      "description": "Fourth Visual Area",
+      "network": "visual"
+    },
+    {
+      "id": 7,
+      "name": "V8",
+      "description": "Eighth Visual Area",
+      "network": "visual"
+    },
+    {
+      "id": 8,
+      "name": "4",
+      "description": "Primary Motor Cortex",
+      "network": "somatosensory"
+    },
+    {
+      "id": 9,
+      "name": "3b",
+      "description": "Primary Sensory Cortex",
+      "network": "somatosensory"
+    },
+    {
+      "id": 10,
+      "name": "FEF",
+      "description": "Frontal Eye Fields",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 11,
+      "name": "PEF",
+      "description": "Premotor Eye Field",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 12,
+      "name": "55b",
+      "description": "Area 55b",
+      "network": "somatosensory"
+    },
+    {
+      "id": 13,
+      "name": "V3A",
+      "description": "Area V3A",
+      "network": "visual"
+    },
+    {
+      "id": 14,
+      "name": "RSC",
+      "description": "RetroSplenial Complex",
+      "network": "default mode"
+    },
+    {
+      "id": 15,
+      "name": "POS2",
+      "description": "Parieto-Occipital Sulcus Area 2",
+      "network": "default mode"
+    },
+    {
+      "id": 16,
+      "name": "V7",
+      "description": "Seventh Visual Area",
+      "network": "visual"
+    },
+    {
+      "id": 17,
+      "name": "IPS1",
+      "description": "IntraParietal Sulcus Area 1",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 18,
+      "name": "FFC",
+      "description": "Fusiform Face Complex",
+      "network": "visual"
+    },
+    {
+      "id": 19,
+      "name": "V3B",
+      "description": "Area V3B",
+      "network": "visual"
+    },
+    {
+      "id": 20,
+      "name": "LO1",
+      "description": "Area Lateral Occipital 1",
+      "network": "visual"
+    },
+    {
+      "id": 21,
+      "name": "LO2",
+      "description": "Area Lateral Occipital 2",
+      "network": "visual"
+    },
+    {
+      "id": 22,
+      "name": "PIT",
+      "description": "Posterior InferoTemporal complex",
+      "network": "visual"
+    },
+    {
+      "id": 23,
+      "name": "MT",
+      "description": "Middle Temporal Area",
+      "network": "visual"
+    },
+    {
+      "id": 24,
+      "name": "A1",
+      "description": "Primary Auditory Cortex",
+      "network": "somatosensory"
+    },
+    {
+      "id": 25,
+      "name": "PSL",
+      "description": "PeriSylvian Language Area",
+      "network": "ventral attention"
+    },
+    {
+      "id": 26,
+      "name": "SFL",
+      "description": "Superior Frontal Language Area",
+      "network": "default mode"
+    },
+    {
+      "id": 27,
+      "name": "PCV",
+      "description": "PreCuneus Visual Area",
+      "network": "default mode"
+    },
+    {
+      "id": 28,
+      "name": "STV",
+      "description": "Superior Temporal Visual Area",
+      "network": "default mode"
+    },
+    {
+      "id": 29,
+      "name": "7Pm",
+      "description": "Medial Area 7P",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 30,
+      "name": "7m",
+      "description": "Area 7m",
+      "network": "default mode"
+    },
+    {
+      "id": 31,
+      "name": "POS1",
+      "description": "Parieto-Occipital Sulcus Area 1",
+      "network": "default mode"
+    },
+    {
+      "id": 32,
+      "name": "23d",
+      "description": "Area 23d",
+      "network": "default mode"
+    },
+    {
+      "id": 33,
+      "name": "v23ab",
+      "description": "Area ventral 23 a+b",
+      "network": "default mode"
+    },
+    {
+      "id": 34,
+      "name": "d23ab",
+      "description": "Area dorsal 23 a+b",
+      "network": "default mode"
+    },
+    {
+      "id": 35,
+      "name": "31pv",
+      "description": "Area 31p ventral",
+      "network": "default mode"
+    },
+    {
+      "id": 36,
+      "name": "5m",
+      "description": "Area 5m",
+      "network": "somatosensory"
+    },
+    {
+      "id": 37,
+      "name": "5mv",
+      "description": "Area 5m ventral",
+      "network": "ventral attention"
+    },
+    {
+      "id": 38,
+      "name": "23c",
+      "description": "Area 23c",
+      "network": "ventral attention"
+    },
+    {
+      "id": 39,
+      "name": "5L",
+      "description": "Area 5L",
+      "network": "somatosensory"
+    },
+    {
+      "id": 40,
+      "name": "24dd",
+      "description": "Dorsal Area 24d",
+      "network": "somatosensory"
+    },
+    {
+      "id": 41,
+      "name": "24dv",
+      "description": "Ventral Area 24d",
+      "network": "somatosensory"
+    },
+    {
+      "id": 42,
+      "name": "7AL",
+      "description": "Lateral Area 7A",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 43,
+      "name": "SCEF",
+      "description": "Supplementary and",
+      "network": "ventral attention"
+    },
+    {
+      "id": 44,
+      "name": "6ma",
+      "description": "Area 6m anterior",
+      "network": "ventral attention"
+    },
+    {
+      "id": 45,
+      "name": "7Am",
+      "description": "Medial Area 7A",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 46,
+      "name": "7Pl",
+      "description": "Lateral Area 7P",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 47,
+      "name": "7PC",
+      "description": "Area 7PC",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 48,
+      "name": "LIPv",
+      "description": "Area Lateral",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 49,
+      "name": "VIP",
+      "description": "Ventral IntraParietal Complex",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 50,
+      "name": "MIP",
+      "description": "Medial IntraParietal Area",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 51,
+      "name": "1",
+      "description": "Area 1",
+      "network": "somatosensory"
+    },
+    {
+      "id": 52,
+      "name": "2",
+      "description": "Area 2",
+      "network": "somatosensory"
+    },
+    {
+      "id": 53,
+      "name": "3a",
+      "description": "Area 3a",
+      "network": "somatosensory"
+    },
+    {
+      "id": 54,
+      "name": "6d",
+      "description": "Dorsal area 6",
+      "network": "somatosensory"
+    },
+    {
+      "id": 55,
+      "name": "6mp",
+      "description": "Area 6mp",
+      "network": "somatosensory"
+    },
+    {
+      "id": 56,
+      "name": "6v",
+      "description": "Ventral Area 6",
+      "network": "somatosensory"
+    },
+    {
+      "id": 57,
+      "name": "p24pr",
+      "description": "Area Posterior 24",
+      "network": "ventral attention"
+    },
+    {
+      "id": 58,
+      "name": "33pr",
+      "description": "Area 33 prime",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 59,
+      "name": "a24pr",
+      "description": "Anterior 24 prime",
+      "network": "ventral attention"
+    },
+    {
+      "id": 60,
+      "name": "p32pr",
+      "description": "Area p32 prime",
+      "network": "ventral attention"
+    },
+    {
+      "id": 61,
+      "name": "a24",
+      "description": "Area a24",
+      "network": "default mode"
+    },
+    {
+      "id": 62,
+      "name": "d32",
+      "description": "Area dorsal 32",
+      "network": "default mode"
+    },
+    {
+      "id": 63,
+      "name": "8BM",
+      "description": "Area 8BM",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 64,
+      "name": "p32",
+      "description": "Area p32",
+      "network": "default mode"
+    },
+    {
+      "id": 65,
+      "name": "10r",
+      "description": "Area 10r",
+      "network": "default mode"
+    },
+    {
+      "id": 66,
+      "name": "47m",
+      "description": "Area 47m",
+      "network": "default mode"
+    },
+    {
+      "id": 67,
+      "name": "8Av",
+      "description": "Area 8Av",
+      "network": "default mode"
+    },
+    {
+      "id": 68,
+      "name": "8Ad",
+      "description": "Area 8Ad",
+      "network": "default mode"
+    },
+    {
+      "id": 69,
+      "name": "9m",
+      "description": "Area 9 Middle",
+      "network": "default mode"
+    },
+    {
+      "id": 70,
+      "name": "8BL",
+      "description": "Area 8B Lateral",
+      "network": "default mode"
+    },
+    {
+      "id": 71,
+      "name": "9p",
+      "description": "Area 9 Posterior",
+      "network": "default mode"
+    },
+    {
+      "id": 72,
+      "name": "10d",
+      "description": "Area 10d",
+      "network": "default mode"
+    },
+    {
+      "id": 73,
+      "name": "8C",
+      "description": "Area 8C",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 74,
+      "name": "44",
+      "description": "Area 44",
+      "network": "default mode"
+    },
+    {
+      "id": 75,
+      "name": "45",
+      "description": "Area 45",
+      "network": "default mode"
+    },
+    {
+      "id": 76,
+      "name": "47l",
+      "description": "Area 47l (47 lateral)",
+      "network": "default mode"
+    },
+    {
+      "id": 77,
+      "name": "a47r",
+      "description": "Area anterior 47r",
+      "network": "default mode"
+    },
+    {
+      "id": 78,
+      "name": "6r",
+      "description": "Rostral Area 6",
+      "network": "ventral attention"
+    },
+    {
+      "id": 79,
+      "name": "IFJa",
+      "description": "Area IFJa",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 80,
+      "name": "IFJp",
+      "description": "Area IFJp",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 81,
+      "name": "IFSp",
+      "description": "Area IFSp",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 82,
+      "name": "IFSa",
+      "description": "Area IFSa",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 84,
+      "name": "46",
+      "description": "Area 46",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 86,
+      "name": "9-46d",
+      "description": "Area 9-46d",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 87,
+      "name": "9a",
+      "description": "Area 9 anterior",
+      "network": "default mode"
+    },
+    {
+      "id": 88,
+      "name": "10v",
+      "description": "Area 10v",
+      "network": "limbic"
+    },
+    {
+      "id": 89,
+      "name": "a10p",
+      "description": "Area anterior 10p",
+      "network": "default mode"
+    },
+    {
+      "id": 90,
+      "name": "10pp",
+      "description": "Polar 10p",
+      "network": "limbic"
+    },
+    {
+      "id": 91,
+      "name": "11l",
+      "description": "Area 11l",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 92,
+      "name": "13l",
+      "description": "Area 13l",
+      "network": "limbic"
+    },
+    {
+      "id": 93,
+      "name": "OFC",
+      "description": "Orbital Frontal Complex",
+      "network": "limbic"
+    },
+    {
+      "id": 94,
+      "name": "47s",
+      "description": "Area 47s",
+      "network": "default mode"
+    },
+    {
+      "id": 95,
+      "name": "LIPd",
+      "description": "Area Lateral",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 96,
+      "name": "6a",
+      "description": "Area 6 anterior",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 97,
+      "name": "i6-8",
+      "description": "Inferior 6-8",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 98,
+      "name": "s6-8",
+      "description": "Superior 6-8",
+      "network": "default mode"
+    },
+    {
+      "id": 99,
+      "name": "43",
+      "description": "Area 43",
+      "network": "ventral attention"
+    },
+    {
+      "id": 100,
+      "name": "OP4",
+      "description": "Area OP4/PV",
+      "network": "somatosensory"
+    },
+    {
+      "id": 101,
+      "name": "OP1",
+      "description": "Area OP1/SII",
+      "network": "somatosensory"
+    },
+    {
+      "id": 102,
+      "name": "OP2-3",
+      "description": "Area OP2-3/VS",
+      "network": "somatosensory"
+    },
+    {
+      "id": 103,
+      "name": "52",
+      "description": "Area 52",
+      "network": "somatosensory"
+    },
+    {
+      "id": 104,
+      "name": "RI",
+      "description": "RetroInsular Cortex",
+      "network": "somatosensory"
+    },
+    {
+      "id": 105,
+      "name": "PFcm",
+      "description": "Area PFcm",
+      "network": "ventral attention"
+    },
+    {
+      "id": 106,
+      "name": "PoI2",
+      "description": "Posterior Insular Area 2",
+      "network": "ventral attention"
+    },
+    {
+      "id": 107,
+      "name": "TA2",
+      "description": "Area TA2",
+      "network": "somatosensory"
+    },
+    {
+      "id": 108,
+      "name": "FOP4",
+      "description": "Frontal OPercular",
+      "network": "ventral attention"
+    },
+    {
+      "id": 109,
+      "name": "MI",
+      "description": "Middle Insular Area",
+      "network": "ventral attention"
+    },
+    {
+      "id": 110,
+      "name": "Pir",
+      "description": "Pirform Cortex",
+      "network": "limbic"
+    },
+    {
+      "id": 111,
+      "name": "AVI",
+      "description": "Anterior Ventral Insular Area",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 112,
+      "name": "AAIC",
+      "description": "Anterior Agranular",
+      "network": "default mode"
+    },
+    {
+      "id": 113,
+      "name": "FOP1",
+      "description": "Frontal OPercular",
+      "network": "ventral attention"
+    },
+    {
+      "id": 114,
+      "name": "FOP3",
+      "description": "Frontal OPercular",
+      "network": "ventral attention"
+    },
+    {
+      "id": 115,
+      "name": "FOP2",
+      "description": "Frontal OPercular",
+      "network": "somatosensory"
+    },
+    {
+      "id": 116,
+      "name": "PFt",
+      "description": "Area PFt",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 117,
+      "name": "AIP",
+      "description": "Anterior IntraParietal",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 118,
+      "name": "EC",
+      "description": "Entorhinal Cortex",
+      "network": "limbic"
+    },
+    {
+      "id": 119,
+      "name": "PreS",
+      "description": "PreSubiculum",
+      "network": "default mode"
+    },
+    {
+      "id": 120,
+      "name": "H",
+      "description": "Hippocampus",
+      "network": "limbic"
+    },
+    {
+      "id": 121,
+      "name": "ProS",
+      "description": "ProStriate Area",
+      "network": "visual"
+    },
+    {
+      "id": 122,
+      "name": "PeEc",
+      "description": "Perirhinal Ectorhinal Cortex",
+      "network": "limbic"
+    },
+    {
+      "id": 123,
+      "name": "STGa",
+      "description": "Area STGa",
+      "network": "default mode"
+    },
+    {
+      "id": 124,
+      "name": "PBelt",
+      "description": "ParaBelt Complex",
+      "network": "somatosensory"
+    },
+    {
+      "id": 125,
+      "name": "A5",
+      "description": "Auditory 5 Complex",
+      "network": "somatosensory"
+    },
+    {
+      "id": 126,
+      "name": "PHA1",
+      "description": "ParaHippocampal",
+      "network": "default mode"
+    },
+    {
+      "id": 127,
+      "name": "PHA3",
+      "description": "ParaHippocampal Area 3",
+      "network": "visual"
+    },
+    {
+      "id": 128,
+      "name": "STSda",
+      "description": "Area STSd anterior",
+      "network": "default mode"
+    },
+    {
+      "id": 129,
+      "name": "STSdp",
+      "description": "Area STSd posterior",
+      "network": "default mode"
+    },
+    {
+      "id": 130,
+      "name": "STSvp",
+      "description": "Area STSv posterior",
+      "network": "default mode"
+    },
+    {
+      "id": 131,
+      "name": "TGd",
+      "description": "Area TG dorsal",
+      "network": "limbic"
+    },
+    {
+      "id": 132,
+      "name": "TE1a",
+      "description": "Area TE1 anterior",
+      "network": "default mode"
+    },
+    {
+      "id": 133,
+      "name": "TE1p",
+      "description": "Area TE1 posterior",
+      "network": "default mode"
+    },
+    {
+      "id": 134,
+      "name": "TE2a",
+      "description": "Area TE2 anterior",
+      "network": "limbic"
+    },
+    {
+      "id": 135,
+      "name": "TF",
+      "description": "Area TF",
+      "network": "limbic"
+    },
+    {
+      "id": 136,
+      "name": "TE2p",
+      "description": "Area TE2 posterior",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 137,
+      "name": "PHT",
+      "description": "Area PHT",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 138,
+      "name": "PH",
+      "description": "Area PH",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 139,
+      "name": "TPOJ1",
+      "description": "Area TemporoParietoOccipital Junction 1",
+      "network": "somatosensory"
+    },
+    {
+      "id": 140,
+      "name": "TPOJ2",
+      "description": "Area TemporoParietoOccipital Junction 2",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 141,
+      "name": "TPOJ3",
+      "description": "Area TemporoParietoOccipital Junction 3",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 142,
+      "name": "DVT",
+      "description": "Dorsal Transitional Visual Area",
+      "network": "visual"
+    },
+    {
+      "id": 143,
+      "name": "PGp",
+      "description": "Area PGp",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 144,
+      "name": "IP2",
+      "description": "Area IntraParietal 2",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 145,
+      "name": "IP1",
+      "description": "Area IntraParietal 1",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 146,
+      "name": "IP0",
+      "description": "Area IntraParietal 0",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 147,
+      "name": "PFop",
+      "description": "Area PF opercular",
+      "network": "ventral attention"
+    },
+    {
+      "id": 148,
+      "name": "PF",
+      "description": "Area PF Complex",
+      "network": "ventral attention"
+    },
+    {
+      "id": 149,
+      "name": "PFm",
+      "description": "Area PFm Complex",
+      "network": "default mode"
+    },
+    {
+      "id": 150,
+      "name": "PGi",
+      "description": "Area PGi",
+      "network": "default mode"
+    },
+    {
+      "id": 151,
+      "name": "PGs",
+      "description": "Area PGs",
+      "network": "default mode"
+    },
+    {
+      "id": 152,
+      "name": "V6A",
+      "description": "Area V6A",
+      "network": "visual"
+    },
+    {
+      "id": 153,
+      "name": "VMV1",
+      "description": "VentroMedial Visual",
+      "network": "visual"
+    },
+    {
+      "id": 154,
+      "name": "VMV3",
+      "description": "VentroMedial Visual",
+      "network": "visual"
+    },
+    {
+      "id": 155,
+      "name": "PHA2",
+      "description": "ParaHippocampal",
+      "network": "default mode"
+    },
+    {
+      "id": 156,
+      "name": "V4t",
+      "description": "Area V4t",
+      "network": "visual"
+    },
+    {
+      "id": 157,
+      "name": "FST",
+      "description": "Area FST",
+      "network": "dorsal attention"
+    },
+    {
+      "id": 158,
+      "name": "V3CD",
+      "description": "Area V3CD",
+      "network": "visual"
+    },
+    {
+      "id": 159,
+      "name": "LO3",
+      "description": "Area Lateral Occipital",
+      "network": "visual"
+    },
+    {
+      "id": 160,
+      "name": "VMV2",
+      "description": "VentroMedial Visual",
+      "network": "visual"
+    },
+    {
+      "id": 161,
+      "name": "31pd",
+      "description": "Area 31pd",
+      "network": "default mode"
+    },
+    {
+      "id": 162,
+      "name": "31a",
+      "description": "Area 31a",
+      "network": "default mode"
+    },
+    {
+      "id": 163,
+      "name": "VVC",
+      "description": "Ventral Visual Complex",
+      "network": "visual"
+    },
+    {
+      "id": 164,
+      "name": "25",
+      "description": "Area 25",
+      "network": "limbic"
+    },
+    {
+      "id": 165,
+      "name": "s32",
+      "description": "Area s32",
+      "network": "limbic"
+    },
+    {
+      "id": 166,
+      "name": "pOFC",
+      "description": "posterior OFC Complex",
+      "network": "limbic"
+    },
+    {
+      "id": 167,
+      "name": "PoI1",
+      "description": "Area Posterior Insular 1",
+      "network": "ventral attention"
+    },
+    {
+      "id": 168,
+      "name": "Ig",
+      "description": "Insular Granular Complex",
+      "network": "somatosensory"
+    },
+    {
+      "id": 169,
+      "name": "FOP5",
+      "description": "Area Frontal Opercular 5",
+      "network": "ventral attention"
+    },
+    {
+      "id": 170,
+      "name": "p10p",
+      "description": "Area posterior 10p",
+      "network": "default mode"
+    },
+    {
+      "id": 171,
+      "name": "p47r",
+      "description": "Area posterior 47r",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 172,
+      "name": "TGv",
+      "description": "Area TG Ventral",
+      "network": "limbic"
+    },
+    {
+      "id": 173,
+      "name": "MBelt",
+      "description": "Medial Belt Complex",
+      "network": "somatosensory"
+    },
+    {
+      "id": 174,
+      "name": "LBelt",
+      "description": "Lateral Belt Complex",
+      "network": "somatosensory"
+    },
+    {
+      "id": 175,
+      "name": "A4",
+      "description": "Auditory 4 Complex",
+      "network": "somatosensory"
+    },
+    {
+      "id": 176,
+      "name": "STSva",
+      "description": "Area STSv anterior",
+      "network": "default mode"
+    },
+    {
+      "id": 177,
+      "name": "TE1m",
+      "description": "Area TE1 Middle",
+      "network": "default mode"
+    },
+    {
+      "id": 178,
+      "name": "PI",
+      "description": "Para-Insular Area",
+      "network": "ventral attention"
+    },
+    {
+      "id": 179,
+      "name": "a32pr",
+      "description": "Area anterior 32 prime",
+      "network": "frontoparietal"
+    },
+    {
+      "id": 180,
+      "name": "p24",
+      "description": "Area posterior 24",
+      "network": "default mode"
+    }
+  ]
+}

@@ -1,6 +1,3 @@
 {
-  "order": [
-    "media",
-    "MSA.md"
-  ]
+  "order": ["media", "MSA.md"]
 }

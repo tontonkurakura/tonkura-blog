@@ -11,7 +11,10 @@ interface HamburgerButtonProps {
 /**
  * ハンバーガーメニューボタンコンポーネント
  */
-export default function HamburgerButton({ isOpen, onToggle }: HamburgerButtonProps) {
+export default function HamburgerButton({
+  isOpen,
+  onToggle,
+}: HamburgerButtonProps) {
   return (
     <button
       className="md:hidden w-8 h-8 flex flex-col justify-center items-center"
@@ -37,4 +40,4 @@ export default function HamburgerButton({ isOpen, onToggle }: HamburgerButtonPro
       ></span>
     </button>
   );
-} 
+}

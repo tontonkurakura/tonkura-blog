@@ -1,6 +1,3 @@
 {
-  "order": [
-    "media",
-    "PSP.md"
-  ]
+  "order": ["media", "PSP.md"]
 }

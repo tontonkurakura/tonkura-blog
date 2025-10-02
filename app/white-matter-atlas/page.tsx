@@ -20,6 +20,44 @@ export default function TractAtlasPage() {
           提示されているトラクトは、投射線維、連合線維、交連線維など、脳の主要な白質経路を網羅しています。
           カテゴリと表示したいトラクトを選択することで、様々な白質線維を詳細に観察できます。
         </p>
+        <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mb-4">
+          <h2 className="text-lg font-semibold mb-2 flex items-center">
+            <span>新機能: 皮質アトラスと白質線維の同時表示</span>
+            <span className="ml-2 text-xs bg-blue-100 px-2 py-0.5 rounded text-blue-700 font-semibold">
+              NEW
+            </span>
+          </h2>
+          <p className="text-md text-gray-700">
+            白質線維表示時に「HCP-MMP1皮質アトラスを同時表示」オプションをオンにすると、
+            白質線維と皮質領域を同時に可視化できるようになりました。
+            これにより、各白質線維束が脳のどの皮質領域とつながっているかを直感的に理解できます。
+          </p>
+        </div>
+        <div className="bg-green-50 p-4 rounded-lg border border-green-200 mb-4">
+          <h2 className="text-lg font-semibold mb-2 flex items-center">
+            <span>新機能: 特定の皮質領域のみを選択して表示</span>
+            <span className="ml-2 text-xs bg-green-100 px-2 py-0.5 rounded text-green-700 font-semibold">
+              NEW
+            </span>
+          </h2>
+          <p className="text-md text-gray-700 mb-2">
+            「特定の皮質領域だけを表示」オプションをオンにすると、
+            関心のある皮質領域だけを選択して表示できるようになりました。
+            これにより、特定の白質線維束と特定の皮質領域の関係をより詳細に観察できます。
+          </p>
+          <div className="text-sm bg-white p-3 rounded border border-green-100">
+            <p className="font-semibold mb-1">使い方：</p>
+            <ol className="list-decimal list-inside space-y-1 text-gray-700">
+              <li>白質線維を選択する（例：弓状束）</li>
+              <li>「HCP-MMP1皮質アトラスを同時表示」をオンにする</li>
+              <li>「特定の皮質領域だけを表示」をオンにする</li>
+              <li>
+                表示される領域選択パネルから関心のある皮質領域を選択する（例：言語関連領域）
+              </li>
+              <li>選択した白質線維と皮質領域の関係を観察する</li>
+            </ol>
+          </div>
+        </div>
       </div>
 
       <BrainViewerClient

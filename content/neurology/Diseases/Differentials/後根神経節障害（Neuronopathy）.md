@@ -1,40 +1,29 @@
 ---
 last_edited: 2022-08-24T00:00:00.000Z
-lastmod: '2025-04-06'
+lastmod: "2025-10-02"
 ---
 
-
-
-
-  
-
 - 傍腫瘍性神経症候群
-    - 背景の悪性腫瘍として多いのは，小細胞肺癌，乳癌，卵巣癌，前立腺癌，悪性リンパ腫，神経内分泌腫瘍，肉腫
+  - 背景の悪性腫瘍として多いのは，小細胞肺癌，乳癌，卵巣癌，前立腺癌，悪性リンパ腫，神経内分泌腫瘍，肉腫
 - 自己免疫疾患
-    - Sjogren症候群
-    - 全身性エリテマトーデス
-    - MCTD
-    - 関節リウマチ
+  - Sjogren症候群
+  - 全身性エリテマトーデス
+  - MCTD
+  - 関節リウマチ
 - 感染症
-    - HIV
-    - HTLV-1
-    - EBV
-    - Zikaウイルス
-    - エンテロウイルス
-    - VZV感染症
+  - HIV
+  - HTLV-1
+  - EBV
+  - Zikaウイルス
+  - エンテロウイルス
+  - VZV感染症
 - 薬剤性
-    - プラチナ製剤（シスプラチン，オキサリプラチン，カルボプラチン）
-    - ビタミンB6（ピリドキシン）毒性
-    - 免疫チェックポイント阻害薬
+  - プラチナ製剤（シスプラチン，オキサリプラチン，カルボプラチン）
+  - ビタミンB6（ピリドキシン）毒性
+  - 免疫チェックポイント阻害薬
 - 特発性
-    
-    - Large-fiber sensory ganglionopathy
-    - Small-fiber sensory ganglionopathy
-    
-      
-    
-
-  
+  - Large-fiber sensory ganglionopathy
+  - Small-fiber sensory ganglionopathy
 
 **・血液検査：ANA, SS-A,B抗体、HIV検査、ビタミンB6**
 

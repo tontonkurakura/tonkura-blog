@@ -8,7 +8,6 @@ import {
   NeurologySubNavigation,
 } from "./SecondaryNavigation";
 import { useMenuState } from "../../hooks/useMenuState";
-import { useKeySequenceDetection } from "../../hooks/useKeySequenceDetection";
 
 /**
  * ナビゲーションヘッダーコンポーネント
@@ -17,9 +16,6 @@ import { useKeySequenceDetection } from "../../hooks/useKeySequenceDetection";
 export default function NavigationHeader() {
   // ナビゲーションメニューの状態管理
   const { isMenuOpen, toggleMenu, closeMenu, navRef } = useMenuState();
-
-  // 隠しメニュー項目の状態管理
-  const { hiddenMenuItems, isClient } = useKeySequenceDetection();
 
   // 現在のパス
   const pathname = usePathname();
@@ -45,7 +41,6 @@ export default function NavigationHeader() {
             navRef={navRef}
             isMenuOpen={isMenuOpen}
             closeMenu={closeMenu}
-            hiddenMenuItems={hiddenMenuItems}
           />
 
           {/* 条件付きサブナビゲーション */}

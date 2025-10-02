@@ -1,8 +1,15 @@
 "use client";
 
+import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
-import { useState, useEffect } from "react";
 import useTractData from "./useTractData";
+import {
+  useHighConnectivityRegions,
+  getHighConnectivityRegions,
+  useConnectomeData,
+  ConnectomeRegion,
+} from "@/app/utils/tractConnectivity";
+import { useGlasserAtlasData } from "@/app/utils/glasserAtlas";
 
 // クライアントサイドでのみレンダリングするためにdynamicインポートを使用
 const NiivueViewer = dynamic(
@@ -11,60 +18,60 @@ const NiivueViewer = dynamic(
 );
 
 // トラクト情報の型定義
-interface TractInfo {
-  path: string;
-  name: string;
-  description: string;
-  fullName?: string; // 英語の正式名称
-  category: string; // カテゴリ名（"Association", "Projection", "Commissural", "Cerebellum", "Cranial Nerves"）
-}
+// interface TractInfo {
+//   path: string;
+//   name: string;
+//   description: string;
+//   fullName?: string; // 英語の正式名称
+//   category: string; // カテゴリ名（"Association", "Projection", "Commissural", "Cerebellum", "Cranial Nerves"）
+// }
 
 // トラクトデータ全体の型定義
-interface TractData {
-  [key: string]: TractInfo; // キーはトラクトのID（例: "AF_L"）
-}
+// interface TractData {
+//   [key: string]: TractInfo; // キーはトラクトのID（例: "AF_L"）
+// }
 
 // カテゴリごとのトラクトの型定義
-interface TractsByCategory {
-  [category: string]: string[]; // カテゴリごとにトラクトIDのリストを持つ
-}
+// interface TractsByCategory {
+//   [category: string]: string[]; // カテゴリごとにトラクトIDのリストを持つ
+// }
 
 // トラクトカテゴリの型定義
-interface TractCategory {
-  [key: string]: TractInfo;
-}
+// interface TractCategory {
+//   [key: string]: TractInfo;
+// }
 
 // トラクトパスの型定義
-interface TractPaths {
-  projection: TractCategory;
-  association: TractCategory;
-  commissural: TractCategory;
-  cranial_nerve: TractCategory;
-  cerebellum: TractCategory;
-  [key: string]: TractCategory;
-}
+// interface TractPaths {
+//   projection: TractCategory;
+//   association: TractCategory;
+//   commissural: TractCategory;
+//   cranial_nerve: TractCategory;
+//   cerebellum: TractCategory;
+//   [key: string]: TractCategory;
+// }
 
 // JSONファイルのトラクト名と説明の型定義
-interface TractNamesData {
-  [category: string]: {
-    [tractBaseId: string]: {
-      name: string;
-      description: string;
-    };
-  };
-}
+// interface TractNamesData {
+//   [category: string]: {
+//     [tractBaseId: string]: {
+//       name: string;
+//       description: string;
+//     };
+//   };
+// }
 
 // JSONファイルのトラクトパスの型定義
-interface TractPathsData {
-  [category: string]: {
-    [tractId: string]: string;
-  };
-}
+// interface TractPathsData {
+//   [category: string]: {
+//     [tractId: string]: string;
+//   };
+// }
 
 // JSONファイルのカテゴリ名の型定義
-interface CategoryNamesData {
-  [category: string]: string;
-}
+// interface CategoryNamesData {
+//   [category: string]: string;
+// }
 
 // 標準脳テンプレートのパス
 const MNI152_2009_TEMPLATE_PATH =
@@ -100,10 +107,65 @@ export default function BrainViewerClient({
     "CST_L",
     "CST_R",
   ]);
+  // 皮質アトラスの表示設定をデフォルトでtrueにしつつ、切り替え可能に変更
+  const [showCorticalAtlas, setShowCorticalAtlas] = useState(true);
+  // 選択された皮質領域を格納する状態変数（接続性表示用に内部的に使用）
+  // const [selectedCorticalRegions, setSelectedCorticalRegions] = useState<
+  //   string[]
+  // >([]);
+  // クロスヘアの表示/非表示設定
+  const [showCrosshair] = useState(true);
+
+  // 接続性ベースの皮質表示は常に有効
+  // const [showConnectivityBasedRegions, setShowConnectivityBasedRegions] =
+  //   useState(true);
+
+  // 接続性情報を取得するカスタムフックを使用
+  const { tractToRegionsMap } = useHighConnectivityRegions();
+
+  // 新しいJSONベースの接続性データを取得
+  const {
+    connectomeData,
+    tractToRegionsMapNew,
+    isLoading: isConnectomeLoading,
+  } = useConnectomeData();
+
+  // 新しいGlasser Atlas領域データを取得
+  const { regionsMap: glasserRegionsMap } = useGlasserAtlasData();
+
+  // HCP-MMP1領域のリスト（代表的なものだけを含む）
+  const corticalRegions = [
+    { id: "1", name: "V1（一次視覚野）", network: "visual" },
+    { id: "2", name: "V2（二次視覚野）", network: "visual" },
+    { id: "3", name: "V3（第三視覚野）", network: "visual" },
+    { id: "4", name: "MT（中側頭領域）", network: "visual" },
+    { id: "22", name: "A1（一次聴覚野）", network: "auditory" },
+    { id: "23", name: "A4（聴覚連合野）", network: "auditory" },
+    { id: "24", name: "STSdp（上側頭溝）", network: "auditory" },
+    { id: "48", name: "M1（一次運動野）", network: "somatomotor" },
+    { id: "52", name: "S1（一次体性感覚野）", network: "somatomotor" },
+    { id: "76", name: "SMA（補足運動野）", network: "somatomotor" },
+    { id: "85", name: "IPS1（頭頂間溝）", network: "dorsal attention" },
+    { id: "96", name: "FEF（前頭眼野）", network: "dorsal attention" },
+    { id: "110", name: "BA44（ブローカ野）", network: "language" },
+    { id: "111", name: "BA45（ブローカ野）", network: "language" },
+    { id: "114", name: "55b（前運動野）", network: "language" },
+    { id: "123", name: "PGi（角回）", network: "language" },
+    { id: "146", name: "DLPFC（背外側前頭前野）", network: "frontoparietal" },
+    { id: "148", name: "A10p（前頭極）", network: "frontoparietal" },
+    { id: "160", name: "PCC（後部帯状皮質）", network: "default mode" },
+    { id: "161", name: "ACC（前部帯状皮質）", network: "default mode" },
+    { id: "162", name: "PFC（前頭前皮質）", network: "default mode" },
+    { id: "163", name: "TPJ（側頭頭頂接合部）", network: "default mode" },
+  ];
 
   // トラクトデータを取得するためのカスタムフックを使用
   const { tractData, tractsByCategory, categoryDisplayNames, isLoading } =
     useTractData();
+
+  // Niivueインスタンスへの参照
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const niivueRef = useRef<any>(null);
 
   // 初期化処理: 初期表示時にactiveTabがtractの場合、適切なトラクトを選択
   useEffect(() => {
@@ -115,7 +177,7 @@ export default function BrainViewerClient({
   // アトラスの表示/非表示またはタブが切り替わったときにNiivueViewerを再マウントする
   useEffect(() => {
     setKey((prevKey) => prevKey + 1);
-  }, [showAtlas, activeTab, selectedTracts]);
+  }, [showAtlas, activeTab, selectedTracts, showCorticalAtlas, showCrosshair]);
 
   // 現在のタブに基づいてテンプレートとアトラスのパスを決定
   const getTemplatePath = () => {
@@ -125,19 +187,163 @@ export default function BrainViewerClient({
       : MNI152_6_TEMPLATE_PATH;
   };
 
+  // カスタム皮質アトラスパスを生成する関数
+  const getCorticalAtlasPath = () => {
+    // トラクトと接続性の高い皮質領域を表示
+    if (selectedTracts.length > 0) {
+      // 選択されたトラクトに基づいて高接続性領域を取得
+      const highConnectivityRegions = getHighConnectivityRegions(
+        selectedTracts,
+        tractToRegionsMap,
+        tractToRegionsMapNew
+      );
+
+      // デバッグ情報
+      console.log(
+        `getCorticalAtlasPath - 高接続領域IDs: ${highConnectivityRegions.join(", ")}`
+      );
+
+      // 高接続性領域が見つかった場合はそれを表示
+      if (highConnectivityRegions.length > 0) {
+        return `${HCP_MMP1_ATLAS_PATH}?regions=${highConnectivityRegions.join(",")}`;
+      }
+    }
+
+    // 高接続性領域が見つからない場合は通常のアトラスパスを返す
+    return HCP_MMP1_ATLAS_PATH;
+  };
+
   const getAtlasPath = () => {
     if (!showAtlas) return undefined;
+
     if (activeTab === "tract") {
       // 選択されたトラクトがない場合はデフォルトを表示
-      if (selectedTracts.length === 0 || Object.keys(tractData).length === 0)
-        return "/data/brain/atlas/hcp1065_avg_tracts_nifti/nifti/projection/CST_L.nii.gz";
+      if (selectedTracts.length === 0 || Object.keys(tractData).length === 0) {
+        // 皮質アトラスの表示有無をユーザー設定に基づいて決定
+        if (showCorticalAtlas) {
+          const corticalAtlasPath = getCorticalAtlasPath();
+          return [
+            "/data/brain/atlas/hcp1065_avg_tracts_nifti/nifti/projection/CST_L.nii.gz",
+            corticalAtlasPath,
+          ];
+        } else {
+          // 皮質アトラスを表示しない場合はトラクトのみ
+          return [
+            "/data/brain/atlas/hcp1065_avg_tracts_nifti/nifti/projection/CST_L.nii.gz",
+          ];
+        }
+      }
 
       // 複数のトラクトパスを配列で返す
-      return selectedTracts
+      const tractPaths = selectedTracts
         .map((tract) => tractData[tract]?.path)
         .filter(Boolean);
+
+      // 皮質アトラスの表示有無をユーザー設定に基づいて決定
+      if (showCorticalAtlas) {
+        const corticalAtlasPath = getCorticalAtlasPath();
+        return [...tractPaths, corticalAtlasPath];
+      } else {
+        // 皮質アトラスを表示しない場合はトラクトのみ
+        return tractPaths;
+      }
     }
+
     return activeTab === "hcp" ? HCP_MMP1_ATLAS_PATH : AAL3_ATLAS_PATH;
+  };
+
+  // 現在選択されているトラクトと関連する皮質領域情報を取得
+  const getConnectedRegionsInfo = () => {
+    if (selectedTracts.length === 0) {
+      return [];
+    }
+
+    // 選択されたトラクトに関連する皮質領域のIDを取得
+    // JSONデータを優先して使用（利用可能な場合）
+    const highConnectivityRegionIds = getHighConnectivityRegions(
+      selectedTracts,
+      tractToRegionsMap,
+      tractToRegionsMapNew
+    );
+
+    console.log(
+      `選択したトラクト ${selectedTracts.join(
+        ", "
+      )} と接続性の高い皮質領域: ${highConnectivityRegionIds.join(", ")}`
+    );
+
+    // JSONデータから直接情報を取得する方法を優先（より正確）
+    const connectedRegionsInfo = highConnectivityRegionIds.map((regionId) => {
+      // 領域ID（文字列）を数値に変換
+      const numericId = parseInt(regionId);
+
+      // 左右半球の判定（201以上は右半球）
+      const hemisphere = numericId >= 200 ? "右" : "左";
+
+      // 右半球の場合、元のID値（1-180）に戻す
+      const originalId = numericId >= 200 ? numericId - 200 : numericId;
+
+      // JSONからの領域情報取得を試みる
+      if (selectedTracts.length > 0 && connectomeData) {
+        const currentTract = selectedTracts[0];
+        const baseTractName = currentTract.replace(/_[LR]$/, "");
+        const isLeftTract = currentTract.endsWith("_L");
+
+        if (connectomeData[baseTractName]) {
+          // 現在の半球に対応する接続情報を取得
+          const connections = isLeftTract
+            ? connectomeData[baseTractName].connections.left
+            : connectomeData[baseTractName].connections.right;
+
+          // 対応する領域情報を探す
+          const regionInfo = connections.find((region: ConnectomeRegion) => {
+            const regionNum = isLeftTract
+              ? region.region_number
+              : region.region_number + 200;
+            return regionNum.toString() === regionId;
+          });
+
+          if (regionInfo) {
+            return {
+              id: regionId,
+              numericId: numericId,
+              hemisphere: hemisphere,
+              name: regionInfo.region_name,
+              description: regionInfo.description,
+              probability: regionInfo.probability,
+              network: undefined, // JSONにはネットワーク情報がない
+            };
+          }
+        }
+      }
+
+      // JSONから情報が取得できない場合はGlasserの情報を使用
+      if (glasserRegionsMap && glasserRegionsMap[originalId.toString()]) {
+        const glasserInfo = glasserRegionsMap[originalId.toString()];
+        return {
+          id: regionId,
+          numericId: numericId,
+          hemisphere: hemisphere,
+          name: glasserInfo.name,
+          network: glasserInfo.network,
+        };
+      }
+
+      // それでも見つからない場合はcorticalRegionsからの情報をフォールバックとして使用
+      const regionInfo = corticalRegions.find(
+        (region) => parseInt(region.id) === originalId
+      );
+
+      return {
+        id: regionId,
+        numericId: numericId,
+        hemisphere: hemisphere,
+        name: regionInfo ? regionInfo.name : `Region ${originalId}`,
+        network: regionInfo ? regionInfo.network : undefined,
+      };
+    });
+
+    return connectedRegionsInfo;
   };
 
   // 現在選択されているトラクトの情報を取得
@@ -172,6 +378,10 @@ export default function BrainViewerClient({
             </span>
           </p>
           <p className="text-sm text-gray-700 mt-2">{tractInfo.description}</p>
+          <p className="text-sm text-gray-700 mt-2">
+            <span className="font-semibold">※</span>{" "}
+            選択したトラクトと接続性の高いHCP-MMP1皮質領域も同時表示されています。
+          </p>
         </div>
       );
     }
@@ -226,17 +436,79 @@ export default function BrainViewerClient({
       <div className="mb-6">
         <h3 className="font-semibold mb-3">トラクト選択</h3>
 
+        {/* 皮質アトラス同時表示の設定（トグルボタンに変更） */}
+        <div className="mb-4 bg-yellow-50 p-3 rounded-lg border border-yellow-200">
+          <div className="flex items-center justify-between">
+            <span className="font-medium">
+              HCP-MMP1皮質アトラス表示設定
+              <span className="ml-2 text-xs bg-blue-100 px-2 py-0.5 rounded text-blue-700 font-semibold">
+                機能
+              </span>
+            </span>
+            <label className="inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                className="sr-only peer"
+                checked={showCorticalAtlas}
+                onChange={() => setShowCorticalAtlas(!showCorticalAtlas)}
+              />
+              <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+              <span className="ms-2 text-sm font-medium text-gray-700">
+                {showCorticalAtlas ? "ON" : "OFF"}
+              </span>
+            </label>
+          </div>
+          <div className="mt-2">
+            <p className="text-xs text-gray-600 mb-2">
+              {showCorticalAtlas
+                ? "HCP-MMP1皮質アトラスを白質線維と同時に表示しています。選択したトラクトと接続性の高い皮質領域のみを表示します。"
+                : "白質線維トラクトのみを表示しています。皮質アトラスは表示されません。"}
+            </p>
+
+            {/* 接続性ベースの皮質表示情報（皮質アトラス表示時のみ） */}
+            {selectedTracts.length > 0 && showCorticalAtlas && (
+              <div className="bg-blue-50 p-2 rounded text-sm mb-3">
+                <p>
+                  選択したトラクトと接続確率が高い皮質領域のみを表示しています。
+                  {isConnectomeLoading ? (
+                    <span className="block mt-1 text-xs italic">
+                      接続データを読み込み中...
+                    </span>
+                  ) : (
+                    <span className="block mt-1 text-xs">
+                      関連皮質領域数:{" "}
+                      {
+                        getHighConnectivityRegions(
+                          selectedTracts,
+                          tractToRegionsMap,
+                          tractToRegionsMapNew
+                        ).length
+                      }
+                    </span>
+                  )}
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+
         <div className="flex flex-col md:flex-row gap-4">
           {/* 脳表示部分 */}
           <div className="flex-1">
             <div className="flex justify-center w-full mx-auto mb-8">
               <NiivueViewer
                 key={key}
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                ref={(ref: any) => (niivueRef.current = ref)}
                 volumeUrl={getTemplatePath()}
                 overlayUrl={getAtlasPath()}
                 atlasType={activeTab}
                 showControls={true}
                 isTractMode={true}
+                connectedRegions={
+                  showCorticalAtlas ? getConnectedRegionsInfo() : []
+                }
+                showCrosshair={showCrosshair}
               />
             </div>
           </div>
@@ -248,7 +520,7 @@ export default function BrainViewerClient({
             {/* 現在表示中のトラクト情報 */}
             {selectedTracts.length > 0 && tractData[selectedTracts[0]] && (
               <div className="bg-white p-3 mb-4 rounded border border-blue-200">
-                <h4 className="font-medium text-blue-700">現在表示中:</h4>
+                <h4 className="font-bold text-blue-700">現在表示中:</h4>
                 <div className="flex items-center mt-1">
                   <p className="font-bold">
                     {tractData[selectedTracts[0]]?.name.replace(
@@ -266,6 +538,46 @@ export default function BrainViewerClient({
                     ""
                   )}
                 </p>
+                {/* 接続皮質領域数の表示（デバッグ情報、皮質アトラス表示時のみ） */}
+                {tractToRegionsMapNew &&
+                  tractToRegionsMapNew[selectedTracts[0]] &&
+                  showCorticalAtlas && (
+                    <div className="mt-2 text-xs bg-gray-100 p-1 rounded">
+                      <p>
+                        接続皮質領域数:{" "}
+                        {tractToRegionsMapNew[selectedTracts[0]].length}
+                      </p>
+                      {/* 接続の高い領域のリスト */}
+                      <div className="mt-1 max-h-40 overflow-y-auto">
+                        <p className="font-semibold text-xs">
+                          接続性の高い領域:
+                        </p>
+                        <ul className="text-xs">
+                          {getConnectedRegionsInfo().map((region) => (
+                            <li
+                              key={region.id}
+                              className="mb-1 border-b border-gray-100 pb-1"
+                            >
+                              <div className="font-medium">
+                                {region.name} ({region.hemisphere})
+                              </div>
+                              <div className="text-gray-500">
+                                ID: {region.id} / NIFTI値:{" "}
+                                {region.numericId >= 200
+                                  ? region.numericId - 200
+                                  : region.numericId}
+                              </div>
+                              {region.probability && (
+                                <div className="text-blue-600">
+                                  確率: {region.probability}%
+                                </div>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
               </div>
             )}
 
@@ -428,14 +740,33 @@ export default function BrainViewerClient({
         <div className="flex justify-center w-full max-w-4xl mx-auto mb-8">
           <NiivueViewer
             key={key}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            ref={(ref: any) => (niivueRef.current = ref)}
             volumeUrl={getTemplatePath()}
             overlayUrl={getAtlasPath()}
             atlasType={activeTab}
             showControls={true}
             isTractMode={false}
+            showCrosshair={showCrosshair}
           />
         </div>
       )}
     </div>
   );
 }
+
+// ネットワークの色を取得する関数
+// function getNetworkColor(network: string): string {
+//   const networkColors: { [key: string]: string } = {
+//     visual: "bg-purple-600",
+//     somatosensory: "bg-blue-600",
+//     "dorsal attention": "bg-green-600",
+//     "ventral attention": "bg-teal-600",
+//     limbic: "bg-yellow-600",
+//     frontoparietal: "bg-orange-600",
+//     "default mode": "bg-red-600",
+//     language: "bg-pink-600",
+//   };
+
+//   return networkColors[network.toLowerCase()] || "bg-gray-600";
+// }

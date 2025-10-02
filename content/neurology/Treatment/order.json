@@ -1,7 +1,3 @@
 {
-  "order": [
-    "Cyclophosphamide.md",
-    "index.md",
-    "assets"
-  ]
+  "order": ["Cyclophosphamide.md", "index.md", "assets"]
 }

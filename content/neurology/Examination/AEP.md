@@ -1,10 +1,7 @@
 ---
 last_edited: 2022-06-02T00:00:00.000Z
-lastmod: '2025-04-06'
+lastmod: "2025-10-02"
 ---
-
-
-
 
 Auditory Evoked Potential, 聴性誘発電位
 
@@ -12,8 +9,6 @@ Auditory Evoked Potential, 聴性誘発電位
 2. 聴性脳幹反応（Auditory Brainstem Response: ABR）：蝸牛神経，上オリーブ核，外側毛帯核，下丘，内側膝状体
 3. 聴性中間潜時反応（Auditory Middle Latency Response: MLR）：中間潜時成分
 4. 頭頂部緩反応（Slow Vertex Response: SVR）：長潜時成分
-
-  
 
 ## 検査
 
@@ -24,8 +19,6 @@ Auditory Evoked Potential, 聴性誘発電位
 - 基本的には単耳刺激，刺激強度が50dB nHLを超える場合は対側のマスキングが必要．
 - 脳死判定や脳幹機能評価では両耳刺激を行う．
 - 加算平均は1000-4000回，同一条件で2回以上記録して再現性を確認する．
-
-  
 
 ## 正常波形
 

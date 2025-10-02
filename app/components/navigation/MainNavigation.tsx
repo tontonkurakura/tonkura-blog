@@ -1,7 +1,6 @@
 import { RefObject } from "react";
 import { usePathname } from "next/navigation";
 import NavigationLink from "./NavigationLink";
-import { HiddenMenuItems } from "../../hooks/useKeySequenceDetection";
 
 /**
  * メインナビゲーションのプロパティ
@@ -13,8 +12,6 @@ interface MainNavigationProps {
   isMenuOpen: boolean;
   /** メニューを閉じる関数 */
   closeMenu: () => void;
-  /** 隠しメニュー項目の状態 */
-  hiddenMenuItems: HiddenMenuItems;
 }
 
 /**
@@ -24,7 +21,6 @@ export default function MainNavigation({
   navRef,
   isMenuOpen,
   closeMenu,
-  hiddenMenuItems,
 }: MainNavigationProps) {
   const pathname = usePathname();
 
@@ -135,48 +131,6 @@ export default function MainNavigation({
             >
               Tract Atlas
             </NavigationLink>
-          </ul>
-
-          {/* 3列目 */}
-          <ul
-            className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 w-full border-t md:border-t-0 border-gray-600 pt-2 md:pt-0 py-2 md:py-1"
-            role="menubar"
-          >
-            {/* 隠しメニュー: レシピ */}
-            {hiddenMenuItems.recipes.show && (
-              <NavigationLink
-                href="/recipes"
-                isActive={pathname.startsWith("/recipes")}
-                onClose={closeMenu}
-                fromColor="orange-800"
-                toColor="yellow-800"
-                animationClass={
-                  hiddenMenuItems.recipes.isDiscovered
-                    ? "animate-[discover_2s_ease-out] bg-gradient-to-r from-orange-800/50 to-yellow-800/50"
-                    : ""
-                }
-              >
-                Recipes
-              </NavigationLink>
-            )}
-
-            {/* 隠しメニュー: 大雪 */}
-            {hiddenMenuItems.daisetsu.show && (
-              <NavigationLink
-                href="/daisetsu"
-                isActive={pathname.startsWith("/daisetsu")}
-                onClose={closeMenu}
-                fromColor="yellow-800"
-                toColor="green-800"
-                animationClass={
-                  hiddenMenuItems.daisetsu.isDiscovered
-                    ? "animate-[discover_2s_ease-out] bg-gradient-to-r from-yellow-800/50 to-green-800/50"
-                    : ""
-                }
-              >
-                Daisetsu
-              </NavigationLink>
-            )}
           </ul>
         </div>
       </div>

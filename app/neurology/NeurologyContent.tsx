@@ -22,7 +22,9 @@ export default function NeurologyContent({
     async function loadContent() {
       try {
         // APIエンドポイントからディレクトリ構造を取得
-        const response = await fetch(`/api/neurology-structure?basePath=${encodeURIComponent(basePath)}`);
+        const response = await fetch(
+          `/api/neurology-structure?basePath=${encodeURIComponent(basePath)}`
+        );
         const data = await response.json();
         setStructureArray(data.structure);
       } catch (error) {

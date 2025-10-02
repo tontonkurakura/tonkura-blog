@@ -6,6 +6,8 @@ import { Niivue } from "@niivue/niivue";
 interface NiivueControlPanelProps {
   niivue: Niivue | null;
   onViewModeChange?: (mode: number) => void; // 表示モード変更時のコールバック
+  onToggleCrosshair?: () => void; // クロスヘア表示/非表示切り替え時のコールバック
+  isCrosshairVisible?: boolean; // クロスヘアの表示状態
 }
 
 /**
@@ -16,6 +18,8 @@ interface NiivueControlPanelProps {
 export default function NiivueControlPanel({
   niivue,
   onViewModeChange,
+  onToggleCrosshair,
+  isCrosshairVisible = true,
 }: NiivueControlPanelProps) {
   const [opacity, setOpacity] = useState<number>(100);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -73,6 +77,13 @@ export default function NiivueControlPanel({
     }
   };
 
+  // クロスヘアの表示/非表示を切り替える
+  const handleToggleCrosshair = () => {
+    if (onToggleCrosshair) {
+      onToggleCrosshair();
+    }
+  };
+
   if (isLoading) {
     return <div>読み込み中...</div>;
   }
@@ -102,8 +113,37 @@ export default function NiivueControlPanel({
         </div>
       </div>
 
+      {/* クロスヘア表示/非表示切り替えボタン */}
+      <div className="mb-4 flex flex-wrap gap-2">
+        <button
+          onClick={handleToggleCrosshair}
+          className={`px-3 py-1 ${
+            isCrosshairVisible
+              ? "bg-blue-600 text-white"
+              : "bg-gray-300 text-gray-700"
+          } rounded hover:bg-blue-700 hover:text-white text-sm flex items-center`}
+          title="クロスヘアの表示/非表示を切り替えます"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4 mr-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+            />
+          </svg>
+          クロスヘア {isCrosshairVisible ? "非表示" : "表示"}
+        </button>
+      </div>
+
       {/* 表示モード切り替えボタン */}
-      <div className="mt-4">
+      <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
           表示モード
         </label>
