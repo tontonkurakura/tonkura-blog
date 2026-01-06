@@ -106,7 +106,7 @@ export async function GET(request: NextRequest) {
 
     // 開発環境の場合のみorder.jsonを更新
     if (process.env.NODE_ENV === "development") {
-      updateOrderConfig();
+      await updateOrderConfig();
     }
 
     // neurologyディレクトリの内容を取得

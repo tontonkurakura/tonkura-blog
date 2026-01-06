@@ -2,13 +2,13 @@
 title: >-
   Association of Early fMRI Connectivity Alterations With Different Cognitive
   Phenotypes in Patients With Newly Diagnosed Parkinson Disease
-date: "2025-02-24"
+date: '2025-02-24'
 tags:
   - rsfMRI
   - PD
   - 論文
-description: ""
-lastmod: "2025-10-02"
+description: ''
+lastmod: '2026-01-06'
 ---
 
 ## 論文情報

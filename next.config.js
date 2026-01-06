@@ -5,27 +5,22 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
+  turbopack: {},
   typescript: {
-    // 一時的に型チェックを無効化（後で段階的に修正）
-    ignoreBuildErrors: true,
+    // 一時的に型チェックを無効化（後で段階的に修正）- REMOVED
   },
-  serverRuntimeConfig: {
-    // サーバーサイドでのみ利用可能な設定
-    projectRoot: process.cwd(),
-    cacheDir: "/tmp/.cache", // 一時ディレクトリを使用
-  },
+
   images: {
     remotePatterns: [
       {
         protocol: "https",
         hostname: "tonkura.blog",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
     ],
-    minimumCacheTTL: 60,
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    formats: ["image/webp"],
-    domains: ["images.unsplash.com"],
   },
   // Next.js 15でのMDXサポート
   experimental: {
@@ -78,9 +73,7 @@ const nextConfig = {
       },
     ];
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+
   webpack: (config) => {
     config.module.rules.push({
       test: /\.md$/,

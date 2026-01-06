@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 export default async function NeurologyPage({
   searchParams,
 }: {
-  searchParams: { tab?: string };
+  searchParams: Promise<{ tab?: string }>;
 }) {
   // 開発中のページなのでホームページにリダイレクト
   redirect("/");

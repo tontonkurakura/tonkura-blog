@@ -3,14 +3,15 @@ import { getMarkdownContent } from "@/app/lib/markdown";
 import { notFound } from "next/navigation";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     category: string;
     id: string;
-  };
+  }>;
 }
 
 export default async function SymptomPage({ params }: PageProps) {
-  const content = await getMarkdownContent(params.category, params.id);
+  const { category, id } = await params;
+  const content = await getMarkdownContent(category, id);
 
   if (!content) {
     notFound();
@@ -73,7 +74,7 @@ export default async function SymptomPage({ params }: PageProps) {
             <div>
               <h3 className="font-medium text-gray-700">関連領域</h3>
               <ul className="list-disc list-inside">
-                {content.relatedAreas.map((area, index) => (
+                {content.relatedAreas.map((area: string, index: number) => (
                   <li key={index} className="text-gray-600">
                     {area}
                   </li>
@@ -83,7 +84,7 @@ export default async function SymptomPage({ params }: PageProps) {
             <div>
               <h3 className="font-medium text-gray-700">関連検査</h3>
               <ul className="list-disc list-inside">
-                {content.relatedExams.map((exam, index) => (
+                {content.relatedExams.map((exam: string, index: number) => (
                   <li key={index} className="text-gray-600">
                     {exam}
                   </li>

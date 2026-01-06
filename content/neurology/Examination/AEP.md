@@ -1,6 +1,6 @@
 ---
 last_edited: 2022-06-02T00:00:00.000Z
-lastmod: "2025-10-02"
+lastmod: '2026-01-06'
 ---
 
 Auditory Evoked Potential, 聴性誘発電位

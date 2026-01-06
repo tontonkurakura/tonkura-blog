@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
-import { getDirectoryStructure, DirectoryStructure } from "./markdown";
+import { getDirectoryStructure } from "./markdown";
+import { DirectoryStructure } from "../types/blog";
 
 interface OrderConfig {
   order: string[];
@@ -115,8 +116,8 @@ const updateOrderConfigForDirectory = (
 };
 
 // メインの更新関数
-export const updateOrderConfig = () => {
+export const updateOrderConfig = async () => {
   const neurologyPath = path.join(process.cwd(), "content", "neurology");
-  const structure = getDirectoryStructure(neurologyPath);
+  const structure = await getDirectoryStructure(neurologyPath);
   return updateOrderConfigForDirectory(structure);
 };

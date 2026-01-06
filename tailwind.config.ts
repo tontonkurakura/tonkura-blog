@@ -21,6 +21,7 @@ const config: Config = {
         },
       },
       fontFamily: {
+        sans: ["var(--font-inter)", "sans-serif"],
         mplus: ["var(--font-mplus)"],
         mono: ["var(--font-geist-mono)"],
       },

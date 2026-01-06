@@ -77,12 +77,11 @@ export default function Pagination({
         return (
           <Link
             key={page}
-            href={getPageUrl(page)}
-            className={`px-3 py-2 rounded-lg ${
-              currentPage === page
+            href={getPageUrl(page as number)}
+            className={`px-3 py-2 rounded-lg ${currentPage === page
                 ? "bg-blue-600 text-white"
                 : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-50"
-            } transition-colors`}
+              } transition-colors`}
           >
             {page}
           </Link>

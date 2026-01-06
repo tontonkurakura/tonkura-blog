@@ -15,7 +15,7 @@ import {
   PostListOptions,
   DirectoryStructure,
   OrderConfig,
-} from "@/types/blog";
+} from "../types/blog";
 
 const contentDirectory = path.join(process.cwd(), "content");
 const blogDirectory = path.join(contentDirectory, "blog");
@@ -146,9 +146,8 @@ export async function getPostList(
     if (options.searchQuery) {
       const query = options.searchQuery.toLowerCase();
       filteredPosts = filteredPosts.filter((post) => {
-        const searchTarget = `${post.title} ${post.description || ""} ${
-          post.tags?.join(" ") || ""
-        }`.toLowerCase();
+        const searchTarget = `${post.title} ${post.description || ""} ${post.tags?.join(" ") || ""
+          }`.toLowerCase();
         return searchTarget.includes(query);
       });
     }

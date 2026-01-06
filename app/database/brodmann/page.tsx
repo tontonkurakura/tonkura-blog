@@ -133,6 +133,8 @@ export default function BrodmannAreasPage() {
 
   // 回答をチェックする関数
   const checkAnswer = (answer: string) => {
+    if (!currentQuestion) return;
+
     setSelectedAnswer(answer);
 
     // 修正: 比較時に全角スペースや余分な空白を削除し、大文字小文字の違いを無視して比較
@@ -143,9 +145,9 @@ export default function BrodmannAreasPage() {
     const isAnswerCorrect =
       quizMode === "area" || quizMode === "function"
         ? normalizeString(answer) ===
-          normalizeString(currentQuestion.correctItem.name)
+        normalizeString(currentQuestion.correctItem.name)
         : normalizeString(answer) ===
-          normalizeString(currentQuestion.correctItem.area);
+        normalizeString(currentQuestion.correctItem.area);
 
     setIsCorrect(isAnswerCorrect);
     setScore((prev) => ({
@@ -204,21 +206,19 @@ export default function BrodmannAreasPage() {
         <div className="flex gap-4 mb-4">
           <button
             onClick={() => setShowQuiz(false)}
-            className={`px-4 py-2 rounded-md ${
-              !showQuiz
+            className={`px-4 py-2 rounded-md ${!showQuiz
                 ? "bg-blue-600 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
+              }`}
           >
             データベース検索
           </button>
           <button
             onClick={() => setShowQuiz(true)}
-            className={`px-4 py-2 rounded-md ${
-              showQuiz
+            className={`px-4 py-2 rounded-md ${showQuiz
                 ? "bg-blue-600 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-            }`}
+              }`}
           >
             ブロードマン領域クイズ
           </button>
@@ -235,31 +235,28 @@ export default function BrodmannAreasPage() {
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setQuizMode("area")}
-                className={`px-4 py-2 rounded-md ${
-                  quizMode === "area"
+                className={`px-4 py-2 rounded-md ${quizMode === "area"
                     ? "bg-blue-600 text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
+                  }`}
               >
                 領域番号から名称を答える
               </button>
               <button
                 onClick={() => setQuizMode("name")}
-                className={`px-4 py-2 rounded-md ${
-                  quizMode === "name"
+                className={`px-4 py-2 rounded-md ${quizMode === "name"
                     ? "bg-blue-600 text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
+                  }`}
               >
                 名称から領域番号を答える
               </button>
               <button
                 onClick={() => setQuizMode("function")}
-                className={`px-4 py-2 rounded-md ${
-                  quizMode === "function"
+                className={`px-4 py-2 rounded-md ${quizMode === "function"
                     ? "bg-blue-600 text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
+                  }`}
               >
                 機能から領域を答える
               </button>
@@ -283,12 +280,11 @@ export default function BrodmannAreasPage() {
                   ? `ブロードマン領域「${currentQuestion.correctItem.area}」の名称は何でしょう？`
                   : quizMode === "name"
                     ? `「${currentQuestion.correctItem.name}」はどのブロードマン領域でしょう？`
-                    : `この機能を持つブロードマン領域の名称は何でしょう？\n「${
-                        brodmannData.find(
-                          (item) =>
-                            item.area === currentQuestion.correctItem.area
-                        )?.function || "機能情報がありません"
-                      }」`}
+                    : `この機能を持つブロードマン領域の名称は何でしょう？\n「${brodmannData.find(
+                      (item) =>
+                        item.area === currentQuestion.correctItem.area
+                    )?.function || "機能情報がありません"
+                    }」`}
               </h3>
 
               {/* 選択肢 */}
@@ -327,15 +323,14 @@ export default function BrodmannAreasPage() {
                         key={index}
                         onClick={() => checkAnswer(optionValue)}
                         disabled={selectedAnswer !== null}
-                        className={`p-3 rounded text-left ${
-                          isSelected
+                        className={`p-3 rounded text-left ${isSelected
                             ? isCorrect
                               ? "bg-green-100 border-2 border-green-500"
                               : "bg-red-100 border-2 border-red-500"
                             : selectedAnswer !== null && isThisCorrect
                               ? "bg-green-100 border-2 border-green-500"
                               : "bg-gray-100 hover:bg-gray-200"
-                        }`}
+                          }`}
                       >
                         {optionValue}
                       </button>

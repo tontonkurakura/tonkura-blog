@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 // クライアントサイドでのみレンダリングするためにdynamicインポートを使用
 const NiivueViewer = dynamic(
-  () => import("@/app/brain/components/NiivueViewer"),
+  () => import("@/components/brain/NiivueViewer"),
   { ssr: false } // サーバーサイドレンダリングを無効化
 );
 
@@ -94,11 +94,10 @@ export default function BrainViewerClient({
         <ul className="flex flex-wrap -mb-px text-sm font-medium text-center">
           <li className="mr-2">
             <button
-              className={`inline-block p-4 rounded-t-lg ${
-                activeTab === "hcp"
+              className={`inline-block p-4 rounded-t-lg ${activeTab === "hcp"
                   ? "text-blue-600 border-b-2 border-blue-600 active"
                   : "text-gray-500 hover:text-gray-600 hover:border-gray-300 border-b-2 border-transparent"
-              }`}
+                }`}
               onClick={() => setActiveTab("hcp")}
             >
               HCP-MMP1アトラス
@@ -106,11 +105,10 @@ export default function BrainViewerClient({
           </li>
           <li className="mr-2">
             <button
-              className={`inline-block p-4 rounded-t-lg ${
-                activeTab === "aal3"
+              className={`inline-block p-4 rounded-t-lg ${activeTab === "aal3"
                   ? "text-blue-600 border-b-2 border-blue-600 active"
                   : "text-gray-500 hover:text-gray-600 hover:border-gray-300 border-b-2 border-transparent"
-              }`}
+                }`}
               onClick={() => setActiveTab("aal3")}
             >
               AAL3アトラス

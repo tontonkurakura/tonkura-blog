@@ -6,6 +6,7 @@ import type { HDSRScores } from "@/types/calculator";
 
 export default function HDSRCalculator() {
   const [scores, setScores] = useState<HDSRScores>({
+    totalScore: 0,
     age: 1,
     date_weekday: 1,
     date_day: 1,
@@ -111,11 +112,10 @@ export default function HDSRCalculator() {
         data-name={name}
         value={value}
         onClick={handleChange}
-        className={`border rounded px-3 py-1.5 transition-colors ${
-          currentScore === value
+        className={`border rounded px-3 py-1.5 transition-colors ${currentScore === value
             ? "bg-blue-600 text-white border-blue-600"
             : "hover:bg-gray-100 border-gray-300"
-        }`}
+          }`}
       >
         {value}
       </button>
@@ -591,6 +591,7 @@ export default function HDSRCalculator() {
             <button
               onClick={() => {
                 setScores({
+                  totalScore: 0,
                   age: 1,
                   date_weekday: 1,
                   date_day: 1,
@@ -769,21 +770,19 @@ export default function HDSRCalculator() {
               <h3 className="font-semibold mb-2 text-center">重症度分類</h3>
               <div className="grid grid-cols-1 gap-2 text-sm">
                 <div
-                  className={`p-2 rounded ${
-                    totalScore > 20
+                  className={`p-2 rounded ${totalScore > 20
                       ? "bg-blue-100 text-blue-800 font-medium"
                       : "bg-gray-50"
-                  }`}
+                    }`}
                 >
                   <span className="font-semibold">21-30点:</span>{" "}
                   正常（認知症の可能性は低い）
                 </div>
                 <div
-                  className={`p-2 rounded ${
-                    totalScore <= 20
+                  className={`p-2 rounded ${totalScore <= 20
                       ? "bg-red-50 text-red-800 font-medium"
                       : "bg-gray-50"
-                  }`}
+                    }`}
                 >
                   <div className="mb-2">
                     <span className="font-semibold">20点以下:</span>{" "}
@@ -791,31 +790,28 @@ export default function HDSRCalculator() {
                   </div>
                   <div className="space-y-2 pl-2 border-red-100">
                     <div
-                      className={`p-2 rounded ${
-                        totalScore >= 15 && totalScore <= 20
+                      className={`p-2 rounded ${totalScore >= 15 && totalScore <= 20
                           ? "bg-yellow-100 text-yellow-900 font-medium border-l-4 border-yellow-500"
                           : "bg-gray-50"
-                      }`}
+                        }`}
                     >
                       <span className="font-semibold">15-20点:</span>{" "}
                       軽症認知症の疑い
                     </div>
                     <div
-                      className={`p-2 rounded ${
-                        totalScore >= 10 && totalScore < 15
+                      className={`p-2 rounded ${totalScore >= 10 && totalScore < 15
                           ? "bg-orange-200 text-orange-900 font-medium border-l-4 border-orange-500"
                           : "bg-gray-50"
-                      }`}
+                        }`}
                     >
                       <span className="font-semibold">10-14点:</span>{" "}
                       中等症認知症の疑い
                     </div>
                     <div
-                      className={`p-2 rounded ${
-                        totalScore < 10
+                      className={`p-2 rounded ${totalScore < 10
                           ? "bg-red-200 text-red-900 font-medium border-l-4 border-red-500"
                           : "bg-gray-50"
-                      }`}
+                        }`}
                     >
                       <span className="font-semibold">0-9点:</span>{" "}
                       重症認知症の疑い

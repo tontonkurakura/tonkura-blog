@@ -8,11 +8,12 @@ type PageParams = {
 };
 
 type Props = {
-  params: PageParams;
+  params: Promise<PageParams>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const id = params.slug.join("/");
+  const { slug } = await params;
+  const id = slug.join("/");
   const post = await getPostData(id);
 
   if (!post) {
@@ -29,7 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const id = params.slug.join("/");
+  const { slug } = await params;
+  const id = slug.join("/");
   const post = await getPostData(id);
 
   if (!post) {

@@ -1,6 +1,6 @@
 ---
 last_edited: 2023-06-06T00:00:00.000Z
-lastmod: "2025-10-02"
+lastmod: '2026-01-06'
 ---
 
 FTD（Frontotemporal dementia，前頭側頭型認知症）は前頭側頭葉に限局性変性を示す疾患群．

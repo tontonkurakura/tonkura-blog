@@ -10,7 +10,7 @@ import Pagination from "./Pagination";
 export default async function BlogPage({
   searchParams,
 }: {
-  searchParams: { tag?: string; q?: string; page?: string };
+  searchParams: Promise<{ tag?: string; q?: string; page?: string }>;
 }) {
   // searchParamsをawaitする
   const params = await searchParams;
@@ -71,11 +71,10 @@ export default async function BlogPage({
                         <Link
                           key={postTag}
                           href={`/blog?tag=${encodeURIComponent(postTag)}`}
-                          className={`px-2 py-1 rounded-full text-xs ${
-                            postTag === tag
+                          className={`px-2 py-1 rounded-full text-xs ${postTag === tag
                               ? "bg-blue-600 text-white"
                               : "bg-blue-50 text-blue-600 hover:bg-blue-100"
-                          }`}
+                            }`}
                         >
                           {postTag}
                         </Link>
@@ -98,9 +97,8 @@ export default async function BlogPage({
               <Pagination
                 currentPage={currentPage}
                 totalPages={totalPages}
-                baseUrl={`/blog${
-                  tag ? `?tag=${tag}` : ""
-                }${query ? `?q=${query}` : ""}`}
+                baseUrl={`/blog${tag ? `?tag=${tag}` : ""
+                  }${query ? `?q=${query}` : ""}`}
               />
             </div>
           )}

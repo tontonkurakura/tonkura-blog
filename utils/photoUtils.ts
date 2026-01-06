@@ -217,23 +217,22 @@ async function extractExif(
   }
 
   const formattedExif = {
-    camera: `${tags.Make?.description || "Unknown"} ${
-      tags.Model?.description || ""
-    }`.trim(),
+    camera: `${tags.Make?.description || "Unknown"} ${tags.Model?.description || ""
+      }`.trim(),
     lens: tags.LensModel?.description || "Unknown",
     focalLength: tags.FocalLength
       ? `${tags.FocalLength.description}`
       : "Unknown",
     aperture: tags.FNumber?.value?.[0]
       ? `f/${(
-          (tags.FNumber.value[0] as number) / (tags.FNumber.value[1] as number)
-        ).toFixed(1)}`
+        (tags.FNumber.value[0] as number) / (tags.FNumber.value[1] as number)
+      ).toFixed(1)}`
       : "Unknown",
     shutterSpeed: tags.ExposureTime?.value?.[0]
       ? formatShutterSpeed(
-          (tags.ExposureTime.value[0] as number) /
-            (tags.ExposureTime.value[1] as number)
-        )
+        (tags.ExposureTime.value[0] as number) /
+        (tags.ExposureTime.value[1] as number)
+      )
       : "Unknown",
     iso: tags.ISOSpeedRatings?.description?.toString() || "Unknown",
     date: dateTimeOriginal?.toISOString() || new Date().toISOString(),
@@ -270,6 +269,7 @@ export async function getPhotos(): Promise<Photo[]> {
     const aspectRatio = await determineAspectRatio(filePath);
 
     photos.push({
+      id: file.replace(/\.[^.]+$/, ""),
       path: `/images/${file}`,
       webpPath,
       exif,

@@ -9,6 +9,7 @@ export default function CodeBlockProcessor() {
       // 言語情報を取得
       const code = pre.querySelector("code");
       if (!code) return;
+      if (!pre.parentNode) return;
 
       // 言語クラスを取得 (例: language-javascript)
       const languageClass = Array.from(code.classList).find((cls) =>

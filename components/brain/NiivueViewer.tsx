@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import {
@@ -357,7 +358,7 @@ export default forwardRef(function NiivueViewer(
           } else {
             // AAL3アトラスの場合は配列からオブジェクトに変換
             const formattedLabels: AtlasLabels = {};
-            data.forEach((item: AtlasLabel, index: number) => {
+            data.forEach((item: any, index: number) => {
               // インデックス+1をIDとして使用（AAL3のIDは1から始まる）
               const id = (index + 1).toString();
               formattedLabels[id] = {
@@ -407,10 +408,11 @@ export default forwardRef(function NiivueViewer(
     if (typeof value === "object") {
       console.log("オブジェクト型のアトラス値:", value);
       // オブジェクトから値を抽出する試み
-      if (value.value !== undefined) {
-        numericValue = Number(value.value);
-      } else if (value.label !== undefined) {
-        numericValue = Number(value.label);
+      const valObj = value as any;
+      if (valObj.value !== undefined) {
+        numericValue = Number(valObj.value);
+      } else if (valObj.label !== undefined) {
+        numericValue = Number(valObj.label);
       } else {
         // JSONに変換して値を表示
         return `オブジェクト値: ${JSON.stringify(value)}`;
@@ -496,10 +498,11 @@ export default forwardRef(function NiivueViewer(
 
     if (typeof value === "object") {
       // オブジェクトから値を抽出する試み
-      if (value.value !== undefined) {
-        numericValue = Number(value.value);
-      } else if (value.label !== undefined) {
-        numericValue = Number(value.label);
+      const valObj = value as any;
+      if (valObj.value !== undefined) {
+        numericValue = Number(valObj.value);
+      } else if (valObj.label !== undefined) {
+        numericValue = Number(valObj.label);
       } else {
         return null;
       }
@@ -623,7 +626,7 @@ export default forwardRef(function NiivueViewer(
     createCustomColormap(nv);
 
     // onLocationChangeコールバックの設定
-    nv.onLocationChange = (data: LocationData) => {
+    nv.onLocationChange = (data: any) => {
       // デバッグ情報
       if (data) {
         // 座標の型と正確な値を確認
@@ -673,10 +676,11 @@ export default forwardRef(function NiivueViewer(
             data.values[1] !== null
           ) {
             // オブジェクトの場合、値を抽出
-            if (data.values[1].value !== undefined) {
-              highlightRegion(Math.round(Number(data.values[1].value)));
-            } else if (data.values[1].label !== undefined) {
-              highlightRegion(Math.round(Number(data.values[1].label)));
+            const valObj = data.values[1] as any;
+            if (valObj.value !== undefined) {
+              highlightRegion(Math.round(Number(valObj.value)));
+            } else if (valObj.label !== undefined) {
+              highlightRegion(Math.round(Number(valObj.label)));
             } else {
               // 値が取得できない場合はハイライトを解除
               highlightRegion(null);

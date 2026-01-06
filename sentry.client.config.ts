@@ -14,21 +14,11 @@ Sentry.init({
   replaysSessionSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 0.5,
   replaysOnErrorSampleRate: 1.0,
 
-  // Enable performance monitoring
-  enableTracing: true,
 
-  integrations: [
-    new Sentry.Breadcrumbs({
-      console: true,
-      dom: true,
-      fetch: true,
-      history: true,
-      sentry: true,
-      xhr: true,
-    }),
-  ],
+
+
 
   // Additional production settings
-  autoSessionTracking: true,
+
   sendDefaultPii: false,
 });

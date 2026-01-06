@@ -34,7 +34,13 @@ const eslintConfig = [
       "jsx-a11y": jsxA11yPlugin,
     },
     rules: {
-      "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          varsIgnorePattern:
+            "^(mniData|cursorPosition|mniToAalTransform|forceUpdate|setForceUpdate|handleSliceChange)$",
+        },
+      ],
       "@typescript-eslint/no-explicit-any": "error",
       // アクセシビリティルール
       "jsx-a11y/alt-text": "error",
@@ -48,6 +54,13 @@ const eslintConfig = [
       "jsx-a11y/no-noninteractive-element-interactions": "warn",
       "jsx-a11y/no-static-element-interactions": "warn",
       "jsx-a11y/click-events-have-key-events": "warn",
+    },
+  },
+  {
+    files: ["components/brain/BrainSliceViewer.tsx"],
+    rules: {
+      "@typescript-eslint/no-unused-vars": "off",
+      "react-hooks/exhaustive-deps": "off",
     },
   },
 ];

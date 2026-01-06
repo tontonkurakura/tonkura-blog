@@ -206,7 +206,7 @@ async function getMarkdownContent(slug: string[]) {
 export default async function NeurologyView({
   params,
 }: {
-  params: { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 }) {
   // 開発中のページなのでホームページにリダイレクト
   redirect("/");

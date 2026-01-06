@@ -6,6 +6,7 @@ import type { MMSEScores } from "@/types/calculator";
 
 export default function MMSECalculator() {
   const [scores, setScores] = useState<MMSEScores>({
+    totalScore: 0,
     time_year: 1,
     time_season: 1,
     time_day: 1,
@@ -104,11 +105,10 @@ export default function MMSECalculator() {
         data-name={name}
         value={value}
         onClick={handleChange}
-        className={`border rounded px-2 py-1.5 transition-colors ${
-          currentScore === value
+        className={`border rounded px-2 py-1.5 transition-colors ${currentScore === value
             ? "bg-blue-600 text-white border-blue-600"
             : "hover:bg-gray-100 border-gray-300"
-        }`}
+          }`}
       >
         {value}
       </button>
@@ -775,6 +775,7 @@ export default function MMSECalculator() {
           <button
             onClick={() => {
               setScores({
+                totalScore: 0,
                 time_year: 1,
                 time_season: 1,
                 time_day: 1,
@@ -986,30 +987,27 @@ export default function MMSECalculator() {
             <h3 className="font-semibold mb-2 text-center">重症度分類</h3>
             <div className="grid grid-cols-1 gap-2 text-sm">
               <div
-                className={`p-2 rounded ${
-                  totalScore > 27
+                className={`p-2 rounded ${totalScore > 27
                     ? "bg-blue-100 text-blue-800 font-medium"
                     : "bg-gray-50"
-                }`}
+                  }`}
               >
                 <span className="font-semibold">28-30点:</span> 正常
               </div>
               <div
-                className={`p-2 rounded ${
-                  totalScore > 23 && totalScore <= 27
+                className={`p-2 rounded ${totalScore > 23 && totalScore <= 27
                     ? "bg-green-100 text-green-800 font-medium"
                     : "bg-gray-50"
-                }`}
+                  }`}
               >
                 <span className="font-semibold">24-27点:</span>{" "}
                 軽度認知障害(MCI)の疑い（感度45-60%、特異度65-90%）
               </div>
               <div
-                className={`p-2 rounded ${
-                  totalScore <= 23
+                className={`p-2 rounded ${totalScore <= 23
                     ? "bg-red-50 text-red-800 font-medium"
                     : "bg-gray-50"
-                }`}
+                  }`}
               >
                 <div className="mb-2">
                   <span className="font-semibold">23点以下:</span>{" "}
@@ -1017,31 +1015,28 @@ export default function MMSECalculator() {
                 </div>
                 <div className="space-y-2 pl-4 border-red-100">
                   <div
-                    className={`p-2 rounded ${
-                      totalScore >= 20 && totalScore <= 23
+                    className={`p-2 rounded ${totalScore >= 20 && totalScore <= 23
                         ? "bg-yellow-100 text-yellow-900 font-medium border-l-4 border-yellow-500"
                         : "bg-gray-50"
-                    }`}
+                      }`}
                   >
                     <span className="font-semibold">20-23点:</span>{" "}
                     軽度認知症の疑い
                   </div>
                   <div
-                    className={`p-2 rounded ${
-                      totalScore >= 10 && totalScore < 20
+                    className={`p-2 rounded ${totalScore >= 10 && totalScore < 20
                         ? "bg-orange-200 text-orange-900 font-medium border-l-4 border-orange-500"
                         : "bg-gray-50"
-                    }`}
+                      }`}
                   >
                     <span className="font-semibold">10-19点:</span>{" "}
                     中等度認知症の疑い
                   </div>
                   <div
-                    className={`p-2 rounded ${
-                      totalScore < 10
+                    className={`p-2 rounded ${totalScore < 10
                         ? "bg-red-200 text-red-900 font-medium border-l-4 border-red-500"
                         : "bg-gray-50"
-                    }`}
+                      }`}
                   >
                     <span className="font-semibold">0-9点:</span>{" "}
                     高度認知症の疑い

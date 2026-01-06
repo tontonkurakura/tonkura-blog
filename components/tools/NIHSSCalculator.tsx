@@ -6,6 +6,7 @@ import type { NIHSSScores } from "@/types/calculator";
 
 export default function NIHSSCalculator() {
   const [scores, setScores] = useState<NIHSSScores>({
+    totalScore: 0,
     consciousness_level: 0,
     consciousness_questions: 0,
     consciousness_commands: 0,
@@ -86,6 +87,7 @@ export default function NIHSSCalculator() {
   // 全ての選択をリセットする関数
   const handleReset = () => {
     setScores({
+      totalScore: 0,
       consciousness_level: 0,
       consciousness_questions: 0,
       consciousness_commands: 0,
@@ -201,11 +203,10 @@ export default function NIHSSCalculator() {
         value={value}
         data-is-n={isN}
         onClick={handleChange}
-        className={`border rounded px-3 py-1.5 transition-colors ${
-          isActive
+        className={`border rounded px-3 py-1.5 transition-colors ${isActive
             ? "bg-blue-600 text-white border-blue-600"
             : "hover:bg-gray-100 border-gray-300"
-        }`}
+          }`}
       >
         {label || value}
       </button>

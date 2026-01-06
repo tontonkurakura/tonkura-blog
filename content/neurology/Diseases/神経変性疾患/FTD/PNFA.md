@@ -1,6 +1,6 @@
 ---
 last_edited: 2022-06-10T00:00:00.000Z
-lastmod: "2025-10-02"
+lastmod: '2026-01-06'
 ---
 
 - 最新の国際診断基準では，原発性進行性失語症（progressive progressive aphasia: PPA）の非流暢/失文法型（non-fluent/agrammatic variant PPA: nfvPPA）に該当する．

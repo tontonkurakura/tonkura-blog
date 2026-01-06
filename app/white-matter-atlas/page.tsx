@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import BrainViewerClient from "../components/brain/BrainViewerClient";
+import BrainViewerClient from "@/components/brain/BrainViewerClient";
 
 export const metadata: Metadata = {
   title: "Tract Atlas - TonKurA",

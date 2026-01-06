@@ -7,7 +7,7 @@ import NavigationLink from "./NavigationLink";
  */
 interface MainNavigationProps {
   /** ナビゲーションへの参照 */
-  navRef: RefObject<HTMLElement>;
+  navRef: RefObject<HTMLElement | null>;
   /** メニューが開いているかどうか */
   isMenuOpen: boolean;
   /** メニューを閉じる関数 */
@@ -27,9 +27,8 @@ export default function MainNavigation({
   return (
     <nav
       ref={navRef}
-      className={`w-full md:w-auto transition-all duration-300 ${
-        isMenuOpen ? "block" : "hidden md:block"
-      }`}
+      className={`w-full md:w-auto transition-all duration-300 ${isMenuOpen ? "block" : "hidden md:block"
+        }`}
       id="navigation-menu"
       aria-label="メインナビゲーション"
     >
