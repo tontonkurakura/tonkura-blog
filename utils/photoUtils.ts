@@ -5,6 +5,12 @@ import ExifReader from "exifreader";
 import type { Photo, ExifData } from "@/types/photo";
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import yaml from "js-yaml";
+import { DOMParser } from "@xmldom/xmldom";
+
+// Polyfill DOMParser for ExifReader in Node.js environment
+if (typeof global.DOMParser === "undefined") {
+  global.DOMParser = DOMParser as any;
+}
 
 const PHOTOS_DIR = path.join(process.cwd(), "public/images");
 const WEBP_DIR = path.join(process.cwd(), "public/images/webp");
