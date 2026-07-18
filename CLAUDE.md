@@ -87,20 +87,65 @@ updated: 2026-07-17
 
 ### 調査時の注意
 
-- `empirical` 型は PubMed を使い、**実在する PMID のみ**を引く
-- `map` 型の Web 検索は SEP / PhilPapers / IEP を優先ソースにする。
-  素の Web 検索に哲学の問いを投げると質が崩壊する
+**まず `DECISIONS.md` を読むこと。** なぜこの方法にしたかと、何が未決かが書いてある。
+
+#### PubMed に自然言語クエリを投げない
+
+PubMed は入力を AND 分解する。実測で、目的の論文が1件も返らず無関係な論文が並んだ。
+**必ずフィールドタグを使う。**
+
+```
+✗  language is primarily a tool for communication rather than thought
+✓  Fedorenko E[Author] AND Nature[Journal]
+✓  "inner speech"[Title] AND aphasia
+✓  "inner speech"[Title] AND (Review[Publication Type])
+```
+
+検索は **PMID しか返さない**（タイトルすら含まれない）。関連性の判断には
+`get_article_metadata` の呼び出しが別途要る。
+
+#### PubMed を既定の情報源にしない
+
+**生物医学限定で、哲学・社会科学・非医学系心理学を含まない。**
+概念・哲学寄りの問いは SEP (plato.stanford.edu) / IEP を主情報源にする。
+素の Web 検索に哲学の問いを投げると質が崩壊する。
+（PhilPapers は 403 で到達できなかった実績がある）
+
+#### 引用の完全性 — 信頼ではなく機械で担保
+
+1. **`get_article_metadata` がそのセッションで返さなかった PMID は書かない。** 例外なし
+2. 各文献の **タイトル・雑誌・年・n数・`article_type`** を記録し本文に反映する
+3. **`article_type` を必ず本文に出す。** Review と原著と症例報告を同じ顔で並べない
+4. 最終稿の全 PMID を**再取得してタイトル一致を確認する検証パス**を最後に置く
+
+#### 硬い証拠と弱い証拠を区別する
+
+n数・研究デザイン・`article_type` を明記し、弱いものは「弱い」と書く。
+小さい n の高い相関値は、そのまま臨床判断に使えない旨を書く。
+**分かっていないことは「分かっていない」と書く。** 調べられなかったソースも
+「未確認」と明記し、推測で埋めない。
+
+#### 反証パスは別の目で
+
+`empirical` 型は規約5により必須。結論を書いたのと同じ視点で探すと形骸化するので、
+**「この主張を否定せよ」という立場で改めて探す。** 実績として、この工程で
+会の最有力仮説が否定されていたこと、文献間の直接対立、自分の当初の想定の誤りが見つかっている。
 
 ## ディレクトリの約束
 
 | パス | 用途 |
 |---|---|
+| `DECISIONS.md` | **なぜそうしたか・何が未決か。作業再開時に必ず読む** |
 | `content/questions/` | 問い1つにつき1ファイル |
 | `content/questions/_inbox/` | 未採用の問いスタブ（採否ゲートの待機列）|
-| `content/sessions/` | 回ごとの索引 |
+| `content/sessions/` | 回ごとの索引（Phase 1 以降。未作成）|
 | `content/database/higher-brain-function/` | 既存の症候事典（51本）|
 | `lib/questions.ts` | frontmatter 走査・逆リンク生成 |
 | `app/wiki/` | 問いの表示 |
+| `.claude/skills/study-group/` | 文字起こしから問いを抽出するスキル |
+
+**文字起こしはコミットしない**（`transcripts/` と `*.vtt` は `.gitignore` 済み）。
+参加者の発言そのものであり、このリポジトリは public。
 
 ## 開発
 
