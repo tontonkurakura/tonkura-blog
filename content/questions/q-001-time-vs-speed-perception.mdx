@@ -2,7 +2,7 @@
 id: q-001
 title: 時間の認知と速度の認知は別のものか
 type: hybrid
-status: open
+status: mapped
 domain: [time-perception, visual-motion, akinetopsia]
 sessions:
   - n: 14
@@ -20,9 +20,14 @@ updated: 2026-07-19
 1. **概念** — 「速度の認知」と「時間の認知」は同一の構成概念か、別の能力か
 2. **実証** — 分離できるとして、片方だけが選択的に損なわれる病態はあるか
 
+**結論を先に書く。概念部は決着しない。** 実証部では
+**「速度が時間の見え方を変える」方向の証拠は多数あるが、逆向き（時間認知の障害が
+速度の見え方を変える）を直接示した研究は本調査では見つからなかった。**
+非対称なまま残る。
+
 ## 概念整理
 
-会で対立したのは次の点。
+### 会での対立
 
 - **同一とする側** — 速度とは「どれくらいの時間である距離を動いたか」なので、
   速度の認知は時間の認知を前提とする
@@ -33,18 +38,365 @@ updated: 2026-07-19
 日単位・半日単位なら太陽や月の運行から直接読めるが、秒単位には
 対応する自然の指標がない。
 
+### 争点の言い換え — 「定義」と「実装」を分ける
+
+**この対立が噛み合わないのは、二つの水準が混ざっているからである。**
+
+| 水準 | 問い | 「同一とする側」の主張 | 「別とする側」の主張 |
+|---|---|---|---|
+| **定義** | 速度という量は時間を含むか | 含む（v = d/t） | — |
+| **実装** | 脳は速度を距離÷時間で計算しているか | 計算している | 速度は一次的な感覚量 |
+
+**定義の水準では「同一とする側」が正しい。これは物理量の定義であって議論の余地がない。**
+争点は実装の水準にしかない。**そして実装の水準では、速度が距離と持続の商として
+計算されている必要はない。**
+
+視覚神経科学の標準的な描像では、速度は時空間フィルタの応答比から直接読み出される
+一次的な量として扱われる。したがって**「速度の知覚が持続の知覚を前提とする」は、
+定義からは導けても実装からは導けない。**
+
+**ただし本調査では、この「速度は一次的な感覚量である」という前提そのものを
+正面から検証した文献を同定できていない。** 上記は視覚科学の教科書的前提を
+筆者が要約したものであり、**本項が PubMed から取得した文献に直接の裏づけはない。**
+この点は弱いまま残す。
+
+### 触覚では速度が振動から読まれている
+
+**速度が「距離÷時間」以外の手がかりから読まれうることを示す実証はある。**
+
+According to PubMed、触覚での速度弁別は、皮膚がすべるときに生じる**振動**に
+依存している（Dallmann, Ernst & Moscatelli 2015, *J Neurophysiol*, Journal Article）。
+振動性のマスキングノイズを加えると速度弁別の精度が落ち、その効果は
+個別の突起を持たない滑らかな面で特に強かった。
+
+**これは「速度の身体性」という会の直観に対応する数少ない実証である。**
+ただし触覚の話であり、視覚の速度知覚にそのまま外挿はできない。
+
+### スケール依存の指摘には対応する記述がある
+
+「日単位なら太陽や月の運行から読めるが、秒単位には自然の指標がない」という
+会の整理は、言語人類学の記述と符合する。
+
+According to PubMed、ブラジルの三つの先住民言語（Huni Kuĩ, Awetý, Kamaiurá）の
+現地調査では、**環境指標・天体指標・社会規範に基づく「出来事基盤の時間区間」の
+語彙は豊富にある一方、計量的な暦・時計の単位は用いられていない**
+（da Silva Sinha 2019, *Front Psychol*, Journal Article）。
+「過去」「未来」に対応する語彙化された概念もなく、概念的なタイムラインの証拠も
+得られなかったと報告されている。
+
+**これは会の直観をかなり正確に支持する。** ただし限界を明記する。
+
+- **単著の民族誌的現地調査**であり、統制された心理物理実験ではない
+- **語彙・言語表現の記述であって、秒単位の時間知覚を測定したものではない。**
+  「時計の単位を持たない文化の話者が、秒単位の持続を知覚できない」ことは
+  この研究から**言えない**
+- 同系統の Pirahã 研究（Frank, Everett, Fedorenko & Gibson 2008, *Cognition*）は
+  **数**についてのものだが、再検証の結果「数語がなくても正確な照合はできる。
+  記憶を要する課題でのみ成績が落ちる」であった。
+  **語彙の不在が知覚の不在を意味しないという教訓は、時間にも当てはまる可能性が高い**
+
+### 哲学側 — 「継起の知覚」と「知覚の継起」
+
+PubMed は生物医学限定で哲学を含まないため、以下は SEP による。
+
+SEP の "Temporal Consciousness" は、**「経験の継起」と「継起の経験」を区別すること**が
+この領域の中心的な論点だと整理する。三つのモデルが対立する。
+
+| モデル | 主張 |
+|---|---|
+| **映画モデル**（反実在論） | 運動・変化は直接知覚されない。瞬間的経験の急速な連続が動的に「見える」だけ |
+| **保持モデル**（実在論） | 瞬間的な意識的エピソードが直前の過去の表象を含む（Brentano, Husserl） |
+| **延長モデル**（実在論） | 意識的エピソード自体が時間的に延長しており、変化・継起を直接含む |
+
+（<https://plato.stanford.edu/entries/consciousness-temporal/>、
+初出 2010-08-06、実質改訂 2023-03-17）
+
+**この地図が本項に効くのは次の点である。会の「同一とする側」は事実上、映画モデルに
+近い立場を取っている** — 個々の位置を継起として捉え、そこから速度を推論する、という
+描像だからである。**一方「別とする側」の「速度は直接感じられる」は延長モデルに近い。**
+
+**そして哲学側でもこの三者は決着していない。** 会での対立は、
+参加者の理解不足に由来するものではなく、**この領域の未決着をそのままなぞっている。**
+
+### 概念部の到達点
+
+**決着しない。** ただし次までは言える。
+
+- 定義の水準では速度は時間を含む。ここに争点はない
+- 実装の水準は経験的問題であり、概念の議論では決まらない
+- **「別のものか」という問いは、そのままでは検証可能な命題になっていない。**
+  「速度の知覚が持続の知覚に因果的に依存するか」まで書き下ろすと実証部に渡せる
+
 ## 現在のエビデンスと質
 
-未調査。
+**硬い部分と弱い部分を分ける。**
+
+### 比較的硬い — 速い運動は持続を長く感じさせる（速度 → 時間の方向）
+
+According to PubMed、この方向の効果は複数の独立した研究で再現されている。
+
+| 研究 | 雑誌・年 | article_type | n | 所見 |
+|---|---|---|---|---|
+| Kaneko & Murakami | *J Vis* 2009 | Journal Article | 抄録に記載なし（未確認） | 時間周波数でも空間周波数でもなく、**速度**が主観的持続を最もよく説明する。持続は log 速度に比例して延びる |
+| Tomassini, Gori, Burr, Sandini & Morrone | *Front Integr Neurosci* 2011 | Journal Article | 抄録に記載なし（未確認） | **視覚だけでなく触覚でも**速度が上がると持続が延びる。触覚のほうが効果が大きい |
+| Yamamoto & Miura | *J Vis* 2012 | Journal Article | 抄録に記載なし（未確認） | プラッドの**パターン速度**では持続が延びるが、成分速度では延びない。MT 相当の高次運動処理段階の関与を示唆 |
+| Sasaki, Yamamoto & Miura | *Perception* 2013 | Comparative Study | 抄録に記載なし（未確認） | 平均速度が同じでも**減速する運動は加速する運動より長く感じられる**。知覚速度の差では説明できない |
+
+**この方向の効果自体は確からしい。** 課題（マッチング・再生）を変えても、
+モダリティを変えても出ている。
+
+**ただしこれは「速度が時間の見え方を歪める」ことを示すのであって、
+「速度の知覚が時間の知覚に依存する」ことを示すのではない。**
+会の論点は後者である。**方向が逆であることに注意が要る。**
+
+### この方向の証拠には正面からの反証がある
+
+**規約5に従って否定側を探した。見つかった。**
+
+Linares & Gorea 2015（*Sci Rep*, Journal Article, n 未確認）は、
+回転する物体の速度と半径を独立に操作し、**主観的持続を延ばすのは速度ではなく
+回転の時間周波数（＝目立つ事象の頻度）だった**と報告している。
+知覚速度も別に測ったうえでの結論である。
+
+**Kaneko & Murakami 2009 と正面から食い違う。** 両者とも「速度か時間周波数か」を
+切り分けることを目的に設計されており、反対の答えを出している。
+**本調査ではどちらが正しいかを決められない。**
+
+この対立は本項にとって決定的である。**もし Linares & Gorea が正しければ、
+「速度が時間を歪める」のではなく「事象の数が時間を歪める」ことになり、
+速度と時間の連関は間接的なものに落ちる。**
+
+なお近年、この論争にさらに別の変数が持ち込まれている。
+Wiener et al. 2026（*PLoS Comput Biol*, Journal Article, 3 群各 n=20）は、
+画像の**記憶されやすさ**と、リカレント CNN で定義した**処理「速度」**が
+それぞれ独立に主観的持続を延ばすと報告し、極端に速い場合は逆に時間圧縮が起きる
+という逆U字モデルを提示している。**「速度」がここでは物理的運動速度ではなく
+情報処理速度を指しており、用語の同一性に注意が要る。**
+
+### 理論的枠組み — ATOM は「同一とする側」に近い
+
+Walsh 2003（*Trends Cogn Sci*, Journal Article）は、**時間・空間・量が
+頭頂皮質の共通の大きさ表現系（A Theory Of Magnitude, ATOM）を共有する**という
+枠組みを提案した。速度はこの枠組みでは時間と空間の複合量として位置づけられる。
+
+これに整合する所見として、Alexander, Cowey & Walsh 2005
+（*Cogn Neuropsychol*, Journal Article, n 未確認）は、
+**右後頭頂皮質への TMS が時間判断の反応時間だけを遅らせ、音高判断には影響しなかった**
+と報告している。左頭頂・vertex 統制では変化しなかった。
+
+**ATOM は「時間認知と速度認知は共通基盤を持つ」という主張であり、
+会の「同一とする側」を理論的に支える。ただし ATOM 自体が仮説であって
+確立した事実ではない。** 提案論文は Journal Article として索引されているが、
+実質的には理論提案であり、一次データを報告していない。
+
+### 運動視障害（akinetopsia）で時間知覚はどうなるか
+
+**ここが本項で最も重要な空白である。**
+
+akinetopsia については系統的レビューが三本ある。
+
+| レビュー | 雑誌・年 | article_type | 対象 |
+|---|---|---|---|
+| Zeki | *Brain* 1991 | Journal Article / Review | 歴史的総説。当時「良い症例は文献上一例のみ」 |
+| Van Swol et al. | *J Neuroophthalmol* 2023 | Systematic Review | 報告された全症例の網羅的カタログ |
+| Browne, Krabbendam & Blom | *Front Neurol* 2025 | Systematic Review | 臨床例 25、皮質刺激による実験例 27 |
+| Mowafi, Khashana & Bakr | *Orphanet J Rare Dis* 2025 | Journal Article / Review | 病因の総説 |
+
+Browne et al. 2025 の所見のうち本項に効くのは次の点である。
+**両側 V5/MT 病変が全般性 akinetopsia と慢性化に対応するが、重症度は残存する
+運動視ネットワーク全体と、また「動く対象の速度」にも依存する**（dynamic parallelism 説）。
+
+**つまり akinetopsia は速度に依存する障害である。** これを単一例で定量したのが次である。
+
+> Heutink, de Haan, Marsman, van Dijk & Cordes 2018（*Cortex*, **Case Reports** /
+> Journal Article, **n=1**）。両側 V5 病変の患者 TD において、ランダムドット
+> キネマトグラムの速度を系統的に変えたところ、**9 deg/s を超える速度でのみ
+> 運動方向の知覚が障害された。** 低速の運動視は保たれていた。さらに 24 deg/s では
+> **常に実際と反対方向を報告した**（連続版ワゴンホイール錯視に相当）。
+> 著者らは、無傷の脳領域が V5 と異なるサンプリングレートで動作している可能性を挙げている。
+
+**この所見は会の「コマ送りに見える」という報告と直接つながる。**
+サンプリングレートの不一致という説明は、まさにコマ送り現象の説明である。
+
+**しかし決定的な限界がある。n=1 であり、しかも時間知覚は測られていない。**
+持続の再生・産出・弁別の成績は報告されていない。
+
+**古典例 LM についても同じである。**
+
+- Baker, Hess & Zihl 1991（*J Neurosci*, Journal Article, n=1）— 限定寿命
+  ランダムドットで運動方向弁別を検査。ノイズドットが少しでも混じると弁別が完全に崩れる
+- Rizzo, Nawrot & Zihl 1995（*Brain*, **Case Reports**, n=1）— 大域的運動の知覚と
+  方向弁別は残存するが中等度のノイズで破綻。運動以外の手がかりによる形の知覚も不良
+- Schenk, Mai, Ditterich & Zihl 2000（*Eur J Neurosci*, **Case Reports**, LM + 対照3名）—
+  0.5 m/s 以下でしか到達運動ができないが、心理物理の成績から予測されるより良好。
+  MT/V5 は知覚経路と行為経路の両方に入力を与える段階にある
+
+**いずれも運動視の心理物理であって、時間知覚の検査ではない。**
+**本調査では、akinetopsia 患者の持続弁別・時間産出を定量した文献を同定できなかった。**
+「存在しない」のではなく「本調査の検索範囲では見つからなかった」と読むべきである。
+
+### 「実際より速く見える」— Zeitraffer 現象
+
+会で報告された「実際より速く見える」に対応する用語は文献にある。
+
+Ovsiew 2013（*Neurocase*, **Case Reports**, n=1）は、
+**Zeitraffer 現象を「動く物体の速度の知覚の変容」と定義し、akinetopsia と
+特徴を共有するが区別されるものとして扱っている。** 速度知覚に関与する脳
+ネットワークの機能不全から生じるだろうという考察である。
+
+**ただしこの用語は文献内で一貫していない。**
+
+- Kesserwani 2020（*Cureus*, **Case Reports**, n=1）は、右頭頂後頭溝の梗塞例で
+  自己身体と周囲が**遅く**動いて見える現象を Zeitraffer 現象と呼んでいる
+- Blom, Nanuashvili & Waters 2021（*Front Psychiatry*, **Systematic Review**）は
+  slow-motion 現象と quick-motion 現象を**別のカテゴリーとして並べ**、
+  キーワードに Zeitraffer / quick-motion / slow-motion を並記している
+
+**同じ語が速く見える場合と遅く見える場合の両方に使われている。**
+本項では、この語を検索語として使うときに取りこぼしが起きうる点だけ記録しておく。
+
+Blom et al. 2021 は本項にとって最も情報量の多いレビューである。
+59 の文献から **168 名**の時間歪曲の体験を集め、うち **84 例**を詳細な個別症例として
+検討している。所見のうち重要なのは次の点である。
+
+- 時間歪曲の**最多カテゴリーは slow-motion / quick-motion 現象**である
+- 時間歪曲が**単一モダリティに限られたのは 39% にとどまり、61% では
+  視覚 (49%)・運動覚 (18%)・聴覚 (14%) の関与があった**
+- 病態生理としては主に後頭領域が関与するが、時間のネットワークは広く分散しており、
+  **個別のタイミング機構が非同期に動作することで、モダリティ内・モダリティ間の
+  時間的ミスマッチ（脱同期）が生じうる**
+
+**この「脱同期」という整理は、本項の問いに対する一つの答え方である。**
+すなわち**「時間認知」も「速度認知」も単一の系ではなく、複数の成分タイミング機構の
+束であって、そのどれが壊れるかで見え方が変わる**という描像になる。
+会の二分法（同一か別か）は、この描像では**どちらも粗すぎる**ことになる。
+
+**格付け:** Blom et al. 2021 は症例報告の系統的レビューであり、
+**元データはすべて症例記述である。** n=168 という数字は被験者数ではなく、
+**文献中に記載された体験の集計**である。有病率や共起率として臨床に持ち込めない。
+
+### 内的時計モデルにおいて速度はどう扱われるか
+
+According to PubMed、区間タイミングの計算モデルを横断的に整理した総説
+（Balcı & Simen 2024, *Adv Exp Med Biol*, Journal Article / Review）は、
+Treisman のペースメーカ・累算器モデル、スカラー期待理論の情報処理版、
+線条体ビート周波数モデル、行動期待理論、learning to time モデル、
+drift-diffusion 系、time cell モデル、神経軌道モデルを列挙し、
+これらを**「閾値可変型 vs 時計可変型」「専用時計／ランプ型 vs 創発的な集団符号型」**という
+二軸で整理している。線条体ビート周波数モデルの原典
+（Matell & Meck 2004, *Brain Res Cogn Brain Res*, Journal Article / Review）も参照した。
+
+**本項にとっての要点は、これらのモデルの一次変数に「運動する対象の速度」が
+含まれないことである。** モデルが扱うのは内的なペースメーカの発火率であって、
+外界の速度ではない。外界の速度は覚醒・注意を経由してペースメーカ速度に影響する
+**外生変数**として扱われる（感情による時間歪曲を扱った総説
+Lake, LaBar & Meck 2016, *Neurosci Biobehav Rev*, Journal Article / Review も同じ構造をとる）。
+
+**したがって内的時計モデルは、会の問いに対しては「別のもの」側に立つ。**
+時計は速度とは独立に定義されており、速度は入力の一つにすぎない。
+**ただしこれはモデルの構成上そうなっているだけであり、証拠ではない。**
+**モデルの選択が答えを決めてしまっている点に注意が要る。**
+
+なお Lake et al. 2016 は、現行のペースメーカ・累算器モデルが覚醒と注意について
+現在の知見と整合しないと明言しており、**このモデル族自体が争われている。**
+
+### クロノスタシスの機序
+
+会で言及されたクロノスタシス（秒針が止まって見える現象）についても調べた。
+
+**古典的説明（後ろ向き外挿説）:**
+Yarrow, Haggard, Heal, Brown & Rothwell 2001（*Nature*, Journal Article, n 未確認）は、
+**サッカード標的の知覚をサッカード開始直前まで時間的に遡って延長する**ことで
+錯覚が生じると論じた。標的をサッカード中に予測不能に動かして空間的連続性を壊すと
+錯覚は消える。付随する空間的注意のシフトには依存しないと報告している。
+
+**この説明は他のモダリティにも拡張された。**
+Yarrow & Rothwell 2003（*Curr Biol*, Comparative Study）は、
+腕の運動の後で**触覚**にも同様の効果が生じることを示し、
+「運動が感覚事象の開始時刻に不確実性を生むときに chronostasis 様の効果が起こる」
+という仮説を提示した。
+
+**しかし機序は決着していない。少なくとも四つの説が競合している。**
+
+| 説 | 代表文献 | 主張 |
+|---|---|---|
+| 後ろ向き外挿 | Yarrow et al. 2001 | サッカード前まで知覚を遡らせる |
+| 皮質下遠心性トリガ | Yarrow, Johnson, Haggard & Rothwell 2004（*J Cogn Neurosci*, Comparative Study） | 随意的〜反射的まで幅広いサッカード種で効果量がほぼ同じ。上丘由来の低次信号が引き金 |
+| 対象特異的・注意由来 | Georg & Lappe 2007（*Exp Brain Res*, Journal Article） | サッカード標的の位置に置かれた時計でのみ延長が起き、中間位置では起きない。局所的・対象特異的機構 |
+| 網膜像運動由来 | Knöll, Morrone & Bremmer 2013（*Vision Res*, Journal Article） | **サッカードを実際に実行しなくても**、模擬サッカードで chronostasis が生じる。サッカードによる偽の網膜運動が主因 |
+
+さらに Melcher, Kumar & Srinivasan 2020（*Sci Rep*, Journal Article）は、
+キー押しとサッカードを比較し、**キー押しでは時間圧縮（intentional binding）が、
+サッカードでは逆に時間の伸長が生じる**ことを示して、
+chronostasis は知覚されるサッカード開始時刻の後方シフトだけでは説明できず
+**時間の膨張**を反映すると論じた。
+
+Chen, Grzeczkowski, Müller & Shi 2025（*Psychol Res*, Journal Article）は、
+サッカード後の**第二の事象は逆に短く感じられる**ことを新たに報告し、
+注意処理の時間的な不均一配分による説明を提示している。
+
+**本項にとっての要点:**
+
+1. **クロノスタシスは「速度の知覚が壊れて時間が歪む」例ではない。**
+   引き金は眼球運動であり、外界の運動速度ではない
+2. **ただし Knöll et al. 2013 が正しければ、原因は網膜像上の運動である。**
+   そうであれば「運動信号が時間知覚を歪める」経路の一例になり、
+   本項の中心的論点に接続する
+3. **どの説が正しいかは決着していない。** 会の宿題（`q-002` に記載）に対する
+   答えは「機序は複数説が競合中」である
 
 ## 反証の探索結果
 
-未調査。
+**規約5に従い、「時間認知と速度認知は別のものである」を否定する側と、
+肯定する側の双方を探した。**
+
+| 「別のもの」を否定する側 | 「別のもの」を支持する側 |
+|---|---|
+| ATOM（Walsh 2003）— 時間・空間・量が共通の頭頂表現を共有 | 内的時計モデル群（Balcı & Simen 2024）— 時計は速度と独立に定義される |
+| Alexander et al. 2005 — 右頭頂 TMS が時間判断を選択的に障害 | Blom et al. 2021 — 複数の成分タイミング機構が非同期に動作しうる |
+| 速度が持続を延ばす一連の研究（Kaneko & Murakami 2009 ほか） | Linares & Gorea 2015 — 延ばすのは速度ではなく事象の時間周波数 |
+
+**どちらも決め手を持っていない。**
+
+**加えて、本項の中心的な検証は実行されていない。** すなわち
+**「時間知覚が選択的に障害された患者で速度知覚がどうなるか」を測った研究を、
+本調査では一本も同定できなかった。** これは反証以前の問題である。
+
+なお、会の「速く見える」を「時間認知の問題」と読む解釈に対する反例として、
+`q-002` に記録された**聴覚での体験（目覚ましのクラシックが朝は速いテンポに聞こえる）**が
+ある。Blom et al. 2021 が時間歪曲の 14% に聴覚の関与を認めていることは、
+**この現象が視覚固有ではない**ことを示唆する。ただし症例記述の集計である。
 
 ## 未解決点
 
-「一秒の感覚は文化依存か」は、時計という技術の普及と切り離せない。
-ここは `q-008` と同じく、能力が何によって規定されるかという論点に接続する。
+**以下は確認できていない。推測で埋めない。**
+
+- **akinetopsia 患者の時間知覚を定量した研究を同定できなかった。**
+  本項の問い（軸1・軸2）に最も直接答えるはずの研究が見つかっていない。
+  Heutink et al. 2018、Rizzo et al. 1995、Schenk et al. 2000 はいずれも
+  運動視の心理物理のみで、持続弁別・時間産出・時間再生は報告していない。
+  **これは本項の最大の空白である**
+- **逆向きの解離が未確認。** 時間知覚が選択的に障害された症例で速度知覚が
+  保たれるか、を検査した文献は見つからなかった
+- **「速度が持続を延ばす」のか「事象頻度が持続を延ばす」のかが未決着。**
+  Kaneko & Murakami 2009 と Linares & Gorea 2015 が正面から食い違う。
+  本調査ではどちらが何を測っていたかを解決できなかった
+- **クロノスタシスの機序が未決着。** 少なくとも四説が競合している
+- **主要文献の n が抄録に記載されておらず未確認のものが多い。**
+  Kaneko & Murakami 2009、Linares & Gorea 2015、Tomassini et al. 2011、
+  Yamamoto & Miura 2012、Yarrow et al. 2001、Alexander et al. 2005 はいずれも
+  抄録に n の記載がない。**全文を確認していないため、効果量の格付けは保留する**
+- **「速度は一次的な感覚量である」という本項の実装水準の前提に、
+  本調査が取得した文献の直接の裏づけがない。** 視覚科学の教科書的前提を
+  要約したものにとどまる
+- **「秒単位の時間感覚は文化依存か」は検証されていない。**
+  da Silva Sinha 2019 が示すのは**語彙と時間計算の慣習**であって知覚ではない。
+  時計を持たない文化の話者に秒単位の持続弁別を実施した研究は、
+  本調査では見つからなかった。**この論点は未検証のまま残る**
+- **日本語圏の文献は未調査。** 本項は PubMed 収載文献と SEP のみに基づく
+- **PubMed の射程外。** 時間の形而上学、時間概念の文化人類学、
+  時計技術史はいずれも PubMed に収載されない。SEP の "Temporal Consciousness" 以外の
+  哲学ソースには当たっていない
 
 ## 当日の議論との接続
 
@@ -55,6 +407,199 @@ updated: 2026-07-19
 > 速度と時間の認知なんか違いますか。だって速度って、
 > どれぐらいの時間でそのものが動いたかっていうのに基づくんじゃないですか
 
+**調査を経て、会の議論について言えることは四つある。**
+
+1. **この問い返しは、定義の水準では正しい。** ただし脳の実装が同じ計算をしている
+   必要はない。**両者は矛盾しない**
+2. **「コマ送り」と「速く見える」は、文献上は別の名前を持つ。**
+   前者は akinetopsia の cinematographic vision、後者は Zeitraffer 現象または
+   quick-motion 現象と呼ばれる。**ただし Zeitraffer の語は速い場合と遅い場合の
+   両方に使われており、用語は安定していない**
+3. **会が期待した「一方だけが壊れる病態」は、本調査では見つからなかった。**
+   akinetopsia の研究は運動視しか測っておらず、時間知覚は測られていない
+4. **Blom et al. 2021 の「脱同期」説を採ると、会の二分法そのものが粗すぎることになる。**
+   時間も速度も単一の系ではなく複数の成分タイミング機構の束であり、
+   どれが壊れるかで現象が変わる、という描像になる。
+   **これは `q-007` で「内言語」が二成分に分解されたのと同型の動きである**
+
+**したがってこの問いは閉じない。** 概念部は決着せず、
+実証部は最も肝心なデータが存在しないまま残る。
+
+`q-002`（時間帯による主観的時間の変動）とはクロノスタシスで、
+`q-003`（PD・小脳の内的クロック）とは内的時計モデルで接続する。
+なお PD については、視覚錯覚の面接調査（Sasaki et al. 2021, *Psychogeriatrics*,
+Journal Article, n=40）が kinetopsia・akinetopsia・Zeitraffer / Zeitlupen 現象を
+PD 患者の体験として列挙している。**運動視の異常と時間の異常が同一患者群で
+併存しうる**ことを示す記述であり、`q-003` の調査で参照すべきである。
+
 ## 出典
 
-未調査。
+文献情報は PubMed から取得し、全 PMID を `get_article_metadata` で実在確認した。
+`article_type` は PubMed が返した値をそのまま記す。
+
+### 速度と主観的持続（原著）
+
+- Kaneko S, Murakami I. Perceived duration of visual motion increases with speed.
+  *J Vis*. 2009;9(7):14. PMID 19761329. **Journal Article**. n 未確認.
+  [DOI](https://doi.org/10.1167/9.7.14)
+- Linares D, Gorea A. Temporal frequency of events rather than speed dilates perceived
+  duration of moving objects. *Sci Rep*. 2015;5:8825. PMID 25744877.
+  **Journal Article**. n 未確認. **反証側**.
+  [DOI](https://doi.org/10.1038/srep08825)
+- Tomassini A, Gori M, Burr D, Sandini G, Morrone MC. Perceived duration of visual and
+  tactile stimuli depends on perceived speed. *Front Integr Neurosci*. 2011;5:51.
+  PMID 21941471. **Journal Article**. n 未確認.
+  [DOI](https://doi.org/10.3389/fnint.2011.00051)
+- Yamamoto K, Miura K. Perceived duration of plaid motion increases with pattern speed
+  rather than component speed. *J Vis*. 2012;12(4):1. PMID 22469816.
+  **Journal Article**. n 未確認. [DOI](https://doi.org/10.1167/12.4.1)
+- Sasaki K, Yamamoto K, Miura K. The difference in speed sequence influences perceived
+  duration. *Perception*. 2013;42(2):198-207. PMID 23700958. **Comparative Study /
+  Journal Article**. n 未確認. [DOI](https://doi.org/10.1068/p7241)
+- Wiener M, Mondok C, Ma A, Desai C, Joyner A, Macedo G. The speed limit of visual
+  perception: Bidirectional influence of image memorability and processing speed on
+  perceived duration and recognition. *PLoS Comput Biol*. 2026;22(5):e1013448.
+  PMID 42149924. **Journal Article**. 3 群各 n=20.
+  [DOI](https://doi.org/10.1371/journal.pcbi.1013448)
+- Mioni G, Stablum F, Grondin S, Altoè G, Zakay D. Effect of the symbolic meaning of
+  speed on the perceived duration of children and adults. *Front Psychol*. 2018;9:521.
+  PMID 29755382. **Journal Article**. 実験1 n=45+22、実験2 n=289.
+  本文では引用していないが、**速度の「意味」だけでも持続推定が動く**という点で
+  争点に関わる。 [DOI](https://doi.org/10.3389/fpsyg.2018.00521)
+
+### 理論枠組み
+
+- Walsh V. A theory of magnitude: common cortical metrics of time, space and quantity.
+  *Trends Cogn Sci*. 2003;7(11):483-8. PMID 14585444. **Journal Article**（実質は理論提案。
+  一次データの報告なし）. [DOI](https://doi.org/10.1016/j.tics.2003.09.002)
+- Alexander I, Cowey A, Walsh V. The right parietal cortex and time perception: back to
+  Critchley and the Zeitraffer phenomenon. *Cogn Neuropsychol*. 2005;22(3):306-15.
+  PMID 21038252. **Journal Article**. n 未確認.
+  [DOI](https://doi.org/10.1080/02643290442000356)
+- Balcı F, Simen P. Neurocomputational models of interval timing: seeing the forest for
+  the trees. *Adv Exp Med Biol*. 2024;1455:51-78. PMID 38918346.
+  **Journal Article / Review**. [DOI](https://doi.org/10.1007/978-3-031-60183-5_4)
+- Matell MS, Meck WH. Cortico-striatal circuits and interval timing: coincidence
+  detection of oscillatory processes. *Brain Res Cogn Brain Res*. 2004;21(2):139-70.
+  PMID 15464348. **Journal Article / Review**.
+  [DOI](https://doi.org/10.1016/j.cogbrainres.2004.06.012)
+- Lake JI, LaBar KS, Meck WH. Emotional modulation of interval timing and time
+  perception. *Neurosci Biobehav Rev*. 2016;64:403-20. PMID 26972824.
+  **Journal Article / Review**. [DOI](https://doi.org/10.1016/j.neubiorev.2016.03.003)
+
+### 運動視障害（akinetopsia）— 総説・系統的レビュー
+
+- Zeki S. Cerebral akinetopsia (visual motion blindness). A review. *Brain*.
+  1991;114(Pt 2):811-24. PMID 2043951. **Journal Article / Review**.
+  [DOI](https://doi.org/10.1093/brain/114.2.811)
+- Van Swol JM, Thompson EB, Joffe JA, Nguyen SA, Berman EL. Akinetopsia: A Systematic
+  Review. *J Neuroophthalmol*. 2023;44(3):e483-e488. PMID 37938052.
+  **Systematic Review / Journal Article**.
+  [DOI](https://doi.org/10.1097/WNO.0000000000002032)
+- Browne JL, Krabbendam L, Blom JD. Akinetopsia: a systematic review on visual motion
+  blindness. *Front Neurol*. 2025;15:1510807. PMID 39996018.
+  **Journal Article / Systematic Review**. 臨床例 25・実験例 27.
+  [DOI](https://doi.org/10.3389/fneur.2024.1510807)
+- Mowafi S, Khashana R, Bakr M. Life in stop motion: a review of akinetopsia.
+  *Orphanet J Rare Dis*. 2025;20(1):334. PMID 40605075. **Journal Article / Review**.
+  [DOI](https://doi.org/10.1186/s13023-025-03781-6)
+
+### 運動視障害 — 症例（**n はいずれも 1。一般化に使えない**）
+
+- Heutink J, de Haan G, Marsman JB, van Dijk M, Cordes C. The effect of target speed on
+  perception of visual motion direction in a patient with akinetopsia. *Cortex*.
+  2019;119:511-518. PMID 30661737. **Case Reports / Journal Article**. n=1.
+  [DOI](https://doi.org/10.1016/j.cortex.2018.12.002)
+- Rizzo M, Nawrot M, Zihl J. Motion and shape perception in cerebral akinetopsia.
+  *Brain*. 1995;118(Pt 5):1105-27. PMID 7496774. **Case Reports / Journal Article**.
+  n=1（患者 LM）. [DOI](https://doi.org/10.1093/brain/118.5.1105)
+- Baker CL, Hess RF, Zihl J. Residual motion perception in a "motion-blind" patient,
+  assessed with limited-lifetime random dot stimuli. *J Neurosci*. 1991;11(2):454-61.
+  PMID 1992012. **Journal Article**. n=1（患者 LM）.
+  [DOI](https://doi.org/10.1523/JNEUROSCI.11-02-00454.1991)
+- Schenk T, Mai N, Ditterich J, Zihl J. Can a motion-blind patient reach for moving
+  objects? *Eur J Neurosci*. 2000;12(9):3351-60. PMID 10998118.
+  **Case Reports / Journal Article**. n=1（患者 LM）＋対照3名.
+  [DOI](https://doi.org/10.1046/j.1460-9568.2000.00194.x)
+- Beckers G, Hömberg V. Cerebral visual motion blindness: transitory akinetopsia induced
+  by transcranial magnetic stimulation of human area V5. *Proc Biol Sci*.
+  1992;249(1325):173-8. PMID 1360678. **Journal Article**. n 未確認.
+  健常者で一過性に akinetopsia を作れることを示した実験.
+  [DOI](https://doi.org/10.1098/rspb.1992.0100)
+- Maeda K. Akinetopsia on Driving. *J Stroke Cerebrovasc Dis*. 2019;28(7):e102-e103.
+  PMID 31036340. **Case Reports / Journal Article**. n=1.
+  右側頭頭頂梗塞で cinematographic vision.
+  [DOI](https://doi.org/10.1016/j.jstrokecerebrovasdis.2019.02.036)
+
+### 速度知覚の変容（Zeitraffer 現象）
+
+- Ovsiew F. The Zeitraffer phenomenon, akinetopsia, and the visual perception of speed of
+  motion: a case report. *Neurocase*. 2014;20(3):269-72. PMID 23557277.
+  **Case Reports / Journal Article**. n=1.
+  [DOI](https://doi.org/10.1080/13554794.2013.770877)
+- Kesserwani H. The Zeitraffer phenomenon: a strategic ischemic infarct of the banks of
+  the parieto-occipital sulcus. *Cureus*. 2020;12(7):e9443. PMID 32864267.
+  **Case Reports / Journal Article**. n=1.
+  [DOI](https://doi.org/10.7759/cureus.9443)
+- Blom JD, Nanuashvili N, Waters F. Time distortions: a systematic review of cases
+  characteristic of Alice in Wonderland syndrome. *Front Psychiatry*. 2021;12:668633.
+  PMID 34025485. **Systematic Review / Journal Article**.
+  59 文献・168 名の体験・84 の詳細症例. **元データはすべて症例記述**.
+  [DOI](https://doi.org/10.3389/fpsyt.2021.668633)
+- Sasaki C, Yokoi K, Takahashi H, Hatakeyama T, Obara K, Wada C, Hirayama K. Visual
+  illusions in Parkinson's disease: an interview survey of symptomatology.
+  *Psychogeriatrics*. 2022;22(1):38-48. PMID 34617361. **Journal Article**. n=40.
+  面接調査（自己報告）. [DOI](https://doi.org/10.1111/psyg.12771)
+
+### クロノスタシス
+
+- Yarrow K, Haggard P, Heal R, Brown P, Rothwell JC. Illusory perceptions of space and
+  time preserve cross-saccadic perceptual continuity. *Nature*. 2001;414(6861):302-5.
+  PMID 11713528. **Journal Article**. n 未確認.
+  [DOI](https://doi.org/10.1038/35104551)
+- Yarrow K, Rothwell JC. Manual chronostasis: tactile perception precedes physical
+  contact. *Curr Biol*. 2003;13(13):1134-9. PMID 12842013. **Comparative Study /
+  Journal Article**. [DOI](https://doi.org/10.1016/s0960-9822(03)00413-5)
+- Yarrow K, Johnson H, Haggard P, Rothwell JC. Consistent chronostasis effects across
+  saccade categories imply a subcortical efferent trigger. *J Cogn Neurosci*.
+  2004;16(5):839-47. PMID 15200711. **Comparative Study / Journal Article**.
+  [DOI](https://doi.org/10.1162/089892904970780)
+- Georg K, Lappe M. Spatio-temporal contingency of saccade-induced chronostasis.
+  *Exp Brain Res*. 2007;180(3):535-9. PMID 17287990. **Journal Article**.
+  [DOI](https://doi.org/10.1007/s00221-007-0876-5)
+- Knöll J, Morrone MC, Bremmer F. Spatio-temporal topography of saccadic overestimation
+  of time. *Vision Res*. 2013;83:56-65. PMID 23458677. **Journal Article**.
+  **模擬サッカードでも生じる**という所見. [DOI](https://doi.org/10.1016/j.visres.2013.02.013)
+- Melcher D, Kumar D, Srinivasan N. The role of action intentionality and effector in the
+  subjective expansion of temporal duration after saccadic eye movements. *Sci Rep*.
+  2020;10(1):16922. PMID 33037289. **Journal Article**.
+  [DOI](https://doi.org/10.1038/s41598-020-73830-6)
+- Chen L, Grzeczkowski L, Müller HJ, Shi Z. Saccade-induced temporal distortion: opposing
+  effects of time expansion and compression. *Psychol Res*. 2025;89(2):86.
+  PMID 40214791. **Journal Article**. n 未確認.
+  [DOI](https://doi.org/10.1007/s00426-025-02116-1)
+- Thilo KV, Walsh V. Chronostasis. *Curr Biol*. 2002;12(17):R580-1. PMID 12225675.
+  **Journal Article**（短報・解説）. [DOI](https://doi.org/10.1016/s0960-9822(02)01096-5)
+
+### 速度の身体性・文化依存性
+
+- Dallmann CJ, Ernst MO, Moscatelli A. The role of vibration in tactile speed perception.
+  *J Neurophysiol*. 2015;114(6):3131-9. PMID 26424580. **Journal Article**. n 未確認.
+  [DOI](https://doi.org/10.1152/jn.00621.2015)
+- da Silva Sinha V. Event-based time in three indigenous Amazonian and Xinguan cultures
+  and languages. *Front Psychol*. 2019;10:454. PMID 30936842. **Journal Article**.
+  単著の民族誌的現地調査。**言語表現の記述であり時間知覚の測定ではない**.
+  [DOI](https://doi.org/10.3389/fpsyg.2019.00454)
+- Frank MC, Everett DL, Fedorenko E, Gibson E. Number as a cognitive technology: evidence
+  from Pirahã language and cognition. *Cognition*. 2008;108(3):819-24. PMID 18547557.
+  **Journal Article**. 時間ではなく数についての研究だが、
+  **語彙の不在が知覚の不在を意味しない**という教訓のために引く.
+  [DOI](https://doi.org/10.1016/j.cognition.2008.04.007)
+
+### 哲学（PubMed 射程外。SEP による）
+
+- *Temporal Consciousness*. Stanford Encyclopedia of Philosophy.
+  初出 2010-08-06、実質改訂 2023-03-17.
+  <https://plato.stanford.edu/entries/consciousness-temporal/>
+  （旧項目 *The Experience and Perception of Time* は retired となり本項目に統合された。
+  旧項目の内容は本調査では確認していない）
