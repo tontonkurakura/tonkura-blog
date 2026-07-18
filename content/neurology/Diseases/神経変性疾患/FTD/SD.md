@@ -1,6 +1,6 @@
 ---
 last_edited: 2022-06-10T00:00:00.000Z
-lastmod: '2026-01-06'
+lastmod: '2026-03-20'
 ---
 
 - 原発性進行性失語症（progressive progressive aphasia: PPA）の意味型（semantic variant PPA: svPPA）に該当する．

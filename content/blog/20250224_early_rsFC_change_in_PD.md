@@ -8,7 +8,7 @@ tags:
   - PD
   - 論文
 description: ''
-lastmod: '2026-01-06'
+lastmod: '2026-03-20'
 ---
 
 ## 論文情報
