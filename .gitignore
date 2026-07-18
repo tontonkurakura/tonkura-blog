@@ -50,3 +50,7 @@ gallery-cache.json
 
 # Sentry Config File
 .env.sentry-build-plugin
+
+# 勉強会の文字起こし。参加者の発言そのものなので public リポジトリに入れない
+transcripts/
+*.vtt
