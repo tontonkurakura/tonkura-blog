@@ -1,0 +1,260 @@
+{
+  "bankssts": {
+    "function": "上側頭溝の壁に位置し、言語理解・聴覚情報処理に関与。Wernicke野と連絡し、音韻・意味処理を担う。",
+    "clinical": "障害時：感覚性失語の一症状として語音認知障害が生じることがある。左半球優位。",
+    "network": "言語ネットワーク",
+    "connections": ["superiortemporal", "inferiorparietal", "supramarginal"]
+  },
+  "caudalanteriorcingulate": {
+    "function": "前帯状皮質の尾側部。認知的葛藤の検出・エラーモニタリング・実行制御に関与。背側前帯状皮質とも呼ばれる。",
+    "clinical": "障害時：遂行機能障害・注意障害。ACC全体の障害は無動性無言症を引き起こしうる。",
+    "network": "実行制御ネットワーク",
+    "connections": ["rostralmiddlefrontal", "superiorfrontal", "precentral"]
+  },
+  "caudalmiddlefrontal": {
+    "function": "中前頭回後部。背外側前頭前野（DLPFC）の一部。ワーキングメモリ・認知的柔軟性・実行機能を担う。",
+    "clinical": "障害時：ワーキングメモリ障害、遂行機能障害。左半球障害で非流暢性失語を伴うことがある。",
+    "network": "実行制御ネットワーク・前頭頭頂ネットワーク",
+    "connections": ["rostralmiddlefrontal", "superiorfrontal", "inferiorparietal"]
+  },
+  "cuneus": {
+    "function": "後頭葉内側面の楔形皮質。一次視覚野（V1）に隣接し、視野の上半分の視覚情報処理に関与。",
+    "clinical": "障害時：下側の視野欠損（下四半盲）。両側障害で上視野の皮質盲。",
+    "network": "視覚ネットワーク",
+    "connections": ["pericalcarine", "lingual", "lateraloccipital"]
+  },
+  "entorhinal": {
+    "function": "海馬への情報の入出力ゲートとして機能。嗅内皮質は海馬-新皮質間の情報変換の中継点であり、エピソード記憶・空間記憶の形成に不可欠。",
+    "clinical": "障害時：記憶障害（特に新規記憶形成）。アルツハイマー病では最早期に萎縮する領域の一つ。",
+    "network": "デフォルトモードネットワーク・記憶ネットワーク",
+    "connections": ["Hippocampus", "parahippocampal", "Amygdala"]
+  },
+  "fusiform": {
+    "function": "側頭葉下面の紡錘状回。顔認識（右優位）・文字認識（左優位：視覚語形野）・物体カテゴリー認識に関与。",
+    "clinical": "障害時：相貌失認（右側障害）、純粋失読（左側障害）、視覚物体失認。",
+    "network": "腹側視覚ストリーム",
+    "connections": ["inferiortemporal", "parahippocampal", "lateraloccipital"]
+  },
+  "inferiorparietal": {
+    "function": "下頭頂小葉（縁上回・角回を含む）。空間認知・道具使用・注意・言語（角回：意味処理）に関与。",
+    "clinical": "障害時：左側障害で観念運動失行・失算・失読失書（Gerstmann症候群）。右側障害で半側空間無視。",
+    "network": "背側注意ネットワーク・言語ネットワーク",
+    "connections": ["superiorparietal", "supramarginal", "superiortemporal"]
+  },
+  "inferiortemporal": {
+    "function": "下側頭回。腹側視覚処理ストリームの一部。高次視覚カテゴリー（動物・道具など）の認識に関与。",
+    "clinical": "障害時：視覚物体失認・相貌失認の一部。意味記憶の障害。",
+    "network": "腹側視覚ストリーム",
+    "connections": ["fusiform", "middletemporal", "lateraloccipital"]
+  },
+  "isthmuscingulate": {
+    "function": "帯状回の峡部。後帯状皮質と海馬傍回を連絡する移行領域。記憶と空間ナビゲーションの統合に関与。",
+    "clinical": "障害時：記憶障害・空間見当識障害。デフォルトモードネットワークの一部として機能低下は認知症早期から観察。",
+    "network": "デフォルトモードネットワーク",
+    "connections": ["posteriorcingulate", "parahippocampal", "Hippocampus"]
+  },
+  "lateraloccipital": {
+    "function": "後頭葉外側面。背側・腹側視覚ストリームの統合部位。形状・物体認識、動体視に関与。",
+    "clinical": "障害時：視覚物体失認・視野欠損。",
+    "network": "視覚ネットワーク",
+    "connections": ["cuneus", "fusiform", "inferiortemporal"]
+  },
+  "lateralorbitofrontal": {
+    "function": "外側眼窩前頭皮質。報酬価値の評価・意思決定・情動調節・社会的判断に関与。扁桃体との強い連絡を持つ。",
+    "clinical": "障害時：衝動制御障害・脱抑制・社会的判断力の低下。前頭葉症状の一型。",
+    "network": "辺縁系・報酬ネットワーク",
+    "connections": ["medialorbitofrontal", "Amygdala", "parsorbitalis"]
+  },
+  "lingual": {
+    "function": "舌状回。一次視覚野と腹側視覚ストリームの中間。色処理・視覚的形状認識・夢（視覚的内容）に関与。",
+    "clinical": "障害時：色認識障害（大脳性色覚異常）・視覚失認の一部。",
+    "network": "視覚ネットワーク",
+    "connections": ["pericalcarine", "cuneus", "fusiform"]
+  },
+  "medialorbitofrontal": {
+    "function": "内側眼窩前頭皮質。報酬の主観的価値評価・情動学習・意思決定に関与。ソマティックマーカー仮説の中核領域。",
+    "clinical": "障害時：意思決定障害（リスク評価不全）・社会行動障害・脱抑制。vmPFC損傷症例（Phineas Gage等）で古くから知られる。",
+    "network": "デフォルトモードネットワーク・報酬ネットワーク",
+    "connections": ["lateralorbitofrontal", "Amygdala", "rostralanteriorcingulate"]
+  },
+  "middletemporal": {
+    "function": "中側頭回。言語処理（意味記憶・語彙アクセス）・概念処理・運動観察に関与。左半球優位。",
+    "clinical": "障害時：語義失語（アノミア）・意味記憶障害。意味性認知症では進行性に萎縮。",
+    "network": "言語ネットワーク・腹側注意ネットワーク",
+    "connections": ["superiortemporal", "inferiortemporal", "inferiorparietal"]
+  },
+  "parahippocampal": {
+    "function": "海馬傍回。場所・文脈・シーン記憶に関与（海馬傍回場所領域：PPA）。海馬への入力路として機能。",
+    "clinical": "障害時：地誌的障害・場所認識障害・エピソード記憶障害。アルツハイマー病早期から萎縮。",
+    "network": "デフォルトモードネットワーク・記憶ネットワーク",
+    "connections": ["Hippocampus", "entorhinal", "isthmuscingulate"]
+  },
+  "paracentral": {
+    "function": "中心傍小葉。中心前回・中心後回の内側面。下肢の運動（皮質脊髄路）・体性感覚に関与。排尿・排便の随意制御にも関与。",
+    "clinical": "障害時：対側下肢の運動麻痺・感覚障害。両側障害で排尿障害（傍矢状面髄膜腫等）。",
+    "network": "体性運動ネットワーク",
+    "connections": ["precentral", "postcentral", "superiorfrontal"]
+  },
+  "parsopercularis": {
+    "function": "弁蓋部。Broca野（44野）の主要部。音韻処理・構文処理・言語産生に関与。左半球優位。",
+    "clinical": "障害時：Broca失語（非流暢性失語）・発語失行。左側優位半球での障害で明著。",
+    "network": "言語ネットワーク",
+    "connections": ["parstriangularis", "precentral", "superiortemporal"]
+  },
+  "parsorbitalis": {
+    "function": "眼窩部。下前頭回腹側部。言語的意味処理・作業記憶・社会認知に関与。",
+    "clinical": "障害時：言語の意味理解障害・社会的認知の一部障害。",
+    "network": "言語ネットワーク",
+    "connections": ["parsopercularis", "parstriangularis", "lateralorbitofrontal"]
+  },
+  "parstriangularis": {
+    "function": "三角部。Broca野（45野）。意味処理・語彙選択・作業記憶・音楽処理に関与。左半球優位。",
+    "clinical": "障害時：失語（特に語彙選択の困難）・意味処理障害。",
+    "network": "言語ネットワーク",
+    "connections": ["parsopercularis", "parsorbitalis", "rostralmiddlefrontal"]
+  },
+  "pericalcarine": {
+    "function": "鳥距溝周囲皮質。一次視覚野（V1/BA17）そのもの。対側の視野の網膜マップ（retinotopic map）を持つ。",
+    "clinical": "障害時：同名半盲（対側視野欠損）。黄斑回避が特徴。後大脳動脈梗塞で生じる。",
+    "network": "一次視覚ネットワーク",
+    "connections": ["cuneus", "lingual", "lateraloccipital"]
+  },
+  "postcentral": {
+    "function": "中心後回。一次体性感覚野（S1/BA3,1,2）。対側の身体からの触覚・位置覚・温痛覚情報を受容し処理。体部位局在あり。",
+    "clinical": "障害時：対側の感覚障害（位置覚・識別覚が主）。皮質感覚障害（立体認知覚障害など）。",
+    "network": "体性感覚ネットワーク",
+    "connections": ["precentral", "superiorparietal", "paracentral"]
+  },
+  "posteriorcingulate": {
+    "function": "後帯状皮質（PCC）。デフォルトモードネットワーク（DMN）の中核。自伝的記憶・自己参照処理・マインドワンダリングに関与。安静時に最も代謝活性が高い領域の一つ。",
+    "clinical": "障害時：記憶障害・注意障害。アルツハイマー病でFDG-PETの代謝低下が早期からみられる。",
+    "network": "デフォルトモードネットワーク",
+    "connections": ["precuneus", "isthmuscingulate", "medialorbitofrontal"]
+  },
+  "precentral": {
+    "function": "中心前回。一次運動野（M1/BA4）。対側の随意運動を制御。皮質脊髄路・皮質核路の起源。上肢（手）の支配野が最大（ホムンクルス）。",
+    "clinical": "障害時：対側の運動麻痺（中枢性）。上肢遠位部が最も影響を受けやすい。中大脳動脈梗塞で生じる。",
+    "network": "体性運動ネットワーク",
+    "connections": ["postcentral", "paracentral", "caudalmiddlefrontal"]
+  },
+  "precuneus": {
+    "function": "楔前部。頭頂葉内側面。デフォルトモードネットワークの中核。自己意識・エピソード記憶想起・視空間イメージ・意識的経験に関与。",
+    "clinical": "障害時：記憶障害・自己意識の変容。意識障害（植物状態）でのDMN機能低下の重要部位。",
+    "network": "デフォルトモードネットワーク",
+    "connections": ["posteriorcingulate", "superiorparietal", "isthmuscingulate"]
+  },
+  "rostralanteriorcingulate": {
+    "function": "吻側前帯状皮質（rACC）。情動処理・共感・痛みの情動的側面・うつ病の病態に深く関与。扁桃体との強い連絡。",
+    "clinical": "障害時・機能変容：うつ病・PTSD・不安障害での機能異常。深部脳刺激（DBS）の標的部位（治療抵抗性うつ）。",
+    "network": "辺縁系・情動ネットワーク",
+    "connections": ["caudalanteriorcingulate", "medialorbitofrontal", "Amygdala"]
+  },
+  "rostralmiddlefrontal": {
+    "function": "吻側中前頭回。DLPFC前部・前頭極に近い領域。計画・抽象的推論・認知的柔軟性・メタ認知に関与。",
+    "clinical": "障害時：遂行機能障害・計画立案困難・認知的柔軟性の低下。",
+    "network": "実行制御ネットワーク",
+    "connections": ["caudalmiddlefrontal", "superiorfrontal", "parstriangularis"]
+  },
+  "superiorfrontal": {
+    "function": "上前頭回。補足運動野（SMA）を含む。運動の計画・開始・シーケンス制御・遂行機能に関与。",
+    "clinical": "障害時：運動開始の困難（無動）・遂行機能障害。両側SMA障害で超皮質性運動失語・失行。",
+    "network": "実行制御ネットワーク・体性運動ネットワーク",
+    "connections": ["precentral", "rostralmiddlefrontal", "paracentral"]
+  },
+  "superiorparietal": {
+    "function": "上頭頂小葉（BA5・7）。背側視覚ストリームの終着点。視覚誘導性の到達・把握運動・空間的注意の制御に関与。",
+    "clinical": "障害時：視覚性失調・空間的注意障害。左側障害で観念運動失行の一部。",
+    "network": "背側注意ネットワーク・体性感覚ネットワーク",
+    "connections": ["inferiorparietal", "postcentral", "precuneus"]
+  },
+  "superiortemporal": {
+    "function": "上側頭回。聴覚連合野・Wernicke野（BA22）を含む。音声言語理解・聴覚処理・社会認知（Theory of Mind）に関与。左半球優位。",
+    "clinical": "障害時：Wernicke失語（流暢性失語・理解障害）。社会的認知障害（自閉スペクトラム症との関連）。",
+    "network": "言語ネットワーク・聴覚ネットワーク",
+    "connections": ["middletemporal", "bankssts", "supramarginal"]
+  },
+  "supramarginal": {
+    "function": "縁上回（BA40）。言語の音韻的短期記憶・音韻ループ（ワーキングメモリ）・体性感覚と視覚の統合・道具操作に関与。",
+    "clinical": "障害時：伝導失語（復唱障害）・観念運動失行（左側）。",
+    "network": "言語ネットワーク・背側注意ネットワーク",
+    "connections": ["inferiorparietal", "superiortemporal", "postcentral"]
+  },
+  "frontalpole": {
+    "function": "前頭極（BA10）。前前頭前野。多目標計画・プロスペクティブ記憶・抽象的思考・メタ認知の最高次中枢。",
+    "clinical": "障害時：多タスク処理の困難・複雑な意思決定障害。社会行動の障害（前頭側頭型認知症で萎縮）。",
+    "network": "デフォルトモードネットワーク・実行制御ネットワーク",
+    "connections": ["rostralmiddlefrontal", "medialorbitofrontal", "superiorfrontal"]
+  },
+  "temporalpole": {
+    "function": "側頭極（BA38）。意味記憶・社会情動的処理・人物同定・概念統合に関与。",
+    "clinical": "障害時：意味性認知症（両側萎縮）・社会的認知障害。前頭側頭型認知症の一型で著明な萎縮。",
+    "network": "腹側注意ネットワーク・辺縁系",
+    "connections": ["superiortemporal", "middletemporal", "Amygdala"]
+  },
+  "transversetemporal": {
+    "function": "横側頭回（Heschl回/BA41・42）。一次聴覚野（A1）。対側耳（両耳）からの音情報を受容。周波数局在（tonotopy）を持つ。",
+    "clinical": "障害時：両側障害で皮質聾（純音聴力は保たれるが音の意味理解不能）。片側は代償されやすい。",
+    "network": "一次聴覚ネットワーク",
+    "connections": ["superiortemporal", "bankssts"]
+  },
+  "insula": {
+    "function": "島皮質。内受容感覚（心拍・呼吸・痛みなどの身体内部感覚）・情動統合・言語（発語失行）・嗜癖・共感に関与。前島皮質は自律神経統合の中枢。",
+    "clinical": "障害時：発語失行（前島皮質）・内受容感覚障害・嚥下障害の一部。島皮質梗塞は心臓自律神経障害・突然死リスクと関連。",
+    "network": "顕著性ネットワーク・辺縁系",
+    "connections": ["precentral", "superiortemporal", "Amygdala"]
+  },
+  "Cerebellum-White-Matter": {
+    "function": "小脳の白質。小脳皮質と小脳核、脳幹・大脳皮質との線維連絡を担う。",
+    "clinical": "障害時：白質病変では小脳症状（測定障害・失調）が生じる。",
+    "network": "小脳ネットワーク",
+    "connections": ["Cerebellum-Cortex", "Brain-Stem"]
+  },
+  "Cerebellum-Cortex": {
+    "function": "小脳皮質。運動の協調・精密な時間的制御・バランス・運動学習（手続き記憶）に関与。認知機能への関与も報告（小脳認知感情症候群）。",
+    "clinical": "障害時：小脳性運動失調（測定障害・企図振戦・失調性歩行・眼振）。小脳認知感情症候群（Schmahmann症候群）。",
+    "network": "小脳ネットワーク・体性運動ネットワーク",
+    "connections": ["Brain-Stem", "Thalamus-Proper"]
+  },
+  "Thalamus-Proper": {
+    "function": "視床。感覚情報（痛覚・温度覚・触覚・視覚・聴覚）と運動情報の皮質への中継核。意識・注意・睡眠覚醒リズムの調節に関与。",
+    "clinical": "障害時：視床症候群（対側の感覚障害・視床痛・不随意運動）。傍正中視床梗塞で記憶障害・意識障害。",
+    "network": "体性感覚ネットワーク・視覚ネットワーク・聴覚ネットワーク",
+    "connections": ["precentral", "postcentral", "Caudate"]
+  },
+  "Caudate": {
+    "function": "尾状核。大脳基底核の一部（線条体）。運動制御・認知機能（認知的柔軟性・報酬に基づく学習）に関与。視床との皮質-線条体-淡蒼球-視床ループの構成要素。",
+    "clinical": "障害時：ハンチントン病（萎縮）・脳卒中による認知症・強迫症状との関連。",
+    "network": "大脳基底核ネットワーク",
+    "connections": ["Putamen", "Thalamus-Proper", "caudalmiddlefrontal"]
+  },
+  "Putamen": {
+    "function": "被殻。大脳基底核（線条体）。主に運動制御・運動学習・習慣形成に関与。皮質からの入力を受け、淡蒼球・黒質へ出力。",
+    "clinical": "障害時：パーキンソン病関連回路の障害・片側バリズム（対側視床下核障害と合わせて）。",
+    "network": "大脳基底核ネットワーク",
+    "connections": ["Pallidum", "Caudate", "Thalamus-Proper"]
+  },
+  "Pallidum": {
+    "function": "淡蒼球。大脳基底核の主要出力核。抑制性出力（GABA性）で視床・脳幹を制御。運動の開始・抑制のバランスに関与。",
+    "clinical": "障害時：ウィルソン病・肝性脳症・一酸化炭素中毒で変性しやすい。舞踏運動・ジストニアとの関連。",
+    "network": "大脳基底核ネットワーク",
+    "connections": ["Putamen", "Thalamus-Proper", "Brain-Stem"]
+  },
+  "Hippocampus": {
+    "function": "海馬。新規エピソード記憶の形成・空間ナビゲーション（場所細胞・グリッド細胞）に不可欠。短期記憶から長期記憶への固定化（記憶の固定化）を担う。",
+    "clinical": "障害時：前向性健忘（新規記憶形成障害）。両側障害でH.M.症例のような重篤な健忘。アルツハイマー病・側頭葉てんかんで早期から障害。",
+    "network": "デフォルトモードネットワーク・記憶ネットワーク",
+    "connections": ["entorhinal", "parahippocampal", "Amygdala"]
+  },
+  "Amygdala": {
+    "function": "扁桃体。情動処理（特に恐怖・不安）・情動的記憶の強化・社会的刺激の認識（表情など）に関与。自律神経反応の調節。",
+    "clinical": "障害時：Klüver-Bucy症候群（両側障害：感情鈍麻・口唇傾向・恐怖消失）。PTSDでの過活動・萎縮。",
+    "network": "辺縁系・情動ネットワーク",
+    "connections": ["Hippocampus", "entorhinal", "insula"]
+  },
+  "Brain-Stem": {
+    "function": "脳幹（中脳・橋・延髄）。意識の維持（網様体賦活系）・脳神経核（動眼・三叉・顔面・迷走など）・呼吸・循環の自律神経中枢を含む。",
+    "clinical": "障害時：脳幹梗塞（Wallenberg症候群・Weber症候群など）・意識障害・脳神経麻痺・呼吸障害。脳死判定の基準部位。",
+    "network": "覚醒・自律神経ネットワーク",
+    "connections": ["Cerebellum-Cortex", "Thalamus-Proper", "Pallidum"]
+  }
+}

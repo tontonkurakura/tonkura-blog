@@ -1,0 +1,604 @@
+{
+  "bankssts": {
+    "ja": "上側頭溝周辺部",
+    "en": "Banks of Superior Temporal Sulcus",
+    "centroid_lh": [
+      -54.1984,
+      1.0733,
+      30.7372
+    ],
+    "centroid_rh": [
+      52.9819,
+      2.793,
+      24.8217
+    ]
+  },
+  "caudalanteriorcingulate": {
+    "ja": "尾側前帯状皮質",
+    "en": "Caudal Anterior Cingulate",
+    "centroid_lh": [
+      -4.5245,
+      18.2538,
+      -37.668
+    ],
+    "centroid_rh": [
+      4.2078,
+      18.3561,
+      -37.7643
+    ]
+  },
+  "caudalmiddlefrontal": {
+    "ja": "尾側中前頭回",
+    "en": "Caudal Middle Frontal",
+    "centroid_lh": [
+      -38.041,
+      40.2899,
+      -26.0099
+    ],
+    "centroid_rh": [
+      36.1825,
+      40.81,
+      -28.1735
+    ]
+  },
+  "cuneus": {
+    "ja": "楔部",
+    "en": "Cuneus",
+    "centroid_lh": [
+      -8.0851,
+      12.0475,
+      64.8063
+    ],
+    "centroid_rh": [
+      8.1968,
+      15.0845,
+      61.5948
+    ]
+  },
+  "entorhinal": {
+    "ja": "嗅内皮質",
+    "en": "Entorhinal",
+    "centroid_lh": [
+      -24.8207,
+      -40.4101,
+      -10.9714
+    ],
+    "centroid_rh": [
+      22.1582,
+      -41.8877,
+      -10.8593
+    ]
+  },
+  "fusiform": {
+    "ja": "紡錘状回",
+    "en": "Fusiform",
+    "centroid_lh": [
+      -35.6358,
+      -28.6564,
+      28.9289
+    ],
+    "centroid_rh": [
+      32.9605,
+      -30.1398,
+      24.3528
+    ]
+  },
+  "inferiorparietal": {
+    "ja": "下頭頂小葉",
+    "en": "Inferior Parietal",
+    "centroid_lh": [
+      -41.7925,
+      24.3749,
+      54.8378
+    ],
+    "centroid_rh": [
+      45.7201,
+      24.9273,
+      46.2924
+    ]
+  },
+  "inferiortemporal": {
+    "ja": "下側頭回",
+    "en": "Inferior Temporal",
+    "centroid_lh": [
+      -52.4857,
+      -30.6257,
+      19.0389
+    ],
+    "centroid_rh": [
+      50.2632,
+      -33.4849,
+      14.362
+    ]
+  },
+  "isthmuscingulate": {
+    "ja": "帯状回峡",
+    "en": "Isthmus Cingulate",
+    "centroid_lh": [
+      -6.5995,
+      11.2575,
+      28.998
+    ],
+    "centroid_rh": [
+      6.6828,
+      9.3107,
+      28.3493
+    ]
+  },
+  "lateraloccipital": {
+    "ja": "外側後頭皮質",
+    "en": "Lateral Occipital",
+    "centroid_lh": [
+      -30.7705,
+      -7.1246,
+      73.3853
+    ],
+    "centroid_rh": [
+      34.0574,
+      -6.553,
+      68.4455
+    ]
+  },
+  "lateralorbitofrontal": {
+    "ja": "外側眼窩前頭皮質",
+    "en": "Lateral Orbitofrontal",
+    "centroid_lh": [
+      -25.2298,
+      -26.6034,
+      -47.7773
+    ],
+    "centroid_rh": [
+      21.7267,
+      -26.6259,
+      -46.2741
+    ]
+  },
+  "lingual": {
+    "ja": "舌状回",
+    "en": "Lingual",
+    "centroid_lh": [
+      -15.5971,
+      -14.6355,
+      51.1999
+    ],
+    "centroid_rh": [
+      14.5269,
+      -13.7176,
+      47.5774
+    ]
+  },
+  "medialorbitofrontal": {
+    "ja": "内側眼窩前頭皮質",
+    "en": "Medial Orbitofrontal",
+    "centroid_lh": [
+      -6.3062,
+      -24.5203,
+      -51.6187
+    ],
+    "centroid_rh": [
+      5.1585,
+      -23.2979,
+      -54.8294
+    ]
+  },
+  "middletemporal": {
+    "ja": "中側頭回",
+    "en": "Middle Temporal",
+    "centroid_lh": [
+      -59.5648,
+      -20.45,
+      9.5741
+    ],
+    "centroid_rh": [
+      57.6462,
+      -21.6156,
+      7.8271
+    ]
+  },
+  "parahippocampal": {
+    "ja": "海馬傍回",
+    "en": "Parahippocampal",
+    "centroid_lh": [
+      -24.8541,
+      -26.881,
+      15.1295
+    ],
+    "centroid_rh": [
+      23.8532,
+      -26.6868,
+      12.9645
+    ]
+  },
+  "paracentral": {
+    "ja": "中心傍小葉",
+    "en": "Paracentral",
+    "centroid_lh": [
+      -7.2924,
+      50.2295,
+      13.273
+    ],
+    "centroid_rh": [
+      7.2481,
+      48.7336,
+      11.5956
+    ]
+  },
+  "parsopercularis": {
+    "ja": "弁蓋部",
+    "en": "Pars Opercularis",
+    "centroid_lh": [
+      -48.6444,
+      6.5361,
+      -31.5231
+    ],
+    "centroid_rh": [
+      47.186,
+      5.3845,
+      -32.0757
+    ]
+  },
+  "parsorbitalis": {
+    "ja": "眼窩部",
+    "en": "Pars Orbitalis",
+    "centroid_lh": [
+      -44.5078,
+      -21.0176,
+      -56.8896
+    ],
+    "centroid_rh": [
+      42.105,
+      -21.1226,
+      -58.9548
+    ]
+  },
+  "parstriangularis": {
+    "ja": "三角部",
+    "en": "Pars Triangularis",
+    "centroid_lh": [
+      -48.0027,
+      -5.5999,
+      -47.6772
+    ],
+    "centroid_rh": [
+      47.8694,
+      -3.858,
+      -48.183
+    ]
+  },
+  "pericalcarine": {
+    "ja": "鳥距溝周囲皮質",
+    "en": "Pericalcarine",
+    "centroid_lh": [
+      -9.2406,
+      -3.1514,
+      65.7275
+    ],
+    "centroid_rh": [
+      9.0957,
+      -1.1758,
+      62.5851
+    ]
+  },
+  "postcentral": {
+    "ja": "中心後回",
+    "en": "Postcentral",
+    "centroid_lh": [
+      -45.9644,
+      37.5346,
+      6.3957
+    ],
+    "centroid_rh": [
+      43.6835,
+      36.9402,
+      3.4008
+    ]
+  },
+  "posteriorcingulate": {
+    "ja": "後帯状皮質",
+    "en": "Posterior Cingulate",
+    "centroid_lh": [
+      -5.8354,
+      31.8388,
+      0.9973
+    ],
+    "centroid_rh": [
+      6.4944,
+      33.3225,
+      -0.7867
+    ]
+  },
+  "precentral": {
+    "ja": "中心前回",
+    "en": "Precentral",
+    "centroid_lh": [
+      -41.437,
+      36.721,
+      -7.0056
+    ],
+    "centroid_rh": [
+      40.0357,
+      36.8633,
+      -9.4581
+    ]
+  },
+  "precuneus": {
+    "ja": "楔前部",
+    "en": "Precuneus",
+    "centroid_lh": [
+      -8.7673,
+      29.6332,
+      42.7504
+    ],
+    "centroid_rh": [
+      9.5945,
+      28.6637,
+      42.1362
+    ]
+  },
+  "rostralanteriorcingulate": {
+    "ja": "吻側前帯状皮質",
+    "en": "Rostral Anterior Cingulate",
+    "centroid_lh": [
+      -4.2739,
+      -8.0798,
+      -53.8033
+    ],
+    "centroid_rh": [
+      4.7786,
+      -2.398,
+      -55.8317
+    ]
+  },
+  "rostralmiddlefrontal": {
+    "ja": "吻側中前頭回",
+    "en": "Rostral Middle Frontal",
+    "centroid_lh": [
+      -35.1755,
+      9.275,
+      -62.7674
+    ],
+    "centroid_rh": [
+      33.7383,
+      9.9874,
+      -63.7465
+    ]
+  },
+  "superiorfrontal": {
+    "ja": "上前頭回",
+    "en": "Superior Frontal",
+    "centroid_lh": [
+      -11.8938,
+      34.0776,
+      -45.7258
+    ],
+    "centroid_rh": [
+      11.6205,
+      34.5781,
+      -46.6681
+    ]
+  },
+  "superiorparietal": {
+    "ja": "上頭頂小葉",
+    "en": "Superior Parietal",
+    "centroid_lh": [
+      -24.556,
+      43.0346,
+      48.2589
+    ],
+    "centroid_rh": [
+      24.1236,
+      44.0792,
+      47.2933
+    ]
+  },
+  "superiortemporal": {
+    "ja": "上側頭回",
+    "en": "Superior Temporal",
+    "centroid_lh": [
+      -55.1788,
+      -10.3023,
+      -2.2505
+    ],
+    "centroid_rh": [
+      53.9996,
+      -12.1739,
+      -6.6616
+    ]
+  },
+  "supramarginal": {
+    "ja": "縁上回",
+    "en": "Supramarginal",
+    "centroid_lh": [
+      -56.5863,
+      26.3943,
+      23.1841
+    ],
+    "centroid_rh": [
+      54.3439,
+      27.3884,
+      14.7764
+    ]
+  },
+  "frontalpole": {
+    "ja": "前頭極",
+    "en": "Frontal Pole",
+    "centroid_lh": [
+      -9.2071,
+      -18.2281,
+      -84.1924
+    ],
+    "centroid_rh": [
+      8.8105,
+      -21.9169,
+      -84.2371
+    ]
+  },
+  "temporalpole": {
+    "ja": "側頭極",
+    "en": "Temporal Pole",
+    "centroid_lh": [
+      -29.8305,
+      -46.3805,
+      -29.3722
+    ],
+    "centroid_rh": [
+      26.4335,
+      -44.5383,
+      -31.6445
+    ]
+  },
+  "transversetemporal": {
+    "ja": "横側頭回",
+    "en": "Transverse Temporal",
+    "centroid_lh": [
+      -46.2641,
+      2.4131,
+      6.1929
+    ],
+    "centroid_rh": [
+      44.8632,
+      2.0246,
+      1.7123
+    ]
+  },
+  "insula": {
+    "ja": "島皮質",
+    "en": "Insula",
+    "centroid_lh": [
+      -37.5828,
+      -6.5436,
+      -15.1158
+    ],
+    "centroid_rh": [
+      37.1653,
+      -7.4658,
+      -17.9337
+    ]
+  },
+  "Cerebellum-White-Matter": {
+    "ja": "小脳白質",
+    "en": "Cerebellum White Matter",
+    "centroid_lh": [
+      -20.5676,
+      -37.6029,
+      42.8924
+    ],
+    "centroid_rh": [
+      19.3435,
+      -38.4328,
+      43.7551
+    ]
+  },
+  "Cerebellum-Cortex": {
+    "ja": "小脳皮質",
+    "en": "Cerebellum Cortex",
+    "centroid_lh": [
+      -21.4578,
+      -39.3386,
+      43.7348
+    ],
+    "centroid_rh": [
+      20.8213,
+      -40.2712,
+      44.2235
+    ]
+  },
+  "Thalamus-Proper": {
+    "ja": "視床",
+    "en": "Thalamus Proper",
+    "centroid_lh": [
+      -13.6785,
+      -1.3411,
+      2.4389
+    ],
+    "centroid_rh": [
+      11.9111,
+      -1.1017,
+      1.6661
+    ]
+  },
+  "Caudate": {
+    "ja": "尾状核",
+    "en": "Caudate",
+    "centroid_lh": [
+      -13.1819,
+      1.5409,
+      -23.9623
+    ],
+    "centroid_rh": [
+      11.3067,
+      0.49,
+      -25.2125
+    ]
+  },
+  "Putamen": {
+    "ja": "被殻",
+    "en": "Putamen",
+    "centroid_lh": [
+      -28.1016,
+      -11.0587,
+      -15.602
+    ],
+    "centroid_rh": [
+      26.9537,
+      -11.8215,
+      -16.4071
+    ]
+  },
+  "Pallidum": {
+    "ja": "淡蒼球",
+    "en": "Pallidum",
+    "centroid_lh": [
+      -23.3493,
+      -11.5782,
+      -11.6433
+    ],
+    "centroid_rh": [
+      21.932,
+      -12.5464,
+      -12.126
+    ]
+  },
+  "Hippocampus": {
+    "ja": "海馬",
+    "en": "Hippocampus",
+    "centroid_lh": [
+      -25.2229,
+      -20.0527,
+      7.7162
+    ],
+    "centroid_rh": [
+      24.1928,
+      -19.5491,
+      7.0953
+    ]
+  },
+  "Amygdala": {
+    "ja": "扁桃体",
+    "en": "Amygdala",
+    "centroid_lh": [
+      -23.4721,
+      -28.3176,
+      -11.1837
+    ],
+    "centroid_rh": [
+      21.2733,
+      -28.3871,
+      -12.1621
+    ]
+  },
+  "Brain-Stem": {
+    "ja": "脳幹",
+    "en": "Brain Stem",
+    "centroid_lh": [
+      -9.058,
+      -40.9615,
+      16.7162
+    ],
+    "centroid_rh": [
+      8.2531,
+      -40.6342,
+      16.058
+    ]
+  }
+}
