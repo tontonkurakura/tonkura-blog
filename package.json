@@ -5,7 +5,6 @@
   "scripts": {
     "predev": "node scripts/update-lastmod.mjs",
     "dev": "next dev",
-    "prebuild": "npx ts-node -P scripts/tsconfig.json scripts/generate-cache.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

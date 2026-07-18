@@ -6,8 +6,8 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import highlight from "rehype-highlight";
-import { visit } from "unist-util-visit";
 import remarkGfm from "remark-gfm";
+import { unstable_cache } from "next/cache";
 import {
   PostMeta,
   PostData,
@@ -20,55 +20,12 @@ import {
 const contentDirectory = path.join(process.cwd(), "content");
 const blogDirectory = path.join(contentDirectory, "blog");
 
-// メモリキャッシュの追加
-interface MemoryCache {
-  postMeta: PostMeta[] | null;
-  tagCounts: { [key: string]: number } | null;
-  postContent: { [key: string]: PostData } | null;
-  lastUpdated: number;
-}
-
-// キャッシュの有効期限（5分）
-const CACHE_TTL = 5 * 60 * 1000;
-
-// メモリキャッシュの初期化
-const memoryCache: MemoryCache = {
-  postMeta: null,
-  tagCounts: null,
-  postContent: null,
-  lastUpdated: 0,
-};
-
-// 環境に応じてキャッシュディレクトリを設定
-const getCacheDir = () => {
-  if (process.env.NODE_ENV === "production") {
-    return "/tmp/.cache";
-  }
-  return path.join(process.cwd(), ".cache");
-};
-
-const CACHE_FILE = path.join(getCacheDir(), "posts-meta.json");
-
-// メタデータのキャッシュを作成
-export async function generatePostMetaCache(): Promise<PostMeta[]> {
-  // メモリキャッシュが有効な場合はそれを返す
-  const now = Date.now();
-  if (memoryCache.postMeta && now - memoryCache.lastUpdated < CACHE_TTL) {
-    return memoryCache.postMeta;
-  }
-
+// 内部関数: 全記事のメタデータを取得（キャッシュなし）
+async function fetchPostMeta(): Promise<PostMeta[]> {
   const posts: PostMeta[] = [];
 
-  // キャッシュディレクトリを作成
-  const cacheDir = getCacheDir();
-  try {
-    await fs.promises.mkdir(cacheDir, { recursive: true });
-  } catch (error) {
-    console.warn("キャッシュディレクトリの作成に失敗しました:", error);
-    // エラーは無視して続行
-  }
-
   async function traverseDirectory(dir: string) {
+    // fs.promisesを使用してディレクトリを読み込む
     const items = await fs.promises.readdir(dir, { withFileTypes: true });
 
     for (const item of items) {
@@ -103,7 +60,7 @@ export async function generatePostMetaCache(): Promise<PostMeta[]> {
   await traverseDirectory(blogDirectory);
 
   // 日付でソート
-  const sortedPosts = posts.sort((a, b) => {
+  return posts.sort((a, b) => {
     const dateA = a.date ? new Date(a.date).getTime() : 0;
     const dateB = b.date ? new Date(b.date).getTime() : 0;
     if (dateA === dateB) {
@@ -111,18 +68,19 @@ export async function generatePostMetaCache(): Promise<PostMeta[]> {
     }
     return dateB - dateA;
   });
-
-  // メモリキャッシュを更新
-  memoryCache.postMeta = sortedPosts;
-  memoryCache.lastUpdated = now;
-
-  return sortedPosts;
 }
 
-// キャッシュからメタデータを取得（キャッシュがない場合は直接生成）
-export async function getPostMetaFromCache(): Promise<PostMeta[]> {
-  return generatePostMetaCache();
-}
+// キャッシュの設定
+// メタデータは頻繁には変わらないが、新しい記事を追加したときに反映させたい
+// revalidate: 3600 (1時間) またはオンデマンドでの更新を想定
+export const getPostMetaFromCache = unstable_cache(
+  async () => fetchPostMeta(),
+  ["posts-meta"],
+  { tags: ["posts"], revalidate: 3600 }
+);
+
+// 互換性のためのエイリアス
+export const generatePostMetaCache = getPostMetaFromCache;
 
 // 一覧表示用の軽量な関数
 export async function getPostList(
@@ -136,13 +94,13 @@ export async function getPostList(
 
     // タグでフィルタリング
     if (options.tag) {
-      const searchTag = options.tag; // 型を確定させる
+      const searchTag = options.tag;
       filteredPosts = filteredPosts.filter((post) =>
         post.tags ? post.tags.includes(searchTag) : false
       );
     }
 
-    // 検索クエリでフィルタリング（タイトル、説明文、タグを含む）
+    // 検索クエリでフィルタリング
     if (options.searchQuery) {
       const query = options.searchQuery.toLowerCase();
       filteredPosts = filteredPosts.filter((post) => {
@@ -168,17 +126,8 @@ export async function getPostList(
   }
 }
 
-// 記事の詳細を取得
-export async function getPostData(id: string): Promise<PostData | null> {
-  // メモリキャッシュをチェック
-  if (
-    memoryCache.postContent &&
-    memoryCache.postContent[id] &&
-    Date.now() - memoryCache.lastUpdated < CACHE_TTL
-  ) {
-    return memoryCache.postContent[id];
-  }
-
+// 内部関数: 記事詳細を取得（キャッシュなし）
+async function fetchPostData(id: string): Promise<PostData | null> {
   try {
     const fullPath = path.join(blogDirectory, `${id}.md`);
     const fileContent = await fs.promises.readFile(fullPath, "utf-8");
@@ -195,12 +144,7 @@ export async function getPostData(id: string): Promise<PostData | null> {
 
     const htmlContent = processedContent.toString();
 
-    // キャッシュを初期化
-    if (!memoryCache.postContent) {
-      memoryCache.postContent = {};
-    }
-
-    const postData: PostData = {
+    return {
       id,
       title: data.title || path.basename(fullPath, ".md"),
       date: data.date,
@@ -208,27 +152,21 @@ export async function getPostData(id: string): Promise<PostData | null> {
       description: data.description || "",
       content: htmlContent,
     };
-
-    // メモリキャッシュに追加
-    memoryCache.postContent[id] = postData;
-
-    return postData;
   } catch (error) {
     console.error(`記事の取得に失敗しました: ${id}`, error);
     return null;
   }
 }
 
+// 記事の詳細を取得（キャッシュ付き）
+export const getPostData = unstable_cache(
+  async (id: string) => fetchPostData(id),
+  ["post-data"],
+  { tags: ["posts"], revalidate: 3600 }
+);
+
 // タグごとの記事数を取得
 export async function getTagCounts(): Promise<{ [key: string]: number }> {
-  // メモリキャッシュをチェック
-  if (
-    memoryCache.tagCounts &&
-    Date.now() - memoryCache.lastUpdated < CACHE_TTL
-  ) {
-    return memoryCache.tagCounts;
-  }
-
   const posts = await getPostMetaFromCache();
   const tagCounts: { [key: string]: number } = {};
 
@@ -240,13 +178,12 @@ export async function getTagCounts(): Promise<{ [key: string]: number }> {
     }
   });
 
-  // メモリキャッシュに追加
-  memoryCache.tagCounts = tagCounts;
-
   return tagCounts;
 }
 
 // ディレクトリ構造を取得
+// 頻繁に変更されないためキャッシュ可能ですが、ファイルシステム走査が含まれるため
+// unstable_cacheでラップするのも有効です。ここでは一旦そのままにします。
 export async function getDirectoryStructure(
   baseDir: string = contentDirectory
 ): Promise<DirectoryStructure> {
