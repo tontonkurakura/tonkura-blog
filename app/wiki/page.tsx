@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { getAllQuestionMeta } from "@/lib/questions";
+import {
+  getAllQuestionMeta,
+  getOpenQuestions,
+  getRealQuestions,
+  isTemplate,
+  TEMPLATE_ID,
+} from "@/lib/questions";
 
 export const metadata = {
   title: "高次脳機能部 wiki",
@@ -19,8 +25,8 @@ const STATUS_STYLE: Record<string, { label: string; className: string }> = {
 };
 
 export default function WikiIndexPage() {
-  const questions = getAllQuestionMeta();
-  const openCount = questions.filter((q) => q.status === "open").length;
+  const questions = getRealQuestions();
+  const openCount = getOpenQuestions().length;
 
   return (
     <div className="container mx-auto max-w-3xl px-4 py-8">
@@ -63,6 +69,15 @@ export default function WikiIndexPage() {
             );
           })}
         </ul>
+      )}
+
+      {/* 見本は一覧と件数から外しているが、辿れなくなると型崩れに気づけない */}
+      {getAllQuestionMeta().some(isTemplate) && (
+        <p className="mt-12 border-t border-gray-200 pt-4 text-xs text-gray-400">
+          <Link href={`/wiki/${TEMPLATE_ID}`} className="hover:text-gray-600">
+            テンプレート見本（{TEMPLATE_ID}）
+          </Link>
+        </p>
       )}
     </div>
   );

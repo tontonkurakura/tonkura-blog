@@ -105,9 +105,24 @@ export function getAllQuestionMeta(): QuestionMeta[] {
     .sort((a, b) => a.id.localeCompare(b.id));
 }
 
-/** status:open の一覧＝次回の議題キュー。 */
+/**
+ * q-000 は frontmatter と本文テンプレの描画を確かめるための見本であって、
+ * 実際の問いではない。件数と議題キューからは除く。
+ */
+export const TEMPLATE_ID = "q-000";
+
+export function isTemplate(q: QuestionMeta): boolean {
+  return q.id === TEMPLATE_ID;
+}
+
+/** 見本を除いた実際の問い。一覧の件数はこれを使う。 */
+export function getRealQuestions(): QuestionMeta[] {
+  return getAllQuestionMeta().filter((q) => !isTemplate(q));
+}
+
+/** status:open の一覧＝次回の議題キュー。見本は混ぜない。 */
 export function getOpenQuestions(): QuestionMeta[] {
-  return getAllQuestionMeta().filter((q) => q.status === "open");
+  return getRealQuestions().filter((q) => q.status === "open");
 }
 
 /**
