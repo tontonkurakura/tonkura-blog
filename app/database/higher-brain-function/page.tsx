@@ -2,94 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-
-// 症候・疾患のカテゴリー定義
-const categories = [
-  {
-    id: "memory",
-    title: "記憶の障害",
-    items: [
-      { id: "alzheimer-memory", title: "アルツハイマー型認知症による記憶障害" },
-      { id: "transient-epileptic-amnesia", title: "一過性てんかん性健忘" },
-      { id: "dissociative-amnesia", title: "解離性健忘" },
-      { id: "confabulation", title: "作話" },
-    ],
-  },
-  {
-    id: "language",
-    title: "言語の障害",
-    items: [
-      { id: "broca-aphasia", title: "運動性失語（Broca失語）" },
-      { id: "wernicke-aphasia", title: "感覚性失語（Wernicke失語）" },
-      { id: "conduction-aphasia", title: "伝導失語" },
-      { id: "transcortical-aphasia", title: "超皮質性失語" },
-      { id: "pure-anarthria", title: "純粋語唖" },
-      { id: "anomic-aphasia", title: "失名辞失語（健忘失語）" },
-      { id: "apraxia-of-speech", title: "発語失行" },
-      { id: "alexia-agraphia", title: "失読失書" },
-      { id: "pure-agraphia", title: "純粋失書" },
-      { id: "pure-alexia", title: "純粋失読" },
-      { id: "surface-dyslexia-dysgraphia", title: "表層失読/表層失書" },
-      { id: "phonological-dyslexia-dysgraphia", title: "音韻失読/音韻失書" },
-      { id: "deep-dyslexia-dysgraphia", title: "深層失読/深層失書" },
-    ],
-  },
-  {
-    id: "praxis",
-    title: "行為の障害",
-    items: [
-      { id: "limb-kinetic-apraxia", title: "肢節運動失行" },
-      { id: "ideational-apraxia", title: "観念失行" },
-      { id: "ideomotor-apraxia", title: "観念運動失行" },
-      { id: "constructional-disorder", title: "構成障害" },
-      { id: "compulsive-manipulation", title: "強迫的行為" },
-      { id: "buccofacial-apraxia", title: "口部顔面失行" },
-      { id: "executive-dysfunction", title: "遂行機能障害" },
-      { id: "dressing-apraxia", title: "着衣失行" },
-      { id: "imitation-behavior", title: "模倣行動" },
-    ],
-  },
-  {
-    id: "cognition",
-    title: "認知の障害",
-    items: [
-      { id: "visual-agnosia", title: "視覚性失認" },
-      { id: "prosopagnosia", title: "相貌失認" },
-      { id: "topographical-disorder", title: "地誌的障害" },
-      { id: "unilateral-spatial-neglect", title: "半側空間無視" },
-      { id: "balint-syndrome", title: "Balint症候群" },
-      { id: "cerebral-achromatopsia", title: "大脳性色覚障害" },
-      { id: "asomatognosia", title: "身体失認" },
-      { id: "auditory-agnosia", title: "聴覚性失認" },
-      { id: "amusia", title: "感覚性失音楽" },
-      { id: "anton-syndrome", title: "Anton症候群" },
-      { id: "tactile-agnosia", title: "触覚性失認" },
-      { id: "acalculia", title: "失計算" },
-      { id: "right-left-disorientation", title: "左右盲" },
-      { id: "anosognosia", title: "病態失認" },
-    ],
-  },
-  {
-    id: "frontal",
-    title: "前頭葉の障害",
-    items: [
-      { id: "motivational-disorder", title: "意欲障害" },
-      { id: "emotional-incontinence", title: "感情失禁" },
-      { id: "executive-dysfunction-frontal", title: "遂行機能障害" },
-      { id: "personality-change", title: "性格変化" },
-      { id: "disinhibition", title: "脱抑制" },
-      { id: "compulsive-tool-use", title: "道具の強迫的使用" },
-      { id: "grasping", title: "把握現象" },
-      { id: "perseveration", title: "保続" },
-      { id: "antagonistic-apraxia", title: "拮抗失行" },
-    ],
-  },
-  {
-    id: "others",
-    title: "その他",
-    items: [{ id: "callosal-disconnection", title: "脳梁離断症候群" }],
-  },
-];
+import { categories } from "@/constants/higherBrainFunction";
 
 export default function HigherBrainFunctionPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -193,9 +106,12 @@ export default function HigherBrainFunctionPage() {
           <div className="space-y-6">
             {filteredCategories.map((category) => (
               <div key={category.id} className="border-b pb-4 last:border-b-0">
-                <h3 className="text-lg font-semibold mb-3 text-gray-700">
+                <h3 className="text-lg font-semibold mb-1 text-gray-700">
                   {category.title}
                 </h3>
+                {category.note && (
+                  <p className="text-xs text-gray-500 mb-3">{category.note}</p>
+                )}
                 <div className="space-y-2">
                   {category.items.map((item) => (
                     <Link
@@ -212,18 +128,16 @@ export default function HigherBrainFunctionPage() {
           </div>
         </div>
 
-        {/* 検査セクション */}
+        {/* 検査セクション
+            以前は WAB への Link があったが、content 側に examinations/ が
+            存在せず 404 になっていたので外した。項目を作るときは
+            constants/higherBrainFunction.ts と同じくファイルと定義を対にすること。
+            なお検査は著作物なので、設問文・選択肢文は載せない。 */}
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold mb-6">検査</h2>
-          <div className="space-y-2">
-            <Link
-              href="/database/higher-brain-function/examinations/wab"
-              className="block p-2 hover:bg-gray-50 rounded transition-colors text-gray-600 hover:text-gray-900"
-            >
-              WAB失語症検査
-            </Link>
-            {/* 他の検査へのリンクを追加 */}
-          </div>
+          <p className="text-sm text-gray-500">
+            準備中です。各症候のページに、その症候で用いる検査を記載しています。
+          </p>
         </div>
       </div>
     </div>
