@@ -7,558 +7,222 @@ domain: [time-perception, parkinsons-disease, cerebellum]
 sessions:
   - n: 14
     at: "0:35:33"
+    date: "2026-07-10"
 depends_on: []
 related: [q-001, q-002]
 refs: []
 updated: 2026-07-19
 ---
 
-## 問いの精密化
+## 問い
 
-方向が定まらない理由として、**課題型の違い**が疑われる。文献を突き合わせる前に
-どの課題の話かを揃える必要がある。
+パーキンソン病や小脳疾患で、患者の主観的な時間の進み方は健常者より速くなるのか、遅くなるのか。
+
+## この問いが出た文脈
+
+時間認知の一般論から、神経疾患での測定へ話が移ったときに立った。パーキンソン病で内的クロックを測ると L-dopa 治療前は遅く治療後に速くなる、ただしその後の研究では結果が一定しない、という伝聞が紹介されたのがきっかけである。
+
+この場では二つの、一見矛盾する観察が並んだ。「十秒たったと思ったら言ってください」と求めると十五秒ほど経ってから答える患者がいる一方、一定の長さを提示して何秒だったかを言わせると短めに答える、というものである。あわせて、パーキンソン病の思考緩慢（bradyphrenia）が注意障害や遂行機能障害と区別できるのか、という論点も提示された。
+
+## 前提となる考え方
+
+「クロックが速い／遅い」という言い方は、ある特定のモデルを前提にしている。**ペースメーカー・蓄積器モデル**である。体内に一定間隔で信号を打つペースメーカーがあり、その信号を蓄積器が数え、溜まった数を時間の長さとして読む、という枠組みで、ヒトの計時研究では scalar expectancy theory として定式化されてきた（Rakitin 1998）。このモデルでは「クロックが速い」とは、単位時間あたりに溜まる信号が多いことを意味する。
+
+ここに**最初の落とし穴がある。同じ「クロックが速い」が、課題によって正反対の行動を生む。**
+
+| クロックが**速い**とすると | 産出課題（十秒を自分で作る） | 言語的推定（提示された長さを答える） |
+|---|---|---|
+| 主観の十秒が早く来る | **短く産出**（実測 8 秒で「十秒」と言う） | **長く答える**（実測 10 秒を「十五秒」と言う） |
+
+つまり**どちらの課題で測ったかを言わずに「速い」「遅い」と述べても意味をなさない。**以下では原著の言い方に従い、産出課題で長すぎることを**過大産出**、提示された長さを短く答えることを**過小推定**と呼び分ける。
+
+主な課題型は次の四つで、測っているものが違う。
 
 | 課題 | 教示 | 何を測っているか |
 |---|---|---|
 | 時間産出 | 「十秒たったと思ったら言ってください」 | 内的クロックの速さ |
 | 時間再生 | 提示された長さを再現させる | 記銘と再生 |
+| 言語的推定 | 提示された長さを秒数で答えさせる | 記銘と尺度への変換 |
 | 時間弁別 | 二つの長さを比較させる | 分解能 |
 
-会でも、産出課題では長め（十秒の教示に対し十五秒程度）に答える例が挙がる一方、
-固定時間を提示させると短く答えるという逆向きの所見が出た。
-**同じ「内的クロック」という語で別の課題の結果が比較されている可能性がある。**
+歴史的には、この問いには一度答えが出たことがある。Pastor 1992（*Brain*、PD 44 例）が「パーキンソン病では内的クロックが異常に遅い」と結論し、これが長く参照されてきた。**この主張は後続研究で維持されなかった。**以下はその経過でもある。
 
-### 調査後の結論を先に置く
+## 現時点での答え
 
-**この仮説は部分的に支持された。しかし十分ではなかった。**
+**「速くなる」でも「遅くなる」でもない。向きは測定手続きによって決まり、疾患だけでは定まらない。**
 
-- **支持** — 同一の患者群に複数の課題を同時に課した研究が複数あり、
-  **課題型によって誤りの向きが逆転する**ことが直接示されている（Terao 2021、
-  Honma 2016、Gooch 2009）。会で出た「産出では長め・提示では短め」という
-  一見矛盾する二つの観察は、**別々の課題の結果を並べたもの**として整合する
-- **不十分** — ただし課題型を固定しても向きは定まらない。
-  Malapani ら 1998 は**同一の再生課題**で、訓練した目標時間が一つか二つかによって
-  誤りの向きが逆転することを示した。**課題型は決定要因の一つにすぎない**
+これは調査が不十分だという意味ではない。**向きが手続きに依存すること自体が、複数の独立した研究で繰り返し示されている所見である。**
 
-したがって本項の答えは「速くなる／遅くなる」のいずれでもない。
-**「向きは課題手続きに依存し、疾患だけでは決まらない」**である。
+会で並んだ二つの逆向きの観察は、矛盾ではない。別の課題の結果を並べたものであり、同一患者に両方を課せば実際に向きは逆転する。ただし**課題型を揃えても向きは決まらない。**同じ課題のなかでも手続きの細部で反転する。
 
-### 語の整理 — 「速い／遅い」は課題によって符号が反転する
+さらに、「クロックの速さ」という枠組み自体に複数の否定がついている。時間課題の成績低下は、計時器の速度ではなく記憶・注意・決定・感覚遅延で説明できる可能性がある。
 
-議論の混乱の相当部分は、**同じ「クロックが速い」が課題によって逆の行動を生む**ことに由来する。
+## 根拠
 
-| クロックが**速い**とすると | 産出課題（十秒を作る） | 言語的推定（提示された長さを答える） |
-|---|---|---|
-| 主観の十秒が早く来る | **短く産出**（実測 8 秒で「十秒」） | **長く答える**（実測 10 秒を「十五秒」） |
+以下、`article_type` と n は PubMed が返した値による。n が抄録にないものは未確認と記す。
 
-**向きの記述はどちらの課題で測ったかを言わなければ意味をなさない。**
-以下、原著の記述に従い「過大産出（overproduction）」「過小推定（underestimation）」のように
-課題ごとの言い方をそのまま用いる。
+### 課題が変われば向きが逆転する
 
-## 前提条件の明示
+同一の患者群に複数の課題を同時に課した研究が三本あり、いずれも課題によって誤りの向きが変わることを直接示している。単一課題の研究をいくら並べても得られない情報を持つ点で、本項の骨格にあたる。
 
-以下を揃えなければ文献の比較は成立しない。**本調査で確認できた範囲で明記する。**
+**Terao 2021**（*Front Neurosci*、PMID 33815049、Journal Article、n 未確認）は二等分・持続時間比較・産出・再生をパーキンソン病・進行性核上性麻痺・健常者に実施した。知覚課題と運動課題で向きが逆になり、再生では短い時間を過大に、長い時間を過小に再生した。著者らは**ドパミン欠乏と時間成績に有意な相関がなく、「クロックが遅い」仮説では全体を説明できない**と明記している。
 
-1. **課題型** — 産出 / 再生 / 言語的推定 / 弁別 / 二等分。本項ではこれを主軸に置く
-2. **時間帯** — 秒未満（sub-second）か秒以上（supra-second）か。
-   両者で責任構造が異なるとする所見がある（Bernardinis 2019、Bareš 2019 合意文書）
-3. **薬物条件** — on / off、あるいは未治療。off の定義（薬剤中止時間）も研究間で異なる
-4. **計数（counting）の許否** — 十秒級の課題では被験者が心内で数えることがある。
-   Honma 2016 は**計数の速さそのものが過小産出と相関した**と報告しており、
-   計数を許した研究と禁じた研究は別物として扱う必要がある
-5. **同一セッションで複数の目標時間を課したか** — 後述するとおり、
-   これが向きを決めうる（Malapani 1998、Koch 2007）
-6. **認知機能・抑うつの併存** — 抑うつは反応遅延を独立に生む（Rogers 1987）
+**Honma 2016**（*Sci Rep*、PMID 27146904、PD 19 / 対照 20）は、10 秒を超える区間で**産出課題では過小産出したが、再生課題では差が出なかった**と報告した。過小産出の程度は、被験者が心内で数える速さと相関し、線条体のドパミントランスポーター量（DaT SPECT で測る、ドパミン神経終末の指標）とも強く相関した。
 
-**会で共有された伝聞は、これらのいずれも特定されていない。**
-したがって「L-dopa 前は遅く後は速い」という一文は、
-そのままでは検証可能な命題になっていない。
+**Gooch 2009**（*Neuropsychologia*、PMID 19962999、小脳病変 11 / 対照 17）では、小脳病変群は再生・産出のいずれでも**過大産出**を示したが、**弁別課題では有意差がなかった。**
 
-## 現在のエビデンスと質
+会で共有された小脳疾患の経験（十秒の教示に十五秒程度）は過大産出であり、 Gooch 2009 の向きと一致する。ただし n=11 の病変群であり、経験が既報と同じ向きだった、という以上のことは言えない。
 
-文献情報は PubMed から取得し、全 PMID を `get_article_metadata` で実在確認した。
-`article_type` は PubMed が返した値をそのまま記す。
+なお Pastor 1992（PMID 1559155、PD 44 / 対照 20）は本項で最大の n を持つが、**この論文の内部でも課題によって向きが逆転している。**言語的推定では過小、再生では過大である。著者らはこれを一つの「遅いクロック」で統一的に説明した。会の伝聞の出所としては、n の大きさと levodopa 効果の報告から、この論文が最も近い。
 
-### 硬い部類 — 課題型で向きが逆転することを同一群で示した研究
+### 課題を固定しても向きは決まらない
 
-**本項で最も重要な系統である。単一課題の研究をいくら並べても得られない情報を持つ。**
+ここが、この問いに対して最も重い所見である。
 
-| 文献 | article_type | n | 課題 | 所見 |
-|---|---|---|---|---|
-| Terao Y, Honma M, et al. 2021 *Front Neurosci*（PMID 33815049） | Journal Article | **抄録に記載なし・未確認** | 二等分・持続時間比較・産出・再生を同一被験者に実施（PD・PSP・健常） | **知覚課題と運動課題で向きが逆になった。** 産出では「主観の 1 秒」が PD でわずかに長く PSP で短い一方、長い時間ではどの群でも過小産出。再生では短い時間を過大再生し長い時間を過小再生。著者らは**ドパミン欠乏と時間成績に有意な相関がなく、「クロックが遅い」仮説では全体を説明できない**と明記 |
-| Honma M, Kuroda T, et al. 2016 *Sci Rep*（PMID 27146904） | Journal Article | **PD 19 / 対照 20** | 産出・再生（計数を許可）＋タッピング＋DaT SPECT | **10 秒を超える区間で、産出課題では過小産出したが再生課題では差が出なかった。** 過小産出は**タッピングでの計数の速さ**と相関し、線条体 DaT 蛋白量とも強く相関 |
-| Gooch CM, Wiener M, et al. 2009 *Neuropsychologia*（PMID 19962999） | Journal Article | **小脳病変 11 / 対照 17** | 2〜12 秒の推定・再生・産出・弁別 | **小脳病変群は再生・産出のいずれでも過大産出**（短い区間で最大）。一部は推定で過小評価。**弁別課題では秒未満・秒以上のいずれでも有意差なし** |
+**Malapani 1998**（*J Cogn Neurosci*、PMID 9869707、n 未確認）は、同じ時間再生課題（peak-interval 法。目標時間を訓練したうえで、いつ反応が最も多くなるかを分布として見る手続き）で次を示した。
 
-**この三本が本項の骨格である。** いずれも「同じ患者に別の課題をやらせたら別の答えが出た」を
-直接示しており、課題型を無視した比較が成立しないことの実証になっている。
-
-**とくに Gooch 2009 は、会で共有された小脳疾患の経験と方向が一致する。**
-「十秒たったと思ったら」と教示して十五秒程度と答えるのは**過大産出**であり、
-小脳病変群に観察された向きと同じである。**ただし n=11 の病変群であり、
-症例経験が既報と一致したという以上のことは言えない。**
-
-### 硬い部類 — 「内的クロックが遅い」を主張した古典
-
-| 文献 | article_type | n | 所見 |
-|---|---|---|---|
-| Pastor MA, Artieda J, Jahanshahi M, Obeso JA. 1992 *Brain*（PMID 1559155） | Journal Article | **PD 44 / 対照 20** | ドパミン薬 12〜24 時間中止下で検査。**言語的推定では持続時間を過小評価し、再生課題では過大産出**。levodopa-carbidopa 投与により、時間マーカーが速い条件（5 Hz・3.3 Hz）で絶対誤差が有意に減少。著者らは「時間推定すなわち『内的クロック』が PD では異常に遅い」と結論 |
-
-**会で共有された伝聞の出所として最も可能性が高いのがこの論文である。**
-n=44 は本項で引いた文献中で最大であり、levodopa 効果も報告されている。
-
-**しかし注意すべき点が二つある。**
-
-1. **この論文自身のなかで、課題によって向きが逆になっている。**
-   言語的推定では過小、再生では過大である。著者らはこれを一つの「遅いクロック」で
-   統一的に説明したが、**その説明は後続研究で維持されなかった**（後述）
-2. **levodopa の効果は全条件で出たのではなく、速い時間マーカーの条件に限られている**
-
-### 中程度 — 秒未満と秒以上の分離
-
-Bernardinis M, Atashzar SF, Jog MS, Patel RV. 2019 *Sci Rep*（PMID 31873093、
-**Clinical Trial / Journal Article**）は、levodopa 群 25・DBS 群 6・未治療（de novo）群 6・
-健常対照 17 に視覚的時間知覚課題を課し、**秒未満では全群で障害がなく、秒以上でのみ
-全 PD 群が有意に障害された**と報告した。**未治療群でも障害が出ている**点は、
-薬効ではなく疾患そのものの効果を示唆する。
-
-Koch G, Costa A, et al. 2007 *Neuropsychologia*（PMID 18215403、Journal Article）も
-500 ms と 2000 ms の再生を比較し、**別セッションで測ればどちらも障害されない**とした。
-
-小脳側の合意文書（Bareš M, Apps R, Ivry RB, et al. 2019 *Cerebellum*、PMID 30259343、
-**Consensus Statement**）は、**秒未満は小脳皮質内の相互作用で足りるが、
-秒以上は皮質・大脳基底核ネットワークを要する**と整理している。
-**合意文書は専門家の総括であって一次データではない。**
-
-### 弱い／一定しない — L-dopa は内的クロックを速くするか
-
-**ここが会の伝聞の核心だが、結果は一定しない。そのまま書く。**
-
-| 文献 | article_type | n | L-dopa／ドパミン治療の効果 |
-|---|---|---|---|
-| Pastor 1992（PMID 1559155） | Journal Article | 44/20 | **改善あり**（速い時間マーカー条件に限る） |
-| Malapani C, Rakitin B, et al. 1998 *J Cogn Neurosci*（PMID 9869707） | Journal Article | 抄録に記載なし・**未確認** | **改善あり**。ON 状態では 8 秒・21 秒とも正確に再生。OFF で「移動効果」が出現 |
-| Torta DME, Castelli L, et al. 2010 *J Neurol*（PMID 20352253） | Journal Article | **PD（STN-DBS 装着）19 / 対照 19** | **改善あり**。薬物・刺激のいずれでも成績が有意に改善 |
-| Guehl D, Burbaud P, et al. 2008 *Neuropsychologia*（PMID 18439632） | Clinical Trial / Comparative Study / Journal Article | 抄録に記載なし・**未確認** | **改善なし。** levodopa では欠損が縮小せず、STN 刺激でわずかに改善 |
-| Bernardinis 2019（PMID 31873093） | Clinical Trial / Journal Article | 25/6/6/17 | **改善なし。** levodopa も DBS も有意な改善をもたらさず、**levodopa はむしろ悪化方向への強い傾向**を示し Weber 則からの逸脱を生じた |
-| Elsinger CL, Rao SM, et al. 2003 *J Int Neuropsychol Soc*（PMID 14738289） | Comparative Study / Journal Article | 抄録に記載なし・**未確認** | **行動成績は改善なし。** UPDRS は off で有意に悪いのに、ペース化タッピングの成績は on/off で差がなかった。一方 fMRI の賦活は部分的に「正常化」した |
-| DiMarco EK, Kishida KT, et al. 2023 *Parkinsonism Relat Disord*（PMID 37595329） | Journal Article | 抄録に記載なし・**未確認** | **改善なし。** 服薬状態（on vs off）は時間成績に影響せず。代わりに**個人差**（衝動制御障害・抑うつ・罹病期間）が成績を予測した |
-
-**六本のうち三本が改善を報告し、四本が改善を否定している**（Bernardinis は悪化傾向）。
-**これは「結果がバラバラ」という会の伝聞そのものである。**
-
-**格付け:** 改善を報告した三本のうち二本（Pastor 1992、Torta 2010）は
-被験者内デザインで比較的堅い。しかし否定側にも被験者内デザインが複数あり
-（Guehl 2008、Elsinger 2003、Bernardinis 2019、DiMarco 2023）、
-**デザインの質で決着がつく状態にない。**
-
-**Elsinger 2003 の所見はとくに扱いに注意が要る。** 行動成績は変わらないのに
-脳賦活だけ正常化しており、**「ドパミンが時間処理を改善する」という主張が
-どの水準の指標を根拠にしているかで結論が変わる**ことを示している。
-
-### 小脳疾患・MSA
-
-| 文献 | article_type | n | 所見 |
-|---|---|---|---|
-| Gooch 2009（PMID 19962999） | Journal Article | 小脳病変 11 / 対照 17 | 前述。**産出・再生で過大産出、弁別では差なし。** 外側上部小葉・歯状核、および左小脳の病変でより顕著 |
-| Ivry RB, Keele SW. 1989 *J Cogn Neurosci*（PMID 23968462） | Journal Article | 抄録に記載なし・**未確認** | PD・小脳・皮質・末梢神経障害を比較し、**産出と知覚の両方で障害を示したのは小脳群だけ**だった。音の大きさの知覚は保たれ、時間に特異的 |
-| Ivry RB, Keele SW, Diener HC. 1988 *Exp Brain Res*（PMID 3208855） | **Case Reports / Journal Article** | **7**（外側 4・内側 3） | 外側病変では中枢的な計時過程の障害、内側病変では実行段階の障害。**症例研究であり n=7** |
-| Cope TE, Grube M, et al. 2013 *Neuropsychologia*（PMID 24135486） | Journal Article | **MSA-C 8 / MSA-P 10 / HD 14 / 対照（慢性自己免疫性末梢神経障害）11** | 六つの適応的閾値課題すべてで三患者群とも対照より障害。**MSA-C と MSA-P の間に差はなかった。** 著者らは「独立モジュール型ではなく統一モデルを支持」と結論 |
-
-**会で共有された小脳疾患（MSA など）の経験について。**
-「十秒たったと思ったら」に十五秒程度と答える向き（過大産出）は、
-**Gooch 2009 の小脳病変群の所見と一致する。**
-ただし Gooch の対象は小脳病変一般であり MSA ではない。
-**MSA を対象に十秒級の産出課題を課した研究は、本調査では見つからなかった。**
-Cope 2013 は MSA を扱っているが、課題はすべて閾値型の弁別・規則性検出であり、
-産出課題を含まない。**したがって会の経験に直接対応する既報は同定できていない。**
-
-### bradyphrenia の概念的地位
-
-**会で併せて提示された論点だが、この概念は成立が疑われている側に証拠が厚い。**
-
-| 文献 | article_type | n | 立場 |
-|---|---|---|---|
-| Mayeux R, Stern Y, et al. 1987 *Neurology*（PMID 2439947） | Comparative Study / Journal Article | 抄録に記載なし・**未確認** | **肯定側。** PD が二群に分かれ、一方は持続処理課題で脱落誤りが多く注意・覚度の障害を示した。CSF-MHPG（ノルアドレナリン代謝物）が最高値。**bradyphrenia は注意・覚度の障害でありノルアドレナリン系に関連**と結論 |
-| Rogers D, Lees AJ, et al. 1987 *Brain*（PMID 3107750） | Journal Article | **PD 30 / うつ病 30 / 対照 30** | **交絡側。** PD の遅さは構造的脳障害と**感情障害**に関連。うつ病の精神運動制止と近縁であり、両者にドパミン系が関与しうると提案 |
-| Duncombe ME, Bradshaw JL, et al. 1994 *Neuropsychologia*（PMID 7877746） | Randomized Controlled Trial / Clinical Trial / Journal Article | 抄録に記載なし・**未確認** | **否定側。** 認知症・抑うつのない PD は心的回転を健常と同速度で行える |
-| Spicer KB, Brown GG, Gorell JM. 1994 *J Clin Exp Neuropsychol*（PMID 7929713） | Journal Article | **PD 22 / 対照 22** | **否定側。** 語彙判断のプライミング利得は健常と同等かむしろ大きく（hyperpriming）、全般的な認知的緩慢の証拠なし |
-| Phillips JG, Schiffter T, et al. 1999 *J Gerontol A*（PMID 10496546） | Journal Article | **PD 16 / 対照 16**（別実験で若年 16 / 高齢 16） | **否定側。** 運動反応を要さない inspection time 課題で、服薬中・非認知症 PD は年齢対照と差がなかった。**臨床印象としての bradyphrenia は加齢または運動緩慢を反映している可能性** |
-
-**格付け:** 否定側の三本はいずれも n が小さく（16〜22）、**「差がなかった」を
-検出力の低い研究で示している**点で弱い。しかし**運動反応を課題から切り離す設計**
-（心的回転・inspection time・プライミング利得）は、
-交絡の切り分けとしては肯定側の課題より鋭い。
-
-**結論としては、「bradyphrenia が注意障害・遂行機能障害・抑うつ・運動緩慢と
-独立に存在する」ことを示した強い証拠は、本調査では見つからなかった。**
-これは会で提示された疑問（区別できるのか）に対して、
-**「区別できるという証拠が弱い」という方向の答えになる。**
-
-### 時間障害は「時間の障害」なのか
-
-**時間課題の成績低下を内的クロックの話に読み替えてよいかを疑う研究がある。**
-
-- **Guehl 2008（PMID 18439632）** — 等時的な系列内の局所的な区間変化の検出は
-  PD で障害されなかった。著者らは**「これは PD が短い持続時間の知覚に関わる
-  内的クロックを遅くするという従来の示唆と矛盾する」**と明記し、
-  持続時間弁別の障害は**記憶や注意の障害の結果**であって時間知覚そのものではない、
-  と論じている
-- **Zhang J, Nombela C, Wolpe N, Barker RA, Rowe JB. 2016 *Mov Disord*（PMID 27091513）** —
-  PD 18 / 対照 19。二等分・三等分課題と計算モデルにより、
-  **時間成績の低下は知覚のゆがみだけでは説明できず、早まった反応を導く
-  衝動的な決定方略が寄与する**と結論。曖昧条件で反応時間が不釣り合いに速くなり、
-  その程度が重症度と相関した
-- **da Silva CF, et al. 2015 *Neuropsychologia*（PMID 26427738）** —
-  時間順序判断で PD の主観的同時点が 283 ms（高齢対照 121 ms・若年 29 ms）。
-  著者らは視覚経路の信号対雑音比の低下による**遅延と変動性の増加**として解釈
-
-**この系統は「クロックの速さ」という枠組み自体に対する反論である。**
-成績の低下が計時器の速度ではなく、記憶・注意・決定・感覚遅延に由来するなら、
-**「速いか遅いか」という問いの立て方そのものが誤っている可能性がある。**
-
-### 総説
-
-方向を定めていない点で一致しており、これ自体が所見である。
-
-- Buikema L, Sadikov A, Jahanshahi M, Vinke RS, Georgiev D. 2026
-  *Neurosci Biobehav Rev*（PMID 42061779、**Journal Article / Review**、
-  narrative review）— **最新の総説。** ドパミン補充療法は運動性の計時を改善しうるが、
-  **注意を要する課題・長い区間では効果が限られる**とし、
-  基底核・前頭前野・小脳を含む複数回路と、アセチルコリン・セロトニン・
-  ノルアドレナリンの関与を挙げる。**「計時課題の多様性が、運動成分と認知成分を
-  明確に分離するより精密な評価の必要性を示している」**と結論。
-  キーワードに bradyphrenia を含む
-- Jones CRG, Jahanshahi M. 2014 *Adv Exp Med Biol*（PMID 25358715、
-  **Journal Article / Review**）— PD の計時研究を課題ごとに整理した章
-- Magalhães F, et al. 2018 *J Biomed Sci*（PMID 29554962、**Journal Article / Review**）—
-  PRISMA 手順を用いたと述べるが、**メタ解析ではなく定量統合を行っていない**
-
-**Buikema 2026 の結論が本項の課題型仮説と実質的に同じ方向を向いている点は重要である。**
-**ただしこれは総説であり、一次データではない。**
-
-## 反証の探索結果
-
-規約5に従い、**下書きの結論「向きは課題型に依存する」を否定する文献を探した。
-四つの方向から探し、三つで反証が見つかった。**
-
-### 検索1 — 「課題型を固定しても向きが定まらない」証拠を探した → **見つかった**
-
-これが本調査で見つかった最も重い反証である。
-
-**Malapani C, Rakitin B, Levy R, Meck WH, Deweer B, Dubois B, Gibbon J. 1998
-*J Cogn Neurosci*（PMID 9869707、Journal Article）。**
-
-同じ**時間再生課題**（peak-interval 法）で、次のことが起きた。
-
-| 訓練条件 | OFF 状態での誤りの向き |
+| 訓練条件 | 服薬中断（off）状態での誤りの向き |
 |---|---|
 | 8 秒と 21 秒を**両方**訓練 | 8 秒は**長く**、21 秒は**短く**再生（移動効果） |
 | 21 秒**だけ**訓練 | 21 秒を**長く**再生（＝上と逆向き） |
 
-**課題型は同一である。変えたのは目標時間をいくつ訓練したかだけである。
-それだけで誤りの向きが反転した。**
+**課題型は同一である。変えたのは目標時間をいくつ訓練したかだけで、それだけで向きが反転した。**（移動効果とは、複数の目標時間が互いに引き寄せ合って中央に寄る現象を指す。）
 
-Koch 2007（PMID 18215403）も同じ構造を独立に示している。
-500 ms と 2000 ms を**別セッションで**測ればどちらも障害されないが、
-**同一セッションで混ぜると秒級だけが選択的に障害された。**
+Koch 2007（PMID 18215403、n 未確認）が独立に同じ構造を示している。500 ms と 2000 ms を**別セッションで**測ればどちらも障害されないが、**同一セッションで混ぜると秒級だけが選択的に障害された。**
 
-**したがって「課題型が向きを決める」は誤りである。**
-正しくは「**課題型は向きを決めうる要因の一つであり、
-同一セッション内の目標時間の数など、他の手続き要因も同等以上に効く**」となる。
+Malapani 2002（PMID 11970794、n 未確認）はさらに、記銘時にドパミンが枯渇していた場合と想起時に枯渇していた場合とで歪みの型が違うと報告している。**同じ課題・同じ「off」でも、いつ off だったかで結果が変わる。**
 
-Malapani C, Deweer B, Gibbon J. 2002 *J Cogn Neurosci*（PMID 11970794、Journal Article）は
-さらに、**記銘時にドパミンが枯渇していた場合と想起時に枯渇していた場合とで
-歪みの型が異なる**（前者は両区間の過大評価、後者は移動効果）と報告している。
-**同じ課題・同じ薬物条件の「off」でも、いつ off だったかで結果が変わる。**
+したがって課題型は、向きを決めうる要因の一つにすぎない。
 
-### 検索2 — 「課題によらず一貫した所見がある」とするメタ解析を探した → **見つかった。ただし査読前**
+### L-dopa の効果は一定しない
 
-`meta-analysis[Publication Type]` および題名・抄録での "meta-analysis" 検索を
-PD／小脳と組み合わせて実施した。**査読を経た時間知覚のメタ解析は
-PD・小脳のいずれについても見つからなかった。**（ヒットした 3 件のうち
-PMID 22178297 は SMA の機能画像メタ解析、PMID 21041067 は統合失調症の
-ALE メタ解析であり、いずれも PD 患者の行動成績を統合したものではない。）
+会の伝聞の核心にあたる部分である。結果は割れている。
 
-代わりに次が見つかった。
+| 文献 | n | 効果 |
+|---|---|---|
+| Pastor 1992（PMID 1559155） | 44 / 20 | **改善あり**（速い時間マーカー条件に限る） |
+| Malapani 1998（PMID 9869707） | 未確認 | **改善あり**。on では 8 秒・21 秒とも正確 |
+| Torta 2010（PMID 20352253） | 19 / 19 | **改善あり**。薬物・刺激のいずれでも有意に改善 |
+| Guehl 2008（PMID 18439632） | 未確認 | **改善なし。** levodopa で欠損は縮小せず |
+| Bernardinis 2019（PMID 31873093） | 25/6/6/17 | **改善なし。** levodopa はむしろ悪化方向への傾向 |
+| Elsinger 2003（PMID 14738289） | 未確認 | **行動成績は改善なし。** ただし fMRI 賦活は部分的に正常化 |
+| DiMarco 2023（PMID 37595329） | 未確認 | **改善なし。** 代わりに個人差が成績を予測 |
 
-**Weber MA, Hunter CM, Narayanan NS. 2026 *Res Sq*（PMID 41646292、
-Journal Article / **Preprint**）。** PD 14 研究・AD 10 研究のメタ解析。
-**多様な課題を通じて、時間的「精度（precision、推定のばらつき）」は
-一貫して障害されるが、「正確さ（accuracy、推定の平均値）」は一貫して
-障害されない**と報告している。
+**三本が改善を報告し、四本が否定している。**改善側の Pastor 1992 と Torta 2010 は被験者内デザインで比較的堅いが、否定側にも被験者内デザインが複数あり、**デザインの質では決着がつかない。**
 
-**これは下書きに対する二重の意味を持つ。**
+Elsinger 2003 の扱いには注意が要る。行動成績は変わらないのに脳賦活だけ正常化しており、**「ドパミンが時間処理を改善する」という主張が、どの水準の指標を根拠にしているかで結論が変わる**ことを示している。
 
-- **反証として** — 課題の多様性を超えて一貫する指標（precision）が存在するなら、
-  「課題型ごとにばらばら」という描像は一面的である
-- **補強として** — 一貫しないのは**まさに正確さ＝向き**の方であり、
-  「速いか遅いか」に定まった答えがないという本項の結論と符合する
+「その後の研究で結果はバラバラ」という会の伝聞は、文献状況を正確に伝えている。
 
-**格付けは厳しく取る必要がある。これは Research Square のプレプリントであり、
-査読を通っていない。** PubMed の `article_type` も Preprint と明記されている。
-**本項の結論の根拠としては用いず、示唆として記録するにとどめる。**
+### 「クロックの速さ」という枠組みへの疑い
 
-### 検索3 — 「課題型は関係なく、すべての課題が同じように障害される」を探した → **見つかった**
+時間課題の成績低下を、そのまま内的クロックの話に読み替えてよいのかを問う研究がある。
 
-**Cope TE, Grube M, Singh B, Burn DJ, Griffiths TD. 2013 *Neuropsychologia*
-（PMID 24135486、Journal Article）。** MSA-C 8・MSA-P 10・HD 14・対照 11。
-絶対的（持続時間弁別）・相対的（拍に基づく規則性検出）の**六課題すべて**で
-三患者群とも障害され、障害の重さは病期進行と相関した。
-著者らは明示的に「**独立モジュールに基づく脳内計時ネットワークのモデルとは
-両立しない**」と述べ、統一モデルを支持している。
+Guehl 2008（PMID 18439632）は、等間隔の系列に混ぜた局所的な区間変化の検出がパーキンソン病で障害されないことを示し、**「内的クロックを遅くするという従来の示唆と矛盾する」**と明記した。持続時間弁別の障害は記憶や注意の障害の結果であって、時間知覚そのものではないという立場である。
 
-**ただし Cope 2013 が測ったのはすべて閾値（分解能）であって向きではない。**
-六課題すべてが閾値型なので、「向きが課題で変わるか」の反証にはならない。
-**「課題型を超えて共通に落ちるものがある」という点で、
-検索2 の precision の所見と同じ方向を指している。**
+Zhang 2016（PMID 27091513、PD 18 / 対照 19）は、時間成績の低下が知覚のゆがみだけでは説明できず、**早まった反応を導く衝動的な決定方略**が寄与すると結論した。 da Silva 2015（PMID 26427738、n 未確認）は、時間順序判断の主観的同時点が PD で 283 ms（高齢対照 121 ms）と延びることを、視覚経路の信号対雑音比の低下による遅延と変動性の増加として解釈している。
 
-### 検索4 — 「そもそも PD で時間知覚は障害されない」を探した → **部分的に見つかった**
+**成績低下が計時器の速度ではなく、記憶・注意・決定・感覚遅延に由来するなら、「速いか遅いか」という問いの立て方そのものが的を外していることになる。**
 
-- Koch 2007（PMID 18215403）— **別セッションで測れば 500 ms も 2000 ms も
-  on/off いずれでも障害されない**
-- Schnider A, Gutbrod K, Hess CW. 1995 *Brain*（PMID 7735889、Journal Article）—
-  PD 11 / 対照 9。運動イメージ課題で、不可視の標的の移動完了時間の推定を
-  **健常と同等の精度で行えた**。著者らは「運動イメージは PD で保たれる」と結論
-- Guehl 2008（PMID 18439632）— 等時系列内の区間変化検出は障害されず
+課題を超えて一貫する指標は、向きではなく**ばらつき**かもしれない。 Weber 2026（PMID 41646292）は PD 14 研究・AD 10 研究のメタ解析で、推定のばらつき（precision）は一貫して障害されるが、推定の平均値（accuracy）は一貫して障害されないと報告している。**ただしこれは Research Square のプレプリントであり査読を通っていない。結論の根拠には用いず、示唆として記録するにとどめる。**査読を経た時間知覚のメタ解析は、PD・小脳のいずれについても見つからなかった。
 
-**全般的な否定ではないが、「PD では時間知覚が一様に障害される」という
-強い主張は支持されない。** どの課題で測るかによって障害の有無自体が変わる。
-**これは下書きの結論を弱めるのではなく、むしろ強める方向の反証結果だった。**
+### 小脳疾患と MSA
 
-### 反証を通した後の結論
+Ivry & Keele 1989（PMID 23968462、n 未確認）は、パーキンソン病・小脳・皮質・末梢神経障害を比較し、**産出と知覚の両方で障害を示したのは小脳群だけ**だったと報告した。音の大きさの知覚は保たれており、障害は時間に特異的である。 Ivry 1988（PMID 3208855、**Case Reports**、n=7）は外側病変と内側病変で障害の段階が違うとするが、症例研究である。
 
-**当初の下書き「向きが定まらないのは課題型の違いによる」は、そのままでは維持できない。**
-修正後の結論は次のとおり。
+**会で話題になった MSA について、直接対応する既報は同定できなかった。** Cope 2013（PMID 24135486、MSA-C 8 / MSA-P 10 / HD 14 / 対照 11）は MSA を扱っているが、課題はすべて閾値型の弁別・規則性検出で、産出課題を含まない。六課題すべてで三患者群とも障害され、著者らは「独立モジュール型ではなく統一モデルを支持」と結論している。測っているのは分解能であって向きではない。
 
-1. **同一患者に複数課題を課すと向きが逆転することは、複数の独立した研究で示されている**
-   （Terao 2021、Honma 2016、Gooch 2009、および Pastor 1992 の内部でも）。
-   **会で出た二つの逆向きの観察は、矛盾ではなく別課題の結果と見てよい**
-2. **しかし課題型だけでは向きは決まらない。** 同一課題内でも、
-   訓練した目標時間の数（Malapani 1998）、同一セッションで混ぜたか
-   （Koch 2007）、記銘時か想起時か（Malapani 2002）で向きが変わる
-3. **「内的クロックが速い／遅い」という枠組み自体に、複数の否定が付いている**
-   （Guehl 2008、Zhang 2016、Terao 2021、DiMarco 2023）
-4. **課題を超えて一貫しうる指標は、向きではなくばらつき（precision）かもしれない。
-   ただし根拠はプレプリント 1 本であり、確定ではない**
+なお、秒未満と秒以上では責任構造が違うという整理がある。Bernardinis 2019（PMID 31873093）は**秒未満では全群で障害がなく、秒以上でのみ全 PD 群が障害された**と報告し、未治療群でも障害が出ている点は薬効ではなく疾患そのものの効果を示唆する。小脳側の合意文書（Bareš 2019、PMID 30259343、**Consensus Statement**）も、秒未満は小脳皮質内で足りるが秒以上は皮質・大脳基底核ネットワークを要すると整理している。合意文書は専門家の総括であって一次データではない。
 
-## 未解決点
+### bradyphrenia は独立した現象か
 
-**以下は確認できていない。推測で埋めない。**
+bradyphrenia は、運動の緩慢さ（bradykinesia）とは別に思考そのものが遅くなる、という臨床概念である。会では、これを注意障害や遂行機能障害と区別できるのかが問われた。
 
-- **多くの文献で n が抄録に記載されておらず未確認である。**
-  Terao 2021・Malapani 1998・Guehl 2008・Elsinger 2003・DiMarco 2023・
-  Ivry & Keele 1989・Duncombe 1994・Mayeux 1987 がこれにあたる。
-  **本項の中心的な根拠である Terao 2021 の n が未確認である点は、格付け上の弱点である**
-- **MSA を対象に十秒級の時間産出課題を課した研究は見つからなかった。**
-  会で共有された経験（十秒の教示に十五秒程度）に直接対応する既報は同定できていない。
-  Gooch 2009 の小脳病変群と向きが一致するというところまでが言えることである。
-  **「未発表かどうか」は確認できない。存在しないのではなく、
-  本調査の検索範囲では見つからなかったと読むべきである**
-- **査読を経た時間知覚のメタ解析は PD・小脳のいずれについても見つからなかった。**
-  唯一のメタ解析（PMID 41646292）はプレプリントである
-- **「L-dopa 治療前は遅く治療後に速くなる」という会の伝聞の出所は特定できていない。**
-  Pastor 1992 が最も近いが、同論文は「治療前後で内的クロックの速さが変わる」ではなく
-  「PD の内的クロックが遅く、levodopa が誤差を減らす」と述べている。
-  **学会報告そのものは PubMed に索引されないため、原報告の確認は本調査の射程外である**
-- **計数（counting）の統制が研究間で揃っていない。**
-  Honma 2016 は計数を許可し、Rakitin 1998（PMID 9438963）は妨害課題で計数を禁じた。
-  十秒級の課題ではこれが決定的な違いになりうるが、
-  **多くの論文は抄録で計数の扱いに触れていない**
-- **bradyphrenia を注意・遂行機能・抑うつ・運動緩慢から分離した研究のうち、
-  十分な検出力を持つものは見つからなかった。** 否定側は n=16〜22 に留まる。
-  **「存在しない」ではなく「独立性を示す証拠が弱い」が正確な言い方である**
-- **日本語圏の臨床研究は未調査。** 本項は PubMed 収載の英語文献のみに基づく
+| 文献 | n | 立場 |
+|---|---|---|
+| Mayeux 1987（PMID 2439947） | 未確認 | **肯定。** 注意・覚度の障害でありノルアドレナリン系に関連 |
+| Rogers 1987（PMID 3107750） | 30/30/30 | **交絡。** うつ病の精神運動制止と近縁 |
+| Duncombe 1994（PMID 7877746） | 未確認 | **否定。** 認知症・抑うつのない PD は心的回転を健常と同速度で行う |
+| Spicer 1994（PMID 7929713） | 22 / 22 | **否定。** 語彙判断のプライミング利得は健常と同等以上 |
+| Phillips 1999（PMID 10496546） | 16 / 16 | **否定。** 運動反応を要さない課題で年齢対照と差なし |
 
-## 当日の議論との接続
+否定側は n が 16〜22 と小さく、**「差がなかった」を検出力の低い研究で示している**点で弱い。ただし運動反応を課題から切り離す設計（心的回転・inspection time・プライミング利得）は、交絡の切り分けとしては肯定側の課題より鋭い。
 
-時間認知の話題から、神経疾患での測定へ展開した。伝聞の共有が中心で、
-議論としては深まっていない。**この問いは会で紛糾したものではなく、
-持ち帰りとして立った。**
+**「bradyphrenia が注意障害・遂行機能障害・抑うつ・運動緩慢と独立に存在する」ことを示した強い証拠は見つからなかった。**存在しないのではなく、独立性を示す証拠が弱い、というのが正確な言い方である。
 
-> 内省クロックを L-dopa 治療前と後でやってみると、治療前は遅くて
-> 治療後より速くなる……その後の研究で結果はバラバラで
+### 総説の位置
 
-**調査を経て、会の発言について言えることは三つある。**
+総説三本（Buikema 2026 / PMID 42061779、Jones & Jahanshahi 2014 / PMID 25358715、 Magalhães 2018 / PMID 29554962）はいずれも方向を定めていない。最新の Buikema 2026 は「計時課題の多様性が、運動成分と認知成分を明確に分離するより精密な評価の必要性を示している」と結論しており、本項と同じ方向を向く。**ただし総説であり一次データではない。**
 
-1. **「その後の研究で結果はバラバラ」は正確である。**
-   L-dopa の効果について、改善を報告する研究と否定する研究が拮抗している。
-   会の伝聞は文献状況を誤って伝えていない
-2. **「産出では長め、提示では短め」という会での二つの観察は、矛盾ではない。**
-   同一患者に両方を課した研究で、実際に向きが逆転することが確認されている
-3. **ただし「課題型が違うから」だけでは説明が足りない。**
-   同じ課題内でも手続きの細部で向きが反転する
+## 分かっていないこと
 
-パーキンソン病の思考緩慢（bradyphrenia）が注意障害や遂行機能障害と
-区別できるのかという論点も併せて提示された。
-**この疑問に対しては、「区別できるという証拠が弱い」方向の文献が複数ある。**
+- **主要文献の n が抄録に記載されておらず未確認である。**Terao 2021・Malapani 1998・ Guehl 2008・Elsinger 2003・DiMarco 2023・Ivry & Keele 1989・Duncombe 1994・ Mayeux 1987 がこれにあたる。とくに骨格にあたる Terao 2021 の n が未確認なのは弱点である
+- **MSA に十秒級の産出課題を課した研究が見つからない。**会で共有された経験に直接対応する既報は同定できていない。存在しないのではなく、この検索範囲では見つからなかった
+- **会の伝聞（治療前は遅く治療後に速い）の出所は特定できていない。**Pastor 1992 が最も近いが、同論文は「治療前後で速さが変わる」ではなく「PD のクロックが遅く、levodopa が誤差を減らす」と述べている。学会報告は PubMed に索引されないため、原報告の確認は射程外である
+- **心内で数えること（計数）の統制が研究間で揃っていない。**Honma 2016 は計数を許可し、 Rakitin 1998（PMID 9438963）は妨害課題で禁じた。十秒級では決定的な違いになりうるが、多くの論文は抄録で扱いに触れていない
+- **日本語圏の臨床研究は未調査。**本項は PubMed 収載の英語文献のみに基づく
 
-**臨床的助言は本項では書かない。** L-dopa の効果は一定せず、
-時間課題の向きは手続きに依存し、bradyphrenia の独立性も確立していない。
-**この状態で「PD 患者の時間感覚はこうである」と述べるのは、
-証拠の強さを超えた言明になる。**
+**臨床的な助言は書かない。**L-dopa の効果は一定せず、向きは手続きに依存し、 bradyphrenia の独立性も確立していない。この状態で「PD 患者の時間感覚はこうである」と述べるのは、証拠の強さを超えた言明になる。
 
 ## 出典
 
-文献情報は PubMed から取得し、全 PMID を `get_article_metadata` で実在確認した。
-`article_type` は PubMed が返した値をそのまま記す。**n は抄録に記載があるものだけ記す。**
+全 PMID を `get_article_metadata` で実在確認した。`article_type` は PubMed が返した値、 n は抄録に記載があるものだけを記す。
 
-### 総説・合意文書
+### 同一群に複数課題を課した原著
 
-- Buikema L, Sadikov A, Jahanshahi M, Vinke RS, Georgiev D. Cognitive processes and
-  neurophysiological mechanisms of time processing in Parkinson's disease: A narrative
-  review. *Neurosci Biobehav Rev*. 2026;186:106719. PMID 42061779.
-  **Journal Article / Review**（narrative review）.
-  [DOI](https://doi.org/10.1016/j.neubiorev.2026.106719)
-- Jones CRG, Jahanshahi M. Motor and perceptual timing in Parkinson's disease.
-  *Adv Exp Med Biol*. 2014;829:265-90. PMID 25358715. **Journal Article / Review**.
-  [DOI](https://doi.org/10.1007/978-1-4939-1782-2_14)
-- Jones CRG, Jahanshahi M. The substantia nigra, the basal ganglia, dopamine and temporal
-  processing. *J Neural Transm Suppl*. 2009;(73):161-71. PMID 20411776.
-  **Journal Article / Review**. [DOI](https://doi.org/10.1007/978-3-211-92660-4_13)
-- Magalhães F, Rocha K, Marinho V, et al. Neurochemical changes in basal ganglia affect
-  time perception in parkinsonians. *J Biomed Sci*. 2018;25(1):26. PMID 29554962.
-  **Journal Article / Review**. [DOI](https://doi.org/10.1186/s12929-018-0428-2)
-- Bareš M, Apps R, Avanzino L, et al. Consensus paper: Decoding the Contributions of the
-  Cerebellum as a Time Machine. From Neurons to Clinical Applications.
-  *Cerebellum*. 2019;18(2):266-286. PMID 30259343.
-  **Consensus Statement / Journal Article**. [DOI](https://doi.org/10.1007/s12311-018-0979-5)
+- Terao Y, Honma M, Asahara Y, et al. Time Distortion in Parkinsonism. *Front Neurosci*. 2021;15:648814. PMID 33815049. **Journal Article**. n 未確認. [DOI](https://doi.org/10.3389/fnins.2021.648814)
+- Honma M, Kuroda T, Futamura A, Shiromaru A, Kawamura M. Dysfunctional counting of mental time in Parkinson's disease. *Sci Rep*. 2016;6:25421. PMID 27146904. **Journal Article**. n=19（PD）/ 20（対照）. [DOI](https://doi.org/10.1038/srep25421)
+- Gooch CM, Wiener M, Wencil EB, Coslett HB. Interval timing disruptions in subjects with cerebellar lesions. *Neuropsychologia*. 2010;48(4):1022-31. PMID 19962999. **Journal Article**. n=11（小脳病変）/ 17（対照）. [DOI](https://doi.org/10.1016/j.neuropsychologia.2009.11.028)
+- Pastor MA, Artieda J, Jahanshahi M, Obeso JA. Time estimation and reproduction is abnormal in Parkinson's disease. *Brain*. 1992;115(Pt 1):211-25. PMID 1559155. **Journal Article**. n=44（PD）/ 20（対照）. **本項で最大の n**. [DOI](https://doi.org/10.1093/brain/115.1.211)
 
-### 課題型の逆転を同一群で示した原著（本項の骨格）
+### 手続きの細部で向きが変わることを示した原著
 
-- Terao Y, Honma M, Asahara Y, et al. Time Distortion in Parkinsonism.
-  *Front Neurosci*. 2021;15:648814. PMID 33815049. **Journal Article**. n 未確認.
-  [DOI](https://doi.org/10.3389/fnins.2021.648814)
-- Honma M, Kuroda T, Futamura A, Shiromaru A, Kawamura M. Dysfunctional counting of
-  mental time in Parkinson's disease. *Sci Rep*. 2016;6:25421. PMID 27146904.
-  **Journal Article**. n=19（PD）/ 20（対照）.
-  [DOI](https://doi.org/10.1038/srep25421)
-- Gooch CM, Wiener M, Wencil EB, Coslett HB. Interval timing disruptions in subjects with
-  cerebellar lesions. *Neuropsychologia*. 2010;48(4):1022-31. PMID 19962999.
-  **Journal Article**. n=11（小脳病変）/ 17（対照）.
-  [DOI](https://doi.org/10.1016/j.neuropsychologia.2009.11.028)
+- Malapani C, Rakitin B, Levy R, Meck WH, Deweer B, Dubois B, Gibbon J. Coupled temporal memories in Parkinson's disease: a dopamine-related dysfunction. *J Cogn Neurosci*. 1998;10(3):316-31. PMID 9869707. **Journal Article**. n 未確認. [DOI](https://doi.org/10.1162/089892998562762)
+- Malapani C, Deweer B, Gibbon J. Separating storage from retrieval dysfunction of temporal memory in Parkinson's disease. *J Cogn Neurosci*. 2002;14(2):311-22. PMID 11970794. **Journal Article**. n 未確認. [DOI](https://doi.org/10.1162/089892902317236920)
+- Koch G, Costa A, Brusa L, et al. Impaired reproduction of second but not millisecond time intervals in Parkinson's disease. *Neuropsychologia*. 2008;46(5):1305-13. PMID 18215403. **Journal Article**. n 未確認. [DOI](https://doi.org/10.1016/j.neuropsychologia.2007.12.005)
+- Koch G, Brusa L, Oliveri M, Stanzione P, Caltagirone C. Memory for time intervals is impaired in left hemi-Parkinson patients. *Neuropsychologia*. 2005;43(8):1163-7. PMID 15817174. **Clinical Trial / Comparative Study / Journal Article**. n 未確認. [DOI](https://doi.org/10.1016/j.neuropsychologia.2004.11.017)
 
-### 「内的クロックが遅い」を主張した原著
+### 「時間の障害ではない」とする原著
 
-- Pastor MA, Artieda J, Jahanshahi M, Obeso JA. Time estimation and reproduction is
-  abnormal in Parkinson's disease. *Brain*. 1992;115(Pt 1):211-25. PMID 1559155.
-  **Journal Article**. n=44（PD）/ 20（対照）. **本項で最大の n**.
-  [DOI](https://doi.org/10.1093/brain/115.1.211)
+- Guehl D, Burbaud P, Lorenzi C, et al. Auditory temporal processing in Parkinson's disease. *Neuropsychologia*. 2008;46(9):2326-35. PMID 18439632. **Clinical Trial / Comparative Study / Journal Article**. n 未確認. [DOI](https://doi.org/10.1016/j.neuropsychologia.2008.03.007)
+- Zhang J, Nombela C, Wolpe N, Barker RA, Rowe JB. Time on timing: Dissociating premature responding from interval sensitivity in Parkinson's disease. *Mov Disord*. 2016;31(8):1163-72. PMID 27091513. **Journal Article**. n=18（PD）/ 19（対照）. [DOI](https://doi.org/10.1002/mds.26631)
+- da Silva CF, Morgero KCS, Mota AM, Piemonte MEP, Baldo MVC. Aging and Parkinson's disease as functional models of temporal order perception. *Neuropsychologia*. 2015;78:1-9. PMID 26427738. **Journal Article**. n 未確認. [DOI](https://doi.org/10.1016/j.neuropsychologia.2015.09.029)
+- Schnider A, Gutbrod K, Hess CW. Motion imagery in Parkinson's disease. *Brain*. 1995;118(Pt 2):485-93. PMID 7735889. **Journal Article**. n=11（PD）/ 9（対照）. [DOI](https://doi.org/10.1093/brain/118.2.485)
 
-### 反証側 — 課題型では向きが決まらないことを示す原著
+### メタ解析（**査読前のプレプリント**）
 
-- Malapani C, Rakitin B, Levy R, Meck WH, Deweer B, Dubois B, Gibbon J. Coupled temporal
-  memories in Parkinson's disease: a dopamine-related dysfunction.
-  *J Cogn Neurosci*. 1998;10(3):316-31. PMID 9869707. **Journal Article**. n 未確認.
-  **最も重い反証**. [DOI](https://doi.org/10.1162/089892998562762)
-- Malapani C, Deweer B, Gibbon J. Separating storage from retrieval dysfunction of
-  temporal memory in Parkinson's disease. *J Cogn Neurosci*. 2002;14(2):311-22.
-  PMID 11970794. **Journal Article**. n 未確認.
-  [DOI](https://doi.org/10.1162/089892902317236920)
-- Koch G, Costa A, Brusa L, et al. Impaired reproduction of second but not millisecond
-  time intervals in Parkinson's disease. *Neuropsychologia*. 2008;46(5):1305-13.
-  PMID 18215403. **Journal Article**. n 未確認.
-  [DOI](https://doi.org/10.1016/j.neuropsychologia.2007.12.005)
-- Koch G, Brusa L, Oliveri M, Stanzione P, Caltagirone C. Memory for time intervals is
-  impaired in left hemi-Parkinson patients. *Neuropsychologia*. 2005;43(8):1163-7.
-  PMID 15817174. **Clinical Trial / Comparative Study / Journal Article**. n 未確認.
-  [DOI](https://doi.org/10.1016/j.neuropsychologia.2004.11.017)
+- Weber MA, Hunter CM, Narayanan NS. Parkinson's and Alzheimer's disease impairs temporal precision. *Res Sq*. 2026. PMID 41646292. **Journal Article / Preprint**. PD 14 研究・AD 10 研究のメタ解析。**査読を通っていない。** [DOI](https://doi.org/10.21203/rs.3.rs-8628264/v1)
 
-### 反証側 — メタ解析（**査読前のプレプリント**）
+### ドパミン治療・刺激の効果
 
-- Weber MA, Hunter CM, Narayanan NS. Parkinson's and Alzheimer's disease impairs temporal
-  precision. *Res Sq*. 2026. PMID 41646292. **Journal Article / Preprint**.
-  PD 14 研究・AD 10 研究のメタ解析。**査読を通っていない。**
-  [DOI](https://doi.org/10.21203/rs.3.rs-8628264/v1)
-
-### 反証側 — 「時間の障害ではない」とする原著
-
-- Guehl D, Burbaud P, Lorenzi C, et al. Auditory temporal processing in Parkinson's
-  disease. *Neuropsychologia*. 2008;46(9):2326-35. PMID 18439632.
-  **Clinical Trial / Comparative Study / Journal Article**. n 未確認.
-  [DOI](https://doi.org/10.1016/j.neuropsychologia.2008.03.007)
-- Zhang J, Nombela C, Wolpe N, Barker RA, Rowe JB. Time on timing: Dissociating premature
-  responding from interval sensitivity in Parkinson's disease.
-  *Mov Disord*. 2016;31(8):1163-72. PMID 27091513. **Journal Article**.
-  n=18（PD）/ 19（対照）. [DOI](https://doi.org/10.1002/mds.26631)
-- da Silva CF, Morgero KCS, Mota AM, Piemonte MEP, Baldo MVC. Aging and Parkinson's
-  disease as functional models of temporal order perception.
-  *Neuropsychologia*. 2015;78:1-9. PMID 26427738. **Journal Article**. n 未確認.
-  [DOI](https://doi.org/10.1016/j.neuropsychologia.2015.09.029)
-- Schnider A, Gutbrod K, Hess CW. Motion imagery in Parkinson's disease.
-  *Brain*. 1995;118(Pt 2):485-93. PMID 7735889. **Journal Article**.
-  n=11（PD）/ 9（対照）. [DOI](https://doi.org/10.1093/brain/118.2.485)
-
-### ドパミン治療の効果
-
-- Torta DME, Castelli L, Latini-Corazzini L, Banche A, Lopiano L, Geminiani G.
-  Dissociation between time reproduction of actions and of intervals in patients with
-  Parkinson's disease. *J Neurol*. 2010;257(8):1356-61. PMID 20352253.
-  **Journal Article**. n=19（PD・STN-DBS）/ 19（対照）.
-  [DOI](https://doi.org/10.1007/s00415-010-5532-5)
-- Bernardinis M, Atashzar SF, Jog MS, Patel RV. Differential Temporal Perception
-  Abilities in Parkinson's Disease Patients Based on Timing Magnitude.
-  *Sci Rep*. 2019;9(1):19638. PMID 31873093. **Clinical Trial / Journal Article**.
-  n=25（levodopa）/ 6（DBS）/ 6（未治療）/ 17（対照）.
-  [DOI](https://doi.org/10.1038/s41598-019-55827-y)
-- Elsinger CL, Rao SM, Zimbelman JL, Reynolds NC, Blindauer KA, Hoffmann RG. Neural basis
-  for impaired time reproduction in Parkinson's disease: an fMRI study.
-  *J Int Neuropsychol Soc*. 2003;9(7):1088-98. PMID 14738289. **Comparative Study / Journal Article**.
-  n 未確認. [DOI](https://doi.org/10.1017/S1355617703970123)
-- DiMarco EK, Sadibolova R, Jiang A, et al. Time perception reflects individual
-  differences in motor and non-motor symptoms of Parkinson's disease.
-  *Parkinsonism Relat Disord*. 2023;114:105800. PMID 37595329. **Journal Article**.
-  n 未確認. [DOI](https://doi.org/10.1016/j.parkreldis.2023.105800)
-- Koch G, Oliveri M, Brusa L, Stanzione P, Torriero S, Caltagirone C. High-frequency rTMS
-  improves time perception in Parkinson disease. *Neurology*. 2004;63(12):2405-6.
-  PMID 15623713. **Clinical Trial / Controlled Clinical Trial / Journal Article**.
-  n 未確認. [DOI](https://doi.org/10.1212/01.wnl.0000147336.19972.82)
+- Torta DME, Castelli L, Latini-Corazzini L, Banche A, Lopiano L, Geminiani G. Dissociation between time reproduction of actions and of intervals in patients with Parkinson's disease. *J Neurol*. 2010;257(8):1356-61. PMID 20352253. **Journal Article**. n=19（PD・STN-DBS）/ 19（対照）. [DOI](https://doi.org/10.1007/s00415-010-5532-5)
+- Bernardinis M, Atashzar SF, Jog MS, Patel RV. Differential Temporal Perception Abilities in Parkinson's Disease Patients Based on Timing Magnitude. *Sci Rep*. 2019;9(1):19638. PMID 31873093. **Clinical Trial / Journal Article**. n=25（levodopa）/ 6（DBS）/ 6（未治療）/ 17（対照）. [DOI](https://doi.org/10.1038/s41598-019-55827-y)
+- Elsinger CL, Rao SM, Zimbelman JL, Reynolds NC, Blindauer KA, Hoffmann RG. Neural basis for impaired time reproduction in Parkinson's disease: an fMRI study. *J Int Neuropsychol Soc*. 2003;9(7):1088-98. PMID 14738289. **Comparative Study / Journal Article**. n 未確認. [DOI](https://doi.org/10.1017/S1355617703970123)
+- DiMarco EK, Sadibolova R, Jiang A, et al. Time perception reflects individual differences in motor and non-motor symptoms of Parkinson's disease. *Parkinsonism Relat Disord*. 2023;114:105800. PMID 37595329. **Journal Article**. n 未確認. [DOI](https://doi.org/10.1016/j.parkreldis.2023.105800)
+- Koch G, Oliveri M, Brusa L, Stanzione P, Torriero S, Caltagirone C. High-frequency rTMS improves time perception in Parkinson disease. *Neurology*. 2004;63(12):2405-6. PMID 15623713. **Clinical Trial / Controlled Clinical Trial / Journal Article**. n 未確認. [DOI](https://doi.org/10.1212/01.wnl.0000147336.19972.82)
 
 ### 小脳・MSA
 
-- Cope TE, Grube M, Singh B, Burn DJ, Griffiths TD. The basal ganglia in perceptual
-  timing: timing performance in Multiple System Atrophy and Huntington's disease.
-  *Neuropsychologia*. 2014;52:73-81. PMID 24135486. **Journal Article**.
-  n=8（MSA-C）/ 10（MSA-P）/ 14（HD）/ 11（対照）.
-  [DOI](https://doi.org/10.1016/j.neuropsychologia.2013.09.039)
-- Ivry RB, Keele SW. Timing functions of the cerebellum.
-  *J Cogn Neurosci*. 1989;1(2):136-52. PMID 23968462. **Journal Article**. n 未確認.
-  [DOI](https://doi.org/10.1162/jocn.1989.1.2.136)
-- Ivry RB, Keele SW, Diener HC. Dissociation of the lateral and medial cerebellum in
-  movement timing and movement execution. *Exp Brain Res*. 1988;73(1):167-80.
-  PMID 3208855. **Case Reports / Journal Article**. n=7.
-  [DOI](https://doi.org/10.1007/BF00279670)
+- Cope TE, Grube M, Singh B, Burn DJ, Griffiths TD. The basal ganglia in perceptual timing: timing performance in Multiple System Atrophy and Huntington's disease. *Neuropsychologia*. 2014;52:73-81. PMID 24135486. **Journal Article**. n=8（MSA-C）/ 10（MSA-P）/ 14（HD）/ 11（対照）. [DOI](https://doi.org/10.1016/j.neuropsychologia.2013.09.039)
+- Ivry RB, Keele SW. Timing functions of the cerebellum. *J Cogn Neurosci*. 1989;1(2):136-52. PMID 23968462. **Journal Article**. n 未確認. [DOI](https://doi.org/10.1162/jocn.1989.1.2.136)
+- Ivry RB, Keele SW, Diener HC. Dissociation of the lateral and medial cerebellum in movement timing and movement execution. *Exp Brain Res*. 1988;73(1):167-80. PMID 3208855. **Case Reports / Journal Article**. n=7. [DOI](https://doi.org/10.1007/BF00279670)
 
 ### bradyphrenia
 
-- Mayeux R, Stern Y, Sano M, Cote L, Williams JB. Clinical and biochemical correlates of
-  bradyphrenia in Parkinson's disease. *Neurology*. 1987;37(7):1130-4. PMID 2439947.
-  **Comparative Study / Journal Article**. n 未確認. **肯定側**.
-  [DOI](https://doi.org/10.1212/wnl.37.7.1130)
-- Rogers D, Lees AJ, Smith E, Trimble M, Stern GM. Bradyphrenia in Parkinson's disease
-  and psychomotor retardation in depressive illness. An experimental study.
-  *Brain*. 1987;110(Pt 3):761-76. PMID 3107750. **Journal Article**.
-  n=30（PD）/ 30（うつ病）/ 30（対照）. **交絡側**.
-  [DOI](https://doi.org/10.1093/brain/110.3.761)
-- Duncombe ME, Bradshaw JL, Iansek R, Phillips JG. Parkinsonian patients without dementia
-  or depression do not suffer from bradyphrenia as indexed by performance in mental
-  rotation tasks with and without advance information.
-  *Neuropsychologia*. 1994;32(11):1383-96. PMID 7877746.
-  **Randomized Controlled Trial / Clinical Trial / Journal Article**. n 未確認.
-  **否定側**. [DOI](https://doi.org/10.1016/0028-3932(94)00071-9)
-- Spicer KB, Brown GG, Gorell JM. Lexical decision in Parkinson disease: lack of evidence
-  for generalized bradyphrenia. *J Clin Exp Neuropsychol*. 1994;16(3):457-71.
-  PMID 7929713. **Journal Article**. n=22（PD）/ 22（対照）. **否定側**.
-  [DOI](https://doi.org/10.1080/01688639408402656)
-- Phillips JG, Schiffter T, Nicholls ME, Bradshaw JL, Iansek R, Saling LL. Does old age or
-  Parkinson's disease cause bradyphrenia? *J Gerontol A Biol Sci Med Sci*.
-  1999;54(8):M404-9. PMID 10496546. **Journal Article**.
-  n=16（PD）/ 16（対照）＋若年 16 / 高齢 16. **否定側**.
-  [DOI](https://doi.org/10.1093/gerona/54.8.m404)
+- Mayeux R, Stern Y, Sano M, Cote L, Williams JB. Clinical and biochemical correlates of bradyphrenia in Parkinson's disease. *Neurology*. 1987;37(7):1130-4. PMID 2439947. **Comparative Study / Journal Article**. n 未確認. **肯定側**. [DOI](https://doi.org/10.1212/wnl.37.7.1130)
+- Rogers D, Lees AJ, Smith E, Trimble M, Stern GM. Bradyphrenia in Parkinson's disease and psychomotor retardation in depressive illness. An experimental study. *Brain*. 1987;110(Pt 3):761-76. PMID 3107750. **Journal Article**. n=30（PD）/ 30（うつ病）/ 30（対照）. **交絡側**. [DOI](https://doi.org/10.1093/brain/110.3.761)
+- Duncombe ME, Bradshaw JL, Iansek R, Phillips JG. Parkinsonian patients without dementia or depression do not suffer from bradyphrenia as indexed by performance in mental rotation tasks with and without advance information. *Neuropsychologia*. 1994;32(11):1383-96. PMID 7877746. **Randomized Controlled Trial / Clinical Trial / Journal Article**. n 未確認. **否定側**. [DOI](https://doi.org/10.1016/0028-3932(94)00071-9)
+- Spicer KB, Brown GG, Gorell JM. Lexical decision in Parkinson disease: lack of evidence for generalized bradyphrenia. *J Clin Exp Neuropsychol*. 1994;16(3):457-71. PMID 7929713. **Journal Article**. n=22（PD）/ 22（対照）. **否定側**. [DOI](https://doi.org/10.1080/01688639408402656)
+- Phillips JG, Schiffter T, Nicholls ME, Bradshaw JL, Iansek R, Saling LL. Does old age or Parkinson's disease cause bradyphrenia? *J Gerontol A Biol Sci Med Sci*. 1999;54(8):M404-9. PMID 10496546. **Journal Article**. n=16（PD）/ 16（対照）＋若年 16 / 高齢 16. **否定側**. [DOI](https://doi.org/10.1093/gerona/54.8.m404)
+
+### 総説・合意文書
+
+- Buikema L, Sadikov A, Jahanshahi M, Vinke RS, Georgiev D. Cognitive processes and neurophysiological mechanisms of time processing in Parkinson's disease: A narrative review. *Neurosci Biobehav Rev*. 2026;186:106719. PMID 42061779. **Journal Article / Review**（narrative review）. [DOI](https://doi.org/10.1016/j.neubiorev.2026.106719)
+- Jones CRG, Jahanshahi M. Motor and perceptual timing in Parkinson's disease. *Adv Exp Med Biol*. 2014;829:265-90. PMID 25358715. **Journal Article / Review**. [DOI](https://doi.org/10.1007/978-1-4939-1782-2_14)
+- Jones CRG, Jahanshahi M. The substantia nigra, the basal ganglia, dopamine and temporal processing. *J Neural Transm Suppl*. 2009;(73):161-71. PMID 20411776. **Journal Article / Review**. [DOI](https://doi.org/10.1007/978-3-211-92660-4_13)
+- Magalhães F, Rocha K, Marinho V, et al. Neurochemical changes in basal ganglia affect time perception in parkinsonians. *J Biomed Sci*. 2018;25(1):26. PMID 29554962. **Journal Article / Review**. [DOI](https://doi.org/10.1186/s12929-018-0428-2)
+- Bareš M, Apps R, Avanzino L, et al. Consensus paper: Decoding the Contributions of the Cerebellum as a Time Machine. From Neurons to Clinical Applications. *Cerebellum*. 2019;18(2):266-286. PMID 30259343. **Consensus Statement / Journal Article**. [DOI](https://doi.org/10.1007/s12311-018-0979-5)
 
 ### 方法論（計数の統制）
 
-- Rakitin BC, Gibbon J, Penney TB, Malapani C, Hinton SC, Meck WH. Scalar expectancy
-  theory and peak-interval timing in humans.
-  *J Exp Psychol Anim Behav Process*. 1998;24(1):15-33. PMID 9438963.
-  **Journal Article**. 健常者。妨害課題で計数を禁じた設計の出典。
-  [DOI](https://doi.org/10.1037//0097-7403.24.1.15)
+- Rakitin BC, Gibbon J, Penney TB, Malapani C, Hinton SC, Meck WH. Scalar expectancy theory and peak-interval timing in humans. *J Exp Psychol Anim Behav Process*. 1998;24(1):15-33. PMID 9438963. **Journal Article**. 健常者。scalar expectancy theory と、妨害課題で計数を禁じた設計の出典。 [DOI](https://doi.org/10.1037//0097-7403.24.1.15)

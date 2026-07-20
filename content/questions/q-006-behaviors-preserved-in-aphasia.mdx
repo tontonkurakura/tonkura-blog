@@ -7,6 +7,7 @@ domain: [aphasia, language-and-thought, rehabilitation]
 sessions:
   - n: 14
     at: "1:32:07"
+    date: "2026-07-10"
 depends_on: [q-005, q-007]
 related: []
 refs:
@@ -15,446 +16,171 @@ refs:
 updated: 2026-07-19
 ---
 
-## 問いの分解
+## 問い
 
-`q-005`（言語を介さない思考はどこまで可能か）を**臨床で操作化したもの**にあたる。
-親問いが原理的に閉じないのに対し、こちらは前提を置けば実証に進める。
+失語の患者で、できなくなる行動とできるまま残る行動があるとして、その境目は何によって引かれているのか。
 
-1. **概念** — 「言語を要する行動」と「要さない行動」の境界をどう定義するか
-2. **実証** — 失語の重症度と、保たれる行動の範囲に対応関係があるか
+## この問いが出た文脈
 
-### q-005・q-007 から引き継ぐもの
+失語から回復した患者の証言をめぐって立った。携帯を触りたいという思考は言語ではないだろうが、文を組み立てられないということは頭の中で文を組み立てていないはずだ、という趣旨の発言である。
 
-- `q-005` は**「言語」の線引きが争点そのもの**だと結論した。本項でも同じ問題が、
-  今度は「行動」の側で反復する。**「言語を要する行動」は、言語の定義を決めないと決まらない。**
-- `q-005` の最も有用な整理は**時間軸の区別**だった。
-  「足場を外しても建物は立つ」（成人失語で残る）と「足場なしでは建てられない」（獲得に要る）は両立する。
-  **本項が扱えるのは前者だけである。** 会の証言は既に成人期に獲得を終えた人の話であり、
-  獲得の問いには答えない
-- `q-007` は「内言語」を**二成分**（①内的な語の想起／②想起した音韻形式の心的操作）に分解した。
-  会の「文を組み立てる」は②に近い。**本項で「言語的媒介」と言うときも、
-  ①なのか②なのかを指定しないと測れない。**
+携帯を手に取る、メッセージアプリを開くといった行為は保たれているのに、文を組み立てることだけができない。この対比から、会では「プログラムされた行動とそうでない行動」という区別が提示された。**この語は会の場で定義されなかった。**失語から回復した症例に当時の体験を聞けば確かめられるのではないか、という提案も出ている。
 
-**したがって本項は q-005 の縮小版ではない。** q-005 が「言語なしで思考できるか」を問うのに対し、
-本項は**「日常行動のどの部分が、どの成分の言語を必要としているか」**を問う。
-前者は原理的に閉じないが、後者は成分を固定すれば測れる。ここが接続点である。
+この問いは `q-005`（言語を介さない思考はどこまで可能か）を臨床で操作化したものにあたる。`q-005` は「言語」の線引きが争点そのものだと結論して閉じなかったが、本項では前提を置けば実証に進める見込みがある。ただし同項の時間軸の区別は引き継ぐ ——「足場を外しても建物は立つ」（成人期に失語になっても残る）と「足場なしでは建てられない」（獲得に言語が要る）は両立し、**会の証言は既に言語を獲得し終えた人の話なので、本項が扱えるのは前者だけである。**
 
-## 概念整理
+## 前提となる考え方
 
-### 「プログラムされた行動」に対応する既存の枠組みは、部分的にしか見つからなかった
+会の「プログラムされた行動」という語に対応しうる既存の枠組みは、複数の領域に散っている。以下は本項を読むために必要な最小限の用語と、それぞれがどういう流れで出てきたかである。
 
-会では「プログラムされた行動とそうでない行動」という区別が提示されたが、
-**この語は定義されていない。** 候補となる軸は三つあった。
+**手続き記憶と潜在学習。**手続き記憶とは、自転車の乗り方のように、内容を言葉で述べられなくても遂行として保たれる記憶を指す。潜在学習は、学習していること自体を本人が意識しないまま成績が向上する現象で、代表的な測定法が系列反応時間課題である。画面上の位置に順に反応させ、実は決まった順序が反復していることを教えない。反復系列をランダム系列に切り替えたときに反応時間が跳ね上がれば、順序を学んでいたと判定できる。
 
-| 候補軸 | 対応する既存の枠組み | 見つかったか |
-|---|---|---|
-| 習慣化の程度（手続き記憶に落ちているか） | 手続き学習／潜在学習 | **見つかった**（Goschke 2001, Schuchard 2016）|
-| 目標の階層（単一動作か、複数手順の系列か） | naturalistic action / 日常行為の誤り分析 | **見つかった。ただし言語との関係は逆向き**（後述）|
-| 言語的媒介の要否 | 内言語と遂行機能の関係 | **見つかったが二重解離が報告されている**（Fama 2024）|
+**定型表現と二重過程モデル。**定型表現（formulaic language）とは、慣用句・悪態・挨拶・決まり文句のように、**まとまりのまま記憶に貯蔵され、字義どおりではない意味を持ち、場面に依存する**言い回しを指す。これに対し、規則に従ってその場で組み立てる言語を新規・命題的（novel / propositional）言語と呼ぶ。Van Lancker Sidtis らは 1970 年代以降この対比を臨床例から積み上げ、2018 年に**二重過程モデル**（dual-process model）として産出モデルの形にまとめた。言語産出は単一の系ではなく、貯蔵単位を丸ごと呼び出す系統と、規則で組み立てる系統の二つからなる、という主張である。
 
-そして**言語そのものの内部には、この区別にほぼ一対一で対応する枠組みがあった。**
+**naturalistic action。**コーヒーを淹れる、弁当を詰めるといった、複数手順からなる日常行為の遂行を実際にやらせて誤りを分類する研究系統を指す。もとは観念失行（道具や手順の概念が崩れる失行）の研究から出てきたもので、当初は左半球損傷に固有の障害と考えられていたが、 1990 年代の比較研究でその前提が揺らいだ。経過は「根拠」で述べる。
 
-### 最も近い既存枠組み — 二重過程モデル（dual-process model）
+**内言語の二成分。**`q-007` は内言語を①内的な語の想起と②想起した音韻形式の心的操作に分解した。会が言う「文を組み立てる」は②に近い。**本項で「言語を要する」と言うときも、 ①なのか②なのかを指定しないと測れない。**
 
-According to PubMed、Van Lancker Sidtis らは、言語産出を
-**定型表現（formulaic）と新規・命題的言語（novel / grammatical）の二系統**に分ける
-二重過程モデルを提唱している（Van Lancker Sidtis & Sidtis 2018、**Review**）。
-定型表現とは慣用句・悪態・挨拶・決まり文句などで、
-**まとまりのまま記憶に貯蔵され、非字義的な意味を持ち、場面に依存する。**
-著者らは、定型表現の産出には右半球と皮質下構造の相互作用が関与し、
-文法的言語とは別の神経基盤で調整されると論じる。
+**スクリプト訓練。**注文や電話応対など、場面ごとに定型化した発話系列（スクリプト）を繰り返し訓練する失語の介入法。定型表現を臨床に応用した例として既に存在する。
 
-**これは会の「プログラムされた行動／そうでない行動」を、言語の内部でそのまま言い直したものである。**
-貯蔵された単位をまるごと呼び出すか、規則に従ってその場で組み立てるか。
-会の証言「携帯を触りたい・LINE を開こうは保たれ、文の構成だけができなかった」は、
-**この線が言語と非言語の間ではなく、言語の内部にも引かれている**ことを示唆する。
+## 現時点での答え
 
-支持する所見として、Van Lancker Sidtis et al. 2015（**Journal Article**、
-PD 16 名・AD 12 名・健常 18 名）は、基底核が機能する AD 群で定型表現の産出割合が高く、
-基底核が機能不全である PD 群で低いと報告した。理解の検査では逆に PD 群が AD 群を上回った。
+**分けているものが何かは、まだ言えない。**会の直観に最もよく対応する既存の枠組みは言語の外ではなく**言語の内部**にあり（定型／新規の二重過程モデル）、それを非言語的行為に拡張した文献は本調査では見つからなかった。
 
-**ただし限界を三つ明記する。**
+もう一段はっきりしているのは、**「非言語的な行動だから保たれる」という推論が、そのままでは通らない**ことである。一見して言語を要さない日常行為の遂行も、言語能力から完全には切り離せていない。逆に、日常行為の崩れ方は左半球損傷に固有でもない。「言語」と「行為」は素直な二分法をなしていない。
 
-1. **この枠組みは言語の内部の区別であって、行動一般の区別ではない。**
-   「携帯を触る」「LINE を開く」という非言語的行為に、そのまま適用できるとは示されていない
-2. 二重過程モデルの主要文献は **Review** であり、右半球・皮質下説は解釈である
-3. Van Lancker Sidtis 2015 の n は各群 12〜18 で、対象は失語ではなく PD / AD である
+本項を `open` に据え置くのは、調査が足りないからではなく、**概念の側が決着していない**からである。「プログラムされた行動」が習慣化の程度を指すのか、目標の階層を指すのか、言語的媒介の要否を指すのか。三つの候補軸は互いに独立ではなく、それぞれ別の反証を抱えている。提起者がどの軸を指しているのかを選ぶまで、何を測ればよいかが定まらない。
 
-### 逆向きの所見 — 行為の側では、区別が言語と一致しない
+## 根拠
 
-日常行為（コーヒーを淹れるなど複数手順の系列）の遂行を測る naturalistic action の系統は、
-**会の想定と逆の絵を出している。**
+以下、`article_type` と n は PubMed が返した値による。n が抄録にないものは未確認と記す。
 
-Buxbaum 1998（**Journal Article**）は、左半球損傷例の行為の誤りが、
-重症度を揃えると右半球損傷例・閉鎖性頭部外傷例と**変わらない**と報告した。
-Schwartz et al. 1999（**Clinical Trial / Journal Article**、右半球脳卒中 n=30）も、
-右半球例が頭部外傷例と類似の誤りパターンを示したとし、
-**「非特異的な資源制約」**（覚醒度・努力量の低下）を中心的な説明に据えた。
+### 同じ線が、言語の内部にも引かれている
 
-つまり**「複数手順の系列行為が崩れる」ことは左半球＝言語の問題に固有ではない。**
-「プログラムされた行動が崩れるのは言語が失われたからだ」という推論は、この系統では支持されない。
+Van Lancker Sidtis & Sidtis 2018（*Brain Cogn*、PMID 30176549、**Journal Article / Review**）は、定型表現の産出には右半球と皮質下構造の相互作用が関与し、文法的言語とは別の神経基盤で調整されると論じる。**貯蔵された単位をまるごと呼び出すか、規則に従ってその場で組み立てるか** —— これは会の「プログラムされた行動／そうでない行動」を、言語の内部でそのまま言い直したものである。会の証言が示唆するのは、この線が言語と非言語の間だけでなく、**言語の内側にも引かれている**ことかもしれない。
 
-**さらに強い反証が新しい研究から出ている。** 後述する。
+支持する所見として、Van Lancker Sidtis et al. 2015（*J Speech Lang Hear Res*、PMID 26183940、 **Journal Article**、PD 16 名 / AD 12 名 / 健常 18 名）は、基底核が機能するアルツハイマー病群で定型表現の産出割合が高く、基底核が機能不全であるパーキンソン病群で低いと報告した。理解の検査では逆にパーキンソン病群がアルツハイマー病群を上回った。
 
-### 結論: 概念部は決着しない
+**ただし三点の限界がある。**これは言語の内部の区別であって行為一般の区別ではなく、「携帯を触る」ような非言語的行為に適用できるとは示されていない。二重過程モデルの主要文献は Review であり、右半球・皮質下説は解釈である。2015 年の研究は各群 12〜18 例で、対象は失語ではない。
 
-三つの候補軸は**互いに独立ではなく、既存の枠組みも一つに収束しない。**
+### 潜在学習は保たれるが、素材が音韻なら落ちる
 
-- 手続き記憶の軸は失語で**保たれる**という所見がある（Goschke 2001）
-- 系列行為の軸は**言語と独立**だという所見がある（Buxbaum 1998, Schwartz 1999）
-- 言語的媒介の軸は**二重解離**が報告されている（Fama et al. 2024）
-- 一方で、言語内部の定型／新規の区別は**会の直観とよく一致する**（Van Lancker Sidtis 2018）
+本調査で見つかった、会の直観に最も直接対応する所見である。
 
-**「プログラムされた行動」を一つの軸に還元する枠組みは、本調査では見つからなかった。**
-無理に当てはめない。会の語を採用するなら、**どの軸のことを言っているのかを
-提起者が先に選ぶ必要がある。** それが決まるまで実証部は設計できない。
+Goschke et al. 2001（*J Cogn Neurosci*、PMID 11371314、**Journal Article**）は二つの実験を行った。標準的な系列反応時間課題では、ブローカ失語・ウェルニッケ失語のいずれも系列学習が保たれた。ところが空間運動系列と音素系列を独立に操作できる新課題では、健常者が両方を学習したのに対し、**ブローカ失語は音素系列の学習だけが選択的に障害された。**
 
-## 現在のエビデンスと質
+同じ潜在学習でも、素材が音韻なら落ち、空間運動なら残る。会の「携帯を触る操作は残り、文の構成だけができない」という証言と構造が一致する。**ただしこれは二重解離ではなく単一解離（音素だけが落ちる）であり、抄録に n の記載がなく各群の人数は未確認である。**2001 年の研究で、本調査の範囲では直接の追試を確認できなかった。
 
-**硬い証拠と弱い証拠を分けて示す。**
+Schuchard et al. 2016（*Aphasiology*、PMID 28603329、**Journal Article**、失文法失語 9 名 / 健常 21 名）も、失文法失語者が系列反応時間課題で有意な潜在系列学習を示したと報告している。
 
-### 比較的硬い — 失語で運動系列の潜在学習は保たれ、音韻系列の学習は落ちる
+**ただし同研究の要点はむしろ否定的である。潜在学習能力があっても、潜在的曝露だけに基づく受動文理解の治療では改善しなかった。**「保たれた能力」と「その能力で言語が治せること」は別である。本項が会の楽観に対して最も直接に持ち出すべき所見はこれで、n=9 と小さいながら、保存の確認と応用の失敗が同一の被験者群で同時に得られている点で重い。
 
-これが本調査で見つかった、会の直観に**最も直接対応する所見**である。
+### 日常行為の崩れは、左半球に固有ではない
 
-Goschke et al. 2001（*J Cogn Neurosci*、**Journal Article**）は二つの実験を行った。
+naturalistic action の系統は、当初の想定と逆の絵を出した。
 
-- 実験1（標準的な系列反応時間課題）— ブローカ失語・ウェルニッケ失語のいずれも
-  **系列学習が保たれた**（反復系列をランダム系列に切り替えると反応時間が確実に増加）
-- 実験2（空間運動系列と音素系列を独立に操作できる新課題）—
-  健常者は両方を学習したのに対し、**ブローカ失語は音素系列の学習だけが選択的に障害された**
+Buxbaum 1998（*Cogn Neuropsychol*、PMID 22448839、**Journal Article**、n 未確認）は、左半球損傷例の行為の誤りが、重症度を揃えると右半球損傷例・閉鎖性頭部外傷例と**変わらない**と報告した。 Schwartz et al. 1999（*Neuropsychologia*、PMID 9920471、**Clinical Trial / Journal Article**、右半球脳卒中 30 名）も、右半球例が頭部外傷例と類似の誤りパターンを示したとし、**非特異的な資源制約**（覚醒度・努力量の低下）を中心的な説明に据えた。
 
-**これは「同じ潜在学習でも、素材が音韻なら落ち、空間運動なら残る」という解離である。**
-会の「携帯を触る操作は残り、文の構成だけができない」という証言と、構造が一致する。
+つまり「複数手順の系列行為が崩れる」ことは左半球すなわち言語の問題に固有ではない。**「プログラムされた行動が崩れるのは言語が失われたからだ」という推論は、この系統では支持されない。**
 
-**格付け:** 二重解離ではなく単一解離（音素だけが落ちる）である。
-**抄録に n の記載がなく、各群の人数は未確認。** 2001 年の研究であり、
-本調査の範囲では直接の追試を確認できなかった。
+### それでも、日常行為の成績は言語理解に予測される
 
-補強する所見として、Schuchard et al. 2016（*Aphasiology*、**Journal Article**、
-失文法失語 n=9・健常 n=21）も、失文法失語者が系列反応時間課題で
-**有意な潜在系列学習を示した**と報告している。
-ただし同研究の要点はむしろ否定的で、**潜在学習能力があっても、
-潜在的訓練だけに基づく受動文理解の治療では改善しなかった。**
-**「学習能力が残っていること」と「その能力で言語が治せること」は別である。**
+上の系統は 2020 年代に入って別の面を見せた。
 
-### 中程度 — 内言語と遂行機能は二重解離する
+Thibault, Wong & Buxbaum 2025（*Cortex*、PMID 40121973、**Journal Article**、左半球脳卒中 51 名、後ろ向き解析）は、日常行為検査の成績を行為・注意・推論・言語の各検査から正則化回帰で予測した。日常行為の障害を独立に予測したのは、(a) 行為の障害（手の構えの系列化、ジェスチャー認知）、(b) 注意の配分と制御、(c) **言語理解能力**、(d) 年齢だった。病変マッピングでは後部中側頭回・前部下頭頂小葉・中前頭回が関与した。
 
-`q-007` から引き継ぐ。Fama et al. 2024（*Neuropsychologia*、**Journal Article**、
-慢性期失語 **n=59**、PMID 39251107）は、内言語を二方式（①内的な語の想起、
-②想起した音韻形式の心的操作）で測り、遂行機能の五側面と照合した。
+**言語理解能力が独立の予測因子として残った点が、会の想定を直接に削る。**コーヒーを淹れるような、一見して言語を要さない複数手順の行為ですら、言語能力から切り離せていない。
 
-- 反応抑制を除くすべての側面で内言語と関連が見られた
-- **同時に二重解離が確認された。** 内言語が不良でも遂行機能が保たれる者、その逆もいた
+**ただし解釈には注意が要る。**後ろ向き解析であり、言語理解の障害が行為障害を引き起こしたことを示さない。著者ら自身、注意資源の説明と失行の説明が相互排他的でないと述べている。左半球病変では言語と行為の基盤が解剖学的に隣接するため、**共通の病変による見かけの相関**という説明が残る。
 
-著者自身が "tentative relationships"、"preliminary evidence" と留保している。
+この所見と、前節の Goschke 2001 の解離は、直接には矛盾しない。前者は**遂行時の全体的資源**を、後者は**学習の素材**の違いを見ている。ただし本調査では、両者を同一被験者で同時に測った研究を見つけられなかった。
 
-**この所見が本項に効くのは、「言語が落ちれば手順の制御も落ちる」という
-単純な連動を否定するからである。** 会の区別を「言語的媒介の要否」の軸で立てるなら、
-**その軸は個人ごとに向きが違う**ことを前提にしなければならない。
+### 言語が落ちれば手順の制御も落ちる、という連動はない
 
-### 弱い — 日常行動の側から見た保存
+`q-007` から引き継ぐ。Fama et al. 2024（*Neuropsychologia*、PMID 39251107、**Journal Article**、慢性期失語 59 名）は、内言語を前述の二方式で測り、遂行機能の五側面と照合した。反応抑制を除くすべての側面で内言語と関連が見られたが、**同時に二重解離が確認された。**内言語が不良でも遂行機能が保たれる者がおり、その逆もいた。著者自身が "tentative relationships"、 "preliminary evidence" と留保している。
+
+会の区別を「言語的媒介の要否」の軸で立てるなら、**その軸は個人ごとに向きが違う**ことを前提にしなければならない。
+
+### 日常生活の水準では、保存と障害の双方が報告されている
+
+証拠はいずれも弱い。n が小さいか、デザインが症例集積である。
 
 | 研究 | article_type | n | 所見 |
 |---|---|---|---|
-| Meier et al. 2017 *AJSLP* | Journal Article | 72（うち治療 39）| 単一時点では言語検査成績と機能的コミュニケーションが多数の相関を示すが、**治療による変化量どうしは有意に相関しなかった** |
-| Adjei-Nicol et al. 2025 *IJLCD* | Journal Article（多重ベースライン症例集積）| **6** | 全失語者に非言語的な認知介入を行い、6 名中 4 名で ASHA-FACS のコミュニケーション自立度が有意に改善 |
-| Proios et al. 2021 *JINS* | Journal Article | 記載なし（未確認）| 失語者は基本的な数の理解課題と、**数を含む日常生活動作（NADL）の大半で成績不良**。前方型は後方型より誤りが多く、全失語型はほぼ全課題で不良 |
-| Lemmetyinen et al. 2024 *Appl Neuropsychol Adult* | Journal Article（長期追跡）| **7** | 重度非流暢性失語＋肢節運動失行の 7 名中 5 名で、口頭要求に対するジェスチャーの了解度が発症 3 年後まで改善し続けた |
+| Meier et al. 2017 *AJSLP*（PMID 28196373） | Journal Article | 72（うち治療 39）| 単一時点では言語検査成績と機能的コミュニケーションが多数の相関を示すが、**治療による変化量どうしは有意に相関しなかった** |
+| Proios et al. 2021 *JINS*（PMID 33568239） | Journal Article | 未確認 | 失語者は基本的な数の理解課題と、**数を含む日常生活動作の大半で成績不良**。前方型は後方型より誤りが多く、全失語型はほぼ全課題で不良 |
+| Adjei-Nicol et al. 2025 *IJLCD*（PMID 39797688） | Journal Article（多重ベースライン症例集積）| 6 | 全失語者への非言語的な認知介入で、6 名中 4 名で ASHA-FACS のコミュニケーション自立度が有意に改善 |
+| Lemmetyinen et al. 2024 *Appl Neuropsychol Adult*（PMID 38801404） | Journal Article（長期追跡）| 7 | 重度非流暢性失語＋肢節運動失行の 7 名中 5 名で、口頭要求に対するジェスチャーの了解度が発症 3 年後まで改善し続けた |
 
-**Meier et al. 2017 の所見は本項にとって重要である。**
-言語機能と機能的コミュニケーションは、**横断的には相関するのに、変化量では連動しない。**
-「言語が良くなれば日常のやりとりも良くなる」という素朴な期待に対する、直接の警告になる。
+このうち二つが本項に効く。Meier et al. 2017 は「言語が良くなれば日常のやりとりも良くなる」という素朴な期待への警告であり、Proios et al. 2021 は「携帯を触る」水準の日常動作でも、数を含むものは失語で広く障害されることを示す。**非言語的に見える日常行動が言語から独立しているとは限らない。**
 
-**Proios et al. 2021 は逆に、会の楽観に対する反例である。**
-「携帯を触る」水準の日常動作でも、**数を含むものは失語で広く障害される。**
-非言語的に見える日常行動が言語から独立しているとは限らない。
+### 保たれた成分を治療の足がかりにできるか
 
-### 反論不能ではない — 内言語をリハビリテーションに利用する介入は存在する
+会で挙がった動機（リハビリテーションへの応用）に対応する研究は、少数だが実在する。
 
-会で挙がった動機（リハビリテーションへの応用）に対応する研究は、**少数だが実在する。**
+Fama et al. 2026（*AJSLP*、PMID 41954433、**Journal Article**、単一被験者デザイン、5 名）は、自己報告で「頭の中では言えた」と分類された項目と「言えなかった」項目に分けて呼称訓練を行い、 **5 名中 4 名で前者の項目だけ呼称正答率が有意に改善した。**混合効果モデルでも、失語重症度とベースライン成績を統制しても内言語が治療後成績を予測した。
 
-- Fama et al. 2026 *AJSLP*（**Journal Article**、単一被験者デザイン、**n=5**、PMID 41954433）—
-  自己報告で「頭の中では言えた」（successful inner speech）と分類された項目と
-  「言えなかった」項目に分けて呼称訓練を行った。**5 名中 4 名で、
-  前者の項目だけ呼称正答率が有意に改善した。** 混合効果モデルでも、
-  失語重症度とベースライン成績を統制しても内言語が治療後成績を予測した
-- 定型表現をリハビリテーションに利用する方向（メロディックイントネーション療法、
-  制約誘導型失語療法など）を論じた文献がある（Stahl & Van Lancker Sidtis 2015、
-  *Front Psychol*。**PubMed に抄録が収載されておらず、
-  本調査では論説か原著かを確定できなかった**）
+定型表現をリハビリテーションに利用する方向（メロディックイントネーション療法、制約誘導型失語療法など）を論じた文献もある（Stahl & Van Lancker Sidtis 2015、*Front Psychol*、 PMID 26539131。**PubMed に抄録が収載されておらず、論説か原著かを確定できなかった**）。スクリプト訓練の研究（Cherney et al. 2019、n=20 / Kaye & Cherney 2016、n=8）も、定型化された系列を訓練する発想が既に臨床にあることを示す。**ただしこれらは会の区別を支持する証拠ではない。**定型表現が訓練しやすいことと、定型／新規の境界が行動全般を分けていることは別の主張である。
 
-**Fama et al. 2026 は n=5 の単一被験者デザインである。**
-「保たれた成分を治療の足がかりにする」という発想が実行可能であることは示すが、
-**臨床推奨の根拠にはならない。** 会で挙がった動機はここまでは届いているが、それ以上ではない。
+**Fama et al. 2026 は n=5 の単一被験者デザインであり、臨床推奨の根拠にはならない。**そして前述のとおり、潜在学習能力が保たれていてもそれに基づく治療が効かなかった例もある（Schuchard et al. 2016）。**「保たれた能力」から「使える介入」への距離は、文献上まだ埋まっていない。**
 
-## 反証の探索結果
+## 分かっていないこと
 
-**規約5に従い、「非言語的・習慣的な行動は失語で保たれる」を否定する文献を探した。結果、見つかった。**
+- **「プログラムされた行動」に対応する単一の既存枠組みは見つからなかった。**最も近いのは言語内部の二重過程モデルだが、**非言語的行為への拡張は文献上示されていない。**これが本調査の最大の空白である
+- **測る側が失語に汚染される。**Olsson, Arvidsson & Blom Johansson 2020（*Disabil Rehabil*、 PMID 33270466、**Journal Article**、認知的インタビュー法、代諾者 11 名）は、重度失語者の遂行機能を家族による評定尺度（BRIEF-A）で測る妥当性を検討し、否定的な結果を得た。項目の解釈にばらつきが大きく、評定者は「能力」と「実際の遂行」の間で揺れ、多くは期待水準を下げていた。著者らは「代諾者評定を使っても、失語が交絡因子である問題は解決しない」と結論する。**家族や臨床家の評定で「何が保たれているか」を測る設計は、これを織り込む必要がある**
+- **会で出た「失語が治った症例に聞く」という提案は、遡及的な聞き取りとしては弱い。**回復後の言語能力で言語がなかった時期を再構成しているため想起バイアスがかかり、回復した者だけが証言できるため生存者バイアスもかかる。加えて `q-007` で確認したとおり、Fama et al. 2019 では 53 名中 6 名が自己報告の信頼性が低く、重症度が高く自分の発話の誤りの検出も不良だった。**「証言できる人」と「体験が保たれていた人」は同じではない。**前向きの代替として、Alexander, Hedrick & Stark 2024（*Front Psychol*、PMID 38577124、**Journal Article**、慢性期失語 23 名）が経験サンプリング法（日常生活のなかで無作為な時点に通知を送り、その場の体験を尋ねる方法）で 3 週間 30 時点の内言語の有無を尋ね、脱落率 8% 未満・順守率 94% 超を報告した。**著者ら自身が exploratory / feasibility study と明記しており、成果は所見ではなく設計の実行可能性である。**内言語の有無を尋ねたのであって「行為のどの段階が保たれていたか」は尋ねておらず、質問項目の設計は未着手である
+- **Goschke et al. 2001 の各群 n が抄録に記載されておらず未確認。**本項で会の直観に最も直接対応する所見であるにもかかわらず、格付けを保留している。Proios et al. 2021 の n も未確認
+- **「携帯を操作する」「メッセージアプリを開く」といった具体的な行為系列を、失語の重症度と対応づけて測った研究は見つからなかった。**失語とデジタル機器を扱う文献はあるが、本調査で確認した範囲では支援技術・遠隔リハビリテーションの文脈のものであり、「言語なしでどこまで操作できるか」を測ったものではない
+- **手続き記憶と失語の解離を扱った文献は、PubMed の題名検索では 2 件しか得られなかった。**検索語の設計上の取りこぼしがある可能性が高く、この軸は追加調査の余地が大きい
+- **失語者の主観的体験を扱った質的研究のうち、「行動のどの段階が保たれていたか」を主題にしたものは同定できなかった。**自己報告を扱う研究（Fama et al. 2016、n=37、パイロット）は語の想起の主観に集中しており、行為の系列には及んでいない
+- **日本語圏の文献は未調査。**本項は英語圏の文献のみに基づく
 
-### 反証1 — 日常行為の遂行は言語理解能力に予測される
-
-Thibault, Wong & Buxbaum 2025 *Cortex*（**Journal Article**、左半球脳卒中 **n=51**、
-後ろ向き解析、PMID 40121973）は、日常行為（naturalistic action）検査の成績を、
-行為・注意・推論・言語の各検査から正則化回帰で予測した。
-
-結果、日常行為の障害を独立に予測したのは
-**(a) 行為の障害（手の構えの系列化、ジェスチャー認知）、(b) 注意の配分と制御、
-(c) 言語理解能力、(d) 年齢**だった。
-病変マッピングでは後部中側頭回・前部下頭頂小葉・中前頭回が関与した。
-
-**「言語理解能力が独立の予測因子として残った」という点が反証である。**
-コーヒーを淹れるような、一見して言語を要さない複数手順の行為ですら、
-言語能力から完全には切り離せていない。
-
-**ただし解釈には注意が要る。**
-これは後ろ向き解析であり、言語理解の障害が行為障害を**引き起こした**ことを示さない。
-著者ら自身は、注意資源の説明と失行の説明が**相互排他的でない**と述べている。
-左半球病変では言語と行為の基盤が解剖学的に隣接するため、
-**共通の病変による見かけの相関**という説明が残る。
-
-### 反証2 — 「保たれる／落ちる」の判定そのものが失語に汚染される
-
-Olsson, Arvidsson & Blom Johansson 2020 *Disabil Rehabil*（**Journal Article**、
-認知的インタビュー法、代諾者 **n=11**）は、重度失語者の遂行機能を
-家族による評定尺度（BRIEF-A）で測る妥当性を検討した。
-
-結果は否定的だった。**項目の解釈に大きなばらつきがあり、
-測ろうとしたものとの対応が頻繁に崩れた。**
-評定者は「能力」と「実際の遂行」の間で揺れ、多くは期待水準を下げていた。
-**失語そのものが一部の項目の妥当性を損なっていた。**
-著者らは「代諾者評定を使っても、失語が交絡因子である問題は解決しない」と結論する。
-
-**これは本項の実証部の設計に直撃する。**
-「失語者で何が保たれているか」を家族や臨床家の評定で測ろうとすると、
-**その評定自体が失語の影響を受ける。**
-
-### 反証3 — 潜在学習が残っていても、それに基づく治療は効かなかった
-
-Schuchard et al. 2016（前掲、n=9）。潜在学習能力そのものは保たれたが、
-潜在的曝露のみに基づく受動文理解の治療では改善しなかった。
-**「保たれた能力＝利用できる能力」ではない。**
-
-### 反証をどう扱ったか
-
-**反証1は会の主張を弱めるが、消さない。**
-Goschke 2001 の音素／空間運動の解離と、Thibault 2025 の
-「言語理解が日常行為を予測する」は、直接には矛盾しない。
-前者は**学習の素材**の違いを、後者は**遂行時の全体的資源**を見ている。
-ただし本調査では、両者を同一被験者で同時に測った研究を見つけられなかった。
-
-**反証2は方法論上の制約であり、実証部を先に設計し直す理由になる。**
-
-## 未解決点
-
-**以下は確認できていない。推測で埋めない。**
-
-- **「プログラムされた行動」に対応する単一の既存枠組みは見つからなかった。**
-  最も近いのは言語内部の二重過程モデル（定型／新規）だが、
-  **非言語的行為への拡張は文献上示されていない。** これは本調査の最大の空白である
-- **Goschke et al. 2001 の各群 n が抄録に記載されておらず未確認。**
-  本項で会の直観に最も直接対応する所見であるにもかかわらず、格付けを保留している
-- **Proios et al. 2021 の n も抄録に記載がなく未確認**
-- **「携帯を操作する」「メッセージアプリを開く」といった具体的な行為系列を、
-  失語の重症度と対応づけて測った研究は見つからなかった。**
-  失語と携帯・デジタル機器を扱う文献はあるが、本調査で確認した範囲では
-  支援技術・遠隔リハビリテーションの文脈のものであり、
-  **「言語なしでどこまで操作できるか」を測ったものではない**
-- **手続き記憶と失語の解離を扱った文献は、PubMed の題名検索では 2 件しか得られなかった**
-  （`aphasia[Title] AND (procedural learning|procedural memory|implicit learning)[Title]`）。
-  検索語の設計上の取りこぼしがある可能性が高く、**この軸は追加調査の余地が大きい**
-- **失語者の主観的体験を扱った質的研究のうち、
-  「行動のどの段階が保たれていたか」を主題にしたものは同定できなかった。**
-  自己報告を扱う研究（Fama et al. 2016、n=37、パイロット）は
-  **語の想起の主観**に集中しており、行為の系列には及んでいない
-- **日本語圏の文献は未調査。** 本項は英語圏の文献のみに基づく
-
-### 設計上の論点 — 遡及的聞き取りのバイアスと、前向き評価の可能性
-
-会の観察は失語から回復した患者本人の証言に基づく。
-**回復例からの遡及的な聞き取りには少なくとも三つのバイアスがかかる。**
-
-1. **想起バイアス** — 回復後の言語能力で、言語がなかった時期の体験を再構成している。
-   `q-005` の枠組みで言えば、**回復後の「言語による符号化」を通した報告**であり、
-   当時の非言語的体験そのものではない
-2. **生存者バイアス** — 回復した者だけが証言できる。
-   回復しなかった者の体験は原理的にこの経路では得られない
-3. **自己報告の信頼性が重症度と交絡する** — `q-007` で確認したとおり、
-   Fama et al. 2019 では 53 名中 6 名が自己報告の信頼性が低く、
-   **重症度が高く自分の発話の誤りの検出も不良**だった。
-   **「証言できる人」と「体験が保たれていた人」は同じではない**
-
-**前向きの評価は可能である。** 本調査で該当する方法論が見つかった。
-
-Alexander, Hedrick & Stark 2024 *Front Psychol*（**Journal Article**、
-慢性期失語 **n=23**、PMID 38577124）は、**経験サンプリング法**を用い、
-3 週間にわたり 30 時点で内言語の有無を、3 時点でその主題を尋ねた。
-脱落率 8% 未満、順守率 94% 超で、**78% 超の時点で内言語が経験されていた**と報告された。
-最も多かった主題は「思い出すとき」「計画するため」「自分を動機づけるため」だった。
-内言語と失語重症度・障害への洞察・人口統計学的変数との間に有意な関係は見られなかった。
-
-**著者ら自身が exploratory / preliminary / feasibility study と明記しており、
-所見ではなく設計の実行可能性が主要な成果である。**
-だがこれは本項にとって重要な意味を持つ。
-
-**「失語の最中に、その場で、行動の各段階を報告してもらう」ことは
-技術的に可能だと示された。** 会の提起者が述べた「失語が治った症例で確かめたい」は、
-**遡及的な聞き取りとしてなら想起バイアスを避けられないが、
-経験サンプリングとしてなら前向きに実施しうる。**
-
-ただし前向き設計にも制約が残る。
-
-- 経験サンプリングは**自己報告に依存する**ため、上記の交絡3を解消しない
-- Alexander et al. 2024 は**内言語の有無**を尋ねており、
-  **「行為のどの段階が保たれていたか」は尋ねていない。**
-  質問項目の設計は未着手である
-- 「計画するため」という主題が高頻度で報告されたことは会の証言と噛み合うが、
-  **n=23 の feasibility study であり、この一致を所見として扱ってはならない**
-
-## 当日の議論との接続
-
-> 携帯を触りたいっていう思考は言語ではないんだろうな。
-> でも文を組み立てられないということは、頭の中で文を組み立ててないはず
-
-**調査を経て、会の議論について言えることは四つある。**
-
-1. **会の区別に最も近い既存枠組みは、言語の外ではなく言語の内部にあった。**
-   定型表現と新規言語を分ける二重過程モデルは、
-   「貯蔵された単位を呼び出すか、その場で組み立てるか」という会の直観そのものである。
-   **ただしそれを非言語的行為に拡張した文献は見つからなかった**
-2. **「非言語的な行動だから保たれる」という推論は、そのままでは通らない。**
-   日常行為の遂行は言語理解能力に独立に予測され（Thibault 2025, n=51）、
-   数を含む日常生活動作は失語で広く障害される（Proios 2021）。
-   一方で日常行為の崩れ方は左半球損傷に固有でもない（Buxbaum 1998, Schwartz 1999）。
-   **「言語」と「行為」は素直な二分法をなしていない**
-3. **「失語が治った症例で確かめたい」という提案は、
-   遡及的聞き取りとしてなら想起バイアスを避けられない。**
-   ただし経験サンプリング法という前向きの代替が実行可能だと示されている
-   （Alexander et al. 2024, n=23, feasibility）。**設計は変えられる**
-4. **リハビリテーションへの応用は動機として妥当だが、結論ではない。**
-   保たれた内言語を治療の足がかりにする試みは存在するが n=5 の単一被験者デザインであり
-   （Fama et al. 2026）、潜在学習能力が保たれていてもそれに基づく治療が
-   効かなかった例もある（Schuchard et al. 2016, n=9）。
-   **「保たれた能力」から「使える介入」への距離は、文献上まだ埋まっていない**
-
-**本項を `open` のままにするのは、概念部が決着していないからである。**
-「プログラムされた行動」がどの軸を指すのかを提起者が選ぶまで、
-実証部の測定対象が定まらない。三つの候補軸は互いに独立ではなく、
-それぞれ別の反証を抱えている。**次回はこの選択から始めるべきである。**
+**次回は「プログラムされた行動」がどの軸を指すのかを選ぶところから始めるべきである。**習慣化の程度を選べば「失語でも保たれる」（Goschke 2001）、目標の階層を選べば「言語と独立」（Buxbaum 1998, Schwartz 1999）、言語的媒介の要否を選べば「二重解離する」（Fama et al. 2024）。**どれを選ぶかで、実証部が向き合う反証が変わる。**
 
 ## 出典
 
-文献情報は PubMed から取得し、全 PMID を `get_article_metadata` で実在確認した。
-`article_type` は PubMed が返した値をそのまま記す。
-**n は抄録に記載があるもののみ記す。記載がないものは「未確認」とする。**
+文献情報は PubMed から取得し、全 PMID を `get_article_metadata` で実在確認した。 `article_type` は PubMed が返した値をそのまま記す。 **n は抄録に記載があるもののみ記す。記載がないものは「未確認」とする。**
 
 ### 総説（Review）
 
-- Van Lancker Sidtis D, Sidtis JJ. Cortical-subcortical production of formulaic language:
-  A review of linguistic, brain disorder, and functional imaging studies leading to a
-  production model. *Brain Cogn*. 2018;126:53-64. PMID 30176549.
-  **Journal Article / Review**. [DOI](https://doi.org/10.1016/j.bandc.2018.08.003)
-- Dahò M, Monzani D. The multifaceted nature of inner speech: Phenomenology, neural
-  correlates, and implications for aphasia and psychopathology. *Cogn Neuropsychol*.
-  2025;42(1-2):1-21. PMID 40611622. **Journal Article / Review**（ナラティブレビュー、
-  1990-2024 の 83 研究）. [DOI](https://doi.org/10.1080/02643294.2025.2527983)
+- Van Lancker Sidtis D, Sidtis JJ. Cortical-subcortical production of formulaic language: A review of linguistic, brain disorder, and functional imaging studies leading to a production model. *Brain Cogn*. 2018;126:53-64. PMID 30176549. **Journal Article / Review**. [DOI](https://doi.org/10.1016/j.bandc.2018.08.003)
+- Dahò M, Monzani D. The multifaceted nature of inner speech: Phenomenology, neural correlates, and implications for aphasia and psychopathology. *Cogn Neuropsychol*. 2025;42(1-2):1-21. PMID 40611622. **Journal Article / Review**（ナラティブレビュー、 1990-2024 の 83 研究）. [DOI](https://doi.org/10.1080/02643294.2025.2527983)
 
 ### 原著 — 手続き記憶・潜在学習と失語
 
-- Goschke T, Friederici AD, Kotz SA, van Kampen A. Procedural learning in Broca's
-  aphasia: dissociation between the implicit acquisition of spatio-motor and phoneme
-  sequences. *J Cogn Neurosci*. 2001;13(3):370-88. PMID 11371314. **Journal Article**.
-  n 未確認. [DOI](https://doi.org/10.1162/08989290151137412)
-- Schuchard J, Nerantzini M, Thompson CK. Implicit learning and implicit treatment
-  outcomes in individuals with aphasia. *Aphasiology*. 2016;31(1):25-48. PMID 28603329.
-  **Journal Article**. n=9（失語）＋21（健常）.
-  [DOI](https://doi.org/10.1080/02687038.2016.1147526)
+- Goschke T, Friederici AD, Kotz SA, van Kampen A. Procedural learning in Broca's aphasia: dissociation between the implicit acquisition of spatio-motor and phoneme sequences. *J Cogn Neurosci*. 2001;13(3):370-88. PMID 11371314. **Journal Article**. n 未確認. [DOI](https://doi.org/10.1162/08989290151137412)
+- Schuchard J, Nerantzini M, Thompson CK. Implicit learning and implicit treatment outcomes in individuals with aphasia. *Aphasiology*. 2016;31(1):25-48. PMID 28603329. **Journal Article**. n=9（失語）＋21（健常）. [DOI](https://doi.org/10.1080/02687038.2016.1147526)
 
-### 原著 — 日常行為の遂行（反証側を含む）
+### 原著 — 日常行為の遂行
 
-- Thibault S, Wong AL, Buxbaum LJ. Cognitive neuropsychological and neuroanatomic
-  predictors of naturalistic action performance in left hemisphere stroke: A retrospective
-  analysis. *Cortex*. 2025;185:301-315. PMID 40121973. **Journal Article**（後ろ向き解析）.
-  n=51. **反証1**. [DOI](https://doi.org/10.1016/j.cortex.2025.03.004)
-- Schwartz MF, Buxbaum LJ, Montgomery MW, et al. Naturalistic action production following
-  right hemisphere stroke. *Neuropsychologia*. 1999;37(1):51-66. PMID 9920471.
-  **Clinical Trial / Journal Article**. n=30.
-  [DOI](https://doi.org/10.1016/s0028-3932(98)00066-9)
-- Buxbaum LJ. Ideational apraxia and naturalistic action. *Cogn Neuropsychol*.
-  1998;15(6-8):617-43. PMID 22448839. **Journal Article**. n 未確認.
-  [DOI](https://doi.org/10.1080/026432998381032)
+- Thibault S, Wong AL, Buxbaum LJ. Cognitive neuropsychological and neuroanatomic predictors of naturalistic action performance in left hemisphere stroke: A retrospective analysis. *Cortex*. 2025;185:301-315. PMID 40121973. **Journal Article**（後ろ向き解析）. n=51. [DOI](https://doi.org/10.1016/j.cortex.2025.03.004)
+- Schwartz MF, Buxbaum LJ, Montgomery MW, et al. Naturalistic action production following right hemisphere stroke. *Neuropsychologia*. 1999;37(1):51-66. PMID 9920471. **Clinical Trial / Journal Article**. n=30. [DOI](https://doi.org/10.1016/s0028-3932(98)00066-9)
+- Buxbaum LJ. Ideational apraxia and naturalistic action. *Cogn Neuropsychol*. 1998;15(6-8):617-43. PMID 22448839. **Journal Article**. n 未確認. [DOI](https://doi.org/10.1080/026432998381032)
 
 ### 原著 — 定型表現と二重過程モデル
 
-- Van Lancker Sidtis D, Choi J, Alken A, Sidtis JJ. Formulaic Language in Parkinson's
-  Disease and Alzheimer's Disease: Complementary Effects of Subcortical and Cortical
-  Dysfunction. *J Speech Lang Hear Res*. 2015;58(5):1493-507. PMID 26183940.
-  **Journal Article**. PD n=16 / AD n=12 / 健常 n=18. **対象は失語ではない**.
-  [DOI](https://doi.org/10.1044/2015_JSLHR-L-14-0341)
-- Sidtis DVL, Sidtis JJ. The Affective Nature of Formulaic Language: A Right-Hemisphere
-  Subcortical Process. *Front Neurol*. 2018;9:573. PMID 30087650. **Journal Article**
-  （理論的論考。新規データの報告ではない）. [DOI](https://doi.org/10.3389/fneur.2018.00573)
-- Stahl B, Van Lancker Sidtis D. Tapping into neural resources of communication: formulaic
-  language in aphasia therapy. *Front Psychol*. 2015;6:1526. PMID 26539131.
-  **Journal Article**. **PubMed に抄録が収載されておらず、原著か論説かを確定できなかった**.
-  [DOI](https://doi.org/10.3389/fpsyg.2015.01526)
+- Van Lancker Sidtis D, Choi J, Alken A, Sidtis JJ. Formulaic Language in Parkinson's Disease and Alzheimer's Disease: Complementary Effects of Subcortical and Cortical Dysfunction. *J Speech Lang Hear Res*. 2015;58(5):1493-507. PMID 26183940. **Journal Article**. PD n=16 / AD n=12 / 健常 n=18. **対象は失語ではない**. [DOI](https://doi.org/10.1044/2015_JSLHR-L-14-0341)
+- Sidtis DVL, Sidtis JJ. The Affective Nature of Formulaic Language: A Right-Hemisphere Subcortical Process. *Front Neurol*. 2018;9:573. PMID 30087650. **Journal Article** （理論的論考。新規データの報告ではない）. [DOI](https://doi.org/10.3389/fneur.2018.00573)
+- Stahl B, Van Lancker Sidtis D. Tapping into neural resources of communication: formulaic language in aphasia therapy. *Front Psychol*. 2015;6:1526. PMID 26539131. **Journal Article**. **PubMed に抄録が収載されておらず、原著か論説かを確定できなかった**. [DOI](https://doi.org/10.3389/fpsyg.2015.01526)
 
 ### 原著 — 内言語と遂行機能・治療
 
-- Fama ME, McCall JD, DeMarco AT, Turkeltaub PE. Evidence from aphasia suggests a
-  bidirectional relationship between inner speech and executive function.
-  *Neuropsychologia*. 2024;204:108997. PMID 39251107. **Journal Article**. n=59.
-  **二重解離を報告**. [DOI](https://doi.org/10.1016/j.neuropsychologia.2024.108997)
-- Fama ME, Anderson HR, Cardman EA, et al. Inner Speech Can Predict Naming Treatment
-  Outcomes in Aphasia: A Pilot, Single-Subject Design Study. *Am J Speech Lang Pathol*.
-  2026:1-15. PMID 41954433. **Journal Article**（単一被験者デザイン、パイロット）. n=5.
-  [DOI](https://doi.org/10.1044/2025_AJSLP-25-00357)
-- Fama ME, Hayward W, Snider SF, Friedman RB, Turkeltaub PE. Subjective experience of
-  inner speech in aphasia: Preliminary behavioral relationships and neural correlates.
-  *Brain Lang*. 2016;164:32-42. PMID 27694017. **Journal Article**（パイロット）. n=37.
-  [DOI](https://doi.org/10.1016/j.bandl.2016.09.009)
+- Fama ME, McCall JD, DeMarco AT, Turkeltaub PE. Evidence from aphasia suggests a bidirectional relationship between inner speech and executive function. *Neuropsychologia*. 2024;204:108997. PMID 39251107. **Journal Article**. n=59. **二重解離を報告**. [DOI](https://doi.org/10.1016/j.neuropsychologia.2024.108997)
+- Fama ME, Anderson HR, Cardman EA, et al. Inner Speech Can Predict Naming Treatment Outcomes in Aphasia: A Pilot, Single-Subject Design Study. *Am J Speech Lang Pathol*. 2026:1-15. PMID 41954433. **Journal Article**（単一被験者デザイン、パイロット）. n=5. [DOI](https://doi.org/10.1044/2025_AJSLP-25-00357)
+- Fama ME, Hayward W, Snider SF, Friedman RB, Turkeltaub PE. Subjective experience of inner speech in aphasia: Preliminary behavioral relationships and neural correlates. *Brain Lang*. 2016;164:32-42. PMID 27694017. **Journal Article**（Pilot）. n=37. [DOI](https://doi.org/10.1016/j.bandl.2016.09.009)
 
-### 原著 — 前向き評価の方法論
+### 原著 — 評価法
 
-- Alexander JM, Hedrick T, Stark BC. Inner speech in the daily lives of people with
-  aphasia. *Front Psychol*. 2024;15:1335425. PMID 38577124. **Journal Article**
-  （経験サンプリング法。著者自身が exploratory / preliminary / feasibility と明記）. n=23.
-  [DOI](https://doi.org/10.3389/fpsyg.2024.1335425)
-- Olsson C, Arvidsson P, Blom Johansson M. What do people respond to when rating executive
-  function? - a cognitive interviewing investigation of BRIEF-A informant ratings in severe
-  aphasia. *Disabil Rehabil*. 2022;44(12):2930-2940. PMID 33270466. **Journal Article**
-  （認知的インタビュー法・主題分析）. n=11（代諾者）. **反証2**.
-  [DOI](https://doi.org/10.1080/09638288.2020.1849418)
+- Alexander JM, Hedrick T, Stark BC. Inner speech in the daily lives of people with aphasia. *Front Psychol*. 2024;15:1335425. PMID 38577124. **Journal Article** （経験サンプリング法。著者自身が exploratory / preliminary / feasibility と明記）. n=23. [DOI](https://doi.org/10.3389/fpsyg.2024.1335425)
+- Olsson C, Arvidsson P, Blom Johansson M. What do people respond to when rating executive function? - a cognitive interviewing investigation of BRIEF-A informant ratings in severe aphasia. *Disabil Rehabil*. 2022;44(12):2930-2940. PMID 33270466. **Journal Article** （認知的インタビュー法・主題分析）. n=11（代諾者）. [DOI](https://doi.org/10.1080/09638288.2020.1849418)
 
 ### 原著 — 日常生活・機能的コミュニケーション
 
-- Meier EL, Johnson JP, Villard S, Kiran S. Does Naming Therapy Make Ordering in a
-  Restaurant Easier? Dynamics of Co-Occurring Change in Cognitive-Linguistic and Functional
-  Communication Skills in Aphasia. *Am J Speech Lang Pathol*. 2017;26(2):266-280.
-  PMID 28196373. **Journal Article**. n=72（実験1）/ 39（実験2）.
-  [DOI](https://doi.org/10.1044/2016_AJSLP-16-0028)
-- Adjei-Nicol S, Sacchett C, Beeke S. Evaluating the effect of a non-linguistic cognitive
-  intervention on functional communication in global aphasia: A case series study.
-  *Int J Lang Commun Disord*. 2025;60(1):e13155. PMID 39797688. **Journal Article**
-  （多重ベースライン症例集積）. n=6. [DOI](https://doi.org/10.1111/1460-6984.13155)
-- Proios H, Tsakpounidou K, Karapanayiotides T, Priftis K, Semenza C. Aphasia and Math:
-  Deficits with Basic Number Comprehension and in Numerical Activities of Daily Living.
-  *J Int Neuropsychol Soc*. 2021;27(9):939-951. PMID 33568239. **Journal Article**.
-  n 未確認. [DOI](https://doi.org/10.1017/S1355617720001368)
-- Lemmetyinen S, Hokkanen L, Vehviläinen V, Klippi A. Recovery of gestures for persons with
-  severe non-fluent aphasia and limb apraxia: A long-term follow-up study.
-  *Appl Neuropsychol Adult*. 2024;33(2):355-366. PMID 38801404. **Journal Article**
-  （3 年追跡）. n=7. [DOI](https://doi.org/10.1080/23279095.2024.2355668)
+- Meier EL, Johnson JP, Villard S, Kiran S. Does Naming Therapy Make Ordering in a Restaurant Easier? Dynamics of Co-Occurring Change in Cognitive-Linguistic and Functional Communication Skills in Aphasia. *Am J Speech Lang Pathol*. 2017;26(2):266-280. PMID 28196373. **Journal Article**. n=72（実験1）/ 39（実験2）. [DOI](https://doi.org/10.1044/2016_AJSLP-16-0028)
+- Adjei-Nicol S, Sacchett C, Beeke S. Evaluating the effect of a non-linguistic cognitive intervention on functional communication in global aphasia: A case series study. *Int J Lang Commun Disord*. 2025;60(1):e13155. PMID 39797688. **Journal Article** （多重ベースライン症例集積）. n=6. [DOI](https://doi.org/10.1111/1460-6984.13155)
+- Proios H, Tsakpounidou K, Karapanayiotides T, Priftis K, Semenza C. Aphasia and Math: Deficits with Basic Number Comprehension and in Numerical Activities of Daily Living. *J Int Neuropsychol Soc*. 2021;27(9):939-951. PMID 33568239. **Journal Article**. n 未確認. [DOI](https://doi.org/10.1017/S1355617720001368)
+- Lemmetyinen S, Hokkanen L, Vehviläinen V, Klippi A. Recovery of gestures for persons with severe non-fluent aphasia and limb apraxia: A long-term follow-up study. *Appl Neuropsychol Adult*. 2024;33(2):355-366. PMID 38801404. **Journal Article** （3 年追跡）. n=7. [DOI](https://doi.org/10.1080/23279095.2024.2355668)
 
 ### 参考 — スクリプト訓練（定型化された発話系列を訓練する介入）
 
-- Cherney LR, Braun EJ, Lee JB, Kocherginsky M, Van Vuuren S. Optimising recovery in
-  aphasia: Learning following exposure to a single dose of computer-based script training.
-  *Int J Speech Lang Pathol*. 2019;21(5):448-458. PMID 31533483. **Journal Article**. n=20.
-  [DOI](https://doi.org/10.1080/17549507.2019.1661518)
-- Kaye RC, Cherney LR. Script Templates: A Practical Approach to Script Training in Aphasia.
-  *Top Lang Disord*. 2016;36(2):136-153. PMID 27594730. **Journal Article**. n=8.
-  [DOI](https://doi.org/10.1097/TLD.0000000000000086)
-
-**この 2 本は本文で結論に用いていない。** 「定型化された系列を訓練する」という発想が
-臨床に既に存在することを示す参考であり、**会の区別を支持する証拠ではない。**
+- Cherney LR, Braun EJ, Lee JB, Kocherginsky M, Van Vuuren S. Optimising recovery in aphasia: Learning following exposure to a single dose of computer-based script training. *Int J Speech Lang Pathol*. 2019;21(5):448-458. PMID 31533483. **Journal Article**. n=20. [DOI](https://doi.org/10.1080/17549507.2019.1661518)
+- Kaye RC, Cherney LR. Script Templates: A Practical Approach to Script Training in Aphasia. *Top Lang Disord*. 2016;36(2):136-153. PMID 27594730. **Journal Article**. n=8. [DOI](https://doi.org/10.1097/TLD.0000000000000086) </content> </invoke>

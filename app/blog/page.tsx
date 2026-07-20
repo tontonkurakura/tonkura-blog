@@ -47,7 +47,8 @@ export default async function BlogPage({
                   key={post.id}
                   className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
                 >
-                  <Link href={`/blog/${post.id}`}>
+                  {/* href を持つ項目は実体が /blog の外にある（wiki の問い） */}
+                  <Link href={post.href ?? `/blog/${post.id}`}>
                     <h2 className="text-xl font-semibold mb-2 hover:text-blue-600 transition-colors">
                       {post.title}
                     </h2>

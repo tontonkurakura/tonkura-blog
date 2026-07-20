@@ -12,17 +12,8 @@ export const metadata = {
   description: "月1回の高次脳機能勉強会で立った問いの保管庫",
 };
 
-const TYPE_LABEL: Record<string, string> = {
-  map: "地図型",
-  empirical: "実証型",
-  hybrid: "複合型",
-};
-
-const STATUS_STYLE: Record<string, { label: string; className: string }> = {
-  open: { label: "未解決", className: "bg-amber-100 text-amber-900" },
-  mapped: { label: "論点整理済み", className: "bg-sky-100 text-sky-900" },
-  evidenced: { label: "証拠あり（前提付き）", className: "bg-emerald-100 text-emerald-900" },
-};
+// type と status は frontmatter に持つが、読者には見せない。
+// 分類のラベルが本文より先に目に入ると、読み物としての体裁が崩れるため。
 
 export default function WikiIndexPage() {
   const questions = getRealQuestions();
@@ -44,30 +35,18 @@ export default function WikiIndexPage() {
         <p className="mt-8 text-sm text-gray-500">まだ問いがありません。</p>
       ) : (
         <ul className="mt-8 divide-y divide-gray-200">
-          {questions.map((q) => {
-            const status = STATUS_STYLE[q.status] ?? STATUS_STYLE.open;
-            return (
-              <li key={q.id} className="py-4">
-                <Link href={`/wiki/${q.id}`} className="group block">
-                  <div className="flex flex-wrap items-center gap-2 text-xs">
-                    <span className="font-mono text-gray-500">{q.id}</span>
-                    <span className="rounded bg-gray-100 px-2 py-0.5 text-gray-700">
-                      {TYPE_LABEL[q.type] ?? q.type}
-                    </span>
-                    <span className={`rounded px-2 py-0.5 ${status.className}`}>
-                      {status.label}
-                    </span>
-                  </div>
-                  <h2 className="mt-1 font-medium text-blue-700 group-hover:text-blue-900">
-                    {q.title}
-                  </h2>
-                  {q.domain.length > 0 && (
-                    <p className="mt-1 text-xs text-gray-500">{q.domain.join(" / ")}</p>
-                  )}
-                </Link>
-              </li>
-            );
-          })}
+          {questions.map((q) => (
+            <li key={q.id} className="py-4">
+              <Link href={`/wiki/${q.id}`} className="group block">
+                <h2 className="font-medium text-blue-700 group-hover:text-blue-900">
+                  {q.title}
+                </h2>
+                {q.domain.length > 0 && (
+                  <p className="mt-1 text-xs text-gray-500">{q.domain.join(" / ")}</p>
+                )}
+              </Link>
+            </li>
+          ))}
         </ul>
       )}
 

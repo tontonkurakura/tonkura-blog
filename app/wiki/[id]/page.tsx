@@ -19,21 +19,12 @@ export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
   const question = getQuestion(id);
   if (!question) return {};
-  return { title: question.title, description: `${id} / ${question.type}` };
+  return { title: question.title };
 }
 
-const TYPE_LABEL: Record<string, string> = {
-  map: "地図型",
-  empirical: "実証型",
-  hybrid: "複合型",
-};
-
-/** status は「未解決＝欠陥」に見えない配色にする。open は第一級の状態。 */
-const STATUS_STYLE: Record<string, { label: string; className: string }> = {
-  open: { label: "未解決", className: "bg-amber-100 text-amber-900" },
-  mapped: { label: "論点整理済み", className: "bg-sky-100 text-sky-900" },
-  evidenced: { label: "証拠あり（前提付き）", className: "bg-emerald-100 text-emerald-900" },
-};
+// type / status / sessions は frontmatter に持つが、読者には見せない。
+// 分類のラベルやタイムスタンプが本文より先に目に入ると、読み物としての体裁が崩れる。
+// 原発言へ戻る導線（規約4）は frontmatter の sessions が担う。
 
 function QuestionLinks({
   ids,
@@ -70,7 +61,6 @@ export default async function QuestionPage({ params }: PageProps) {
   }
 
   const titles = getQuestionTitles();
-  const status = STATUS_STYLE[question.status] ?? STATUS_STYLE.open;
 
   return (
     <div className="container mx-auto max-w-3xl px-4 py-8">
@@ -79,15 +69,7 @@ export default async function QuestionPage({ params }: PageProps) {
       </Link>
 
       <header className="mt-4 border-b border-gray-200 pb-6">
-        <div className="flex flex-wrap items-center gap-2 text-sm">
-          <span className="font-mono text-gray-500">{question.id}</span>
-          <span className="rounded bg-gray-100 px-2 py-0.5 text-gray-700">
-            {TYPE_LABEL[question.type] ?? question.type}
-          </span>
-          <span className={`rounded px-2 py-0.5 ${status.className}`}>{status.label}</span>
-        </div>
-
-        <h1 className="mt-3 text-2xl font-bold leading-snug">{question.title}</h1>
+        <h1 className="text-2xl font-bold leading-snug">{question.title}</h1>
 
         {question.domain.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-2">
@@ -97,20 +79,6 @@ export default async function QuestionPage({ params }: PageProps) {
               </span>
             ))}
           </div>
-        )}
-
-        {/* 原発言へ戻る導線。規約4により必須。 */}
-        {question.sessions.length > 0 && (
-          <dl className="mt-4 text-sm text-gray-600">
-            <dt className="font-medium">議論された回</dt>
-            <dd className="mt-1 space-y-0.5">
-              {question.sessions.map((s) => (
-                <div key={`${s.n}-${s.at}`}>
-                  第{s.n}回 <span className="font-mono">{s.at}</span>
-                </div>
-              ))}
-            </dd>
-          </dl>
         )}
       </header>
 
