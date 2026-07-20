@@ -42,9 +42,10 @@ export default async function SymptomPage({ params }: PageProps) {
         </Link>
       </div>
 
+      {/* 見出しは Markdown 本文の H1 が担う。
+          以前ここに <h1>{content.title}</h1> があったが、frontmatter に title を
+          持たせていないため常に undefined で、空の h1 が出力されていた。 */}
       <article className="prose prose-lg max-w-none">
-        <h1 className="text-3xl font-bold mb-8">{content.title}</h1>
-
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
           <div className="flex">
             <div className="flex-shrink-0">
@@ -68,33 +69,11 @@ export default async function SymptomPage({ params }: PageProps) {
           </div>
         </div>
 
-        <div className="bg-gray-50 p-4 rounded-lg mb-8">
-          <h2 className="text-lg font-semibold mb-2">関連情報</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <h3 className="font-medium text-gray-700">関連領域</h3>
-              <ul className="list-disc list-inside">
-                {content.relatedAreas.map((area: string, index: number) => (
-                  <li key={index} className="text-gray-600">
-                    {area}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-medium text-gray-700">関連検査</h3>
-              <ul className="list-disc list-inside">
-                {content.relatedExams.map((exam: string, index: number) => (
-                  <li key={index} className="text-gray-600">
-                    {exam}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="mt-4 text-sm text-gray-500">
-            最終更新: {content.lastmod}
-          </div>
+        {/* 「関連情報」ボックスを外した。relatedAreas / relatedExams を
+            frontmatter に持たせていないため常に空配列で、見出しだけが並んだ
+            空のリストが2つ表示されていた。病巣と検査は本文の節が担っている。 */}
+        <div className="mb-8 text-sm text-gray-500">
+          最終更新: {content.lastmod}
         </div>
 
         <div

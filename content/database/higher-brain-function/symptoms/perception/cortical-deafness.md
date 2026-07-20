@@ -1,5 +1,5 @@
 ---
-lastmod: "2026-07-19"
+lastmod: "2026-07-20"
 ---
 
 # 皮質聾
@@ -7,26 +7,26 @@ lastmod: "2026-07-19"
 ## 説明
 
 末梢の聴器と聴神経が保たれているにもかかわらず、**大脳の病変によって音そのものが聞こえなくなる**
-症候です。患者は音の存在に反応せず、行動上は難聴と区別がつきません。しかし純音聴力検査で高度の
+症候である。患者は音の存在に反応せず、行動上は難聴と区別がつかない。しかし純音聴力検査で高度の
 閾値上昇を示す一方、聴性脳幹反応は保たれるという解離を示すことがあり、これが末梢性難聴との
-鑑別の手がかりになります。
+鑑別の手がかりになる [1]。
 
-聴覚失認の階層の**最上位に位置する障害**です。皮質聾から回復する過程で、音は聞こえるが意味が
+聴覚失認の階層の**最上位に位置する障害**である。皮質聾から回復する過程で、音は聞こえるが意味が
 分からないという段階、すなわち広義の聴覚失認へ移行し、さらにそこから純粋語聾・環境音失認・
-失音楽といった選択的な下位型へ分岐していくことがあります。
+失音楽といった選択的な下位型へ分岐していくことがある [2]。
 
 ```
 皮質聾 → 広義の聴覚失認 → { 純粋語聾 / 環境音失認 / 失音楽 }
 ```
 
 皮質聾に自身の聴覚障害への無自覚を伴うことがあり、Anton は1899年にこれを皮質盲における無自覚と
-並べて記述しました。Anton症候群の項を参照してください。
+並べて記述した [3]。Anton症候群の項を参照されたい。
 
 ## 病巣
 
 - 両側の一次聴覚野（ヘシュル回）
-- 両側の聴放線 — 側頭葉皮質下白質の両側性病変
-- 両側性であることがほぼ必須で、多くは血管性病変による
+- 両側の聴放線 — 側頭葉皮質下白質の両側性病変 [2]
+- 両側性であることがほぼ必須で、多くは血管性病変による [1]
 
 ## 検査
 
@@ -51,20 +51,21 @@ lastmod: "2026-07-19"
 
 ## 分類上の論点
 
-皮質聾と重度の広義の聴覚失認をどこで線引きするかは明確でありません。純音閾値の上昇の程度は
-経過中に変動しうるため、同一の患者が時期によって皮質聾とも聴覚失認とも記述されることがあります。
+皮質聾と重度の広義の聴覚失認をどこで線引きするかは明確でない。純音閾値の上昇の程度は
+経過中に変動しうるため、同一の患者が時期によって皮質聾とも聴覚失認とも記述されることがある。
 
 Miceli と Caccia は、120年以上の文献のなかで確実な病巣記載を伴う症例が累計80例に満たないことを
 指摘し、既存の報告では聴力検査・神経言語学的評価・神経解剖学的記述のいずれかが不十分な例が多い
-と述べています。**皮質聾と聴覚失認を鑑別する統一された閾値基準は確立していません。**
+と述べている [1]。**皮質聾と聴覚失認を鑑別する統一された閾値基準は確立していない。**
 
-## 出典
+## 文献
 
-- Miceli G, Caccia A. Cortical disorders of speech processing: Pure word deafness and auditory
-  agnosia. _Handb Clin Neurol_ 2022;187:69-87.（総説。PMID 35964993 /
-  [DOI](https://doi.org/10.1016/B978-0-12-823493-8.00005-5)）
-- Gainotti G. History of Anosognosia. _Front Neurol Neurosci_ 2019;44:75-82.（総説。
-  PMID 31220837 / [DOI](https://doi.org/10.1159/000494954)）
-- Tokida H, et al. [Auditory agnosia associated with bilateral putaminal hemorrhage: A case
-  report of clinical course of recovery]. _Rinsho Shinkeigaku_ 2017;57(8):441-445.
-  （症例報告。PMID 28740065 / [DOI](https://doi.org/10.5692/clinicalneurol.cn-001046)）
+1. Miceli G, Caccia A. Cortical disorders of speech processing: Pure word deafness and auditory
+   agnosia. _Handb Clin Neurol_ 2022;187:69-87.（総説。PMID 35964993 /
+   [DOI](https://doi.org/10.1016/B978-0-12-823493-8.00005-5)）
+2. Tokida H, Kanaya Y, Shimoe Y, Imagawa M, Fukunaga S, Kuriyama M. [Auditory agnosia associated
+   with bilateral putaminal hemorrhage: A case report of clinical course of recovery].
+   _Rinsho Shinkeigaku_ 2017;57(8):441-445.（症例報告。PMID 28740065 /
+   [DOI](https://doi.org/10.5692/clinicalneurol.cn-001046)）
+3. Gainotti G. History of Anosognosia. _Front Neurol Neurosci_ 2019;44:75-82.（総説。
+   PMID 31220837 / [DOI](https://doi.org/10.1159/000494954)）

@@ -1,5 +1,5 @@
 ---
-lastmod: "2026-07-19"
+lastmod: "2026-07-20"
 ---
 
 # 脳梁離断症候群
@@ -7,27 +7,27 @@ lastmod: "2026-07-19"
 ## 説明
 
 脳梁は左右の大脳半球を結ぶ最大の交連線維で、ここが離断されると、一方の半球が持つ情報を
-他方の半球が利用できなくなります。その結果、**個々の半球の機能自体は保たれているのに、
-半球をまたぐ情報の統合を要する課題だけが選択的に破綻する**という特徴的な症候が生じます。
+他方の半球が利用できなくなる。その結果、**個々の半球の機能自体は保たれているのに、
+半球をまたぐ情報の統合を要する課題だけが選択的に破綻する**という特徴的な症候が生じる [1]。
 
-代表的な症候は次のとおりです。
+代表的な症候は次のとおりである。
 
-- **左手の失書・失行** — 言語野（左半球）からの指令が右半球運動野へ届きません
-- **左手の触覚性呼称障害** — 左手で触れた物の名前が言えませんが、右手でなら言えます
-- **左視野の失読**（純粋失読の一型） — 右半球で見た文字情報が左半球の言語野に届きません
-- **拮抗失行** — 一方の手の動作を他方の手が妨害します（別項）
+- **左手の失書・失行** — 言語野（左半球）からの指令が右半球運動野へ届かない
+- **左手の触覚性呼称障害** — 左手で触れた物の名前が言えないが、右手でなら言える
+- **左視野の失読**（純粋失読の一型） — 右半球で見た文字情報が左半球の言語野に届かない
+- **拮抗失行** — 一方の手の動作を他方の手が妨害する（別項）
 - **一側性の観念運動失行**（左手）
 
 原因は脳梁梗塞（前大脳動脈領域）、脳梁離断術（難治性てんかんの治療）、脳腫瘍、
-Marchiafava-Bignami 病などです。
+Marchiafava-Bignami 病などである。
 
 ## 病巣
 
 - 脳梁（膝部 genu / 体部 body / 膨大部 splenium / 吻部 rostrum / 峡部 isthmus）
 - 前大脳動脈灌流域
-- 症候は離断された部位の連絡する皮質領域に対応します
+- 症候は離断された部位の連絡する皮質領域に対応する
 
-脳梁の部位と接続皮質のおおまかな対応は下表のとおりです。
+脳梁の部位と接続皮質のおおまかな対応は下表のとおりである。
 
 | 部位                    | 接続する皮質領域           | 離断で問題になる機能           |
 | ----------------------- | -------------------------- | ------------------------------ |
@@ -59,22 +59,22 @@ Marchiafava-Bignami 病などです。
 
 ## 分類上の論点
 
-**脳梁の部位と機能の対応表は、そのまま鵜呑みにできません。**
+**脳梁の部位と機能の対応表は、そのまま鵜呑みにできない。**
 
-上表のような区分は Witelson の分類に代表される古典的な図式に由来しますが、
-Hofer & Frahm は拡散テンソル画像によるトラクトグラフィで、
+上表のような区分は Witelson の分類に代表される古典的な図式に由来するが、
+Hofer と Frahm は拡散テンソル画像によるトラクトグラフィで、
 **運動線維が従来考えられていたよりかなり後方で脳梁を横切る**ことを示し、
-Witelson の図式の修正と新しい区分を提案しています。
-とくに体部中央と前方3分の1で古典的分類との相違が大きく見られます。
+Witelson の図式の修正と新しい区分を提案している [2]。
+とくに体部中央と前方3分の1で古典的分類との相違が大きく見られる。
 
-したがって、**部位から症候を演繹する使い方は避け、あくまで目安として扱う**のが妥当です。
+したがって、**部位から症候を演繹する使い方は避け、あくまで目安として扱う**のが妥当である。
 
-## 出典
+## 文献
 
-- Hofer S, Frahm J. Topography of the human corpus callosum revisited—comprehensive fiber
-  tractography using diffusion tensor magnetic resonance imaging. _NeuroImage_ 2006;32(3):989-94.
-  （原著。PMID 16854598 / [DOI](https://doi.org/10.1016/j.neuroimage.2006.05.044)）
-- Fabri M, Polonara G. Functional topography of the corpus callosum as revealed by fMRI and
-  behavioural studies of control subjects and patients with callosal resection.
-  _Neuropsychologia_ 2023;183:108533.
-  （総説。PMID 36906223 / [DOI](https://doi.org/10.1016/j.neuropsychologia.2023.108533)）
+1. Fabri M, Polonara G. Functional topography of the corpus callosum as revealed by fMRI and
+   behavioural studies of control subjects and patients with callosal resection.
+   _Neuropsychologia_ 2023;183:108533.
+   （総説。PMID 36906223 / [DOI](https://doi.org/10.1016/j.neuropsychologia.2023.108533)）
+2. Hofer S, Frahm J. Topography of the human corpus callosum revisited--comprehensive fiber
+   tractography using diffusion tensor magnetic resonance imaging. _Neuroimage_ 2006;32(3):989-94.
+   （原著。PMID 16854598 / [DOI](https://doi.org/10.1016/j.neuroimage.2006.05.044)）

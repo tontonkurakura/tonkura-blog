@@ -1,32 +1,32 @@
 ---
-lastmod: "2026-07-19"
+lastmod: "2026-07-20"
 ---
 
 # Anton症候群
 
 ## 説明
 
-皮質盲でありながら、自身の視覚障害を否認する状態です。
+皮質盲でありながら、自身の視覚障害を否認する状態である。
 視覚が失われているにもかかわらず「見えている」と主張し、
-見えたはずのものを作話的に語ります。
+見えたはずのものを作話的に語る。
 
-現代的には次の3徴で定義されます。
+現代的には次の3徴で定義される [1]。
 
 - **皮質盲**
 - **視覚性病態失認**（視覚障害の無自覚）
 - **視覚性作話**
 
-前視路（網膜から外側膝状体まで）は保たれているため、対光反射は残ります。
+前視路（網膜から外側膝状体まで）は保たれているため、対光反射は残る。
 歩き回って物にぶつかりながら「暗いから」「眼鏡がないから」と説明する、
-といった形で気づかれることがあります。
+といった形で気づかれることがある。
 
-原因は両側後頭葉梗塞が代表的ですが、脳出血、可逆性後頭葉白質脳症、
-脳底動脈領域の脳卒中、低酸素後の遅発性白質脳症、感染症など多様です。
+原因は両側後頭葉梗塞が代表的だが [1]、脳出血、可逆性後頭葉白質脳症、
+脳底動脈領域の脳卒中、低酸素後の遅発性白質脳症 [2]、感染症など多様である。
 
 ## 病巣
 
-- 両側後頭葉（一次視覚野およびその近傍）
-- 前視路は保たれます
+- 両側後頭葉（一次視覚野およびその近傍）[1]
+- 前視路は保たれる
 
 ## 検査
 
@@ -45,28 +45,29 @@ lastmod: "2026-07-19"
 
 ## 分類上の論点
 
-**Anton症候群は病態失認の下位型であり、両者は同列に並ぶ概念ではありません。**
+**Anton症候群は病態失認の下位型であり、両者は同列に並ぶ概念ではない。**
 
-歴史的な経緯がそれを示しています。
+歴史的な経緯がそれを示している [3]。
 **Anton（1899）が、皮質聾および皮質盲の患者における「障害の無自覚」を、
-神経学的欠損そのものとは独立した症候として初めて概念化しました。**
+神経学的欠損そのものとは独立した症候として初めて概念化した。**
 これを受けて **Babinski（1914）が、まさに Anton の概念化したその臨床実体を指すために
 「anosognosia（病態失認）」という語を造語し**、さらに皮質聾・皮質盲の無自覚から
-片麻痺の無自覚へと概念を拡張しました。
+片麻痺の無自覚へと概念を拡張した [3]。
 
-つまり Anton症候群は、病態失認という概念の**起源そのもの**です。
+つまり Anton症候群は、病態失認という概念の**起源そのもの**である。
 このデータベースでは病態失認を上位項目とし、Anton症候群をその下位型
-（皮質盲に対する病態失認）として位置づけています。
-病態失認の項も併せて参照してください。
+（皮質盲に対する病態失認）として位置づけている。
+病態失認の項も併せて参照されたい。
 
-## 出典
+## 文献
 
-- Gainotti G. History of Anosognosia. _Front Neurol Neurosci_ 2019;44:75-82.
-  （史的総説。PMID 31220837 / [DOI](https://doi.org/10.1159/000494954)）
-- Mankoo D. Anton syndrome with bilateral occipital infarct: A case report.
-  _Radiol Case Rep_ 2023;18(12):4461-4464.（症例報告。PMID 37860783 /
-  [DOI](https://doi.org/10.1016/j.radcr.2023.09.036)）
-- Cardona Quiñones RA, et al. A neuropsychiatric case of delayed post-hypoxic
-  leukoencephalopathy from opioid intoxication resulting in Anton-Babinski syndrome and
-  quadriplegia. _Neurocase_ 2024;29(5):160-166.（症例報告。PMID 38713498 /
-  [DOI](https://doi.org/10.1080/13554794.2024.2350103)）
+1. Mankoo D. Anton syndrome with bilateral occipital infarct: A case report.
+   _Radiol Case Rep_ 2023;18(12):4461-4464.（症例報告。PMID 37860783 /
+   [DOI](https://doi.org/10.1016/j.radcr.2023.09.036)）
+2. Cardona Quiñones RA, Salem Hernández SA, Sekimitsu S, Antongiorgi Torres J, Yerstein O,
+   Safar LT. A neuropsychiatric case of delayed post-hypoxic leukoencephalopathy from opioid
+   intoxication resulting in Anton-Babinski syndrome and quadriplegia. _Neurocase_
+   2024;29(5):160-166.（症例報告。PMID 38713498 /
+   [DOI](https://doi.org/10.1080/13554794.2024.2350103)）
+3. Gainotti G. History of Anosognosia. _Front Neurol Neurosci_ 2019;44:75-82.
+   （史的総説。PMID 31220837 / [DOI](https://doi.org/10.1159/000494954)）

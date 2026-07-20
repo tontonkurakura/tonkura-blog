@@ -1,29 +1,29 @@
 ---
-lastmod: "2026-07-19"
+lastmod: "2026-07-20"
 ---
 
 # 超皮質性感覚失語
 
 ## 説明
 
-発話は流暢で復唱も良好なのに、**言語理解が障害される**失語症です。
+発話は流暢で復唱も良好なのに、**言語理解が障害される**失語症。
 「流暢・理解不良・復唱良好」の組み合わせで定義され、
-復唱が保たれる点だけがWernicke失語との違いになります。
+復唱が保たれる点だけがWernicke失語との違いになる。
 
-聞いた言葉の意味は分からないのに、そのまま繰り返すことはできます。
+聞いた言葉の意味は分からないのに、そのまま繰り返すことはできる。
 理解を伴わない復唱であるため、反響言語（相手の言葉をそのまま返してしまう現象）として
-現れることもあります。発話は流暢ですが、語性錯語（別の語に置き換わる誤り）や
-迂遠な言い回しが目立ち、内容は空虚になりがちです。呼称も障害されます。
+現れることもある。発話は流暢であるが、語性錯語（別の語に置き換わる誤り）や
+迂遠な言い回しが目立ち、内容は空虚になりがちである。呼称も障害される。
 
 病巣は左側頭・頭頂・後頭移行部、すなわちWernicke野の後方・下方の分水嶺領域とされ、
-Wernicke野と意味処理を担う領域とのつながりが断たれることで生じると説明されてきました。
+Wernicke野と意味処理を担う領域とのつながりが断たれることで生じると説明されてきた。
 
-初発脳卒中による失語60例の連続例では10%を占めました。
+初発脳卒中による失語60例の連続例では10%を占めた [1]。
 
-なお、日本語圏で記載されてきた**語義失語**は、大枠ではこのカテゴリに収まりますが、
-障害されるレベルを語（word）に限定する点でより特異的です。
+なお、日本語圏で記載されてきた**語義失語**は、大枠ではこのカテゴリに収まるが、
+障害されるレベルを語（word）に限定する点でより特異的である [2]。
 超皮質性感覚失語は「流暢・復唱良好」としか規定せず、
-言語のどのレベルが障害されているかを特定しません。詳細は語義失語の項を参照してください。
+言語のどのレベルが障害されているかを特定しない。詳細は語義失語の項を参照。
 
 ## 病巣
 
@@ -47,20 +47,20 @@ Wernicke野と意味処理を担う領域とのつながりが断たれること
 
 ## 分類上の論点
 
-古典的分類の病巣予測力は限られています。初発脳卒中失語60例の検討では、
-伝統的分類による型と病巣の対応が明確だったのは35%にとどまりました。
+古典的分類の病巣予測力は限られている。初発脳卒中失語60例の検討では、
+伝統的分類による型と病巣の対応が明確だったのは35%にとどまった [1]。
 Bunker & Hillis は、失語型を特定の動脈の灌流域に対応する血管症候群として
-捉え直す再構成を提案しています。
+捉え直す再構成を提案している [3]。
 
-## 出典
+## 文献
 
-- Bohra V, Khwaja GA, Jain S, Duggal A, Ghuge VV, Srivastava A.
-  Clinicoanatomical correlation in stroke related aphasia.
-  _Ann Indian Acad Neurol_ 2015;18(4):424-9.（原著、初発脳卒中失語60例。PMID 26713015 /
-  [DOI](https://doi.org/10.4103/0972-2327.165469)）
-- Bunker LD, Hillis AE. Vascular syndromes: Revisiting classification of poststroke aphasia.
-  _Handb Clin Neurol_ 2022;185:37-55.（総説。PMID 35078609 /
-  [DOI](https://doi.org/10.1016/B978-0-12-823384-9.00002-5)）
-- Yamadori A. Gogi (Word Meaning) Aphasia and Its Relation with Semantic Dementia.
-  _Front Neurol Neurosci_ 2019;44:30-38.（総説・歴史的論文。PMID 31220829 /
-  [DOI](https://doi.org/10.1159/000494950)）
+1. Bohra V, Khwaja GA, Jain S, Duggal A, Ghuge VV, Srivastava A.
+   Clinicoanatomical correlation in stroke related aphasia.
+   _Ann Indian Acad Neurol_ 2015;18(4):424-9.（原著、初発脳卒中失語60例。PMID 26713015 /
+   [DOI](https://doi.org/10.4103/0972-2327.165469)）
+2. Yamadori A. Gogi (Word Meaning) Aphasia and Its Relation with Semantic Dementia.
+   _Front Neurol Neurosci_ 2019;44:30-38.（総説・歴史的論文。PMID 31220829 /
+   [DOI](https://doi.org/10.1159/000494950)）
+3. Bunker LD, Hillis AE. Vascular syndromes: Revisiting classification of poststroke aphasia.
+   _Handb Clin Neurol_ 2022;185:37-55.（総説。PMID 35078609 /
+   [DOI](https://doi.org/10.1016/B978-0-12-823384-9.00002-5)）

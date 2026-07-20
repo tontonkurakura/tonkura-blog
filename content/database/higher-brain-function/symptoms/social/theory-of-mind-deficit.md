@@ -1,18 +1,18 @@
 ---
-lastmod: "2026-07-19"
+lastmod: "2026-07-20"
 ---
 
 # 心の理論の障害
 
 ## 説明
 
-他者が自分とは異なる信念・意図・知識を持っていることを推論する能力の障害です。相手が何を知っていて何を知らないかを踏まえて話す、相手の意図を汲んで発言の裏を読む、皮肉や冗談を字義どおりでなく解釈する、といった日常的な営みがこの能力に支えられています。障害されると、会話は文法的にも語彙的にも正常でありながら、相手の状態を考慮しない一方的なものになります。
+他者が自分とは異なる信念・意図・知識を持っていることを推論する能力の障害である。相手が何を知っていて何を知らないかを踏まえて話す、相手の意図を汲んで発言の裏を読む、皮肉や冗談を字義どおりでなく解釈する、といった日常的な営みがこの能力に支えられている。障害されると、会話は文法的にも語彙的にも正常でありながら、相手の状態を考慮しない一方的なものになる。
 
-**言語や記憶の検査では検出されません。** 患者は流暢に話し、質問に的確に答え、標準的な神経心理検査では正常範囲にとどまることがあります。それにもかかわらず、家族からは「人の気持ちが分からなくなった」「場が読めない」と訴えられます。この乖離が本症候の臨床的な特徴であり、専用の課題を用いなければ捉えられません。
+**言語や記憶の検査では検出されない。** 患者は流暢に話し、質問に的確に答え、標準的な神経心理検査では正常範囲にとどまることがある。それにもかかわらず、家族からは「人の気持ちが分からなくなった」「場が読めない」と訴えられる。この乖離が本症候の臨床的な特徴であり、専用の課題を用いなければ捉えられない。
 
-評価には二つの水準が区別されます。**認知的な心の理論**は他者の信念や知識の推論を対象とし、誤信念課題がその典型です。**情動的な心の理論**は他者が何を感じているかの推論を対象とし、表情や視線からの心的状態の読み取りが用いられます。両者は分離しうるとされ、疾患によってどちらが強く障害されるかが異なると報告されています。
+評価には二つの水準が区別される。**認知的な心の理論**は他者の信念や知識の推論を対象とし、誤信念課題がその典型である。**情動的な心の理論**は他者が何を感じているかの推論を対象とし、表情や視線からの心的状態の読み取りが用いられる。両者は分離しうるとされ、疾患によってどちらが強く障害されるかが異なると報告されている。
 
-外傷性脳損傷を対象としたメタ解析では、患者群の心の理論課題の成績が対照群より有意に低いことが示されています。また、行動障害型前頭側頭型認知症（bvFTD）とアルツハイマー型認知症を比較したメタ解析では、両群とも健常対照より成績が低下する一方、bvFTD のほうがより強く障害されることが示されており、この差は全般的な認知機能の低下だけでは説明されないと論じられています。
+外傷性脳損傷を対象としたメタ解析では、患者群の心の理論課題の成績が対照群より有意に低いことが示されている [1]。また、行動障害型前頭側頭型認知症（bvFTD）とアルツハイマー型認知症を比較したメタ解析では、両群とも健常対照より成績が低下する一方、bvFTD のほうがより強く障害されることが示されており、この差は全般的な認知機能の低下だけでは説明されないと論じられている [2]。
 
 ## 病巣
 
@@ -21,7 +21,7 @@ lastmod: "2026-07-19"
 - 上側頭溝
 - 側頭極
 - 前部帯状回、眼窩前頭皮質
-- 課題の種類（認知的か情動的か、言語的か非言語的か）によって関与する領域が異なるため、単一の「心の理論領域」は同定されていません
+- 課題の種類（認知的か情動的か、言語的か非言語的か）によって関与する領域が異なるため、単一の「心の理論領域」は同定されていない [3]
 
 ## 検査
 
@@ -35,7 +35,7 @@ lastmod: "2026-07-19"
 2. 情動的な心の理論の課題
 
    - 目領域からの心的状態の読み取り課題
-   - 動画素材を用いた社会的認知の評価（MASC など）
+   - 動画素材を用いた社会的認知の評価（MASC など） [4]
 
 3. 交絡因子の評価（成績の解釈に必須）
 
@@ -51,16 +51,16 @@ lastmod: "2026-07-19"
 
 ## 分類上の論点
 
-**心の理論と共感、とくに認知的共感との境界は明確ではありません。** 両者を独立した項目として立てると同じ現象を二重に数えることになります。この重複については共感の障害の項で詳しく述べていますので、併せて参照してください。
+**心の理論と共感、とくに認知的共感との境界は明確ではない。** 両者を独立した項目として立てると同じ現象を二重に数えることになる [3]。この重複については共感の障害の項で詳しく述べているので、併せて参照されたい。
 
-**成績低下を「心の理論の障害」と解釈してよいかにも慎重さが要ります。** 誤信念課題は言語理解・作業記憶・抑制を同時に要求するため、これらの障害でも成績は低下します。外傷性脳損傷では遂行機能障害と表情認知障害が心の理論課題の成績を媒介するという指摘があり、**課題成績だけでは、社会的推論そのものの障害なのか、その前提となる機能の障害なのかを区別できません。** 交絡因子を併せて測定し、記録しておく必要があります。
+**成績低下を「心の理論の障害」と解釈してよいかにも慎重さが要る。** 誤信念課題は言語理解・作業記憶・抑制を同時に要求するため、これらの障害でも成績は低下する。外傷性脳損傷では遂行機能障害と表情認知障害が心の理論課題の成績を媒介するという指摘があり [5]、**課題成績だけでは、社会的推論そのものの障害なのか、その前提となる機能の障害なのかを区別できない。** 交絡因子を併せて測定し、記録しておく必要がある。
 
-**行政的な「社会的行動障害」との関係については、脱抑制の項に置いた対応表を参照してください。** 高次脳機能障害診断基準の五項目のうち、学術的な社会的認知に直接対応するのは「③対人関係の障害」のみです。
+**行政的な「社会的行動障害」との関係については、脱抑制の項に置いた対応表を参照されたい。** 高次脳機能障害診断基準の五項目のうち、学術的な社会的認知に直接対応するのは「③対人関係の障害」のみである。
 
-## 出典
+## 文献
 
-- Lin X, ほか. Theory of mind in adults with traumatic brain injury: A meta-analysis. _Neurosci Biobehav Rev_ 2020;121:106-118.（メタ解析。PMID 33359093 / [DOI](https://doi.org/10.1016/j.neubiorev.2020.12.010)）
-- Bora E, ほか. Theory of mind in behavioural-variant frontotemporal dementia and Alzheimer's disease: a meta-analysis. _J Neurol Neurosurg Psychiatry_ 2015;86(7):714-9.（メタ解析。PMID 25595152 / [DOI](https://doi.org/10.1136/jnnp-2014-309445)）
-- Schurz M, ほか. Toward a hierarchical model of social cognition: A neuroimaging meta-analysis and integrative review of empathy and theory of mind. _Psychol Bull_ 2020;147(3):293-327.（神経画像メタ解析および総説。PMID 33151703 / [DOI](https://doi.org/10.1037/bul0000303)）
-- Henry JD, ほか. Theory of mind following traumatic brain injury: the role of emotion recognition and executive dysfunction. _Neuropsychologia_ 2006;44(10):1623-8.（比較研究、外傷性脳損傷16例・対照17例。PMID 16643969 / [DOI](https://doi.org/10.1016/j.neuropsychologia.2006.03.020)）
-- Dziobek I, ほか. Introducing MASC: a movie for the assessment of social cognition. _J Autism Dev Disord_ 2006;36(5):623-36.（課題開発研究、Asperger 症候群19例・対照20例。PMID 16755332 / [DOI](https://doi.org/10.1007/s10803-006-0107-0)）
+1. Lin X, Zhang X, Liu Q, Zhao P, Zhang H, Wang H, et al. Theory of mind in adults with traumatic brain injury: A meta-analysis. _Neurosci Biobehav Rev_ 2020;121:106-118.（メタ解析。PMID 33359093 / [DOI](https://doi.org/10.1016/j.neubiorev.2020.12.010)）
+2. Bora E, Walterfang M, Velakoulis D. Theory of mind in behavioural-variant frontotemporal dementia and Alzheimer's disease: a meta-analysis. _J Neurol Neurosurg Psychiatry_ 2015;86(7):714-9.（メタ解析。PMID 25595152 / [DOI](https://doi.org/10.1136/jnnp-2014-309445)）
+3. Schurz M, Radua J, Tholen MG, Maliske L, Margulies DS, Mars RB, et al. Toward a hierarchical model of social cognition: A neuroimaging meta-analysis and integrative review of empathy and theory of mind. _Psychol Bull_ 2020;147(3):293-327.（神経画像メタ解析および総説。PMID 33151703 / [DOI](https://doi.org/10.1037/bul0000303)）
+4. Dziobek I, Fleck S, Kalbe E, Rogers K, Hassenstab J, Brand M, et al. Introducing MASC: a movie for the assessment of social cognition. _J Autism Dev Disord_ 2006;36(5):623-36.（課題開発研究、Asperger 症候群19例・対照20例。PMID 16755332 / [DOI](https://doi.org/10.1007/s10803-006-0107-0)）
+5. Henry JD, Phillips LH, Crawford JR, Ietswaart M, Summers F. Theory of mind following traumatic brain injury: the role of emotion recognition and executive dysfunction. _Neuropsychologia_ 2006;44(10):1623-8.（比較研究、外傷性脳損傷16例・対照17例。PMID 16643969 / [DOI](https://doi.org/10.1016/j.neuropsychologia.2006.03.020)）

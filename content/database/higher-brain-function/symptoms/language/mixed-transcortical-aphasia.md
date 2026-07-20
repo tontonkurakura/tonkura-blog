@@ -1,5 +1,5 @@
 ---
-lastmod: "2026-07-19"
+lastmod: "2026-07-20"
 ---
 
 # 超皮質性混合失語
@@ -7,19 +7,19 @@ lastmod: "2026-07-19"
 ## 説明
 
 発話は非流暢で理解も不良、つまり全失語に近い重症度でありながら、
-**復唱だけが保たれる**という失語症です。この組み合わせは他の型では説明がつかないため、
-復唱の保持そのものが診断の決め手になります。
+**復唱だけが保たれる**という失語症。この組み合わせは他の型では説明がつかないため、
+復唱の保持そのものが診断の決め手になる。
 
 自発話はほとんど出ず、簡単な指示も理解できないのに、
-検者の言った文をそのまま正確に繰り返すことができます。
+検者の言った文をそのまま正確に繰り返すことができる。
 意味を理解しないままの復唱であるため、反響言語として現れることが多く、
-決まり文句の続きを自動的に言ってしまう補完現象を伴うこともあります。
+決まり文句の続きを自動的に言ってしまう補完現象を伴うこともある。
 
 古典的には、シルビウス裂周囲の言語野そのものは保たれ、
 それを取り囲む分水嶺領域が広範に損なわれることで、
-言語野が周囲の皮質から孤立して生じると説明されてきました。
-この状態は**言語野孤立症候群**（isolation of the speech area）と呼ばれます。
-低灌流や低酸素脳症、内頸動脈閉塞など、分水嶺領域を選択的に侵す病態で生じます。
+言語野が周囲の皮質から孤立して生じると説明されてきた。
+この状態は**言語野孤立症候群**（isolation of the speech area）と呼ばれる。
+低灌流や低酸素脳症、内頸動脈閉塞など、分水嶺領域を選択的に侵す病態で生じる。
 
 ## 病巣
 
@@ -48,33 +48,33 @@ lastmod: "2026-07-19"
 ## 分類上の論点
 
 **復唱の保持を「保たれた左シルビウス裂周囲言語ネットワークの離断」で説明する古典的解釈は、
-そのままでは成り立たなくなっています。**
+そのままでは成り立たなくなっている。**
 
 López-Barroso らは、急性期に超皮質性混合失語を呈した4例を慢性期に神経画像で追跡し、
-左シルビウス裂周囲言語ネットワークの機能的活動と構造的完全性を評価しました。
-1例は超皮質性混合失語のまま経過し、3例はより軽症の型へ移行しています。
+左シルビウス裂周囲言語ネットワークの機能的活動と構造的完全性を評価した [1]。
+1例は超皮質性混合失語のまま経過し、3例はより軽症の型へ移行している。
 その結果、**保たれた復唱は必ずしも左シルビウス裂周囲ネットワークとその背側連絡の
 健全性に依存しない**こと、**右半球や左半球の腹側経路も復唱を支えうる**ことが
-示されました。臨床経過の多様さは、この分水嶺ネットワークの障害の程度と、
-発症前の個人ごとの言語基盤の違いで説明されるとしています。
+示された [1]。臨床経過の多様さは、この分水嶺ネットワークの障害の程度と、
+発症前の個人ごとの言語基盤の違いで説明されるとしている。
 
-Bellin らも、超皮質性混合失語1例に対する disconnectome 解析で復唱経路を検討しています。
+Bellin らも、超皮質性混合失語1例に対する disconnectome 解析で復唱経路を検討している [2]。
 
 つまり、「言語野が孤立しているから復唱だけが残る」という説明は、
-症候を記述する枠組みとしては有用ですが、
-個々の症例で実際にどの経路が復唱を支えているかは、画像で確かめる必要があります。
+症候を記述する枠組みとしては有用であるが、
+個々の症例で実際にどの経路が復唱を支えているかは、画像で確かめる必要がある。
 ただしこれらはいずれも少数例の研究であり、
-どの経路がどの条件で復唱を担うかについての一般化された答えは、まだ得られていません。
+どの経路がどの条件で復唱を担うかについての一般化された答えは、まだ得られていない [1, 2]。
 
-## 出典
+## 文献
 
-- López-Barroso D, Paredes-Pacheco J, Torres-Prioris MJ, Dávila G, Berthier ML.
-  Brain structural and functional correlates of the heterogenous progression of
-  mixed transcortical aphasia.
-  _Brain Struct Funct_ 2023;228(5):1347-1364.（原著、脳卒中後の超皮質性混合失語4例の
-  神経画像・行動研究。PMID 37256346 / [DOI](https://doi.org/10.1007/s00429-023-02655-6)）
-- Bellin I, Menardi A, De Pellegrin S, Bisogno AL, Semenza C, Corbetta M, Vallesi A.
-  Advanced disconnectomic analyses reveal repetition pathways in a case of
-  mixed transcortical aphasia.
-  _Brain Cogn_ 2024;183:106257.（症例報告。PMID 39732053 /
-  [DOI](https://doi.org/10.1016/j.bandc.2024.106257)）
+1. López-Barroso D, Paredes-Pacheco J, Torres-Prioris MJ, Dávila G, Berthier ML.
+   Brain structural and functional correlates of the heterogenous progression of
+   mixed transcortical aphasia.
+   _Brain Struct Funct_ 2023;228(5):1347-1364.（原著、脳卒中後の超皮質性混合失語4例の
+   神経画像・行動研究。PMID 37256346 / [DOI](https://doi.org/10.1007/s00429-023-02655-6)）
+2. Bellin I, Menardi A, De Pellegrin S, Bisogno AL, Semenza C, Corbetta M, et al.
+   Advanced disconnectomic analyses reveal repetition pathways in a case of
+   mixed transcortical aphasia.
+   _Brain Cogn_ 2024;183:106257.（症例報告。PMID 39732053 /
+   [DOI](https://doi.org/10.1016/j.bandc.2024.106257)）

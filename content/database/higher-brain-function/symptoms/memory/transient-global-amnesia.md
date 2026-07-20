@@ -1,23 +1,23 @@
 ---
-lastmod: "2026-07-19"
+lastmod: "2026-07-20"
 ---
 
 # 一過性全健忘
 
 ## 説明
 
-突然発症し、24時間以内に消退する健忘発作です。発作中の患者は自分の状況を把握できず、「私はどうしてここにいるのか」といった同じ質問を短い間隔で繰り返します。一方で、意識は清明で、人物の同定は保たれ、複雑な行動（運転、調理、業務）は遂行できます。この「反復質問と、他の行動の見かけの正常さ」の組み合わせが臨床像の中核です。中高年に多く、大半は再発しません。
+突然発症し、24時間以内に消退する健忘発作である。発作中の患者は自分の状況を把握できず、「私はどうしてここにいるのか」といった同じ質問を短い間隔で繰り返す。一方で、意識は清明で、人物の同定は保たれ、複雑な行動（運転、調理、業務）は遂行できる。この「反復質問と、他の行動の見かけの正常さ」の組み合わせが臨床像の中核である。中高年に多く、大半は再発しない [1]。
 
-**急性期の認知障害はエピソード記憶に限局しません。** これは臨床上とくに注意を要する点です。系統的レビューによれば、急性期には時間・場所の失見当識、意味記憶の検索困難、ワーキングメモリの障害が併存します。回復は一定の順序をたどり、**反復質問の消失 → 見当識の回復 → ワーキングメモリと意味記憶の回復 → エピソード記憶の回復**の順に進みます。したがって「質問を繰り返さなくなった」ことは回復の完了を意味しません。さらに、**発症24時間後の時点でも微細な再認障害が残りうる**ことが報告されており、「24時間以内に完全回復する」という古典的な記述は、日常的な観察の水準での話として理解すべきです。
+**急性期の認知障害はエピソード記憶に限局しない。** これは臨床上とくに注意を要する点である。系統的レビューによれば、急性期には時間・場所の失見当識、意味記憶の検索困難、ワーキングメモリの障害が併存する。回復は一定の順序をたどり、**反復質問の消失 → 見当識の回復 → ワーキングメモリと意味記憶の回復 → エピソード記憶の回復**の順に進む。したがって「質問を繰り返さなくなった」ことは回復の完了を意味しない。さらに、**発症24時間後の時点でも微細な再認障害が残りうる**ことが報告されており [2]、「24時間以内に完全回復する」という古典的な記述は、日常的な観察の水準での話として理解すべきである。
 
-**MRI 拡散強調画像（DWI）の感度は撮像時期に強く依存します。** メタ解析では、発症からの時間別の陽性率は0〜12時間で15.6%、48〜60時間では82.8%と報告されています。海馬 CA1 領域の点状高信号が典型ですが、急性期に撮像した MRI が陰性であることは一過性全健忘を否定する根拠になりません。逆に、急性期に画像を撮る主目的は本症の確定ではなく、脳梗塞をはじめとする他の病態の除外にあります。
+**MRI 拡散強調画像（DWI）の感度は撮像時期に強く依存する。** メタ解析では、発症からの時間別の陽性率は0〜12時間で15.6%、48〜60時間では82.8%と報告されている [3]。海馬 CA1 領域の点状高信号が典型であるが、急性期に撮像した MRI が陰性であることは一過性全健忘を否定する根拠にならない。逆に、急性期に画像を撮る主目的は本症の確定ではなく、脳梗塞をはじめとする他の病態の除外にある。
 
 ## 病巣
 
 - 海馬 CA1 領域の点状病変が DWI で捉えられることが多い
 - 片側性のことも両側性のこともある
-- 病変が同定されない例も少なくない
-- 発症機序については、静脈還流障害、拡延性抑制、片頭痛関連機序などが提唱されているが、確立していません
+- 病変が同定されない例も少なくない [4]
+- 発症機序については、静脈還流障害、拡延性抑制、片頭痛関連機序などが提唱されているが、確立していない
 
 ## 検査
 
@@ -46,15 +46,29 @@ lastmod: "2026-07-19"
 
 ## 分類上の論点
 
-**一過性てんかん性健忘との鑑別が実務上の主要な問題です。** 一過性てんかん性健忘は発作が短く（多くは1時間未満）、反復し、覚醒直後に起こりやすく、抗てんかん薬に反応するという特徴で区別されます。一過性全健忘は通常1〜数時間持続して再発しないため、両者の区別は主として**持続時間と反復性**に依拠します。
+**一過性てんかん性健忘との鑑別が実務上の主要な問題である。** 一過性てんかん性健忘は発作が短く（多くは1時間未満）、反復し、覚醒直後に起こりやすく、抗てんかん薬に反応するという特徴で区別される。一過性全健忘は通常1〜数時間持続して再発しないため、両者の区別は主として**持続時間と反復性**に依拠する。
 
-ただしこの区別は絶対ではありません。反復する一過性全健忘（recurrent TGA）が存在し、その臨床像は一過性てんかん性健忘に接近します。両者を比較した報告では、発作の持続時間と発作頻度が鑑別の手がかりとして挙げられていますが、個々の症例で明確に分けられるとは限りません。反復例では脳波の再検と、抗てんかん薬への反応を見る診断的治療が検討されます。一過性てんかん性健忘の項も併せて参照してください。
+ただしこの区別は絶対ではない。反復する一過性全健忘（recurrent TGA）が存在し、その臨床像は一過性てんかん性健忘に接近する。両者を比較した報告では、発作の持続時間と発作頻度が鑑別の手がかりとして挙げられているが [5]、個々の症例で明確に分けられるとは限らない。反復例では脳波の再検と、抗てんかん薬への反応を見る診断的治療が検討される [6]。一過性てんかん性健忘の項も併せて参照されたい。
 
-## 出典
+## 文献
 
-- Liampas I, ほか. Cognitive deficits and course of recovery in transient global amnesia: a systematic review. _J Neurol_ 2024;271(10):6401-6425.（系統的レビュー。PMID 39090229 / [DOI](https://doi.org/10.1007/s00415-024-12563-2)）
-- Wong ML, ほか. Sensitivity of diffusion-weighted magnetic resonance imaging in transient global amnesia as a function of time from symptom onset. _Acad Emerg Med_ 2021;29(4):398-405.（メタ解析。PMID 34516708 / [DOI](https://doi.org/10.1111/acem.14390)）
-- Ropper AH. Transient Global Amnesia. _N Engl J Med_ 2023;388(7):635-640.（総説。PMID 36791163 / [DOI](https://doi.org/10.1056/NEJMra2213867)）
-- Piffer S, ほか. Transient global amnesia with unexpected clinical and radiological findings: A case series and systematic review. _J Neurol Sci_ 2022;441:120349.（症例集積および系統的レビュー。PMID 35944401 / [DOI](https://doi.org/10.1016/j.jns.2022.120349)）
-- Sugiyama M, ほか. Clinical differences between transient epileptic amnesia (TEA) and recurrent transient global amnesia (r-TGA). _Epilepsy Behav Rep_ 2024;27:100690.（PMID 39416713 / [DOI](https://doi.org/10.1016/j.ebr.2024.100690)）
-- Mettananda C, ほか. Transient epileptic amnesia: temporal progression of partially treated disease-a case report. _J Med Case Rep_ 2025;19(1):505.（症例報告。PMID 41088379 / [DOI](https://doi.org/10.1186/s13256-025-05118-0)）
+1. Ropper AH. Transient Global Amnesia. _N Engl J Med_ 2023;388(7):635-640.
+   （総説。PMID 36791163 / [DOI](https://doi.org/10.1056/NEJMra2213867)）
+2. Liampas I, Kyriakoulopoulou P, Akrioti A, Stamati P, Germeni A, Batzikosta P, et al.
+   Cognitive deficits and course of recovery in transient global amnesia: a systematic review.
+   _J Neurol_ 2024;271(10):6401-6425.
+   （系統的レビュー。PMID 39090229 / [DOI](https://doi.org/10.1007/s00415-024-12563-2)）
+3. Wong ML, E Silva LOJ, Gerberi DJ, Edlow JA, Dubosh NM. Sensitivity of diffusion-weighted
+   magnetic resonance imaging in transient global amnesia as a function of time from symptom
+   onset. _Acad Emerg Med_ 2021;29(4):398-405.
+   （メタ解析。PMID 34516708 / [DOI](https://doi.org/10.1111/acem.14390)）
+4. Piffer S, Nannoni S, Maulucci F, Beaud V, Rouaud O, Förster A, et al. Transient global
+   amnesia with unexpected clinical and radiological findings: A case series and systematic
+   review. _J Neurol Sci_ 2022;441:120349.
+   （症例集積および系統的レビュー。PMID 35944401 / [DOI](https://doi.org/10.1016/j.jns.2022.120349)）
+5. Sugiyama M, Tsunemi T, Hattori N. Clinical differences between transient epileptic amnesia
+   (TEA) and recurrent transient global amnesia (r-TGA). _Epilepsy Behav Rep_ 2024;27:100690.
+   （PMID 39416713 / [DOI](https://doi.org/10.1016/j.ebr.2024.100690)）
+6. Mettananda C, Mettananda S, Gunarathne K, Caldera M. Transient epileptic amnesia: temporal
+   progression of partially treated disease-a case report. _J Med Case Rep_ 2025;19(1):505.
+   （症例報告。PMID 41088379 / [DOI](https://doi.org/10.1186/s13256-025-05118-0)）

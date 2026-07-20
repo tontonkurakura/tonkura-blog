@@ -1,12 +1,12 @@
 ---
-lastmod: "2026-07-19"
+lastmod: "2026-07-20"
 ---
 
 # 着衣失行
 
 ## 説明
 
-衣服の着脱に関する行為の障害です。衣服の空間的な位置関係の理解が困難で、適切な向きで着ることができません。自分の身体と衣服の位置関係の把握が特に障害されます。
+衣服の着脱に関する行為の障害である。衣服の空間的な位置関係の理解が困難で、適切な向きで着ることができない。自分の身体と衣服の位置関係の把握が特に障害される。
 
 ## 病巣
 
@@ -37,49 +37,49 @@ lastmod: "2026-07-19"
 
 ## 分類上の論点
 
-**着衣失行が独立した失行であるかどうかには、疑問が向けられています。**
+**着衣失行が独立した失行であるかどうかには、疑問が向けられている。**
 
 Sunderland らは、脳卒中8例を対象に、
 着衣行動の詳細な観察と神経心理学的検査を組み合わせ、
-自立した着衣を妨げている認知的障壁を同定しました。
+自立した着衣を妨げている認知的障壁を同定した [1]。
 その結果、**右半球病変例では視空間障害または持続的注意の低下**によって着衣が阻害されており、
 **左半球病変で観念運動失行を伴う例**では、
-片麻痺を代償するための正しい手順を学習できないために着衣が困難になっていました。
-つまり、いずれの群でも着衣に固有の機序は同定されていません。
+片麻痺を代償するための正しい手順を学習できないために着衣が困難になっていた。
+つまり、いずれの群でも着衣に固有の機序は同定されていない。
 
-さらに同研究では、単盲検の無作為化多重ベースライン実験により治療法が比較されました。
+さらに同研究では、単盲検の無作為化多重ベースライン実験により治療法が比較された。
 個々の認知障害のパターンを考慮しない従来型の着衣訓練をベースラインとし、
 症例ごとに機序に応じて組み立てた介入と対比したところ、
 **右半球病変例では有意な治療効果が認められた一方、
-左半球ないし両側病変で失行を伴う例では治療関連の改善はありませんでした**。
-このことも、着衣障害が単一の症候ではないことを示唆します。
+左半球ないし両側病変で失行を伴う例では治療関連の改善はなかった** [1]。
+このことも、着衣障害が単一の症候ではないことを示唆する。
 
-他方、**限局した症候として立項する実用的な価値を支持する報告もあります。**
+他方、**限局した症候として立項する実用的な価値を支持する報告もある。**
 Heckmann らは、76歳女性が約7週間にわたって顕著な着衣失行の徴候を示したのち、
 病態が進行して画像所見と髄液所見に支持される probable Creutzfeldt-Jakob 病と
-診断された例を報告しました。
+診断された例を報告した [2]。
 著者らは、着衣失行が Creutzfeldt-Jakob 病の初発症状として報告されることは
 きわめて稀であるとしたうえで、
 この**際立って限局した症候群**は、早期 Creutzfeldt-Jakob 病における
-運動障害・神経心理学的障害を考えるうえで念頭に置くべきだとしています。
-また山崎らも、着衣失行の寄与因子を検討した症例を報告しています。
+運動障害・神経心理学的障害を考えるうえで念頭に置くべきだとしている。
+また山崎らも、着衣失行の寄与因子を検討した症例を報告している [3]。
 
 したがって、「着衣失行」という語は、
 機序を説明する診断名としてではなく、
-臨床で目立つ現象を指す記述語として用いるのが実際的です。
-どちらの立場が正しいかは、ここでは決着させません。
+臨床で目立つ現象を指す記述語として用いるのが実際的である。
+どちらの立場が正しいかは、ここでは決着させない。
 
-## 出典
+## 文献
 
-- Sunderland A, Walker CM, Walker MF. Action errors and dressing disability after stroke:
-  an ecological approach to neuropsychological assessment and intervention.
-  _Neuropsychol Rehabil_ 2006;16(6):666-83.（原著・無作為化試験、脳卒中8例。PMID 17127572 /
-  [DOI](https://doi.org/10.1080/09602010500204385)）
-- Heckmann JG, Vachalova I, Vynogradova I, Schwab S.
-  Dressing Apraxia as Initial Manifestation of Creutzfeldt-Jakob Disease.
-  _Tremor Other Hyperkinet Mov (N Y)_ 2020;10:14.（症例報告。PMID 32775028 /
-  [DOI](https://doi.org/10.5334/tohm.72)）
-- Yamazaki K, Hirata K, Mimuro I, Kaitoh Y.
-  A case of dressing apraxia: contributory factor to dressing apraxia.
-  _J Neurol_ 2001;248(3):235-6.（症例報告・レター。PMID 11355161 /
-  [DOI](https://doi.org/10.1007/s004150170234)）
+1. Sunderland A, Walker CM, Walker MF. Action errors and dressing disability after stroke:
+   an ecological approach to neuropsychological assessment and intervention.
+   _Neuropsychol Rehabil_ 2006;16(6):666-83.（原著・無作為化試験、脳卒中8例。PMID 17127572 /
+   [DOI](https://doi.org/10.1080/09602010500204385)）
+2. Heckmann JG, Vachalova I, Vynogradova I, Schwab S.
+   Dressing Apraxia as Initial Manifestation of Creutzfeldt-Jakob Disease.
+   _Tremor Other Hyperkinet Mov (N Y)_ 2020;10:14.（症例報告。PMID 32775028 /
+   [DOI](https://doi.org/10.5334/tohm.72)）
+3. Yamazaki K, Hirata K, Mimuro I, Kaitoh Y.
+   A case of dressing apraxia: contributory factor to dressing apraxia.
+   _J Neurol_ 2001;248(3):235-6.（症例報告・レター。PMID 11355161 /
+   [DOI](https://doi.org/10.1007/s004150170234)）
