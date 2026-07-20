@@ -33,6 +33,14 @@ export interface PostMeta extends BaseMetadata, Taggable {
   previousPost?: { id: string; title: string };
   /** 次の記事へのリンク */
   nextPost?: { id: string; title: string };
+  /**
+   * 実体が /blog/{id} 以外にある項目のリンク先。
+   *
+   * 高次脳機能部 wiki の問いは content/questions にあり、本体は /wiki/{id} に
+   * 一本化している。ブログ側に複製を作らず一覧・タグ・検索にだけ載せるため、
+   * リンク先をここで上書きする。未指定なら従来どおり /blog/{id} を指す。
+   */
+  href?: string;
 }
 
 /**

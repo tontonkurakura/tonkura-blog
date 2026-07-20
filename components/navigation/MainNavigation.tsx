@@ -70,6 +70,17 @@ export default function MainNavigation({
               Database
             </NavigationLink>
 
+            {/* 高次脳機能部 wiki（問い） */}
+            <NavigationLink
+              href="/wiki"
+              isActive={pathname.startsWith("/wiki")}
+              onClose={closeMenu}
+              fromColor="emerald-800"
+              toColor="teal-800"
+            >
+              Wiki
+            </NavigationLink>
+
             {/* ツール */}
             <NavigationLink
               href="/tools"

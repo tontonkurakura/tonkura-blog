@@ -16,6 +16,7 @@ import {
   DirectoryStructure,
   OrderConfig,
 } from "../types/blog";
+import { getQuestionsAsPosts } from "../lib/questions";
 
 const contentDirectory = path.join(process.cwd(), "content");
 const blogDirectory = path.join(contentDirectory, "blog");
@@ -58,6 +59,19 @@ async function fetchPostMeta(): Promise<PostMeta[]> {
   }
 
   await traverseDirectory(blogDirectory);
+
+  // 高次脳機能部 wiki の問いを一覧に合流させる。
+  // 記事の実体は /wiki/{id} のままで、ここでは複製を作らない（href で外に逃がす）。
+  for (const q of getQuestionsAsPosts()) {
+    posts.push({
+      id: q.id,
+      title: q.title,
+      date: q.date,
+      tags: q.tags,
+      description: q.description,
+      href: q.href,
+    });
+  }
 
   // 日付でソート
   return posts.sort((a, b) => {
