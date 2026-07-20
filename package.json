@@ -60,7 +60,7 @@
     "lucide-react": "^0.477.0",
     "marked": "^15.0.7",
     "next": "^16.2.10",
-    "next-mdx-remote": "5.0.0",
+    "next-mdx-remote": "^6.0.0",
     "nifti-reader-js": "^0.8.0",
     "pako": "^2.1.0",
     "plotly.js": "^3.0.1",
