@@ -4,12 +4,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
-  turbopack: {},
-  typescript: {
-    // 一時的に型チェックを無効化（後で段階的に修正）- REMOVED
-  },
-
   images: {
     remotePatterns: [
       {
@@ -21,10 +15,6 @@ const nextConfig = {
         hostname: "images.unsplash.com",
       },
     ],
-  },
-  // Next.js 15でのMDXサポート
-  experimental: {
-    mdxRs: true,
   },
   async rewrites() {
     return [
@@ -72,14 +62,6 @@ const nextConfig = {
         ],
       },
     ];
-  },
-
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.md$/,
-      type: "asset/source",
-    });
-    return config;
   },
 };
 
