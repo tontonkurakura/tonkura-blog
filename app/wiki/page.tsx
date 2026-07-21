@@ -24,8 +24,8 @@ export default function WikiIndexPage() {
       <h1 className="text-2xl font-bold">高次脳機能部 wiki</h1>
       <p className="mt-2 text-sm text-gray-600">
         月1回の勉強会で立った問いを、問い単位で蓄積しています。
-        地図型の問いは閉じません。<strong>未解決は欠陥ではなく第一級の状態</strong>として
-        扱います。
+        地図型の問いは閉じません。
+        <strong>未解決は欠陥ではなく第一級の状態</strong>として 扱います。
       </p>
       <p className="mt-1 text-sm text-gray-500">
         全 {questions.length} 問 / 未解決 {openCount} 問
@@ -42,7 +42,9 @@ export default function WikiIndexPage() {
                   {q.title}
                 </h2>
                 {q.domain.length > 0 && (
-                  <p className="mt-1 text-xs text-gray-500">{q.domain.join(" / ")}</p>
+                  <p className="mt-1 text-xs text-gray-500">
+                    {q.domain.join(" / ")}
+                  </p>
                 )}
               </Link>
             </li>

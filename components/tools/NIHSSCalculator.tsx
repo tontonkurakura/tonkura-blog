@@ -203,10 +203,11 @@ export default function NIHSSCalculator() {
         value={value}
         data-is-n={isN}
         onClick={handleChange}
-        className={`border rounded px-3 py-1.5 transition-colors ${isActive
+        className={`border rounded px-3 py-1.5 transition-colors ${
+          isActive
             ? "bg-blue-600 text-white border-blue-600"
             : "hover:bg-gray-100 border-gray-300"
-          }`}
+        }`}
       >
         {label || value}
       </button>

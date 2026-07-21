@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "generate-photo-yaml": "npx ts-node scripts/generatePhotoYaml.ts",
     "new-post": "npx ts-node -T scripts/create-post.ts",
     "update-lastmod": "node scripts/update-lastmod.mjs",

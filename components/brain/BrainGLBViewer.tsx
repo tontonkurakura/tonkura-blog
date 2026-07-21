@@ -64,7 +64,9 @@ function TexturedSlicePlane({
       </mesh>
       {/* 境界線 */}
       <lineSegments renderOrder={2}>
-        <edgesGeometry args={[new THREE.PlaneGeometry(planeWidth, planeHeight)]} />
+        <edgesGeometry
+          args={[new THREE.PlaneGeometry(planeWidth, planeHeight)]}
+        />
         <lineBasicMaterial color={borderColor} transparent opacity={0.85} />
       </lineSegments>
     </group>
@@ -88,9 +90,15 @@ interface SlicePlanesProps {
 }
 
 function SlicePlanes({
-  axialZ, coronalY, sagittalX,
-  axialUrl, coronalUrl, sagittalUrl,
-  showAxial, showCoronal, showSagittal,
+  axialZ,
+  coronalY,
+  sagittalX,
+  axialUrl,
+  coronalUrl,
+  sagittalUrl,
+  showAxial,
+  showCoronal,
+  showSagittal,
 }: SlicePlanesProps) {
   // 脳の GLB空間での中心・サイズ（slice_metadata.json の world_coord range から算出）
   // MNI_X: sagittal range -75.76..76.15 → cx=0.2, W=151.9
@@ -99,9 +107,9 @@ function SlicePlanes({
   const cx = 0.2;
   const cy = 7.1;
   const cz = 16.7;
-  const W = 151.9;  // MNI_X 幅
-  const H = 157.8;  // MNI_Z 高さ
-  const D = 188.1;  // MNI_Y 奥行き
+  const W = 151.9; // MNI_X 幅
+  const H = 157.8; // MNI_Z 高さ
+  const D = 188.1; // MNI_Y 奥行き
 
   return (
     <>
@@ -153,17 +161,31 @@ interface BrainModelProps {
   hiddenRegions?: Set<string>;
 }
 
-function BrainModel({ glbPath, labelsData, selectedRegion, onRegionSelect, hiddenRegions }: BrainModelProps) {
+function BrainModel({
+  glbPath,
+  labelsData,
+  selectedRegion,
+  onRegionSelect,
+  hiddenRegions,
+}: BrainModelProps) {
   const gltf = useLoader(GLTFLoader, glbPath);
   const [hoveredMesh, setHoveredMesh] = useState<string | null>(null);
-  const originalMaterials = useRef<Map<string, THREE.MeshStandardMaterial>>(new Map());
+  const originalMaterials = useRef<Map<string, THREE.MeshStandardMaterial>>(
+    new Map()
+  );
 
   // 初期マテリアル保存
   useEffect(() => {
     if (!gltf.scene) return;
     gltf.scene.traverse((node) => {
-      if (node instanceof THREE.Mesh && !originalMaterials.current.has(node.name)) {
-        originalMaterials.current.set(node.name, (node.material as THREE.MeshStandardMaterial).clone());
+      if (
+        node instanceof THREE.Mesh &&
+        !originalMaterials.current.has(node.name)
+      ) {
+        originalMaterials.current.set(
+          node.name,
+          (node.material as THREE.MeshStandardMaterial).clone()
+        );
       }
     });
   }, [gltf]);
@@ -186,8 +208,12 @@ function BrainModel({ glbPath, labelsData, selectedRegion, onRegionSelect, hidde
       const orig = originalMaterials.current.get(node.name);
       if (!orig) return;
       const mat = node.material as THREE.MeshStandardMaterial;
-      const isSelected = selectedRegion ? node.name.toLowerCase() === selectedRegion.toLowerCase() : false;
-      const isHovered = hoveredMesh ? node.name.toLowerCase() === hoveredMesh.toLowerCase() : false;
+      const isSelected = selectedRegion
+        ? node.name.toLowerCase() === selectedRegion.toLowerCase()
+        : false;
+      const isHovered = hoveredMesh
+        ? node.name.toLowerCase() === hoveredMesh.toLowerCase()
+        : false;
 
       if (isSelected) {
         // 強調表示: 発光 + 完全不透明 + 明るい色
@@ -252,7 +278,10 @@ function BrainModel({ glbPath, labelsData, selectedRegion, onRegionSelect, hidde
   );
 }
 
-function findRegionKey(meshName: string, labelsData: Record<string, RegionLabel>): string | null {
+function findRegionKey(
+  meshName: string,
+  labelsData: Record<string, RegionLabel>
+): string | null {
   const name = meshName.toLowerCase();
   for (const key of Object.keys(labelsData)) {
     if (key.toLowerCase() === name) return key;
@@ -293,18 +322,31 @@ export interface BrainGLBViewerProps {
 }
 
 export default function BrainGLBViewer({
-  glbPath, labelsData, selectedRegion, onRegionSelect,
-  viewMode, sliceMni,
-  showAxialPlane = false, showCoronalPlane = false, showSagittalPlane = false,
+  glbPath,
+  labelsData,
+  selectedRegion,
+  onRegionSelect,
+  sliceMni,
+  showAxialPlane = false,
+  showCoronalPlane = false,
+  showSagittalPlane = false,
   hiddenRegions,
 }: BrainGLBViewerProps) {
   // 背景クリックでは選択解除しない（ボタン専用）
   return (
     <div className="relative w-full" style={{ aspectRatio: "4/3" }}>
       <Canvas
-        camera={{ position: [120, 60, 180], fov: 40, near: 1, far: 2000, up: [0, 1, 0] }}
+        camera={{
+          position: [120, 60, 180],
+          fov: 40,
+          near: 1,
+          far: 2000,
+          up: [0, 1, 0],
+        }}
         gl={{ antialias: true, alpha: false }}
-        style={{ background: "linear-gradient(160deg, #080c14 0%, #121928 100%)" }}
+        style={{
+          background: "linear-gradient(160deg, #080c14 0%, #121928 100%)",
+        }}
       >
         <ambientLight intensity={0.5} />
         <directionalLight position={[150, 200, 100]} intensity={1.1} />
@@ -319,28 +361,35 @@ export default function BrainGLBViewer({
             onRegionSelect={(key) => onRegionSelect(key)}
             hiddenRegions={hiddenRegions}
           />
-          {sliceMni && (showAxialPlane || showCoronalPlane || showSagittalPlane) && (
-            <SlicePlanes
-              axialZ={sliceMni.axialZ}
-              coronalY={sliceMni.coronalY}
-              sagittalX={sliceMni.sagittalX}
-              axialUrl={sliceMni.axialUrl}
-              coronalUrl={sliceMni.coronalUrl}
-              sagittalUrl={sliceMni.sagittalUrl}
-              showAxial={showAxialPlane}
-              showCoronal={showCoronalPlane}
-              showSagittal={showSagittalPlane}
-            />
-          )}
+          {sliceMni &&
+            (showAxialPlane || showCoronalPlane || showSagittalPlane) && (
+              <SlicePlanes
+                axialZ={sliceMni.axialZ}
+                coronalY={sliceMni.coronalY}
+                sagittalX={sliceMni.sagittalX}
+                axialUrl={sliceMni.axialUrl}
+                coronalUrl={sliceMni.coronalUrl}
+                sagittalUrl={sliceMni.sagittalUrl}
+                showAxial={showAxialPlane}
+                showCoronal={showCoronalPlane}
+                showSagittal={showSagittalPlane}
+              />
+            )}
         </Suspense>
 
         <OrbitControls
           target={[0, 7, 18]}
-          enablePan enableZoom enableRotate
-          enableDamping dampingFactor={0.08}
-          rotateSpeed={0.8} zoomSpeed={1.2} panSpeed={0.8}
+          enablePan
+          enableZoom
+          enableRotate
+          enableDamping
+          dampingFactor={0.08}
+          rotateSpeed={0.8}
+          zoomSpeed={1.2}
+          panSpeed={0.8}
           autoRotate={false}
-          minPolarAngle={0} maxPolarAngle={Math.PI}
+          minPolarAngle={0}
+          maxPolarAngle={Math.PI}
         />
       </Canvas>
 

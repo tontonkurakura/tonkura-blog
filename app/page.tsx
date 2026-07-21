@@ -116,7 +116,9 @@ export default async function Home() {
                   </span>
                 )}
               </div>
-              <p className="text-gray-600 leading-relaxed">{card.description}</p>
+              <p className="text-gray-600 leading-relaxed">
+                {card.description}
+              </p>
             </Link>
           ))}
         </div>

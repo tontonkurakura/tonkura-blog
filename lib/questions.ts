@@ -58,7 +58,9 @@ function toStringArray(value: unknown): string[] {
 function toSessions(value: unknown): QuestionSession[] {
   if (!Array.isArray(value)) return [];
   return value
-    .filter((s): s is Record<string, unknown> => typeof s === "object" && s !== null)
+    .filter(
+      (s): s is Record<string, unknown> => typeof s === "object" && s !== null
+    )
     .map((s) => ({
       n: Number(s.n),
       at: String(s.at ?? ""),
@@ -67,7 +69,10 @@ function toSessions(value: unknown): QuestionSession[] {
     .filter((s) => Number.isFinite(s.n));
 }
 
-function parseMeta(data: Record<string, unknown>, fallbackId: string): QuestionMeta {
+function parseMeta(
+  data: Record<string, unknown>,
+  fallbackId: string
+): QuestionMeta {
   const type = data.type as QuestionType;
   const status = data.status as QuestionStatus;
 
@@ -96,7 +101,10 @@ function readAllFiles(): { meta: QuestionMeta; body: string }[] {
     .readdirSync(questionsDirectory, { withFileTypes: true })
     .filter((e) => e.isFile() && /\.mdx?$/.test(e.name))
     .map((e) => {
-      const raw = fs.readFileSync(path.join(questionsDirectory, e.name), "utf8");
+      const raw = fs.readFileSync(
+        path.join(questionsDirectory, e.name),
+        "utf8"
+      );
       const { data, content } = matter(raw);
       return {
         meta: parseMeta(data, e.name.replace(/\.mdx?$/, "")),
@@ -144,7 +152,9 @@ export function getQuestion(id: string): QuestionData | null {
 
   const backlinks = files
     .filter((f) => f.meta.id !== id)
-    .filter((f) => f.meta.depends_on.includes(id) || f.meta.related.includes(id))
+    .filter(
+      (f) => f.meta.depends_on.includes(id) || f.meta.related.includes(id)
+    )
     .map((f) => f.meta)
     .sort((a, b) => a.id.localeCompare(b.id));
 

@@ -47,7 +47,7 @@ jobs:
 
       - name: Cache validation
         run: |
-          if [ -f ".next/cache" ]; then
+          if [ -d ".next/cache" ]; then
             echo "Next.js cache exists ✅"
           else
             echo "Next.js cache missing ❌"

@@ -24,12 +24,19 @@ interface RegionAnnotationPanelProps {
   onRegionClick?: (region: string) => void;
 }
 
-function MNICoordBadge({ coords, label }: { coords: [number, number, number]; label: string }) {
+function MNICoordBadge({
+  coords,
+  label,
+}: {
+  coords: [number, number, number];
+  label: string;
+}) {
   return (
     <div className="flex items-center gap-2 text-xs">
       <span className="text-gray-400 w-6 flex-shrink-0">{label}</span>
       <code className="bg-gray-800 px-2 py-0.5 rounded font-mono text-gray-300">
-        ({coords[0].toFixed(1)}, {coords[1].toFixed(1)}, {coords[2].toFixed(1)}) mm
+        ({coords[0].toFixed(1)}, {coords[1].toFixed(1)}, {coords[2].toFixed(1)})
+        mm
       </code>
     </div>
   );
@@ -39,7 +46,6 @@ export default function RegionAnnotationPanel({
   regionKey,
   labelsData,
   annotations,
-  hemisphere = "both",
   onRegionClick,
 }: RegionAnnotationPanelProps) {
   const label = regionKey ? labelsData[regionKey] : null;
@@ -56,13 +62,25 @@ export default function RegionAnnotationPanel({
     return (
       <div className="flex flex-col items-center justify-center h-full text-center p-6 text-gray-400">
         <div className="mb-3 opacity-30">
-          <svg className="w-12 h-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <svg
+            className="w-12 h-12 mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1}
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
           </svg>
         </div>
         <p className="text-sm font-medium">領域を選択してください</p>
         <p className="text-xs mt-1 text-gray-500">
-          3Dモデルの脳領域をクリックすると<br />詳細情報が表示されます
+          3Dモデルの脳領域をクリックすると
+          <br />
+          詳細情報が表示されます
         </p>
       </div>
     );
@@ -72,7 +90,9 @@ export default function RegionAnnotationPanel({
     <div className="flex flex-col gap-4 p-4 overflow-y-auto h-full">
       {/* ヘッダー：領域名 */}
       <div className="border-b border-gray-700 pb-3">
-        <h2 className="text-xl font-bold text-white leading-tight">{label.ja}</h2>
+        <h2 className="text-xl font-bold text-white leading-tight">
+          {label.ja}
+        </h2>
         <p className="text-sm text-gray-400 mt-0.5 italic">{label.en}</p>
         <span className="inline-block mt-2 text-xs px-2 py-0.5 bg-indigo-900/60 text-indigo-300 rounded-full border border-indigo-700/50">
           {regionKey}

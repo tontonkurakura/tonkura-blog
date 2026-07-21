@@ -27,8 +27,9 @@ export default function MainNavigation({
   return (
     <nav
       ref={navRef}
-      className={`w-full md:w-auto transition-all duration-300 ${isMenuOpen ? "block" : "hidden md:block"
-        }`}
+      className={`w-full md:w-auto transition-all duration-300 ${
+        isMenuOpen ? "block" : "hidden md:block"
+      }`}
       id="navigation-menu"
       aria-label="メインナビゲーション"
     >

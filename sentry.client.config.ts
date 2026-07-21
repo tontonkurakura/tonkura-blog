@@ -14,10 +14,6 @@ Sentry.init({
   replaysSessionSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 0.5,
   replaysOnErrorSampleRate: 1.0,
 
-
-
-
-
   // Additional production settings
 
   sendDefaultPii: false,

@@ -42,15 +42,7 @@ export interface FilterInfo {
   value: string | number | boolean | string[] | number[];
   /** フィルターの演算子（equals, contains, greaterThan など） */
   operator?:
-    | "eq"
-    | "neq"
-    | "gt"
-    | "gte"
-    | "lt"
-    | "lte"
-    | "contains"
-    | "in"
-    | "between";
+    "eq" | "neq" | "gt" | "gte" | "lt" | "lte" | "contains" | "in" | "between";
 }
 
 /**
@@ -104,7 +96,7 @@ export interface ApiResponse<T> {
     /** ページネーション情報 */
     pagination?: PaginationInfo;
     /** その他のメタデータ */
-    [key: string]: any;
+    [key: string]: unknown;
   };
   /** ステータス情報 */
   status: {

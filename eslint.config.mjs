@@ -1,22 +1,41 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-import nextPlugin from "@next/eslint-plugin-next";
 import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
 import typescriptEslintParser from "@typescript-eslint/parser";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
+import nextPlugin from "@next/eslint-plugin-next";
+import reactHooksPlugin from "eslint-plugin-react-hooks";
+import prettierConfig from "eslint-config-prettier";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-// Next.jsの推奨設定を使用
+// Next 16 で `next lint` が廃止されたため、eslint を直接実行する構成に移行した。
+// 以前は FlatCompat で next/core-web-vitals を extends していたが、
+// eslint-plugin-react の設定に循環参照があり @eslint/eslintrc が JSON 化で
+// クラッシュしていた（"Converting circular structure to JSON"）。
+// FlatCompat を捨て、各プラグインが提供する flat config を直接使う。
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals"),
-  ...compat.extends("prettier"),
+  // flat config は .eslintignore を読まないので、無視対象をここで宣言する。
+  {
+    ignores: [
+      ".next/**",
+      "node_modules/**",
+      "coverage/**",
+      "public/**",
+      "content/**",
+      "next-env.d.ts",
+    ],
+  },
+  // Next.js の core-web-vitals（@next/next ルール群）
+  nextPlugin.configs["core-web-vitals"],
+  // React Hooks。従来 next/core-web-vitals が効かせていた2ルールに揃える。
+  // react-hooks 7.x の recommended-latest は React Compiler 世代の新ルール
+  // （static-components 等）を含み、既存コードに無関係な違反を大量に出すため使わない。
+  {
+    plugins: {
+      "react-hooks": reactHooksPlugin,
+    },
+    rules: {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+    },
+  },
   {
     files: ["**/*.ts", "**/*.tsx"],
     languageOptions: {
@@ -63,6 +82,8 @@ const eslintConfig = [
       "react-hooks/exhaustive-deps": "off",
     },
   },
+  // prettier と競合する整形系ルールを最後に無効化する。
+  prettierConfig,
 ];
 
 export default eslintConfig;

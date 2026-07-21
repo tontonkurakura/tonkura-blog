@@ -14,7 +14,7 @@ describe("PhotoGallery", () => {
     // 想定外の値を landscape に落とす。そのフォールバックを検証するため、
     // 型にない "unknown" を意図的に渡す（アサーションで型検査を通す）。
     expect(getPhotoHeight("unknown" as AspectRatio)).toBe(
-      PHOTO_HEIGHTS.landscape,
+      PHOTO_HEIGHTS.landscape
     );
   });
 });

@@ -35,13 +35,10 @@ export const loadOrderConfig = (dirPath: string = ""): OrderConfig => {
 };
 
 // ディレクトリ構造から指定階層のアイテムを抽出する（ファイルとフォルダ両方）
-const getAllItems = (
-  structure: DirectoryStructure,
-  currentPath: string = ""
-): string[] => {
+const getAllItems = (structure: DirectoryStructure): string[] => {
   const items: string[] = [];
 
-  Object.entries(structure).forEach(([name, value]) => {
+  Object.entries(structure).forEach(([name]) => {
     if (name !== "order.json") {
       items.push(name);
     }

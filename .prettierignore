@@ -1,0 +1,16 @@
+# 手書きの臨床コンテンツ。prettier で整形すると描画が変わりうる
+# （特に wiki の Markdown 強調 ** は約物との並びで表示が壊れる。commit 5150e21 参照）
+content/
+
+# 生成データ・大容量アセット・外部由来
+public/data/
+public/brain-viewer.html
+
+# Claude Code のツール領域（スキル定義など。プロジェクト本体ではない）
+.claude/
+
+# ビルド成果物・依存・カバレッジ（既定でも無視されるが明示）
+.next/
+node_modules/
+coverage/
+*.tsbuildinfo

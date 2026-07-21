@@ -9,7 +9,7 @@ import { DOMParser } from "@xmldom/xmldom";
 
 // Polyfill DOMParser for ExifReader in Node.js environment
 if (typeof global.DOMParser === "undefined") {
-  global.DOMParser = DOMParser as any;
+  global.DOMParser = DOMParser as unknown as typeof global.DOMParser;
 }
 
 const PHOTOS_DIR = path.join(process.cwd(), "public/images");
@@ -19,21 +19,6 @@ const PHOTO_INFO_PATH = path.join(process.cwd(), "content/photos.yaml");
 interface PhotoInfo {
   [key: string]: {
     description: string;
-  };
-}
-
-interface RawExif {
-  Image: {
-    Make: string;
-    Model: string;
-  };
-  Photo: {
-    DateTimeOriginal: string;
-    FNumber: number;
-    ExposureTime: number;
-    ISOSpeedRatings: number;
-    FocalLength: number;
-    LensModel: string;
   };
 }
 
@@ -203,7 +188,7 @@ async function extractExif(
         /^(\d{4}):(\d{2}):(\d{2}) (\d{2}):(\d{2}):(\d{2})/
       );
       if (match) {
-        const [_, year, month, day, hours, minutes, seconds] = match;
+        const [, year, month, day, hours, minutes, seconds] = match;
         dateTimeOriginal = new Date(
           parseInt(year),
           parseInt(month) - 1,
@@ -223,22 +208,23 @@ async function extractExif(
   }
 
   const formattedExif = {
-    camera: `${tags.Make?.description || "Unknown"} ${tags.Model?.description || ""
-      }`.trim(),
+    camera: `${tags.Make?.description || "Unknown"} ${
+      tags.Model?.description || ""
+    }`.trim(),
     lens: tags.LensModel?.description || "Unknown",
     focalLength: tags.FocalLength
       ? `${tags.FocalLength.description}`
       : "Unknown",
     aperture: tags.FNumber?.value?.[0]
       ? `f/${(
-        (tags.FNumber.value[0] as number) / (tags.FNumber.value[1] as number)
-      ).toFixed(1)}`
+          (tags.FNumber.value[0] as number) / (tags.FNumber.value[1] as number)
+        ).toFixed(1)}`
       : "Unknown",
     shutterSpeed: tags.ExposureTime?.value?.[0]
       ? formatShutterSpeed(
-        (tags.ExposureTime.value[0] as number) /
-        (tags.ExposureTime.value[1] as number)
-      )
+          (tags.ExposureTime.value[0] as number) /
+            (tags.ExposureTime.value[1] as number)
+        )
       : "Unknown",
     iso: tags.ISOSpeedRatings?.description?.toString() || "Unknown",
     date: dateTimeOriginal?.toISOString() || new Date().toISOString(),
