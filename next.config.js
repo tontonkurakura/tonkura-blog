@@ -65,50 +65,24 @@ const nextConfig = {
   },
 };
 
-module.exports = withBundleAnalyzer(nextConfig);
-
-/*
-// Injected content via Sentry wizard below
-
 const { withSentryConfig } = require("@sentry/nextjs");
 
-module.exports = withSentryConfig(
-  module.exports,
-  {
-    // For all available options, see:
-    // https://www.npmjs.com/package/@sentry/webpack-plugin#options
+// org / project / authToken はハードコードせず環境変数から読む
+// （SENTRY_ORG / SENTRY_PROJECT / SENTRY_AUTH_TOKEN）。
+// ソースマップの実アップロードは authToken がある環境（Vercel のビルド）でのみ走る。
+module.exports = withSentryConfig(withBundleAnalyzer(nextConfig), {
+  // ソースマップのアップロードログは CI のときだけ出す
+  silent: !process.env.CI,
 
-    org: "tonkura",
-    project: "javascript-nextjs",
+  // 読めるスタックトレースのために広めにソースマップを上げる
+  widenClientFileUpload: true,
 
-    // Only print logs for uploading source maps in CI
-    silent: !process.env.CI,
+  // ブラウザからの計測リクエストを /monitoring 経由で送り、広告ブロッカーを回避する。
+  // これにより送信先が same-origin になるため、next.config.js の CSP
+  // （connect-src 'self'）とも整合する。middleware は無いので衝突しない。
+  tunnelRoute: "/monitoring",
 
-    // For all available options, see:
-    // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
-
-    // Upload a larger set of source maps for prettier stack traces (increases build time)
-    widenClientFileUpload: true,
-
-    // Automatically annotate React components to show their full name in breadcrumbs and session replay
-    reactComponentAnnotation: {
-      enabled: true,
-    },
-
-    // Route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
-    // This can increase your server load as well as your hosting bill.
-    // Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
-    // side errors will fail.
-    tunnelRoute: "/monitoring",
-
-    // Automatically tree-shake Sentry logger statements to reduce bundle size
-    disableLogger: true,
-
-    // Enables automatic instrumentation of Vercel Cron Monitors. (Does not yet work with App Router route handlers.)
-    // See the following for more information:
-    // https://docs.sentry.io/product/crons/
-    // https://vercel.com/docs/cron-jobs
-    automaticVercelMonitors: true,
-  }
-);
-*/
+  // disableLogger / automaticVercelMonitors / reactComponentAnnotation は
+  // v10 で webpack.* 配下へ移動し、かつ Turbopack（Next 16 の既定）では非対応。
+  // 指定しても効かず警告を出すだけなので付けない。
+});
