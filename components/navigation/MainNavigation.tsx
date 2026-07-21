@@ -48,18 +48,13 @@ export default function MainNavigation({
               Home
             </NavigationLink>
 
-            {/* ブログ */}
-            <NavigationLink
-              href="/blog"
-              isActive={pathname.startsWith("/blog")}
-              onClose={closeMenu}
-              fromColor="indigo-800"
-              toColor="purple-800"
-            >
-              Blog
-            </NavigationLink>
+            {/*
+              神経内科ノート（/neurology）はここに置かない。
+              app/neurology/page.tsx が「開発中」として redirect("/") しているため、
+              リンクしても トップに跳ね返る。公開する判断が出たら redirect を外して復活させる。
+            */}
 
-            {/* データベース */}
+            {/* データベース（神経筋・Brodmann・高次脳機能のハブ） */}
             <NavigationLink
               href="/database"
               isActive={pathname.startsWith("/database")}
@@ -81,26 +76,15 @@ export default function MainNavigation({
               Wiki
             </NavigationLink>
 
-            {/* ツール */}
+            {/* ブログ */}
             <NavigationLink
-              href="/tools"
-              isActive={pathname.startsWith("/tools")}
+              href="/blog"
+              isActive={pathname.startsWith("/blog")}
               onClose={closeMenu}
-              fromColor="rose-800"
-              toColor="pink-800"
+              fromColor="indigo-800"
+              toColor="purple-800"
             >
-              Tools
-            </NavigationLink>
-
-            {/* ギャラリー */}
-            <NavigationLink
-              href="/gallery"
-              isActive={pathname.startsWith("/gallery")}
-              onClose={closeMenu}
-              fromColor="pink-800/80"
-              toColor="orange-800/80"
-            >
-              Gallery
+              Blog
             </NavigationLink>
           </ul>
 
@@ -140,6 +124,28 @@ export default function MainNavigation({
               toColor="green-800"
             >
               Tract Atlas
+            </NavigationLink>
+
+            {/* ツール */}
+            <NavigationLink
+              href="/tools"
+              isActive={pathname.startsWith("/tools")}
+              onClose={closeMenu}
+              fromColor="rose-800"
+              toColor="pink-800"
+            >
+              Tools
+            </NavigationLink>
+
+            {/* ギャラリー */}
+            <NavigationLink
+              href="/gallery"
+              isActive={pathname.startsWith("/gallery")}
+              onClose={closeMenu}
+              fromColor="pink-800/80"
+              toColor="orange-800/80"
+            >
+              Gallery
             </NavigationLink>
           </ul>
         </div>
